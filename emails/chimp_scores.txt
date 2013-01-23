@@ -1,0 +1,10 @@
+1	83	Joe the Chimp	Banana Moon Pie	Neverland Ranch		14.69	4432	83	
+2	75	Elijah the Chimp	Banana Moon Pie	Neverland Ranch		21.48	4373	75	
+3	73	Alexis the Chimp	Banana Moon Pie	Neverland Ranch		42.24	3608	73	
+4	71	Albert the Chimp	Banana Moon Pie	Neverland Ranch		30.25	4175	71	
+5	69	Jair the Chimp	Banana Moon Pie	Neverland Ranch		36.46	3658	69	
+6	68	Gisselle the Chimp	Banana Moon Pie	Neverland Ranch		39.21	3581	68	
+7	67	Arturo the Chimp	Banana Moon Pie	Neverland Ranch		42.64	3574	67	
+8	66	Elvis the Chimp	Banana Moon Pie	Neverland Ranch		37.99	4021	66	
+8	66	Roy the Chimp	Banana Moon Pie	Neverland Ranch		33.50	4200	66	
+8	66	Tia the Chimp	Banana Moon Pie	Neverland Ranch		40.53	3759	66	
