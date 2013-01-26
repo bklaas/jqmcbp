@@ -1,0 +1,164 @@
+<html>
+<head><title>JohnnyQuest YEAR Prognosticationland&#0153;</title>
+<link rel="stylesheet" type="text/css" href="johnnystyle.css">
+<script language="JavaScript" src="/johnnyquest/effects.js" type="text/javascript"></script>
+</head>
+
+<body> 
+
+DYNAMIC|cgilinks
+<div id = "centercontent">
+<img src = "/jqmcbp/images/bannersmall.gif">
+</div>
+
+<!--DYNAMIC|cgilinks-->
+
+        <div id="rightcontent">
+        <table cellpadding=4 cellspacing=0 border=0 >
+                                                                               
+                <tr>
+                                                                               
+                <!-- left side of heading -->
+                <td valign = top>
+                <table border = 0>
+
+                        <tr>
+                                <td class = 'brackets_heading'>
+                                        <b>Player:</b></td>
+                                <td align = 'left' class = 'brackets_heading' nowrap>
+DYNAMIC|PLAYER
+                                </td>
+                        </tr>
+
+                        <tr>
+                        <td class = 'brackets_heading'>
+                                <b>Rank:</b></td>
+                                                                               
+                        <td align = left>
+DYNAMIC|RANK
+                        </td>
+                                                                               
+                        </tr>
+                        <tr>
+                                <td class = brackets_heading valign = top>
+                                        <b>Score:</b></td>
+                                <td align = 'left' nowrap>
+DYNAMIC|SCORE
+                                </td>
+                        </tr>
+                        <tr>
+                        <td class = 'brackets_clear' colspan = 2>
+                                Scores Last Updated:
+DYNAMIC|LAST_UPDATED
+			</td>
+                        </tr>
+
+                                                                               
+                </table>
+                </td>
+		</tr>
+                                                                               
+                <!--left side again-->
+                <tr>
+                        <td valign = bottom>
+                        <table border = 0>
+                        <tr>
+                                <td class= 'brackets_heading'>
+                                        <b>Candybar:</b>
+                                </td>
+                                <td align = left class = 'brackets_heading'>
+DYNAMIC|CANDY
+                                </td>
+
+                        </tr>
+                        <tr>
+                                <td class = 'brackets_heading'>
+                                        <b><a href =" javascript:popUpPieGraph('/jqmcbp/graphs/game_61.html')">Final Four 1:</a></b>
+                                </td>
+                                <td align = left class = 'brackets_heading'>
+DYNAMIC|FF1
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class = 'brackets_heading'>
+                                        <b><a href =" javascript:popUpPieGraph('/jqmcbp/graphs/game_62.html')">Final Four 2:</a></b>
+                                <td align = left class = 'brackets_heading'>
+DYNAMIC|FF2
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class = 'brackets_heading'>
+                                        <b><a href =" javascript:popUpPieGraph('/jqmcbp/graphs/game_63.html')">Champion:</a></b>
+                                <td align = left class = 'brackets_heading'>
+DYNAMIC|GAME_63
+                                </td>
+                        </tr>
+                        </table>
+                </td>
+                </table>
+
+</div>
+<div id = "brackets">
+
+<table border = 0 cellspacing = 0 cellpadding = 0 width = 100%>
+
+	<tr>
+		<th class = 'brackets_heading' width = 40>&nbsp;</td>
+		<th class = 'brackets_heading'>first round</td>
+		<th class = 'brackets_heading'>second round</td>
+		<th class = 'brackets_heading'>sweet 16</td>
+		<th class = 'brackets_heading'>regional final</td>
+		<th class = 'brackets_heading'>final four</td>
+		<th class = 'brackets_heading'>championship</td>
+	<tr>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0>
+DYNAMIC|regions
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|first_round
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|second_round
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|third_round
+		</table>
+
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|fourth_round
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|final_four
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+DYNAMIC|championship
+		</table>
+	</td>
+
+	</tr>
+</table>
+<table cellpadding=4 cellspacing=2 border=0 width=450>
+<tr><td align = left >Legend:</tr>
+<tr><td class = brackets1><img src='/jqmcbp/images/bullet.gif' border=0> pops up the distribution of human picks for that game</td></tr>
+<tr><td class = brackets1><img src='/johnnyquest/images/chimp.gif' border=0> pops up the distribution of chimp picks for that game</td></tr>
+<tr><td class = brackets2><span class = 'picked'>This</span> indicates a correct pick</td></tr>
+<tr><td class = brackets1><strike><b>Strike-through Text</b></strike> indicates a missed pick</td></tr>
+<tr><td class = brackets2><font color = black>Black Text</font> indicates an undecided pick</td></tr>
+</table>
+
+</div>
+</body>
+</html>

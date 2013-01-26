@@ -1,0 +1,36 @@
+<table border=0 cellpadding = 5>
+
+<tr>
+	<td align = 'center'>
+		<font size = '+2'><b>[% first_player %]</b></font>
+	</td>
+	<td><font size=+2><b>VS.</b></font></td>
+	<td align = 'center'>
+		<font size = '+2'><b>[% second_player %]</b></font>
+	</td>
+<tr>
+	<td align=center>
+	[% FOR number IN first_player_strings %]
+		<img src = "/jqmcbp/images/[% number %]BRSD.GIF">
+	[% END %]
+	</td>
+
+	<td>&nbsp;</td>
+
+	<td align=center>
+	[% FOR number IN second_player_strings %]
+		<img src = "/jqmcbp/images/[% number %]BRSD.GIF">
+	[% END %]
+	</td>
+</tr>
+<tr>
+	<td align=center colspan = '3'>
+	These brackets have a Scientific Similarity Score (SSS&#0153;) of [% similarity %]
+	</td>
+</tr>
+
+</table>
+<p>
+[% FOR graph IN graphs %]
+<img src = "graphomatic/[% graph %]" class = "white"><p><hr>
+[% END %]

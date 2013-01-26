@@ -1,0 +1,181 @@
+body { color: white; background: #4c4c6b; font-family: serif; }
+body.brackets { color: white; font-size: 8pt; font-family: arial, sans-serif; }
+
+img.curve {float: left; clear: left; margin: 0 1em 0 0;}
+
+a a:link a:visited {color: white;}
+a {color: white;}
+a:hover {background: #6d6d99; color: #CCFF80; text-decoration: underline overline;}
+a:active {text-decoration: underline overline;}
+
+
+div#banner { 
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0;
+	border: 0;
+	}
+div#header { 
+	position: absolute;
+	top: 140px;
+	left: 0px;
+	width: 100%;
+	background: #6d6d99;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+div#header2 { 
+	position: absolute;
+	top: 100px;
+	left: 0px;
+	width: 100%;
+	background: #6d6d99;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+a.imagelink { background: none; text-decoration: none;}
+img.imagelink { border: 0; }
+
+a.header  { color: white; font: 16px Arial, sans-serif; font-weight: bold; margin: 0; border-width: 0; text-decoration: none; text-transform: uppercase; }
+a.header:hover  { text-decoration: underline overline; }
+
+div#links { 
+	position: absolute; 
+	margin-top: 200px; 
+	left: 0px; 
+	width: 200px; 
+	color: #CCFF80; 
+	border-right: 1px #6d6d99; 
+	z-index: 1; 
+	font-family: serif;
+	font-variant: small-caps;
+	font-weight: bold; }
+
+div#links a { color: #CCFF80; display: block; text-align: left; font: 16px serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; font-variant: small-caps; }
+div#links a:hover { color: #ffa500; display: block; text-align: left; font: 16px serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; font-variant: small-caps; }
+
+div#left_justified { text-align: justify; position: absolute; top: 190px; left: 0px; width: 90%; color: white; background: #4c4c6b; font-size: 90%; font-weight: bold; }
+div#brackets { text-align: justify; position: absolute; top: 260px; left: 0px; width: 90%; color: white; background: #4c4c6b; font-size: 90%; font-weight: bold; }
+
+
+div#bracket {
+	margin-top: 135px;
+	left: 5px;
+}
+
+div#content { 
+	font-family: arial, sans-serif; 
+	position: absolute; 
+	text-align: left; 
+	margin-top: 200px; 
+	left: 205px; 
+	border: 3px; 
+	color: white; 
+	font-weight: normal; 
+	line-height: 120%;
+	margin-right: 25px;
+}
+div#content a {color: white;}
+div#content a:link a:visited {color: white;}
+div#content a:hover {background: #6d6d99; color: #CCFF80;}
+div#content a:active {text-decoration: underline overline;}
+
+div#cgicontent { position: absolute; margin-top: 20px; left: 200px; right: 20px; border: 3px; color: white; font-size: 90%; font-weight: normal; line-height: 120%;}
+div#cgicontent a:link {color: white;}
+div#cgicontent a:visited {color: white;}
+img.white { background: white; }
+
+div#scoop { position: absolute; margin-top: 20px; margin-left: 0px; right: 20px; border: 3px; color: white; font-size: 90%; font-weight: normal; }
+div#scoop a:link {color: white;}
+div#scoop a:visited {color: white;}
+
+.booty { font-size: 90%; font-weight: normal; }
+
+.fame { font-size: 80%; font-weight: normal; }
+.fame_bold { font-size: 90%; font-weight: bold; }
+
+td.fame { white-space: nowrap; }
+
+div#enter { position: absolute; margin-top: 10px; margin-left: 10px; text-align: center; font-size: 80%; }
+div#enter a:link {color: white;}
+div#enter a:visited {color: white;}
+
+h1.scoop {text-align: center; padding: 0.25em 0.25em 0.125em; margin: 0; border-bottom: 0.125em solid white; font: 160% arial, sans-serif; font-size: 200%; font-weight: bold;}
+
+h3 {text-align: center; padding: 0.25em 0 0.125em 0; font-family: serif; margin: 0 0 0 1em; font-variant: small-caps; }
+h3.links { background: transparent; color: white; font-weight: bold; text-align: left; border-bottom: 1px solid white; font-variant: small-caps; font-size: 90%; margin-left: 2px; font-variant: small-caps;}
+h3.selected { color: white; text-align: left; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; font-variant: small-caps; font-size: 90%; }
+
+span.right { text-align: right; }
+
+.brackets1 { white-space: nowrap; color: black; background: #fffaf0; font-size: 70%; font-weight: normal; font-family: sans-serif; text-align: left; }
+.brackets2 { white-space: nowrap; color: black; background: #e6e6e6; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: left;}
+.brackets_clear { color: white; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+
+.brackets1 a { color: #4c4c6b; }
+.brackets1 a:hover {background: #6d6d99; color: #CCFF80; text-decoration: underline overline;}
+brackets2 a { color: #4c4c6b; }
+.brackets2 a:hover {background: #6d6d99; color: #CCFF80; text-decoration: underline overline;}
+brackets_clear a { color: #4c4c6b; }
+.brackets_clear a:hover {background: #6d6d99; color: #CCFF80; text-decoration: underline overline;}
+
+.brackets_clear2 { color: red; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: left;}
+.brackets_heading { white-space: nowrap; font-size: 90%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+.brackets_region { background: white; }
+
+.brackets1_center { color: black; background: #fffaf0; font-size: 70%; font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets2_center { color: black; background: #e6e6e6; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets_clear_center { background: transparent; color: white; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets_heading_center { font-size: 90%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+
+td.brackets1 td.brackets2 { white-space: nowrap; margin: 10px; border: 0.125em solid black; }
+tr.brackets_clear { white-space: nowrap; margin: 10px; border: 0.125em solid white; }
+h1.enter {text-align: justify; margin: 0; font-family: verdand, arial, sans-serif; font-size: 150%; font-weight: bold;}
+h2.enter {text-align: justify; margin: 0; font-family: verdand, arial, sans-serif; font-size: 100%; font-weight: bold;}
+h5.enter {text-align: center; padding: 0.25em 0.25em 0.125em; margin: 0; font-family: arial, sans-serif; font-size: 120%; font-weight: bold;}
+td.enter { color: white; font-size: 90%; }
+td.scoop { color: white; font-size: 90%; }
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
+
+#leftcontent {
+	position: absolute;
+	left:0px;
+	top:5px;
+	width:150px;
+	background: #4c4c6b;
+	white-space: nowrap;
+	color: white;
+	font-size: 90%;
+	font-weight: bold;
+	border-right: 1px solid white;
+}
+
+h3.leftcontent { background: transparent; color: white; font-weight: bold; text-align: left; border-bottom: 1px solid white; font-size: 90%; margin-left: 2px;}
+div#leftcontent a { display: block; text-align: left; font: 15px Arial, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; color: white; font-size: 90%;}
+div#leftcontent a:hover { color: white; display: block; text-align: left; font: 12px Arial, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; font-size: 90%;}
+
+#centercontent {
+	position: absolute;
+	margin-left:151px;
+	top:5px;
+	width:310px;
+	background: #4c4c6b;
+}
+#rightcontent {
+	position: absolute;
+	margin-left:465px;
+	top:5px;
+	background: #4c4c6b;
+	border:1px solid white;
+}
+div#rightcontent a { text-decoration: underline; color: white; }
+div#rightcontent a:hover { color: white; text-decoration: underline overline; }
+
+.picked { color: red; font-weight: bold; }

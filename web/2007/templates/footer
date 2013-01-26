@@ -1,0 +1,17 @@
+[% IF params.keywords != 'enter' %]
+<div id="enter">
+<p>Ready to enter? LET'S GET IT ON!</p>
+<a href="/jqmcbp/index.cgi?enter"><img src="candybar.gif" alt="Candy Bar with the golden ticket." /></a>
+</div>
+[% END %]
+	
+<div id="footer">
+
+	<img src="footer.gif" alt="Logo" width="38" height="40" />&copy;2007 Ben Klaas Productions<br />
+	<a href="mailto:bklaas@occamnetworks.com">Problems?</a> | Powered by Perl
+	
+</div>
+
+</div><!-- end container -->
+</body>
+</html>

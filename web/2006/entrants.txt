@@ -1,0 +1,20 @@
+START_PARAMS
+title   JQMCBP Entrants
+x_label	Year
+y_label	Number of Candy Seekers
+y_max	500
+height  400
+width   550
+
+START_DATA
+1996	9
+1997	26
+1998	50
+1999	95
+2000	137
+2001	199
+2002	272
+2003	305
+2004	384
+2005	483
+2006	0

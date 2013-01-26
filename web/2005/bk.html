@@ -1,0 +1,411 @@
+<html><head><title>JohnnyQuest 2005</title>
+<link rel="stylesheet" type="text/css" href="jqmcbp.css">
+<script language="JavaScript" src="bracket.js" type="text/javascript"></script></head>
+<body class="brackets">
+
+<div id="banner">
+<img src="bk_files/bannerround">
+</div>
+
+<div id="header2">
+<img src="bk_files/firstround"></div>
+
+<div id="bracket">
+<form id = 'bracketform'>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+	<tbody><tr>
+		<th class="brackets_heading" width="40">&nbsp;
+		</th><th class="brackets_heading">first round
+		</th><th class="brackets_heading">second round
+		</th><th class="brackets_heading">sweet 16
+		</th><th class="brackets_heading">regional final
+		</th><th class="brackets_heading">final four
+		</th><th class="brackets_heading">championship
+	</th></tr><tr>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0">
+<tbody><tr><td class="brackets_region" align="right" height="400" valign="center">
+		<img src="bk_files/midwest">
+			</td></tr>
+<tr><td class="brackets_region" align="right" height="400" valign="center">
+		<img src="bk_files/west">
+			</td></tr>
+<tr><td class="brackets_region" align="right" height="400" valign="center">
+		<img src="bk_files/east">
+			</td></tr>
+<tr><td class="brackets_region" align="right" height="400" valign="center">
+		<img src="bk_files/south">
+			</td></tr>
+		</tbody></table>
+	</td>
+	<td>
+		<input name="SECOND_ROUND.x" value="1" type="hidden"><table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="brackets1" height="50" valign="center">
+<span id = 'game_1 Illinois select' style = "display: block;">
+	<input name="game_1" value="Illinois" type="radio" onClick="advanceTeam('Illinois','game_1','game_33')">1 Illinois<br>
+</span>
+<span id = 'game_1 Farleigh Dickinson select' style = "display: block;">
+	<input name="game_1" value="Farleigh Dickinson" type="radio" onClick="advanceTeam('Farleigh Dickinson','game_1','game_33')">16 Farleigh Dickinson
+</span>
+
+<span id = 'game_1 Illinois done' style = "display: none;">
+	<span id = 'game_1 Illinois'>1 Illinois<br></span>
+</span>
+<span id = 'game_1 Farleigh Dickinson done' style = "display: none;">
+	<span id = 'game_1 Farleigh Dickinson'>16 Farleigh Dickinson</span>
+</span>
+
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<span id = 'game_2 Texas select' style = "display: block;">
+	<input name="game_2" value="Texas" type="radio" onClick="advanceTeam('Texas','game_2','game_33')">8 Texas<br>
+</span>
+<span id = 'game_2 Nevada select' style = "display: block;">
+	<input name="game_2" value="Nevada" type="radio" onClick="advanceTeam('Nevada','game_2','game_33')">9 Nevada
+</span>
+
+<span id = 'game_2 Texas done' style = "display: none;">
+	<span id = 'game_2 Texas'>8 Texas<br></span>
+</span>
+<span id = 'game_2 Nevada done' style = "display: none;">
+	<span id = 'game_2 Nevada'>9 Nevada</span>
+</span>
+
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_3" value="Boston College" type="radio">4 Boston College<br>
+<input name="game_3" value="Penn" type="radio">13 Penn
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_4" value="Alabama" type="radio">5 Alabama<br>
+<input name="game_4" value="UW-Milwaukee" type="radio">12 UW-Milwaukee
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_5" value="Arizona" type="radio">3 Arizona<br>
+<input name="game_5" value="Utah State" type="radio">14 Utah State
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_6" value="LSU" type="radio">6 LSU<br>
+<input name="game_6" value="UAB" type="radio">11 UAB
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_7" value="Southern Illinois" type="radio">7 Southern Illinois<br>
+<input name="game_7" value="Saint Mary's" type="radio">10 Saint Mary's
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_8" value="Oklahoma State" type="radio">2 Oklahoma State<br>
+<input name="game_8" value="SE Louisiana" type="radio">15 SE Louisiana
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_9" value="Washington" type="radio">1 Washington<br>
+<input name="game_9" value="Montana" type="radio">16 Montana
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_10" value="Pacific" type="radio">8 Pacific<br>
+<input name="game_10" value="Pittsburgh" type="radio">9 Pittsburgh
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_11" value="Louisville" type="radio">4 Louisville<br>
+<input name="game_11" value="LA-Lafayette" type="radio">13 LA-Lafayette
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_12" value="Georgia Tech" type="radio">5 Georgia Tech<br>
+<input name="game_12" value="George Washington" type="radio">12 George Washington
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_13" value="Gonzaga" type="radio">3 Gonzaga<br>
+<input name="game_13" value="Winthrop" type="radio">14 Winthrop
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_14" value="Texas Tech" type="radio">6 Texas Tech<br>
+<input name="game_14" value="UCLA" type="radio">11 UCLA
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_15" value="West Virginia" type="radio">7 West Virginia<br>
+<input name="game_15" value="Creighton" type="radio">10 Creighton
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_16" value="Wake Forest" type="radio">2 Wake Forest<br>
+<input name="game_16" value="Chattanooga" type="radio">15 Chattanooga
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_17" value="North Carolina" type="radio">1 North Carolina<br>
+<input name="game_17" value="Oakland" type="radio">16 Oakland
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_18" value="Minnesota" type="radio">8 Minnesota<br>
+<input name="game_18" value="Iowa State" type="radio">9 Iowa State
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_19" value="Florida" type="radio">4 Florida<br>
+<input name="game_19" value="Ohio" type="radio">13 Ohio
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_20" value="Villanova" type="radio">5 Villanova<br>
+<input name="game_20" value="New Mexico" type="radio">12 New Mexico
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_21" value="Kansas" type="radio">3 Kansas<br>
+<input name="game_21" value="Bucknell" type="radio">14 Bucknell
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_22" value="Wisconsin" type="radio">6 Wisconsin<br>
+<input name="game_22" value="Northern Iowa" type="radio">11 Northern Iowa
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_23" value="Charlotte" type="radio">7 Charlotte<br>
+<input name="game_23" value="NC State" type="radio">10 NC State
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_24" value="Connecticut" type="radio">2 Connecticut<br>
+<input name="game_24" value="Central Florida" type="radio">15 Central Florida
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_25" value="Duke" type="radio">1 Duke<br>
+<input name="game_25" value="Delaware State" type="radio">16 Delaware State
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_26" value="Stanford" type="radio">8 Stanford<br>
+<input name="game_26" value="Mississippi State" type="radio">9 Mississippi State
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_27" value="Syracuse" type="radio">4 Syracuse<br>
+<input name="game_27" value="Vermont" type="radio">13 Vermont
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_28" value="Michigan State" type="radio">5 Michigan State<br>
+<input name="game_28" value="Old Dominion" type="radio">12 Old Dominion
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_29" value="Oklahoma" type="radio">3 Oklahoma<br>
+<input name="game_29" value="Niagra" type="radio">14 Niagra
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_30" value="Utah" type="radio">6 Utah<br>
+<input name="game_30" value="UTEP" type="radio">11 UTEP
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_31" value="Cincinnati" type="radio">7 Cincinnati<br>
+<input name="game_31" value="Iowa" type="radio">10 Iowa
+</td></tr>
+<tr>
+<td class="brackets1" height="50" valign="center">
+<input name="game_32" value="Kentucky" type="radio">2 Kentucky<br>
+<input name="game_32" value="Eastern Kentucky" type="radio">15 Eastern Kentucky
+</td></tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="brackets2" height="100" valign="center">
+	<span id = 'game_33 Illinois select' style="display: none;">
+		<input name="game_33" value="Illinois" type="radio" onClick="advanceTeam('Illinois','game_33','game_49')">1 Illinois
+		<img src = 'images/remove.gif' onClick="secondThoughts('Illinois','game_33','game_1')">
+	</span>
+	<span id = 'game_33 Illinois done' style='display: none;'>
+		<span id = 'game_33 Illinois'>1 Illinois</span>
+	</span>
+	<span id = 'game_33 Farleigh Dickinson select' style="display: none;">
+	<input name="game_33" value="Farleigh Dickinson" type="radio" onClick="advanceTeam('Farleigh Dickinson','game_33','game_49')">16 Farleigh Dickinson
+		<img src = 'images/remove.gif' onClick="secondThoughts('Farleigh Dickinson','game_33','game_1')">
+	</span>
+	<span id = 'game_33 Farleigh Dickinson done' style='display: none;'>
+		<span id = 'game_33 Farleigh Dickinson'>16 Farleigh Dickinson</span>
+	</span>
+
+	<span id = 'game_33 Texas select' style="display: none;">
+	<input name="game_33" value="Texas" type="radio" onClick="advanceTeam('Texas','game_33','game_49')">8 Texas
+		<img src = 'images/remove.gif' onClick="secondThoughts('Texas','game_33','game_2')">
+	</span>
+	<span id = 'game_33 Texas done' style='display: none;'>
+		<span id = 'game_33 Texas'>8 Texas</span>
+	</span>
+	<span id = 'game_33 Nevada select' style="display: none;">
+	<input name="game_33" value="Nevada" type="radio" onClick="advanceTeam('Nevada','game_33','game_49')">9 Nevada
+		<img src = 'images/remove.gif' onClick="secondThoughts('Nevada','game_33','game_2')">
+	</span>
+	<span id = 'game_33 Nevada done' style='display: none;'>
+		<span id = 'game_33 Nevada'>9 Nevada</span>
+	</span>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="100" valign="center">
+<br>
+</td></tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="200" valign="center">
+<br>
+</td></tr>
+		</tbody></table>
+
+	</td>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="brackets2" height="400" valign="center">
+<br>
+</td></tr><tr>
+<td class="brackets2" height="400" valign="center">
+<br>
+</td></tr><tr>
+<td class="brackets2" height="400" valign="center">
+<br>
+</td></tr><tr>
+<td class="brackets2" height="400" valign="center">
+<br>
+		</td></tr></tbody></table>
+	</td>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="brackets2" height="800" valign="center">
+<br>
+</td></tr>
+<tr>
+<td class="brackets2" height="800" valign="center">
+<br>
+</td></tr>
+		</tbody></table>
+	</td>
+	<td>
+		<table border="1" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td class="brackets2" height="1600" valign="center">
+<br>
+</td></tr>
+		</tbody></table>
+	</td>
+
+	</tr>
+</tbody></table>
+<input name="email" value="foo@foo.com" type="hidden">
+<input name="locale" value="Florida" type="hidden">
+<input name="name" value="foo" type="hidden">
+<input name="years_played" value="1" type="hidden">
+<center>
+<img src="bk_files/forward" align="middle">
+<input name="SECOND_ROUND" src="bk_files/go_ben_go" value="true" align="center" type="image"><img src="bk_files/back" align="middle">
+</center>
+</form>
+</div>
+</body></html>

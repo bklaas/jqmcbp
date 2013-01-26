@@ -1,0 +1,26 @@
+<table width=700>
+<tr><td>
+<form action='player_bracket.cgi'>
+<font size=+1><b>If you know your Player ID, enter it here</b></font></td></tr>
+<tr><td>
+<input type = text size = 4 maxlength = 4 name = player_id value = '[% cookie %]'><input type = submit value = "Go Ben Go!">
+
+</td>
+</form>
+</tr>
+<tr><form action = 'player_bracket.cgi'><tr><td><font size=+1><b>Otherwise, choose from the Big List</b></font>
+</td></tr>
+
+<tr>
+<td>
+<select name="player_id">
+<option value="">
+[% FOR name IN names %]
+	<option value = '[% name.player_id %]' [% IF cookie == name.player_id %]SELECTED[% END %]>[% name.name %]
+[% END %]
+</select>
+<input type = submit value = "Go Ben Go!">
+</td>
+</form>
+</tr>
+</table>

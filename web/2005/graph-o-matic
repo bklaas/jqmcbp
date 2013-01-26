@@ -1,0 +1,470 @@
+#!/usr/bin/perl
+
+############
+# usage: graph-o-matic --data <data file> --type <graph type> (many many optional args)
+#
+# example: ./graph-o-matic --data data.txt --type line --outfile graph.png
+############
+
+use strict;
+
+# make Chart::Plot (scatter graphs) optional
+my $scatter_it = 0;
+BEGIN {
+	if (eval (require Chart::Plot)) {
+		$scatter_it = 1;
+		import Chart::Plot qw(all);
+	} else {
+		warn "Chart::Plot is not installed. You should install it if you want scatter plots\n";
+	}
+}
+
+use GD;
+use GD::Graph;
+use GD::Text;
+
+# intitalize a couple of vars
+my @data; my %CONFIG; my %ARGS;
+my @dclrs;
+my @legend_keys;
+
+# set defaults
+$CONFIG{"height"} = 400;
+$CONFIG{"width"} = 600;
+$CONFIG{"title"} = "Automated Graph";
+$CONFIG{"x_label"} = "X";
+$CONFIG{"y_label"} = "Y";
+
+my $flags = "[--help] --data data_file --graph_type (line|pie|bar|scatter)  
+	[--time_series (positive integer)]
+	[--verbose]
+	[--outfile string]
+	[--title string]
+	[--width (positive integer)]
+	[--height (positive integer)]
+	[--x_label string] 
+	[--y_label string] 
+	[--x_label_skip (positive integer)]
+	[--y_label_skip (positive integer)]
+	[--y_tick_number (positive integer)]
+	[--x_tick_offset (positive integer)]
+	[--x_labels_vertical (0 or 1)]
+	[--box_axis]
+	[--cumulate]
+	[--bar_width (positive integer)]
+	[--bar_spacing (positive integer)]
+	[--pie_height (positive integer)]
+	[--suppress_angle (positive integer < 360)]
+	[--start_angle (positive integer < 360)]
+	[--marker_size (integer 1-10]
+	[--y_max (number)]
+	[--y_min (number)]
+	[--spike_kill]
+	";
+my $usage_string = "USAGE: ./graph-o-matic $flags\n";
+
+command_args();
+
+foreach (keys %ARGS) {
+	if ($ARGS{$_} ne "") {
+		$CONFIG{$_} = $ARGS{$_};
+	}
+}
+
+
+get_data($CONFIG{"data_file"});
+
+	for (keys %CONFIG) {
+		print "CONFIG: $_\t$CONFIG{\"$_\"}\n" if $ARGS{"verbose"};
+	}
+	print "DCLRS: @dclrs\n" if $ARGS{'verbose'};
+		print "\nThe Data:\n" if $ARGS{"verbose"};
+	for my $i (@data) {
+		print "@$i\n" if $ARGS{"verbose"};
+	}
+	print "\nFINISHED PARSING DATA\n" if $ARGS{"verbose"};
+
+
+if ($CONFIG{"graph_type"} eq "line") {
+	make_line_graph();
+} elsif ($CONFIG{"graph_type"} eq "pie") {
+	make_pie_graph();
+} elsif ($CONFIG{"graph_type"} eq "scatter") {
+	if ($scatter_it) {
+		make_scatter_plot();
+	} else {
+		die "You do not have the Chart::Plot module installed. Install it if you want scatter plots\n";
+	}
+} elsif ($CONFIG{"graph_type"} eq "bar") {
+	make_bar_graph();
+}
+
+print "Done with graph!\n" if $ARGS{"verbose"};
+
+sub command_args {
+
+	use Getopt::Long;
+
+###############################################################
+# get command-line flags
+###############################################################
+
+GetOptions(	"data=s" => \$ARGS{"data_file"},
+		"x_label=s"	=>	\$ARGS{"x_label"},
+		"y_label=s"	=>	\$ARGS{"y_label"},
+		"y_min=s"	=>	\$ARGS{"y_min"},
+		"y_max=s"	=>	\$ARGS{"y_max"},
+		"width=s"	=>	\$ARGS{"width"},
+		"height=s"	=>	\$ARGS{"height"},
+		"title=s"	=>	\$ARGS{"title"},
+		"outfile=s"	=>	\$ARGS{"outfile"},
+		"graph_type=s"	=>	\$ARGS{"graph_type"},
+		"x_label_skip=s"	=>	\$ARGS{"x_label_skip"},
+		"y_label_skip=s"	=>	\$ARGS{"y_label_skip"},
+		"y_tick_number=s"	=>	\$ARGS{"y_tick_number"},
+		"x_tick_offset=s"	=>	\$ARGS{"x_tick_offset"},
+		"x_labels_vertical=s"	=>	\$ARGS{"x_labels_vertical"},
+		"box_axis"	=>	\$ARGS{"box_axis"},
+		"suppress_angle=s"	=>	\$ARGS{"suppress_angle"},
+		"start_angle=s"		=>	\$ARGS{"start_angle"},
+		"pie_height=s"		=>	\$ARGS{"pie_height"},
+		"cumulate"		=>	\$ARGS{"cumulate"},
+		"bar_width=s"		=>	\$ARGS{"bar_width"},
+		"bar_spacing=s"		=>	\$ARGS{"bar_spacing"},
+		"marker_size=s"		=>	\$ARGS{"marker_size"},
+		"time_series=s"		=>	\$ARGS{"time_series"},
+		"verbose"			=>	\$ARGS{"verbose"},
+		"spike_kill"			=>	\$ARGS{"spike_kill"},
+           	"help"               => \$ARGS{"help"} );
+
+    # look for help flag
+    if ($ARGS{"help"}) {
+	print "\n" . $usage_string;
+	print "REQUIRED FLAGS:
+		--data specifies data file to parse
+		--graph_type specifies graph type (line, scatter, pie, bar)
+OPTIONAL FLAGS:
+		--time_series will graph only last (x) data points
+		--verbose verbose output of program
+		--outfile specifies name of PNG file to write to
+		--title The title of the graph
+		--width specify the width of the graph in pixels
+		--height specify the height of the graph in pixels
+		--x_label specifies x-axis label
+		--y_label specifies y-axis label
+		--x_label_skip specifies the amount of x labels to skip for each displayed label
+		--y_label_skip specifies the amount of y labels to skip for each displayed label
+		--y_tick_number specifies how many ticks used for the y axis
+		--x_tick_offset use with x_label_skip to shift the beginning x_label to be printed
+		--x_labels_vertical boolean for whether to display x labels in a vertial alignment
+		--box_axis draw a box around the graph
+		--cumulate (bar graphs) specifies to stack data on top of each other rather than side-by-side
+		--bar_width (bar graphs) sets the pixel width of the bar
+		--bar_spacing (bar graphs) sets the pixel space between bars
+		--pie_height (pie graphs) sets the pixel height of the 3d pie graph
+		--marker_size (line graphs) sets the pixel size of the data marker
+		--suppress_angle (pie graphs) don't print labels on pie slices smaller than this angle
+		--start_angle (pie graphs) start the pie graph plot at this angle
+		--help displays this message\n\n";
+	exit(0);
+    }
+
+   # exit program unless the bare minimum of command line args are given
+
+   unless ($ARGS{"data_file"} && $ARGS{"graph_type"} =~ /(pie|line|scatter|bar)/) {
+          die "$usage_string";
+   }
+
+   unless ($ARGS{"outfile"}) {
+           $ARGS{"outfile"} = $ARGS{"graph_type"} . "_graph.png";
+   }
+
+}
+
+sub get_data {
+
+	my $params = 0;
+	my $data = 1;
+	my $inc = 1;
+
+	print "PARSING DATA...\n" if $ARGS{"verbose"};
+
+	open(DATA,"<$CONFIG{\"data_file\"}") or die "couldn't open $CONFIG{\"data_file\"}: $!";
+	my $i = 0;
+	my $y_max = 0;
+	while (<DATA>) {
+		my @ary = ();
+		# skip comments and blank lines
+		next if (/^$/ || /^#/);
+		chomp;
+		if (/START_PARAMS/) {
+			$params = 1;
+			next;
+		}
+		@ary = split /\t|\s\s+/;
+
+		if ($params) {
+			if (/END_PARAMS/ || /START_DATA/) {
+				$params = 0;
+				next;
+			}
+
+			if ($ary[0] eq "legend_keys") {
+
+				for (1..$#ary) {
+					push @legend_keys, $ary[$_];
+				}
+			} elsif ($ary[0] eq "dclrs") {
+				for (1..$#ary) {
+					push @dclrs, $ary[$_];
+				}
+			} else {
+				$CONFIG{$ary[0]} = $ary[1];
+			}
+			next;
+		}
+		if ($data) {
+			next if /START_DATA/;
+			if ($#ary == 0) {
+				unshift @ary, $inc;
+				$inc++;
+			}
+			# skip if spike kill is enabled
+			if ($CONFIG{'y_max'} && $CONFIG{'spike_kill'}) {
+				my $skip = 0;
+				for my $j (1..$#ary) {
+					if ($ary[$j] > $CONFIG{'y_max'}) {
+						print "|$ary[$j]|\n";
+						$skip = 1;
+					}
+				}
+				next if $skip;
+			}
+			for my $k (0..$#ary) {
+				$data[$k][$i] = $ary[$k];
+				# intelligently figure out y_max if not already specified
+				unless ($CONFIG{"y_max"}) {
+					for my $j (1..$#ary) {
+						if ($y_max < $ary[$j]) {
+							$y_max = $ary[$j];
+						}
+					}
+				}
+			}
+			$i++;
+		}
+	}
+
+	# graph only last x points if time_series
+	my @new_data;
+	if ($CONFIG{"time_series"}) {
+		if ($CONFIG{"time_series"} < $i) {
+			my $last = $i - 1;
+			my $first = $last - $CONFIG{"time_series"} + 1;
+			$i = $CONFIG{"time_series"};
+			print "$first\t$last\n";
+			my $z = 0;
+			for my $j ($first..$last) {
+				for my $k (0..$#data) {
+					$new_data[$k][$z] = $data[$k][$j];
+					print "$k\t$z\t$new_data[$k][$z]\n";
+				}
+					$z++;
+			}
+		}
+		@data = @new_data;
+	}
+
+	# give a default set of data colors if not already specified
+	unless (@dclrs) {
+		@dclrs = qw(blue red green lred lgreen lblue lyellow lpurple cyan lorange);
+	}
+	# intelligently decide x_label_skip if not already specified
+	unless ($CONFIG{"x_label_skip"}) {
+		if ($i < 15) {
+			# no skip
+		} elsif ($i >= 15) {
+			$CONFIG{"x_label_skip"} = 2;
+		} elsif ($i >= 30) {
+			$CONFIG{"x_label_skip"} = 3;
+		} elsif ($i >= 45) {
+			$CONFIG{"x_label_skip"} = 4;
+		} elsif ($i >= 60) {
+			$CONFIG{"x_label_skip"} = 5;
+		} elsif ($i >= 75) {
+			$CONFIG{"x_label_skip"} = 6;
+		} elsif ($i >= 90) {
+			$CONFIG{"x_label_skip"} = 7;
+		} elsif ($i >= 105) {
+			$CONFIG{"x_label_skip"} = 8;
+		} else {
+			$CONFIG{"x_label_skip"} = 10;
+		}
+	}
+	$CONFIG{"y_max"} = $y_max unless $CONFIG{"y_max"};
+	$CONFIG{"y_max"} = "" unless $CONFIG{"y_max"} > 0;
+	
+	close(DATA);
+
+}
+
+sub make_scatter_plot {
+
+######################################
+# Make scatter plot                  #
+######################################
+
+#use Chart::Plot;
+
+print STDOUT "Plotting graph into $CONFIG{\"outfile\"}..." if $CONFIG{"verbose"};
+my $plot = Chart::Plot->new($CONFIG{"width"}, $CONFIG{"height"});
+my $gd = $plot->getGDobject;
+
+$plot->setData (@data, 'Points Noline Blue');
+
+$plot->setGraphOptions ('title' => $CONFIG{"title"},
+                        'horAxisLabel' => $CONFIG{"x_axis_label"},
+                        'vertAxisLabel' => $CONFIG{"y_axis_label"}
+			);
+
+
+           open (WR,">$CONFIG{\"outfile\"}") or die ("Failed to write file: $!");
+           binmode WR;            # for DOSish platforms
+           print WR $plot->draw();
+           close WR;
+print STDOUT "DONE\n" if $CONFIG{"verbose"};
+}
+
+sub make_line_graph {
+
+	use GD::Graph::linespoints;
+	my $line_graph = GD::Graph::linespoints->new($CONFIG{"width"},$CONFIG{"height"});
+
+	# removed graph params
+         #dclrs => ["$color1", "$color2", "$color3", "$color4"],
+         #markers => [1, 4, 7, 5],
+         #logo => $LOGO,
+         #logo_resize => 1,
+         #logo_position => 'UR',
+
+	$line_graph->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";  
+	#my $occam_blue = "occam_blue";
+	if (@legend_keys) {
+		$line_graph->set_legend(@legend_keys);
+	}
+	$line_graph->set(
+         t_margin => "2",
+         b_margin => "2",
+         l_margin => "2",
+         r_margin => "2",
+         box_axis => $CONFIG{"box_axis"},
+         transparent => 1,
+         bgclr=>"white",
+         skip_undef=> 1,
+         marker_size => $CONFIG{"marker_size"},
+         y_min_value => $CONFIG{"y_min"},
+         y_max_value => $CONFIG{"y_max"},
+         x_label_position => 0.5,
+	 x_label_skip => $CONFIG{"x_label_skip"},
+	 x_label_offset => $CONFIG{"x_label_offset"},
+	 y_label_skip => $CONFIG{"y_label_skip"},
+	 x_labels_vertical => $CONFIG{"x_labels_vertical"},
+         title  => $CONFIG{"title"},
+         x_label => $CONFIG{"x_label"},
+         y_label => $CONFIG{"y_label"},
+	 dclrs => [ @dclrs ],
+         legend_placement => 'RC'
+        );
+
+	my $gd = $line_graph->plot(\@data) or die "$!";
+
+	print STDOUT "Making graph: $CONFIG{\"outfile\"}\n" if $ARGS{"verbose"};
+	open(IMG, ">$CONFIG{\"outfile\"}") or die "$CONFIG{\"outfile\"}: $!";
+     	binmode IMG;
+     	print IMG $gd->png; 
+	close IMG;
+
+}
+
+sub make_pie_graph {
+
+  use GD::Graph::pie;
+  my $pie_graph = GD::Graph::pie->new($CONFIG{"width"}, $CONFIG{"height"});
+
+  $pie_graph->set_title_font(gdGiantFont) or warn "couldn't do it: $!";
+
+
+  unless ($CONFIG{"pie_height"}) {
+	$CONFIG{"pie_height"} = $CONFIG{"height"} * 0.1;
+  }
+
+  $pie_graph->set(
+         title  => $CONFIG{"title"},
+	 bgclr => "white",
+         suppress_angle => $CONFIG{"suppress_angle"},
+	 pie_height =>	$CONFIG{"pie_height"},
+	 start_angle =>	$CONFIG{"start_angle"},
+	 dclrs => [ @dclrs ]
+	 
+         );
+
+  $pie_graph->set_value_font(gdMediumBoldFont)  or warn "couldn't set font: $!";
+
+ my $gd = $pie_graph->plot(\@data);
+	print STDOUT "Making graph: $CONFIG{\"outfile\"}\n" if $ARGS{"verbose"};
+  open(IMG, ">$CONFIG{\"outfile\"}") or die $!;
+     binmode IMG;
+     print IMG $gd->png;
+
+  close(IMG);
+
+}
+
+sub make_bar_graph {
+
+
+	use GD::Graph::bars;
+	my $bar_graph = GD::Graph::bars->new($CONFIG{"width"},$CONFIG{"height"});
+
+	$bar_graph->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";  
+
+	if (@legend_keys) {
+		$bar_graph->set_legend(@legend_keys);
+	}
+
+	$bar_graph->set(
+         t_margin => "2",
+         b_margin => "2",
+         l_margin => "2",
+         r_margin => "2",
+         box_axis => $CONFIG{"box_axis"},
+         transparent => 1,
+         bgclr=>"white",
+         y_min_value => $CONFIG{"y_min"},
+         y_max_value => $CONFIG{"y_max"},
+         x_label_position => 0.5,
+	 x_label_skip => $CONFIG{"x_label_skip"},
+	 x_label_offset => $CONFIG{"x_label_offset"},
+	 x_labels_vertical => $CONFIG{"x_labels_vertical"},
+	 y_label_skip => $CONFIG{"y_label_skip"},
+	 bar_width => $CONFIG{"bar_width"},
+	 bar_spacing => $CONFIG{"bar_spacing"},
+	 dclrs => [ @dclrs ],
+         title  => $CONFIG{"title"},
+         x_label => $CONFIG{"x_label"},
+         y_label => $CONFIG{"y_label"},
+	 cumulate => $CONFIG{"cumulate"},
+	 legend_placement => 'RC'
+        );
+
+	my $gd = $bar_graph->plot(\@data);
+
+	print STDOUT "Making graph: $CONFIG{\"outfile\"}\n" if $ARGS{"verbose"};
+	open(IMG, ">$CONFIG{\"outfile\"}") or die "$CONFIG{\"outfile\"}: $!";
+     	binmode IMG;
+     	print IMG $gd->png;
+	close IMG;
+
+}
+
+

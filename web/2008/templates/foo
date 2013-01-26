@@ -1,0 +1,5 @@
+[% PROCESS cgi_header title = 'JQMCBP Leaderboard' %]
+<div id = 'content'>
+[% PROCESS leaderboard_main.html.tmpl %]
+</div>
+[% PROCESS cgi_footer %]

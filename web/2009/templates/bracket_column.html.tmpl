@@ -1,0 +1,23 @@
+<td>
+	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+	[% n = [ start .. end ] %]
+	[% FOR x IN n %]
+		[% row = games.$x %]
+		<tr><td class="[% class %]" height="[% height %]" valign="center">&nbsp;
+		[% elements = [ 0 .. row.teams.size ] %]
+		[% FOR element IN elements %]
+		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]
+		[% seed = seeds.$team %]
+			<span id = '[% row.game %] [% team %] select' style = "display: none;" class = 'radio'>
+				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team %]" type="radio" onClick='advanceTeam("[% team %]","[% row.game %]","[% row.nextGame %]")'>[% seed %] [% team %]
+				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team %]","[% row.game %]","[% prevGame %]")'><br>
+			</span>
+			<span id = '[% row.game %] [% team %] done' style = "display: none;" class = 'normal'>
+				<span id = '[% row.game %] [% team %]'>[% seed %] [% team %]<br></span>
+			</span>
+		[% END %]
+		</td></tr>
+	[% END %]
+	</tbody></table>
+</td>

@@ -1,0 +1,10 @@
+[% PROCESS header %]
+<div id = 'content'>
+
+    <div id="main">
+    	
+[% PROCESS $params.keywords %]
+      <!-- main ends -->
+	</div>
+
+[% PROCESS footer %]

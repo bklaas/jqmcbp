@@ -1,0 +1,137 @@
+<table>
+<tr><td align = left rowspan = 2><img src = "/johnnyquest/2007/images/insaneclownposse.jpg"></td>
+<td valign = top class = 'brackets'>
+The Insane Clown Posse:<br>Blender Magazine's #1 Worst Music Act of All Time!<p>They are also the <font size = +1>Official Spokesclowns&#0153;</font><br> of the JQMCBP Hall of Shame&#0153;</td></tr>
+<tr><td align = left>
+[% FOR thisNumber IN tally_strings %]
+	<img src = "/jqmcbp/images/[% thisNumber %]BRSD.GIF">
+[% END %]
+
+[%# strings code goes here %]
+
+ members and counting to the Hall of Shame&#0153;!
+</td></tr>
+</table>
+<table width = 800>
+<tr><td>The concept is simple-- if your RtT&#0153; score* is below the current leader's score, you have absolutely no chance of winning! Welcome to the Hall of Shame&#0153;!</td></tr>
+<tr><td><hr width = 50 align = left>* - RtT&#0153; is your final score if all remaining games you picked turn out to be correct</td></tr>
+</table>
+Scores last updated: [% last_updated %] CDT
+
+<table width = 720 border = 1>
+<tr><td colspan = 8 class = 'brackets' nowrap><form>
+ sort by
+<select name = sort>
+<option VALUE= 'candybar'>Candybar
+<option VALUE= 'champion'>Champion
+<option VALUE= 'j2_factor'>J Factor&#0153;
+<option VALUE= 'location'>Location
+<option VALUE= 'name'>Name
+<option VALUE= 'place'>Rank
+<option VALUE= 'rtt'>RtT&#0153;
+</select>
+ order 
+<select name = order>
+<option VALUE= 'asc' selected>Low to High
+<option VALUE= 'desc'>High to Low
+</select>
+<input type = submit value = 'Go Ben Go!'>
+</form>
+</td></tr>
+<tr><td colspan = 8 align = center>
+Leader is currently at [% high_score %]
+</td></tr>
+<tr><td colspan = 8 align = center>
+</td></tr><tr>
+<td class = brackets1 align=center>
+        <a href = "hallofshame.cgi?sort=rank&order=desc&view=All">
+        Rank
+	</a></td>
+<td class = brackets1>
+        <a href = "hallofshame.cgi?sort=name&order=desc&view=All">
+	NAME
+	</a></td>
+<td class = brackets1>
+        <a href = "hallofshame.cgi?sort=candybar&order=desc">
+        CANDY BAR
+	</a></td>
+<!--
+<td class = brackets1>
+        <a href = "hallofshame.cgi?sort=location&order=desc">
+        LOCATION
+	</a></td>
+<td class = brackets1>
+        <a href = "hallofshame.cgi?sort=champion&order=desc">
+        CHAMPION
+	</a></td>
+	-->
+	[% IF cookie %]
+<td class = brackets1>
+SSS&#0153;
+</td>
+	[% END %]
+<td class = brackets1 nowrap>
+        <a href = "hallofshame.cgi?sort=j2_factor&order=desc">
+        J FACTOR&#0153;
+	</a></td>
+<td class = brackets1 align=center>
+        <a href = "hallofshame.cgi?sort=rtt&order=desc">
+        RtT&#0153; 
+	</a></td>
+<td class = brackets1 align=center>
+        <a href = "hallofshame.cgi?sort=rank&order=desc">
+        SCORE
+	</a></td>
+</tr>
+[%# row code goes here %]
+[% FOR thisKey IN scores %]
+	[% INCLUDE printRowData %]
+[% END %]
+</table>
+[% UNLESS params.view == 'All' %]
+	<a href = \"hallofshame.cgi?sort=[% params.sort %]&order=[% params.order %]&view=[% params.view %]&next=[% next %]\">Next [% params.view %]</a>
+[% END %]
+
+[% BLOCK printRowData %]
+	[% UNLESS thisKey.name == "WINNERS" %]
+	<tr>
+		<td class = 'brackets2'>
+			[% thisKey.rank %]
+		</td>
+		<td class = 'brackets2'>
+			<a href = "player_bracket.cgi?player_id=[% thisKey.player_id %]">[% thisKey.name | truncate (30) %]</a>
+		</td>
+		<td class = 'brackets2'>
+			[% thisKey.candybar | truncate(30) %]
+		</td>
+		<!--
+		<td class = 'brackets2' nowrap>
+			[% thisKey.location %]
+		</td>
+		<td class = 'brackets2' nowrap>
+			[% thisKey.champion %]
+		</td>
+		-->
+		[% IF cookie %]
+		<td class = '
+		[% IF similarities.${thisKey.player_id}.similarity == 100 %]one
+	        [% ELSIF similarities.${thisKey.player_id}.similarity > 80 %]two
+	        [% ELSIF similarities.${thisKey.player_id}.similarity > 60 %]three
+	        [% ELSIF similarities.${thisKey.player_id}.similarity > 40 %]four
+	        [% ELSIF similarities.${thisKey.player_id}.similarity > 20 %]five
+	        [% ELSE %]six
+	        [% END %]'>[% similarities.${thisKey.player_id}.similarity %]
+		</td>
+		[% END %]
+		<td class = 'brackets2'>
+			[% thisKey.j2_factor %]
+		</td>
+		<td class = 'brackets2'>
+			[% thisKey.rtt %]
+		</td>
+		<td class = 'brackets2' align = center>
+			<b>[% thisKey.score %]</br>
+		</td>
+	</tr>
+	[% END %]
+[% END %]

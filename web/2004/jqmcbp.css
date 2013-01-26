@@ -1,0 +1,78 @@
+body { color: BLACK; background: white; font-family: verdana, arial, sans-serif; }
+body.brackets { color: BLACK; background: white; font-size: 8pt; font-family: verdana, arial, sans-serif; }
+
+img.curve {float: left; clear: left; margin: 0 1em 0 0;}
+
+a a:visited a:link {color: firebrick;} 
+a:hover { color: firebrick; background: #cccccc; }
+
+h3.links { background: transparent; color: black; font-weight: bold; text-align: left; border-bottom: 1px solid black; text-transform: uppercase; font-size: 90%; margin-left: 2px;}
+div#links { position: absolute; top: 25px; left: 0px; width: 200px; color: black; font-size: 90%; font-weight: bold; }
+div#links a { color: #cccccc; display: block; text-align: left; font: 15px Verdana, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; color: black; text-transform: uppercase; font-size: 90%;}
+div#links a:hover { background: #cccccc; color: white; display: block; text-align: left; font: 12px Verdana, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; text-transform: uppercase; font-size: 90%;}
+
+div#left_justified { text-align: justify; position: relative; top: 240px; left: 0px; width: 90%; color: black; font-size: 90%; font-weight: bold; }
+
+div#cgilinks { white-space: nowrap; position: absolute; top: 25px; left: 0px; width: 150; color: black; font-size: 90%; font-weight: bold; }
+h3.cgilinks { background: transparent; color: black; font-weight: bold; text-align: left; border-bottom: 1px solid black; font-size: 90%; margin-left: 2px;}
+div#cgilinks a { color: #cccccc; display: block; text-align: left; font: 15px Verdana, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; color: black; font-size: 90%;}
+div#cgilinks a:hover { background: #cccccc; color: white; display: block; text-align: left; font: 12px Verdana, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; font-size: 90%;}
+
+h3.selected { background: #cccccc; color: white; display: block; text-align: left; font: 12px Verdana, sans-serif; font-weight: bold; padding: 5px 10px; margin: 0; border-width: 0; text-decoration: none; text-transform: uppercase; font-size: 90%;}
+
+div#content { position: absolute; text-align: justify; top: 230px; left: 225px; width: 475px; border: 3px; color: black; font-size: 90%; font-weight: normal; line-height: 120%;}
+div#content a:link {color: firebrick;}
+div#content a:visited {color: firebrick;}
+div#content a:link:hover a:visited:hover {color: yellow; background: #cccccc;}
+
+div#cgicontent { position: absolute; top: 20px; left: 175px; right: 20px; border: 3px; color: black; font-size: 90%; font-weight: normal; line-height: 120%;}
+div#cgicontent a:link {color: firebrick;}
+div#cgicontent a:visited {color: firebrick;}
+div#cgicontent a:link:hover a:visited:hover {color: yellow; background: #cccccc;}
+a.imagelink { background: white; }
+
+div#scoop { position: absolute; top: 20px; left: 0px; right: 20px; border: 3px; color: black; font-size: 90%; font-weight: normal; }
+div#scoop a:link {color: firebrick;}
+div#scoop a:visited {color: firebrick;}
+div#scoop a:link:hover a:visited:hover {color: yellow; background: #cccccc;}
+
+.booty { font-size: 90%; font-weight: normal; }
+
+.fame { font-size: 80%; font-weight: normal; }
+.fame_bold { font-size: 90%; font-weight: bold; }
+
+td.fame { white-space: nowrap; }
+
+div#enter { position: absolute; top: 10px; left: 10px; text-align: center; font-size: 80%; }
+div#enter a:link {color: firebrick;}
+div#enter a:visited {color: firebrick;}
+div#enter a:link:hover a:visited:hover {color: yellow; background: #cccccc;}
+
+h1.scoop {text-align: center; padding: 0.25em 0.25em 0.125em; margin: 0; border-bottom: 0.125em solid black; font: 160% verdana, arial, sans-serif; font-size: 200%; font-weight: bold;}
+
+h3 {text-align: center; padding: 0.25em 0 0.125em 0; font-family: verdana, arial, sans-serif; margin: 0 0 0 1em;}
+
+span.right { text-align: right; }
+
+
+.brackets1 { white-space: nowrap; color: black; background: #fffaf0; font-size: 70%; font-weight: bold; font-family: sans-serif; text-align: left; }
+.brackets2 { white-space: nowrap; color: black; background: #e6e6e6; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+.brackets_clear { color: black; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+.brackets_clear2 { color: red; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+.brackets_heading { white-space: nowrap; font-size: 90%;  font-weight: bold; font-family: sans-serif; text-align: left;}
+
+.brackets1_center { color: black; background: #fffaf0; font-size: 70%; font-weight: bold; font-family: sans-serif; text-align: center;}
+.brackets2_center { color: black; background: #e6e6e6; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: center;}
+.brackets_clear_center { color: black; font-size: 70%;  font-weight: bold; font-family: sans-serif; text-align: center;}
+.brackets_heading_center { font-size: 90%;  font-weight: bold; font-family: sans-serif; text-align: center;}
+
+td.brackets1 td.brackets2 { white-space: nowrap; margin: 10px; border: 0.125em solid black; }
+h1.enter {text-align: justify; margin: 0; font-family: verdand, arial, sans-serif; font-size: 150%; font-weight: bold;}
+h2.enter {text-align: justify; margin: 0; font-family: verdand, arial, sans-serif; font-size: 100%; font-weight: bold;}
+h5.enter {text-align: center; padding: 0.25em 0.25em 0.125em; margin: 0; font-family: verdana, arial, sans-serif; font-size: 120%; font-weight: bold;}
+td.enter { color: black; font-size: 90%; }
+td.scoop { color: black; font-size: 90%; }
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }

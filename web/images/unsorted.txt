@@ -1,0 +1,7 @@
+64	Ben Klaas	Ritter Sport Halbbitter	M	California	Michigan State	1
+104	Sarah Handlos	Butterfinger	F	Texas	Duke	2
+72	John Niyo	Ninja Bar	M	Michigan	Michigan State	3
+75	martin casey	cherry ripe	M	California	Gonzaga	4
+152	WINNERS	Nutrageous			foo	5
+136	Topsies	foo	M	Delaware	Duke	6
+0	Bottomsies	foo	M	Delaware	Central Connecticut St.	7

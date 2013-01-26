@@ -1,0 +1,19 @@
+[% PROCESS header %]
+<div id = 'content'>
+
+<!--
+<table class = 'thinborder'>
+<tr><td>
+<b>The pool is now closed for entries. If you feel you have been wronged in some way, and desparately need to get a late entry in, <a href = 'mailto:jqmcbp@gmail.com'>plead your case</a>
+<p>Otherwise, <a href = 'leaderboard.cgi'>head to the LEADERBOARD</a>
+</td></tr>
+</table>
+-->
+
+    <div id="main">
+    	
+[% PROCESS $params.keywords %]
+      <!-- main ends -->
+	</div>
+
+[% PROCESS footer %]

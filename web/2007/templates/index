@@ -1,0 +1,5 @@
+[% PROCESS header %]
+<div id = 'content'>
+[% PROCESS $params.keywords %]
+</div>
+[% PROCESS footer %]

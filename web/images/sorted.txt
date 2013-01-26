@@ -1,0 +1,7 @@
+152	WINNERS	Nutrageous			foo	5
+136	Topsies	foo	M	Delaware	Duke	6
+104	Sarah Handlos	Butterfinger	F	Texas	Duke	2
+75	martin casey	cherry ripe	M	California	Gonzaga	4
+72	John Niyo	Ninja Bar	M	Michigan	Michigan State	3
+64	Ben Klaas	Ritter Sport Halbbitter	M	California	Michigan State	1
+0	Bottomsies	foo	M	Delaware	Central Connecticut St.	7

@@ -1,0 +1,32 @@
+<html>
+<head><title>Who are you?</title>
+<link href="johnnystyle.css" rel="stylesheet" type="text/css" />
+<script src="effects.js" language="JavaScript"></script>
+</head>
+<body id = 'colPrefs'>
+<div id = 'centerMe'>
+
+[% IF params.cookie == 'set' %]
+<h3 class = 'foo'>Cookie Set</h3>
+<a href="javascript:self.close()">Close Page</a>
+<script type = "text/javascript">
+	opener.location.reload();
+	window.close();
+</script>
+[% ELSE %]
+
+<form>
+<span class = 'smallWhiteBold'>Who are you? JQMCBP wants to know!</span><br>
+<select name="thisisme">
+<option value="">
+[% FOR name IN names %]
+        <option value = '[% name.player_id %]' [% IF cookieValue == name.player_id %]SELECTED[% END %]>[% name.name %]
+	[% END %]
+	</select>
+	<br>&nbsp;<br>
+	<input type = submit name = 'submitMe' value = "Go Ben Go!">
+</form>
+[% END %]
+</div>
+</body>
+</html>

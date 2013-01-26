@@ -1,0 +1,19 @@
+<p>
+It has been getting harder and harder to get my silly emails through the multitude of "feature rich" spamfilters, bad email clients, and general ill will set up on the Interwebs now (the Interwebs, if you haven't heard, are a series of tubes).
+<img src = 'images/whereyouat.jpg' class = 'rightfloat'>
+<p>
+Rather than spend an eternity trying to weasel my way into your inbox (Microsoft Outlook, I'm giving you the evil eye right now), I've decided to just put each missive online in their mostly unformatted glory (as I told pool-goer Ethan Ray: in the hipster world, unformatted email is the new trucker hat).
+
+<ul>
+[% FOR email IN emails %]
+	<li><a href = 'emails.cgi?email=[% email %]'>[% email %]</a></li>
+[% END %]
+
+[% IF content %]
+<hr>
+[% FILTER html_line_break %]
+[% content %]
+[% END %]
+[% END %]
+</ul>
+

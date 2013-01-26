@@ -1,0 +1,27 @@
+Here's what's needed:
+
+html space: copy 2002/ directory space to 2003/
+perl space: copy /home/bklaas/jqmcbp_2002 to /home/bklaas/jqmcbp_2003
+change all references in cgis, html space and perl space from 2002 to 2003
+
+following programs need to be fixed for region pairings:
+
+johnnyquest.cgi
+jq_admin.cgi
+winners.cgi
+--check out .pl files as well in cgi-bin and webspace perl dirs
+
+backup up johnnyquest db to jq_2002
+
+use jq_admin.cgi through browser to clear out fields in teams table (*don't just delete records*);
+do this only after cgi has been changed for new region pairings
+clear database of all values in players, games, player_info, players tables. Do not clear teams table. Let jq_admin.cgi do that.
+use clear_db.sql in /home/bklaas/jqmcbp_2002 to do this.
+command:
+mysql -u root -phoopoe < clear_db.sql
+
+change text as necessary throughout
+new graphics as needed
+
+test it!
+

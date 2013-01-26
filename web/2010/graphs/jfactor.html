@@ -1,0 +1,36 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"  href="locale.css">
+<script language = 'javascript'>
+
+
+function showDiv(divId) {
+	var divs = new Array( 'img1', 'img2', 'img3', 'img4', 'img5', 'img6' );
+	for (var i = 0; i < divs.length; i++) {
+		var thisDiv = divs[i];
+		if (thisDiv == divId) {
+			document.getElementById(thisDiv).style.display = 'block';
+		} else {
+			document.getElementById(thisDiv).style.display = 'none';
+		}
+	}
+}
+</script>
+<body>
+<div id = 'menu'>
+<a href = "javascript:showDiv('img1');">2002</a>|
+<a href = "javascript:showDiv('img2');">2003</a>|
+<a href = "javascript:showDiv('img3');">2004</a>|
+<a href = "javascript:showDiv('img4');">2005</a>|
+<a href = "javascript:showDiv('img5');">2006</a>|
+<a href = "javascript:showDiv('img6');">2006 Chimps</a>
+</div>
+</div>
+<div id = 'img1'><img src = 'j_2002.png'></div>
+<div id = 'img2'><img src = 'j_2003.png'></div>
+<div id = 'img3'><img src = 'j_2004.png'></div>
+<div id = 'img4'><img src = 'j_2005.png'></div>
+<div id = 'img5'><img src = 'j_2006.png'></div>
+<div id = 'img6'><img src = 'chimp_jfactor_histogram.png'></div>
+</body>
+</html>

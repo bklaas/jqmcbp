@@ -1,0 +1,12 @@
+    <h1>The Scoring</h1>
+    <ul>
+      <li>Each 1st round game correctly prognosticated: 1 point</li>
+      <li>Each 2nd round game correctly prognosticated: 2 points</li>
+      <li>Each 3rd round game correctly prognosticated: 4 points</li>
+      <li>Each 4th round game correctly prognosticated: 6 points</li>
+      <li>Each Final Four game correctly prognosticated: 8 points</li>
+      <li>NCAA champion correctly prognosticated: 16 points</li>
+    </ul>
+ 
+    <p>Boy, it's fun saying prognosticated...</p>
+	

@@ -1,0 +1,17 @@
+<td>
+	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+	[% FOR game in games %][% NEXT UNTIL games.game == start %][% LAST IF games.game == end %]
+		<tr><td class="[% class %]" height="[% height %]" valign="center">
+		[% FOR team in games.game.teams %][% seed = seeds.$team %]
+			<span id = '[% games.game %] [% team %] select' style = "display: block;">
+				<input name="[% games.game %]" value="[% team %]" type="radio" onClick="advanceTeam('[% team %]','[% games.game %]','[% games.nextGame %]')">[% seed %] [% team %]<br>
+			</span>
+			<span id = '[% games.game %] [% team %] done' style = "display: none;">
+				<span id = '[% games.game %] [% team %]'>[% seed %] [% team ]<br></span>
+			</span>
+		[% END %]
+		</td></tr>
+	[% END %]
+	</tbody></table>
+</td>

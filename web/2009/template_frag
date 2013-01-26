@@ -1,0 +1,14 @@
+use Template;
+$PARAMS{'title'} = 'PROGNOSTICATIONLAND';
+$PARAMS{'cgi'} = 'player_bracket_selection';
+my %data = ( 
+              'params'  =>      \%PARAMS,
+	      'names'	=>	$names,
+            );
+
+my $tmpl = "cgi_generic";
+my $template = Template->new( {
+            INCLUDE_PATH => "$config->{'template_dir'}",
+																 } ) or print "couldn't do it $!";
+$template->process($tmpl, \%data) || die "Template process failed: ", $template->error(), "\n";
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head><meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JQMCBP 2009</title>
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<script src="effects.js" language="JavaScript"></script>
+
+</head>
+
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+
+	
+  <!--header -->
+	
+  <div id="header">			
+				
+		
+    <h1 id="logo-text"><a href="/jqmcbp/" title="Johnny Quest">jqmcbp</a></h1>
+    <p id="slogan">v. 14.0</p>
+    <div id="top-menu">
+			
+      <p><a href = "leaderboard.cgi">Current Leaderboard</a> | <a href="http://www.twitter.com/candymeister">twitter</a> | <a href="mailto:jqmcbp@gmail.com">contact</a></p>
+    </div>
+    <!--header ends-->
+    					
+	</div>
+  <!-- navigation starts-->
+  	
+	
+  <div id="nav">
+		
+    <ul>
+          <li[% IF params.keywords == 'overview' %] id = "current"[% END %]><a href="?overview">Overview</a></li>
+          <li[% IF params.keywords == 'lucky' %] id = "current"[% END %]><a href="?lucky">Lucky the Chimp</a></li>
+          <li[% IF params.keywords == 'army' %] id = "current"[% END %]><a href="?army">1000 Chimp Army</a></li>
+          <li[% IF params.keywords == 'scoring' %] id = "current"[% END %]><a href="?scoring">Scoring</a></li>
+          <li[% IF params.keywords == 'booty' %] id = "current"[% END %]><a href="?booty">Booty</a></li>
+          <li[% IF params.keywords == 'fame' %] id = "current"[% END %]><a href="?fame">Hall of Fame</a></li>
+          <li[% IF params.keywords == 'enter' %] id = "current"[% END %]><a href="?enter">Enter JQMCBP</a></li>
+    </ul>
+    <!-- navigation ends-->
+    	
+	</div>

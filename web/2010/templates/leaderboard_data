@@ -1,0 +1,20 @@
+<tr class = '[% IF rowdata.man_or_chimp == 'chimp' || rowdata.name == 'Lucky the Chimp' %]monkey[% ELSIF rowdata.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
+	<td>[% IF params.man_or_chimp == 'both' %][% rowdata.combined_rank %][% ELSE %][% rowdata.rank %][% END %]</td>
+	<td style = "font-size: larger;" nowrap = ''>[% IF rowdata.man_or_chimp == 'chimp' %]<img src = '/johnnyquest/images/chimp.gif'>[% END %]<a href = "player_bracket.cgi?player_id=[% rowdata.player_id %]" title = "[% rowdata.name | html %]">[% rowdata.name | truncate(25) %]</a></td>
+	<td class = 'nolink'>[% rowdata.candybar | truncate (25)%]</td>
+	<td>[% rowdata.location %]</td>
+	<td>[% rowdata.champion %]</td>
+	<td>[% rowdata.j2_factor %]</td>
+	<td>[% IF params.man_or_chimp != 'chimp' %][% rowdata.darwin %][% ELSE %]n/a[% END %]</td>
+	<td>[% rowdata.rtt %]</td>
+	<td[% IF cookie %] class = "
+	[% IF similarities.${rowdata.player_id}.similarity == 100 %]one
+	[% ELSIF similarities.${rowdata.player_id}.similarity > 80 %]two
+	[% ELSIF similarities.${rowdata.player_id}.similarity > 60 %]three
+	[% ELSIF similarities.${rowdata.player_id}.similarity > 40 %]four
+	[% ELSIF similarities.${rowdata.player_id}.similarity > 20 %]five
+	[% ELSE %]six
+	[% END %]
+	">[% similarities.${rowdata.player_id}.similarity %][% ELSE %]><a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">?</a>[% END %]</td>
+	<td align = center><b>[% rowdata.score %]</b></td>
+</tr>

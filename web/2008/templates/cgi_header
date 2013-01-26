@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Johnny Quest - [% IF title %][% title %][% END %]</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="benklaas.com" />
+<link href="johnnystyle.css" rel="stylesheet" type="text/css" />
+<script src="effects.js" language="JavaScript"></script>
+</head>
+
+<body>
+
+<div id="container">
+<div id="bannerplain"> 
+      [% IF title %]<br><br><span class = 'largeWhiteBold'>&nbsp;&nbsp;[% title %]</span>[% END %]
+</div>
+
+<ul id="nav">
+<li><a [% IF params.cgi == 'leaderboard' %]id = 'active'[% END %]href = 'leaderboard.cgi'>Leaderboard</a></li>
+<li><a [% IF params.cgi == 'player_bracket_selection'  || params.cgi == 'player_bracket' %]id = 'active'[% END %] href = 'player_bracket_selection.cgi'>Prognosticationland&#0153;</a></li>
+<li><a [% IF params.cgi == 'whatsyourj' %]id = 'active' [% END %] href = 'whatsyourj.cgi'>Your "J" Factor&#0153;</a></li>
+<li><a [% IF params.cgi == 'filtermatic' %]id = 'active' [% END %] href = 'filtermatic.cgi'>Filtermatic&#0153;</a></li>
+<li><a [% IF params.cgi == 'hallofshame' %]id = 'active' [% END %] href = 'hallofshame.cgi'>Hall of Shame&#0153;</a></li>
+<li><a [% IF params.cgi == 'graphomatic' || params.cgi == 'graphomatic_selection' %]id = 'active' [% END %] href = 'graphomatic.cgi'>Graphomatic&#0153;</a></li>
+<li><a [% IF params.cgi == 'sss' || params.cgi == 'sss_selection' %]id = 'active' [% END %] href = 'sss.cgi'>SSS&#0153;</a></li>
+</ul>

@@ -1,0 +1,43 @@
+<h1 class = 'enter'>JQMCBP FILTERMATIC&#0153;</h1>
+[% update %]
+<form>
+<table>
+<tr><td colspan = '[% tableCols %]' class = 'brackets'>
+Edit Filter: 
+<select name="filter">
+<option value="" [% IF selected_filter == 'none' %]SELECTED[% END %]>none
+[%- FOR filter IN filters %]
+<option value = '[% filter.filter_id %]' [% IF selected_filter == filter.filter_id %]SELECTED[% END %]>[% filter.name %]
+[% END -%]
+</select>
+<input type = 'submit' value = 'Edit Filter' name = 'edit_filter'>
+</form>
+</td></tr>
+<form>
+<tr><td colspan = '[% tableCols %]' class = 'brackets'>
+
+[% IF params.filter %]
+Update this filter: <input type = 'text' size = '15' name = 'filter_name' value = "[% filter_name %]" maxlength = '20'>
+	<input type = hidden name = 'filter_id' value = "[% params.filter %]">
+	<input type = submit name = 'update_filter' value = 'Update this filter'>
+[% ELSE %]
+Name this filter: <input type = 'text' size = '15' name = 'filter_name' maxlength = '20'>
+	<input type = submit name = 'submit_filter' value = 'Save this filter'>
+[% END %]
+
+<!--<input type = 'reset' value = 'Clear Form'>-->
+</td></tr>
+
+<tr><td class = 'brackets1' valign = top>
+[% FOR entry IN player_info %]
+	<input type = checkbox name = "id_[% entry.player_id %]" value = "[% entry.player_id %]"
+	[%- player_id = entry.player_id -%]
+	[% IF filter_ids.$player_id || entry.player_id == cookie %]CHECKED[% END %]
+	>[% entry.name %]<br>
+	[% UNLESS loop.index % divs || loop.index == 0 %]
+	</td><td class = 'brackets1' valign = 'top'>
+	[% END %]
+[% END %]
+</td><td class = 'brackets1' valign = 'top'>
+</tr>
+</form></table>

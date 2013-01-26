@@ -1,0 +1,25 @@
+[% PROCESS header %]
+<div id = 'content'>
+<!--
+JQMCBP Countdown: <script language="JavaScript">
+TargetDate = "03/20/2008 11:30 AM";
+BackColor = "white";
+ForeColor = "black";
+CountActive = true;
+CountStepper = -1;
+LeadingZero = true;
+DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+FinishMessage = "JQMCBP is here!";
+</script>
+<script language="JavaScript" src="http://scripts.hashemian.com/js/countdown.js"></script>
+<br><b>Bah!</b> Silly countdown timer...you have until 12:30ish today to get your picks in. If you're anywhere but the U.S. central time zone, the timer above is off by +/- the hours difference you are from CDT.
+-->
+<table class = 'thinborder'>
+<tr><td>
+<b>The pool is now closed for entries. If you feel you have been wronged in some way, and desparately need to get a late entry in, <a href = 'mailto:jqmcbp@gmail.com'>plead your case</a>
+<p>Otherwise, <a href = 'leaderboard.cgi'>head to the LEADERBOARD</a>
+</td></tr>
+</table>
+[% PROCESS $params.keywords %]
+</div>
+[% PROCESS footer %]

@@ -1,0 +1,10 @@
+<div id="footer">
+
+	<img src="footer.gif" alt="Logo" width="38" height="40" />&copy;2007 Ben Klaas Productions<br />
+	<a href="mailto:bklaas@occamnetworks.com">Problems?</a> | Powered by Perl
+	
+</div>
+
+</div><!-- end container -->
+</body>
+</html>

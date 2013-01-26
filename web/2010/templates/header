@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head><meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JQMCBP 2010</title>
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<script src="effects.js" language="JavaScript"></script>
+
+</head>
+
+<body>
+<!-- wrap starts here -->
+<div id="wrap">
+
+	
+  <!--header -->
+	
+  <div id="header">			
+				
+		
+    <h1 id="logo-text"><a href="/jqmcbp/" title="Johnny Quest">jqmcbp</a></h1>
+    <p id="slogan">RETURN TO SENDER</p>
+
+    <div id="top-menu">
+			
+      <p><a href="mailto:jqmcbp@gmail.com">Complain</a></p>
+    </div>
+    <!--header ends-->
+    					
+	</div>

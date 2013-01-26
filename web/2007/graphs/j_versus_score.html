@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"  href="locale.css">
+<script language = 'javascript'>
+
+
+function showDiv(divId) {
+	var divs = new Array( 'img1', 'img2' );
+	for (var i = 0; i < divs.length; i++) {
+		var thisDiv = divs[i];
+		if (thisDiv == divId) {
+			document.getElementById(thisDiv).style.display = 'block';
+		} else {
+			document.getElementById(thisDiv).style.display = 'none';
+		}
+	}
+}
+</script>
+<body>
+<div id = 'menu'>
+J Factor vs. Score: 
+<a href = "javascript:showDiv('img1');">Without Chimps</a>|
+<a href = "javascript:showDiv('img2');">With Chimps</a>|
+</div>
+</div>
+<div id = 'img1'><img src = 'score_vs_j.png'></div>
+<div id = 'img2'><img src = 'score_vs_j_with_chimps.png'></div>
+</body>
+</html>
