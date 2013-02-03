@@ -1,3 +1,0 @@
-#mailsend -smtp smtp.gmail.com -port 587 -t ben@benklaas.com,mcstayinskool@gmail.com -cc mcstayinskool@yahoo.com -f jqmcbp@gmail.com -sub 'mailsend test again' -starttls -auth -user jqmcbp -pass luckythechimp -attach todays.email,text/plain,i 
-
-my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.comcast.net -port 587 -t '$email' -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user wvolkman -pass --****-- -attach $file,text/plain,i"; 
