@@ -7,6 +7,11 @@ use vars qw/ $dbh /;
 do "/data/cgi-bin/jq_globals.pl";
 connect_to_db();
 
+# XXX: consider running this program off-site for speed
+# what would be needed--
+# do the sql queries separately and store the data in a file, Perl Storable structure, something
+# OR, have the program that runs externally query the db remotely
+#
 # Collect everyone's current score after 2nd round (DONE)
 # Simulate all 2^15 (32768) possible outcomes and encode them as hex (DONE)
 # Code the Sweet 16 teams as hex codes 0-F (DONE)
@@ -37,8 +42,6 @@ my $step = 48;
 my $currentScoreRef = getCurrentPlayerScores('man');
 # get all chimp player_ids and their score at step = ? (end of round 16)
 
-for my $player (keys %$currentScoreRef) {
-}
 
 # select all human players and read in their picks for games 49 to 63
 #my $player_picks = "SELECT * from players ";
@@ -64,26 +67,32 @@ my $playerPicks = encodePlayerPicks();
 # XXX: iterate across each outcome, calculate scores efficiently, rank them, and store each player's outcome in the $playerPicks hash
 # each outcome
 my $j = 1;
+my $byPlayer = {};
+my $byOutcome = {};
+
 for my $outcome (@$outcomes) {
 	# each player
 	for my $player (keys %$playerPicks) {
 		# push player picks through $outcome to get shared hits
 		# for debug
-		print @{$outcome};
-		print "\n";
-		print @{$playerPicks->{$player}{picks}};
-		print "\n";
+		#print @{$outcome};
+		#print "\n";
+		#print @{$playerPicks->{$player}{picks}};
+		#print "\n";
 		$playerPicks->{$player}{score} = $playerPicks->{$player}{current_score};
 		my $i = 0;
 		for my $point (@$points) {
 			$playerPicks->{$player}{score} += $point if $playerPicks->{$player}{picks}[$i] eq $outcome->[$i];
 			$i++;
 		}
-		print "$playerPicks->{$player}{current_score}\t$playerPicks->{$player}{score}\n";
-		print "--------------\n";
+		#print "$playerPicks->{$player}{current_score}\t$playerPicks->{$player}{score}\n";
+		#print "--------------\n";
+		# stash this score for this outcome
+		$byOutcome->{$outcome}{$player} = $playerPicks->{$player}{current_score};
+		$byPlayer->{$player}{$outcome} = $playerPicks->{$player}{current_score};
 		#exit if $j == 40;
-		$j++;
 	}
+	$j++;
 }
 
 $dbh->disconnect();
