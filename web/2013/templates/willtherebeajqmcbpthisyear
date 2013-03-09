@@ -1,0 +1,5 @@
+<h1 style="border: none;">YES</h1>
+<p></p>
+<div id = 'defaultCountdown'></div>
+    <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif'>
+

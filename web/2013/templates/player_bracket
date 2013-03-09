@@ -1,0 +1,202 @@
+        <table class = 'thinborder' cellpadding=4 cellspacing=0 border=0 >
+                <tr>
+                <!-- left side of heading -->
+                <td valign = 'top'>
+                <table border = 0 class = 'verysmall'>
+
+                        <tr>
+                                <td class = 'rightalign'>
+                                        <b>Player:</b></td>
+                                <td align = 'left' class = 'leftalign' nowrap>
+				[% IF params.player_id == 'winners' %]GAME WINNERS[% ELSE %][% player_info.name %][% END %]
+                                </td>
+                        </tr>
+
+			[% IF player_info.player_id != 'winners' %]
+                        <tr>
+                        <td class = 'rightalign'>
+                                <b>Rank:</b></td>
+                                                                               
+                        <td class = 'leftalign'>
+			[% player_info.rank %]
+                        </td>
+                                                                               
+                        </tr>
+                        <tr>
+                                <td class = 'rightalign' valign = top>
+                                        <b>Score:</b></td>
+                                <td align = 'left' nowrap>
+				<b>[% player_info.score %](leader at [% player_info.leader %])</b>
+			</tr>
+			<tr>
+				<td class = 'rightalign'><b>Run the Table&#0153;:</b></td>
+				<td class = 'leftalign' nowrap>[% IF player_info.rtt %][% player_info.rtt %][% ELSE %]152[% END %]</td>
+                        </tr>
+			[% END %]
+                                                                               
+                </table>
+                </td>
+                                                                               
+		[% IF player_info.player_id != 'winners' %]
+                        <td valign = 'top'>
+                        <table class = 'verysmall'>
+                        <tr>
+                                <td class= 'rightalign'>
+                                        <b>Candybar:</b>
+                                </td>
+                                <td class = 'leftalign'>
+				[% player_info.candybar %]
+                                </td>
+
+                        </tr>
+                        <tr>
+                                <td class = 'rightalign' nowrap valign = 'top'>
+                                        <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=61')">Final Four 1:</a></b>
+                                </td>
+                                <td class = 'leftalign'>
+				[% picks.game_57 %], [% picks.game_58 %] --> [% picks.game_61 %]
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class = 'rightalign' nowrap valign = 'top'>
+                                        <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=62')">Final Four 2:</a></b>
+                                <td align = left class = 'leftalign'>
+				[% picks.game_59 %], [% picks.game_60 %] --> [% picks.game_62 %]
+                                </td>
+                        </tr>
+                        <tr>
+                                <td class = 'rightalign' nowrap valign = 'top'>
+                                        <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=63')">Champion:</a></b>
+                                <td align = left class = 'leftalign'>
+				[% picks.game_63 %]
+                                </td>
+                        </tr>
+                        </table>
+                </td>
+		</tr>
+		[% END %]
+                </table>
+<span class = 'verysmall'>Scores Last Updated: [% last_updated %]</span>
+
+</div>
+
+<div id = "brackets">
+<table style="clear:both" class="verysmall" width="100%" border="0" cellpadding="0" cellspacing="0">
+<!--<table class = 'verysmall' border = 0 cellspacing = 0 cellpadding = 0 width = 100%>-->
+	<tr>
+		<th class = 'brackets_heading' width = 40>&nbsp;</th>
+		<th class = 'brackets_heading'>first round</th>
+		<th class = 'brackets_heading'>second round</th>
+		<th class = 'brackets_heading'>sweet 16</th>
+		<th class = 'brackets_heading'>regional final</th>
+		<th class = 'brackets_heading'>final four</th>
+		<th class = 'brackets_heading'>championship</th>
+	</tr>
+	<tr>
+	<td>
+	<table class = 'thinborder' cellspacing = 0 cellpadding = 0>
+	  [%- FOR region IN brackets %]
+	  [%- height = base_height * 8 -%]
+	  <tr>
+		<td height = "[% height %]" class = "brackets_region" valign = "middle" align = "right">
+		<img src = "[% params.imagedir %]/[% region %].gif" height = "[% height %]" class = "white">
+		</td>
+	  </tr>
+	  [% END -%]
+		</table>
+	</td>
+	<td>
+		<table border = '1' cellspacing = 0 cellpadding = 0 width = '100%'>
+		[% i = 1 %]
+		[% WHILE i <= 64 %]
+			[% j = i - 1 %] [% thisNumerator = j + 2 %][% game = thisNumerator / 2 %][% thisGame = "game_$game" %]
+			<tr>
+				<td class = 'brackets1 nowrap' height = '[% base_height %]' valign = 'center'>
+				[% teams_ref.$i.seed %] [% teams_ref.$i.team %]
+                     		&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]')"><img height = 15 width = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
+				<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
+				<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]&man_or_chimp=celebrity')"><img height = 15 src='/jqmcbp/images/star_icon.png' border=0></a>
+				<br>
+                      		[% teams_ref.$j.seed %] [% teams_ref.$j.team %]
+				</td>
+			</tr>
+			[% i = i + 2 %]
+		[% END %]
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+		[% height = base_height * 2  %]
+		[% PROCESS column_data height = height start = 1 end = 32 class = 'brackets2 nowrap' %]
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+		[% height = height * 2 %]
+		[% PROCESS column_data height = height start = 33 end = 48 class = 'brackets3 nowrap' %]
+		</table>
+
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+		[% height = height * 2 %]
+		[% PROCESS column_data height = height start = 49 end = 56 class = 'brackets4 nowrap' %]
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+		[% height = height * 2 %]
+		[% PROCESS column_data height = height start = 57 end = 60 class = 'brackets5 nowrap' %]
+		</table>
+	</td>
+	<td>
+		<table border = 1 cellspacing = 0 cellpadding = 0 width = 100%>
+		[% height = height * 2 %]
+		[% PROCESS column_data height = height start = 61 end = 62 class = 'brackets6 nowrap' %]
+		</table>
+	</td>
+
+	</tr>
+</table>
+<table cellpadding=4 cellspacing=2 border=0 width=450>
+	<tr>
+		<td align = left colspan = '2'>Legend:</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><img src='/jqmcbp/images/piecharticon.png' border=0> pops up the distribution of human picks for that game</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><img src='/johnnyquest/images/chimp.gif' border=0> pops up the distribution of chimp picks for that game</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><img src='/jqmcbp/images/star_icon.png' border=0> pops up the distribution of celebrity picks for that game</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><span class = 'winner'>This</span> indicates a correct pick</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><strike><b>Strike-through Text</b></strike> indicates a missed pick</td>
+	</tr>
+	<tr>
+		<td class = 'leaderboard'><font color = black>Black Text</font> indicates an undecided pick</td>
+	</tr>
+</table>
+
+
+[% BLOCK column_data %]
+	[%- i = start -%]
+	[%- WHILE i < end %]
+		[%- game = "game_$i" %][% j = i + 1 %][% other_game = "game_$j" %][% factor = j / 2 %][% next = factor + 32 -%]
+		<tr>
+			<td class = "[% class %]" height = "[% height %]" valign = "center">
+			[% picks.$game %]
+		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
+		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
+		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=celebrity')"><img height = 15 src='/jqmcbp/images/star_icon.png' border=0></a>
+			<br>
+		 	[% picks.$other_game %]
+		  	</td>
+		</tr>
+	[% i = i + 2 %]
+	[% END -%]
+[% END %]
