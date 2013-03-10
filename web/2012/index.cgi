@@ -31,6 +31,10 @@ $PARAMS->{'keywords'} = 'overview' unless $PARAMS->{'keywords'};
 $CONFIG->{'template_dir'} = '/data/benklaas.com/jqmcbp/templates';
 my $tmpl = "index";
 
+unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {
+	$PARAMS->{'keywords'} = 'filenotfound';
+}
+
 my %data = (
 	'params'	=>	$PARAMS,
 	'title'		=> 	'2012',

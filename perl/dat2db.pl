@@ -2,7 +2,7 @@
 
 use DBI;
 
-die "usage: ./dat2db.pl path_to_files man_or_chimp" unless (-d $ARGV[0] && ($ARGV[1] eq "man" || $ARGV[1] eq "chimp" || $ARGV[1] eq 'celebrity'));
+die "usage: ./dat2db.pl path_to_files man_or_chimp" unless (-d $ARGV[0] && ($ARGV[1] eq "man" || $ARGV[1] eq "chimp" ));
 
 my $dirpath = $ARGV[0];
 my $man_or_chimp = $ARGV[1];

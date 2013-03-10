@@ -164,7 +164,7 @@ sub get_player_and_score_info {
 	if ($id) {
 		$query .= " where player_info.email = '$id'";
 	} else {
-		$query .= " where player_info.man_or_chimp = 'man' or player_info.man_or_chimp = 'celebrity'";
+		$query .= " where player_info.man_or_chimp = 'man'";
 	}
 	#print "$query\n"; exit;
 	my $return = multi_row_query($query);
@@ -191,7 +191,7 @@ sub get_high_score {
 sub get_player_pool_size {
 	my $man_or_chimp = shift;
 	my $query;
-	if ($man_or_chimp eq 'man' || $man_or_chimp eq 'chimp' || $man_or_chimp eq 'celebrity' ) {
+	if ($man_or_chimp eq 'man' || $man_or_chimp eq 'chimp' ) {
 		$query = "select count(*) as count from player_info where man_or_chimp = \"$man_or_chimp\"";
 	} else {
 		$query = "select count(*) as count from player_info";
@@ -246,7 +246,7 @@ sub print_number_images {
 }
 
 sub grab_names {
-	my $query = "select name, player_id from player_info where man_or_chimp = \"man\" or man_or_chimp = \"celebrity\" order by name";
+	my $query = "select name, player_id from player_info where man_or_chimp = \"man\" order by name";
         my $aref = multi_row_query($query);
 	return $aref;
 }

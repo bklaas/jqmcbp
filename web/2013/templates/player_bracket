@@ -115,7 +115,6 @@
 				[% teams_ref.$i.seed %] [% teams_ref.$i.team %]
                      		&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]')"><img height = 15 width = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
 				<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
-				<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]&man_or_chimp=celebrity')"><img height = 15 src='/jqmcbp/images/star_icon.png' border=0></a>
 				<br>
                       		[% teams_ref.$j.seed %] [% teams_ref.$j.team %]
 				</td>
@@ -169,9 +168,6 @@
 		<td class = 'leaderboard'><img src='/johnnyquest/images/chimp.gif' border=0> pops up the distribution of chimp picks for that game</td>
 	</tr>
 	<tr>
-		<td class = 'leaderboard'><img src='/jqmcbp/images/star_icon.png' border=0> pops up the distribution of celebrity picks for that game</td>
-	</tr>
-	<tr>
 		<td class = 'leaderboard'><span class = 'winner'>This</span> indicates a correct pick</td>
 	</tr>
 	<tr>
@@ -192,7 +188,6 @@
 			[% picks.$game %]
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
-		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=celebrity')"><img height = 15 src='/jqmcbp/images/star_icon.png' border=0></a>
 			<br>
 		 	[% picks.$other_game %]
 		  	</td>

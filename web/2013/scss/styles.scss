@@ -381,11 +381,10 @@ a#active {
 
 #main h1 {
 	font: bold 2.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-	color: #51432F; 
+	color: $color3;
 	padding: 10px 0 5px 5px; 	
 	margin-left: 5px;		
 	letter-spacing: -2px;
-	border-bottom: 1px solid #E4F2C8; 	
 }
 #main h1 a {
 	color: #51432f;
@@ -393,7 +392,7 @@ a#active {
 }
 #main h2 {
 	font: bold 2.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-	color: #51432F; 
+	color: $color3;
 	padding: 10px 0 5px 5px; 	
 	margin-left: 5px;		
 	letter-spacing: -2px;
@@ -404,15 +403,17 @@ a#active {
 	font-size: $bigtext;
 	border-bottom: none;
 	line-height: 0.7em;
-	color: #444;	
+	color: $color3;
 }
 
 #main h2 a {
-	color: #51432f;
+	color: $color4;
 	text-decoration: none;		
 }
+
 #main ul li {
-	list-style-image: url("../bullet.gif");
+//	list-style-image: url("../bullet.gif");
+	list-style-type: disc;
 }
 
 #main p.nextpage {
@@ -428,81 +429,6 @@ a#active {
 	padding: 0; 
 	margin: 0 45px 0 0;
 	display: inline;	
-}
-#sidebar h3 {
-	color: #51432F; 
-	font: bold 1.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-	text-transform: none;
-	letter-spacing: -0.5px;
-	padding: 5px 0 5px 7px; 
-	margin: 10px 0 5px 10px; 	
-	border-bottom: 1px solid #E4F2C8;	
-}
-
-#sidebar .sidemenu {
-	margin: 10px 10px 5px 7px; padding: 0;
-	text-decoration: none;			
-}
-#sidebar .sidemenu li {
-	list-style: none;
-	margin: 0;
-	padding: 8px 10px; 		
-	border-bottom: 1px solid #E8E8E8;	
-}
-
-
-* html body #sidebar .sidemenu li {
-	height: 1%;
-}
-#sidebar .sidemenu li a {
-	text-decoration: none;	
-	color: #07669c;
-	background: none;
-	font-weight: normal;
-}
-#sidebar .sidemenu li a span {
-	color: #7F7F7F;	
-	font-size: .9em;
-	
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	font-style: italic;
-	font-weight: normal;
-	}
-#sidebar .sidemenu li a:hover {	
-	color: #000;	
-	background: none;	
-}
-#sidebar .sidemenu ul { margin: 0 0 0 5px; padding: 0; }
-#sidebar .sidemenu ul li { border: none; }
-
-/* header quick search */
-#sidebar form#qsearch {
-	padding: 0; margin: 20px 0 30px 10px;
-	border: none;
-	width: 270px; height: 33px;
-	background: #F2F0F0 url("../qsearch.gif") no-repeat;		
-}
-#sidebar form#qsearch p {
-	margin: 0; padding: 0;		
-}
-#sidebar form#qsearch input {
-	float: left;
-	border: none;
-	background: transparent;
-	color: #B8B8B8;	
-	margin: 0;
-}
-#sidebar form#qsearch .tbox {
-	margin: 5px 0 0 5px; 
-	width: 220px;	
-	display: inline;	
-	font: 1em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;	
-}
-#search form#qsearch .btn{
-	width: 24px; height: 24px;				
-}
-#sidebar form#qsearch label {
-	display: none;
 }
 
 /* footer */

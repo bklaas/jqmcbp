@@ -105,7 +105,7 @@
           <li[% IF params.keywords == 'overview' %] id = "current"[% END %]><a href="?overview">Overview</a></li>
           <li[% IF params.keywords == 'lucky' %] id = "current"[% END %]><a href="?lucky">Lucky the Chimp</a></li>
           <li[% IF params.keywords == 'army' %] id = "current"[% END %]><a href="?army">1000 Chimp Army</a></li>
-          <li[% IF params.keywords == 'celebs' %] id = "current"[% END %]><a href="?celebs">Celebs!</a></li>
+<!--          <li[% IF params.keywords == 'celebs' %] id = "current"[% END %]><a href="?celebs">Celebs!</a></li>-->
           <li[% IF params.keywords == 'scoring' %] id = "current"[% END %]><a href="?scoring">Scoring</a></li>
           <li[% IF params.keywords == 'booty' %] id = "current"[% END %]><a href="?booty">Booty</a></li>
           <li[% IF params.keywords == 'fame' %] id = "current"[% END %]><a href="?fame">Hall of Fame</a></li>

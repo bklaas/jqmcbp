@@ -3,8 +3,10 @@
 
     <div id="main">
     	
+<!--
 <h1> The Tourney Has Started and is Closed for Entries</h1>
 <h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
+-->
 
 [% PROCESS $params.keywords  %]
       <!-- main ends -->

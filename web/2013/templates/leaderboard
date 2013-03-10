@@ -89,7 +89,6 @@ View first
 <input type = 'radio' name = 'man_or_chimp' value = 'man' [% IF params.man_or_chimp == 'man' %]CHECKED[% END %]>
  humans
 <input type = 'radio' name = 'man_or_chimp' value = 'chimp' [% IF params.man_or_chimp == 'chimp' %]CHECKED[% END %]> chimps
-<input type = 'radio' name = 'man_or_chimp' value = 'celebrity' [% IF params.man_or_chimp == 'celebrity' %]CHECKED[% END %]> celebrities
 <input type = 'radio' name = 'man_or_chimp' value = 'both' [% IF params.man_or_chimp == 'both' %]CHECKED[% END %]>
  all</td></tr>
 </form>

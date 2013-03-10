@@ -55,9 +55,6 @@ my $title = $round;
 if ($PARAMS->{man_or_chimp} eq 'chimp') {
 	$title .= ' as picked by chimps';
 }
-elsif ($PARAMS->{man_or_chimp} eq 'celebrity') {
-	$title .= ' as picked by celebrities';
-}
 
 #Data::Dump::dump($data);
 # to send to the template:
