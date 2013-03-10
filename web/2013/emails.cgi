@@ -18,7 +18,7 @@ my $dir = 'emails';
 
 my %PARAMS;
 # start with some defaults
-$PARAMS{'year'} = '2012';
+$PARAMS{'year'} = '2013';
 my $tm = "&#0153;";
 $PARAMS{'cgi'} = 'emails';
 $PARAMS{'title'} = 'JQMCBP Email Vault';

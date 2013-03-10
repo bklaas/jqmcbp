@@ -5,7 +5,7 @@
     <ul id="image">
 
       <li><img src="images/footer.gif" alt="Candymeister" width="38" height="40" /></li>
-      <li id="last">&copy; 2012 Ben Klaas Productions</li>
+      <li id="last">&copy; [% year %] Ben Klaas Productions</li>
     </ul>
     <ul id="links">
 

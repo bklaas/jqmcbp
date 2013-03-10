@@ -14,7 +14,7 @@ my %data;
 my @legend;
 my $labels;
 my ($start_time, $end_time, $db);
-for my $year ('2012', '2009', '2008', '2007', '2006', '2005') {
+for my $year ('2013', '2012', '2009', '2008', '2007', '2006', '2005') {
 	if ($year eq '2005') {
 		$start_time = timelocal(00,00,17,13,2,2005);
 		$db = 'jq_2005';
@@ -32,10 +32,13 @@ for my $year ('2012', '2009', '2008', '2007', '2006', '2005') {
 		$db = 'jq_2009';
 	} elsif ($year eq '2012') {
 		$start_time = timelocal(00,00,17,11,2,2012);
+		$db = 'jq_2012';
+	} elsif ($year eq '2013') {
+		$start_time = timelocal(00,00,17,17,2,2013);
 		$db = 'johnnyquest';
 	}
 
-	if ($year eq '2012') {
+	if ($year eq '2013') {
 		my $now = time;
 		$end_time = $now - $start_time > 327600 ? $start_time + 327600 : $now;
 	} else {
