@@ -1,12 +1,36 @@
 /* Johnny Style */
 body {
-  background: #000000;
   font: medium Verdana, sans-serif;
   margin: 0;
   padding: 0; }
 
 body.brackets {
-  background: white; }
+  background-image: url("../images/triangles.png"); }
+
+#bracket {
+  padding-bottom: 20px; }
+
+#entryinfo {
+  width: 100%;
+  padding-left: 10px; }
+
+table.entryinfo {
+  padding-left: 10px;
+  font-size: small;
+  font-weight: bold;
+  color: white; }
+
+.bracket_banner {
+  font-family: 'Faster One', sans-serif;
+  display: inline-block;
+  font-size: 46px;
+  font-weight: bold;
+  letter-spacing: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  color: white; }
 
 #container {
   width: 800px;
@@ -82,7 +106,8 @@ h1 {
   text-align: center; }
 
 td {
-  text-align: left; }
+  text-align: left;
+  white-space: nowrap; }
 
 img {
   border: 0; }
@@ -290,8 +315,8 @@ td.brackets1 td.brackets2 {
   color: black;
   text-transform: uppercase;
   text-decoration: underline overline;
-  font-size: larger;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: larger; }
 
 .winner {
   color: black;
@@ -397,55 +422,73 @@ td.brackets_region {
   vertical-align: middle; }
 
 table.first_round {
-  width: 100%; }
+  min-width: 180px; }
   table.first_round td {
     height: 40px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
 
 table.second_round {
-  width: 100%; }
+  min-width: 180px; }
   table.second_round td {
     height: 82px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
 
 table.sweet_16 {
-  width: 100%; }
+  min-width: 180px; }
   table.sweet_16 td {
     height: 166px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
 
 table.final_8 {
-  width: 100%; }
+  min-width: 180px; }
   table.final_8 td {
     height: 334px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
 
 table.final_four {
-  width: 100%; }
+  min-width: 180px; }
   table.final_four td {
     height: 670px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
 
 table.championship {
-  width: 100%; }
+  min-width: 180px; }
   table.championship td {
     height: 1342px;
     vertical-align: middle;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
-    border-right: 1px solid black; }
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+
+.flash_forward {
+  background-color: yellow; }
+
+.flash_remove {
+  background-color: red; }

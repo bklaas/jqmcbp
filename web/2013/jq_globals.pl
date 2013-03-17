@@ -5,7 +5,7 @@ sub config_variables {
 	my %return =
 	(	
 	"year"	=>	$year,
-	"template_dir"	=>	"/data/benklaas.com/jqmcbp/templates",
+	"template_dir"	=>	"/home/bklaas/jqmcbp/web/$year/templates",
 	);
 	return \%return;
 

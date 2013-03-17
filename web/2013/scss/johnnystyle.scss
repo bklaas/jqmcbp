@@ -5,16 +5,46 @@
 $bracket-height: 40px;
 
 body {
-	background: #000000; 
 	font: medium Verdana, sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 body.brackets {
-	background: white;
+//	background: white;
+   background-image: url("../images/triangles.png");
+
 }
 
+#bracket {
+	padding-bottom: 20px;
+}
+
+#entryinfo {
+	width: 100%;
+	padding-left: 10px;
+}
+
+table.entryinfo {
+	padding-left: 10px;
+	font-size: small;
+	font-weight: bold;
+	color: white;
+}
+
+
+.bracket_banner {
+	font-family: 'Faster One', sans-serif;
+	display: inline-block;
+	font-size: 46px;
+	font-weight: bold;
+	letter-spacing: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: white;
+}
 #container {
 	width: 800px;
 	\width: 820px;
@@ -102,6 +132,7 @@ h1 {
 
 td {
 	text-align: left;
+	white-space: nowrap;
 }
 
 img {
@@ -276,7 +307,15 @@ table.sss {
 
 td.brackets1 td.brackets2 { white-space: nowrap; margin: 10px; border: 0.125em solid black; }
 
-.picked { margin-left: 12px; color: black; text-transform: uppercase; text-decoration: underline overline; font-size: larger; font-weight: bold; }
+.picked { 
+	margin-left: 12px; 
+	color: black; 
+	text-transform: uppercase; 
+	text-decoration: underline overline; 
+	font-weight: bold; 
+	font-size: larger;
+}
+
 .winner { color: black; text-transform: uppercase; text-decoration: underline overline; font-size: larger; font-weight: bold; }
 .normal { margin-left: 12px; color: black; font-weight: normal; }
 .radio { margin-left: 0px; color: black; font-weight: normal; }
@@ -342,13 +381,16 @@ td.brackets_region {
 
 
 @mixin brackets( $height, $adjust: 2px ) {
-	width: 100%;
+	min-width: 180px;
 	td {
 		height: $height + $adjust;
 		vertical-align: middle;
 		border-bottom: 1px solid black;
 		border-top: 1px solid black;
 		border-right: 1px solid black;
+		white-space: nowrap;
+		overflow: hidden;
+	
 	}
 }
 
@@ -369,5 +411,12 @@ table.final_four {
 }
 table.championship {
 	@include brackets($bracket-height * 32, 62);
+}
+
+.flash_forward {
+	background-color: yellow;
+}
+.flash_remove {
+	background-color: red;
 }
 

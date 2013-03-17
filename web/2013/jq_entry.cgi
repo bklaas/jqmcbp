@@ -34,7 +34,7 @@ if ($PARAMS{"ENTER_PICKS.x"} > 0) {
 	print "Content-type: text/html\n\n";
 }
 
-$PARAMS{'year'} = '2013';
+$PARAMS{'year'} = $config->{'year'};
 
 if (!$PARAMS{'email'} || !$PARAMS{'locale'} || !$PARAMS{'name'} ) {
 	print "<html><body><b>Somehow you got here without entering an email address, location, and/or name.<p>Make sure javascript is turned on in your browser, hit back, and submit again</b></body></html>\n";

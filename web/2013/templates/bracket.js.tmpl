@@ -33,7 +33,18 @@ function advanceTeam(thisTeam,thisGame,nextGame)
 		}
 	}
 	var nextOne = document.getElementById(nextGame + " " + thisTeam + displayType);
-	nextOne.style.display = 'block';
+	$(nextOne).fadeIn();
+	flashParent(nextOne, 'flash_forward');
+}
+
+function flashParent(elem, flashclass) {
+	var parent = $(elem).parent('td');
+	setTimeout( function() { 
+					parent.addClass(flashclass); 
+				}, 750);
+	setTimeout( function() { 
+					parent.removeClass(flashclass); 
+				}, 1250);
 }
 
 function secondThoughtsChamp(team)
@@ -66,7 +77,9 @@ function secondThoughts(team,thisGame,prevGame)
 {
 	// "display: none;" for team in thisGame
 	var removeMe = document.getElementById(thisGame + " " + team + " select");
-	removeMe.style.display = 'none';
+	$(removeMe).fadeOut();
+	flashParent(removeMe, 'flash_remove');
+//	removeMe.style.display = 'none';
 	// remove text of teams in previous cell
 	// unselect all radios for prevGame
 	setRadio(false, 'radio_'+prevGame);

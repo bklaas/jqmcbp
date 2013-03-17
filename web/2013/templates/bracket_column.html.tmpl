@@ -4,7 +4,7 @@
 	[% n = [ start .. end ] %]
 	[% FOR x IN n %]
 		[% row = games.$x %]
-		<tr><td class="[% class %]" height="[% height %]" valign="center">&nbsp;
+		<tr><td class="[% class %]" height="[% height %]" valign="center">
 		[% elements = [ 0 .. row.teams.size ] %]
 		[% FOR element IN elements %]
 		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]

@@ -5,6 +5,7 @@
 	[% FOR x IN n %]
 		[% row = games.$x %]
 		<tr><td class="[% class %]">&nbsp;
+		<div class = 'flash_effect'></div>
 		[% elements = [ 0 .. 63  ] %]
 		[% FOR element IN elements %]
 		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]

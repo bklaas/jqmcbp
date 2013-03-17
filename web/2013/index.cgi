@@ -9,14 +9,17 @@ use CGI qw/ :param /;
 use DBI;
 use vars qw/ $dbh /;
 do "/data/cgi-bin/jq_globals.pl";
-my $PARAMS; my $CONFIG;
+my $PARAMS; 
+my $CONFIG = config_variables();
 
 for (param()) {
 	$PARAMS->{$_} = param("$_");
 }
 
 if (    $PARAMS->{'keywords'} eq 'enter' ||
-        $PARAMS->{'keywords'} eq 'brackettest') {
+        $PARAMS->{'keywords'} eq 'enter2' ||
+        $PARAMS->{'keywords'} eq 'brackettest'
+	) {
         connect_to_db('johnnyquest');
         my @brackets = get_bracket_order();
         my $teamRef = get_teams(@brackets);
@@ -28,7 +31,6 @@ if (    $PARAMS->{'keywords'} eq 'enter' ||
 # change this to overview at launch
 $PARAMS->{'keywords'} = 'overview' unless $PARAMS->{'keywords'};
 
-$CONFIG->{'template_dir'} = '/data/benklaas.com/jqmcbp/templates';
 my $tmpl = "index";
 
 unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {
@@ -37,8 +39,8 @@ unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {
 
 my %data = (
 	'params'	=>	$PARAMS,
-	'title'		=> 	'2013',
-	'year'		=> '2013',
+	'title'		=> 	$CONFIG->{'year'},
+	'year'		=>  $CONFIG->{'year'},
 );
 
 my $template = Template->new({
