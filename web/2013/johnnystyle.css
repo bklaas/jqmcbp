@@ -208,7 +208,7 @@ brackets2 a { color: #4c4c6b; }
 .monkey a:hover {background: black; color: yellow; text-decoration: underline overline;}
 
 .brackets_heading { white-space: nowrap; font-size: 100%;  font-weight: bold; font-family: sans-serif; text-align: left; color: white; padding-top: 10px;
-background: #314650 url(navtab.jpg) repeat-x top left;
+background: #314650 url('nav.png') repeat-x top left;
 }
 .rightalign { text-align: right }
 .leftalign { text-align: left }

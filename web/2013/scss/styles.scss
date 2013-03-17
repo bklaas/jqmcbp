@@ -1,23 +1,17 @@
 // Idaho Gold palette 
-$color1: #FEFBB5; //pale yellow
+//$color1: #FEFBB5; //pale yellow
+$color1: white; //pale yellow
 $color2: #F5EF35; //bright yellow
-$color3: #473B5A; //purple
+$color3: #2c2c2c;
 $color4: #9583A5; //light purple
 $color5: #E6A61F; //orange
 
 $content-width: 900px;
+$width: $content-width - 2;
 $default-padding: 10px;
 $swf-width: 200px;
 $bigtext: 32px;
 
-$left-right-border: 10px;
-
-$width: $content-width + $left-right-border + $left-right-border - 2;
-
-@mixin left-right-border {
-	border-left: $left-right-border solid $color5;
-	border-right: $left-right-border solid $color5;
-}
 
 /* Johnny Style */ 
 
@@ -30,6 +24,8 @@ body {
 	width: $width;
 
 	background-color: $color1;
+	//background-image: url("../images/bballcandy.jpg");
+	background-image: url("../images/triangles.png");
 	color: $color3;
 	font-weight: bold;
 
@@ -44,16 +40,16 @@ html {
 
 /* links */
 a, a:visited {	
-	//color: #07669c;
 	color: $color3;
 	background: inherit;
 	text-decoration: none;
 }
+
 a:hover {
-	//color: #73471B;
-	color: $color4;
-	background: inherit;
-	text-decoration: underline;
+	color: white;
+	background-color: $color3;
+	text-decoration: none;
+	border-radius: 2px;
 }
 
 /* headers */
@@ -61,7 +57,6 @@ h1, h2, h3 {
 	font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
 	font-weight: Bold; 	
 	padding: 10px;		
-	color: #444;	
 }
 
 h1 {
@@ -100,7 +95,7 @@ dd {
 
 /* images */
 img {
-	border: 1px solid $color5;
+	border: 1px solid black;
 //	padding: 4px;
 }
 img.float-right {
@@ -143,13 +138,14 @@ blockquote {
 table {
 	border-collapse: collapse;
 	margin: 15px 10px;		
-	border: 1px solid $color4;
+	//border: 1px solid $color4;
+	border: 1px solid black;
 }
 th {
 	height: 28px;
 	padding-left: 12px;
 	padding-right: 12px;
-	color: #fff;
+	color: $color3;
 	text-align: left;
 	background: $color5;
 	vertical-align: middle;
@@ -158,7 +154,6 @@ th {
 tr {
 	height: 34px;
 	background: lighten($color2, 15%);
-	border-bottom: 1px solid $color4;
 }
 td {
 	padding-left: 11px;
@@ -176,7 +171,6 @@ form {
 }
 
 #entry_form {
-	background: #FAF7F5;
 	float: left;
 }
 
@@ -256,20 +250,17 @@ input.button {
 #content {
 	clear: both;	
 	float: left;	
-	width: $content-width;
-	padding: 25px 0 60px 0; 	
-	@include left-right-border;
+	padding: 10px 0 20px 0; 	
+	background-color: $color1;
 }
 
 #header {
 	position: relative;
-	height: 230px;
-	background: $color5 url("../banner.png") $left-right-border 5px no-repeat;	
+	height: 221px;
+	background: url("../banner.png") no-repeat;
 	color: #fff;	
 	margin-left: 10px;	
 	margin: 0;	
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 }
 #header h1#logo-text a {
 	position: absolute;
@@ -280,7 +271,7 @@ input.button {
 	color: #fff;
 	
 	/* change the values of top and left to adjust the position of the logo*/
-	top: 65px; left: 125px;	
+	top: 75px; left: 95px;	
 }
 
 #multimedia {
@@ -299,7 +290,7 @@ input.button {
 	letter-spacing: -0.5px;
 	
 	/* change the values of top and left to adjust the position of the slogan*/
-	top: 126px; left: 190px;
+	top: 138px; left: 165px;
 }
 
 /* top-menu */
@@ -325,10 +316,10 @@ input.button {
 #nav {
 	clear: both;	
 	padding: 0;	margin: 0;
-	width: $content-width;
 	height: 50px;
-	background: $color5 url("../nav.png") no-repeat;
-	@include left-right-border;
+	//background: $color5 url("../nav.png") no-repeat;
+	background: url("../nav.png") no-repeat;
+//	background-color: $color5;
 }
 #nav ul {
 	float: left;	
@@ -349,28 +340,30 @@ input.button {
 	font: bold 15px/45px 'Trebuchet MS', 'Helvetica Neue', Arial, sans-serif;
 	text-decoration: none;		
 }
+
 #nav ul li a:hover, 
 #nav ul li a:active {
-	color: #E7FAA9;	
+	color: #F9F57E;
+	background: inherit;
+	text-decoration: none;
+	border-radius: 0px;
 }
-/*
-a#active {
-        background: #314650 url(activetab.jpg) repeat-x top left;
-}
-*/
 #nav ul li#current {
-	background: transparent url("../left-tab.gif") no-repeat;	
+	background: white;
 }
+
 #nav ul li#current a {	
 	color: #4B3D2C;
-	background: transparent url("../right-tab.gif") no-repeat right top;	
 }
 
 /* Main Column */
 #main {
 	float: left;
 	width: 820px;
-	padding: 0; margin: 0 0 0 60px;
+	padding-left: 10px;; 
+	padding-right: 10px;; 
+	margin: 20px;
+	margin-top: 0px;
 	display: inline;	
 	min-height: 300px;
 }
@@ -387,8 +380,13 @@ a#active {
 	letter-spacing: -2px;
 }
 #main h1 a {
-	color: #51432f;
-	text-decoration: none;		
+	color: $color3;
+	text-decoration: underline;		
+}
+
+#main h1 a:hover {
+	background-color: $color3;
+	color: white;
 }
 #main h2 {
 	font: bold 2.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
@@ -441,12 +439,8 @@ a#active {
 	color: #777;	
 	text-align: center;	
 	letter-spacing: 20px;
-	width: $content-width;
-	@include left-right-border;
-	height: 40px;
-	border-bottom: $left-right-border solid $color5;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	height: 50px;
+	background-color: $color1;
 }
 
 #footer ul#image {
@@ -495,7 +489,7 @@ a#active {
 
 #footer a:hover { 
 	color: #555; 
-	border-bottom: 1px dotted #555;
+//	border-bottom: 1px dotted #555;
 	text-decoration: none;
 }
 
@@ -739,4 +733,17 @@ span.visible {
 
 div.hidden {
 	display: none;
+}
+
+table.entry {
+	margin: 0;
+	tr {
+		height: auto;
+	}
+	td.entry_label {
+		vertical-align: middle;
+	}
+	td.entry_input {
+		vertical-align: middle;
+	}
 }
