@@ -1,10 +1,10 @@
 <td>
-	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<table class = 'championship' cellpadding="0" cellspacing="0" width="100%">
 	<tbody>
 	[% n = [ start .. end ] %]
 	[% FOR x IN n %]
 		[% row = games.$x %]
-		<tr><td class="[% class %]" height="[% height %]" valign="center">&nbsp;
+		<tr><td class="[% class %]">&nbsp;
 		[% elements = [ 0 .. 63  ] %]
 		[% FOR element IN elements %]
 		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]

@@ -1,8 +1,8 @@
 <td>
-	<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<table class = 'first_round' cellpadding="0" cellspacing="0">
 	<tbody>
 	[% FOR row IN games %][% LAST IF row.game == 'game_33' %]
-		<tr><td class="brackets1" height="50" valign="center">
+		<tr><td class="brackets1">
 		[% FOR team IN row.teams %][% seed = seeds.$team %]
 			<span id = '[% row.game %] [% team %] select' style = "display: block;" class = 'radio'>
 				<input name="radio_[% row.game %]" id = "radio_[% row.game %]_[% loop.count %]" value="[% team %]" type="radio" onClick='advanceTeam("[% team %]","[% row.game %]","[% row.nextGame %]")'>[% seed %] [% team %]<br>

@@ -1,6 +1,6 @@
 <html>
 <head><title>Who are you?</title>
-<link href="johnnystyle.css" rel="stylesheet" type="text/css" />
+<link href="css/johnnystyle.css" rel="stylesheet" type="text/css" />
 <script src="effects.js" language="JavaScript"></script>
 </head>
 <body id = 'colPrefs'>
