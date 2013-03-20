@@ -9,6 +9,9 @@
 
 
 <link rel="stylesheet" href="css/styles.css" type="text/css" />
+[% IF keyword == 'stately' %]
+	<link rel="stylesheet" href="stately/assets/css/stately.css" type="text/css" />
+[% END %]
 
 <script src="effects.js" language="JavaScript"></script>
 <script src="/javascript/jquery.js" language="JavaScript"></script>

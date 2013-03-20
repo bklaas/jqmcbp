@@ -1,20 +1,14 @@
 </div>
-
   <div id="footer">
 
     <ul id="image">
 
-      <li><img src="images/footer.gif" alt="Candymeister" width="38" height="40" /></li>
-      <li id="last">&copy; [% year %] Ben Klaas Productions</li>
-    </ul>
-    <ul id="links">
+        <li><img src="images/footer.png" alt="Candymeister" width="38" height="40" /></li>
+        <li class = 'cc'><a href = 'https://creativecommons.org/'><img src="images/creative_commons.png" width='14' height='14' /></a></li>
+        <li id="last">
+            [% year %] Ben Klaas Productions
+        </li>
 
-      <li><a href="mailto:jqmcbp@gmail.com">Problems?</a> | </li>
-      <!--<li><a href="http://validator.w3.org/check?uri=referer">Valid XHTML</a> | </li>-->
-      <li><a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | </li>
-      <li><a href="http://perl.org">Powered by PERL</a> | </li>
-      <li><a href="http://www.styleshout.com/">Design by styleshout</a> | </li>
-      <li><a href="leaderboard.cgi">Leaderboard</a> </li>
     </ul>
     <!-- footer ends-->
         </div>
@@ -23,3 +17,4 @@
 </div><!-- end container -->
 </body>
 </html>
+

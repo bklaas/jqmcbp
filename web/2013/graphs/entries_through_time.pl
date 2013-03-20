@@ -10,7 +10,8 @@ do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 my $graph;
 my $logo = "/data/benklaas.com/jqmcbp/graphs/jq_graph_logo.gif";
 #my $font_path = "/usr/share/fonts/truetype/ttf-bitstream-vera";
-my $font_path = "/usr/share/fonts/truetype/ttf-liberation";
+#my $font_path = "/usr/share/fonts/truetype/ttf-liberation";
+my $font_path = "/usr/share/fonts/truetype/ubuntu-font-family";
 
 
 use Time::Local;
@@ -38,7 +39,7 @@ for my $year ('2013', '2012', '2009', '2008', '2007', '2006', '2005') {
 		$start_time = timelocal(00,00,17,11,2,2012);
 		$db = 'jq_2012';
 	} elsif ($year eq '2013') {
-		$start_time = timelocal(00,00,17,17,2,2012);
+		$start_time = timelocal(00,00,17,17,2,2013);
 		$db = 'johnnyquest';
 	}
 
@@ -64,8 +65,9 @@ my $aref4 = $data{'2006'};
 my $aref5 = $data{'2005'};
 my @graph_data = ( [ @$labels ] , [ @$aref ], [ @$aref6 ], [ @$aref1 ] , [ @$aref2 ], [ @$aref3 ], [ @$aref4 ], [ @$aref5 ] );
 
-$graph = GD::Graph::lines->new(600,500) or die "couldn't do it: $!";
-$graph->set_title_font("$font_path/LiberationSans-Bold.ttf", 14) or die "couldn't do it: $!";
+#$graph = GD::Graph::lines->new(600,500) or die "couldn't do it: $!";
+$graph = GD::Graph::lines->new(800,800) or die "couldn't do it: $!";
+$graph->set_title_font("$font_path/Ubuntu-B.ttf", 14) or die "couldn't do it: $!";
 $graph->set_legend(@legend);
 
 #my $max_y = $data[$#data];

@@ -9,7 +9,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name="description" content="benklaas.com" />
-<link rel="stylesheet" href="wide.css" type="text/css" />
+<!--<link rel="stylesheet" href="wide.css" type="text/css" />-->
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
 <script src="effects.js" language="JavaScript"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -49,10 +50,10 @@
 
 </head>
 
-<body>
+<body class = 'wide'>
 
 <!-- wrap starts here -->
-<div id="wrap">
+<div id="wrapWide">
 
 	
   <!--header -->

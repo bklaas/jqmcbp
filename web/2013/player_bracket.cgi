@@ -18,12 +18,15 @@ connect_to_db();
 my $last_updated = get_last_updated();
 my $teams_ref = get_teams(@brackets);
 my $player_id = param("player_id") || 'winners';
+
 if ($player_id eq 'THE_PRESIDENT_OF_THE_UNITED_STATES') {
 	$player_id = 6601;
 }
+
 $PARAMS{'player_id'} = $player_id;
 $PARAMS{'pool_size'} = get_player_pool_size('man');
 $PARAMS{'high_score'} = get_high_score();
+
 my %picks;
 my $name; 
 
@@ -135,19 +138,19 @@ $player_info->{'rtt'} = $run_the_table;
 
 print "Content-type: text/html\n\n";
 my $template = "player_bracket";
-
 my $tm = "&#0153;";
 $PARAMS{'title'} = "Prognosticationland$tm";
 $PARAMS{'cgi'} = 'player_bracket';
+
 my %data = ( 
-              'params'  =>      \%PARAMS,
-	      'player_info'	=>	$player_info,
+        'params'  		=>      \%PARAMS,
+		'player_info'	=>	$player_info,
 		'last_updated'	=>	$last_updated,
-		'picks'		=>	\%picks,
-		'base_height'		=>	$base_height,
-		'teams_ref'	=>	$teams_ref,
-		'brackets'	=>	\@brackets,
-            );
+		'picks'			=>	\%picks,
+		'base_height'	=>	$base_height,
+		'teams_ref'		=>	$teams_ref,
+		'brackets'		=>	\@brackets,
+);
 
 my $tmpl = "cgi_generic";
 my $template = Template->new( {

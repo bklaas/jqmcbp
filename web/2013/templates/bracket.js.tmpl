@@ -34,6 +34,7 @@ function advanceTeam(thisTeam,thisGame,nextGame)
 	}
 	var nextOne = document.getElementById(nextGame + " " + thisTeam + displayType);
 	$(nextOne).fadeIn();
+	nextOne.style.display = 'block';
 	flashParent(nextOne, 'flash_forward');
 }
 
@@ -79,7 +80,8 @@ function secondThoughts(team,thisGame,prevGame)
 	var removeMe = document.getElementById(thisGame + " " + team + " select");
 	$(removeMe).fadeOut();
 	flashParent(removeMe, 'flash_remove');
-//	removeMe.style.display = 'none';
+	removeMe.style.display = 'none';
+
 	// remove text of teams in previous cell
 	// unselect all radios for prevGame
 	setRadio(false, 'radio_'+prevGame);

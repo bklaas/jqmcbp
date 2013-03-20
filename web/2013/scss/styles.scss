@@ -1,6 +1,5 @@
 // Idaho Gold palette 
-//$color1: #FEFBB5; //pale yellow
-$color1: white; //pale yellow
+$color1: white; 
 $color2: #F5EF35; //bright yellow
 $color3: #2c2c2c;
 $color4: #9583A5; //light purple
@@ -8,10 +7,11 @@ $color5: #E6A61F; //orange
 
 $content-width: 900px;
 $width: $content-width - 2;
+$wide-width: 1002px;
 $default-padding: 10px;
 $swf-width: 200px;
 $bigtext: 32px;
-
+$bracket-height: 48px;
 
 /* Johnny Style */ 
 
@@ -32,6 +32,17 @@ body {
 	// XXX: rethink
 	font: 12px/170% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	text-align: center;	
+}
+
+body.wide {
+	width: $wide-width;
+	#wrapWide {
+		width: $wide-width;
+		#header {
+			background: url("../bannerWide.png") no-repeat;
+			height: 245px;
+		}
+	}
 }
 
 html {
@@ -152,7 +163,7 @@ th {
 }
 
 tr {
-	height: 34px;
+//	height: 34px;
 	background: lighten($color2, 15%);
 }
 
@@ -161,6 +172,7 @@ td {
 	padding-right: 11px;
 	vertical-align: top;
 }	
+
 /* end - table */
 
 /* form elements */
@@ -237,6 +249,8 @@ input.button {
 //	background: #FFF url("../wrap2.gif") repeat-y center top;
 	text-align: left;	
 }
+
+
 #showmetext {
 	display: none;
 	text-align: center;
@@ -263,7 +277,9 @@ input.button {
 	margin-left: 10px;	
 	margin: 0;	
 }
+
 #header h1#logo-text a {
+
 	position: absolute;
 	margin: 0; padding: 0;
 	font: bold 66px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
@@ -322,6 +338,10 @@ input.button {
 	background: url("../nav.png") no-repeat;
 //	background-color: $color5;
 }
+#wrapWide #nav {
+	background-image: url("../images/triangles.png");
+}
+
 #nav ul {
 	float: left;	
 	list-style: none;	
@@ -367,6 +387,11 @@ input.button {
 	margin-top: 0px;
 	display: inline;	
 	min-height: 300px;
+}
+
+#wrapWide #main {
+	width: 942px;
+	min-height: 0;
 }
 
 #main p, #main a, #main li, #main td {
@@ -747,4 +772,102 @@ table.entry {
 	td.entry_input {
 		vertical-align: middle;
 	}
+}
+
+#popMe {
+    position: absolute;
+    right: 25px;
+    bottom: 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    filter:alpha(opacity=60);
+    -moz-opacity: 0.6;
+    opacity: 0.6;
+    -khtml-opacity: 0.6;
+}
+ 
+table.verysmall {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	td {
+		padding: 0;
+		margin: 0;
+		text-align: left;
+		vertical-align: middle;
+	}
+}
+
+@mixin brackets( $height, $adjust: 2px ) {
+    min-width: 160px;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	tr {
+		height: auto;
+	}
+    td {
+		padding-left: 2px;
+        height: $height + $adjust;
+        vertical-align: middle;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        white-space: nowrap;
+        overflow: hidden;
+		a {
+			border: 0;
+			img {
+				border: 0;
+			}
+		}
+    }
+}
+
+table.first_round {
+    @include brackets($bracket-height, 1);
+}
+table.second_round {
+    @include brackets($bracket-height * 2, 3);
+}
+table.sweet_16 {
+    @include brackets($bracket-height * 4, 7);
+}
+table.final_8 {
+    @include brackets($bracket-height * 8, 15);
+}
+table.final_four {
+    @include brackets($bracket-height * 16, 31);
+}
+table.championship {
+    @include brackets($bracket-height * 32, 63);
+}
+
+td.brackets_region {
+	height: ($bracket-height * 4) + 7;
+	vertical-align: middle;
+	background-color: white;
+	min-width: 0;
+	width: 40px;
+	img {
+		border: 0;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+}
+
+table.region_wrapper {
+	height: 100%;
+	background-color: white;
+	margin: 0;
+	tr {
+		height: auto;
+	}
+}
+
+.brackets2, .brackets4, .brackets6 {
+	background-color: $color1;
 }

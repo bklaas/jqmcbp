@@ -16,6 +16,14 @@ body {
   font: 12px/170% "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-align: center; }
 
+body.wide {
+  width: 1002px; }
+  body.wide #wrapWide {
+    width: 1002px; }
+    body.wide #wrapWide #header {
+      background: url("../bannerWide.png") no-repeat;
+      height: 245px; }
+
 html {
   overflow-y: scroll; }
 
@@ -125,7 +133,6 @@ th {
   vertical-align: middle; }
 
 tr {
-  height: 34px;
   background: #f9f57e; }
 
 td {
@@ -281,6 +288,9 @@ input.button {
   height: 50px;
   background: url("../nav.png") no-repeat; }
 
+#wrapWide #nav {
+  background-image: url("../images/triangles.png"); }
+
 #nav ul {
   float: left;
   list-style: none;
@@ -324,6 +334,10 @@ input.button {
   margin-top: 0px;
   display: inline;
   min-height: 300px; }
+
+#wrapWide #main {
+  width: 942px;
+  min-height: 0; }
 
 #main p, #main a, #main li, #main td {
   font-size: 1.1em; }
@@ -685,3 +699,174 @@ table.entry {
     vertical-align: middle; }
   table.entry td.entry_input {
     vertical-align: middle; }
+
+#popMe {
+  position: absolute;
+  right: 25px;
+  bottom: 5px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  color: black;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+  -khtml-opacity: 0.6; }
+
+table.verysmall {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+  table.verysmall td {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    vertical-align: middle; }
+
+table.first_round {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.first_round tr {
+    height: auto; }
+  table.first_round td {
+    padding-left: 2px;
+    height: 49px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.first_round td a {
+      border: 0; }
+      table.first_round td a img {
+        border: 0; }
+
+table.second_round {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.second_round tr {
+    height: auto; }
+  table.second_round td {
+    padding-left: 2px;
+    height: 99px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.second_round td a {
+      border: 0; }
+      table.second_round td a img {
+        border: 0; }
+
+table.sweet_16 {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.sweet_16 tr {
+    height: auto; }
+  table.sweet_16 td {
+    padding-left: 2px;
+    height: 199px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.sweet_16 td a {
+      border: 0; }
+      table.sweet_16 td a img {
+        border: 0; }
+
+table.final_8 {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.final_8 tr {
+    height: auto; }
+  table.final_8 td {
+    padding-left: 2px;
+    height: 399px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.final_8 td a {
+      border: 0; }
+      table.final_8 td a img {
+        border: 0; }
+
+table.final_four {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.final_four tr {
+    height: auto; }
+  table.final_four td {
+    padding-left: 2px;
+    height: 799px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.final_four td a {
+      border: 0; }
+      table.final_four td a img {
+        border: 0; }
+
+table.championship {
+  min-width: 160px;
+  margin: 0;
+  border: 0;
+  padding: 0; }
+  table.championship tr {
+    height: auto; }
+  table.championship td {
+    padding-left: 2px;
+    height: 1599px;
+    vertical-align: middle;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    white-space: nowrap;
+    overflow: hidden; }
+    table.championship td a {
+      border: 0; }
+      table.championship td a img {
+        border: 0; }
+
+td.brackets_region {
+  height: 199px;
+  vertical-align: middle;
+  background-color: white;
+  min-width: 0;
+  width: 40px; }
+  td.brackets_region img {
+    border: 0;
+    padding-left: 5px;
+    padding-right: 5px; }
+
+table.region_wrapper {
+  height: 100%;
+  background-color: white;
+  margin: 0; }
+  table.region_wrapper tr {
+    height: auto; }
+
+.brackets2, .brackets4, .brackets6 {
+  background-color: white; }

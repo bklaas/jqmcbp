@@ -37,10 +37,12 @@ unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {
 	$PARAMS->{'keywords'} = 'filenotfound';
 }
 
+my $random = rand(1000);
 my %data = (
 	'params'	=>	$PARAMS,
 	'title'		=> 	$CONFIG->{'year'},
 	'year'		=>  $CONFIG->{'year'},
+	'random'	=>	$random,
 );
 
 my $template = Template->new({

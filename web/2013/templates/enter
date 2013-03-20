@@ -33,8 +33,11 @@ function isEmailAddr(elem) {
 }
 
 function get_count() {
+	// chrome keeps a JS cache, so we have to fudge a bogus query string
+	// to get around that
+	var random = Math.floor((Math.random()*99999)+1);
 	$.getJSON(
-		'entry_count.json',
+		'entry_count.json?foo=bar' + random,
 		function(data) {
 			$('.entry_count').replaceWith('<span class = "entry_count">' + data.entry_count + '</span>');
 			$('.entry_count').fadeIn('slow');
@@ -59,135 +62,138 @@ $(document).ready(
 <h3><a href = 'leaderboard.cgi'>JQMCBP Leaderboard</a></h3>
 -->
 
-<!--
 <h1 class = "enter">Guaranteed Fun or...or ELSE!*</h1>
 <h5>*JQMCBP is free, so if you don't have fun I will donate an equivalent amount to <br><a href="javascript:popUpHF('images/human_fund.jpg')">The Human Fund</a></h5>
 
 <div id = 'entry_form'>
 <FORM ACTION="jq_entry.cgi" METHOD='post' onSubmit = 'return validateForm(this);'>
 
-<TABLE CELLSPACING=2 CELLPADDING=0>
+<table class = 'entry'>
+	<tr>
+		<td class = "entry_label">
+			Full Name
+		</td>
 
-<TR>
-<TD ALIGN=LEFT VALIGN=CENTER class = "booty">
-Full Name</TD>
-<TD ALIGN=LEFT VALIGN=CENTER><INPUT TYPE=text NAME="name" VALUE="" SIZE=20 MAXLENGTH=60></TD>
-</TR>
+		<td class = 'entry_input'>
+			<input type=text name="name" value="" size=20 maxlength=60>
+		</td>
+	</tr>
 
+	<tr>
+		<td class = 'entry_label'>
+			Email
+		</td>
+		<td class = 'entry_input'>
+			<input type=text name="email" value="" size=30 maxlength=60>
+		</td>
+	</tr>
 
-<TR>
-<TD ALIGN=LEFT VALIGN=CENTER class = "booty" nowrap>Email</TD>
+	<tr>
+		<td class = 'entry_label'>
+			Location
+		</td>
 
-<TD ALIGN=LEFT VALIGN=CENTER><INPUT TYPE=text NAME="email" VALUE="" SIZE=30 MAXLENGTH=60></TD>
-</TR>
+		<td class = 'entry_input'>
 
-<TR>
-<TD ALIGN=LEFT VALIGN=CENTER class = "booty">Location</TD>
+			<select name='locale'>
+			<option selected value="">
+			<option value="International">Outside U.S. and Canada
+			<option value="Canada">Canada
+			<option value="Alabama">Alabama
+			<option value="Alaska">Alaska
+			<option value="Arizona">Arizona
+			<option value="Arkansas">Arkansas
+			<option value="California">California
+			<option value="Colorado">Colorado
+			<option value="Connecticut">Connecticut
+			<option value="Delaware">Delaware
+			<option value="District of Columbia">District of Columbia
+			<option value="Florida">Florida
+			<option value="Georgia">Georgia
+			<option value="Hawaii">Hawaii
+			<option value="Idaho">Idaho
+			<option value="Illinois">Illinois
+			<option value="Indiana">Indiana
+			<option value="Iowa">Iowa
+			<option value="Kansas">Kansas
+			<option value="Kentucky">Kentucky
+			<option value="Louisiana">Louisiana
+			<option value="Maine">Maine
+			<option value="Maryland">Maryland
+			<option value="Massachusetts">Massachusetts
+			<option value="Michigan">Michigan
+			<option value="Minnesota">Minnesota
+			<option value="Mississippi">Mississippi
+			<option value="Missouri">Missouri
+			<option value="Montana">Montana
+			<option value="Nebraska">Nebraska
+			<option value="Nevada">Nevada
+			<option value="New Hampshire">New Hampshire
+			<option value="New Jersey">New Jersey
+			<option value="New Mexico">New Mexico
+			<option value="New York">New York
+			<option value="North Carolina">North Carolina
+			<option value="North Dakota">North Dakota
+			<option value="Ohio">Ohio
+			<option value="Oklahoma">Oklahoma
+			<option value="Oregon">Oregon
+			<option value="Pennsylvania">Pennsylvania
+			<option value="Places Unknown">Places Unknown
+			<option value="Rhode Island">Rhode Island
+			<option value="South Carolina">South Carolina
+			<option value="South Dakota">South Dakota
+			<option value="Tennessee">Tennessee
+			<option value="Texas">Texas
+			<option value="Utah">Utah
+			<option value="Vermont">Vermont
+			<option value="Virginia">Virginia
+			<option value="Washington">Washington
+			<option value="West Virginia">West Virginia
+			<option value="Wisconsin">Wisconsin
+			<option value="Wyoming">Wyoming
+			</select>
+		</td>
+	</tr>
 
-<TD ALIGN=LEFT VALIGN=CENTER>
+	<tr>
+	<td align = 'left' valign = 'bottom' class = 'booty' colspan = '2'>
+	Did your alma mater make it into the tournament? If so, specify:
+	</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td class = 'entry_input'>
+	<select name = 'alma_mater'>
+	<option value="No" SELECTED>No
+	<option value="Impossible">Impossible
+	<option value="Huh">Alma mater?
+	[%- FOR team IN params.teams %]
+	<option value = '[% team %]'>[% team %]
+	[% END -%]
 
-<select name='locale'>
-<option selected value="">
-<option value="International">Outside U.S. and Canada
-<option value="Canada">Canada
-<option value="Alabama">Alabama
-<option value="Alaska">Alaska
-<option value="Arizona">Arizona
-<option value="Arkansas">Arkansas
-<option value="California">California
-<option value="Colorado">Colorado
-<option value="Connecticut">Connecticut
-<option value="Delaware">Delaware
-<option value="District of Columbia">District of Columbia
-<option value="Florida">Florida
-<option value="Georgia">Georgia
-<option value="Hawaii">Hawaii
-<option value="Idaho">Idaho
-<option value="Illinois">Illinois
-<option value="Indiana">Indiana
-<option value="Iowa">Iowa
-<option value="Kansas">Kansas
-<option value="Kentucky">Kentucky
-<option value="Louisiana">Louisiana
-<option value="Maine">Maine
-<option value="Maryland">Maryland
-<option value="Massachusetts">Massachusetts
-<option value="Michigan">Michigan
-<option value="Minnesota">Minnesota
-<option value="Mississippi">Mississippi
-<option value="Missouri">Missouri
-<option value="Montana">Montana
-<option value="Nebraska">Nebraska
-<option value="Nevada">Nevada
-<option value="New Hampshire">New Hampshire
-<option value="New Jersey">New Jersey
-<option value="New Mexico">New Mexico
-<option value="New York">New York
-<option value="North Carolina">North Carolina
-<option value="North Dakota">North Dakota
-<option value="Ohio">Ohio
-<option value="Oklahoma">Oklahoma
-<option value="Oregon">Oregon
-<option value="Pennsylvania">Pennsylvania
-<option value="Places Unknown">Places Unknown
-<option value="Rhode Island">Rhode Island
-<option value="South Carolina">South Carolina
-<option value="South Dakota">South Dakota
-<option value="Tennessee">Tennessee
-<option value="Texas">Texas
-<option value="Utah">Utah
-<option value="Vermont">Vermont
-<option value="Virginia">Virginia
-<option value="Washington">Washington
-<option value="West Virginia">West Virginia
-<option value="Wisconsin">Wisconsin
-<option value="Wyoming">Wyoming
-</select>
+	</td>
+	</tr>
+	<tr>
+	<td colspan = '2' align = 'center'>
+		<input type="image" name="FIRST_ROUND" src="/johnnyquest/images/go_ben_go.gif"><br>
+		(submit and go to next page to start your picks)
+	</td>
+	</tr>
+	</TABLE>
+	</form>
 
+	</div>
 
-</TD>
-</TR>
-
-<tr>
-<td align = 'left' valign = 'bottom' class = 'booty' colspan = '2'>
-Did your alma mater make it into the tournament? If so, specify:
-</td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<TD ALIGN=LEFT VALIGN=CENTER class = "booty" nowrap>
-<select name = 'alma_mater'>
-<option value="No" SELECTED>No
-<option value="Impossible">Impossible
-<option value="Huh">Alma mater?
-[%- FOR team IN params.teams %]
-<option value = '[% team %]'>[% team %]
-[% END -%]
-
-</td>
-</tr>
-<tr>
-<td colspan = '2' align = 'center'>
-	<input type="image" name="FIRST_ROUND" src="/johnnyquest/images/go_ben_go.gif"><br>
-	(submit and go to next page to start your picks)
-</td>
-</tr>
-</TABLE>
-</form>
-
-</div>
--->
-
-<!--
 <div id = 'entry_counter'>
 <h2>JQMCBP Entries:</h2>
 <span class = 'entry_count'></span>
 </div>
+<!--
 <div id = 'entry_rate'>
 <img src = 'graphs/entries_yeartoyear.png' alt = 'Can we outnumber the 1000 Chimp Army?'>
 </div>
 <p>
--->
 <div id = 'defaultCountdown'></div>
     <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif'>
+-->
 
