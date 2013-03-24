@@ -4,7 +4,7 @@ use GD;
 use GD::Graph::pie;
 use strict;
 
-my $year = '2009';
+my $year = '2013';
 my %tallies;
 my @category_data;
 my @tally_data;
@@ -25,8 +25,14 @@ for (sort {$tallies{$a} <=> $tallies{$b} } keys %tallies) {
 #$graph = GD::Graph::pie->new();
 $graph = GD::Graph::pie->new(650,400);
 
-$graph->set_title_font('/usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf', 14);
-$graph->set_value_font('/usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf', 12);
+#/usr/share/fonts/truetype/liberation:
+#LiberationMono-BoldItalic.ttf  LiberationSans-BoldItalic.ttf        LiberationSansNarrow-Bold.ttf     LiberationSerif-BoldItalic.ttf
+#LiberationMono-Bold.ttf        LiberationSans-Bold.ttf              LiberationSansNarrow-Italic.ttf   LiberationSerif-Bold.ttf
+#LiberationMono-Italic.ttf      LiberationSans-Italic.ttf            LiberationSansNarrow-Regular.ttf  LiberationSerif-Italic.ttf
+#LiberationMono-Regular.ttf     LiberationSansNarrow-BoldItalic.ttf  LiberationSans-Regular.ttf        LiberationSerif-Regular.ttf
+
+$graph->set_title_font('/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', 14);
+$graph->set_value_font('/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf', 12);
 
 $graph->set(
 	title	=>	"$year Locale Breakdown",
@@ -37,7 +43,7 @@ $graph->set(
 
 
 my $gd = $graph->plot(\@graph_data); 
-open(IMG, '>locale.png');
+open(IMG, ">locale_$year.png");
 binmode IMG;
 print IMG $gd->png;
 	

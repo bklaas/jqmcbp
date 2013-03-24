@@ -9,6 +9,8 @@ use DBI;
 use vars qw/ $dbh /;
 my $web_dir = "/data/benklaas.com/jqmcbp";
 do "$web_dir/jq_globals.pl";
+my $width = 900;
+my $height = 400;
 
 connect_to_db();
 
@@ -55,7 +57,7 @@ my $trunc_name2 = substr($names{$player2}, 0, 25);
 # Make graph for regional data       #
 ######################################
 
- my $region_graph = GD::Graph::linespoints->new(640,300);
+my $region_graph = GD::Graph::linespoints->new($width, $height);
 
   $region_graph->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";
 #  $region_graph->set_legend("$names{$player1}", "$names{$player2}");
@@ -93,7 +95,7 @@ print STDOUT $player1 . "vs" . $player2 . "_1.png\n";
 ######################################
 # Make graph for rounds data         #
 ######################################
- my $graph = GD::Graph::linespoints->new(640, 300);
+ my $graph = GD::Graph::linespoints->new($width, $height);
 
   $graph->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";
   $graph->set_legend("$trunc_name1", "$trunc_name2");

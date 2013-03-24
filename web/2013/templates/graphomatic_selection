@@ -1,7 +1,7 @@
 <form method="post" enctype="multipart/form-data">
 <table border = '0'>
 <tr>
-	<td colspan=5 align='center'><h4>Choose two players to compare in a Battle Royale of JQMCBP proportions</h4></td>
+	<td colspan=5 align='center'><h3>Choose two players to compare in a Battle Royale of JQMCBP proportions</h3></td>
 </tr>
 <tr>
 	<td align='right'><img align = 'right' src="/jqmcbp/images/boxing_glove.gif"></td>
@@ -28,7 +28,7 @@
 </td></tr>
 
 <tr>
-	<td valign='middle' align='right'><img align = 'right' src= "/images/forward.gif"></td>
+	<td valign='middle' align='right'><img style = 'padding-top: 90px;' valign = 'middle' align = 'right' src= "/images/forward.gif"></td>
 	<td colspan = '3' valign = 'middle align = 'center'><input type = 'image' value = "submit" name = "submit" align = 'center' src ="/jqmcbp/images/rockemsockem.gif"></td>
 	<td valign = 'middle' align = 'left'><!--<img align = 'left' src = "/images/back.gif">--></td>
 	</td>

@@ -9,27 +9,27 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <meta name="description" content="benklaas.com" />
-<!--<link rel="stylesheet" href="wide.css" type="text/css" />-->
 <link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <script src="effects.js" language="JavaScript"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="/javascript/highcharts/js/highcharts.js"></script>
-<!--<script src="/javascript/bk.jquery-utilities.js" language="JavaScript"></script>-->
+<script src="/javascript/jquery.js"></script>
+<!--<script type="text/javascript" src="/javascript/highcharts/js/highcharts.js"></script>-->
+<script type="text/javascript" src="/javascript/highcharts/3.0/js/highcharts.js"></script>
+<script type="text/javascript" src="/javascript/highcharts/3.0/js/highcharts-more.js"></script>
 <script src="/javascript/airport.js" language="JavaScript"></script>
 
 <script type="text/javascript">
 
 	var slogans = [
-		'Like a Phoenix from the Ashes',
-		'Back again for the first time',
-		'Fifteenth time is a charm',
-		'Infinitely better than last year',
-		'Now with antioxidants',
+		'Sixteen Candles',
 		'Tastes like chicken',
 		'Only superficially about basketball',
 		'It is not social networking if I do not allow anyone else to speak',
-		'Come for the candy stay for the insanity'
+		'Come for the candy stay for the insanity',
+		'Fuuuuuuuuuuudge',
+		'Sweeeeeeeeet',
+		'I Want Candy'
 	];
 
 	function createNewSlogan() {
@@ -46,7 +46,6 @@
         );
 
 </script>
-
 
 </head>
 
@@ -76,7 +75,7 @@
 	[% END %]
 
     <h1 id="logo-text"><a href="leaderboard.cgi" title="Johnny Quest">jqmcbp</a></h1>
-    <p id="slogan">Return to Greatness</p>
+    <p id="slogan"></p>
     <div id="top-menu">
 			
       <p><a href = "emails.cgi">email archive</a> | <a href = "index.cgi?overview">intro pages</a> | <a href="mailto:jqmcbp@gmail.com">contact</a></p>

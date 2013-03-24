@@ -1,6 +1,6 @@
 <tr class = '[% IF rowdata.man_or_chimp == 'chimp' || rowdata.name == 'Lucky the Chimp' %]monkey[% ELSIF rowdata.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
 	<td>[% IF params.man_or_chimp == 'both' %][% rowdata.combined_rank %][% ELSE %][% rowdata.rank %][% END %]</td>
-	<td style = "font-size: larger;" nowrap = ''>[% IF rowdata.man_or_chimp == 'chimp' %]<img src = '/johnnyquest/images/chimp.gif'>[% END %]<a href = "player_bracket.cgi?player_id=[% rowdata.player_id %]" title = "[% rowdata.name | html %]">[% rowdata.name | truncate(40) %]</a></td>
+	<td>[% IF rowdata.man_or_chimp == 'chimp' %]<img src = '/johnnyquest/images/chimp.gif'>[% END %]<a href = "player_bracket.cgi?player_id=[% rowdata.player_id %]" title = "[% rowdata.name | html %]">[% rowdata.name | truncate(40) %]</a></td>
 	<td class = 'nolink'>[% rowdata.candybar | truncate (40)%]</td>
 	<td>[% rowdata.location %]</td>
 	<td>[% rowdata.champion %]</td>
@@ -16,5 +16,5 @@
 	[% ELSE %]six
 	[% END %]
 	">[% similarities.${rowdata.player_id}.similarity %][% ELSE %]><a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">?</a>[% END %]</td>
-	<td align = center><b>[% rowdata.score %]</b></td>
+	<td><b>[% rowdata.score %]</b></td>
 </tr>

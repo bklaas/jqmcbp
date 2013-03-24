@@ -55,13 +55,14 @@ $(document).ready(
 	});
 </script>
 
+<h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com" style='text-decoration: underline;'>Give it a shot</a></h3>
+
+<h3>
+If you've entered already and are looking for your bracket
+<a href = 'player_bracket_selection.cgi' style='text-decoration: underline;'>Head Here</a></h3>
+
+
 <!--
-<h1 class = 'enter'>Tournament has started, the pool is closed for entries. </h1>
-<h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com">Give it a shot</a></h3>
-
-<h3><a href = 'leaderboard.cgi'>JQMCBP Leaderboard</a></h3>
--->
-
 <h1 class = "enter">Guaranteed Fun or...or ELSE!*</h1>
 <h5>*JQMCBP is free, so if you don't have fun I will donate an equivalent amount to <br><a href="javascript:popUpHF('images/human_fund.jpg')">The Human Fund</a></h5>
 
@@ -183,6 +184,7 @@ $(document).ready(
 	</form>
 
 	</div>
+-->
 
 <div id = 'entry_counter'>
 <h2>JQMCBP Entries:</h2>

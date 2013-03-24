@@ -1,16 +1,19 @@
-<table width=700>
-<tr><td>
 <form action='player_bracket.cgi'>
-<font size=+1><b>If you know your Player ID, enter it here</b></font></td></tr>
+<table class = 'bracket_selection'>
+<tr>
+	<td class = 'heading'>If you know your Player ID, enter it here</td>
+</tr>
 <tr><td>
-<input type = text size = 4 maxlength = 4 name = player_id value = '[% cookie %]'><input type = submit value = "Go Ben Go!">
+<input type = text size = 5 maxlength = 5 name = player_id value = '[% cookie %]'>&nbsp;<input type = submit value = "Go Ben Go!">
 
 </td>
 </form>
 </tr>
-<tr><form action = 'player_bracket.cgi'><tr><td><font size=+1><b>Otherwise, choose from the Big List</b></font>
-</td></tr>
+</table>
 
+<form class = 'unstyled' action = 'player_bracket.cgi'>
+<table class = 'bracket_selection'>
+	<tr><td class = 'heading'>Otherwise, choose from the Big List</td></tr>
 <tr>
 <td>
 <select name="player_id">
@@ -21,10 +24,10 @@
 </select>
 <input type = submit value = "Go Ben Go!">
 </td>
-</form>
 </tr>
 </table>
 
+</form>
 <!--
 <h1>Egads, this is a total mess right now...I'll get 'er cleaned up shortly and then you can access your bracket</h1>
 -->

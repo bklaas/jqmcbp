@@ -1,7 +1,7 @@
 <table>
-<tr><td align = left rowspan = 2><img src = "/johnnyquest/2007/images/insaneclownposse.jpg"></td>
+<tr><td align = left rowspan = 2><img src = "/johnnyquest/2007/images/insaneclownposse.jpg" class = 'bordered'></td>
 <td valign = top class = 'brackets'>
-The Insane Clown Posse:<br>Blender Magazine's #1 Worst Music Act of All Time!<p>They are also the <font size = +1>Official Spokesclowns&#0153;</font><br> of the JQMCBP Hall of Shame&#0153;</td></tr>
+The Insane Clown Posse:<br>Blender Magazine's #1 Worst Music Act of All Time!<p>They are also the <span class = 'russoFont larger_bold'>Official Spokesclowns&#0153;</span><br> of the JQMCBP Hall of Shame&#0153;</td></tr>
 <tr><td align = left>
 [% FOR thisNumber IN tally_strings %]
 	<img src = "/jqmcbp/images/[% thisNumber %]BRSD.GIF">
@@ -18,7 +18,7 @@ The Insane Clown Posse:<br>Blender Magazine's #1 Worst Music Act of All Time!<p>
 </table>
 Scores last updated: [% last_updated %] CDT
 
-<table width = 720 border = 1>
+<table class = 'leaderboard'>
 <tr><td colspan = 8 class = 'brackets' nowrap><form>
  sort by
 <select name = sort>

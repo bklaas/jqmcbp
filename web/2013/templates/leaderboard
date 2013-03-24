@@ -7,7 +7,7 @@ Scores last updated: [% params.last_updated %] [%# params.year %] CDT
 </td></tr>
 </table>
 
-<table class = 'thinborder'>
+<table class = 'thinborder leaderboard_wrapper'>
 [% INCLUDE filterForm %]
 [% INCLUDE extraInfo %]
 [% INCLUDE leaderboard_headings %]
@@ -54,7 +54,7 @@ Scores last updated: [% params.last_updated %] [%# params.year %] CDT
 
 
 [% BLOCK filterForm %]
-<tr><td><table width = '100%' ><tr><td>
+<tr><td><table width = '100%' class = 'leaderboard_wrapper'><tr><td>
 <tr><td class = 'leaderboard'><form >
 View first
 <select name = view>
@@ -117,11 +117,11 @@ Leader is currently at [% params.high_score %]
 
 [% BLOCK leaderboard_headings %]
 <tr>
-<td><table width = '100%' border = 1>
+<td><table width = '100%' class = 'leaderboard'>
 [% IF params.prev > 0 %]<tr><td align = center class = 'leaderboard' colspan = 9>
 <a href = "leaderboard.cgi?sort=[% params.sort %]&order=[% params.order %]&view=[% params.view %]&next=[% params.prev %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">Previous [% params.view %]</a></td></tr>[% END %]
 <tr>
-<td class = 'leaderboard' align=center>
+<td class = 'leaderboard' style = 'width: 20px;'>
         <a href = "leaderboard.cgi?sort=rank&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
         Rank
 	</a></td>
@@ -153,14 +153,14 @@ Leader is currently at [% params.high_score %]
         Darwin&#0153;
 	</a></td>
 
-<td class = 'leaderboard' align=center>
+<td class = 'leaderboard'>
         <a href = "leaderboard.cgi?sort=rtt&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
         RtT&#0153; 
 	</a></td>
-<td class = 'leaderboard' align=center>
+<td class = 'leaderboard'>
 SSS&#0153; 
 	</td>
-<td class = 'leaderboard' align=center>
+<td class = 'leaderboard'>
         <a href = "leaderboard.cgi?sort=rank&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
 
         SCORE

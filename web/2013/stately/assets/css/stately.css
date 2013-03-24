@@ -53,6 +53,11 @@ ul.stately {
   font-size: 600px;
   color: #9583a5; }
 
+#entrants {
+  color: #9583a5; }
+  #entrants .ca {
+    color: red; }
+
 #intrideans {
   color: #b0b0b0; }
   #intrideans .ca,

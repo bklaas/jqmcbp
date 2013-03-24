@@ -1,11 +1,12 @@
 [% PROCESS jfactor_histogram %]
-<h3>So Just What the Heck is a "J" Factor Anyway?</h3>
-<div id = 'jfactor_histogram' class = 'highchart'>
+
+<h1>So Just What the Heck is a "J" Factor Anyway?</h1>
+<div id = 'jfactor_histogram' class = 'chart_container wide_chart'>
 	<div id="container"></div>
 	<div class = 'logo_container'></div>
 </div>
 
-<!--<img border = 0 src ="/jqmcbp/graphomatic/j_index_histogram.png" class = "white"></a><p>-->
+<p></p>
 
 <p>
 The "J" in J Factor is for Jonesy...astute pool-goer Chris Jones came up with this concept. You might remember Chris as the first contestant to ever lose to Lucky the Chimp.  

@@ -3,8 +3,9 @@
 
     <div id="main">
     	
-<!--
 <h1> The Tourney Has Started and is Closed for Entries</h1>
+<h3><a href = 'player_bracket_selection.cgi' style = 'text-decoration: underline;'>I ENTERED BUT WHERE'S MY BRACKET I'M FREAKIN OUT!</a></h3>
+<!--
 <h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
 -->
 

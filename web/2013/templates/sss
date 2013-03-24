@@ -1,5 +1,6 @@
 <h1>The Scientific Similarity Score, or SSS&#0153;</h1>
 
+<p></p>
 From the Pointless Data Division of JQMCBP Labs is the Scientific Similarity Score, which can be both abbreviated and pronounced SSS. I've done pair-wise comparison of each player to every other player, resulting in > 460,000 comparison records in the JQMCBPDB. By doing so, it is now possible to see who picked brackets like you did, who picked brackets not like you did, and perhaps add further evidence as to why you are getting beaten this year (I make this statement with only a 1/[% params.pool_size %] chance of being wrong).
 <p>
      <table width = '100%' border = '1' style = 'border: 1px solid black;'>

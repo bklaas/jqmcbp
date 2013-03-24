@@ -2,7 +2,7 @@
                 <tr>
                 <!-- left side of heading -->
                 <td valign = 'top'>
-                <table border = 0 class = 'verysmall'>
+                <table>
 
                         <tr>
                                 <td class = 'rightalign'>
@@ -39,7 +39,7 @@
                                                                                
 		[% IF player_info.player_id != 'winners' %]
                         <td valign = 'top'>
-                        <table class = 'verysmall'>
+                        <table>
                         <tr>
                                 <td class= 'rightalign'>
                                         <b>Candybar:</b>
@@ -82,7 +82,7 @@
 
 <div id = "brackets">
 <table style="clear:both" class="verysmall">
-	<tr>
+	<tr class = 'bracket_header'>
 		<!--<th class = 'brackets_heading'>&nbsp;</th>-->
 		<th class = 'brackets_heading'>first round</th>
 		<th class = 'brackets_heading'>second round</th>

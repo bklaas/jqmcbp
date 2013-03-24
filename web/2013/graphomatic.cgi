@@ -50,8 +50,8 @@ if ($submit > 0) {
 
 my $first_player_score = get_scores($first_player);
 my $second_player_score = get_scores($second_player);
-my $first_player_name = get_player_name($first_player);
-my $second_player_name = get_player_name($second_player);
+my ($first_player_name, $first_j_factor) = get_player_name_and_j($first_player);
+my ($second_player_name, $second_j_factor) = get_player_name_and_j($second_player);
 my $similarity = get_similarity($first_player, $second_player);
 my @fp_strings = split(//, $first_player_score);
 my @sp_strings = split(//, $second_player_score);
@@ -67,9 +67,11 @@ $PARAMS{'cgi'} = 'graphomatic';
 
 %data = ( 
 		'params'  =>      \%PARAMS,
-	      	'names'	=>	$names,
+	  	'names'	=>	$names,
 		'first_player_strings'	=>	\@fp_strings,
 		'second_player_strings'	=>	\@sp_strings,
+		'j_factor1'		=> $first_j_factor,
+		'j_factor2'		=> $second_j_factor,
 		'similarity'	=>	$similarity,
 		'first_player'	=>	$first_player_name,
 		'second_player'	=>	$second_player_name,
@@ -126,9 +128,9 @@ sub get_scores {
 	return $ref->{'score'};
 }
 
-sub get_player_name {
+sub get_player_name_and_j {
 	my $id = shift;
-	my $query = "select name from player_info where player_id = $id";
+	my $query = "select name, j2_factor from player_info where player_id = $id";
 	my $ref = single_row_query($query);
-	return $ref->{'name'};
+	return ($ref->{'name'}, $ref->{'j2_factor'});
 }

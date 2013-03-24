@@ -1,22 +1,26 @@
 #!/usr/bin/perl 
 
+### XXX Note for 2014: Remove the 'step != 31' workaround in the code twice below
+
 use strict; 
 
 use GD::Graph::linespoints;
 use GD;
 use DBI;
 
+
 use vars qw/ $dbh /;
 do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
-my $some_player = 5251;
+my $some_player = 9998;
 
 my $webdir = "/data/benklaas.com/jqmcbp";
 my $png_path = "$webdir/graphomatic";
-my $logo_path ="$webdir/images/jq_graph_logo.gif";
-my $font_path = "/usr/share/fonts/truetype/ttf-bitstream-vera";
+my $logo_path ="../images/jq_graph_logo.png";
+#my $font_path = "/usr/share/fonts/truetype/ttf-bitstream-vera";
+my $font_path = "/usr/share/fonts/truetype/ttf-dejavu";
 my $graphdir = "$webdir/graphomatic";
 my @data;
 my @size;
@@ -32,7 +36,8 @@ if ($ARGV[0] eq 'filter') {
 	$graphname_stub = "step_graph_filter_" . $filter . "_";
 } else {
 	@ids = @ARGV;
-	@size = (640, 340);
+	#@size = (640, 340);
+	@size = (900, 500);
 	my $string = join('vs', @ids);
 	$graphname_stub = $string . "_step_graph_";
 }
@@ -69,16 +74,16 @@ for my $name (@names) {
 
 my $graph = GD::Graph::linespoints->new(@size);
 
-$graph->set_title_font("$font_path/VeraBd.ttf", 14) or die "couldn't do it: $!";
-       $graph->set_x_label_font("$font_path/VeraBd.ttf", 10) or die "$!";
-       $graph->set_y_label_font("$font_path/VeraBd.ttf", 10) or die "$!";
-       $graph->set_x_axis_font("$font_path/Vera.ttf", 8) or die "$!";
-       $graph->set_y_axis_font("$font_path/VeraBd.ttf", 8) or die "$!";
-       $graph->set_values_font("$font_path/Vera.ttf", 8) or die "$!";
+$graph->set_title_font("$font_path/DejaVuSans-Bold.ttf", 14) or die "couldn't do it: $!";
+       $graph->set_x_label_font("$font_path/DejaVuSans-Bold.ttf", 10) or die "$!";
+       $graph->set_y_label_font("$font_path/DejaVuSans-Bold.ttf", 10) or die "$!";
+       $graph->set_x_axis_font("$font_path/DejaVuSans.ttf", 8) or die "$!";
+       $graph->set_y_axis_font("$font_path/DejaVuSans-Bold.ttf", 8) or die "$!";
+       $graph->set_values_font("$font_path/DejaVuSans.ttf", 8) or die "$!";
 
 #  $graph->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";
   $graph->set_legend(@names);
-$graph->set_legend_font("$font_path/VeraBd.ttf", 6) or die "couldn't do it: $!";
+$graph->set_legend_font("$font_path/DejaVuSans.ttf", 6) or die "couldn't do it: $!";
 #  my $values = $graph->copy;
   
   $graph->set( 
@@ -116,7 +121,7 @@ sub grab_score_data {
 	my @id_sorted = sort { $a <=> $b } @$ids;
         my @return;
 	for my $id (@id_sorted) {
-		my $query = "select * from player_info, scores where player_info.player_id = scores.player_id AND player_info.player_id = $id order by scores.step";
+		my $query = "select * from player_info, scores where player_info.player_id = scores.player_id AND player_info.player_id = $id and step != 31 order by scores.step";
         	my $ref = multi_row_query($query);
 		push @return, $ref;
 	}
@@ -145,7 +150,7 @@ sub grab_these_names {
 
 sub get_steps {
 
-	my $query = "select step from scores where player_id = $some_player order by step";
+	my $query = "select step from scores where player_id = $some_player and step != 31 order by step";
 	my $ref = multi_row_query($query);
 	my @return;
 	for (@$ref) {
