@@ -19,7 +19,7 @@ $dbh = DBI->connect($database,$db_user) or die $DBI::errstr;
 ## make variables for the WINNERS
 ###############################################################
 
-$email_sql = "select name, email from player_info";
+$email_sql = "select name, email from player_info where man_or_chimp = 'man' order by name";
 
 my $sth = $dbh->prepare($email_sql);
 $sth->execute;
@@ -33,10 +33,10 @@ $sth->finish;
 
 ###open file for writing###
 
-open (EMAILS,">/tmp/2002_entries.txt");
+open (EMAILS,">emails.csv");
 
 foreach $key (keys %email_address) {
-     print EMAILS "$email_address{$key}\n";
+     print EMAILS "\"$key\",\"$email_address{$key}\"\n";
 }
 
 close(EMAILS);

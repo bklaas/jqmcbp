@@ -4,6 +4,9 @@ use DBI;
 
 die "usage: ./dat2db.pl path_to_files man_or_chimp" unless (-d $ARGV[0] && ($ARGV[1] eq "man" || $ARGV[1] eq "chimp" ));
 
+    my @time = localtime();
+    my $year = sprintf("%04d", $time[5] + 1900);
+
 my $dirpath = $ARGV[0];
 my $man_or_chimp = $ARGV[1];
 my $dbh;
@@ -19,7 +22,7 @@ for (1..63) {
 }
 
 my %done;
-open(DONE,"</home/bklaas/jq/perl/done");
+open(DONE,"</home/bklaas/jqmcbp/perl/done");
 while(<DONE>) {
 	chomp;
 	$done{$_}++;
@@ -78,7 +81,7 @@ while (defined($datfile = readdir(DIR))) {
               $picks{$name} = $value;
         }
 	close (DATAFILE);
-	open(DONE,">>/home/bklaas/jq/perl/done");
+	open(DONE,">>/home/bklaas/jqmcbp/perl/done");
 	print DONE "$datfile\n";
 	close(DONE);
 
@@ -174,7 +177,7 @@ while (my $hashref = $sth->fetchrow_hashref) {
 }
 $sth->finish();
 
-open(COUNT, ">/data/benklaas.com/jqmcbp/entry_count.json") or die $!;
+open(COUNT, ">/home/bklaas/jqmcbp/web/$year/entry_count.json") or die $!;
 print COUNT "{ \"entry_count\": \"$count\" }\n";
 close(COUNT);
 
