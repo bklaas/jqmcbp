@@ -122,7 +122,7 @@ for my $outcome (@$outcomes) {
 	# $ranks is a LoH
 	# size of $ranks is number of winners from that outcome
 	# go through each and 
-	my $ranks = rank_em($scenario);
+	my $ranks = rank_em($scenario, $stringOutcome );
 
 	my $i = 0;
 	my $manWins = 0;
@@ -130,6 +130,9 @@ for my $outcome (@$outcomes) {
 
 	for my $winner (@$ranks) {
 		$byPlayer->{ $winner->{player_id} }++;
+		if ( $remainingTeams == 4 ) {
+			print "$winner->{name}\t$winner->{stringOutcome}\n";
+		}
 		if ( $winner->{man_or_chimp} eq 'chimp' && !$chimpWins ) {
 			$menOrChimps->{chimp}++;
 			$chimpWins++;
@@ -203,11 +206,12 @@ exit;
 
 sub rank_em {
 	my $outcome = shift;
+	my $stringOutcome = shift;
 	# put all of the scores into a sorted list
 	my @scores;
 	for my $player (keys %$outcome) {
 	    #push @scores, [ $outcome->{$player}{'score'}, $player ];
-	    push @scores, { score => $outcome->{$player}{'score'}, player_id => $player, man_or_chimp => $currentScoreRef->{$player}{'man_or_chimp'}, name => $currentScoreRef->{$player}{'name'} };
+	    push @scores, { score => $outcome->{$player}{'score'}, player_id => $player, man_or_chimp => $currentScoreRef->{$player}{'man_or_chimp'}, name => $currentScoreRef->{$player}{'name'}, stringOutcome => $stringOutcome };
 	}
 
 	my $place = 1;
@@ -281,7 +285,9 @@ sub makeTeamHexCodes {
 		my $hex_j = sprintf "%x", $j;
 		$j++;
 		$return->{$ref->{winner}} = $hex_j;
-
+		if ($remainingTeams == 4) {
+			print "$ref->{winner}\t$hex_j\n";
+		}
 	}
 
 	return $return;

@@ -86,7 +86,7 @@ if (0) {
                Hello   =>      'benklaas.com',
                Port    =>      587, 
                User    =>      'jqmcbp',
-               Password=>      'bk9711bk',
+               Password=>      'SECUREPASS',
 		);
         $mailer->mail('jqmcbp@gmail.com');
         $mailer->to('ben@benklaas.com');

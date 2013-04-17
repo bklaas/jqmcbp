@@ -34,6 +34,7 @@ for (0..$#goners) {
 		print "\n\n$this_one: ";
 		print "$goners[$_]{'name'}, ";
 	}
+	my $str = join(', ', @list);
 	$last_one = $goners[$_]{'alma_mater'};
 	$inc++;
 }

@@ -1,0 +1,8 @@
+Player:		    *|FULLNAME|*
+Candybar:	    *|CANDYBAR|*
+Your Bracket:	    http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|PLAYERID|*
+Your Darwin Score:  *|DARWIN|*
+Your Current Score: *|SCORE|*
+Leader is at:       *|LEADER|*
+Your rank:          *|RANK|*/*|POOL_SIZE|*
+---------------

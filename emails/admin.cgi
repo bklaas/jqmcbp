@@ -13,7 +13,7 @@ sub send_email {
 
 	#my $to = 'ben@benklaas.com,mcstayinskool@yahoo.com';
 	my $to = 'lancev@ping.com,jeremyw@pinggolf.com,ben@benklaas.com';
-	my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t $to -f 'ben\@benklaas.com' -sub 'Shipment' -starttls -auth -user 'ben\@benklaas.com' -pass bk9711bk < $file";
+	my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t $to -f 'ben\@benklaas.com' -sub 'Shipment' -starttls -auth -user 'ben\@benklaas.com' -pass SECUREPASS < $file";
 	`$cmd`;
 	unlink($file);
 

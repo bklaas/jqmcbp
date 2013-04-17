@@ -13,7 +13,7 @@ $| = 1;
 my $file = 'test_invite';
 my $email = 'ben@benklaas.com';
 $email = 'jqmcbp@gmail.com';
-my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t 'ben\@benklaas.com' -f '$email' -sub 'Stuff & Things' -starttls -auth -user '$email' -pass bk9711bk < $file";
+my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t 'ben\@benklaas.com' -f '$email' -sub 'Stuff & Things' -starttls -auth -user '$email' -pass SECUREPASS < $file";
 `$cmd`;
 
 sub send_email {
@@ -24,7 +24,7 @@ sub send_email {
                Hello   =>      'benklaas.com',
                Port    =>      587, 
                User    =>      'ben@benklaas.com',
-               Password=>      'bk9711bk',
+               Password=>      'SECUREPASS',
 		);
         $mailer->mail('ben@benklaas.com');
         $mailer->to('ben@benklaas.com');

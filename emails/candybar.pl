@@ -3,7 +3,7 @@
 my $dbh;
 
 use DBI;
-do "/etc/httpd/cgi-bin/jq_globals.pl";
+do "/data/cgi-bin/jq_globals.pl";
 connect_to_db();
 
 my $query = "select name, candybar from player_info group by candybar order by candybar";

@@ -4,8 +4,8 @@ use strict;
 my $dbh;
 
 use DBI;
-do "/etc/httpd/cgi-bin/jq_globals.pl";
-my @dbs = ('jq_2005', 'jq_2006', 'johnnyquest');
+do "/data/cgi-bin/jq_globals.pl";
+my @dbs = ('jq_2005', 'jq_2006', 'jq_2007', 'jq_2008', 'jq_2009', 'jq_2012', 'johnnyquest');
 for my $db (@dbs) {
 connect_to_db($db);
 

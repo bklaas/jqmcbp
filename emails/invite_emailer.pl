@@ -33,7 +33,8 @@ print "$i\n";
 sub get_emails {
 
     my %return;
-    open( LIST, "<2009emails.txt" );
+    open( LIST, "<reinvite.txt");
+    #open( LIST, "<justme");
     while (<LIST>) {
 	chomp;
         my @ary = split /\t/;
@@ -47,10 +48,14 @@ sub send_email {
 
     my $email = shift;
 
-        my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.comcast.net -port 587 -t '$email' -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user wvolkman -pass roofclip < $file";
-#	my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t $email -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user 'jqmcbp\@gmail.com' -pass bk9711bk < $file";
+   #     my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.comcast.net -port 587 -t '$email' -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user wvolkman -pass roofclip < $file";
 
-print "|$email|\n";
+#	my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t $email -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user 'jqmcbp\@gmail.com' -pass SECUREPASS < $file";
+
+	#my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.comcast.net -port 587 -t '$email' -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user wvolkman -pass roofclip -attach $file,text/plain,i";
+
+	# google limits to 500 emails/day, so this is a non-starter
+	my $cmd =  "/home/bklaas/bin/mailsend -smtp smtp.gmail.com -port 587 -t '$email' -f 'jqmcbp\@gmail.com' -sub '$title_string' -starttls -auth -user 'jqmcbp\@gmail.com' -pass SECUREPASS -attach $file,text/plain,i";
 
 	open(CMD, "$cmd |");
 	while(<CMD>) {
