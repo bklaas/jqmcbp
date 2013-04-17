@@ -68,7 +68,7 @@ a:hover {
 }
 
 /* headers */
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
 	@include russoFont;
 	font-weight: bold; 	
 	padding: 10px;		
@@ -85,6 +85,10 @@ h2 {
 }
 h3 {
 	font-size: 1.6em;
+	font-weight: normal;	
+}
+h5 {
+	font-size: 1.1em;
 	font-weight: normal;	
 }
 
@@ -414,6 +418,7 @@ input.button {
 	@include russoFont;
 	font-weight: bold;
 	font-size: 2.9em;
+	line-height: 1em;
 	color: $color3;
 	padding: 10px 0 5px 5px; 	
 	margin-left: 5px;		

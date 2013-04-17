@@ -65,7 +65,6 @@ exit;
 
 sub get_content {
 	my $email = shift;
-	my $content;
 	open(EMAIL,"<$dir/$email");
 	while(<EMAIL>) {
 		s/(http:\/\/.*?)[\s|\n|)]/<a href = '$1'>$1<\/a> /g;

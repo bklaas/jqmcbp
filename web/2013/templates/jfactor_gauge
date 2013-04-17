@@ -88,7 +88,7 @@ $(document).ready(function() {
 	        ],
 	        pane: 0,
 	        title: {
-	        	text: '[% title1 %]<br/><span style="font-size:8px">[% subtitle1 %]</span>',
+	        	text: '[% title1 | html %]<br/><span style="font-size:8px">[% subtitle1 | html %]</span>',
 	        	y: -40
 	        }
 	    }, 
@@ -140,7 +140,7 @@ $(document).ready(function() {
 			],
 	        pane: 1,
 	        title: {
-	        	text: '[% title2 %]<br/><span style="font-size:8px">[% subtitle2 %]</span>',
+	        	text: "[% title2 | html %]<br/><span style='font-size:8px'>[% subtitle2 | html %]</span>",
 	        	y: -40
 	        }
 	    }],
@@ -171,7 +171,7 @@ $(document).ready(function() {
 	    setTimeout(function() {
 	        var left = chart.series[0].points[0],
 	            leftVal;
-			if ( [% left_val %] > 10 ) {
+			if ( [% left_val %] > 12 ) {
 				leftVal = 12
 			}
 			else {
@@ -185,7 +185,7 @@ $(document).ready(function() {
 	        var right = chart.series[1].points[0],
 	            rightVal;
 	
-			if ( [% right_val %] > 10 ) {
+			if ( [% right_val %] > 12 ) {
 				rightVal = 12
 			}
 			else {

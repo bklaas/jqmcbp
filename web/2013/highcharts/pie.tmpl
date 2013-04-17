@@ -11,6 +11,17 @@
 		<script type="text/javascript">
 var chart;
 $(document).ready(function() {
+    	// Radialize the colors
+		Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+		    return {
+		        radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+		        stops: [
+		            [0, color],
+		            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+		        ]
+		    };
+		});
+
 	chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'container',
@@ -51,8 +62,12 @@ $(document).ready(function() {
 			name: 'Who Picked Who',
 			data: [
 				[%- FOR team IN series %]
-					[ '[% team.0 %]', [% team.1 %] ]
-					[% UNLESS loop.last %],[% END %]
+					{
+						name: '[% team.0 %]',
+						y: [% team.1 %]
+						[% IF team.0 == params.selectedTeam %], selected: true, sliced: true[% END %]
+						
+					}[% UNLESS loop.last %],[% END %]
 				[%- END %]
 			]
 		}]

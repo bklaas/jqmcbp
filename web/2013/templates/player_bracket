@@ -179,11 +179,11 @@
 [% BLOCK column_data %]
 	[%- i = start -%]
 	[%- WHILE i < end %]
-		[%- game = "game_$i" %][% j = i + 1 %][% other_game = "game_$j" %][% factor = j / 2 %][% next = factor + 32 -%]
+		[%- game = "game_$i" %][% j = i + 1 %][% other_game = "game_$j" %][% factor = j / 2 %][% next = factor + 32 -%][% next_winner = "game_$next" %]
 		<tr>
 			<td class = "[% class %]" valign = "center">
 			[% picks.$game %]
-		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
+		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %][% UNLESS picks.$next_winner.match('winner') %]&selectedTeam=[% picks.$next_winner | html %][% END %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
 			<br />
 		 	[% picks.$other_game %]
