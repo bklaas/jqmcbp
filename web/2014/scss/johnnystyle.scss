@@ -1,0 +1,423 @@
+/* Johnny Style */
+// should really be merged with the main styles file
+// this is used to deliver the bracket selector page
+
+$bracket-height: 40px;
+
+body {
+	font: medium Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body.brackets {
+//	background: white;
+   background-image: url("../images/triangles.png");
+
+}
+
+#bracket {
+	padding-bottom: 20px;
+}
+
+#entryinfo {
+	padding-left: 10px;
+}
+
+table.entryinfo {
+	padding-left: 10px;
+	font-size: small;
+	font-weight: bold;
+	color: white;
+}
+
+
+.bracket_banner {
+	font-family: 'Faster One', sans-serif;
+	display: inline-block;
+	font-size: 46px;
+	font-weight: bold;
+	letter-spacing: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: white;
+}
+#container {
+	width: 800px;
+	\width: 820px;
+	w\idth: 800px;
+	border: 1px solid #000;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	background: #fff;
+	font-size: 90%;
+}
+
+#banner {
+	height:140px;
+	background-image: url(bannermain.jpg);
+	padding: 0px;
+}
+
+#bannerplain {
+	height:140px;
+	background-image: url(bannerplain.jpg);
+	padding: 0px;
+}
+
+#centerMe {
+	background-color: #324651;
+	color: white;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#banner p {
+	display: none;
+}
+
+#nav {
+	width: 780px;
+	float: left;
+	margin: 0;
+	padding: 0 0 0 20px;
+	background: #3B0D0D;
+	list-style: none;
+}
+
+#nav li {
+	float: left;
+	margin: 0 0 0 2px;
+	padding: 0;
+	font-size: 85%;
+}
+
+#nav a {
+	float: left;
+	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 8px;
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #3b0d0d;
+	border-bottom: none;
+	background: #3b0d0d url(navtab.jpg) repeat-x top left;
+}
+
+a#active {
+	background: #314650 url(activetab.jpg) repeat-x top left;
+}
+
+#content {
+	clear:both;
+	padding: 10px 20px 10px 20px;
+	margin: 0;
+}
+
+h1 {
+	font-size: 150%;
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+td {
+	text-align: left;
+	white-space: nowrap;
+}
+
+img {
+	border: 0;
+}
+
+td a { 
+	cursor: pointer; 
+	text-decoration: none; 
+	font-weight: bold; 
+	font-size: larger;
+}
+
+td a:hover {
+	cursor: pointer; 
+	text-decoration: none;
+	font-weight: bold; 
+	background: lightgrey; 
+	font-size: larger;
+}
+
+#content a { 
+	cursor: pointer; 
+	color: #3B0D0D; 
+	text-decoration: none; 
+	font-weight: bold; 
+	font-size: larger;
+}
+
+#content a:hover {
+cursor: pointer; color: #3B0D0D; text-decoration: none; font-weight: bold; background: lightgrey; font-variant: small-caps; font-size: larger;}
+#enter {
+	clear: both;
+	text-align: center;
+	font-weight: bold;
+	margin: 30px 0 0 0;
+	padding: 0;
+}
+
+#footer {
+	clear: both;
+	background-color: #ffffff;
+	height: 40px;
+	vertical-align: middle;
+	margin: 30px 0pt 30px 10px;
+	padding: 0;
+	line-height: 16px;
+	color: #666666;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+#footer img {
+	float: left;
+	padding: 0;
+	margin-left: 10px;
+	margin-right: 15px;
+	vertical-align:middle;
+}
+
+#footer a {
+	text-decoration: none;
+	color: #666666;
+}
+
+#footer a:hover {
+	background-color: #DAE3E7;
+}
+
+.rightfloat {
+	float: right;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.leftfloat {
+	float: left;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+table.thinborder {
+	border: 1px solid black;
+	font-size: small;
+	width: 90%;
+}
+
+table.thinborderwhite {
+	border: 1px solid black;
+	font-size: small;
+	font-weight: bold;
+	background: #fffaf0;
+	color: black;
+}
+
+table.sss {
+	border: 1px solid black;
+	font-size: normal;
+	width: 100%;
+}
+
+.verysmall {
+	font-size: 90%;
+}
+
+.whiteboldtext {
+	font-weight: bold;
+	color: white;
+}
+
+.brackets1 { 
+	white-space: nowrap; 
+	color: black; 
+	background: #fffaf0; 
+	font-size: 70%; 
+	font-weight: normal; 
+	font-family: sans-serif; 
+	text-align: left; 
+}
+
+.brackets2 { 
+	white-space: nowrap; 
+	color: black; 
+	background: #e6e6e6; 
+	font-size: 70%;  
+	font-weight: normal; 
+	font-family: sans-serif; 
+	text-align: left;
+}
+.thisisme { 
+	color: white; 
+	background: #324651; 
+	font-size: 70%;  
+	font-weight: bold; 
+	font-family: sans-serif; 
+	text-align: left;
+}
+.monkey { 
+	color: black; 
+	background: yellow; 
+	font-size: 70%;  
+	font-weight: bold; 
+	font-family: sans-serif; 
+	text-align: left;
+}
+
+.brackets1 a { 
+	color: #4c4c6b; 
+}
+.brackets1 a:hover {
+	background: black; color: #324651; text-decoration: underline overline;
+}
+.brackets2 a { 
+	color: #4c4c6b; 
+}
+.brackets2 a:hover {
+	background: black; color: #324651; text-decoration: underline overline;
+}
+
+.thisisme a { color: white; }
+.thisisme a:hover {background: white; color: #324651; text-decoration: underline overline;}
+.monkey a { color: black; }
+.monkey a:hover {background: black; color: yellow; text-decoration: underline overline;}
+
+.rightalign { text-align: right }
+.leftalign { text-align: left }
+
+
+.brackets1_center { color: black; background: #fffaf0; font-size: 70%; font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets2_center { color: black; background: #e6e6e6; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets_heading_center { font-size: 90%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+
+td.brackets1 td.brackets2 { white-space: nowrap; margin: 10px; border: 0.125em solid black; }
+
+.picked { 
+	margin-left: 12px; 
+	color: black; 
+	text-transform: uppercase; 
+	text-decoration: underline overline; 
+	font-weight: bold; 
+	font-size: larger;
+}
+
+.winner { color: black; text-transform: uppercase; text-decoration: underline overline; font-size: larger; font-weight: bold; }
+.normal { margin-left: 12px; color: black; font-weight: normal; }
+.radio { margin-left: 0px; color: black; font-weight: normal; }
+
+
+.textinput { font-weight: bold; font-size: larger; }
+.largeWhiteBold { font-size: 26px; color: white; font-weight: bold; }
+.smallWhiteBold { font-size: 12px; color: white; font-weight: bold; }
+
+td.nolink a { cursor: pointer; color: blue; text-decoration: none; font-variant: small-caps; }
+td.nolink a:hover {cursor: pointer; color: blue; text-decoration: none; font-variant: small-caps;}
+
+td.one { color: white; background: black;}
+td.two { color: white; background: #333333;}
+td.three { color: white; background: #666666;}
+td.four { color: white; background: #999999;}
+td.five { color: black; background: #cccccc;}
+td.six { color: black; background: #ffffff;}
+
+pre.fitme {
+	width: 400px;
+	white-space: normal;
+}
+
+.hidden {
+	display: none;
+}
+.visible {
+	display: block;
+}
+
+#pickCandy {
+	z-index: 100;
+}
+
+th.brackets_heading, th.brackets_heading_banner { 
+	white-space: nowrap; 	
+	font-size: 100%;  
+	font-weight: bold; 
+	font-family: sans-serif; 
+	text-align: left; 
+	color: white; 
+	padding-top: 8px;
+	padding-bottom: 2px;
+	vertical-align: middle;
+}
+
+tr.brackets_heading {
+	background: #314650 url('../nav.png') repeat-x top left;
+}
+
+
+th.brackets_heading_banner {
+	width: 30px;
+}
+
+td.brackets_region { 
+	background: white; 
+	height: $bracket-height * 8 + 14;
+	border: 1px solid black;
+	vertical-align: middle;
+}
+
+
+@mixin brackets( $height, $adjust: 2px ) {
+	min-width: 180px;
+	td {
+		height: $height + $adjust;
+		vertical-align: middle;
+		border-bottom: 1px solid black;
+		border-top: 1px solid black;
+		border-right: 1px solid black;
+		white-space: nowrap;
+		overflow: hidden;
+	
+	}
+}
+
+table.first_round {
+	@include brackets($bracket-height, 0);
+}
+table.second_round {
+	@include brackets($bracket-height * 2);
+}
+table.sweet_16 {
+	@include brackets($bracket-height * 4, 6);
+}
+table.final_8 {
+	@include brackets($bracket-height * 8, 14);
+}
+table.final_four {
+	@include brackets($bracket-height * 16, 30);
+}
+table.championship {
+	@include brackets($bracket-height * 32, 62);
+}
+
+.flash_forward {
+	background-color: yellow;
+}
+.flash_remove {
+	background-color: red;
+}
+

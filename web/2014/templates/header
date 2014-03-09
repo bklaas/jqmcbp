@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+<head><meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JQMCBP [% year %]</title>
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+[% IF keyword == 'stately' %]
+	<link rel="stylesheet" href="stately/assets/css/stately.css" type="text/css" />
+[% END %]
+
+<script src="effects.js" language="JavaScript"></script>
+<script src="/javascript/jquery.js" language="JavaScript"></script>
+<script src="/javascript/bk.jquery-utilities.js" language="JavaScript"></script>
+[% IF keyword == 'top' %]
+<script src="/javascript/airport.js" language="JavaScript"></script>
+<script src="/javascript/jquery-texteffects.js" language="JavaScript"></script>
+<script src="/javascript/jquery.countdown.min.js" language="JavaScript"></script>
+<script src="/javascript/jplayer/jquery.jplayer.min.js" language="JavaScript"></script>
+[% ELSIF keyword == 'enter' || keyword == 'willtherebeajqmcbpthisyear' %]
+<script src="/javascript/jquery.countdown.min.js" language="JavaScript"></script>
+[% END %]
+
+</head>
+
+<body>
+[% IF keyword == 'top' %]
+
+
+<script type="text/javascript">
+	function startIt() {
+		var austDay = new Date();
+		austDay = new Date([% year %], 02, 17, 20);
+		$('#defaultCountdown').countdown({until: austDay});
+		$('#year').text(austDay.getFullYear());
+	}
+
+	$(document).ready(
+	function() {
+
+		var stage1 = 2200;
+		var stage2 = 10800;
+		var stage3 = 11300;
+		var stage4 = 18200;
+		var stage5 = 20800;
+
+		setTimeout(function() {
+			$( '#slogan' ).airport( [ 'RETURN TO GREATNESS' ] );
+			$( '#rejoice' ).airport( [ 'Rejoice' ] );
+		}, stage1);
+
+		setTimeout(function() {
+			$('#strikeme').addClass('strikeme');
+			$( '#hidemetext').fadeOut();
+			//$( '#footer').fadeOut();
+		}, stage2);
+
+		setTimeout(function() {
+			$("#typeme").typewriter();
+			$("#typeme").show();
+		}, stage3);
+
+		setTimeout(function() {
+			$( '#showmetext').fadeIn();
+		}, stage4);
+
+		setTimeout(function() {
+			$("#defaultCountdown").fadeIn('slow');
+			$("#stayTuned").fadeIn('slow');
+			startIt();
+			$( '#footer').fadeIn('slow');
+		}, stage5);
+	}
+	);
+</script>
+
+[% ELSIF keyword == 'enter' || keyword == 'willtherebeajqmcbpthisyear' %]
+<script type="text/javascript">
+	function startIt() {
+		var austDay = new Date();
+		austDay = new Date([% year %], 02, 16, 20);
+		$('#defaultCountdown').countdown({until: austDay});
+		$('#year').text(austDay.getFullYear());
+	}
+
+	$(document).ready(
+	function() {
+
+		setTimeout(function() {
+			$("#defaultCountdown").fadeIn('slow');
+			$("#stayTuned").fadeIn('slow');
+			startIt();
+		}, 1000);
+	}
+	);
+</script>
+[% END %]
+
+<!-- wrap starts here -->
+<div id="wrap">
+
+	<!--header -->
+	<div id="header">			
+
+		<h1 id="logo-text"><a href="/jqmcbp/" title="Johnny Quest">jqmcbp</a></h1>
+		<p id="slogan">Certifiable</p>
+
+		<div id="top-menu">
+			<p><a href="mailto:jqmcbp@gmail.com"><span id = 'rejoice'>[% IF keywords == 'top' %]Complain[% ELSE %]Shout Out[% END %]</span></a></p>
+		</div>
+
+		[% IF keyword == 'top' %]
+		<div id = 'multimedia'>
+			<object type="application/x-shockwave-flash" width = '280px' height = '12px'
+				data="sounds/xspf_player.swf?playlist_url=sounds/knockyouout.xspf&autoplay=1">
+					<param name="movie" value="sounds/xspf_player.swf?playlist_url=sounds/knockyouout.xspf&autoplay=1" />
+			</object>
+		</div>
+		[% END %]
+	</div>
+	<!--header ends-->
+
+	[% IF keyword != 'top' and keyword != 'lehighandnorfolk' %]
+  <div id="nav">
+
+    <ul>
+          <li[% IF params.keywords == 'overview' %] id = "current"[% END %]><a href="?overview">Overview</a></li>
+          <li[% IF params.keywords == 'lucky' %] id = "current"[% END %]><a href="?lucky">Lucky the Chimp</a></li>
+          <li[% IF params.keywords == 'army' %] id = "current"[% END %]><a href="?army">1000 Chimp Army</a></li>
+          <li[% IF params.keywords == 'scoring' %] id = "current"[% END %]><a href="?scoring">Scoring</a></li>
+          <li[% IF params.keywords == 'booty' %] id = "current"[% END %]><a href="?booty">Booty</a></li>
+          <li[% IF params.keywords == 'fame' %] id = "current"[% END %]><a href="?fame">Hall of Fame</a></li>
+          <li[% IF params.keywords == 'enter' %] id = "current"[% END %]><a href="?enter">Enter JQMCBP</a></li>
+    </ul>
+    <!-- navigation ends-->
+
+        </div>
+	[% END %]
