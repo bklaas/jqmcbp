@@ -1,3 +1,5 @@
+@import "_globals";
+
 /* Johnny Style */
 // should really be merged with the main styles file
 // this is used to deliver the bracket selector page
@@ -5,7 +7,8 @@
 $bracket-height: 40px;
 
 body {
-	font: medium Verdana, sans-serif;
+	//font: medium Verdana, sans-serif;
+	@include font("Roboto");
 	margin: 0;
 	padding: 0;
 }
@@ -33,10 +36,11 @@ table.entryinfo {
 
 
 .bracket_banner {
-	font-family: 'Faster One', sans-serif;
+	//font-family: 'Faster One', sans-serif;
+	@include font("SportsWorld");
 	display: inline-block;
 	font-size: 46px;
-	font-weight: bold;
+	//font-weight: bold;
 	letter-spacing: 25px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -121,7 +125,7 @@ a#active {
 
 h1 {
 	font-size: 150%;
-	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	@include font("SportsWorld");
 	text-align: center;
 }
 
@@ -180,7 +184,8 @@ cursor: pointer; color: #3B0D0D; text-decoration: none; font-weight: bold; backg
 	padding: 0;
 	line-height: 16px;
 	color: #666666;
-	font-family: Arial,Helvetica,sans-serif;
+	@include font("DroidSans");
+	//font-family: Arial,Helvetica,sans-serif;
 	font-size: 10px;
 	text-transform: uppercase;
 }
@@ -250,7 +255,7 @@ table.sss {
 	background: #fffaf0; 
 	font-size: 70%; 
 	font-weight: normal; 
-	font-family: sans-serif; 
+	@include font("Roboto"); 
 	text-align: left; 
 }
 
@@ -260,7 +265,7 @@ table.sss {
 	background: #e6e6e6; 
 	font-size: 70%;  
 	font-weight: normal; 
-	font-family: sans-serif; 
+	@include font("Roboto"); 
 	text-align: left;
 }
 .thisisme { 
@@ -268,7 +273,7 @@ table.sss {
 	background: #324651; 
 	font-size: 70%;  
 	font-weight: bold; 
-	font-family: sans-serif; 
+	@include font("Roboto"); 
 	text-align: left;
 }
 .monkey { 
@@ -276,7 +281,7 @@ table.sss {
 	background: yellow; 
 	font-size: 70%;  
 	font-weight: bold; 
-	font-family: sans-serif; 
+	@include font("Roboto"); 
 	text-align: left;
 }
 
@@ -302,11 +307,33 @@ table.sss {
 .leftalign { text-align: left }
 
 
-.brackets1_center { color: black; background: #fffaf0; font-size: 70%; font-weight: normal; font-family: sans-serif; text-align: center;}
-.brackets2_center { color: black; background: #e6e6e6; font-size: 70%;  font-weight: normal; font-family: sans-serif; text-align: center;}
-.brackets_heading_center { font-size: 90%;  font-weight: normal; font-family: sans-serif; text-align: center;}
+.brackets1_center { 
+	color: black; 
+	background: #fffaf0; 
+	font-size: 70%; 
+	@include font("Roboto"); 
+	text-align: center;
+}
 
-td.brackets1 td.brackets2 { white-space: nowrap; margin: 10px; border: 0.125em solid black; }
+.brackets2_center { 
+	color: black; 
+	background: #e6e6e6; 
+	font-size: 70%;  
+	@include font("Roboto"); 
+	text-align: center;
+}
+
+.brackets_heading_center { 
+	font-size: 90%;  
+	@include font("Roboto"); 
+	text-align: center;
+}
+
+td.brackets1 td.brackets2 { 
+	white-space: nowrap; 
+	margin: 10px; 
+	border: 0.125em solid black; 
+}
 
 .picked { 
 	margin-left: 12px; 
@@ -355,17 +382,17 @@ pre.fitme {
 th.brackets_heading, th.brackets_heading_banner { 
 	white-space: nowrap; 	
 	font-size: 100%;  
+	@include font("Roboto");
 	font-weight: bold; 
-	font-family: sans-serif; 
 	text-align: left; 
-	color: white; 
+	color: #111; 
 	padding-top: 8px;
 	padding-bottom: 2px;
 	vertical-align: middle;
 }
 
 tr.brackets_heading {
-	background: #314650 url('../nav.png') repeat-x top left;
+	background: #314650 url('../images/wood_pattern.png') repeat-x top left;
 }
 
 

@@ -1,4 +1,38 @@
-/* Johnny Style */
+@font-face {
+  font-family: "SportsWorld";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/SportsWorld/SportsWorld-webfont.eot");
+  src: url("fonts/SportsWorld/SportsWorld-webfont.eot?") format("eot"), url("fonts/SportsWorld/SportsWorld-webfont.woff") format("woff"), url("fonts/SportsWorld/SportsWorld-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "DroidSans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/DroidSans/DroidSans-webfont.eot");
+  src: url("fonts/DroidSans/DroidSans-webfont.eot?") format("eot"), url("fonts/DroidSans/DroidSans-webfont.woff") format("woff"), url("fonts/DroidSans/DroidSans-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Roboto/Roboto-webfont.eot");
+  src: url("fonts/Roboto/Roboto-webfont.eot?") format("eot"), url("fonts/Roboto/Roboto-webfont.woff") format("woff"), url("fonts/Roboto/Roboto-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "RobotoLight";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/RobotoLight/RobotoLight-webfont.eot");
+  src: url("fonts/RobotoLight/RobotoLight-webfont.eot?") format("eot"), url("fonts/RobotoLight/RobotoLight-webfont.woff") format("woff"), url("fonts/RobotoLight/RobotoLight-webfont.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "RobotoMedium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/RobotoMedium/RobotoMedium-webfont.eot");
+  src: url("fonts/RobotoMedium/RobotoMedium-webfont.eot?") format("eot"), url("fonts/RobotoMedium/RobotoMedium-webfont.woff") format("woff"), url("fonts/RobotoMedium/RobotoMedium-webfont.ttf") format("truetype"); }
+
 /* Top Elements */
 * {
   margin: 0;
@@ -8,12 +42,13 @@
 body {
   margin-left: auto;
   margin-right: auto;
-  width: 898px;
+  width: 958px;
   background-color: white;
-  background-image: url("../images/triangles.png");
+  background-image: url("../images/squaredmetal.png");
   color: #2c2c2c;
-  font-weight: bold;
-  font: 12px/170% "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; }
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 14px;
+  font-weight: normal; }
 
 body.wide {
   width: 1002px; }
@@ -40,24 +75,24 @@ a:hover {
 
 /* headers */
 h1, h2, h3, h4, h5 {
-  font-family: 'Russo One', 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-  font-weight: bold;
+  font-family: "SportsWorld", "Helvetica", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
   padding: 10px; }
 
 h1 {
-  font-size: 2.9em; }
+  font-size: 30px; }
 
 h2 {
-  font-family: 'Russo One', 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-  font-size: 2.5em;
+  font-size: 24px;
   color: #88AC0B; }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 18px;
   font-weight: normal; }
 
 h5 {
-  font-size: 1.1em;
+  font-size: 14px;
   font-weight: normal; }
 
 /* Paragraph */
@@ -115,8 +150,10 @@ blockquote {
   font-weight: normal;
   font-size: 17px;
   line-height: 1.6em;
+  font-family: "DroidSans", "Helvetica", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
   font-style: italic;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   color: #80614D;
   border: 1px solid #EEE8E1;
   background: #faf7f5 url("../quote.gif") no-repeat 15px 15px; }
@@ -208,7 +245,7 @@ input.button {
 --------------------------------------------*/
 #wrap {
   position: relative;
-  width: 898px;
+  width: 958px;
   text-align: left; }
 
 #showmetext {
@@ -230,7 +267,7 @@ input.button {
 #header {
   position: relative;
   height: 221px;
-  background: url("../banner.png") no-repeat;
+  background: url("../banner960.png") no-repeat;
   color: #fff;
   margin-left: 10px;
   margin: 0; }
@@ -239,7 +276,9 @@ input.button {
   position: absolute;
   margin: 0;
   padding: 0;
-  font: bold 66px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  font-family: "SportsWorld", "Helvetica", sans-serif;
+  font-size: 48px;
+  font-weight: normal;
   /*letter-spacing: -5px;*/
   text-decoration: none;
   color: #fff;
@@ -259,6 +298,9 @@ input.button {
   margin: 0;
   padding: 0;
   font: bold 15px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
   color: #fff;
   letter-spacing: -0.5px;
   /* change the values of top and left to adjust the position of the slogan*/
@@ -270,8 +312,10 @@ input.button {
   position: absolute;
   margin: 0;
   padding: 10px;
-  font-family: 'Trebuchet MS', Arial, Sans-serif;
-  color: #FFF;
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
   top: 0;
   right: 130px; }
 
@@ -289,10 +333,7 @@ input.button {
   padding: 0;
   margin: 0;
   height: 50px;
-  background: url("../nav.png") no-repeat; }
-
-#wrapWide #nav {
-  background-image: url("../images/triangles.png"); }
+  background: url("../images/wood_pattern.png") repeat-x; }
 
 #nav ul {
   float: left;
@@ -303,29 +344,37 @@ input.button {
 
 #nav ul li {
   float: left;
-  margin: 0;
-  padding: 0 0 0 10px; }
+  margin: 0; }
 
 #nav ul li a {
   float: left;
   margin: 0;
-  padding: 0 15px 0 5px;
-  color: #FFF;
-  font: bold 15px/45px "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+  padding: 0 15px 0 15px;
+  color: #000;
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 45px;
   text-decoration: none; }
 
 #nav ul li a:hover,
 #nav ul li a:active {
-  color: #F9F57E;
-  background: inherit;
+  color: #fff;
+  background: #aaa;
   text-decoration: none;
   border-radius: 0px; }
 
 #nav ul li#current {
   background: white; }
 
+#nav ul li#current:hover {
+  background: white; }
+
 #nav ul li#current a {
   color: #4B3D2C; }
+
+#nav ul li#current a:hover {
+  background: white; }
 
 /* Main Column */
 #main {
@@ -348,14 +397,20 @@ input.button {
   font-size: 1.1em; }
 
 #main h1 {
-  font-family: 'Russo One', 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-  font-weight: bold;
-  font-size: 2.9em;
+  font-family: "SportsWorld", "Helvetica", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
   line-height: 1em;
   color: #2c2c2c;
   padding: 10px 0 5px 5px;
   margin-left: 5px;
-  letter-spacing: -2px; }
+  letter-spacing: -2px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px; }
+
+#main h1.overview_title {
+  font-size: 30px;
+  line-height: normal; }
 
 #main h1 a {
   color: #2c2c2c;
@@ -366,7 +421,9 @@ input.button {
   color: white; }
 
 #main h2 {
-  font: bold 2.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  font-family: "SportsWorld", "Helvetica", sans-serif;
+  font-size: 24px;
+  font-weight: normal;
   color: #2c2c2c;
   padding: 10px 0 5px 5px;
   margin-left: 5px;
@@ -404,8 +461,9 @@ input.button {
   clear: both;
   margin: 0;
   padding: 20px 0 0px 0;
-  font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+  font-family: "DroidSans", "Helvetica", sans-serif;
   font-size: 0.95em;
+  font-weight: normal;
   color: #777;
   text-align: center;
   letter-spacing: 20px;
@@ -708,6 +766,11 @@ span.visible {
 div.hidden {
   display: none; }
 
+div.scoring {
+  float: left;
+  clear: none;
+  width: 400px; }
+
 table.entry {
   margin: 0; }
   table.entry tr {
@@ -930,8 +993,9 @@ tr.bracket_header {
 .thisisme, .monkey {
   color: white;
   background: #324651;
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 12px;
   font-weight: bold;
-  font-family: sans-serif;
   text-align: left; }
   .thisisme a, .monkey a {
     color: white; }
@@ -1003,9 +1067,6 @@ td.six {
 .larger_bold {
   font-size: larger;
   font-weight: bold; }
-
-.russoFont {
-  font-family: 'Russo One', 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif; }
 
 .bigFont {
   font-size: 48px; }

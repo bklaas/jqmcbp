@@ -1,23 +1,4 @@
-// Idaho Gold palette 
-$color1: white; 
-$color2: #F5EF35; //bright yellow
-$color3: #2c2c2c;
-$color4: #9583A5; //light purple
-$color5: #E6A61F; //orange
-
-$content-width: 900px;
-$width: $content-width - 2;
-$wide-width: 1002px;
-$default-padding: 10px;
-$swf-width: 200px;
-$bigtext: 32px;
-$bracket-height: 48px;
-
-/* Johnny Style */ 
-
-@mixin russoFont {
-	font-family: 'Russo One', 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-}
+@import "_globals.scss";
 
 /* Top Elements */
 * { margin: 0; padding: 0; outline: 0 }
@@ -28,14 +9,11 @@ body {
 	width: $width;
 
 	background-color: $color1;
-	//background-image: url("../images/bballcandy.jpg");
-	background-image: url("../images/triangles.png");
-	color: $color3;
-	font-weight: bold;
+	background-image: url("../images/squaredmetal.png");
 
-	// XXX: rethink
-	font: 12px/170% 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-//	text-align: center;	
+	color: $color3;
+
+	@include font("RobotoMedium", 14px);
 }
 
 body.wide {
@@ -69,26 +47,24 @@ a:hover {
 
 /* headers */
 h1, h2, h3, h4, h5 {
-	@include russoFont;
-	font-weight: bold; 	
+	@include font("SportsWorld", 12px);
 	padding: 10px;		
 }
 
 h1 {
-	font-size: 2.9em;		
+	font-size: 30px;
 }
 
 h2 {
-	@include russoFont;
-	font-size: 2.5em;
+	font-size: 24px;
 	color: #88AC0B;
 }
 h3 {
-	font-size: 1.6em;
+	font-size: 18px;
 	font-weight: normal;	
 }
 h5 {
-	font-size: 1.1em;
+	font-size: 14px;
 	font-weight: normal;	
 }
 
@@ -150,8 +126,8 @@ blockquote {
    font-weight: normal;
 	font-size: 17px;
 	line-height: 1.6em;
+	@include font("DroidSans");
 	font-style: italic;
-	font-family: Georgia, 'Times New Roman', Times, serif;		
 	color: #80614D;	
 	border: 1px solid #EEE8E1; 
 	background: #FAF7F5 url("../quote.gif") no-repeat 15px 15px;
@@ -259,7 +235,6 @@ input.button {
 #wrap {
 	position: relative;
 	width: $width;
-//	background: #FFF url("../wrap2.gif") repeat-y center top;
 	text-align: left;	
 }
 
@@ -285,7 +260,7 @@ input.button {
 #header {
 	position: relative;
 	height: 221px;
-	background: url("../banner.png") no-repeat;
+	background: url("../banner960.png") no-repeat;
 	color: #fff;	
 	margin-left: 10px;	
 	margin: 0;	
@@ -295,7 +270,9 @@ input.button {
 
 	position: absolute;
 	margin: 0; padding: 0;
-	font: bold 66px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+	//font: bold 66px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+	@include font("SportsWorld", 48px);
+
 	/*letter-spacing: -5px;*/
 	text-decoration: none;
 	color: #fff;
@@ -316,6 +293,9 @@ input.button {
 	position: absolute;
 	margin: 0; padding: 0;
 	font: bold 15px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+
+	@include font("RobotoMedium", 15px, bold);
+
 	color: #fff;
 	letter-spacing: -0.5px;
 	
@@ -329,8 +309,8 @@ input.button {
 	margin: 0;
 	padding: 10px;
 //	background: #07669c url("../top-menu.gif") repeat-x;
-	font-family: 'Trebuchet MS', Arial, Sans-serif;
-	color: #FFF;
+	@include font("RobotoMedium");
+	color: #000;
 	
 	top: 0;	right: 130px;
  }
@@ -347,12 +327,7 @@ input.button {
 	clear: both;	
 	padding: 0;	margin: 0;
 	height: 50px;
-	//background: $color5 url("../nav.png") no-repeat;
-	background: url("../nav.png") no-repeat;
-//	background-color: $color5;
-}
-#wrapWide #nav {
-	background-image: url("../images/triangles.png");
+	background: url("../images/wood_pattern.png") repeat-x;
 }
 
 #nav ul {
@@ -362,23 +337,28 @@ input.button {
 	height: 45px;
 	padding: 0 0 0 40px;					
 }
+
 #nav ul li {
 	float: left;
-	margin: 0; padding: 0 0 0 10px;		
+	margin: 0; 
+//	padding: 0 0 0 10px;		
 }
+
 #nav ul li a {
 	float: left;
 	margin: 0;
-	padding: 0 15px 0 5px;
-	color: #FFF;
-	font: bold 15px/45px 'Trebuchet MS', 'Helvetica Neue', Arial, sans-serif;
+	padding: 0 15px 0 15px;
+	color: #000;
+//	font: bold 15px/45px 'Trebuchet MS', 'Helvetica Neue', Arial, sans-serif;
+	@include font("RobotoMedium", 15px, bold);
+	line-height: 45px;
 	text-decoration: none;		
 }
 
 #nav ul li a:hover, 
 #nav ul li a:active {
-	color: #F9F57E;
-	background: inherit;
+	color: #fff;
+	background: #aaa;
 	text-decoration: none;
 	border-radius: 0px;
 }
@@ -386,10 +366,17 @@ input.button {
 	background: white;
 }
 
+#nav ul li#current:hover {
+	background: white;
+}
+
 #nav ul li#current a {	
 	color: #4B3D2C;
 }
 
+#nav ul li#current a:hover {
+	background: white;
+}
 /* Main Column */
 #main {
 	float: left;
@@ -415,15 +402,21 @@ input.button {
 }
 
 #main h1 {
-	@include russoFont;
-	font-weight: bold;
-	font-size: 2.9em;
+	@include font("SportsWorld", 30px);
 	line-height: 1em;
 	color: $color3;
 	padding: 10px 0 5px 5px; 	
 	margin-left: 5px;		
 	letter-spacing: -2px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
 }
+
+#main h1.overview_title {
+	font-size: 30px;
+	line-height: normal;
+}
+
 #main h1 a {
 	color: $color3;
 	text-decoration: underline;		
@@ -434,7 +427,7 @@ input.button {
 	color: white;
 }
 #main h2 {
-	font: bold 2.9em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+	@include font("SportsWorld", 24px);
 	color: $color3;
 	padding: 10px 0 5px 5px; 	
 	margin-left: 5px;		
@@ -479,8 +472,7 @@ input.button {
 	clear: both;
 	margin: 0;
 	padding: 20px 0 0px 0;
-	font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
-	font-size: 0.95em;
+	@include font("DroidSans", 0.95em);
 	color: #777;	
 	text-align: center;	
 	letter-spacing: 20px;
@@ -791,6 +783,12 @@ div.hidden {
 	display: none;
 }
 
+div.scoring {
+	float: left;
+	clear: none;
+	width: 400px;
+}
+
 table.entry {
 	margin: 0;
 	tr {
@@ -957,9 +955,7 @@ tr.bracket_header {
 .thisisme { 
 	color: white; 
 	background: #324651; 
-	//font-size: 70%;  
-	font-weight: bold; 
-	font-family: sans-serif; 
+	@include font("RobotoMedium", 12px, bold);
 	text-align: left;
 	a {
 		color: white;
@@ -1022,9 +1018,6 @@ td.six { color: black; background: #ffffff;}
 	font-weight: bold;
 }
 
-.russoFont {
-	@include russoFont;
-}
 .bigFont {
 	font-size: 48px;
 }
@@ -1070,3 +1063,5 @@ td.six { color: black; background: #ffffff;}
 	left: 300px;
 	top: 38px;
 }
+
+

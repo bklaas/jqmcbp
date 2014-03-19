@@ -19,34 +19,36 @@ my %data;
 my @legend;
 my $labels;
 my ($start_time, $end_time, $db);
-for my $year ('2013', '2012', '2009', '2008', '2007', '2006', '2005') {
+for my $year ('2014', '2013', '2012', '2009', '2008', '2007', '2006', '2005') {
 	if ($year eq '2005') {
-		$start_time = timelocal(00,00,17,13,2,2005);
+		$start_time = timelocal(00,00,17,13,2,$year);
 		$db = 'jq_2005';
 	} elsif ($year eq '2006') {
-		$start_time = timelocal(00,00,17,12,2,2006);
+		$start_time = timelocal(00,00,17,12,2,$year);
 		$db = 'jq_2006';
 	} elsif ($year eq '2007') {
-		$start_time = timelocal(00,00,17,11,2,2007);
+		$start_time = timelocal(00,00,17,11,2,$year);
 		$db = 'jq_2007';
 	} elsif ($year eq '2008') {
-		$start_time = timelocal(00,00,17,16,2,2008);
+		$start_time = timelocal(00,00,17,16,2,$year);
 		$db = 'jq_2008';
 	} elsif ($year eq '2009') {
-		$start_time = timelocal(00,00,17,15,2,2009);
+		$start_time = timelocal(00,00,17,15,2,$year);
 		$db = 'jq_2009';
 	} elsif ($year eq '2012') {
-		$start_time = timelocal(00,00,17,11,2,2012);
+		$start_time = timelocal(00,00,17,11,2,$year);
 		$db = 'jq_2012';
 	} elsif ($year eq '2013') {
-		$start_time = timelocal(00,00,17,17,2,2013);
+		$start_time = timelocal(00,00,17,17,2,$year);
+		$db = 'jq_2013';
+	} elsif ($year eq '2014') {
+		$start_time = timelocal(00,00,17,16,2,$year);
 		$db = 'johnnyquest';
 	}
 
-	if ($year eq '2013') {
+	if ($year eq '2014') {
 		my $now = time;
 		$end_time = $now - $start_time > 327600 ? $start_time + 327600 : $now;
-		print "|$end_time|\n";
 	} else {
 		$end_time = $start_time + 327600;
 	}
@@ -56,16 +58,16 @@ $data{$year} = $data;
 push @legend, $year;
 }
 
-my $aref = $data{'2013'};
+my $aref7 = $data{'2014'};
+my $aref  = $data{'2013'};
 my $aref6 = $data{'2012'};
 my $aref1 = $data{'2009'};
 my $aref2 = $data{'2008'};
 my $aref3 = $data{'2007'};
 my $aref4 = $data{'2006'};
 my $aref5 = $data{'2005'};
-my @graph_data = ( [ @$labels ] , [ @$aref ], [ @$aref6 ], [ @$aref1 ] , [ @$aref2 ], [ @$aref3 ], [ @$aref4 ], [ @$aref5 ] );
+my @graph_data = ( [ @$labels ] , [ @$aref7 ], [ @$aref ], [ @$aref6 ], [ @$aref1 ] , [ @$aref2 ], [ @$aref3 ], [ @$aref4 ], [ @$aref5 ] );
 
-#$graph = GD::Graph::lines->new(600,500) or die "couldn't do it: $!";
 $graph = GD::Graph::lines->new(800,800) or die "couldn't do it: $!";
 $graph->set_title_font("$font_path/Ubuntu-B.ttf", 14) or die "couldn't do it: $!";
 $graph->set_legend(@legend);
@@ -134,7 +136,7 @@ sub get_timestamps_from_db {
 	if ($db eq 'jq_2005') {
 		$sql = "select entry_time from player_info order by entry_time";
 	}
-	print "$sql\n";
+	print "$db\t$sql\n";
 	my $aref = multi_row_query($sql);
 	for my $href (@$aref) {
 		push @timestamps, $href->{'entry_time'};

@@ -1,13 +1,13 @@
 <h1>Lucky the Chimp</h1>
 
-<div class="center">
-<img class="bordered center" src="mugshot.gif" title="Lucky's going down the river." width="484" height="183" />
-</div>
 
 <p>To introduce newcomers to the JQMCBP, Lucky the Chimp is our loyal mascot and favorite repeat offender (see above). He's back again with his random coin-flip-generated bracket, and he's again brought his <a href = "?army">POSSE.</a></p>
 
+<img src='images/luckyComputer.gif' class = 'float-right'/>
 <p>Lucky had a dream run in 2001, picking Duke to win it all (which they did). Although his other picks didn't do so well, he still beat a huge number of entrants.</p>
 
 <p>Lucky is the leader of the <a href = "?army">1000 CHIMP ARMY</a> again, in an effort to redeem his years of futile efforts.</p> 
 	
+<img class="bordered center" src="mugshot.gif" title="Lucky's going down the river." width="484" height="183" />
+
 [% PROCESS next link = 'army' %]

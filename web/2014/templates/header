@@ -9,6 +9,8 @@
 
 
 <link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link rel="stylesheet" href="css/jquery.countdown.css" type="text/css" />
+
 [% IF keyword == 'stately' %]
 	<link rel="stylesheet" href="stately/assets/css/stately.css" type="text/css" />
 [% END %]
@@ -19,10 +21,12 @@
 [% IF keyword == 'top' %]
 <script src="/javascript/airport.js" language="JavaScript"></script>
 <script src="/javascript/jquery-texteffects.js" language="JavaScript"></script>
-<script src="/javascript/jquery.countdown.min.js" language="JavaScript"></script>
+<script src="/javascript/jquery.plugin.js" language="JavaScript"></script>
+<script src="/javascript/jquery.countdown.js" language="JavaScript"></script>
 <script src="/javascript/jplayer/jquery.jplayer.min.js" language="JavaScript"></script>
-[% ELSIF keyword == 'enter' || keyword == 'willtherebeajqmcbpthisyear' %]
-<script src="/javascript/jquery.countdown.min.js" language="JavaScript"></script>
+[% ELSIF keyword == 'enter' || keyword == 'willtherebeajqmcbpthisyear' || keyword == 'overview' %]
+<script src="/javascript/jquery.plugin.js" language="JavaScript"></script>
+<script src="/javascript/jquery.countdown.js" language="JavaScript"></script>
 [% END %]
 
 </head>
@@ -78,7 +82,7 @@
 	);
 </script>
 
-[% ELSIF keyword == 'enter' || keyword == 'willtherebeajqmcbpthisyear' %]
+[% ELSIF keyword == 'enter' || keyword == 'overview' || keyword == 'willtherebeajqmcbpthisyear' %]
 <script type="text/javascript">
 	function startIt() {
 		var austDay = new Date();
@@ -89,7 +93,6 @@
 
 	$(document).ready(
 	function() {
-
 		setTimeout(function() {
 			$("#defaultCountdown").fadeIn('slow');
 			$("#stayTuned").fadeIn('slow');

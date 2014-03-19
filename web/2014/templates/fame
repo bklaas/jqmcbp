@@ -1,4 +1,6 @@
-    <h1>Past Champions and Losers of the Candy Bar Pool</h1>
+    <h1>The Hall of Fame and Shame
+	<img src = 'images/yogabbagabba.gif' class = 'float-right' />
+	</h1>
     <table class = 'thinborder' width="100%" cellpadding="3" cellspacing="0" title="Past Champions and Losers of the Candy Bar Pool.">
       <tr> 
         <th align='left' scope="col">Year</th> 
@@ -8,20 +10,20 @@
 	  </tr>
    <tr>
         <td>[% year %]</td>
-        <td nowrap >Could be a billion</td>
+        <td nowrap >Could be a billion (+1000 chimps)</td>
 	<td>Could be you</td>
 	<td>Also could be you</td>
 	
     </tr>
     <tr>
         <td>2013</td>
-        <td nowrap >711</td>
+        <td nowrap >711 (+1000 chimps)</td>
 	<td>William 'King Sized Snickers' Hershey</td>
 	<td>Dr. William Wonka</td>
     </tr>
     <tr>
         <td>2012</td>
-        <td nowrap >722</td>
+        <td nowrap >722 (+1000 chimps)</td>
 	<td>Chris 'Take 5' Gayler</td>
 	<td>Blair 'Beefcake' Brownyard</td>
 	

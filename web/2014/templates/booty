@@ -20,4 +20,7 @@
 	</table>
 </div>
 
+<img src = 'images/ronweasley.gif' />
+<img src = 'images/witholding.gif' />
+
 [% PROCESS next link = 'fame' %]

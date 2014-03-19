@@ -18,7 +18,7 @@ What, you aren't [% thisisme.name %]? <a href = "javascript:popUpAny('whoareyou.
 
 <div id = 'content'>
 <div id = 'main'>
-<h5>The JQMCBP is forever 100% free, but in June I am riding 150 miles on my bike to help fund MS research. <a href = 'http://main.nationalmssociety.org/site/TR/Bike/MNMBikeEvents?px=9224614&pg=personal&fr_id=19263' style = 'text-decoration: underline;'>Donate to my ride here.</a></h5>
+<h5>The JQMCBP is forever 100% free, but in June I am riding 150 miles on my bike to help fund MS research. <a href = 'http://main.nationalmssociety.org/site/TR/Bike/MNMBikeEvents?px=9224614&pg=personal&fr_id=22278' style = 'text-decoration: underline;'>Donate to my ride here.</a></h5>
 
 [% PROCESS $params.cgi %]
 </div>
