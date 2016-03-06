@@ -6,21 +6,25 @@ copy last year's johnnyquest database to jq_2009
 	mysql -u root jq_2009 < jq.sql
 	now this year's johnnyquest is ready for use (follow instructions below for setup)
 
-html space: copy johnnyquest/2007/ directory space to johnnyquest/2008/
-	rm jqmcbp; ln -s johnnyquest/2008 jqmcbp
+html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year>
+	cd jqmcbp/web && rm <this_year> && cp -rf <last_year> <this_year> && ln -s <this_year> <next_year>
+	<next_year> is a symlink to this year so the dynamic year in jq_globals.pl works up until the next JQMCBP
 	change year reference in credits.html
-perl space: copy /home/bklaas/jqmcbp_2007 to /home/bklaas/jqmcbp_2008
+	make sure halloffame list includes last year's winner and loser
+	change symlink at website root from <last_year> to <this_year>
+data/perl space: 
+        cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/Lucky.dat
+        cd jqmcbp && rm data_files/*.dat
 	rm jq; ln -s /home/bklaas/jqmcbp_2008 jq
 
-change year in config_variables subroutine ref of cgi-bin/jq_globals.pl 
-change year in html space jqmcbp/templates/header
+Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
 
 ###
 USE clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
 DO NOT just clear the tables. clear_db.sql will insert values to the games table and NULL out the teams table
 
 command:
-mysql -u root -phoopoe < clear_db.sql
+mysql -u root -p<pwd> < clear_db.sql
 
 use winners.cgi to define the bracket order (do not just edit www/jqmcbp/brackets.order, as winners.cgi updates the games table with game_* and region info)
 BIG FAT WARNING: cgi writes brackets.order to /data/benklaas.com/jqmcbp/. If you are staging in a different area and then copy to the live area, make damn sure that brackets.order is there and in the correct order. Fer Fuck's Sake.
