@@ -22,13 +22,11 @@
 <script type="text/javascript">
 
 	var slogans = [
-		'Sixteen Candles',
 		'Tastes like chicken',
 		'Only superficially about basketball',
 		'It is not social networking if I do not allow anyone else to speak',
 		'Come for the candy stay for the insanity',
-		'Fuuuuuuuuuuudge',
-		'Sweeeeeeeeet',
+		'A moose once bit my sister',
 		'I Want Candy'
 	];
 

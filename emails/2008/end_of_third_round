@@ -1,9 +1,0 @@
-Pseudo-code Award
-Jason Wulff  	 If #2pick=0, then Super Sugar Daddy, else whatever #2 wanted
-
-if ($leaders[1]->{'candybar'} eq '') {
-	$pick = 'Super Sugar Daddy';
-} else {
-	$pick = $leaders->{'candybar'};
-}
-

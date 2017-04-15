@@ -73,14 +73,14 @@ $graph->set_title_font("$font_path/Ubuntu-B.ttf", 14) or die "couldn't do it: $!
 $graph->set_legend(@legend);
 
 #my $max_y = $data[$#data];
-my $max_y = 750;
+my $max_y = 800;
 $graph->set(
 	box_axis	=> 0,
         x_tick_number	=> 4,
         x_labels_vertical	=> 1,
 	y_max_value => $max_y,
 	x_max_value => 90,
-	y_tick_number => 15,
+	y_tick_number => 16,
 	y_min_value =>	0,
 	long_ticks => 1,
         transparent	=> 0,

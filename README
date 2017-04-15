@@ -19,6 +19,11 @@ change year in html space jqmcbp/templates/header
 USE clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
 DO NOT just clear the tables. clear_db.sql will insert values to the games table and NULL out the teams table
 
+NOTE TO 2018 BEN FROM 2017 BEN: watch out to make sure that all second round and onward games in winners.cgi show up as 'foo' and not NULL. If they show up as NULL, RTT will be messed up.
+
+Here's a one-liner sql that will fix it
+UPDATE games set winner = 'foo' where round > 1;
+
 command:
 mysql -u root -phoopoe < clear_db.sql
 

@@ -1,4 +1,4 @@
-	<h1>Lucky's 1000 Chimp Army</h1>
+	<h1>Lucky's 1000 Chimp Army &#128584;&#128585;&#128586;</h1>
 		
 	<!--<img src = '/johnnyquest/images/chimparmy2_flipped.jpg' class = 'bordered rightfloat' />-->
 	<img src = 'images/luckyGun.gif' class = 'bordered rightfloat' />
@@ -16,6 +16,6 @@ Not satisfied with his personal-best 2001 performance as his crowning JQMCBP ach
 
 
 	<img src = '/johnnyquest/images/chimparmy3.jpg' class = 'bordered leftfloat'>
-A Score of 0 defines you squarely as a member of <i>Homo sapiens</i>, 500 means you aren't much different than <i>Pan troglodytes</i>, and a score of 1000 demonstrates that you scientifically identical to <i>Quercus bicolor</i>. </p>
+A Score of 0 defines you squarely as a member of <i>Homo sapiens</i>, 500 means you aren't much different than <i>Pan troglodytes</i>, and a score of 1000 demonstrates that you are scientifically identical to <i>Quercus bicolor</i>. </p>
 
 [% PROCESS next link = 'fame' %]

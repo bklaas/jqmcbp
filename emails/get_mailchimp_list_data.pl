@@ -17,6 +17,7 @@ my $high_score_query = "select score from scores where step = \"$step\" order by
 my $high_score_ref = single_row_query($high_score_query);
 my $high_score = $high_score_ref->{'score'} || '0';
 
+print "email, name, candybar, player_id, darwin, score, rank, leader\n";
 for my $href (@$ref) {
 	next if $href->{email} eq 'Anders.kurtis@gmail.com';
 
@@ -27,6 +28,10 @@ for my $href (@$ref) {
 	}
 	print "\"$high_score\"\n";
 }
+
+# XXX only for 2016
+#print join(",", '"jgmikulay@gmail.com"', '"Jenny Gator"', '"Did not enter one"', '"0"', '"1000"', '"0"', '"757"', '"757"');
+#print "\n";
 
 sub sanitize_quotes {
 	my $href = shift;

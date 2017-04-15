@@ -61,24 +61,21 @@ $(document).ready(
 <img src = "images/bigcookie.gif" />
 -->
 
-<!-- to be displayed after entries are closed -->
 
-<!--
+<div class = 'closed'>
 <h1> The Tourney Has Started and is Closed for Entries</h1>
 <h3><a href = 'player_bracket_selection.cgi' style = 'text-decoration: underline;'>I ENTERED BUT WHERE'S MY BRACKET I'M FREAKIN OUT!</a></h3>
 <h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
--->
 
-<!--
 <h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com" style='text-decoration: underline;'>Give it a shot</a></h3>
 
 <h3>
 If you've entered already and are looking for your bracket
 <a href = 'player_bracket_selection.cgi' style='text-decoration: underline;'>Head Here</a></h3>
+</div>
 
--->
 
-<!-- when entries are open -->
+<!-- when entries are open 
 <h1 class = "enter">Guaranteed Fun or Your Money Back!*</h1>
 *JQMCBP is free, so if you don't have fun I will donate an equivalent amount to <a href="javascript:popUpHF('images/human_fund.jpg')">The Human Fund</a><br />
 
@@ -201,6 +198,7 @@ If you've entered already and are looking for your bracket
 
 	</div>
 
+[% PROCESS wheresmybracket %]
 <div id = 'entry_counter'>
 <h2>JQMCBP Entries:</h2>
 <span class = 'entry_count'></span>
@@ -209,6 +207,7 @@ If you've entered already and are looking for your bracket
 <div id = 'entry_rate'>
 <img src = 'graphs/entries_yeartoyear.png' alt = 'Can we outnumber the 1000 Chimp Army?'>
 </div>
+-->
 
 <!--
 <p>

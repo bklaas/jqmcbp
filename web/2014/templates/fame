@@ -1,6 +1,5 @@
-    <h1>The Hall of Fame and Shame
-	<img src = 'images/yogabbagabba.gif' class = 'float-right' />
-	</h1>
+    <h1>The Hall of Fame and Shame &#127942;</h1>
+	<img src = 'images/synchronizedSkatersGoBonkers.gif' class = 'float-left' />
     <table class = 'thinborder' width="100%" cellpadding="3" cellspacing="0" title="Past Champions and Losers of the Candy Bar Pool.">
       <tr> 
         <th align='left' scope="col">Year</th> 
@@ -8,6 +7,7 @@
         <th align='left' scope="col">Champion</th> 
         <th align='left' scope="col">Loser</th>
 	  </tr>
+	<!--
    <tr>
         <td>[% year %]</td>
         <td nowrap >Could be a billion (+1000 chimps)</td>
@@ -15,7 +15,14 @@
 	<td>Also could be you</td>
 	
     </tr>
+	-->
     <tr>
+        <td>2014</td>
+        <td nowrap >811 (+1000 chimps)</td>
+	<td>Meredity 'Cadbury Egg' Hammons</td>
+	<td>Dr. Wilbur "Candy is a waste of time" Wonka</td>
+    </tr>
+     <tr>
         <td>2013</td>
         <td nowrap >711 (+1000 chimps)</td>
 	<td>William 'King Sized Snickers' Hershey</td>
@@ -134,5 +141,7 @@
           the Chimp</a></td>
       </tr>
     </table>
+	<img src = 'images/crazyCelebration.gif' class = 'float-left' />
+	<img src = 'images/yogabbagabba.gif' class = 'float-right' />
 
 [% PROCESS next link = 'enter' %]

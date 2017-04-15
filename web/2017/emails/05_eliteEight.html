@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XX</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/xAhuSDRIDHE">BEES!</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+<p>
+As a University of Wisconsin alum and attendee of the (un)Official Minneapolis Bunch Of Other Wisconsin Alums Congregate At Bar And Root For Bucky Badger Night, that was a bit of a gut wrench. It took 56 games but there was finally an overtime game, and it couldn't have been more exciting. Unfortunately it didn't work out for Bucky, but the Candy Bar Pool goes on and, as we all know, it's not about the basketball, it's about the candy.
+</p>
+
+<p>
+So who's still in it? There are 29 humans, 1 chimp, and one human who identifies as a chimp left as possible candy victors. According to the patented UCOW technology, my buddy BearDawg* wins 12.5% of the possible permutations of remaining brackets. Also in the mix are the ACTUALLY HUMAN "The Smartest Chimp", eyoung54**, Steve Shwaiko, and a host of others close behind. Details of the UCOW run below.
+</p>
+
+<p>* Just kidding. BearDawg? Never met him/her. DawgBear on the other hand I'm tight with.</p>
+<p>** Not to be confused with eyoung55, who is wanted in 10 states for insurance fraud</p>
+
+
+<div class = 'pre'>
+===== WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+BearDawg	16	12.500
+The Smartest Chimp	14	10.938
+eyoung54	12	9.375
+Steve Shwaiko	10	7.812
+Dan Clark	9	7.031
+Kelly Wolfe-Bellin	9	7.031
+Betsy Ross	8	6.250
+Annelise Ross	6	4.688
+Julie Smith	6	4.688
+Mark Richards	6	4.688
+Uriel the Chimp	6	4.688
+Riley Daine	6	4.688
+Angie Mowery	5	3.906
+Ronald Gin	5	3.906
+Derek Roesti	4	3.125
+Gym Nasium	4	3.125
+Andy Weinecke	4	3.125
+Richard Doher	3	2.344
+Jon Blake	3	2.344
+Amythemouse	3	2.344
+Milt Bellin	3	2.344
+Ruth Volkman	3	2.344
+Kerie Whelan	2	1.562
+andy anderson	2	1.562
+Michael The Deac Butler	2	1.562
+Hunter Tickel	2	1.562
+Justin Seipelt	1	0.781
+TomH	1	0.781
+Mark R Carlson	1	0.781
+Craig Wadzinske	1	0.781
+Lea Adams	1	0.781
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 122
+Chimp Wins: 6
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	105
+2	19
+3	2
+4	1
+5	1
+</div>
+
+<hr class = 'section' />
+<h1>Buggin you for charity</h1>
+<p>The JQMCBP was, is, and always will be 100% Free. In past years I've bugged you for donations to support my MS-150 bike ride. I can't make the ride this year, but will still bug you for money. <a href = "https://benklaas.com/jqmcbp/?charity">Have a look at the JQMCBP XX Charity Page</a> and, if you are able and willing, give piles of cash to one or many of the causes listed there.</p>
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+62 had the Florida win picked, 22 for Xavier, and just 14 for South Carolina.
+</p>
+
+<div class = 'pre'>
+Florida:  Amanda Ferguson, Amy McLanahan, Amythemouse, Andrew T. Bryan, BearDawg, Bill Gates, Bill Mazur, Brenda Ochs, Bret Malkowski, Cheryl Holton, Chris 'charby' Charbonneaux, chris gayler, Cindy Arvant, Colin Klaas, David 'Not at Work' Lucas, David Needham, Derek Roesti, Diane Sievert, Ethan 'Go Green' Ray, eyoung54, Fatty Stinky, Janet Keane, Jeff Dabbs, Jenny Gator, John Martin Lucas, Josie McCartney, Julie Smith, Katherine Gifford, Katrina schuler, Kerri Bruckner, Kevin Gill, Kim Landon, Kristen Lopez, Kyle Reardon, Lea Adams, Lindsey Cloud, Lisa Blake, Lisa Reed, Mark Richards, Marty Dickrell, Matt Jay, Matthew Dill, Mellissa Simko, Michelle Mondoux, Paul Schmidt, Pete Baenen, Princess Jasmine, Rob Reed, Robbie Smalling, Robert O'Bryan, Ronald Gin, Rowan Klaas, Sabrina Bier, Sarah DeLeon, Stella Van Houten, Steve Shwaiko, Susie Flora, Terry Sievert, Terry Sievert, TomH, Trey Woods, William Meyer
+
+Xavier:  Annabel Flora, Baba Delargy, Baron Joel Van Valin, Christopher May, Cormac 'Mac' OBoyle, Don Pechumer, Finn O'Boyle, Greg 'Krackel' Zinn, JeffreyB, Kelly Poole, Laura 'tippy toes' Goodwin, Margaret Care, Maria Seipelt , Matt Johnson, Mel Medler, Miles 'Shooty Hoops is a Real Sport' Haysman, Nolan Simmons, Old Joe Cislo, Papa P, Tracy Cleys, Usha D., Vee walker
+
+South Carolina:  Adam J Chittenden, Baron Joel Van Valin, Claire 'The Bear' Lucas, DeSontis The Cat (from the grave) Smalling, Don Pechumer, Donald Trump, Emil Angelica, Greg Freedman Ellis, Jim Chryssikos, Jokey Shanahan, Katrin Wenz, Maya O, Rainy Jay, wei
+</div>
+
+<!--
+<hr class = 'section' />
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+The Worst Typo Award goes to whatever family member created a filter just for my family, and then spelled our name wrong. No ass in Klaas.
+</p>
+-->
+
+<!--
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+</p>
+<div class = 'quote'>
+</div>
+
+<p>
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<hr class = 'section' />
+-->
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+UCLA's loss was the death knell for my own chances in JQMCBP, but no matter. So many more of you lost out Thursday and Friday, 171 in total. Yyyyouch. UCLA and Arizona were especially brutal on the pool's collective brackets, but let's also give a moment of silence to the 10 brave souls that had Purdue, Butler, Bayolor, or West Virginia as champs. Buh bye now.
+</p>
+
+<div class = 'pre'>
+Wisconsin: Jorgen Chapin, Thor Fabiado, TyGroh, Michelle Tresssel, Devin James Teal
+
+Baylor: Steve Danek, Peter C, Kristen Lopez
+
+Butler: Finn O'Boyle, Mel Medler
+
+UCLA: Ben Klaas, Joe Hoag, Tom Leeper, AndryDucey, Jim Parker, Scott Driscoll, Claire Westerlund, Ross Benson, Jeff 'Trouble Bruin' Hober, Caleb Anderson, Will Scott, Scott King, Zachary Klaas, Andy Glime, John Varesi, Jeremy Garncarz, Joe Cislo, Benjamin Dickson, Kristen Blake, Mr. Haney, Ted Ackerman, Syracuse Sour Grapes, Bill Mech, Greg Castle, Jake Lowenstern, Clayton b, Joshua Veltman, Paul Wadzinske, Brady Glime, Allen witt, Rick Wilder, JT, Bill Scott, curtis stalter, Sean Morgan, Eva Witt, wei, Daniel Weckstein, Brett Rootberg, jack smalling, Judi Durda, Craig Welsh, Dave Lyons, Ken 'Taking candy from a baby' Reo, Wendy Volkman, Dan Reed, Jeff Hartwig, Katie Genadek, Tyler Schmitt, Rashaan Clark, Michelle Morrisey, Parsa, Rick Tetlow, Kyle Reardon, Andy Ducey, Charlie Meilinger, Mark Larson, Bryan Boguslawski, Kurt Anders, Brian O'Donnell
+
+Purdue: Annie Rhoades, Drew Rupe
+
+Michigan: Colin Keiffer, Larry Ochs, blueberrymuffin , Cami Niyo, Sean Whelan, Alyssa Campbell , Brenda Ochs, Matt Rennie, Becca Castle, Sarah DeLeon, Jim McKelvey, Steve Lindsey, Cheryl Holton
+
+West Virginia: Anna Bier, John Housenga, Theresa L. White
+
+Arizona: Joel M Vause, Jaime Millard, Lance Van Houten, Kai Anderson, Sara Mitchell, Paul Smith, Lisa Blake, Dana Care, Chris Zurowski, Tom lyons, Todd Mullanix, Taylor DiGirolomo , chris daigh, Dave Giugni, Jeral Poskey, Izaak Sawyer, Dennis Brodjeski, Blake Brodjeski, Tracy Niyo, Oscar Valentine , John Caragher, Amythemouse, Jon Marthaler, Jim Stec, Dan Boyle, Tina Ferreter, BUSTA RHYMES , Colin Morrison, Chelsey Hungerholt, Todd Martin, Mark Foster, Terry Sievert, Terry Sievert, Heather Lucas-Foster, C Stiddy O'B, Fatty Stinky, Chris Larson, Sarah Ogborn, Todd M Is Lame, stephen malcolm anderson, Rod Cookie Layer Crunch, Steve Lantz, Hayden Tucker Bier, Sandlots, Josie Davis, Tim Rush, Jeff Waterstredt, Bill Mazur, Josie McCartney, Rob Giannoni, prince ali, The Sedge, Jon Blake, Joel Rondeau, Mike Shanahan, jennyrupe, Princess Jasmine, Marty Dickrell, Jack Wenz, Jane Cislo, Julian Louis Wenz, Angie DeWaard, Katrin Wenz, Will Arvant, Michael Ferreter, Patrick O'Boyle, Bill Gates, B.J. Bardy, ElisaNicole, Josh Thaler, Nate Reed, Robert Portnoy, Alex Frangos, BIll Crandall, Rowan Klaas, Matthew Meilinger, Amy Glomski, Mitchell Post, Dave Hebert, Tor Tor, BillG, Bill Evans, Craig Roder
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+I guess the one point of solace is that so many more Michigan alums lost out than Wisconsin alums. Sad!
+</p>
+
+<p>
+Also nice try Cami Niyo you are not old enough to have graduated from the University of Michigan. That's 10 points from Hufflepuff.
+</p>
+
+<div class = 'pre'>
+Wisconsin: Ben Klaas, Craig Wadzinske, Paul Smith, Jenny Gator, Steve Danek, Glen Volkman, Kevin Quinn, Steve Shwaiko, Alex Anderson, David Van Riper, Paul Wadzinske, Vee walker, Mike Weipert, Wendy Volkman, Joel Rondeau, Marty Dickrell, Lisa Wadzinske, Greg Wenz, John McCartney, Matt Calvert, Jonathan Schroeder, Mark Larson, Paula Shwaiko
+
+UCLA: John Varesi, Joshua Veltman, Rick Wilder
+
+Purdue: Patrick Zunk, Todd Mullanix, Paul Repp, Dave Aucott, Sarah Ogborn, Tim Ogborn, Brian Hampton, Dan Ridgeway, David Needham
+
+Michigan: Colin Keiffer, Alex 'ball hard in the paint' Goff, Mooseman Bruce Ghastin, Michael 'The Engineer' Collins, Claire Westerlund, Faith Anders, Kelli Strom, kchauvin1, Larry Ochs, Barbie Girl, blueberrymuffin , Cami Niyo, Sean Whelan, Alyssa Campbell , The Real Joseph Ghastin, Tracy Niyo, Joe Cislo, Jim Stec, Matt Rennie, Greg Castle, Kendra White, Chad Pechumer, Shamrock , Jonathan White, P West, Alvin Lee, Sean Morgan, Sarah DeLeon, Allan Dranberg, Tom Lettenberger, Daniel Weckstein, John Cooper, Usha D., Rob DeLeon, Alex Ross, John Geis, Leto, Velvet Fog, Michael Maten, Jonathan Klimczuk, Jeff Hartwig, john niyo, B.J. Bardy, Rob M, Kate Meilinger, Pete Arvant, Fielding Yost, Dave Hebert, Ryan Herrington, BillG, Betsy Ross, Katy Klimczuk, Sophie Groves
+
+Arizona: Todd Martin, Todd M Is Lame, Ajay Shrestha
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>The Top of the Reverse Alphabetical List Award goes to Velvet Fog for the choice of Zotz!, the last alphabetically amongst 869 candybar choices.
+</p>
+
+<p>An Absolutely True Zotz! story: A few years back I was trying to find Zotz! in Minneapolis (as one is wont to do) via my phone's voice search. I couldn't get the phone to understand what I was asking for, it kept thinking I was saying something else. Google actually saves a recording of every time you do an "OK Google" voice search into your phone, and keeps a record that you can listen to later. </p>
+
+<p>So I parused my records, and here are the verbatim things I said, recorded by Google as Important Data worthy of being Saved For Eternity:
+
+<div class = 'quote'>
+OK Google, where can I get socks in Minneapolis?
+</div>
+
+<div class = 'quote'>
+OK Google, no where can I get socks in Minneapolis?
+</div>
+
+<div class = 'quote'>
+OK Google, where can I get sod in Minneapolis?
+</div>
+
+<div class = 'quote'>
+OK Google, where can I get shots in Minneapolis?
+</div>
+
+<div class = 'quote'>
+OK Google, washcloth in my pants.
+</div>
+
+<p>Honestly, I'm not making this up. Other gems from my personal voice search history:</p>
+
+<div class = 'quote'>
+OK Google, "and YOU get a car" translated into Spanish
+</div>
+
+<div class = 'quote'>
+OK Google, hammerschlagen
+</div>
+
+<div class = 'quote'>
+OK Google, voocaray recipe
+</div>
+
+<div class = 'quote'>
+OK Google, Jack Handey Deep Thoughts
+</div>
+
+<div class = 'quote'>
+OK Google, REM Green Tour 1989
+</div>
+
+<div class = 'quote'>
+OK Google, Montana University's film program
+</div>
+
+<div class = 'quote'>
+OK Google, Scooby doo show mysterious girl
+</div>
+
+<div class = 'quote'>
+OK Google, just what is in Cool Whip
+</div>
+
+<div class = 'quote'>
+OK Google, why did Bradley Cooper sign on to the Limitless show?
+</div>
+
+<div class = 'quote'>
+OK Google, is the tawny frogmouth so wise?
+</div>
+
+<p>There are also about a half dozen times where I ask for images of mudskippers. So apparently I really like those creatures.</p>
+
+ <hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Steve Shwaiko</td><td>Illinois</td><td>Big chunky</td><td>Gonzaga</td><td>76</td></tr>
+<tr><td>2</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>74</td></tr>
+<tr><td>3</td><td>Andy Weinecke</td><td>California</td><td>Peanut M&Ms</td><td>Kansas</td><td>72</td></tr>
+<tr><td>4</td><td>andy anderson</td><td>Idaho</td><td>SOUR SKITTLES</td><td>Villanova</td><td>70</td></tr>
+<tr><td>4</td><td>Bill Teer</td><td>Texas</td><td>big hunck</td><td>Kansas</td><td>70</td></tr>
+<tr><td>4</td><td>Kerie Whelan</td><td>Michigan</td><td>Toblerone</td><td>Villanova</td><td>70</td></tr>
+<tr><td>4</td><td>Michelle Housenga</td><td>Minnesota</td><td>Peanut Butter Twix</td><td>Gonzaga</td><td>70</td></tr>
+<tr><td>8</td><td>Amythemouse</td><td>Washington</td><td>Bacon jelly beans</td><td>Arizona</td><td>69</td></tr>
+<tr><td>8</td><td>Angie Mowery</td><td>Iowa</td><td>O'Henry</td><td>Gonzaga</td><td>69</td></tr>
+<tr><td>8</td><td>Jon Blake</td><td>California</td><td>King Size Butterfinger mmmmm</td><td>Arizona</td><td>69</td></tr>
+<tr><td>8</td><td>Julia -2016 Champ- Foster</td><td>Illinois</td><td>Gummy Bears</td><td>Villanova</td><td>69</td></tr>
+<tr><td>8</td><td>Michael The Deac Butler</td><td>Georgia</td><td>1906 Chocolate Bar</td><td>Duke</td><td>69</td></tr>
+<tr><td>8</td><td>Nancy Niergarth</td><td>Michigan</td><td>Hershey baar</td><td>Villanova</td><td>69</td></tr>
+<tr><td>8</td><td>Rob Strnad</td><td>Minnesota</td><td>PB Max</td><td>North Carolina</td><td>69</td></tr>
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Uriel is the one to watch out for. A Xavier win will position the Chimp Army for their first JQMCBP win ever.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Anya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>57</td></tr>
+<tr><td>2</td><td>Amiya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>55</td></tr>
+<tr><td>3</td><td>Uriel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Xavier</td><td>50</td></tr>
+<tr><td>4</td><td>Saul the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico St</td><td>49</td></tr>
+<tr><td>4</td><td>Tariq the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>49</td></tr>
+<tr><td>6</td><td>Quinn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iona</td><td>48</td></tr>
+<tr><td>6</td><td>Zaria the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>48</td></tr>
+<tr><td>8</td><td>Bryant the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>47</td></tr>
+<tr><td>8</td><td>Chaya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oregon</td><td>47</td></tr>
+<tr><td>8</td><td>Cruz the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas</td><td>47</td></tr>
+<tr><td>8</td><td>Ivy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>47</td></tr>
+<tr><td>8</td><td>Miriam the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>47</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2017 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

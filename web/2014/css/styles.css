@@ -65,7 +65,7 @@ html {
 a, a:visited {
   color: #2c2c2c;
   background: inherit;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 a:hover {
   color: white;
@@ -74,7 +74,7 @@ a:hover {
   border-radius: 2px; }
 
 /* headers */
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4 {
   font-family: "SportsWorld", "Helvetica", sans-serif;
   font-size: 12px;
   font-weight: normal;
@@ -92,7 +92,9 @@ h3 {
   font-weight: normal; }
 
 h5 {
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
   font-size: 14px;
+  font-weight: normal;
   font-weight: normal; }
 
 /* Paragraph */
@@ -439,7 +441,7 @@ input.button {
 
 #main h2 a {
   color: #9583a5;
-  text-decoration: none; }
+  text-decoration: underline; }
 
 #main ul li {
   list-style-type: disc; }
@@ -763,6 +765,9 @@ span.visible {
   right: 0px;
   z-index: 1; }
 
+div.closed h1, div.closed h2, div.closed h3, div.closed h4, div.closed h5 {
+  font-family: "RobotoMedium"; }
+
 div.hidden {
   display: none; }
 
@@ -1005,6 +1010,9 @@ tr.bracket_header {
   color: #324651; }
 
 .monkey {
+  font-family: "RobotoMedium", "Helvetica", sans-serif;
+  font-size: 11px;
+  font-weight: normal;
   color: black;
   background: yellow; }
   .monkey a {

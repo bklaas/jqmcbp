@@ -1,6 +1,4 @@
 #!/usr/bin/perl
-# #!/Users/bklaas/perl5/perlbrew/perls/perl-5.14.1/bin/perl
-
 # UCOW = Unweighted Chance Of Winning
 
 use strict;
@@ -8,7 +6,6 @@ use DBI;
 use Data::Dump qw/dump/;
 
 use vars qw/ $dbh /;
-#do "/data/cgi-bin/jq_globals.pl";
 do "jq_globals.pl";
 #connect_to_db('johnnyquest', '192.168.1.199');
 connect_to_db('johnnyquest');
@@ -17,6 +14,8 @@ connect_to_db('johnnyquest');
 ## SET THE REMAINING TEAMS VARIABLE HERE
 ## EVERYTHING ELSE SHOULD TAKE CARE OF ITSELF
 #################################
+#my $remainingTeams = 16;
+#my $remainingTeams = 8;
 my $remainingTeams = 4;
 
 my $N;

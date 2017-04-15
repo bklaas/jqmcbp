@@ -28,7 +28,8 @@ if (    $PARAMS->{'keywords'} eq 'enter' ||
 # change this to overview at launch
 $PARAMS->{'keywords'} = 'overview' unless $PARAMS->{'keywords'};
 
-$CONFIG->{'template_dir'} = '/data/benklaas.com/jqmcbp/templates';
+#$CONFIG->{'template_dir'} = '/data/benklaas.com/jqmcbp/templates';
+$CONFIG->{'template_dir'} = '/home/bklaas/jqmcbp/web/2012/templates';
 my $tmpl = "index";
 
 unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {

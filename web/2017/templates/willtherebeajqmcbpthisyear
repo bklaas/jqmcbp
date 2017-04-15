@@ -1,0 +1,8 @@
+<h1 style="border: none;">YES</h1>
+<p></p>
+<!--
+<h1><a href = '?overview'>SO ENTER ALREADY</h1>
+-->
+<div id = 'defaultCountdown'></div>
+    <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif'>
+
