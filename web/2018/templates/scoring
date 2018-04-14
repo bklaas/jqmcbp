@@ -1,0 +1,22 @@
+    <h1>The Scoring &#127936;</h1>
+
+	<div class = 'scoring'>
+		<ul>
+		  <li>Each 1st round game correctly prognosticated:<br /> 1 point</li>
+		  <li>Each 2nd round game correctly prognosticated:<br /> 2 points</li>
+		  <li>Each 3rd round game correctly prognosticated:<br /> 4 points</li>
+		  <li>Each 4th round game correctly prognosticated:<br /> 6 points</li>
+		  <li>Each Final Four game correctly prognosticated:<br /> 8 points</li>
+		  <li>NCAA champion correctly prognosticated:<br /> 16 points</li>
+		</ul>
+	 
+		<p>Boy, it's fun saying prognosticated...</p>
+	</div>
+
+	<div class = 'scoring'>
+		<img src='http://i.imgur.com/xulA51d.gif' />
+	</div>
+	
+	<div style = 'float: left; clear: both;'>
+[% PROCESS next link = 'booty' %]
+	</div>

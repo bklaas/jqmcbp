@@ -1,0 +1,13 @@
+[% IF params.cgi != 'player_bracket' %]
+<div id = 'popMe' style = "float:right; text-align: right; font-size: 9px;">
+[% IF cookie %]
+Welcome <a href = "player_bracket.cgi?player_id=[% cookie %]">[% thisisme.name %]</a><br>
+your rank is [% thisisme.rank %]/[% params.pool_size %]<br>
+your score is [% thisisme.score %] (leader @ [% params.high_score %])<br>
+What, you aren't [% thisisme.name %]? <a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">change it
+</a>
+[% ELSE %]
+<a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">Who are you?</a>
+[% END %]
+</div>
+[% END %]

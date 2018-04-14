@@ -1,0 +1,34 @@
+<h1>The Booty  &#127851; [&nbsp;&nbsp;] &#127926;</h1>
+<div class="center">
+	<table class = 'thinborder'>
+		<tr> 
+		    <th scope="col" align = 'left' width = '100'>Place</th>
+		    <th scope="col"align = 'left'>Prize</th>
+		  </tr>
+		  <tr> 
+			<td>1st Prize</td>
+			<td>A Scrumpdillyicious Candy Bar, mailed anywhere on the globe.</td>
+		  </tr>
+		  <tr> 
+			<td>2nd Prize</td>
+			<td>BIG FAT nothing</td>
+		  </tr>
+		  <tr> 
+			<td>3rd prize</td>
+			<td>CD of my choosing from Wendy and Ben's Music Collection (Past selections include such classics as 'Pokemon: U B A Master' and 'Atari Teenage Riot: Burn, Berlin, Burn!')</td>
+		  </tr>
+	</table>
+</div>
+
+<!--
+<img src = 'images/ronweasley.gif'>
+<img src = 'images/witholding.gif' />
+-->
+
+<img src="https://i.imgur.com/kiamhxi.gif" width = '400' />
+<!--<iframe class="imgur-embed" width="100%" height="720" frameborder="0" src="https://i.imgur.com/kiamhxi.gifv#embed"></iframe>-->
+<a href="https://imgur.com/xP4Cd1c"><img src="https://i.imgur.com/xP4Cd1c.gif" title="source: imgur.com" width = '400' /></a>
+<a href="https://imgur.com/RtNfhUY"><img src="https://i.imgur.com/RtNfhUY.gif" title="source: imgur.com" width = '400' /></a>
+<a href="https://imgur.com/OrhzC66"><img src="https://i.imgur.com/OrhzC66.gif" title="source: imgur.com" width = '400' /></a>
+
+[% PROCESS next link = 'fame' %]

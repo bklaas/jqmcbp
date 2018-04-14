@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css"  href="locale.css">
+<script src="/javascript/jquery.js" language="JavaScript"></script>
+<script language = 'javascript'>
+
+
+function showDiv(divId) {
+	var divs = new Array( 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12' );
+	for (var i = 0; i < divs.length; i++) {
+		var thisDiv = divs[i];
+		if (thisDiv == divId) {
+			$("#" + thisDiv).fadeIn();
+		} else {
+			$("#" + thisDiv).fadeOut();
+		}
+	}
+}
+
+$(document).ready( function() {
+	$("#img12").fadeIn();
+});
+
+// do a fade in fade out thing with document.ready
+
+</script>
+<body>
+<div id = 'menu'>
+<a href = "javascript:showDiv('img1');">2001</a>|
+<a href = "javascript:showDiv('img2');">2002</a>|
+<a href = "javascript:showDiv('img3');">2003</a>|
+<a href = "javascript:showDiv('img4');">2004</a>|
+<a href = "javascript:showDiv('img5');">2005</a>|
+<a href = "javascript:showDiv('img6');">2006</a>|
+<a href = "javascript:showDiv('img7');">2007</a>|
+<a href = "javascript:showDiv('img8');">2008</a>|
+<a href = "javascript:showDiv('img9');">2009</a>|
+<a href = "javascript:showDiv('img10');">2012</a>|
+<a href = "javascript:showDiv('img11');">2013</a>|
+<a href = "javascript:showDiv('img12');">2014</a>|
+</div>
+<div class = 'locale' id = 'img1'><img src = 'locale_2001.png'></div>
+<div class = 'locale' id = 'img2'><img src = 'locale_2002.png'></div>
+<div class = 'locale' id = 'img3'><img src = 'locale_2003.png'></div>
+<div class = 'locale' id = 'img4'><img src = 'locale_2004.png'></div>
+<div class = 'locale' id = 'img5'><img src = 'locale_2005.png'></div>
+<div class = 'locale' id = 'img6'><img src = 'locale_2006.png'></div>
+<div class = 'locale' id = 'img7'><img src = 'locale_2007.png'></div>
+<div class = 'locale' id = 'img8'><img src = 'locale_2008.png'></div>
+<div class = 'locale' id = 'img9'><img src = 'locale_2009.png'></div>
+<div class = 'locale' id = 'img10'><img src = 'locale_2012.png'></div>
+<div class = 'locale' id = 'img11'><img src = 'locale_2013.png'></div>
+<div class = 'locale' id = 'img12'><img src = 'locale_2014.png'></div>
+</body>
+</html>

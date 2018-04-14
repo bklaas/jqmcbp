@@ -1,0 +1,12 @@
+update teams set team = "Radford" where team = "LIU Brooklyn/Radford";
+update picks set winner = "Radford" where winner = "LIU Brooklyn/Radford";
+update teams set team = "St Bonaventure" where team = "St Bonaventure/UCLA";
+update picks set winner = "St Bonaventure" where winner = "St Bonaventure/UCLA";
+update player_info set champion = "Radford" where champion = "LIU Brooklyn/Radford";
+update player_info set champion = "St Bonaventure" where champion = "St Bonaventure/UCLA";
+update teams set team = "Texas Southern" where team = "NC Central/Texas Southern";
+update picks set winner = "Texas Southern" where winner = "NC Central/Texas Southern";
+update player_info set champion = "Texas Southern" where champion = "NC Central/Texas Southern";
+update teams set team = "Syracuse" where team = "Arizona State/Syracuse";
+update picks set winner = "Syracuse" where winner = "Arizona State/Syracuse";
+update player_info set champion = "Syracuse" where champion = "Arizona State/Syracuse";

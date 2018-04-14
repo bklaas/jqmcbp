@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 use DBI;
+#use Data::Dump qw(dump);
 
 die "usage: ./dat2db.pl path_to_files man_or_chimp" unless (-d $ARGV[0] && ($ARGV[1] eq "man" || $ARGV[1] eq "chimp" ));
 
@@ -105,7 +106,11 @@ foreach $key (keys %picks_info) {
 
 # write to PLAYER_INFO table
 construct_playerinfo_sql();
-$dbh->do($playerinfo_sql) unless $test;
+
+unless ($test) {
+	$dbh->do($playerinfo_sql) unless $test;
+
+}
 
 # grab player_id from PLAYER_INFO table
 my $player_id_sql = "SELECT player_id from player_info where name = \"$picks{name}\" order by player_id desc limit 1";
@@ -166,6 +171,12 @@ $dbh->do($insert) unless $test;
 # end readdir while loop
 }
 closedir(DIR);
+
+# fix weird quote chars
+my $q1 = "update `player_info` set `candybar` = REPLACE(`candybar`, CHAR(145), \"'\")";
+my $q2 = "update `player_info` set `candybar` = REPLACE(`candybar`, CHAR(146), \"'\")";
+$dbh->do($q1);
+$dbh->do($q2);
 
 # finally, write the entry_count.json file
 my $howmany = "SELECT count(*) as count from player_info where man_or_chimp = 'man'";

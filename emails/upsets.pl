@@ -19,7 +19,7 @@ close(UPSETS);
 
 for (sort keys %upsets) {
 	my $query = "select picks.name, picks.winner from picks, player_info where picks.player_id = player_info.player_id and game = \"$_\" and winner = \"$upsets{$_}\" and (man_or_chimp = 'man') order by name";
-#	print $query . "\n";
+	#print STDERR $query . "\n";
 	print "$upsets{$_}:  ";
 	my $ref = multi_row_query($query);
 	my @temp = @$ref;
