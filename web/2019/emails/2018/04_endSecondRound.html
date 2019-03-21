@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin-top: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXI</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/kAqIJZeeXEc">It's Got Electrolytes</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<!--<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>-->
+
+<div class = "quote">
+When you fall, I will be there to catch you.
+</div>
+-The Floor<br />
+<p>
+This section is definitely the lede. The first four days blew up a <em>massive</em> number of JQMCBP brackets. Virginia, the most popular pick to win it all, devestated 170 candy seekers on Friday. That's gotta be it, right? Nope.
+</p>
+
+<img src ="https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/2b24f438-b8c3-46d3-ad2d-38b779c91fd9.jpg" />
+<p>
+Michigan State was only a 3-seed, but was the third most popular pick in JQMCBP. 98 people picked them as their champion. Nope.
+</p>
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/a4d7a3a4-54ce-4f60-bbce-1da11277d2fa.jpg" />
+<p>
+Then North Carolina, a 2-seed, got positively shellacked by Texas A&amp;M. Thirty-eight chocolate hopefuls had them going all the way. Nope.
+</p>
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/418ff8ec-1cac-4286-ba71-d15d6a3fcb60.jpg" />
+<p>
+The Meister's selection for winning the bracket, the Cincinnati Bearcats, went up 22 points with 10 minutes left against the Nevada Wolfpack. Excellent, I thought, this one's in the bag. Nope. Nope, nope, nope. Nevada outscores Cincinnati 32-8, tying the largest comeback in tournament history, and wins by 2. Another 22 players join the what-were-they-thinking club. Me included. #sadpandaemoji
+</p>
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/9bd6c092-6086-4319-adf8-b6d9d5c00287.jpg" />
+<p>
+Alright, #1 seed Xavier's really good. A shoe-in, right? Nooooooooope. Wait, Xavier lost? Well of course they did.
+</p>
+<p>
+After all was said and done, 224 of you lost your champion over the weekend, and a mind-blowing 425, more than 50% of all human entrants, over the first four days. It's really not supposed to work like that.
+</p>
+
+<div class = 'pre'>
+Tennessee: Kazu Delargy, Michael Weipert, Max Barton
+
+Ohio State: Rod Harl, Bridget Burns, Jokey Shananagins, Bam Bam Shananagins, Kim Armitage , Annette Dyal, Mike Shananagins, Fedorame 'payday' Fudge
+
+Alabama: Jordan wheeler
+
+Florida: Herman ‘Stop the Madness’ Weiss, Kelly Clark
+
+Michigan State: Andrew Moore, Ken Mills, Kathy Guimond, Stacy Trussell , Evan Sargent, Kendall DiGirolomo, Richard Doher, Lesley Hogg, Nick DiGirolomo, Natalie Weir, Matt Carlton, Maria E Seipelt, Helen Copley, Bill Evans, Billy Beck, Steve Kushion, Mike Ford, Dustin Ramoie, Trevor Hartmann, Shae Lorenc, Kevin Quinn, Ben Glime, Andy Ducey, Mark Largent, Sherri , Ken Reo, Shaul Hurwitz, Chris Hewitt, Alexsandra Lonetti , Ethan 'Go Green' Ray, Kurt Gardinier, Scott Driscoll, Brian Fitzpatrick, Eddie Sander, Mel Medler, Andy Glime, Anthony M Borgia, Noga Hurwitz, Terry Valentine, Eric Gifford, Kristin Gifford, Katherine Gifford, Christie, Steve R, Zoey the great., Brady Glime, Cindy Arvant , Peggy meagher, Green Acres, Lyman Hancock, Old  Joe Cislo, Go Green!, Steve Englehart, Dane Rozek, Keith Boyd, David Smalling, Craig Welsh, Brian Hampton, Lindsay Genadek, James Delproposto, Eddie Deevine, Laura Beckeman, Jessica Wiltse, Therese Hebda, Estela Hebda, Rich Todd, Rick Shepich, Jacob Strom, Shawn Gloden, Michael Hartmann, Barack Obama, Bob Armitage , Andy Reynolds, jim the seal, Dana Care, C Stiddy  , President Barack Obama, Tom Hoag, Sam Hoag, Ben Lantz, Matt Suomi, Amy McLanahan, Patrick Dillon, Scott Johnson, Dick Vitale, Bar Low, Patrick O'Boyle, Keith Baker, Jenny Gator, Susan Bannan, Bill Crandall, Paula Fronckowiak, Jonathan Schroeder, Greg Wenz, Julian Wenz, Michelle Housenga, MATT GOODRICH, Tami 2
+
+Cincinnati: Ben Klaas, Dave Giugni, Jane Cislo, Zachary Klaas, Kaitlin Jensen, Wesley Amato, Wesley Amato, Jeffrey Bunch , Joe Cislo, Steve Danek, Mark Larson, Sam Christopherson, Peter JC, Mark Foster, John McCartney, Nicki Boweras, miyagi-do, Sue “the shoe” walker, David Mitchell, Rudy Pedraza, Montezuma’s Revenge, Jacob Wadzinske, Thijs Housenga, Tamara Fink
+
+North Carolina: Joe Hoag, Kari Williams, Ben Kehrwald, Jim Chryssikos, Risa Griffin, Geraldine Cowden, Colin 'G-Love, Hold the Special Sauce' Gjervold, Carson Moxie Klaas, Jeff Amato, Sean Kittridge, Bob Rogers, Justin McAlister, Maizey (done by Darby Niyo), Marion Brown, Chris Zurowski, Brian O'Donnell, Eva Witt, Nathan Glime, Scott Boniface, Kirk, Eric Young, Shannon O'Hare, Beth Norberg, Will Ervin, Maya O'Hare, Renee O'Hare, Reed Reynolds, Isaiah O'Hare, Teresa Bryan, Michael The Deac Butler, Jenni Thomas, Chris Bowhay, Martin Dickrell, Ryan Schmitt, Whitechocolatekitkat, El Dub, Christy Griesheimer, Stella Van Houten
+
+Auburn: Eric Gottlieb, Lester Roquefort, Annie Rhoades
+
+Xavier: Jaime Millard, Ross Benson, PK Noice, Bear Dawg, Jon Blake, Noah weiss, Rebecca Behrens, Gregory White II, Mike Riggins, Becky Burton, Ian Hatzilias, Samuel McWilliams, Milo Anderson, Rennie Anderson, Ruth Chittenden, Myron Danielson, Sofia Amato, Jeff Shipley, Caleb Anderson, Blake Brodjeski, jennyrupe, Stephanie H, Rob Bellin, Bob Smalling, Brennan Swanson, Ellen Gifford, Jennifer Meagher, Nicholas LeTarte, Kenny Boyd, John Caragher, Lisa Reed, Emily Caragher, Charlotte Bier, Nate Hafer, KWest, Lucy Tice, Tyler Schmitt, Kurt Anders, Greg Freedman Ellis, Quinn, Romke Mooiweer, Mommy Shananagins, Sam Rhoades, Cathryn 'Killer' Kristine, Carin 'Jump Shot' Jean
+
+UMBC: Andrew Mossburg, Salty Salmon
+</div>
+
+<p>
+So long suckers!
+</p>
+
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+Over the weekend we lost some very interesting mascots: Volunteers, Buckeyes, Crimson Tide, Gators, Pirates, Spartans, Rams, Bearcats, Musketeers, and a Chesapeake Bay Retriever named True Grit. But my favorite of the losing mascots has to be The Thundering Herd of Marshall. It's so non-specific, yet utterly terrifying!
+<p>
+"Here comes the Tigers on one side of the field and...OMG A GIANT THUNDERING HERD IS COMING FOR THE TIGERS! THERE'S NOTHING TO STOP IT! WHAT ARE THEY? I DON'T KNOW! BUT BY GOSH, IT'S THUNDERING! OH THE HUMANITY!"
+</p>
+
+<p>
+It's really hard to compete with a Thundering Herd. Who could beat that? Perhaps my new For-Profit University, the Johnny Quest Library, Mines and Ophthalmology University (JQ LMaO U). Our mascot is The Field Covered in Banana Peels. You scoff at its absurdity, but how else would you stop a Thundering Herd? GO PEELS!!
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+54 had Nevada winning, 47 had Texas A&amp;M into the Sweet 16, and these 25, 22, and 24 somehow knew Syracuse, Kansas State, and Florida State, respectively, would be advancing:
+</p>
+<div class = "pre">
+Syracuse:  Alex 'Kit Kat Dark' Man , Alexa Sonnier, Amy Lyons, Casey O'Hara, Chris 'charby'  Charbonneaux, Emily Caragher, Fran Fabrizio, Helen Regan, Jeff Johnson, Kyle Ashland, Laurie Anderson, Lester Roquefort, Lindsey Cloud, Margaret Wadzinske, Mark Foster, Mason Smalling, Mazzie Clark, Millie Tressel, Montezuma’s Revenge, Slappy Band, Stella Van Houten, stephen malcolm anderson, Steve Danek, Tim Hoffman, Whitechocolatekitkat
+
+Kansas State:  Annette Dyal, Becky Burton, Benjamin R Haines, Billy Beck, Cad Monkey, Christy Griesheimer, Debra Hendren , Emily Caragher, Eric Gottlieb, Finn O'Boyle, Gina Rumore, Gregory J White III, Hadassah Thau, Helen Care, Joel Van Valin, Jordan wheeler, Kevin Chauvin, Morgan 'Menacing' Mary, Peggy meagher, Stephanie Lozenski, Theresa White, Willy Lee
+
+Florida State:  Annette Dyal, Brenda Ochs, Cad Monkey, Charlotte Bowers, David Needham, Eric Young, Fedorame 'payday' Fudge, Geraldine Cowden, Gregory J White III, Jordan wheeler, Katherine Gifford, Kim Baenen, Kim Baenen, Maddy Cloud, Mark Foster, Matt Clark, Millie Tressel, nina beatrice 'pony lover' thaler, Pondscum, Rachel Ray, Renata Rush, superbob, Yaron 'Ankle Breaker' Weiss, Zoey the great.
+</div>
+
+<!--
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+</p>
+
+<div class = 'quote'>
+
+</div>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! When you get published in a JQMCBP email, experts* have determined** that this kind of exposure is 10x more effective for fame*** and fortune**** than either Snapchat or Instagram*****.
+</p>
+
+<p>
+* meaning me<br />
+** determined implies no actual data collection<br />
+*** not so much<br />
+**** candy!<br />
+***** actually, this is probably true<br />
+</p>
+-->
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Andrew Mossburg and, ahem, Salty Salmon, you two UMBC grads must have been filled with Retriever Pride, telling Virginia to go fetch like that. Alas, the problem with wearing Cinderella's glass slipper is that glass is TOTALLY BREAKABLE AND NOT AT ALL SUITED FOR DURABLE FOOTWEAR. Really, if you're wearing glass shoes, you're kind of asking for it.
+</p>
+
+<p>
+The sheer volume of MSU grads listed below prove once again that while Tom Waits is Big in Japan, The Candymeister is Huge in Michigan.
+</p>
+
+<div class = 'pre'>
+Ohio State: Herman ‘Stop the Madness’ Weiss, Arthur Rush, Dennis Sabo, Andy Glime, Arthur Rush, Tor Tor, Cuz Monster, Nathan Glime, Nancy Valentine, The Dude
+
+Alabama: Melissa Zoghby
+
+Florida: Mary F. Herrmann, Kevin Huntsman
+
+Michigan State: Jaime Millard, Kathy Guimond, Richard Doher, Natalie Weir, Jim Chryssikos, Matt Carlton, Kim Clexton, Sue Ray, Billy Beck, Beaumont Hoffman , Ben Glime, Barbie Hoag, Ken Reo, Bob Ruprich, Ethan 'Go Green' Ray, Kurt Gardinier, Scott Driscoll, Mark Weiss, Brian Fitzpatrick, Anthony M Borgia, Pickles pete, Eric Gifford, Kristin Gifford, Leigh Keiper, Steve R, Sue Baenen, Cindy Arvant , Lyman Hancock, Go Green!, James Delproposto, Jessica Wiltse, Trevor Shepich, Rick Shepich, Michael Hartmann, Bob Armitage , Andy Reynolds, Kim Armitage , KWest, Tom Hoag, John Boyle, Bar Low, Patrick O'Boyle, Dan Gates, Kevin Meade, Susan Bannan, Bill Crandall, Leep
+
+Cincinnati: Jim Bruckner, Quinn, Steve Fink
+
+North Carolina: Risa Griffin, Michelle Gavel, Justin McAlister, Michael Wooley-Ousdahl
+
+Auburn: Tamara Fink
+
+Florida State: Yaron 'Ankle Breaker' Weiss
+
+UMBC: Andrew Mossburg, Salty Salmon
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+The What a Difference a Letter Makes Award
+</p>
+
+<p>
+Justin Wheeler may have thought he was opting for a box of fruity chewy candy. But by adding a loose "a" on the end, Justin unwittingly selected "Mike and Ikea," a concept candy designed by Mike Ditka and available only at Ikea stores. It's a kielbasa dipped in a swedish milk chocolate. From now until Sveriges nationaldag you can find it at Ikea under the product name Ditt jävla ålahuvud. Rooting for you, Justin!
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+After a fair bit of shuffling at the top of the leaderboard, Greg "Baby Ruth" S and Debra "Three Musketeers" Hendren are tied in first place with 45 points. There are 17 people within two points of these two though. Also notable, have a look at how all over the map the Run the Table (RtT) numbers are. I've never seen that much variation amongst this early in the tournament. Kevin "Butterfinger" Chauvin has the most intact bracket of all, an RtT of 130, and sits in 3rd place. He's probably the Vegas favorite right now to Take Home the Candy. Place your bets.
+</p>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Debra Hendren </td><td>Michigan</td><td>Three Musketeers </td><td>Purdue</td><td>45</td></tr>
+<tr><td>1</td><td>Greg S</td><td>Nevada</td><td>baby ruth</td><td>Kansas</td><td>45</td></tr>
+<tr><td>3</td><td>Alyssa campbell </td><td>Michigan</td><td>GO BLUE! (Candy irrelevant!)</td><td>Michigan</td><td>44</td></tr>
+<tr><td>3</td><td>Kevin Chauvin</td><td>Michigan</td><td>Butterfinger </td><td>Kentucky</td><td>44</td></tr>
+<tr><td>3</td><td>Matt Newton</td><td>Michigan</td><td>Gummy Coke Bottles</td><td>Virginia</td><td>44</td></tr>
+<tr><td>3</td><td>Peggy meagher</td><td>Michigan</td><td>Almond joy</td><td>Michigan State</td><td>44</td></tr>
+<tr><td>3</td><td>Renata Rush</td><td>Michigan</td><td>Milky Way Midnight Dark Chocolate</td><td>Virginia</td><td>44</td></tr>
+<tr><td>8</td><td>Bar Low</td><td>Michigan</td><td>Clark Bar</td><td>Michigan State</td><td>43</td></tr>
+<tr><td>8</td><td>Brenda Ochs</td><td>Michigan</td><td>3 Musketeer </td><td>Michigan</td><td>43</td></tr>
+<tr><td>8</td><td>Bridget Conkling</td><td>Ohio</td><td>Giant Toblerone</td><td>Kansas</td><td>43</td></tr>
+<tr><td>8</td><td>Carson Moxie Klaas</td><td>Minnesota</td><td>Reese's Peanut Butter Egg</td><td>North Carolina</td><td>43</td></tr>
+<tr><td>8</td><td>Hayden Bier</td><td>Michigan</td><td>Jumbo Reeces Penut Butter Cups</td><td>Duke</td><td>43</td></tr>
+<tr><td>8</td><td>Jacob Strom</td><td>Michigan</td><td>Sour Patch Kids</td><td>Michigan State</td><td>43</td></tr>
+<tr><td>8</td><td>Kim Clexton</td><td>Michigan</td><td>Bag of Almond Joy mini candy bars</td><td>Kansas</td><td>43</td></tr>
+<tr><td>8</td><td>KWest</td><td>Michigan</td><td>Kit Kat</td><td>Xavier</td><td>43</td></tr>
+<tr><td>8</td><td>Sarah DeLeon</td><td>Michigan</td><td>King Size Hershey's Bar</td><td>Michigan</td><td>43</td></tr>
+<tr><td>8</td><td>Victoria Hebda</td><td>Michigan</td><td>King Size Reese's pieces</td><td>Michigan</td><td>43</td></tr>
+<tr><td>8</td><td>William Morrison</td><td>California</td><td>Nestle Aero Bar (Beauty!)</td><td>Purdue</td><td>43</td></tr>
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Zavier the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan</td><td>40</td></tr>
+<tr><td>2</td><td>Anais the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Lipscomb</td><td>39</td></tr>
+<tr><td>3</td><td>Earl the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida State</td><td>38</td></tr>
+<tr><td>3</td><td>Monique the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Loyola-Chicago</td><td>38</td></tr>
+<tr><td>3</td><td>Noemi the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Georgia State</td><td>38</td></tr>
+<tr><td>3</td><td>Santiago the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas A&M</td><td>38</td></tr>
+<tr><td>7</td><td>Annette the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas State</td><td>37</td></tr>
+<tr><td>7</td><td>Desmond the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Stephen F Austin</td><td>37</td></tr>
+<tr><td>7</td><td>Fletcher the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas</td><td>37</td></tr>
+<tr><td>7</td><td>Jane the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan</td><td>37</td></tr>
+<tr><td>7</td><td>Jovanny the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Southern</td><td>37</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2018 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

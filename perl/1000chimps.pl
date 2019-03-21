@@ -5,12 +5,12 @@ use strict;
 # connect to database
 use DBI;
 use vars qw/$dbh/;
-do "jq_globals.pl";
+do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
 #my $name_file = "2000names.txt";
-my $name_file = "the1000Chimps.txt";
+my $name_file = "the1000Chimps2017.txt";
 my $bracket_picker = "random_bracket_selector.pl";
 my $names = get_names();
 

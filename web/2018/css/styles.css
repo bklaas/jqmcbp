@@ -794,9 +794,6 @@ table.entry {
     vertical-align: middle; }
 
 #popMe {
-  position: absolute;
-  right: 25px;
-  bottom: 5px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
@@ -805,7 +802,45 @@ table.entry {
   filter: alpha(opacity=60);
   -moz-opacity: 0.6;
   opacity: 0.6;
-  -khtml-opacity: 0.6; }
+  -khtml-opacity: 0.6; 
+  position: absolute;
+  right: 25px;
+  bottom: 5px;
+}
+
+.velociraptor {
+	padding-left: 25px;
+}
+.raptorButton {
+   background: #080003;
+   background: -webkit-gradient(linear, left top, left bottom, from(#eb1a71), to(#080003));
+   background: -webkit-linear-gradient(top, #eb1a71, #080003);
+   background: -moz-linear-gradient(top, #eb1a71, #080003);
+   background: -ms-linear-gradient(top, #eb1a71, #080003);
+   background: -o-linear-gradient(top, #eb1a71, #080003);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.raptorButton:hover {
+   background: #28597a;
+   color: #ccc;
+	cursor: pointer;
+   }
+.raptorButton:active {
+   background: #1b435e;
+	cursor: pointer;
+   }
 
 table.verysmall {
   margin: 0;

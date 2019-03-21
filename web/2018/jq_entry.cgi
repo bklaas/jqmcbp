@@ -15,7 +15,7 @@ use CGI qw/:param :header :image_button/; # cgi.pm module
 use DBI;   # perl DBI module
 use Template;
 use vars qw/$dbh/;
-do "jq_globals.pl";
+do "./jq_globals.pl";
 my $config = config_variables();
 my %PARAMS;
 for (param()) {

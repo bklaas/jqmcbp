@@ -1,9 +1,9 @@
 Here's what's needed: 
 
-copy last year's johnnyquest database to jq_2009
+copy last year's johnnyquest database to jq_2018
 	mysqldump -u root johnnyquest > jq.sql
-	CREATE DATABASE jq_2009
-	mysql -u root jq_2009 < jq.sql
+	CREATE DATABASE jq_2018
+	mysql -u root jq_2018 < jq.sql
 	now this year's johnnyquest is ready for use (follow instructions below for setup)
 
 html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year>
@@ -11,26 +11,33 @@ html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year
 	<next_year> is a symlink to this year so the dynamic year in jq_globals.pl works up until the next JQMCBP
 	change year reference in credits.html
 	make sure halloffame list includes last year's winner and loser
-	change symlink at website root from <last_year> to <this_year>
+	change symlink at website root (/data/benklaas.com) from <last_year> to <this_year>
 data/perl space: 
         cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/Lucky.dat
         cd jqmcbp && rm data_files/*.dat
-	rm jq; ln -s /home/bklaas/jqmcbp_2008 jq
+	rm jq; ln -s /home/bklaas/jqmcbp_2019 jq
 
 Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
 
 ###
-USE clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
+US clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
 DO NOT just clear the tables. clear_db.sql will insert values to the games table and NULL out the teams table
 
-NOTE TO 2018 BEN FROM 2017 BEN: watch out to make sure that all second round and onward games in winners.cgi show up as 'foo' and not NULL. If they show up as NULL, RTT will be messed up.
+NOTE TO 2019 BEN FROM 2018 BEN: HOLY CRAP DON'T SCREW UP THE FINAL FOUR REGION ORDER AGAIN. DO NOT USE ESPN. DO NOT. USE. ESPN.
+Delay the initial go-live to make sure you have this right. SERIOUSLY.
+
+Also: Watch out to make sure that all second round and onward games in winners.cgi show up as 'foo' and not NULL. If they show up as NULL, RTT will be messed up.
 
 Here's a one-liner sql that will fix it
 UPDATE games set winner = 'foo' where round > 1;
 
-command:
-mysql -u root -p<pwd> < clear_db.sql
+Also: graph-o-matic needs a 2019 player_id to work properly. Fix that so the step-o-matic stuff works.
+<web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl
 
+command:
+mysql -u root -p<pwd> < ~/jqmcbp/clear_db.sql
+
+AGAIN FOR EMPHASIS:
 use winners.cgi to define the bracket order (do not just edit www/jqmcbp/brackets.order, as winners.cgi updates the games table with game_* and region info)
 BIG FAT WARNING: cgi writes brackets.order to /data/benklaas.com/jqmcbp/. If you are staging in a different area and then copy to the live area, make damn sure that brackets.order is there and in the correct order. Fer Fuck's Sake.
 
@@ -44,4 +51,5 @@ test it!
 #######
 
 graphomatic: SQL hard-codes a player_id for doing the step-o-matic stuff. update that to something from the current year or it will be broken
+<web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl
 

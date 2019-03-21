@@ -82,9 +82,11 @@ while (defined($datfile = readdir(DIR))) {
               $picks{$name} = $value;
         }
 	close (DATAFILE);
-	open(DONE,">>/home/bklaas/jqmcbp/perl/done");
-	print DONE "$datfile\n";
-	close(DONE);
+    if ($man_or_chimp eq 'man') {
+    	open(DONE,">>/home/bklaas/jqmcbp/perl/done");
+    	print DONE "$datfile\n";
+    	close(DONE);
+    }
 
 
 # champion as well

@@ -5,7 +5,7 @@ use strict;
 # connect to database
 use DBI;
 use vars qw/$dbh/;
-do "jq_globals.pl";
+do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
