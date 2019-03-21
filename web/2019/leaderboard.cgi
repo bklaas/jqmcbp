@@ -14,6 +14,7 @@ $| = 1;
 print "Content-type: text/html\n\n";
 connect_to_db();
 my $config = config_variables();
+my $prev = 0;
 my %PARAMS;
 # start with some defaults
 $PARAMS{"sort"} = "rank";
@@ -158,7 +159,6 @@ sub get_scores_from_db {
 	my $inc = 1;
 	my @return;
 	my $next = 0;
-	my $prev = 0;
 	for my $href (@$aref) {
 		my $id = $href->{'player_id'};
 		if ($id == $PARAMS{'next'}) {
