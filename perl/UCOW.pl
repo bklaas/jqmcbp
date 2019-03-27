@@ -6,7 +6,7 @@ use DBI;
 use Data::Dump qw/dump/;
 
 use vars qw/ $dbh /;
-do "jq_globals.pl";
+do "./jq_globals.pl";
 #connect_to_db('johnnyquest', '192.168.1.199');
 connect_to_db('johnnyquest');
 
@@ -14,9 +14,9 @@ connect_to_db('johnnyquest');
 ## SET THE REMAINING TEAMS VARIABLE HERE
 ## EVERYTHING ELSE SHOULD TAKE CARE OF ITSELF
 #################################
-#my $remainingTeams = 16;
+my $remainingTeams = 16;
 #my $remainingTeams = 8;
-my $remainingTeams = 4;
+#my $remainingTeams = 4;
 
 my $N;
 my $man_or_chimp = 'both';
