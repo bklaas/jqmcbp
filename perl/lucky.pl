@@ -54,7 +54,7 @@ for my $name ('Lucky') {
 		print OUT "$game_name|$teams[$which]\n";
 	}
 	print OUT "name|$chimp\n";
-	print OUT "location|Neverland Ranch\n";
+	print OUT "location|Rancho Cucamonga\n";
 	print OUT "candybar|Banana Moon Pie\n";
 	close(OUT);
 	$inc++;
