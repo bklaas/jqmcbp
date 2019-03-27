@@ -21,24 +21,6 @@ my $remainingTeams = 16;
 my $N;
 my $man_or_chimp = 'both';
 
-# XXX: consider running this program off-site for speed
-# what would be needed--
-# do the sql queries separately and store the data in a file, Perl Storable structure, something
-# OR, have the program that runs externally query the db remotely
-#
-# Collect everyone's current score after 2nd round (DONE)
-# Simulate all 2^15 (32768) possible outcomes and encode them as hex (DONE)
-# Code the Sweet 16 teams as hex codes 0-F (DONE)
-# For each player, query DB for picks in game_49 - game_63
-#		encode those picks as hex codes, with an X for teams that are not part of 0-F code set (i.e., teams that aren't around any more) (DONE)
-# For each possible outcome of games, calculate every player's score and rank in that outcome, and stash that outcome in a summary data structure (DONE)
-
-# final data of interest are:
-#		for a given player: 
-#				highest possible score
-#				highest possible rank
-#				number and percentage of $all outcomes at top
-
 # the points for each remaining game
 my $points;
 my $startGame;
