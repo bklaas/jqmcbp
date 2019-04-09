@@ -4,7 +4,7 @@ use GD;
 use GD::Graph::pie;
 use strict;
 
-my $year = '2014';
+my $year = '2019';
 my %tallies;
 my @category_data;
 my @tally_data;
@@ -37,7 +37,7 @@ $graph->set(
 
 
 my $gd = $graph->plot(\@graph_data); 
-open(IMG, ">locale_$year.png");
+open(IMG, ">locale_${year}.png");
 binmode IMG;
 print IMG $gd->png;
 	
@@ -49,6 +49,7 @@ use DBI;
 ############### connect to database ###########################
 ###############################################################
 my $database_name = "johnnyquest";
+#my $database_name = "jq_" . $year;
 my $location = "localhost";
 my $port_num = "3306";
 

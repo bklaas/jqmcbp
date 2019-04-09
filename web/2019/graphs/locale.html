@@ -6,7 +6,7 @@
 
 
 function showDiv(divId) {
-	var divs = new Array( 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12' );
+	var divs = new Array( 'img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7', 'img8', 'img9', 'img10', 'img11', 'img12', 'img13', 'img14', 'img15', 'img16', 'img17' );
 	for (var i = 0; i < divs.length; i++) {
 		var thisDiv = divs[i];
 		if (thisDiv == divId) {
@@ -18,7 +18,7 @@ function showDiv(divId) {
 }
 
 $(document).ready( function() {
-	$("#img12").fadeIn();
+	$("#img17").fadeIn();
 });
 
 // do a fade in fade out thing with document.ready
@@ -38,6 +38,11 @@ $(document).ready( function() {
 <a href = "javascript:showDiv('img10');">2012</a>|
 <a href = "javascript:showDiv('img11');">2013</a>|
 <a href = "javascript:showDiv('img12');">2014</a>|
+<a href = "javascript:showDiv('img13');">2015</a>|
+<a href = "javascript:showDiv('img14');">2016</a>|
+<a href = "javascript:showDiv('img15');">2017</a>|
+<a href = "javascript:showDiv('img16');">2018</a>|
+<a href = "javascript:showDiv('img17');">2019</a>|
 </div>
 <div class = 'locale' id = 'img1'><img src = 'locale_2001.png'></div>
 <div class = 'locale' id = 'img2'><img src = 'locale_2002.png'></div>
@@ -51,5 +56,10 @@ $(document).ready( function() {
 <div class = 'locale' id = 'img10'><img src = 'locale_2012.png'></div>
 <div class = 'locale' id = 'img11'><img src = 'locale_2013.png'></div>
 <div class = 'locale' id = 'img12'><img src = 'locale_2014.png'></div>
+<div class = 'locale' id = 'img13'><img src = 'locale_2015.png'></div>
+<div class = 'locale' id = 'img14'><img src = 'locale_2016.png'></div>
+<div class = 'locale' id = 'img15'><img src = 'locale_2017.png'></div>
+<div class = 'locale' id = 'img16'><img src = 'locale_2018.png'></div>
+<div class = 'locale' id = 'img17'><img src = 'locale_2019.png'></div>
 </body>
 </html>

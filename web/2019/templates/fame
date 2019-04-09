@@ -10,12 +10,20 @@
         <th align='left' scope="col">Champion</th> 
         <th align='left' scope="col">Loser</th>
 	  </tr>
+    <!--
    <tr>
         <td>[% year %]</td>
         <td nowrap >Could be a billion (+1001 chimps)</td>
 	<td>Could be you</td>
 	<td>Also could be you</td>
 	
+    </tr>
+    -->
+    <tr>
+        <td>2019</td>
+        <td nowrap>838 (+1001 chimps)</td>
+	<td>Tamara "Vosges Missing Link Chocolate Bar" Fink</td>
+	<td>He Who Shall Not Be Named</td>
     </tr>
     <tr>
         <td>2018</td>

@@ -1,1 +1,1 @@
-/data/cgi-bin/jq_globals.pl
+/data/benklaas.com/jqmcbp/jq_globals.pl
