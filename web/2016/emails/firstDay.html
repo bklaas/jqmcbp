@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XIX</a></h1>
+	<h2 class = 'slogan'>Always Reppin?</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+For the rookies:
+What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.*
+</p>
+
+<p>
+In addition to the emails, there's lots of important, vital resources available with your web browser. Evaluate how risky your picks are with the J Factor, see who picked brackets like yours with the Scientific Similarity Index. As the tournament progresses, figure out who has no chance of winning at the Hall of Shame! Generate pointless head-to-head graphs! Check out the linky links at the bottom of the email or head to <a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
+</p>
+
+<p>
+As I've done for the past few years, I'm sending emails through the appropriately named <a href = "http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.
+</p>
+
+<p>
+* Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.
+</p>
+
+<p>
+But enough of my yakkin'. Let's boogie!
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+
+<p>
+I watched some basketball tonight. It was, objectively, very bad basketball. I'm watching the last game of the night right now, Gonzaga vs. Seton Hall. The top player from Seton Hall just set the O-fer record for 3-pointers, 0-10. Earlier I saw Kentucky vs. Stony Brook, and the bricks could have built a house. But that's okay, this thing isn't about basketball, it's about candy. And mascot discussion! Some alternative mascot names I thought up while watching bad basketball:
+</p>
+
+<p>
+<ul>
+	<li>The Androllers of Little Rock</li>
+	<li>The Trout of Stony Brook</li>
+	<li>The Gonzaga Agaznog, because that would be a sweet palindrome</li>
+	<li>The Seton Hall of Justice</li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+The biggest upsets of the day were Yale over the Laser Lemon clad Baylor Bears and Little Rock beating the Purdue Boilermakers, but 144 and 76 candy seekers tabbed those teams, respectively.
+</p>
+
+<hr class = 'section' />
+<!--
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+</p>
+
+<hr class = 'section' />
+-->
+<h1>Mailbag</h1>
+
+<p>
+Well, the mailbag was full the last few days. Full of things like "your site is down" and "you sent me a link that doesn't work" and "hey your site is down" and "did you know you don't have the brackets in the right order?" and "YOUR SITE IS DOWN". It's been a tough week, technically, yet somehow 757 of you still managed to enter successfully. Now that we're through that, write me something publishable! I'm old and tired and need to crowd-source my content like the rest of the internet!
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! When you get published in a JQMCBP email, experts* have determined** that this kind of exposure is 10x more effective for fame*** and fortune**** than either Snapchat or Instagram*****.
+</p>
+
+<p>
+* meaning me<br />
+** determined implies no actual data collection<br />
+*** not so much<br />
+**** candy!<br />
+***** actually, this is probably true<br />
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>11 misguided candy seekers lost their champion today. Chant as Mark Jones heartily tried, "Let's Go Peay! Let's Go Peay!", it wasn't enough.</p>
+
+<div class = 'pre'>
+Florida Gulf Coast: Allen 'Thunderstick' Witt
+Austin Peay: Mark Jones
+Colorado: Ian
+Arizona: Kathie Grover, Alexandria Chittenden
+Purdue: Larry F Ochs, Sarah Ogborn, Grandma Kirch
+Seton Hall: Aloy Makalinao
+Baylor: Connor Byers, D Backs
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+20 people who listed these schools as their alma mater wept tears of agony as their squads came up short. Let's stand united with Jeral Poskey of UNC Wilmington. Tonight we are all Seahawks. We are all Seahawks.
+
+<div class = 'pre'>
+USC: Andy Ducey, Andrew Bush, Andrew Ducey, David Hagen
+Colorado: Ian, Kevin Chauvin
+Texas Tech: Andrew Mossburg
+Purdue: Tod Mullanix, Tim Ogborn, Dave Aucott, Dave Aucott, Sarah Ogborn, Andrew May, David Needham, Mark Richards, Dan Ridgeway
+Fresno State: andy anderson, Ross Benson
+UNC Wilmington: Jeral Poskey
+Baylor: Justin Cox
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+WOW. There's always a few people trolling for hard-to-buy candy bars to stump me. Some of those choices have even been won by past champions: Dulce De Leche M&amp;M's, only available while being test marketed in certain Southwest US hispanic neighborhoods. The Melo Bar, a liquer-filled Carmelo Anthony signature candy bar available only in Denver area King Soopers grocery stores. Finally last year I needed to use eBay to find a dessicated, hope-he-didn't-eat-it 20 year old Kirby Puckett bar. But this candy is next level on the Troll-O-Meter: <a href = "https://toakchocolate.com/shop/products/">To'ak Chocolate</a>, fine chocolates from the forests of Ecuador. From the website:
+</p>
+
+
+<div class = 'quote'>
+Made with the care of a vintage winemaker and precision of a premium small-batch whisky
+</div>
+
+<p>Hmmm, that sounds pretty good. I like wine and whisky, so why not some craft chocolate to go with it? Sign me up!</p>
+
+<div class = 'quote'>
+A series of sensory impressions that tell a narrative of the origins of a chocolate and its journey from earth to tree to bean to bar.
+</div>
+
+<p>I think I'm still interested, but this is getting a wee bit pretentious. Okay, I'll order some.</p>
+
+<div class = 'pre'>
+Shopping Cart:
+Vintage 2014 Spanish Elm × 1	$315.00
+Vintage 2014 Cognac Cask × 1	$345.00
+Rain Harvest 2015 Dark × 1	$270.00
+Rain Harvest 2015 Light × 1	$270.00
+Total $1,200.00
+</div>
+
+<p>WAT?!?! $1200 for FOUR chocolate bars? Does it come with a fully functional golf cart? Are the wrappers lined with a sum total of $1190? No? Okay, count me WAY OUT then.</p>
+
+<p>Impressively, three different JQMCBP participants went full To'ak on me: Michael Wooley-Ousdahl, Nikhil Bhandarkar, and current front-runner Ken Mills. Ken even specified he wanted the To'ak Piedra de Plata 2014 vintage* bar, which goes for about $245. Why aim so low Ken? Next time go for the Cognac Cask!
+
+<p>* Chocolate, like milk, peanuts, and sushi, should not have a "vintage"</p>
+
+<hr class = 'section' />
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+The JQMCBP is forever 100% free with no obligations, other than listening to my long rants*, but in June I am riding 150 miles on my bike to help fund MS research. <a href ="http://bit.ly/bkMS150_2016">Donate to my ride here</a>. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>. 
+</p>
+<p>
+* also optional
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+Nobody was perfect, but we have a 10-way tie for first place, each of whom picked 15 of 16 correctly from Day 1.
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>Alex F</td><td>International</td><td>kitkat dark</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>Brad Johnson</td><td>California</td><td>TWIX</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>jNov</td><td>Michigan</td><td>snickers</td><td>Butler</td><td>15</td></tr>
+		<tr><td>1</td><td>Joey Valentine</td><td>Ohio</td><td>Giant Three Musketeers</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>Jon Marthaler</td><td>Minnesota</td><td>King Size Snickers</td><td>North Carolina</td><td>15</td></tr>
+		<tr><td>1</td><td>Jonathan Schroeder</td><td>Minnesota</td><td>assorted chocolates</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>Ken Mills</td><td>Massachusetts</td><td>To'ak Piedra de Plata 2014</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>Pete Arvant</td><td>Michigan</td><td>Snickers</td><td>Oklahoma</td><td>15</td></tr>
+		<tr><td>1</td><td>Sister Zissou</td><td>Wisconsin</td><td>Plain 'Ol M&Ms</td><td>Michigan State</td><td>15</td></tr>
+		<tr><td>1</td><td>Wesley Amato</td><td>New Mexico</td><td>Cadbury Fudge Bar</td><td>Villanova</td><td>15</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Watch out for Mackenzie the Chimp: 14 for 16 in round 1 and has Kansas as her champion.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>1</td><td>Dashawn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wichita State</td><td>14</td></tr>
+		<tr><td>1</td><td>Jonas the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Hawaii</td><td>14</td></tr>
+		<tr><td>1</td><td>Mackenzie the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas</td><td>14</td></tr>
+		<tr><td>4</td><td>Abdullah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>13</td></tr>
+		<tr><td>4</td><td>Brad the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>13</td></tr>
+		<tr><td>4</td><td>Brendan the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>13</td></tr>
+		<tr><td>4</td><td>Bryan the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Indiana</td><td>13</td></tr>
+		<tr><td>4</td><td>Diego the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Virginia</td><td>13</td></tr>
+		<tr><td>4</td><td>Jordan the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iowa State</td><td>13</td></tr>
+		<tr><td>4</td><td>Julian the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>13</td></tr>
+		<tr><td>4</td><td>Perry the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Weber State</td><td>13</td></tr>
+		<tr><td>4</td><td>Samantha the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Providence</td><td>13</td></tr>
+		<tr><td>4</td><td>Shayna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Yale</td><td>13</td></tr>
+		<tr><td>4</td><td>Shirley the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Cincinnati</td><td>13</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2016 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

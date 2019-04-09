@@ -1,0 +1,74 @@
+<thead>
+<tr><th>Name</th><th>Number of Winning Brackets</th><th>Percentage of Winning Brackets</th></tr>
+</thead>
+<tbody>
+<tr><td>Kiera Delargy</td><td>30</td><td>23.438</td></tr>
+<tr><td>Traci Nies</td><td>9</td><td>7.031</td></tr>
+<tr><td>Michelle R Young</td><td>7</td><td>5.469</td></tr>
+<tr><td>Conor Whelan</td><td>7</td><td>5.469</td></tr>
+<tr><td>Zane Sabbert</td><td>7</td><td>5.469</td></tr>
+<tr><td>Dawn Smith</td><td>6</td><td>4.688</td></tr>
+<tr><td>Bill Girardot</td><td>6</td><td>4.688</td></tr>
+<tr><td>Carlee the Chimp</td><td>6</td><td>4.688</td></tr>
+<tr><td>Julia Foster</td><td>5</td><td>3.906</td></tr>
+<tr><td>Todd Campbell </td><td>5</td><td>3.906</td></tr>
+<tr><td>Joanne Isenhart</td><td>4</td><td>3.125</td></tr>
+<tr><td>Sabrina Bier</td><td>4</td><td>3.125</td></tr>
+<tr><td>Leslie Karkanawi</td><td>4</td><td>3.125</td></tr>
+<tr><td>Joel Davis</td><td>4</td><td>3.125</td></tr>
+<tr><td>Richard Augustin</td><td>4</td><td>3.125</td></tr>
+<tr><td>Andrew Hanson </td><td>4</td><td>3.125</td></tr>
+<tr><td>Dan Solt</td><td>4</td><td>3.125</td></tr>
+<tr><td>Sabrina Ruiz</td><td>3</td><td>2.344</td></tr>
+<tr><td>Fernando the Chimp</td><td>3</td><td>2.344</td></tr>
+<tr><td>Bri</td><td>3</td><td>2.344</td></tr>
+<tr><td>Jon Marthaler</td><td>2</td><td>1.562</td></tr>
+<tr><td>Tom 'T3' Wadzinski</td><td>2</td><td>1.562</td></tr>
+<tr><td>Erin Delargy</td><td>2</td><td>1.562</td></tr>
+<tr><td>Kenny Boyd</td><td>2</td><td>1.562</td></tr>
+<tr><td>Curly Girl</td><td>2</td><td>1.562</td></tr>
+<tr><td>Mark Bailey</td><td>2</td><td>1.562</td></tr>
+<tr><td>Brandon Cox</td><td>2</td><td>1.562</td></tr>
+<tr><td>Jim Bunda</td><td>2</td><td>1.562</td></tr>
+<tr><td>Laura 'Bob's mom' Moreland</td><td>2</td><td>1.562</td></tr>
+<tr><td>Sheryl Hatcher</td><td>2</td><td>1.562</td></tr>
+<tr><td>Brenda VB</td><td>1</td><td>0.781</td></tr>
+<tr><td>Natalie Weir</td><td>1</td><td>0.781</td></tr>
+<tr><td>Mark T Weaver</td><td>1</td><td>0.781</td></tr>
+<tr><td>Sue Ray</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kelli Strom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Michael Howard</td><td>1</td><td>0.781</td></tr>
+<tr><td>Christopher Bowhay</td><td>1</td><td>0.781</td></tr>
+<tr><td>Mike Askren</td><td>1</td><td>0.781</td></tr>
+<tr><td>Paco Sinbad</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kristopher Nordstrom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Matt Van Heukelom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Regan Soldner</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kelly Poole</td><td>1</td><td>0.781</td></tr>
+<tr><td>Giggidy Giggidy</td><td>1</td><td>0.781</td></tr>
+<tr><td>Jerry Schmitt</td><td>1</td><td>0.781</td></tr>
+<tr><td>Sam Housker</td><td>1</td><td>0.781</td></tr>
+</table>
+
+<table class = 'scores'>
+<thead>
+<tr><th>==== HUMAN WINS, CHIMP WINS ====</th></tr>
+</thead>
+<tbody>
+<tr><td>Human Wins: 120</td></tr>
+<tr><td>Chimp Wins: 9</td></tr>
+</tbody>
+</table>
+
+<table class = 'scores'>
+<thead>
+<tr><th colspan = 2>==== NUMBER OF WINNERS/OUTCOME TALLY ====</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>101</td></tr>
+<tr><td>2</td><td>22</td></tr>
+<tr><td>3</td><td>4</td></tr>
+<tr><td>4</td><td>1</td></tr>
+<tr><td></td></tr>
+</tbody>
+</table>

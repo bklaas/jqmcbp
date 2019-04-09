@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><title>JohnnyQuest [% PARAMS.year %]</title>
+<link rel="stylesheet" type="text/css" href="css/johnnystyle.css">
+<!--<link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+<script src="/javascript/jquery.js" language="JavaScript"></script>
+[% PROCESS bracket.js.tmpl %]
+
+</head>
+<body class="brackets">
+
+<div id= 'entryinfo'>
+	<span class = 'bracket_banner'>THE QUEST FOR CANDY</span>
+	<table class = 'entryinfo'>
+		<tr><td>JQMCBP Entry for:</td><td>[% PARAMS.name %]</td></tr>
+		<tr><td>Hailing from:</td><td>[% PARAMS.locale %]</td></tr>
+		<tr><td>JQMCBP Updates to:</td><td>[% PARAMS.email %]</td></tr>
+		[% IF PARAMS.man_or_chimp %]<tr><td>Man/Chimp/Celebrity:</td><td>[% PARAMS.man_or_chimp %]</td></tr>[% END %]
+	</table>
+</div>
+
+<form method = 'post' id = 'bracketform' onSubmit='return validateForm(this)'>
+<div id="bracket">
+<table border="0" cellpadding="0" cellspacing="0" >
+
+	<thead>
+		<tr class = 'brackets_heading'>
+		<th class="brackets_heading_banner">&nbsp;</th>
+		<th class="brackets_heading">first round</th>
+		<th class="brackets_heading">second round</th>
+		<th class="brackets_heading">sweet 16</th>
+		<th class="brackets_heading">regional final</th>
+		<th class="brackets_heading">final four</th>
+		<th class="brackets_heading">championship</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<td>
+			<table class = 'brackets_region' cellpadding="0" cellspacing="0">
+				<tbody>
+[% FOR region IN brackets -%]
+		<tr><td class="brackets_region" align="right" valign="center">
+			<img src="/jqmcbp/images/[% region %].gif">
+		</td></tr>
+[% END -%]
+		</tbody></table>
+	</td>

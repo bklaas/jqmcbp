@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head><title>Oh Noes!</title>
+<link rel="stylesheet" type="text/css" href="css/johnnystyle.css">
+<!--<link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+<script src="/javascript/jquery.js" language="JavaScript"></script>
+[% PROCESS fixit.bracket.js.tmpl %]
+
+</head>
+<body class="brackets">
+
+<div id= 'entryinfo'>
+	<span class = 'bracket_banner'>Oh Noes!</span>
+	<table class = 'entryinfo'>
+		<tr><td>Fixing JQMCBP Entry for:</td><td>[% PARAMS.name %]</td></tr>
+	</table>
+</div>
+
+<form method = 'post' id = 'bracketform' onSubmit='return validateForm(this)'>
+<div id="bracket">
+<table border="0" cellpadding="0" cellspacing="0" >
+
+</table>
+

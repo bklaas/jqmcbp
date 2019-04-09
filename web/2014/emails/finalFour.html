@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		p.footnote {
+			font-size: 11px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         border : 2px solid #000;
+         margin: 20px;
+         padding: 10px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #111;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header a {
+			text-decoration: none;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a title = "He was just seventeen" href = "http://youtu.be/pJ7X0inKxbo">XVII</a></h1>
+	<h2 class = 'slogan'>
+		<a href = "http://youtu.be/pJ7X0inKxbo" title = "Worst Beatles cover ever">
+		Oh no, not this one
+		</a>
+	</h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|FNAME|*</li>
+	<li>Candybar: *|MMERGE3|*</li>
+	<li>Score: *|MMERGE6|* (leader is at *|MMERGE8|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE5|*</li>
+	<li>Rank: *|MMERGE7|*/810</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE4|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Today 8-seed Kentucky and 7-seed Connecticut advanced to the Final Four, which had massive implications in the Quest for Candy. Sitting atop the leaderboard now is Meredith "Cadbury Egg" Hammons of Georgia, who not only was one of the 18 people having Kentucky in their Final Four, but even has them going all the way. Only 3 other candy seekers tabbed Kenutcky all the way, and two of them (Julie "Mother of wall what wall John Lucas" Smith and Dave "Something something probably some relation to wall what wall John Lucas" Lucas) sit tied in 3rd place. Which of course is just enough to mathematically eliminate them from the Candy, as any Kentucky win will still put Hammons in the fabled catbird seat.
+</p>
+
+<hr class = 'section' />
+<h1>UCOW Update</h1>
+<p>You know whose still in it? John "Wall, what wall?" Lucas, that's who! And to answer your question: No, I also don't know what wall. But regardless of what wall John presumably hit, presumably with his head, he clearly had enough sense to make a bracket that would survive several rounds of UCOW! elimination.
+</p>
+
+<p>
+This year is notable in just how clean things are at the end. It's typical with a final four that includes a couple underdogs to produce scenarios in which a member of the 1,000 chimp army is still in it. Not this year. Of the 8 remaining permutations, there are 4 potential Winners of Candy left, all (probably) human:
+</p>
+
+<ul>
+<li>Meredith Hammons wins a Cadbury Egg with either a Kentucky championship or a Connecticut over Kentucky final</li>
+<li>cal RUPE wins a Baby Ruth with either a Wisconsin championship or a Connecticut over Wisconsin final</li>
+<li>Bob RUPE wins a Kit Kat with a Florida over Wisconsin final</li>
+<li>John "Wall, what wall?" Lucas wins "only Green M&M's" with a Florida over Kentucky final</li>
+</ul>
+
+<hr class = 'section' />
+<h1>NEW! Anagramatron Tweets</h1>
+<h2>Don't Tweet? That's okay, Anagramatron search Twitter for you. Anagramatron find authentic tweets that are anagrams of each other. Anagramatron share with you.</h2>
+
+<p>
+A Man, a plan, a canal, Panama! That's a palindrome. These are anagrams. Don't get me started on portmanteaus.
+</p>
+
+<div class = 'quote'>
+I Really Don't Get Him Sometimes.
+</div>
+<div class = 'quote'>
+omg yes The Little Mermaid is on 
+</div>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Eighteen brave souls had Kentucky into the Final Four, and just six had Connecticut.
+</p>
+
+<div class = 'pre'>
+Kentucky:  Andy Calvert, Bob RUPE, cal RUPE, Cathy 'swiss miss' Stidwell, Charlotte Bowers, David Lucas, Denis Charette, Jeff 'with 30min of ESPN knowledge' Hober, John 'Wall, what wall?' Lucas, Jon Klimczuk, Julie 'Mother of wall what wall John Lucas' Smith, KBHart, kim coffey, Lindsey Cloud, Mark Foster, Meredith Hammons, molly mortimer, Trey Joseph
+
+Connecticut:  Charlotte Bowers, Filthy Phil, Heather Stratton Williams, Johnny Marathon Flaa, Julie 'Mother of wall what wall John Lucas' Smith, Mazzie Clark
+</div>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+This weekend was not a good weekend for 271 of you. Michigan State was probably the most heavily picked-as-champion 4 seed in the history of me running these pools (only Florida was picked in more brackets), but alas they are no longer. Also, Trey Joseph's bid to become the modern day Basketball Nostradamus with his champion selection of Dayton was denied. So close Trey.
+</p>
+<p>
+So long suckers!
+</p>
+
+<div class = 'pre'>
+Arizona: Kelli Strom, CJ Hewitt :D, Peter James, Rollie Empizo, Caleb Anderson, Todd Mullanix, Johnny Marathon Flaa, Kendall DiGirolomo, Alex 'Rowntrees of York' Frangos, Lisa Blake, Ben Boxcar Kehrwald, Jon, Simmie Chiger, Jay Leonard, Matthew Heimiller, Jeff Amato, Rick Wilder, Eddie Topel, Michael Nommensen, Chris Goodwin, Pinata King, Romke Mooiweer, Laura 'Bob's Mom' Moreland, Thomas Joseph, Dan Ridgeway, Karen McCartney, Jim Toomey, Jon Blake, Corey Garza, Robert Portnoy, Pastor Mike, Bryan Boguslawski, James Stremme, Joe Bro, Dana Portnoy, Tamara Portnoy, Todd Sieve, Dave Bush, El de Sedge, Ralph Wiggum, Tim Ogborn, Sarah Ogborn, Eric W Schmidt, Peyton Bowers, Lady Hoosiers, Andrew Alex Anderson, Piper Dare Klaas, Matt MacDonell, Greg Wenz, Doug Busta, Gage Teer, Pete Arvant, Rob Meilinger, Chris Hutchinson, Dan K'ski, Jenni Thomas, Matt Ross, Jeremy Farr
+
+Dayton: Trey Joseph
+
+Michigan: Chad Pechumer, Gary Schultz, Jennifer Meagher, Joe (rhymes with) Cislo, Carson Moxie Klaas, Rennie Anderson, Tala Anderson, Diane Sievert, Staci Nowak, Ben Halpern, Larry F Ochs, Greg Castle, Big Ten Rules, Eric Stevens, Elizabeth Ryan, Izaak Sawyer, Kathleen Mojzak, Matt Rennie, Bill Scott, Mike Kozak, Robin Fitzgerald, Marty Dickrell, Scott Johnson, Ted Daniel, Brenda VB, Fatty Stinky, Dave McHalpine, Dan Ketelsen, Kiera Joseph, Zachary Pruitt, Kolleen, Sophie Groves, Billy Girardot, Maria Seipelt, Chilly Willy, Greg Ross, Hayden Simmons (kid), Kate Meilinger, Alex Cory, Bob Cory, Michael Gill Jr., MastaDavesta, Liam McGrail, Steve Colmus, P West, caprice mcgrail, Nancy Niergarth, Rob D, Sarah Daniel, Steve Lantz, Byron Bardy, Cate Whelan, Kevin Taylor, Karen Hart, Bill Girardot, Lisa LaGrou, Keith Shaftoe, Jason Cadell, Alex Morrison 
+
+Michigan State: Scott Westhoff, Keyfur, Andrew Peanut Butter Cup Eggs Waldron, Kathy Westerlund, Joe Hebda, Paul Schmidt, Therese Hebda, Mark Largent, Mike Popek, Terry Sievert, Ramon Roullard, Taylor DiGirolomo, Owen Clexton, Hermanator 'the snickers is mine' Weiss, Michael Hartnett, Mike Brace, Cris Osier, Dan Solt, Sparty Party, Dave Evans, Chris Picini, Phil 'on track' Horvath, Lesley Hogg, Serge Martinez, Matthew Spohn, Jim Parker, Alex Ross, Dan Clark, Ken Mills, Pete Kroha, Aelx Blom, Jorgen Chapin, Jeff 'with 30min of ESPN knowledge' Hober, Brian Nemes, SCOTT DRISCOLL, whatchamacallit3pt, Will Scott, Traci Nies #Wofford_WHO, Joe Stevens, Tom Osier, Leigh Keiper, Colin Morrison, Tim DeJonge, Rich Lyle, Chase Campbell, Patrick O'Boyle, Bab Sansgaard, Christie Schmidt, John Geis, Dave Giugni, Rick Shepich, Brian Fitzpatrick, Kendra Corneliusen, Eric Young, Natalie Schmidt, Tim Rush, John Housenga, Dave Myers, HUGEBAG, kurt gardinier, John Montzingo, Mark Foster, Mark Danhausen, Ben 'No Klass' Brown, Mark Weiss, Clarence S., Tina Ferreter, Jim Chryssikos, Sasquatch, Kristin Gifford, Katherine Gifford, Jeff Martin, Flora Z, Kevin De Jong, Jared Elfvin, Chris Long, Darren Spiece, David Smalling, Jim Soriano, Deron Stec, Jonathan Downing, Rich Doher, Peter Baenen, Joel Rondeau, jim walker, James Bell, Dustin Ramoie, Candy Chatawanich, Joshua Hanson, Frank Spada, Andrew 'Barlow' Showich, Kim Landon, Ava Levy, Michael McDonald , Mel Medler, Paul S, Kim Gilmore, Todd Rich, Fitzy Fitz, Matt Johnson, laura mydlarz, Michael Shim, Dustin Thonen, Ethan 'Go Green' Ray, Dana Care, Dane Rozek, Cindy Arvant, KellyKat, William 'King Size Snickers' Hershey, Andy Ducey, Ruthann Jones, Ben Glime, President Barack Obama, Theresa L. White, Charlie Englehart, Old Joe Cislo, Gregory J. White III, Rafi Thaler, Annette Dyal, Jack Wenz, Shae Lorenc, Lance Van Houten, Brittany Hite, Renee Baenen, Scott Koehler, Kurt Anders, Ryan Schmitt, Lauren Schmitt, Mark Richards, Michelle Housenga, Todd Bennett, Dawn Schmitt, Barbara mojzak, Jennyrupe, Rick Tetlow, Kerie Whelan, Mike Carcone, Ron Charlebois, Nikki Keller, Sara Rajan, Spanky McSpankins, Jeff Kopaska, Jamie Samuelsen, bruce blake, Tom Cosgrove, Kurt Kedzierzawski, Kevin Boyd, Michelle Mondoux, John quinn, Tom Hoag, Michael, Phil Wilson, Devon Alexander
+</div>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+We had one Dayton alum this year, and his name is not Trey Joseph. Also 90 people from Michigan and Michigan State are probably thinking this is a sad day for Michigan sports, but seriously you should consider surveying the scene here in Minnesota. Well, I suppose we are quite excellent in college hockey, so we've got that going for us. Which is nice.
+</p>
+
+<div class = 'pre'>
+Dayton: Eric W Schmidt
+
+Michigan: Kelli Strom, Jennifer Meagher, Joe (rhymes with) Cislo, Tracy Niyo, Colin Keiffer, John Cooper, Greg Castle, U Dheenan, Michael Collins, Big Ten Rules, Alex Ross, Faith Daniel, Michael Maten, Kathleen Mojzak, Matt Rennie, Sean Whelan, John Geis, Woody Hays, Thomas Joseph, John Niyo, Deron Stec, Mooseman Bruce, Greg Ross, Kate Meilinger, Rob Cory, Mike Gill, MastaDavesta, Betsy Ross, P West, caprice mcgrail, ryche13, Rob D, Sarah Daniel, Pete Arvant, Rob Meilinger, Byron Bardy, Kevin Taylor, Fritz Crisler, Jon Klimczuk, Bill Girardot, Katy K.
+
+Michigan State: Kathy Westerlund, Mackle Schwartz, Mark Largent, Jaime Millard, Staci Nowak, Owen Clexton, Thomas Leeper, Sparty Party, Brian Nemes, SCOTT DRISCOLL, Joe Hoag, Tom Osier, Sue Ray, Leigh Keiper, Patrick O'Boyle, Pinata King, Rick Shepich, Brian Fitzpatrick, Kim, Natalie Schmidt, Barbie Hoag, kurt gardinier, Mark Weiss, Julie fitzpatrick, Jim Chryssikos, Eric Gifford, Kristin Gifford, Darren Spiece, Rich Doher, Peter Baenen, Andrew 'Barlow' Showich, Michael McDonald , Julie Olson, Bill Crandall, Kim Gilmore, Fitzy Fitz, Matt Johnson, Ethan 'Go Green' Ray, Bob Cory, Cindy Arvant, KellyKat, Ben Glime, Sara McHalpine, Renee Baenen, Mike Carcone, Bob RUPE, Nikki Keller, Kurt Kedzierzawski, Tom Hoag
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The Most Disgusting Award had so many contestants, but I'm going to hand it to Steve "Jane-Jane Tasty Tuna Tidbits" Carlson. What do you think the main ingredient in Jane-Jane Tasty Tuna Tidbits is? Nope, it's TUNA! These tidbits come in at #4 on thetoptens.com list of <a href = "http://www.thetoptens.com/most-disgusting-candies/">Most Disgusting Candies</a>, sandwiched between two candies made out of insects. At #3 is Crick-ettes, which come in Salt-n-Vinegar, Bacon-n-Cheddar Cheese, and Sour Cream-n-Onion flavors. At #5 is Ant Candy, which only comes in Ant.</p>
+
+<p>Tasty Tuna Tidbits are also well ahead of both Gorilla Boogers and Candy Scabs. Yum!
+</p>
+
+<p>
+But don't take my word for it, read this candy review excerpt from the internet, which apparently chronicles literally everything.
+</p>
+<div class = 'pre'>
+<a href = "http://candyaddict.com/blog/2006/09/29/jane-jane-tasty-tuna-tidbits-candy/">
+"There you are at the party when you suddenly see a bowl of shiny foil wrapped candies sitting in a bowl. You reach down and unwrap it while talking with that person that you have wanted to make a good impression. Continuing that conversation you pop the delicious treat into your mouth. You smile and think, “Mmm...er...Oh my goodness. I-I-I am going to hurl. This tastes like… FISH! I can’t spit this out, they will see…” You chew and swallow as soon as you can.
+
+You just ate a piece of Jane-Jane Tasty Tuna Tidbits Candy. "</a>
+</div>
+
+<p class = 'footnote'>
+</p>
+<hr class = 'section' />
+
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+I went on a training day today with Larry. Larry always out fundraises me. I do not like this. I want to beat Larry this year. And I want <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">PRIORITY TOILETS</a>. <a href ="http://main.nationalmssociety.org/site/TR/Bike/MNMBikeEvents?px=9224614&pg=personal&fr_id=22278">Donate to my MS-150 ride via this link</a> and help me beat Larry and not stand in line so long to pee. Remember, you are under no obligation to spend a dime for the JQMCBP.
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>
+Hammons and Lucas and RUPEs Oh My!
+</p>
+
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10574">Meredith Hammons</a></td>
+			<td>Georgia</td>
+			<td>Cadbury Egg</td>
+			<td>86</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=12001">cal RUPE</a></td>
+			<td>Michigan</td>
+			<td>Baby Ruth</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10579">David Lucas</a></td>
+			<td>Washington</td>
+			<td>Super Size Reeses Cup</td>
+			<td>84</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10589">Julie 'Mother of wall what wall John Lucas' Smith</a></td>
+			<td>Washington</td>
+			<td>Violet Crumble</td>
+			<td>84</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10834">Mark Dyal</a></td>
+			<td>Texas</td>
+			<td>Spree</td>
+			<td>82</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10638">Andrew R. Moore</a></td>
+			<td>International</td>
+			<td>Kit Kat</td>
+			<td>81</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11972">Marc Vachon</a></td>
+			<td>Michigan</td>
+			<td>snickers</td>
+			<td>81</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10580">John 'Wall, what wall?' Lucas</a></td>
+			<td>Washington</td>
+			<td>Only Green M and M's</td>
+			<td>80</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10760">Tim Ogborn</a></td>
+			<td>Illinois</td>
+			<td>Snickers</td>
+			<td>80</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11938">Bob RUPE</a></td>
+			<td>Michigan</td>
+			<td>Kit Kat</td>
+			<td>79</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10418">Wayne Lucas</a></td>
+			<td>Oregon</td>
+			<td>Snickers!</td>
+			<td>79</td>
+		</tr>
+	</tbody>
+</table>
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11553">Ivy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>59</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11650">Galilea the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>59</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11064">Darion the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>57</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11730">Kelly the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>56</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11837">Krystal the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>54</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11428">Patricia the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>54</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11662">Damarion the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>53</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11091">Kassidy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>53</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11679">Alana the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>53</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11423">Denise the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>53</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11707">Dario the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>53</td>
+		</tr>
+	</tbody>
+</table>
+<hr class = 'section' />
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2014 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

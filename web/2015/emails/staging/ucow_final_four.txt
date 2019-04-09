@@ -1,0 +1,27 @@
+Duke	0
+Michigan State	1
+Kentucky	2
+Wisconsin	3
+Tom Hinds	020
+Dustin Ramoie	022
+Todd 'Bartman' Barton	030
+Craig Wadz-za-man	033
+Anna Arvant	121
+Dustin Ramoie	122
+Jennyrupe	131
+Chad meister Pechumer	133
+===== WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Dustin Ramoie	2	25.000
+Craig Wadz-za-man	1	12.500
+Chad meister Pechumer	1	12.500
+Todd 'Bartman' Barton	1	12.500
+Anna Arvant	1	12.500
+Tom Hinds	1	12.500
+Jennyrupe	1	12.500
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 8
+Chimp Wins: 
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	8
+

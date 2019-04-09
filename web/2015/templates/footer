@@ -1,0 +1,42 @@
+[% IF params.keywords != 'enter' %]
+<!--
+<div id="enter">
+<p>Ready to enter? LET'S GET IT ON!</p>
+<a href="/jqmcbp/index.cgi?enter"><img src="candybar.gif" alt="Candy Bar with the golden ticket." /></a>
+</div>
+-->
+[% END %]
+	
+	<div id="sidebar">
+
+<!--
+      <h3>Links</h3>
+      <ul class="sidemenu">
+
+        <li><a href="http://www.cbssports.com/collegebasketball/mayhem/brackets/viewable_men">Viewable Bracket (CBS Sports)</a></li>
+        <li><a href="http://www.cbssports.com/collegebasketball/mayhem/brackets/printable_men">Printable Bracket (CBS Sports)</a></li>
+        <li><a href="http://www.google.com/search?hl=en&q=best+candy+bar+in+the+world&btnG=Search">Candy Inspiration</a></li>
+        <li><a href="http://home.pacbell.net/bettychu/2003allbreedbisris/BIS.html">Bunnies!</a></li>
+      </ul>
+-->
+	</div>
+</div>
+
+  <div id="footer">
+
+    <ul id="image">
+
+		<li><img src="images/footer.png" alt="Candymeister" width="38" height="40" /></li>
+		<li class = 'cc'><a href = 'https://creativecommons.org/'><img src="images/creative_commons.png" width='14' height='14' /></a></li>
+		<li id="last">
+			[% year %] Ben Klaas Productions
+		</li>
+
+    </ul>
+    <!-- footer ends-->
+        </div>
+  <!-- wrap ends here -->
+
+</div><!-- end container -->
+</body>
+</html>

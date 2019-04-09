@@ -1,0 +1,12 @@
+<tr><td>1</td><td>Todd 'Bartman' Barton</td><td>Minnesota</td><td>Kirby Puckett Bar</td><td>Duke</td><td>124</td></tr>
+<tr><td>2</td><td>Craig Wadz-za-man</td><td>International</td><td>King size Kit Kat</td><td>Wisconsin</td><td>118</td></tr>
+<tr><td>2</td><td>Lochlain McGrail</td><td>Michigan</td><td>a jumbo pack of gum balls</td><td>Duke</td><td>118</td></tr>
+<tr><td>4</td><td>Paul C. Smith</td><td>Wisconsin</td><td>Baby Ruth</td><td>Wisconsin</td><td>117</td></tr>
+<tr><td>5</td><td>Tom Hinds</td><td>California</td><td>Bag of rootbeer lollipops</td><td>Duke</td><td>113</td></tr>
+<tr><td>6</td><td>Eitan Weiss</td><td>International</td><td>milk chocolate hershey bar</td><td>Duke</td><td>111</td></tr>
+<tr><td>7</td><td>Doug Gilbert</td><td>Ohio</td><td>Peanut M&M</td><td>Duke</td><td>109</td></tr>
+<tr><td>7</td><td>Stephanie Haan-Amato</td><td>New Mexico</td><td>Reese's Peanut Butter Cup</td><td>Duke</td><td>109</td></tr>
+<tr><td>9</td><td>Bonnie Hendricks</td><td>Idaho</td><td>reese's peanutbutter cups</td><td>Duke</td><td>108</td></tr>
+<tr><td>9</td><td>Dustin Ramoie</td><td>Montana</td><td>Charleston Chew</td><td>Kentucky</td><td>108</td></tr>
+<tr><td>9</td><td>Kathy Larson</td><td>Florida</td><td></td><td>Wisconsin</td><td>108</td></tr>
+<tr><td>9</td><td>Kevin Quinn</td><td>Massachusetts</td><td>Payday</td><td>Wisconsin</td><td>108</td></tr>

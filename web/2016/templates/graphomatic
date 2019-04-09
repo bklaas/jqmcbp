@@ -1,0 +1,64 @@
+[% PROCESS jfactor_gauge
+        selector = '#jfactor_gauge'
+        main_title = 'Who Is Gutsier?'
+        subtitle1 = 'J Factor'
+        title1 = first_player
+        subtitle2 = 'J Factor'
+        title2 = second_player
+        left_val = j_factor1
+        right_val = j_factor2
+%]
+
+<table border=0 cellpadding = 5>
+
+<tr>
+	<td align = 'center'>
+		<span class = 'russoFont larger_bold'>[% first_player %]</span>
+	</td>
+	<td><span class = 'russoFont larger_bold'>VS.</span></td>
+	<td align = 'center'>
+		<span class = 'russoFont larger_bold'>[% second_player %]</span>
+	</td>
+<tr>
+	<td align=center>
+	[% FOR number IN first_player_strings %]
+		<img src = "/jqmcbp/images/[% number %]BRSD.GIF">
+	[% END %]
+	</td>
+
+	<td>&nbsp;</td>
+
+	<td align=center>
+	[% FOR number IN second_player_strings %]
+		<img src = "/jqmcbp/images/[% number %]BRSD.GIF">
+	[% END %]
+	</td>
+</tr>
+<tr>
+	<td align=center colspan = '3'>
+	<span class = 'russoFont larger_bold'>
+	These brackets have a Scientific Similarity Score (SSS&#0153;) of [% similarity %]
+	</span>
+	</td>
+</tr>
+</table>
+
+    <div class = 'gauge_wrapper'>
+
+    <div id = 'jfactor_gauge' class = 'chart_container'>
+    </div>
+
+    <div id = 'broken_glass_left'>
+        <img src = 'images/brokenglass.png' />
+    </div>
+    <div id = 'broken_glass_right'>
+        <img src = 'images/brokenglass.png' />
+    </div>
+
+    </div>
+
+<p></p>
+
+[% FOR graph IN graphs %]
+<img src = "graphomatic/[% graph %]" class = "white"><p><hr>
+[% END %]

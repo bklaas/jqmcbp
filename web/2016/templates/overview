@@ -1,0 +1,28 @@
+<h1 class="overview_title">Johnny Quest Memorial Candy Bar Pool XIX &#127852;</h1>
+
+<!--
+<h3><a href = '?willtherebeajqmcbpthisyear' style = 'text-decoration: underline;'>WILL THERE BE A [% year %] JQMCBP?</a></h3>
+
+<div id = 'defaultCountdown'></div>
+    <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif' />
+
+-->
+[%# PROCESS wheresmybracket %]
+
+<p>Welcome newcomers and seasoned veterans to the 19th Johnny Quest Memorial Candy Bar Pool (JQMCBP)! JQMCBP started in 1996 as a project to learn how to publish things to this new-fangled "World Wide Web". 21 years later, I'm still here schlocking out the Web's Weirdest NCAA pool.
+</p>
+
+<img src = "images/andwereback.gif" class = 'float-left' />
+<h2>No Purchase Necessary Enter Once and Only Once</h2>
+
+		
+	<p>The whole point of this thing is fun and candy. Unlike other office NCAA pools, this one won't have you stressed out about the $1-$5 you are going to lose because you picked Yale in the upset of the decade. The stakes are candy, and you can't lose. There's loads more information via the tabs above, but for the impatient <a href = "?enter">you can just get on with it.</a>
+
+<p>Make your picks by clicking on the button by each of your projected winning teams. When you make your selection, JQMCBP BracketMagic&trade; will automatically move your selection to the next round. If you want to change any selections, just click on the red 'x' to the right of the team name and it will send it back a round for further scrutiny. After you fill in your entire bracket, you will be prompted for the crucial part of your entry, your candy bar selection. Click on the Go! Ben! Go! button and your bracket is complete!</p>
+
+<p>Printable and Viewable brackets are usually available from CBS Sports, however once the tourney starts you will be able to view your selections Supa-Fancy Style&trade; from benklaas.com.</p>
+
+<p>So, that's the scoop. As in past years, I will religiously send out irreverant email rants as the tournament progresses, thus allowing you to spend countless hours following teams like the the Seawolves of Stony Brook, the Gaels of Iona, the Jackrabbits of South Dakota State, and of course the future NCAA champion UW-Green Bay Phoenix.
+
+<p>
+[% PROCESS next link = 'lucky' %]

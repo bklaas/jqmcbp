@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		p.footnote {
+			font-size: 11px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         border : 2px solid #000;
+         margin: 20px;
+         padding: 10px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #111;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header a {
+			text-decoration: none;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a title = "my little rock and roll queen" href = "http://youtu.be/ZynIhCs27Xs">XVII</a></h1>
+	<h2 class = 'slogan'><a href = "http://youtu.be/ZynIhCs27Xs" title = "good morning class">
+my little rock and roll queen</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|FNAME|*</li>
+	<li>Candybar: *|MMERGE3|*</li>
+	<li>Score: *|MMERGE6|* (leader is at *|MMERGE8|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE5|*</li>
+	<li>Rank: *|MMERGE7|*/810</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE4|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Michigan and Michigan State are both still alive in the tourney, and since <a href = "http://benklaas.com/jqmcbp/graphs/locale.html">I'm huge in Michigan</a> many of you still have some home-state interest in the tournament. JQMCBP also has a significant Iowa contingent, as I'm both a native of Ames, Iowa and have an M.S. from Iowa State. Most of the Iowa contingent were rooting for the Fred Hoiberg-coached Iowa State Cyclones in their Friday night loss to Connecticut. Fred is already as big of a celebrity as you can be in Ames, Iowa, a graduate and star player from both Ames High and Iowa State. In the last week he's become a darling of the sports media for his <a href = "http://bleacherreport.com/articles/2003350-iowa-state-coach-fred-hoiberg-dances-in-locker-room-after-beating-unc">awesome dance moves and texted apology to his daughter</a>. 
+</p>
+<p>
+Since the Cyclones, and with it the JQMCBP hopes of so many (34 had ISU as their champion, 51 listed them as their alma mater) are gone, I thought this would be a good time to tell a couple stories about how Fred Hoiberg destroyed my career as a basketball player.
+</p>
+
+<h2>How Fred Hoiberg Destroyed my Basketball Career</h2>
+<p>
+Circa 1987, I had a misplaced dream that I could become a viable competitive basketball player. In pursuit of this dream, I attended a weekend basketball clinic at Ames High School sponsored by former ISU guard Jeff Hornacek*. Midway through one of the scrimmages that day, I was on a team playing Fred Hoiberg's** team. Fred had just grabbed a rebound or stolen the ball or some such thing that Fred did well, and was leading a fast break the other way. I*** got it into my head that I was going to steal the ball by running up from behind and swiping it from him Jeff Moe-style*****. Oh, I forgot to mention this game was being played in the "new gym" at Ames High, which had the technological innovation of a poured rubber floor. This floor had about as much slickness as you'd expect from a floor made of poured rubber. As I made a flying horizontal leap to swipe the ball away, it was one of those moments where you felt like it was happening in slow motion. It was only mid-slow-mo flight that I noticed that Fred was not in slow-motion and continuing to dribble down the court in real time. Then I slow-mo skidded on the rubber floor, missing the steal by...well it wasn't close. As Fred, about a 9th grader at that point, dunked the ball on the other end, I was given adequate time to reflect on the hip-to-ankle floor burn I sustained as well as my future as an AHS varsity basketball player.
+</p>
+<p>
+
+Fast forward to 1989. I had given up my dream of playing varsity, but I was captain of one of AHS's most formidable intramural basketball teams. Granted, we only played other schmoes from our school, but the league championship was played in front of the entire student body of about 1,500, so it still felt like kind of a big deal. My team was in the semifinals, only one victory away from playing before a (mandatory attendance) capacity crowd. Our opponent was a team made up of mostly linemen from the football team (at least one of whom is entered in JQMCBP this year). Before the game started, we were given the choice of playing on the full varsity court or "cross court", which is much shorter end-to-end. Somehow we convinced the wide bodies on the other team that full court was the only way to play, and by halftime we were comfortably ahead. This semifinal game was not attended by 1,500 people. More like 10. But one of them was Fred Hoiberg, who at halftime was talked into coming out and showing off his dunking skills******. Fred reluctantly took the ball, made his approach for the dunk...and while throwing it down <em>violently shattered the backboard</em>. My starting forward, JQMCBP veteran Matt "Elbows and Knees" Smalling, within seconds excitedly ran out on the court, collecting pieces of broken glass in his Super Kwik Kwencher******* and telling everyone animatedly how much the broken glass was going to be worth someday. After the excitement settled (and Fred sheepishly made his exit), we still had the second half of basketball to play, and since we just lost one of the hoops we were forced to play cross-court. The linemen, now not so winded, employed their second half strategy of putting up a solid wall of linemen around the basket to thwart all attempts at layups, rebounds, or anything else a normally-widthed person might do within 10 feet of the hoop. They eked out a victory, marking the second time in two years Fred had shattered my dreams. This time quite literally shattered.
+
+</p>
+<p>
+That said, I was rooting hard for the Cyclones yesterday, because that Fred. He's such a nice boy.
+</p>
+<p class = 'footnote'>
+* Now head coach of the Phoenix Suns, and very likely NBA Coach of the Year<br />
+** Now head coach of the Iowa State Cyclones, and very likely Big 12 Coach of the Year<br />
+**** Now the Candymeister, and 100% Candymeister of the Decade<br />
+***** Obscure 1980s Iowa Hawkeye basketball player known for signature play of chasing people down from behind<br />
+****** I will admit, I was probably involved in this<br />
+******* The 48oz refillable soda cup from Kwik Shop everyone carried around in those days, for when the 32oz Kwik Kwencher just might not be enough<br />
+</p>
+<p>
+
+<hr class = 'section' />
+<h1>UCOW Update</h1>
+<p>
+The cruel and unusual UCOW has revealed that all but 27 humans (and 2 chimps) are mathematically out of the running. 
+</p>
+
+<div class = 'pre'>
+UCOW! Who's left in the Quest for Candy?
+Great Eight:  possible permutations 128
+Number of Humans still in the running: 27
+Number of Chimps still in the running: 2 (Alana the Chimp is rooting hard for Dayton as champion, Taliyah similarly for Connecticut)
+
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Tim Ogborn	20	15.625
+Wayne Lucas	16	12.500
+Dave McHalpine	11	8.594
+cal RUPE	11	8.594
+David Lucas	10	7.812
+Kiera Joseph	8	6.250
+Julie 'Mother of wall what wall John Lucas' Smith	7	5.469
+Erin Hogg	7	5.469
+Meredith Hammons	7	5.469
+Rich Lyle	6	4.688
+Phil 'on track' Horvath	6	4.688
+Terry Sievert	4	3.125
+Mark Foster	4	3.125
+Jim Bunda	3	2.344
+John 'Wall, what wall?' Lucas	2	1.562
+Alana the Chimp	2	1.562
+Ellie RUPE	2	1.562
+Bob RUPE	2	1.562
+Tom Starling	1	0.781
+John. C. Savagian	1	0.781
+Mike Kozak	1	0.781
+Sarah Boyd	1	0.781
+Karen Hart	1	0.781
+Taliyah the Chimp	1	0.781
+Michael Hartnett	1	0.781
+Kolleen	1	0.781
+Bob Cory	1	0.781
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 125
+Chimp Wins: 3
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	120
+2	7
+3	1
+</div>
+
+<hr class = 'section' />
+<h1>NEW! Anagramatron Tweets</h1>
+<h2>Don't Tweet? That's okay, Anagramatron search Twitter for you. Anagramatron find authentic tweets that are anagrams of each other. Anagramatron share with you.</h2>
+
+<p>
+Witness the existential glory of inane, unrelated tweet pairs that are anagrams of one another. These are all 100% real things people spent time typing into a computer. (Like I should talk)
+</p>
+
+<div class = 'quote'>
+I'm trying to be patient.
+</div>
+<div class = 'quote'>
+Bite me. #pottytraining
+</div>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+41 of you had Kentucky. Big deal. 23 of you had Connecticut, which I'd give props to but that means you bet against ISU and that's unforgivable. 3 of you though had the Dayton Flyers advancing this far, and for that I give you the Candymeister's 2nd highest award of recognition, BIG FAT NOTHING. Well done!
+</p>
+
+<div class = 'pre'>
+Kentucky:  Andy Calvert, Bob Cory, Bob RUPE, cal RUPE, Cathy 'swiss miss' Stidwell, Charlotte Bowers, Chris Hutchinson, David Lucas, Denis Charette, Edziu, Ellie RUPE, Eric Gifford, Jeff 'with 30min of ESPN knowledge' Hober, Jim Chryssikos, John 'Wall, what wall?' Lucas, Johnny Marathon Flaa, Jon Klimczuk, Julie 'Mother of wall what wall John Lucas' Smith, KBHart, Kiera Delargy, Kiera Joseph, kim coffey, kurt gardinier, Lady Hoosiers, Lindsey Cloud, Madison Dyal, Mark Foster, Martie Lucas, Meredith Hammons, molly mortimer, Nancy Girardot, Prince Ali Ababwa, Ron 'Circus Peanuts' Jeremy, Ron Charlebois, Scott Mortimer, Sue Ray, Teresa Bryan, Therese Hebda, Tom Starling, Trey Joseph, Wayne Lucas
+
+Connecticut:  Allen witt, Ashley Charlebois, Charlotte Bowers, Cosmic Rick, Filthy Phil, Heather Stratton Williams, John 'Wall, what wall?' Lucas, Johnny Marathon Flaa, Joseph Gobernatz, Julie 'Mother of wall what wall John Lucas' Smith, Mark Danhausen, Mark Dyal, Mazzie Clark, Michelle Mondoux, Rafi Thaler, Renata Guedes Sampaio, Robin Fitzgerald, Romke Mooiweer, Sarah Ogborn, Sparty Party, Sue Ray, Tim Ogborn, Zachary Pruitt
+
+Dayton:  Billy Girardot, Katherine Gifford, Trey Joseph
+</div>
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<div class = 'pre'>
+To: The Candymeister
+From: Rick Shepich
+Subject: UCOW
+
+...this is a statistic that tells me after the first weekend of games that I have absolutely no chance of winning? Whose the brainchild that thought this was a good idea? Have a little compassion, man! Can we please just have the second weekend of games to believe that we might have a chance, even if we don't? Is it too much to ask to get a week to look at our brackets with a sense of wonder, thinking that maybe, just maybe, if things go right, we might be able to win some candy? Way to crush our spirits after one weekend, YOU COW!
+
+Aside from that, thanks for entertaining us and keep up the great work. Good times. Good times.
+</div>
+
+<div class = 'pre'>
+To: Rick Shepich
+From: The Candymeister
+Subject: re: UCOW
+
+I think you've captured the spirit of UCOW very well. The JQMCBP is at heart a dictatorship, so it is often pointlessly cruel and inhuman. I'd apologize for that, but dictators don't say they are sorry.
+
+On a positive note, I have not invaded Ukraine, nor plan to. At least for this fiscal quarter.
+
+cheers,
+The Meister
+</div>
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+So long suckers!
+</p>
+
+<div class = 'pre'>
+Baylor: Christine Dyal
+
+Iowa State: CJ Hewitt, Kai Anderson, Avey Anderson, Tracy Niyo, Shaun Connolly, Patrick Connolly, Doug Van Beek, Ortopan, Matt 'Go Fred Go!' Smalling, Bob Smalling, Cathy 'swiss miss' Stidwell, tom Quakenbush, ARH, annette orvedal, Carrie SO'B, Ellen 'Sweet Tooth' Gifford, Jen Johnson, stephen malcolm anderson, Eddie Deevine, Lindsey Cloud, John Niyo's Buddy, Karni Magdesian, Gary Bahr, Dan 'the Fan' Crim, Christy Reed, Rob Reed, Christian 'The Charby' Charbonneaux, MaKenzie Margaret Smalling, Deanne Busta, Sara Van Houten , Sarah Handlos, Jason Earl Teal, Kevin Kane, Joanne Isenhart
+
+Louisville: Chris 'Junior Mints' Young, Mackle Schwartz, Steve Carlson, Sheryl Hatcher, ML Cogar, Jared Poertner, Big Pappa Pump, Bill Mech, Pondscum, Trish Soriano, Brent Dakin, Sidney Moncrief, Bill Rogers, Ken Howard, Todd Campbell, Eric Naiburg, Bryan Romig, Josh Klein, John Davidson, wilson korol, Jim Marten, Michael Pruitt, Alex Anderson, Jennifer Taylor, Natalie Groves, Ray Niergarth, Gregory White II, Big Bri Hutchinson, Matt Englehart, Maggie MacDonell, Paul Wadzinske, Bill Teer, Carly McLanahan, Nate Reed, Josh Thaler, Patty 'The Twixter' White, Margaret WadzinskE, Mary Vachon, Darragh Quinn, T Miller, Armageddon, P Repp
+
+San Diego State: Michael Payne, Mrs. Mitchell Goosen, Wesley Davis, Carol Reed, Nathan Blake
+
+Stanford: Martha & Jacob Carlos
+
+UCLA: Filthy Phil, carly a thaler, Renata Guedes Sampaio, Owen Carlos, Jan Macie
+
+Virginia: Jane MC, joshua stevens, Lea Adams, Russell, Catherine Jones, Mark Stringer, Teej, Dennis Brodjeski, Sue Ray, Bob Topel, Mark Larson, Camden Johnson, William Morrison, Nate Herr, Bill Holmes, Owen Davidson, Myron Danielson, Andy Glime, Kevin Quinn, Matthew Meilinger, Tim Handlos, Jedidiah Durkin, Alyssa Teer, Fritz Crisler, Nigel, Chris Daigh, catherine brozowski
+</div>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+<div class = 'pre'>
+<p>
+Iowa State: CJ Hewitt, CJ Hewitt :D, Brett callison, Ben Boxcar Kehrwald, Shaun Connolly, Brent Swanson, Patrick Connolly, Angie Mowery, Matt 'Go Fred Go!' Smalling, Aelx Blom, Bob Smalling, Sandlots, Angela Hewitt, Green Acres, Pondscum, Brent Dakin, Kristal Sieve, Pat Dillon, ARH, Mark Carson, Brenda VB, Laura 'Bob's Mom' Moreland, Andrew Hefte, Dan Ketelsen, Clare Isenhart , Jen Johnson, Zachary Klaas, Jamie Harrison, David Smalling, Matt Van Heukelom, Chris Handlos, Bo Darville, Chuck Rodrigues, Cara Peters, michael mowery, Gary Bahr, Dan 'the Fan' Crim, Christy Reed, Rob Reed, Christian 'The Charby' Charbonneaux, Brad Johnson, Sarah Handlos, Rob Bellin, Doug Busta, Kelly Wolfe-Bellin, Sarah Vandevanter, Jeff Kopaska, Kevin Kane, Limno girl, Todd Rozendaal, Joanne Isenhart
+
+Louisville: ML Cogar
+
+San Diego State: Matt Clark, Alexandra Syphard, Maria Blake, Wesley Davis, Nate Reed
+
+Stanford: Andrew Hanson, Kai Anderson, Rennie Anderson, Ramon Roullard, Jeff Amato, Robert Portnoy, Jodie Baird, Andy Calvert
+
+UCLA: Rick Wilder, Ron 'Circus Peanuts' Jeremy, John Varesi, Rick Tetlow
+
+Virginia: Addy Burke
+</p>
+
+
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The What About the Children award goes to Colin Gjervold, for his selection of "Candy cigs with powdered sugar smoke". I used to buy these as a kid. They all had fake brands that were close to the names of real cigarettes. I always favored the candy cig brand "Hey, Man! KOOL!" because I felt the powdered sugar smoke had a certain piquant after-dinner flavor that went so well with my Bubs Daddy bubblegum and RC Cola* from Skelly gas station. Brent Dakin, if you're reading this far, you know I'm right. You were out there in the parking lot "smoking" with me.
+</p>
+
+<p class = 'footnote'>
+* RC Cola collector's edition can featuring the pictures of such 1980s Kansas City Royals icons as Amos Otis and Willie Wilson
+</p>
+<hr class = 'section' />
+
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+I've been encouraged to use the term "<a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">PRIORITY TOILETS</a>" to describe anything awesome. Feel free to use it, as a catch phrase it is SO priority toilets. If you <a href ="http://main.nationalmssociety.org/site/TR/Bike/MNMBikeEvents?px=9224614&pg=personal&fr_id=22278">Donate to my MS-150 ride via this link</a>, you will help me achieve golden gears status, which means use of priority toilets, which is totally priority toilets. Remember, you are under no obligation to spend a dime for the JQMCBP.
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>
+Tim "Snickers" Ogborn of Illinois has taken over sole possession of the lead, and is also the UCOW front-runner winning 20% of all remaining bracket permutations. Many of those on the top 10 list are completely out of it. Just think, without UCOW to stomp on their hopes and dreams they would still think they were in it! That's the sublime beauty of UCOW.
+</p>
+
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10760">Tim Ogborn</a></td>
+			<td>Illinois</td>
+			<td>Snickers</td>
+			<td>74</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10418">Wayne Lucas</a></td>
+			<td>Oregon</td>
+			<td>Snickers!</td>
+			<td>73</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10563">Andrew Hefte</a></td>
+			<td>Kansas</td>
+			<td>King Size bag of Reese's Pieces</td>
+			<td>71</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10632">Ron 'Circus Peanuts' Jeremy</a></td>
+			<td>California</td>
+			<td>Circus Peanuts</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10834">Mark Dyal</a></td>
+			<td>Texas</td>
+			<td>Spree</td>
+			<td>70</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10638">Andrew R. Moore</a></td>
+			<td>International</td>
+			<td>Kit Kat</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11972">Marc Vachon</a></td>
+			<td>Michigan</td>
+			<td>snickers</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10744">michael mowery</a></td>
+			<td>Iowa</td>
+			<td>whatcamacallit</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10574">Meredith Hammons</a></td>
+			<td>Georgia</td>
+			<td>Cadbury Egg</td>
+			<td>68</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11921">Sarah Vandevanter</a></td>
+			<td>Iowa</td>
+			<td>Reeses Peanut butter cups</td>
+			<td>68</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10327">Phil 'on track' Horvath</a></td>
+			<td>Ohio</td>
+			<td>Snickers</td>
+			<td>68</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11371">Jonathan the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>51</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11730">Kelly the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11837">Krystal the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>48</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10971">Jeremy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>48</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11423">Denise the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11674">Cooper the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11050">Dayanara the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11553">Ivy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11679">Alana the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10968">Douglas the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11650">Galilea the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>47</td>
+		</tr>
+	</tbody>
+</table>
+<hr class = 'section' />
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2014 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

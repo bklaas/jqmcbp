@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		p.footnote {
+			font-size: 11px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         border : 2px solid #000;
+         margin: 20px;
+         padding: 10px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #111;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header a {
+			text-decoration: none;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a title = "my little rock and roll queen" href = "http://youtu.be/ZynIhCs27Xs">XVII</a></h1>
+	<h2 class = 'slogan'><a href = "http://youtu.be/ZynIhCs27Xs" title = "good morning class">
+my little rock and roll queen</a></h2>
+</div>
+
+<div class = 'email'>
+<h2>How Fred Hoiberg Destroyed my Basketball Career</h2>
+<p>
+Circa 1987, I had a misplaced dream that I could become a viable competitive basketball player. In pursuit of this dream, I attended a weekend basketball clinic at Ames High School sponsored by former ISU guard Jeff Hornacek*. Midway through one of the scrimmages that day, I was on a team playing Fred Hoiberg's** team. Fred had just grabbed a rebound or stolen the ball or some such thing that Fred did well, and was leading a fast break the other way. I*** got it into my head that I was going to steal the ball by running up from behind and swiping it from him Jeff Moe-style*****. Oh, I forgot to mention this game was being played in the "new gym" at Ames High, which had the technological innovation of a poured rubber floor. This floor had about as much slickness as you'd expect from a floor made of poured rubber. As I made a flying horizontal leap to swipe the ball away, it was one of those moments where you felt like it was happening in slow motion. It was only mid-slow-mo flight that I noticed that Fred was not in slow-motion and continuing to dribble down the court in real time. Then I slow-mo skidded on the rubber floor, missing the steal by...well it wasn't close. As Fred, about a 9th grader at that point, dunked the ball on the other end, I was given adequate time to reflect on the hip-to-ankle floor burn I sustained as well as my future as an AHS varsity basketball player.
+</p>
+<p>
+
+Fast forward to 1989. I had given up my dream of playing varsity, but I was captain of one of AHS's most formidable intramural basketball teams. Granted, we only played other schmoes from our school, but the league championship was played in front of the entire student body of about 1,500, so it still felt like kind of a big deal. My team was in the semifinals, only one victory away from playing before a (mandatory attendance) capacity crowd. Our opponent was a team made up of mostly linemen from the football team (at least one of whom is entered in JQMCBP this year). Before the game started, we were given the choice of playing on the full varsity court or "cross court", which is much shorter end-to-end. Somehow we convinced the wide bodies on the other team that full court was the only way to play, and by halftime we were comfortably ahead. This semifinal game was not attended by 1,500 people. More like 10. But one of them was Fred Hoiberg, who at halftime was talked into coming out and showing off his dunking skills******. Fred reluctantly took the ball, made his approach for the dunk...and while throwing it down <em>violently shattered the backboard</em>. My starting forward, JQMCBP veteran Matt "Elbows and Knees" Smalling, within seconds excitedly ran out on the court, collecting pieces of broken glass in his Super Kwik Kwencher******* and telling everyone animatedly how much the broken glass was going to be worth someday. After the excitement settled (and Fred sheepishly made his exit), we still had the second half of basketball to play, and since we just lost one of the hoops we were forced to play cross-court. The linemen, now not so winded, employed their second half strategy of putting up a solid wall of linemen around the basket to thwart all attempts at layups, rebounds, or anything else a normally-widthed person might do within 10 feet of the hoop. They eked out a victory, marking the second time in two years Fred had shattered my dreams. This time quite literally shattered.
+
+</p>
+<p>
+That said, I was rooting hard for the Cyclones, because that Fred. He's such a nice boy.
+</p>
+<p class = 'footnote'>
+* Now head coach of the Phoenix Suns, and very likely NBA Coach of the Year<br />
+** Now head coach of the Iowa State Cyclones, and very likely Big 12 Coach of the Year<br />
+**** Now the Candymeister, and 100% Candymeister of the Decade<br />
+***** Obscure 1980s Iowa Hawkeye basketball player known for signature play of chasing people down from behind<br />
+****** I will admit, I was probably involved in this<br />
+******* The 48oz refillable soda cup from Kwik Shop everyone carried around in those days, for when the 32oz Kwik Kwencher just might not be enough<br />
+</p>
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2014 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

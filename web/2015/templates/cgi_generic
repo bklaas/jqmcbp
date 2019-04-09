@@ -1,0 +1,25 @@
+[% PROCESS cgi_header title = params.title banner = 'plain' %]
+
+<!--
+[% IF params.cgi != 'player_bracket' %]
+<div id = 'popMe' style = "float:right; text-align: right; font-size: 9px;">
+[% IF cookie %]
+Welcome <a href = "player_bracket.cgi?player_id=[% cookie %]">[% thisisme.name %]</a><br>
+your rank is [% thisisme.rank %]/[% params.pool_size %]<br>
+your score is [% thisisme.score %] (leader @ [% params.high_score %])<br>
+What, you aren't [% thisisme.name %]? <a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">change it
+</a>
+[% ELSE %]
+<a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">Who are you?</a>
+[% END %]
+</div>
+[% END %]
+-->
+
+<div id = 'content'>
+<div id = 'main'>
+<h5>The JQMCBP is forever 100% free, but in June I am riding 150 miles on my bike to help fund MS research. <a href = 'http://bit.ly/benMS150' target = '_blank' style = 'text-decoration: underline;'>Donate to my ride here.</a></h5>
+
+[% PROCESS $params.cgi %]
+</div>
+[% PROCESS cgi_footer %]

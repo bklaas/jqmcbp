@@ -1,0 +1,21 @@
+	<h1>Lucky's 1000 Chimp Army &#128584;&#128585;&#128586;</h1>
+		
+	<!--<img src = '/johnnyquest/images/chimparmy2_flipped.jpg' class = 'bordered rightfloat' />-->
+	<img src = 'images/luckyGun.gif' class = 'bordered rightfloat' />
+	<p>
+2006 was an amazing year for the Chimp Batallion due to the unprecedented success of underdog George Mason University in the tournament. It was only after the final weekend that the chimp's chances at winning were finally stifled. Buoyed by their 2006 showing, the 1000 Chimp Army will continue to return, wreaking havoc wherever and whenever possible.
+</p>
+	<h3>Chimp Army History</h3>
+	<p>
+Not satisfied with his personal-best 2001 performance as his crowning JQMCBP achievement, Lucky the Chimp assembled 1000 of the toughest, roughest, most notorious Chimps to aid in his cause, and since then they have never left his side.
+	
+	<img src = '/johnnyquest/images/chimparmy.jpg' class = 'bordered leftfloat'>
+	Lucky's Army includes Dario the Chimp, wanted for extradition by the government of Panama for Produce Fraud; Fatima the Chimp, deemed 'untreatable and clearly psychopathic' by her primate psychologists at the Univerisity of Wisconsin; Diego the Chimp, implicated as the mastermind in several mass zoo escapes. The other 997 are even worse, and ALL of them are entering this year's JQMCBP again, each with their own randomly generated picks (for the geek-inclined, <a href = "random_bracket_selector.html">code here</a>), as part of Lucky's 1000 Chimp Army.</p>
+
+<p>Your success against Lucky's Army will be tracked with your Darwin Score, a measure of how many of the Army are currently beating you (tie goes to the chimp). 
+
+
+	<img src = '/johnnyquest/images/chimparmy3.jpg' class = 'bordered leftfloat'>
+A Score of 0 defines you squarely as a member of <i>Homo sapiens</i>, 500 means you aren't much different than <i>Pan troglodytes</i>, and a score of 1000 demonstrates that you are scientifically identical to <i>Quercus bicolor</i>. </p>
+
+[% PROCESS next link = 'fame' %]

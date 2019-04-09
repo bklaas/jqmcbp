@@ -1,0 +1,12 @@
+<tr><td>1</td><td>Terrell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>84</td></tr>
+<tr><td>2</td><td>Cale the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>70</td></tr>
+<tr><td>2</td><td>Kadence the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>70</td></tr>
+<tr><td>4</td><td>Blaine the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>66</td></tr>
+<tr><td>5</td><td>Breanna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>65</td></tr>
+<tr><td>6</td><td>Carlos the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Utah</td><td>64</td></tr>
+<tr><td>6</td><td>Dangelo the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>64</td></tr>
+<tr><td>8</td><td>Chase the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>63</td></tr>
+<tr><td>8</td><td>Jack the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>63</td></tr>
+<tr><td>10</td><td>Deborah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+<tr><td>10</td><td>Gary the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>62</td></tr>
+<tr><td>10</td><td>Madyson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>

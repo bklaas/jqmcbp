@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         border : 2px solid #000;
+         margin: 20px;
+         padding: 10px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header a {
+			text-decoration: none;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a title = "oo..baby..oo...babyoo" href = "http://www.youtube.com/watch?v=zdEccVETRgc">XVII</a></h1>
+	<h2 class = 'slogan'><a href = "http://www.youtube.com/watch?v=VyTBBbJ4GOo" title = "">just like the white-winged dove</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|FNAME|*</li>
+	<li>Candybar: *|MMERGE3|*</li>
+	<li>Score: *|MMERGE6|* (leader is at *|MMERGE8|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE5|*</li>
+	<li>Rank: *|MMERGE7|*/810</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE4|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+I had the good fortune to take in the Iowa State - NC Sentra Legals game last night with my dad at an area watering hole. ISU looked really good, though losing one of their best players to a broken foot will probably reduce the chances of my ISU-Creighton finals match up (it was always far-fetched, but I was trying to do right by the great state of Iowa this year). 
+</p>
+<p>
+Anyway, Dad and I got home close to midnight and I made the unprecedented move to go right to sleep instead of waiting for the Tulsa-UCLA game to finish (West Coast, I shake my fist at your timezone). I'm sure at least 4 or 5 of the 810 humans in this year's pool (all-time JQMCBP record, by the way) were just sitting there at 2am CDT hitting refresh-refresh-refresh wondering why the leaderboard wasn't updating*, and worse yet wondering WHERE IS MY RAMBLING CANDYMEISTER EMAIL?. Well, in the advanced age of my XVIIth year of JQMCBP, I was in deep need of shuttin' er down for the night. A solid choice, as I have awoken once again with the ability to write long, comma-filled, parenthetical heavy (or footnoted*****) sentences once again.
+</p>
+
+<p>
+* While I'll do my best to update via smartphone, get ready for more leaderboard delays, I'm going to a community theater production of The Sound of Music** this afternoon.<br />
+** I know, right? Save me, my entire family is in it***<br />
+*** They love musicals****<br />
+**** I do not.<br />
+***** See what I did there?<br />
+</p>
+
+<hr class = 'section' />
+<h1>NEW! Anagramatron Tweets</h1>
+<h2>Don't Tweet? That's okay, Anagramatron search Twitter for you. Anagramatron find authentic tweets that are anagrams of each other. Anagramatron share with you.</h2>
+
+<p>
+I realize Twitter anagrams are not what most would consider a good time, but I can't get enough of these. These are 100% real and culled directly from the crazed pyscho babble of Twitter.
+</p>
+
+<div class = 'quote'>
+The demons are out in force. 
+</div>
+<div class = 'quote'>
+Of course, I mean the rodent.
+</div>
+
+<p>Bonus anagram!</p>
+
+<div class = 'quote'>
+Now my heart is as cold as December 
+</div>
+<div class = 'quote'>
+THE WENDY'S COMMERCIALS ARE SO BAD
+</div>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+The day started out with a bang with Duke exiting at the hands of Mercer (who both looked great and apparently had some guy on the team <a href = "http://www.slate.com/blogs/browbeat/2014/03/21/duke_mercer_upset_dance_from_kevin_canevari_a_primer_on_the_nae_nae.html">dancing something called the NaeNae</a>). Only 15 people picked Duke, including Brian Stromquist who used <a href ="http://exygy.com/generating-a-smart-ncaa-bracket/">this javascript method</a> and <a href = "https://www.codersbracket.com/code_bracket">this coder's bracket generator tool</a> to generate a bracket based on weighted probabilities given by Nate Silver's published model (though notable: Silver's Mercer win probability was listed at 7%; sometimes you roll weighted dice and they still come up with the unexpected). 
+</p>
+
+<p>
+Also picking Duke to lose were Blair 'Beefcake' Brownyard who, as mentioned in the last update, made all of his picks based on mascot toughness. Also picking the Mercer win was at least one child under 10. Also picking a Duke loss was someone named "Candy Chatawanich". Also that candy-hating Wilbur Wonka, DDS. So...yeah.
+</p>
+
+<p>
+Nothing else really ranked to high on the JQMCBP upset meter. 186 people had Stephen F Austin winning, which one in spectacular fashion with a little help from a questionable 4-point play at the end of regulation.
+</p>
+
+<div class = 'pre'>
+Mercer:  Billy Girardot, Blair 'Beefcake' Brownyard, Brian Stromquist, Candy Chatawanich, Claire 'The Bear' Lucas, Dr. Wilbur ' Candy is a waste of time' Wonka, DDS, Gregory J. White III, Izaak Sawyer, John Niyo's Buddy, Kiera Joseph, Limno girl, Margaret Care, Nathan Blake, Sam Rhoades, Tracy Niyo
+</div>
+
+<p>
+</p>
+<hr class = 'section' />
+
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+Pool veteran Brian "Data Smasher" Hutchinson has informed me that his IT guy is Kip Winger's cousin Scott. Kip's deeply disturbing 80s song "Seventeen" was the featured XVII link at the top of my first email. I love these Brushes with (Semi-)Greatness or Relatives of (Semi-)Greatness stories, and will be looking forward to hearing more*.
+</p>
+
+<p>
+* I actually have one for today. I once served coffee to a deeply inebriated Stevie Nicks at the Village Inn Pancake House in Ames, Iowa** in 1988.<br />
+** Go Cyclones!
+</p>
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+The mailbag was hopping Friday...so many to choose from. I've decided to highlight emails from two of my nieces, Ellie Chungath and Rowan Klaas, who have a mastery of email emojis and color selections that far dwarfs my own. 
+</p>
+	<ul>
+		<li> <a href = "http://benklaas.com/jqmcbp/images/ellie1.png">Ellie on Emojis</a></li>
+		<li> <a href = "http://benklaas.com/jqmcbp/images/ellie2.png">Ellie on Emojis Part Deux</a></li>
+		<li> <a href = "http://benklaas.com/jqmcbp/images/rowan.png">Rowan's Spectacular Color Palette</a></li>
+	</ul>
+
+<p>
+In case you were wondering, I did grant Rowan special niece power and allowed her candy choice of "1 lb chocolate bunny" to be replaced with "Anything the size of my head".
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<p>
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Luke, your pick of Coastal Carolina to win it all has to be the most painful of the 28 that lost their champion yesterday. In what seemed like a prescient selection, now you just look a wee bit foolish. No matter, the Chanticleers (a <a href = "http://grfx.cstv.com/schools/coas/graphics/chauncey-fb.jpg">crafty, quick-witted rooster</a>) will rise again.
+</p>
+<p>
+Oh, and Duke lost.
+</p>
+<p>
+So long suckers!
+</p>
+
+<div class = 'pre'>
+Coastal Carolina: Luke
+
+Duke: Jeb Byers, Brett callison, Kevin Chauvin , Connor Byers, Joe Hoag, Wesley Amato, Tom Hinds, Mark Carson, Ryan Cochran, Nancy Girardot, Bo Darville, Kiera Delargy, Madison Dyal, Jeff Johnson, Richard Mott, LJ , Mazzie Clark
+
+George Washington: David Ullman, kim coffey
+
+New Mexico: Scott Delker
+
+Oklahoma State: TJ
+
+Providence: nina thaler
+
+Tulsa: Victoria Hebda
+
+UMass: Josh Carlson, Heather Stratton Williams
+
+VCU: Sofia Amato, Meredith Clark
+</div>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Okay MaKenzie Margaret Smalling, how is that degree from California Polytechnic of San Luis Obispo treating you? Pool participants, you are being duped. MaKenzie is not a graduate of Cal Poly SLO, or if she is she would be easily its youngest graduate, as she is not even 10 years old. Apparently this kind of academic fraud is rampant in JQMCBP this year amongst pre-10s (pre-10 is the new pre-teen), as evidenced by this shocking whistleblower email I received from Patty "Inventor of the Modern J Factor Statistic" Henshaw.
+</p>
+
+<div class = 'mailbag'>
+Ben,
+Considering that I work with Chris Long (and introduced him to the JQMCBP), I feel like I am eminently qualified to report that Gavin Long, who is 10(ish) and not Doogie Howser, is definitely not a North Carolina State alum. Even if Gavin entered that himself for some reason*, I hate to see him tarred for the sins of his father. (You'll notice that Chris missed a perfect Day 1 by only his misplaced loyalty to the Wolfpack.**)
+
+Guess I better go check and make sure Pat didn't sign Katie up as an Iowa State alumna on her inaugural bracket...which, by the way, I think is a pretty credible effort for a 6-year old who knows nothing about college basketball.
+Patty
+
+* Brainwashing? Or maybe just excessive exposure to NC State alumni--we are in Seattle and thus subject to the cult of Russell "Pack of Badgers" Wilson***
+** Even if they really should have won that game...
+*** Use of JQMCBP-style footnotes is totally an homage...and possibly a shameless ploy for the mailbag.
+</div>
+
+<p>
+Just a reminder though Patty, nobody likes a snitch.
+</p>
+
+<p>
+Here's the roll call of people that lost their (possibly fictional) alma mater Friday.
+</p>
+<div class = 'pre'>
+Cal Poly SLO: MaKenzie Margaret Smalling, Jeremy Farr
+
+Duke: Jeb Byers, Connor Byers, Tim Hoelscher, wilson korol, Kirk Moloney, Kurt Evan Anderson
+
+Kansas State: Bill Rogers
+
+Nebraska: molly mortimer, Chris Hutchinson
+
+New Mexico: David Mitchell
+
+Oklahoma State: jeffrey mckeage, Big Pappa Pump, Armageddon
+
+UMass: Scott Govoni, Amy McLanahan
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+Greg Wenz has lived in Thailand, and understands the horrors of desserts from Southeast Asia. To paraphrase Greg "Fermented beans are not treats!" This does not appear to have affected Greg's decision for Popin' Cookin' Sushi Kit (yes, that's how you spell it). You may wonder what Popin' Cookin' Sushi Kit is, and how it qualifies as "candy". Well, <a href = "https://www.youtube.com/watch?v=eiJbgYwlxWc">this handy and informative instructional video</a> teaches you all you need to know*.
+</p>
+
+<p>
+* If you watch the whole 5 minutes, it's a 2-for-1. You will be both forever scarred and never get that 5 minutes back.
+
+<hr class = 'section' />
+
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+<a href = "http://benklaas.com/jqmcbp/images/larryNben.jpg">I ride the MS 150 each year with my friend Larry</a>, who annoyingly out-fundraises me every year. I cannot let this stand further. You are under no obligation to donate anything to enter JQMCBP, but if you do I can FINALLY BEAT LARRY and qualify for <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>.
+</p>
+<p>
+<a href ="http://main.nationalmssociety.org/site/TR/Bike/MNMBikeEvents?px=9224614&pg=personal&fr_id=22278">Donate to my ride here</a>. 
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>Congrats to Georgia's own Amish Das, standing atop the leadboard alone after round 1. Lurking right behind Amish are 9 more, including THE Kai Anderson, Rod "Big Hunk" Harl, and Gene "Danger Zone" Seichter. I have also been reminded* that my 8-year-old daughter Piper is leading my household's competition.
+</p>
+<p>
+* by my 8-year-old daughter Piper
+</p>
+
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10764">Amish Das</a></td>
+			<td>Georgia</td>
+			<td>TWIX</td>
+			<td>29</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10456">Rod Harl</a></td>
+			<td>Massachusetts</td>
+			<td>Big Hunk</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10408">Gene Seichter</a></td>
+			<td>Minnesota</td>
+			<td>Butterfinger</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10618">Chris Long</a></td>
+			<td>Washington</td>
+			<td>Girl Scout Cookie Samoas</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10279">Nick DiGirolomo</a></td>
+			<td>Arizona</td>
+			<td>Kirby Puckett bar</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10395">Rick Wilder</a></td>
+			<td>California</td>
+			<td>Reese's peanut butter cup</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10244">Kai Anderson</a></td>
+			<td>District of Columbia</td>
+			<td>Reese's Peanut Butter Cups</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10570">Hal Norman</a></td>
+			<td>California</td>
+			<td>Six Million Dollar Man Candy Bar</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10353">Susie Smalling</a></td>
+			<td>Minnesota</td>
+			<td>Take 5</td>
+			<td>28</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10826">Annette Dyal</a></td>
+			<td>Texas</td>
+			<td>3 Musketeers</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10560">Clarence S.</a></td>
+			<td>Minnesota</td>
+			<td>beer</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10377">Ken Mills</a></td>
+			<td>Massachusetts</td>
+			<td>Boom Choco Boom Dark Chocolate Bar</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10457">Kristal Sieve</a></td>
+			<td>Oklahoma</td>
+			<td>Eiffel Strawberry Bon Bons</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10773">Mike Gill</a></td>
+			<td>Michigan</td>
+			<td>Giant Hersheys</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10563">Andrew Hefte</a></td>
+			<td>Kansas</td>
+			<td>King Size bag of Reese's Pieces</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11877">Gage Teer</a></td>
+			<td>Texas</td>
+			<td>king size hershey bar</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10638">Andrew R. Moore</a></td>
+			<td>International</td>
+			<td>Kit Kat</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10557">Julie fitzpatrick</a></td>
+			<td>Michigan</td>
+			<td>Mounds bar</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10504">Tim Hoelscher</a></td>
+			<td>Tennessee</td>
+			<td>Peanut butter Snickers</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10858">Greg Wenz</a></td>
+			<td>Minnesota</td>
+			<td>Popin' Cookin' Happy Sushi House</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10356">Mike Lamb</a></td>
+			<td>Minnesota</td>
+			<td>Reese's</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10761">Greg Rhoades</a></td>
+			<td>Missouri</td>
+			<td>Sky Bar</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11972">Marc Vachon</a></td>
+			<td>Michigan</td>
+			<td>snickers</td>
+			<td>27</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11898">Kendra Moloney</a></td>
+			<td>Iowa</td>
+			<td>Snickers</td>
+			<td>27</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11507">Devonte the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>24</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11675">Deshawn the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10978">Koby the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10957">Aryanna the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11211">Gaige the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11182">Belen the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11645">Jordy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>23</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11549">Juliette the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11234">Kieran the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11414">Larissa the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11026">Arnold the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11444">Sydni the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11859">Iyana the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11074">Kallie the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11247">Konnor the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11798">Alfredo the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11647">Makayla the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11695">Elisa the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11362">Trace the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10971">Jeremy the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11730">Kelly the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=10945">Kourtney the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11597">Andrew the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11094">Markus the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11212">Emily the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td><a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=11029">Ximena the Chimp</a></td>
+			<td>Neverland Ranch</td>
+			<td>Banana Moon Pie</td>
+			<td>22</td>
+		</tr>
+	</tbody>
+</table>
+<hr class = 'section' />
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2014 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>
