@@ -1,0 +1,171 @@
+
+<table width = '100%' border = '0'>
+<tr><td>If you would like to see what teams have won so far, look
+       <a href="player_bracket.cgi?player_id=winners">here</a></td></tr>
+
+<tr><td class = 'verysmall'>
+Scores last updated: [% params.last_updated %] [%# params.year %] CDT
+</td></tr>
+</table>
+
+<table class = 'thinborder leaderboard_wrapper'>
+[% INCLUDE filterForm %]
+[% INCLUDE extraInfo %]
+[% INCLUDE leaderboard_headings %]
+[% whereIat = 1 %]
+[% FOR row IN scores %]
+	[% IF row.player_id == cookie %][% whereIat = 0 %][% END %]
+	[% PROCESS leaderboard_data rowdata = row %]
+[%  END %]
+[% IF whereIat  %]
+<tr ><td colspan = '10' class = 'leaderboard'><b>Who cares about these bumpkins? Where Am I At?</b></td></tr>
+	[% PROCESS leaderboard_data rowdata = thisisme %]
+[% END %]
+[% INCLUDE nextNPlayers %]
+[% INCLUDE histograms %]
+[% INCLUDE instructions %]
+</table>
+
+[% BLOCK nextNPlayers %]
+[% firstrow = scores.0 %]
+<tr><td align = center class = 'leaderboard' colspan = '[% IF cookie %]10[% ELSE %]9[% END %]'>
+<a href = "leaderboard.cgi?sort=[% params.sort %]&order=[% params.order %]&view=[% params.view %]&prev=[% firstrow.player_id %]&next=[% params.next %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">Next [% params.view %]</a></td></tr>
+</table></td></tr>
+[% END %]
+
+[% BLOCK histograms %]
+	<tr><td align = center>
+	[% IF params.man_or_chimp == 'man' || params.man_or_chimp == 'both' %]
+		<img src = "/jqmcbp/graphomatic/histogram.png" name = 'histogram' id = 'histogram' class = "white" 
+		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png";'
+		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png";'>
+	[% ELSE %]
+		<img src = "/jqmcbp/graphomatic/chimp_histogram.png" name = 'histogram' id = 'histogram' class = "white" 
+		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png";'
+		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png";'>
+	[% END %]
+	</td></tr>
+[% END %]
+
+[% BLOCK instructions %]
+<tr><td><b>Above you may click on the link of anyone's name to view
+       their picks.</td></tr>
+<tr><td>The second-to-last column, RtT&#0153;, stands for the patented JQMCBP Run the Table&#0153; Statistic, dreamt up by JQMCBP founding member Martin 'White Chocolate' Dickrell. Want to know how many points you'd get if every remaining game you picked came through? Look no further than the RtT&#0153;! Plus it's sortable!</td></tr>
+[% END %]
+
+
+[% BLOCK filterForm %]
+<tr><td><table width = '100%' class = 'leaderboard_wrapper'><tr><td>
+<tr><td class = 'leaderboard'><form >
+View first
+<select name = view>
+[% FOR view IN [ '10', '100', '50', '25', 'All' ] %]
+<option VALUE= '[% view %]' [% IF params.view == view %]SELECTED[% END %]>[% view %]
+[% END %]
+</select>
+ sort by
+
+<select name = sort>
+[% FOR sortitem IN sort_item %]
+	<option value = '[% sortitem.key %]' [% IF params.sort == sortitem.key %]SELECTED[% END %]>[% sortitem.value %]
+[% END %]
+</select>
+
+ order 
+<select name = order>
+<option VALUE= 'asc' [% IF params.order == 'asc' %]SELECTED[% END %]>Low to High
+<option VALUE= 'desc'[% IF params.order == 'desc' %]SELECTED[% END %]>High to Low
+</select>
+
+ Apply filter: 
+<select name="filter">
+<option value="">none
+[% FOR filter IN filters -%]
+<option value = "[% filter.filter_id %]" [% IF params.filter == filter.filter_id %]SELECTED[% END %]>[% filter.name %]
+[% END -%]
+</select>
+
+<input type = submit value = 'Go Ben Go!'>
+<br>Display 
+<input type = 'radio' name = 'man_or_chimp' value = 'man' [% IF params.man_or_chimp == 'man' %]CHECKED[% END %]>
+ humans
+<input type = 'radio' name = 'man_or_chimp' value = 'chimp' [% IF params.man_or_chimp == 'chimp' %]CHECKED[% END %]> chimps
+<input type = 'radio' name = 'man_or_chimp' value = 'both' [% IF params.man_or_chimp == 'both' %]CHECKED[% END %]>
+ all</td></tr>
+</form>
+[% END %]
+
+[% BLOCK extraInfo %]
+<tr><td class = 'leaderboard'>
+Leader is currently at [% params.high_score %]
+</td></tr>
+[% IF params.filter > 0 %]
+<!-- broken right now
+<tr>
+	<td class = 'leaderboard'>
+	<img src = '/johnnyquest/images/new.gif'>Step-o-matic! Graph your progress against your filtermates as JQMCBP progresses.<br>A "step" is defined as each time I update the database with a winning team(s).
+	&nbsp;<p><b>Step-o-matic graph:</b>
+		[% FOR type = ['score', 'rtt', 'rank', 'darwin'] %]
+		<a href = "javascript: popUpAny('stepomatic.cgi?statistic=[% type %]&filter=[% params.filter %]',920,550);"> [% type %] </a>|
+		[% END %]<p>
+-->
+[% END %]
+	</td>
+</tr>
+</table></td></tr>
+[% END %]
+
+
+[% BLOCK leaderboard_headings %]
+<tr>
+<td><table width = '100%' class = 'leaderboard'>
+[% IF params.prev > 0 %]<tr><td align = center class = 'leaderboard' colspan = 9>
+<a href = "leaderboard.cgi?sort=[% params.sort %]&order=[% params.order %]&view=[% params.view %]&next=[% params.prev %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">Previous [% params.view %]</a></td></tr>[% END %]
+<tr>
+<td class = 'leaderboard' style = 'width: 20px;'>
+        <a href = "leaderboard.cgi?sort=rank&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        Rank
+	</a></td>
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=name&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+	NAME
+	</a></td>
+
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=candybar&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        CANDY BAR
+	</a></td>
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=location&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        LOCATION
+	</a></td>
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=champion&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        CHAMPION
+	</a></td>
+
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=j2_factor&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        J FACTOR&#0153;
+	</a></td>
+
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=rank&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        Darwin&#0153;
+	</a></td>
+
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=rtt&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+        RtT&#0153; 
+	</a></td>
+<td class = 'leaderboard'>
+SSS&#0153; 
+	</td>
+<td class = 'leaderboard'>
+        <a href = "leaderboard.cgi?sort=rank&order=[% params.toggle_order %]&view=[% params.view %]&man_or_chimp=[% params.man_or_chimp %][% IF params.filter %]&filter=[% params.filter %][% END %]">
+
+        SCORE
+	</a></td>
+</tr>
+[% END %]
+

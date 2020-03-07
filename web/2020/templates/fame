@@ -1,0 +1,180 @@
+    <h1>The Hall of Fame and Shame &#127942;</h1>
+	<!--<img src = 'images/synchronizedSkatersGoBonkers.gif' class = 'float-left' />-->
+	<!--PHOTOBUCKET NOPE<img src = 'http://i199.photobucket.com/albums/aa296/mcstayinskool/synchronizedSkatersGoBonkers.gif' class = 'float-left' />-->
+	<!--<img src = 'IMGUR HERE' class = 'float-left' />-->
+<a href="https://imgur.com/ABNM145"><img src="https://i.imgur.com/ABNM145.gif" title="source: imgur.com" class = 'float-left' /></a>
+    <table class = 'thinborder' width="100%" cellpadding="3" cellspacing="0" title="Past Champions and Losers of the Candy Bar Pool.">
+      <tr> 
+        <th align='left' scope="col">Year</th> 
+        <th align='left' scope="col">Entries</th> 
+        <th align='left' scope="col">Champion</th> 
+        <th align='left' scope="col">Loser</th>
+	  </tr>
+    <!--
+   <tr>
+        <td>[% year %]</td>
+        <td nowrap >Could be a billion (+1001 chimps)</td>
+	<td>Could be you</td>
+	<td>Also could be you</td>
+	
+    </tr>
+    -->
+    <tr>
+        <td>2019</td>
+        <td nowrap>838 (+1001 chimps)</td>
+	<td>Tamara "Vosges Missing Link Chocolate Bar" Fink</td>
+	<td>He Who Shall Not Be Named</td>
+    </tr>
+    <tr>
+        <td>2018</td>
+        <td nowrap>835 (+1001 chimps)</td>
+	<td>Super "Black &amp; Gold Musk Flavoured Sticks" Grover</td>
+	<td>Andrew Mossburg, Mark Jones, Salty Salmon</td>
+    </tr>
+    <tr>
+        <td>2017</td>
+        <td nowrap>868 (+1001 chimps)</td>
+	<td>Eric "Twix" Young</td>
+	<td>Mark Jones</td>
+    </tr>
+	<tr>
+        <td>2016</td>
+        <td nowrap>757 (+1001 chimps)</td>
+	<td>Julia "Gummy Bears" Foster</td>
+	<td>Charlotte Bowers</td>
+    </tr>    
+	<tr>
+        <td>2015</td>
+        <td nowrap >760 (+1001 chimps)</td>
+	<td>Todd 'Kirby Puckett Bar' Barton</td>
+	<td>Mark Jones/Andrew Mossburg</td>
+    </tr>
+    <tr>
+        <td>2014</td>
+        <td nowrap >811 (+1001 chimps)</td>
+	<td>Meredity 'Cadbury Egg' Hammons</td>
+	<td>Dr. Wilbur "Candy is a waste of time" Wonka</td>
+    </tr>
+     <tr>
+        <td>2013</td>
+        <td nowrap >711 (+1001 chimps)</td>
+	<td>William 'King Sized Snickers' Hershey</td>
+	<td>Dr. William Wonka</td>
+    </tr>
+    <tr>
+        <td>2012</td>
+        <td nowrap >722 (+1001 chimps)</td>
+	<td>Chris 'Take 5' Gayler</td>
+	<td>Blair 'Beefcake' Brownyard</td>
+	
+    </tr>
+   <tr>
+        <td>2010-2011</td>
+        <td nowrap >JQMCBP LOCKOUT</td>
+	<td>The Dark Side of the Force</td>
+	<td>Freedom, Puppies</td>
+	
+    </tr>
+    <tr>
+        <td>2009</td>
+        <td nowrap>658 (+1001 chimps)</td>
+        <td>Anna "Dark Chocolate Almond M&M's" Lee</td>
+        <td>Allen Witt</td>
+    </tr>
+    <tr>
+        <td>2008</td>
+        <td nowrap>727 (+1001 chimps)</td>
+        <td>Betsy "Snickers" Ross</td>
+        <td>Andrea Berkley</td>
+      </tr>
+      <tr> 
+        <td>2007</td>
+        <td>683 (+1001 chimps)</td>
+        <td>Cary "Hazelnut Lindt" Thayer and<br>Arthur "Snickers" Rush</td>
+        <td>Jason Rush</td>
+      </tr>
+      <tr> 
+        <td>2006</td>
+        <td>580 (+1001 chimps)</td>
+        <td>Jay "Snickers" Wulcowicz</td>
+        <td>William E. Rogers</td>
+      </tr>
+      <tr> 
+        <td>2005</td>
+        <td>483 (+1 chimp)</td>
+        <td>Andy "See's Nuts and Chews" Calvert</td>
+        <td>Crazy Ramon</td>
+      </tr>
+      <tr> 
+        <td>2004</td>
+        <td>384 (+1 chimp)</td>
+        <td>Greg "Melo Bar" Rhoades</td>
+        <td>Carly McLanahan</td>
+      </tr>
+      <tr> 
+        <td>2003</td>
+        <td>305 (+1 chimp)</td>
+        <td>'Crazy "Snickers Cruncher" Woodsman'<BR>
+        </td>
+        <td>Piglet Montague Ogg</td>
+      </tr>
+      <tr> 
+        <td>2002</td>
+        <td>272 (+1 chimp)</td>
+        <td>Karim "Dulce de Leche M&amp;M's" Touami<BR>
+        </td>
+        <td>Colin Klaas</td>
+      </tr>
+      <tr> 
+        <td>2001</td>
+        <td>199 (+1 chimp)</td>
+        <td>Linda "three musketeers" Paradowski<BR>
+        </td>
+        <td>Antonio</td>
+      </tr>
+      <tr> 
+        <td>2000</td>
+        <td>137 (+1 chimp)</td>
+        <td>Wendy &quot;Chewy Sweettarts&quot; Volkman<BR>
+        </td>
+        <td><a href="javascript:popUp('/johnnyquest/images/lucky.gif')">Lucky 
+          the Chimp</a></td>
+      </tr>
+      <tr> 
+        <td>1999</td>
+        <td>~95 (+1 chimp)</td>
+        <td>Heather &quot;Toblerone!!!&quot; Reece<BR>
+        </td>
+        <td>Chris "<a href="javascript:popUp('/johnnyquest/images/lucky.gif')">Lucky</a> 
+          Schmucky" Jones</td>
+      </tr>
+      <tr> 
+        <td>1998</td>
+        <td>~50 (+1 chimp)</td>
+        <td>(tie) Patrick &quot;Milky Way&quot; 
+          O'Boyle<BR>
+          Sean &quot;Butterfinger&quot; Whelan<BR>
+          Ben &quot;Hershey's Kiss&quot; Klaas</td>
+        <td><a href="javascript:popUp('/johnnyquest/images/lucky.gif')">Lucky 
+          the Chimp</a></td>
+      </tr>
+      <tr> 
+        <td>1997</td>
+        <td>26 (+1 chimp)</td>
+        <td>Jeff &quot;Caramello&quot; Kopaska</td>
+        <td><a href="javascript:popUp('/johnnyquest/images/lucky.gif')">Lucky 
+          the Chimp</a></td>
+      </tr>
+      <tr> 
+        <td>1996</td>
+        <td>9 (+1 chimp)</td>
+        <td>Tom &quot;<a href="javascript:popUpChew('images/charlestonchew.gif')">Charleston 
+          Chew</a>&quot; Wadzinski</td>
+        <td><a href="javascript:popUp('/johnnyquest/images/lucky.gif')">Lucky 
+          the Chimp</a></td>
+      </tr>
+    </table>
+	<img src = 'http://i.imgur.com/QM54dSY.gif'  />
+	<img src = 'http://i.imgur.com/nbbkOLg.gif' />
+
+[% PROCESS next link = 'enter' %]

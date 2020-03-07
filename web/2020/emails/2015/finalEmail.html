@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         margin: 5px;
+		 margin-left: 10px;
+         padding: 5px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">XVIII</a></h1>
+	<h2 class = 'slogan'><a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">18 and Life!</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE4|*</li>
+	<li>Candybar: *|MMERGE5|*</li>
+	<li>Score: *|MMERGE8|* (leader is at *|MMERGE10|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE7|*</li>
+	<li>Rank: *|MMERGE9|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE6|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Congratulations to JQMCBP XVIII Champion Todd 'Bartman' Barton</h1>
+
+<p>
+Another JQMCBP year is in the books, and a hearty congrats goes to Todd "Bartman" Barton. With the Duke win, Barton secured his grand prize of a probably rancid Kirby Puckett Bar. Todd, I'll need your address to send you your biohazard. Craig Wadz-za-man...ouch, oh so close. It's a testament to your excellent bracket that even after the Wisconsin loss you finished in a tie for 2nd place with Lochlain "a jumbo pack of gumballs" McGrail. These two fine 2nd place winners have earned the traditional 2nd place prize of BIG FAT NOTHING. Since there was a 2nd place tie there is no 3rd place CD winner, which means my album of Bagpipe Funeral Dirges will have to wait for another year.
+</p>
+
+<p>
+I do truly hope you've enjoyed my (almond joy's got) nutty escapade. If you loved the candy bar pool so much you feel compelled to shower me with gifts, instead <a href = "http://bit.ly/benMS150">donate to my MS-150 Ride</a>. In June I am riding 150 miles on my bike to help fund Multiple Sclerosis research. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>.
+</p>
+
+<p>
+Feel free to <a href = "mailto:jqmcbp@gmail.com">drop me a note</a> if you've got Awesome Stuff To Say. All complaints and refund requests are to be directed to my customer care department, John Niyo.
+</p>
+<hr class = 'section' />
+<div class = 'quote'>
+You know, I'm glad that Duke school won. They really battle adversity and never seem to get any exposure.
+</div>
+<p>
+-quipped Absolutely No One
+</p>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+118 of us, including yours truly, THE Kai Anderson, Kringle Boy Craig Wadz-za-man, someone named Stinkapants, so many Daneks, Norse God Thor, and someone possibly posing as worst-excuse-for-a-governor Scott Walker lost their champion Monday night. 
+</p>
+
+<div class = 'pre'>
+Wisconsin: Ben Klaas, Jeff Chungath, Kai Anderson, Andy Glime, Andy Weinecke, Steve shwaiko, John Charles Savagian, Chris Zurowski, Andrew 'sour skittles' Anderson, Becky Burton, The Steve Carlson, Paul C. Smith, Sheryl Hatcher, Michele Thomas, Todd Mullanix, Steve Danek, Peter Hepburn, Papa Lloyd, Ed Nordstrom, Mark Larson, Todd Krueger, Colin Keiffer, Wilson Korol, Dennis Brodjeski, Leslie Karkanawi, Terry Sievert , Suebob, Devon Kristiansen/Collin Calvert, Nancy Valentine, Mike Ketelsen, Alex Anderson, Dayton McGrail, Marion Brown, Bill Mech, Tyler Groh, John Davidson, Vilhelm Schmidtz, Joel Davis, Tracy Niyo, Peyton Bowers, Rich Lyle, Andrew Mortimer, Dave Lyons, Dan Clark, Craig Wadz-za-man, Linda Beczkiewicz, Drew Downs, Stinkapants, Kevin Quinn, Greg Ross, Keith Boyd , Michelle R Young, Jon Blake, Jason Hermanson , Craig Roder, Alyssa Blom, Dave Myers, bruce blake, Kendra Corneliusen, Andy Bowers, Kate Meilinger, Traci Nies, Jess Larson, Ruth Volkman, Andrew Hefte, Jennifer Topel, Thor, Chad meister Pechumer, Kathy Larson, Kiowa Kid, Frank Spada, Lisa Wadzinske, Ray Niergarth, Gary Smulka, Ashley, Mason's Dad, Jerry Schmitt, Dave McHalpine, reesa karamanski, The Lopsided Lollipop :), Finn Stidwell O'Boyle, Sarah Ogborn, Missy Shanahan, Jason Forest, Lauren Schmitt, Ryan Schmitt, QBKatt, Tim Handlos, Andy Carhart, Joel Rondeau, John McCartney, Helen May Regan, Cal Ruprich, Matt Van Heukelom, Byron Bardy, Barbara Mojzak, Julia Hutchinson, The Hutch, Sam Housker, Matt Newton, Julia Drew, JFH, Scott Walker, Jeff Johnson, Ken Brown, Jason Earl Teal, Chris 'The Lama' Goodwin, Scott Chesky, Mike Shanahan, Mara Peyton, Rob Danek, Kirin danek, Ginger Housker, Oscar Danek
+</div>
+
+<p>
+So long Bucky.
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+For the 28 of us graduates of UW-Madison, let me say for all of us: "that kinda sucked." Also, the refs were on the take.
+</p>
+
+<div class = 'pre'>
+Wisconsin: Ben Klaas, Steve shwaiko, Paul C. Smith, Steve Danek, Papa Lloyd, Mark Larson, Todd Krueger, Glen Volkman, Alex Anderson, Bill Mech, Ben 'No Klaas' Brown, Kevin Quinn, Jenny Gator, Paul WadzinskE, Sonia Pai, Jess Larson, GeeGee the dog, Kathy Larson, Lisa Wadzinske, Gary Smulka, Wendy Volkman, MadMammaK'ski, Joel Rondeau, John McCartney, The Hutch, Julia Drew, Rob Danek, Marty Dickrell
+</div>
+
+<hr class = 'section' />
+
+<h1>The Final 2015 Leaderboard</h1>
+
+<p>
+A shout-out to Stephanie Haan-Amato who, despite picking the absurd alma mater choice of New Mexico State in the Final Four, still managed a 7th place finish. Also, husband Jeff Amato LIKE TOTALLY did not put me up to that.
+</p>
+
+<p>
+Well done, Terrell the Chimp, securing the Top Chimp award of 2015. Chimps Cale and Kadence (Kadence: I like the pace of that name) finished in a tie for 2nd. If my bracket had been a chimp bracket, I would have finished tied for 4th at 66 points.
+</p>
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Todd 'Bartman' Barton</td><td>Minnesota</td><td>Kirby Puckett Bar</td><td>Duke</td><td>124</td></tr>
+<tr><td>2</td><td>Craig Wadz-za-man</td><td>International</td><td>King size Kit Kat</td><td>Wisconsin</td><td>118</td></tr>
+<tr><td>2</td><td>Lochlain McGrail</td><td>Michigan</td><td>a jumbo pack of gum balls</td><td>Duke</td><td>118</td></tr>
+<tr><td>4</td><td>Paul C. Smith</td><td>Wisconsin</td><td>Baby Ruth</td><td>Wisconsin</td><td>117</td></tr>
+<tr><td>5</td><td>Tom Hinds</td><td>California</td><td>Bag of rootbeer lollipops</td><td>Duke</td><td>113</td></tr>
+<tr><td>6</td><td>Eitan Weiss</td><td>International</td><td>milk chocolate hershey bar</td><td>Duke</td><td>111</td></tr>
+<tr><td>7</td><td>Doug Gilbert</td><td>Ohio</td><td>Peanut M&M</td><td>Duke</td><td>109</td></tr>
+<tr><td>7</td><td>Stephanie Haan-Amato</td><td>New Mexico</td><td>Reese's Peanut Butter Cup</td><td>Duke</td><td>109</td></tr>
+<tr><td>9</td><td>Bonnie Hendricks</td><td>Idaho</td><td>reese's peanutbutter cups</td><td>Duke</td><td>108</td></tr>
+<tr><td>9</td><td>Dustin Ramoie</td><td>Montana</td><td>Charleston Chew</td><td>Kentucky</td><td>108</td></tr>
+<tr><td>9</td><td>Kathy Larson</td><td>Florida</td><td></td><td>Wisconsin</td><td>108</td></tr>
+<tr><td>9</td><td>Kevin Quinn</td><td>Massachusetts</td><td>Payday</td><td>Wisconsin</td><td>108</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Terrell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>84</td></tr>
+<tr><td>2</td><td>Cale the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>70</td></tr>
+<tr><td>2</td><td>Kadence the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>70</td></tr>
+<tr><td>4</td><td>Blaine the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>66</td></tr>
+<tr><td>5</td><td>Breanna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>65</td></tr>
+<tr><td>6</td><td>Carlos the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Utah</td><td>64</td></tr>
+<tr><td>6</td><td>Dangelo the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>64</td></tr>
+<tr><td>8</td><td>Chase the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>63</td></tr>
+<tr><td>8</td><td>Jack the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>63</td></tr>
+<tr><td>10</td><td>Deborah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+<tr><td>10</td><td>Gary the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>62</td></tr>
+<tr><td>10</td><td>Madyson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+	</tbody>
+</table>
+<p>
+see you in 2016,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2015 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

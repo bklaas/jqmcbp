@@ -18,6 +18,7 @@ data/perl space:
 	rm jq; ln -s /home/bklaas/jqmcbp_2019 jq
 
 Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
+Go to templates/header and adjust the timer for the countdown
 
 ###
 US clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
@@ -31,7 +32,7 @@ Also: Watch out to make sure that all second round and onward games in winners.c
 Here's a one-liner sql that will fix it
 UPDATE games set winner = 'foo' where round > 1;
 
-Also: graph-o-matic needs a 2019 player_id to work properly. Fix that so the step-o-matic stuff works.
+Also: graph-o-matic needs a 2020 player_id to work properly. Fix that so the step-o-matic stuff works.
 <web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl
 
 command:
@@ -42,6 +43,10 @@ use winners.cgi to define the bracket order (do not just edit www/jqmcbp/bracket
 BIG FAT WARNING: cgi writes brackets.order to /data/benklaas.com/jqmcbp/. If you are staging in a different area and then copy to the live area, make damn sure that brackets.order is there and in the correct order. Fer Fuck's Sake.
 
 ###
+
+NOTE TO 2020 BEN FROM 2019 BEN: do not use apostrophes in team names. 
+
+[PROLLY FIXED 7 Mar 2020-->] also, user www-data doesn't have write permission to /tmp, so the top10* files need to be manually generated (or fix the permissions) with just_the_files.pl, which is in the main web dir
 
 change text as necessary throughout
 new graphics as needed
