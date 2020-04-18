@@ -55,28 +55,26 @@ $(document).ready(
 	});
 </script>
 
-<!-- to be displayed before selections are ready -->
+<!--
 <h1>Not. Yet. Patience, grasshopper.</h1>
 <img src = "images/bigcookie.gif" />
+-->
 
-<!-- to be displayed after entries are closed -->
 
-<!--
 <h1> The Tourney Has Started and is Closed for Entries</h1>
 <h3><a href = 'player_bracket_selection.cgi' style = 'text-decoration: underline;'>I ENTERED BUT WHERE'S MY BRACKET I'M FREAKIN OUT!</a></h3>
 <h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
--->
 
 <!--
 <h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com" style='text-decoration: underline;'>Give it a shot</a></h3>
-
-<h3>
-If you've entered already and are looking for your bracket
-<a href = 'player_bracket_selection.cgi' style='text-decoration: underline;'>Head Here</a></h3>
-
 -->
 
 <!--
+<h3>
+Already entered and are looking for your bracket?
+<a href = 'player_bracket_selection.cgi' style='text-decoration: underline;'>Head Here</a></h3>
+
+
 <h1 class = "enter">Guaranteed Fun or...or ELSE!*</h1>
 <h5>*JQMCBP is free, so if you don't have fun I will donate an equivalent amount to <br><a href="javascript:popUpHF('images/human_fund.jpg')">The Human Fund</a></h5>
 
@@ -172,16 +170,14 @@ If you've entered already and are looking for your bracket
 
 	<tr>
 	<td align = 'left' valign = 'bottom' class = 'booty' colspan = '2'>
-	Did your alma mater make it into the tournament? If so, specify:
+	What is your favorite thing in the BEES bracket?
 	</td>
 	</tr>
 	<tr>
 	<td>&nbsp;</td>
 	<td class = 'entry_input'>
 	<select name = 'alma_mater'>
-	<option value="No" SELECTED>No
-	<option value="Impossible">Impossible
-	<option value="Huh">Alma mater?
+	<option value="No" SELECTED>I Hate All of This
 	[%- FOR team IN params.teams %]
 	<option value = '[% team %]'>[% team %]
 	[% END -%]
@@ -200,12 +196,10 @@ If you've entered already and are looking for your bracket
 	</div>
 -->
 
-<!--
 <div id = 'entry_counter'>
 <h2>JQMCBP Entries:</h2>
 <span class = 'entry_count'></span>
 </div>
--->
 
 <!--
 <div id = 'entry_rate'>
@@ -213,6 +207,9 @@ If you've entered already and are looking for your bracket
 </div>
 -->
 <p>
+
+<!--
 <div id = 'defaultCountdown'></div>
     <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif'>
+-->
 

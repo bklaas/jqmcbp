@@ -7,14 +7,13 @@
 		<tr><td class="[% class %]" height="[% height %]" valign="center">
 		[% elements = [ 0 .. row.teams.size ] %]
 		[% FOR element IN elements %]
-		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]
-		[% seed = seeds.$team %]
-			<span id = '[% row.game %] [% team %] select' style = "display: none;" class = 'radio'>
-				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team %]" type="radio" onClick='advanceTeam("[% team %]","[% row.game %]","[% row.nextGame %]")'>[% seed %] [% team %]
-				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team %]","[% row.game %]","[% prevGame %]")'><br>
+		[% team_info = row.teams.$element %][% prevGame = row.prevGame.$element %]
+			<span id = '[% row.game %] [% team_info.team %] select' style = "display: none;" class = 'radio'>
+				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team_info.team %]" type="radio" onClick='advanceTeam("[% team_info.team %]","[% row.game %]","[% row.nextGame %]")'>[% team_info.seed %] [% team_info.team %]
+				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team_info.team %]","[% row.game %]","[% prevGame %]")'><br>
 			</span>
-			<span id = '[% row.game %] [% team %] done' style = "display: none;" class = 'normal'>
-				<span id = '[% row.game %] [% team %]'>[% seed %] [% team %]<br></span>
+			<span id = '[% row.game %] [% team_info.team %] done' style = "display: none;" class = 'normal'>
+				<span id = '[% row.game %] [% team_info.team %]'>[% team_info.seed %] [% team_info.team %]<br></span>
 			</span>
 		[% END %]
 		</td></tr>

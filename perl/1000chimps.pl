@@ -9,8 +9,8 @@ do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
-#my $name_file = "2000names.txt";
-my $name_file = "the1000Chimps2017.txt";
+my $name_file = "2000names.txt";
+#my $name_file = "the1000Chimps2017.txt";
 my $bracket_picker = "random_bracket_selector.pl";
 my $names = get_names();
 
@@ -34,7 +34,7 @@ for my $chimp (keys %$names) {
 	last if $inc == 1001;
 	my $outfile = "chimp_data/$name.dat";
 	my %losers;
-	open(OUT,">$outfile");
+	open(OUT,">$outfile") or die $!;
 	for my $game (1..63) {
 		my ($sub, $mult);
 		if ($game <= 32) {
@@ -96,7 +96,7 @@ sub pick_it {
 
 sub get_names {
 	my %names;
-	open(NAMES,"<$name_file");
+	open(NAMES,"<$name_file") or die $!;
 	while(<NAMES>) {
 		chomp;
 		$names{$_}++;

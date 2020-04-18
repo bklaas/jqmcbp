@@ -5,9 +5,9 @@ use DBD::mysql;      # perl module for mySQL interface
 use strict;
 
 use vars qw/$dbh/;
-do "/home/bklaas/jqmcbp/web/2013/jq_globals.pl";
+do "/home/bklaas/jqmcbp/web/2020/jq_globals.pl";
 
-connect_to_db('jq_2012');
+connect_to_db('johnnyquest');
 my $player_info = get_emails();
 
 my %done;
@@ -17,7 +17,7 @@ for my $email ( @$player_info ) {
 }
 
 sub get_emails {
-	my $query = "select email from player_info order by email";
+	my $query = "select * from player_info order by email";
 	my $return = multi_row_query($query);
 	return $return;
 }

@@ -1,42 +1,107 @@
+<!--
 <h1 class="overview_title">Johnny Quest Memorial Candy Bar Pool XXIII &#127852;</h1>
 
 
-<!--
 <h3><a href = '?willtherebeajqmcbpthisyear' style = 'text-decoration: underline;'>WILL THERE BE A [% year %] JQMCBP?</a></h3>
-
--->
 
 <div id = 'defaultCountdown'></div>
     <img id = 'stayTuned' src = 'images/staytuned.gif' />
 <p></p>
 
-<!--
+<!-- -->
+
 [% PROCESS wheresmybracket %]
-<p>Welcome newcomers and seasoned veterans to the 23rd Johnny Quest Memorial Candy Bar Pool (JQMCBP)! JQMCBP started in 1996 as a project to learn how to publish things to this new-fangled "World Wide Web". Eons later, I'm still here schlocking out the Web's Weirdest NCAA pool.
+<h1>OHHHHHHHH SNAP! WE ARE BACK, BABY!</h1>
+<h3 class = 'strikeme'>JQMCBP XXIII has been cancelled</h3>
+<p>
+These are weird, surreal times everyone. But what's weirder and more surreal than the Johnny Quest Memorial Candy Bar Pool? Sure, there isn't any actual <i>basketball</i> being played now, but why should that stop The Quest for Candy? This thing has never been about basketball.
 </p>
 
--->
-<a href="https://imgur.com/XvM34YI"><img src="https://i.imgur.com/XvM34YI.gif" title="source: imgur.com" class = "float-left" /></a>
+<img src = "images/andwereback.gif" class = 'float-right' />
+<p>
+I'm sure most of you have had your lives pretty upended by our public health crisis, and I'm hoping this year's JQMCBP will bring you some much needed break from the news cycle and the hand-washing/wringing. I've spent the last few days huddled in JQMCBP HQ, calling in advice and pep talks from pool veterans (shouts out: Patty "J2 Factor" Dillon, John "Big Cup" Niyo, Carrie "3 Musketeers" O'Boyle, the wonderful Wendy Volkman, and even my daughters Carson and Piper), and made the command decision that <b>This Is Something We Need Right Now</b>.
+</p>
+<p>
+So how's this going to work without a basketball tournament? I'm glad you asked! I've made a bracket of...stuff. And things. It's...well it's difficult to describe, but it's AMAZING. The next section, <a href = "https://benklaas.com/jqmcbp/?2020regions" />BEES</a>, details the new bracket in its entirety. But why don't I answer a few questions here first.
+</p>
 
-<!--<img src = "images/andwereback.gif" class = 'float-left' />-->
+<table>
+<tr>
+    <td><b>Will entering the pool be the same?</b></td>
+</tr>
+<tr>
+    <td>Sure. You'll be entering picks for a bracket. Except the bracket is not made up of basketball teams.</td>
+</tr>
+<tr>
+    <td><b>How long do I have to enter?</b></td>
+</tr>
+<tr>
+    <td>Last entries are due by <b>Midnight Central Daylight Time, Sunday March 22nd</b></td>
+</tr>
+<tr>
+    <td><b>There aren't any actual games. How are game "winners" decided?</b></td>
+</tr>
+<tr>
+    <td>You just don't worry your pretty little head, let the Candymeister do the driving. But seriously, with a couple notable exceptions I will be picking the "winner" of each matchup based on IT'S A SECRET. But there will be a first round, second round, etc., that will follow a similar cadence to the normal tournament. As Candymeister, your Benevolent Overlord, I reserve the right to change this at will for whatever reason I so choose.</td>
+</tr>
+
+<tr>
+    <td><b>Will Lucky the Chimp be back?</b></td>
+</tr>
+<tr>
+    <td>I don't even know if Covid-19 is transmissable to chimps. Of course Lucky will be back!</td>
+</tr>
+<tr>
+    <td><b>And the 1000 Chimp Army?</b></td>
+</tr>
+<tr>
+    <td>Fully armed (with bananas and poo) and ready for battle.</td>
+</tr>
+<tr>
+    <td><b>And the winner still gets a candybar of their choosing? Mailed to anywhere? No questions asked?</b></td>
+</tr>
+<tr>
+    <td>There are no stupid questions, except for these. YES.</td>
+</tr>
+<tr>
+    <td><b>And the annoying emails? You'll continue sending those?</b></td>
+</tr>
+<tr>
+    <td>Emphatically, <i>YES</i>.</td>
+</tr>
+<tr>
+    <td><b>I've never heard of JQMCBP before. JUST WHAT IS THIS?</b></td>
+</tr>
+<tr>
+    <td>And you've read this far? Wow. Color me impressed. Okay, below the dancing Kermit I've dropped in the usual intro text, edited to remove all references to NCAA basketball. Make sure to follow the links in the tabs above, finishing with "Enter", which will put you into the bracket selection page.
+</tr>
+
+
+</table>
+Veterans will probably want to hit <a href = "https://benklaas.com/jqmcbp/?2020regions">Next</a> now for the big bracket reveal.<br />
+[% PROCESS next link = '2020regions' %]
+<img src = "https://media.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif"/ class = 'float-right' width = '300'>
+
+<h1 class="overview_title">Johnny Quest Memorial Candy Bar Pool XXIII &#127852;</h1>
+
+<p>Welcome newcomers and seasoned veterans to the 23rd Johnny Quest Memorial Candy Bar Pool (JQMCBP)! JQMCBP started in 1996 as a project to learn how to publish things to this new-fangled "World Wide Web". Eons later, I'm still here schlocking out the Web's Weirdest <span class = 'strikeme'>NCAA</span> pool.
+</p>
+
+
+<img src = "https://media.giphy.com/media/Sg86rhq4G3vqM/giphy.gif" class = 'float-right' width = '300' />
+
 
 <h2>No Purchase Necessary Enter Once and Only Once</h2>
 
 
-	<p>The whole point of this thing is fun and candy. Unlike other office NCAA pools, this one won't have you stressed out about the $1-$5 you are going to lose because you picked Texas Southern in the upset of the decade. The stakes are candy, and you can't lose. There's loads more information via the tabs above, but for the impatient <a href = "?enter">you can just get on with it.</a>
+	<p>The whole point of this thing is fun and candy. Unlike other <span class = 'strikeme'>office NCAA</span> pools, this one won't have you stressed out about the $1-$5 you are going to lose because you don't know what you're doing. The stakes are candy, and you can't lose. There's loads more information via the tabs above, but for the impatient <a href = "?enter">you can just get on with it.</a>
 
 <p>Make your picks by clicking on the button by each of your projected winning teams. When you make your selection, JQMCBP BracketMagic&trade; will automatically move your selection to the next round. If you want to change any selections, just click on the red 'x' to the right of the team name and it will send it back a round for further scrutiny. After you fill in your entire bracket, you will be prompted for the crucial part of your entry, your candy bar selection. Click on the Go! Ben! Go! button and your bracket is complete!</p>
 
-<!--
-<a href="https://imgur.com/WL3317i"><img src="https://i.imgur.com/WL3317i.gif" class = 'float-right' title="source: imgur.com" /></a>
--->
 <img src = "images/whatisthis.gif" class = 'float-right' />
 
-<p>Printable and Viewable brackets are usually available from CBS Sports, however once the tourney starts you will be able to view your selections Supa-Fancy Style&trade; from benklaas.com.</p>
-
-<p>So, that's the scoop. As in past years, I will religiously send out irreverant email rants as the tournament progresses, thus allowing you to spend countless hours following teams like the the Huskies of Northeastern, the Terriers of Wofford, and of course the future NCAA champion Gardner-Webb Runnin' Bulldogs.
+<p>So, that's the scoop. As in past years, I will religiously send out irreverant email updates as the tournament progresses.
 
 <p>
 <br />
 
-[% PROCESS next link = 'lucky' %]

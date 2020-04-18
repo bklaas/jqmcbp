@@ -45,6 +45,7 @@ connect_to_db();
 # first get bracket order
 my @brackets = get_bracket_order();
 my $teams = get_teams(@brackets);
+my $team_info = get_teams_allinfo(@brackets);
 my $seeds = get_seeds($teams);
 my $games = construct_games_array($teams);
 $dbh->disconnect();
@@ -52,6 +53,7 @@ $dbh->disconnect();
 my %data = ( 'games'	=>	$games,
 		'PARAMS'	=>	\%PARAMS,
 		'teams'	=>	$teams,
+		'team_info'	=>	$team_info,
 		'seeds'	=>	$seeds,
 		'brackets'	=>	\@brackets,
 		);
@@ -84,7 +86,7 @@ sub construct_last_round {
 	my $game = 63;
 	my $game_name = "game_63";
 	my @team_list;
-	for (@$teams) {
+	for (@$team_info) {
 		push @team_list, $_->{'team'};
 	}
 	my $team_list = join('","', @team_list);
@@ -120,16 +122,21 @@ sub construct_round {
 		my $game_name = "game_" . $game;
 		my $next_game_name = "game_" . $next_game;
 		my @team_list;
+		my @justteams;
 		my $j = $next;
 		for (my $k = $j; $k < $j+$teamlist_size; $k++) {
-			push @team_list, $teams->[$k]{'team'};
+			push @team_list, { "team" => $team_info->[$k]{'team'},
+                               "url"  => $team_info->[$k]{'url'},
+                               "seed" => $team_info->[$k]{'seed'},
+                             };
+            push @justteams, $team_info->[$k]{'team'};
 			$next++;
 		}
-		my $team_list = join('","', @team_list);
-		$team_list = '"' . $team_list . '"';
+		my $teamlist = join('","', @justteams);
+		$teamlist = '"' . $teamlist . '"';
 		$ary[$element]{'game'} = $game_name;
 		$ary[$element]{'teams'} = \@team_list;
-		$ary[$element]{'team_list'} = $team_list;
+		$ary[$element]{'team_list'} = $teamlist;
 		$ary[$element]{'nextGame'} = $next_game_name;
 		$element++;
 		$next_game++ unless ($element % 2);

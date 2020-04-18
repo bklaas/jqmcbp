@@ -223,7 +223,7 @@ sub calculate_table_run {
 		# compare %picks to %winners
 
 	  	# is there a winner and does it match the player's pick?
-		if ($winners{$game} ne "foo" && $picks{$game} ne $winners{$game} ) {
+		if ($winners{$game} ne "foo" && $winners{$game} ne "NULL" && $picks{$game} ne $winners{$game} ) {
 			my $team = $picks{$game};
 			$losers{$team} = 1;
 		}

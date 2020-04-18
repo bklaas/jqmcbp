@@ -15,8 +15,8 @@ connect_to_db('johnnyquest');
 ## EVERYTHING ELSE SHOULD TAKE CARE OF ITSELF
 #################################
 #my $remainingTeams = 16;
-#my $remainingTeams = 8;
-my $remainingTeams = 4;
+my $remainingTeams = 8;
+#my $remainingTeams = 4;
 
 my $N;
 my $man_or_chimp = 'both';

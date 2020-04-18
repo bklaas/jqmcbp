@@ -5,25 +5,26 @@ sub config_variables {
 	my %return =
 	(	
 	"year"	=>	$year,
-	"template_dir"	=>	"/data/benklaas.com/jqmcbp/templates",
+	"template_dir"	=>	"/home/bklaas/jqmcbp/web/$year/templates",
 	);
 	return \%return;
 
 }
-sub connect_to_db {
-###############################################################
-############### connect to database ###########################
-###############################################################
-my $database_name = shift || "johnnyquest";
-my $location = "localhost";
-my $port_num = "3306";
-my $database = "DBI:mysql:$database_name:$location:$port_num";
-#my $db_user = "nobody";
-my $db_user = "root";
-my $pass = "hoopoe";
 
-$dbh = DBI->connect($database,$db_user,$pass) or die $DBI::errstr;
-###############################################################
+sub connect_to_db {
+    ###############################################################
+    ############### connect to database ###########################
+    ###############################################################
+    my $database_name = shift || "johnnyquest";
+    my $location = "localhost";
+    my $port_num = "3306";
+    my $database = "DBI:mysql:$database_name:$location:$port_num";
+    #my $db_user = "nobody";
+    my $db_user = "root";
+    my $pass = "hoopoe";
+
+    $dbh = DBI->connect($database,$db_user,$pass) or die $DBI::errstr;
+    ###############################################################
 }
 
 sub single_row_query {
@@ -74,20 +75,6 @@ sub multi_row_query {
 	return $return;
 }
 
-sub print_links {
-
-	my $tm = "&#0153;";
-	print "<div id = 'leftcontent'>\n";
-	print "<h3 class = 'links'>Links</h3>\n";
-	print "<a href = '/cgi-bin/leaderboard.cgi'>Leaderboard</a>\n";
-	print "<a href = '/cgi-bin/player_bracket_selection.cgi'>Prognosticationland$tm</a>\n";
-	print "<a href = '/cgi-bin/graphomatic.cgi'>Graphomatic$tm</a>\n";
-	print "<a href = '/cgi-bin/whatsyourj.cgi'>Your \"J\" Factor$tm</a>\n";
-	print "<a href = '/cgi-bin/filtermatic.cgi'>Filtermatic$tm</a>\n";
-	print "<a href = '/cgi-bin/hallofshame.cgi'>Hall of Shame$tm</a>\n";
-	print "</div>\n";
-}
-
 sub get_bracket_order {
 
 	my @return;
@@ -116,6 +103,25 @@ sub get_teams {
 	}
 	return \@return;
 }
+
+sub get_teams_allinfo {
+
+	# returns an hashref of hashrefs similar to what multi_row_query does
+	# elements are ordered by bracket order first, then by team_id
+	# bracket order is defined in /data/benklaas.com/jqmcbp/brackets.order
+	my @brackets = @_;
+	my @return;
+	for (@brackets) {
+		my $query = "select * from teams where bracket_name = \"$_\" order by team_id";
+		my $ref = multi_row_query($query);
+        for my $row (@$ref) {
+        	$row->{'team'} =~ s/'//g;
+            push @return, $row;
+        }
+	}
+	return \@return;
+}
+
 
 sub log_to_file {
 	my @message = @_;
@@ -164,7 +170,7 @@ sub get_player_and_score_info {
 	if ($id) {
 		$query .= " where player_info.email = '$id'";
 	} else {
-		$query .= " where player_info.man_or_chimp = 'man' ";
+		$query .= " where player_info.man_or_chimp = 'man'";
 	}
 	#print "$query\n"; exit;
 	my $return = multi_row_query($query);
@@ -263,8 +269,14 @@ sub getSimilarities {
         my $q = "select * from similarity_index where first_player_id = \"$id\"";
         my $aref = multi_row_query($q);
         for my $href (@$aref) {
-                my $other_id = $href->{'second_player_id'};
-                $return{$other_id} = $href;
+            my $other_id = $href->{'second_player_id'};
+            $return{$other_id} = $href;
+       }
+       $q = "select * from similarity_index where second_player_id = \"$id\"";
+       $aref = multi_row_query($q);
+       for my $href (@$aref) {
+			my $other_id = $href->{'first_player_id'};
+			$return{$other_id} = $href;
        }
        return \%return;
 }
@@ -305,3 +317,19 @@ sub mrq {
         my $return = \@return;
         return $return;
 }
+
+sub print_links {
+
+	my $tm = "&#0153;";
+	print "<div id = 'leftcontent'>\n";
+	print "<h3 class = 'links'>Links</h3>\n";
+	print "<a href = '/cgi-bin/leaderboard.cgi'>Leaderboard</a>\n";
+	print "<a href = '/cgi-bin/player_bracket_selection.cgi'>Prognosticationland$tm</a>\n";
+	print "<a href = '/cgi-bin/graphomatic.cgi'>Graphomatic$tm</a>\n";
+	print "<a href = '/cgi-bin/whatsyourj.cgi'>Your \"J\" Factor$tm</a>\n";
+	print "<a href = '/cgi-bin/filtermatic.cgi'>Filtermatic$tm</a>\n";
+	print "<a href = '/cgi-bin/hallofshame.cgi'>Hall of Shame$tm</a>\n";
+	print "</div>\n";
+}
+
+

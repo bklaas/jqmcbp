@@ -2,7 +2,7 @@
 <html><head><title>JohnnyQuest [% PARAMS.year %]</title>
 <link rel="stylesheet" type="text/css" href="css/johnnystyle.css">
 <!--<link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>-->
-<link href='http://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Faster+One' rel='stylesheet' type='text/css'>
 <script src="/javascript/jquery.js" language="JavaScript"></script>
 [% PROCESS bracket.js.tmpl %]
 
@@ -41,7 +41,8 @@
 				<tbody>
 [% FOR region IN brackets -%]
 		<tr><td class="brackets_region" align="right" valign="center">
-			<img src="/jqmcbp/images/[% region %].gif">
+			<!--<img src="/jqmcbp/images/[% region %].gif">-->
+			<img src="/jqmcbp/[% year %]/images/[% region %].png">
 		</td></tr>
 [% END -%]
 		</tbody></table>

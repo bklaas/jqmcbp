@@ -47,7 +47,8 @@
 <script type="text/javascript">
 	function startIt() {
 		var austDay = new Date();
-		austDay = new Date([% year %], 02, 14, 22);
+		//austDay = new Date([% year %], 02, 14, 22);
+		austDay = new Date(2021, 02, 14, 22);
 		$('#defaultCountdown').countdown({until: austDay});
 		$('#year').text(austDay.getFullYear());
 	}
@@ -95,7 +96,8 @@
 <script type="text/javascript">
 	function startIt() {
 		var austDay = new Date();
-		austDay = new Date([% year %], 02, 15, 20);
+		//austDay = new Date([% year %], 02, 15, 20);
+		austDay = new Date(2021, 02, 14, 20);
 		$('#defaultCountdown').countdown({until: austDay});
 		$('#year').text(austDay.getFullYear());
 	}
@@ -141,6 +143,7 @@
 
     <ul>
           <li[% IF params.keywords == 'overview' %] id = "current"[% END %]><a href="?overview">Overview</a></li>
+          <li[% IF params.keywords == '2020regions' %] id = "current"[% END %]><a href="?2020regions">BEES</a></li>
           <li[% IF params.keywords == 'lucky' %] id = "current"[% END %]><a href="?lucky">Lucky the Chimp</a></li>
           <li[% IF params.keywords == 'army' %] id = "current"[% END %]><a href="?army">1000 Chimp Army</a></li>
           <li[% IF params.keywords == 'scoring' %] id = "current"[% END %]><a href="?scoring">Scoring</a></li>
@@ -152,3 +155,6 @@
 
         </div>
 	[% END %]
+
+<!--<img src = "images/jqmcbp_cancelled_sad.gif" />-->
+

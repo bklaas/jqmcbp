@@ -19,7 +19,7 @@ What, you aren't [% thisisme.name %]? <a href = "javascript:popUpAny('whoareyou.
 <div id = 'content'>
 <div id = 'main'>
 <!--<h5>The JQMCBP is forever 100% free, but this year consider a donation to a <a href = '/jqmcbp/?charity' target = '_blank' style = 'text-decoration: underline;'>Candymeister-approved charity</a>.</h5>-->
-<h5>The JQMCBP is forever 100% free, but in June I am again riding 150 miles on my bike to help fund MS research.<br />My goals remain the same: raise $1,000 so I can access VIP toilets, and beat Larry. <b><a href = 'http://bit.ly/bkMS150_2019' target = '_blank' style = 'text-decoration: underline;'>Donate to my ride here.</a></b></h5>
+<h5>The JQMCBP is forever 100% free, but in June I am again riding 150 miles on my bike to help fund MS research.<br />My goals remain the same: raise $1,000 so I can access VIP toilets, and beat Larry. <b><a href = 'http://main.nationalmssociety.org/goto/beat_larry_2020' target = '_blank' style = 'text-decoration: underline;'>Donate to my ride here.</a></b></h5>
 
 [% PROCESS $params.cgi %]
 </div>

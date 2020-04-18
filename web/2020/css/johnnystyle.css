@@ -146,23 +146,25 @@ h1 {
 
 td {
   text-align: left;
-  white-space: nowrap; }
+  white-space: nowrap; 
+    font-size: smaller;
+}
 
 img {
   border: 0; }
 
 td a {
   cursor: pointer;
-  text-decoration: none;
   font-weight: bold;
-  font-size: larger; }
+  font-size: 11px;
+}
 
 td a:hover {
   cursor: pointer;
-  text-decoration: none;
   font-weight: bold;
   background: lightgrey;
-  font-size: larger; }
+  color: white;
+  }
 
 #content a {
   cursor: pointer;
@@ -259,7 +261,7 @@ table.sss {
   font-size: 70%;
   font-weight: normal;
   font-family: "Roboto", "Helvetica", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: normal;
   text-align: left; }
 

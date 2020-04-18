@@ -16,8 +16,9 @@ my $base_height = 35;
 my @brackets = get_bracket_order();
 connect_to_db();
 my $last_updated = get_last_updated();
-my $teams_ref = get_teams(@brackets);
+my $teams_ref = get_teams_allinfo(@brackets);
 my $player_id = param("player_id") || 'winners';
+#my $player_id = "21758";
 
 if ($player_id eq 'THE_PRESIDENT_OF_THE_UNITED_STATES') {
 	$player_id = 6601;
@@ -29,6 +30,14 @@ $PARAMS{'high_score'} = get_high_score();
 
 my %picks;
 my $name; 
+
+my $urls = {};
+my $urls_by_game = {};
+my $url_wrapped_picks = {};
+my $urls_info = multi_row_query("select url, team from teams");
+for my $row (@$urls_info) {
+    $urls->{$row->{'team'}} = $row->{'url'};
+}
 
 my $candybar;
 my $candybar_sql = "select * from player_info where player_id=\"$player_id\"";
@@ -81,10 +90,18 @@ if ($player_id eq "winners") {
 
 	for (1..63) {
 		my $game = "game_" . $_;
-          if ($winners{$game} =~ /foo/ || $winners{$game} eq 'NULL') {
+        my $w = $winners{$game};
+        if ($w =~ /foo/ || $w eq 'NULL') {
             $picks{$game} = "&nbsp;";
-          } else {
-            $picks{$game} = $winners{$game};
+            $url_wrapped_picks->{$game} = "&nbsp;";
+        } else {
+            $picks{$game} = $w;
+            if ($urls->{$w} ne "") {
+                $url_wrapped_picks->{$game} = "<a href = \"$urls->{$w}\" target = \"_blank\">" . $w . "</a>";
+            }
+            else {
+                $url_wrapped_picks->{$game} = "<a href = \"https://youtu.be/dQw4w9WgXcQ\" target = \"_blank\">" . $w . "</a>";
+            }
           }
         }
 
@@ -94,9 +111,17 @@ my $player_sql = "select * from picks where player_id=\"$player_id\"";
 my $player_ref = multi_row_query($player_sql);
 
 for (@$player_ref) {
-        $name = $_->{'name'};
-        my $game = $_->{'game'};
-	$picks{$game} = $_->{'winner'};
+    $name = $_->{'name'};
+    my $game = $_->{'game'};
+    my $w = $_->{'winner'};
+    $picks{$game} = $w;
+    if ($urls->{$w} ne "") {
+        $url_wrapped_picks->{$game} = "<a href = '$urls->{$w}'>" . $w . "</a>";
+    }
+    else {
+        $url_wrapped_picks->{$game} = "<a href = 'https://youtu.be/dQw4w9WgXcQ'>" . $w . "</a>";
+    }
+#    print $url_wrapped_picks->{$game} . "\n";
 }
 
 }
@@ -107,19 +132,18 @@ for (1..63) {
 	# compare %picks to %winners
 
 
-         # is there a winner and does it match the player's pick?
-         if (($winners{$game} ne "foo" && $winners{$game} ne "" && $winners{$game} ne 'NULL') && $picks{$game} ne $winners{$game} ) {
-#		log_to_file("$game|$winners{$game}|$picks{$game}");
-		push @losers, $game;
-		my $team = $picks{$game};
-		$losers{$team} = 1;
-         }
+    # is there a winner and does it match the player's pick?
+    if (($winners{$game} ne "foo" && $winners{$game} ne "" && $winners{$game} ne 'NULL') && $picks{$game} ne $winners{$game} ) {
+        push @losers, $game;
+        my $team = $picks{$game};
+        $losers{$team} = 1;
+    }
      
 	$run_the_table += $point_values{$game};
-         # if game is truly a winner, make font color firebrick
+
+         # if game is truly a winner, indicate that
          if ($winners{$game} ne 'foo' && $picks{$game} eq $winners{$game} ) {
-                   #$picks{$game} = "<font color=firebrick><b>" . $picks{$game} . "</b></font>";
-                   $picks{$game} = "<span class = 'winner'>" . $picks{$game} . "</span>";
+            $url_wrapped_picks->{$game} = "<span class = 'winner'>" . $url_wrapped_picks->{$game} . "</span>";
          }
 
             # does winner match something already found as a loser??
@@ -127,11 +151,11 @@ for (1..63) {
 			my $this_pick = $picks{$game};
 			if ($losers{$this_pick}) {
 				#log_to_file("$this_pick|$losers{$this_pick}|$loser");
-				$picks{$game} = "<strike>" . $picks{$game} . "</strike>\n";
+				$url_wrapped_picks->{$game} = "<strike>" . $url_wrapped_picks->{$game} . "</strike>\n";
 				$run_the_table = $run_the_table - $point_values{$game};
                    		last;
 			}
-               }
+        }
 }
 
 $player_info->{'rtt'} = $run_the_table;
@@ -147,6 +171,7 @@ my %data = (
 		'player_info'	=>	$player_info,
 		'last_updated'	=>	$last_updated,
 		'picks'			=>	\%picks,
+		'url_wrapped_picks' =>	$url_wrapped_picks,
 		'base_height'	=>	$base_height,
 		'teams_ref'		=>	$teams_ref,
 		'brackets'		=>	\@brackets,

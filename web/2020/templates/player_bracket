@@ -54,21 +54,21 @@
                                         <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=61')">Final Four 1:</a></b>
                                 </td>
                                 <td class = 'leftalign'>
-				[% picks.game_57 %], [% picks.game_58 %] --> [% picks.game_61 %]
+				[% url_wrapped_picks.game_57 %], [% url_wrapped_picks.game_58 %] --> [% url_wrapped_picks.game_61 %]
                                 </td>
                         </tr>
                         <tr>
                                 <td class = 'rightalign' nowrap valign = 'top'>
                                         <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=62')">Final Four 2:</a></b>
                                 <td align = left class = 'leftalign'>
-				[% picks.game_59 %], [% picks.game_60 %] --> [% picks.game_62 %]
+				[% url_wrapped_picks.game_59 %], [% url_wrapped_picks.game_60 %] --> [% url_wrapped_picks.game_62 %]
                                 </td>
                         </tr>
                         <tr>
                                 <td class = 'rightalign' nowrap valign = 'top'>
                                         <b><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=63')">Champion:</a></b>
                                 <td align = left class = 'leftalign'>
-				[% picks.game_63 %]
+				[% url_wrapped_picks.game_63 %]
                                 </td>
                         </tr>
                         </table>
@@ -114,11 +114,21 @@
 			[% j = i - 1 %] [% thisNumerator = j + 2 %][% game = thisNumerator / 2 %][% thisGame = "game_$game" %]
 			<tr>
 				<td class = 'brackets1 nowrap' valign = 'center'>
-				[% teams_ref.$i.seed %] [% teams_ref.$i.team %]
+				[% teams_ref.$i.seed %]
+                    [% IF teams_ref.$i.url == '' %]
+                        [% teams_ref.$i.team %]
+                    [% ELSE %]
+                        <a href = "[% teams_ref.$i.url %]" target = "_blank">[% teams_ref.$i.team %]</a>
+                    [% END %]
                      		&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]')"><img height = 12 width = 12 src='/jqmcbp/images/piecharticon.png' border=0></a>
 				<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% game %]&man_or_chimp=chimp')"><img height = 12 src='/johnnyquest/images/chimp.gif' border=0></a>
 				<br />
-                      		[% teams_ref.$j.seed %] [% teams_ref.$j.team %]
+                      		[% teams_ref.$j.seed %]
+                            [% IF teams_ref.$i.url == '' %]
+                                [% teams_ref.$j.team %]
+                            [% ELSE %]
+                                <a href = "[% teams_ref.$j.url %]" target = "_blank">[% teams_ref.$j.team %]</a>
+                            [% END %]
 				</td>
 			</tr>
 			[% i = i + 2 %]
@@ -182,11 +192,11 @@
 		[%- game = "game_$i" %][% j = i + 1 %][% other_game = "game_$j" %][% factor = j / 2 %][% next = factor + 32 -%][% next_winner = "game_$next" %]
 		<tr>
 			<td class = "[% class %]" valign = "center">
-			[% picks.$game %]
+			[% url_wrapped_picks.$game %]
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %][% UNLESS picks.$next_winner.match('winner') %]&selectedTeam=[% picks.$next_winner | html %][% END %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
 			<br />
-		 	[% picks.$other_game %]
+		 	[% url_wrapped_picks.$other_game %]
 		  	</td>
 		</tr>
 	[% i = i + 2 %]

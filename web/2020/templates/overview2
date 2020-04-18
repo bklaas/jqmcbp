@@ -1,20 +1,21 @@
+<!--
+
 <h1 class="overview_title">Johnny Quest Memorial Candy Bar Pool XXIII &#127852;</h1>
 
 
 <h3><a href = '?willtherebeajqmcbpthisyear' style = 'text-decoration: underline;'>WILL THERE BE A [% year %] JQMCBP?</a></h3>
 
-
 <div id = 'defaultCountdown'></div>
-    <img id = 'stayTuned' class = 'float-right' src = 'images/staytuned.gif' />
+    <img id = 'stayTuned' src = 'images/staytuned.gif' />
+<p></p>
 
-[%# PROCESS wheresmybracket %]
-
+[% PROCESS wheresmybracket %]
 <p>Welcome newcomers and seasoned veterans to the 23rd Johnny Quest Memorial Candy Bar Pool (JQMCBP)! JQMCBP started in 1996 as a project to learn how to publish things to this new-fangled "World Wide Web". Eons later, I'm still here schlocking out the Web's Weirdest NCAA pool.
 </p>
 
 <a href="https://imgur.com/XvM34YI"><img src="https://i.imgur.com/XvM34YI.gif" title="source: imgur.com" class = "float-left" /></a>
 
-<!--<img src = "images/andwereback.gif" class = 'float-left' />-->
+<img src = "images/andwereback.gif" class = 'float-left' />
 
 <h2>No Purchase Necessary Enter Once and Only Once</h2>
 
@@ -23,17 +24,23 @@
 
 <p>Make your picks by clicking on the button by each of your projected winning teams. When you make your selection, JQMCBP BracketMagic&trade; will automatically move your selection to the next round. If you want to change any selections, just click on the red 'x' to the right of the team name and it will send it back a round for further scrutiny. After you fill in your entire bracket, you will be prompted for the crucial part of your entry, your candy bar selection. Click on the Go! Ben! Go! button and your bracket is complete!</p>
 
-<!--
 <a href="https://imgur.com/WL3317i"><img src="https://i.imgur.com/WL3317i.gif" class = 'float-right' title="source: imgur.com" /></a>
--->
+
 <img src = "images/whatisthis.gif" class = 'float-right' />
 
 <p>Printable and Viewable brackets are usually available from CBS Sports, however once the tourney starts you will be able to view your selections Supa-Fancy Style&trade; from benklaas.com.</p>
 
-<p>So, that's the scoop. As in past years, I will religiously send out irreverant email rants as the tournament progresses, thus allowing you to spend countless hours following teams like the the Grizzlies of Montana, the Retrievers of Maryland Baltimore County, and of course the future NCAA champion Lipscomb Bisons.
+<p>So, that's the scoop. As in past years, I will religiously send out irreverant email rants as the tournament progresses, thus allowing you to spend countless hours following teams like the the Huskies of Northeastern, the Terriers of Wofford, and of course the future NCAA champion Gardner-Webb Runnin' Bulldogs.
 
 <p>
 <br />
 -->
 
+<h3>JQMCBP (and March Madness) have been cancelled due to the pandemic health crisis with Covid-19</h3>
+<p>
+Doing the right thing in a public health crisis is paramount, but I will miss peppering you all with my bizarre and somehow popular emails during the Quest for Candy. A heartfelt hope that 2021 brings us back to the Full Glory of this unusual endeavor. Until then, stay safe, and wash hands!</p>
+
+<div id = 'defaultCountdown'></div>
+    <img id = 'stayTuned' src = 'images/staytuned.gif' />
+<p></p>
 [% PROCESS next link = 'lucky' %]

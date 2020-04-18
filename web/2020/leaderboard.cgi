@@ -60,6 +60,7 @@ my %sort_fields = (
 			'candybar'	=>	'player_info.candybar',
 			'location'	=>	'player_info.location',
 			'champion'	=>	'player_info.champion',
+            'past_champion' => 'player_info.past_champion',
 			'rtt'		=>	'scores.rtt',
 		);
 $sort_fields{'rank'} = 'scores.combined_rank' if $PARAMS{'man_or_chimp'} eq 'both';
@@ -83,6 +84,7 @@ my %sort_item = (
 		"location"	=> "Location",
 		"j2_factor"	=> "J Factor$tm",
 		"champion"	=> "Champion",
+        "past_champion" => "Past Champion",
 		"rtt"	=>	"RtT$tm"
 		);
 my %order = (
