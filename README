@@ -12,10 +12,11 @@ html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year
 	change year reference in credits.html
 	make sure halloffame list includes last year's winner and loser
 	change symlink at website root (/data/benklaas.com) from <last_year> to <this_year>
+	cd /data/benklaas.com && rm jq && ln -s /home/bklaas/jqmcbp_<this_year> jq
+
 data/perl space: 
         cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/Lucky.dat
         cd jqmcbp && rm data_files/*.dat
-	rm jq; ln -s /home/bklaas/jqmcbp_2019 jq
 
 Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
 Go to templates/header and adjust the timer for the countdown
