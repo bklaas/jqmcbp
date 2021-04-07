@@ -1,5 +1,9 @@
 Here's what's needed: 
 
+(DB copy to jq_2021 already compeleted)
+
+BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
+
 copy last year's johnnyquest database to jq_2018
 	mysqldump -u root johnnyquest > jq.sql
 	CREATE DATABASE jq_2018
