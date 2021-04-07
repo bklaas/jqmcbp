@@ -8,31 +8,40 @@ use Data::Dump qw/dump/;
 use vars qw/ $dbh /;
 do "/data/cgi-bin/jq_globals.pl";
 
-my $bracket_j_factors = {};
+my $years = [qw/ 2004 2005 2006 2007 2008 2009 2012 2013 2014 2015 2016 2017 2018 2019 2020 johnnyquest/];
 
-my $years = [qw/ 2004 2005 2006 2007 2008 2009 2012 2013 2014 2015 2016 2017 2018 2019 2020/];
-#for my $year (2012..2019) {
+print "year\tperfect_j\n";
 for my $year (@$years) {
-    my $db = "jq_" . $year;
+    my $db;
+    if ($year eq "johnnyquest") {
+        $db = $year;
+    } else {
+        $db = "jq_" . $year;
+    }
     my $first = first_round($db);
     my $third = third_round($db);
-    my $j = calculate_j($first, $third);
-    print "$db\t$j\n";
+    my $perfect_j = calculate_j($first, $third);
+    my $median_j = median_j("man");
+    my $median_chimp_j = median_j("chimp");
+    if ($year eq "johnnyquest") {
+        my $this_year = this_year();
+        print "$this_year\t$perfect_j\t$median_j\t$median_chimp_j\n";
+    } else {
+        print "$year\t$perfect_j\n";
+    }
 }
 
+sub median_j {
+    my $man_or_chimp = shift;
+    # XXX
+}
 sub calculate_j {
     my $sigma1 = shift;
     my $sigma2 = shift;
 
 	my $j = (($sigma1 - 144) / 256);
-	my $j_factor = 100 * $j;
-	my $j2 = ( $j + ( 4 * (($sigma2 - 12)/112)) );
-	my $j2_factor = 20 * $j2;
-    if ($j2_factor == 100) {
-        $j2_factor = 99.99;
-    }
-    return $j2_factor;
-
+	my $j2 = 20 * ( $j + ( 4 * (($sigma2 - 12)/112)) );
+    return $j2;
 
 }
 sub first_round {

@@ -9,6 +9,7 @@ do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
+my $timestamp = time;
 my $bracket_picker = "random_bracket_selector.pl";
 
 # get all of the team names into an ordered array
@@ -27,7 +28,7 @@ for (@$teams) {
 my $inc = 1;
 for my $name ('Lucky') {
 	my $chimp = $name . " the Chimp";
-	my $outfile = "lucky/$name.dat";
+	my $outfile = "lucky/$timestamp.$name.dat";
 	my %losers;
 	open(OUT,">$outfile");
 	for my $game (1..63) {
@@ -55,7 +56,7 @@ for my $name ('Lucky') {
 	}
 	print OUT "name|$chimp\n";
 	print OUT "location|Rancho Cucamonga\n";
-	print OUT "candybar|Banana Moon Pie\n";
+	print OUT "candybar|Krembanan\n";
 	close(OUT);
 	$inc++;
 }

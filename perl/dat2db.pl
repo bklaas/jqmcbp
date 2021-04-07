@@ -166,6 +166,13 @@ my $j_factor = 100 * $j;
 my $j2 = ( $j + ( 4 * (($sigma2 -12)/112)) );
 my $j2_factor = 20 * $j2;
 
+if ($j_factor == 100) {
+    $j_factor = 99.99;
+}
+if ($j2_factor == 100) {
+    $j2_factor = 99.99;
+}
+
 print "j_factor: $j_factor\tj2_factor: $j2_factor\n";
 my $insert = "UPDATE player_info set j_factor = \"$j_factor\", j2_factor = \"$j2_factor\" where player_id = \"$player_id\"";
 $dbh->do($insert) unless $test;

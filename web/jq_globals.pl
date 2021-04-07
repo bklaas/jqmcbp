@@ -1,7 +1,13 @@
+sub this_year {
+	my @time = localtime();
+    return sprintf("%04d", $time[5] + 1900);
+}
+
 sub config_variables {
 
-	my @time = localtime();
-	my $year = sprintf("%04d", $time[5] + 1900);
+	#my @time = localtime();
+	#my $year = sprintf("%04d", $time[5] + 1900);
+	my $year = this_year();
 	my %return =
 	(	
 	"year"	=>	$year,

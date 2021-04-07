@@ -12,7 +12,8 @@ open(UPSETS,"<upsets");
 while(<UPSETS>) {
 	chomp;
 	next if /^$/ || /^#/;
-	my ($team, $key) = split /\s+/, $_;
+	my ($team, $key) = split /,/, $_;
+    print "|$team|$key|\n";
 	$upsets{$key} = $team;
 }
 close(UPSETS);

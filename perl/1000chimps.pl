@@ -7,10 +7,11 @@ use DBI;
 use vars qw/$dbh/;
 do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
+my $timestamp = time;
+
 connect_to_db();
 
 my $name_file = "2000names.txt";
-#my $name_file = "the1000Chimps2017.txt";
 my $bracket_picker = "random_bracket_selector.pl";
 my $names = get_names();
 
@@ -32,7 +33,7 @@ for my $chimp (keys %$names) {
 	my $name = $chimp;
 	$name =~ s/ the Chimp//;
 	last if $inc == 1001;
-	my $outfile = "chimp_data/$name.dat";
+	my $outfile = "chimp_data/$timestamp.$chimp.dat";
 	my %losers;
 	open(OUT,">$outfile") or die $!;
 	for my $game (1..63) {
@@ -58,9 +59,9 @@ for my $chimp (keys %$names) {
 		my $which = pick_it($rand, $team1, $team2, \%losers);
 		print OUT "$game_name|$teams[$which]\n";
 	}
-	print OUT "name|$chimp\n";
+	print OUT "name|$name\n";
 	print OUT "location|Rancho Cucamonga\n";
-	print OUT "candybar|Banana Moon Pie\n";
+	print OUT "candybar|Krembanan\n";
 	print OUT "alma_mater|Bonobo U\n";
 	close(OUT);
 	$inc++;
