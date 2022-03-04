@@ -16,7 +16,10 @@ html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year
 	change year reference in credits.html
 	make sure halloffame list includes last year's winner and loser
 	change symlink at website root (/data/benklaas.com) from <last_year> to <this_year>
-	cd /data/benklaas.com && rm jq && ln -s /home/bklaas/jqmcbp_<this_year> jq
+	cd /data/benklaas.com && rm jqmcbp && ln -s /home/bklaas/jqmcbp_<this_year> jqmcbp
+    update ~/.bash_alias for jq and jqw to current year. source ~/.bash_aliases
+
+    go to templates/enter and uncomment the "Not yet" bit and comment out the other bits
 
 data/perl space: 
         cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/Lucky.dat
@@ -26,7 +29,7 @@ Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web
 Go to templates/header and adjust the timer for the countdown
 
 ###
-US clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
+USE clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
 DO NOT just clear the tables. clear_db.sql will insert values to the games table and NULL out the teams table
 
 NOTE TO 2019 BEN FROM 2018 BEN: HOLY CRAP DON'T SCREW UP THE FINAL FOUR REGION ORDER AGAIN. DO NOT USE ESPN. DO NOT. USE. ESPN.

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p, ul {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XX</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/lf3mgmEdfwg">As God as my witness, I thought turkeys could fly!</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+<p>
+Because of South Carolina's surprise presence in the final, the potential outcomes in the Quest For Candy are slightly oddball. Amazingly though, the Chimp Army is fully out of it. Lucky the Chimp has Snapchatted me video of him hurling something at the camera that I do NOT think is pudding. Sorry buddy. Next year. Always next year.
+</p>
+
+<p>
+With 4 teams left and 2 to the 3rd (also known as 8!) permutations left, we have 4 players left with a chance for Sweet Sweet Candy.
+</p>
+
+<ul>
+<li>With either Oregon as champ or a South Carolina over Oregon final, <b>Milo Anderson</b> gets a King Size Kit Kat.</li>
+<li>If South Carolina beats North Carolina in the Battle of Carolinas, or if Gonzaga beats North Carolina in the Battle of I'm Not Sure What, <b>Steve Shwaiko</b> takes home a coveted Big Chunky.</li>
+<li>If North Carolina is champ, <b>eyoung54</b> will be mailed a Twix.</li>
+<li>Finally, just like Milo my main man <b>Craig Wadzinske</b> will get a King Size Kit Kat sent to Milwaukee (The Good Land) should Gonzaga beat Oregon in the final</li>
+</ul>
+
+<p>
+As is frequently the case going into the Final Four weekend, I'm going to be traveling. Last year I made updates in the Honolulu airport over my phone with very bad wifi. This year should be slightly simpler, but I will be in Kansas City for the semifinal games and Santa Fe the night of the championship. I'll do my best to promptly send out a final tip of the hat email from The Land of Enchantment, but if there's any significant delay it's because I'm in a green chile stupor and/or my runs-out-of-my-basement web server lost its connection. Rest assured you will all, eventually, be notified of the champ.</p>
+
+<hr class = 'section' />
+<h1>Buggin you for charity</h1>
+<p>The JQMCBP was, is, and always will be 100% Free. In past years I've bugged you for donations to support my MS-150 bike ride. I can't make the ride this year, but will still bug you for money. <a href = "https://benklaas.com/jqmcbp/?charity">Have a look at the JQMCBP XX Charity Page</a> and, if you are able and willing, give piles of cash to one or many of the causes listed there.</p>
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Only 110 had the Oregon Ducks in the final, but Sweet Zotz! Don Pechumer and Maya O picked the Gamecocks of South Carolina into the Final Four. 
+</p>
+
+<div class = 'pre'>
+South Carolina:  Don Pechumer, Maya O
+</div>
+
+<hr class = 'section' />
+<!--
+<hr class = 'section' />
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+The Worst Typo Award goes to whatever family member created a filter just for my family, and then spelled our name wrong. No ass in Klaas.
+</p>
+-->
+
+<!--
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+</p>
+<div class = 'quote'>
+</div>
+
+<p>
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<hr class = 'section' />
+-->
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+168 of you lost your champ over the weekend, none more notable than fearsome animal hybrid "BearDawg", whose bold choice of Florida was looking incredibly Nostradamus-like until they ran out of gas against South Carolina. Had Florida kept on with their winning ways, ain't no stoppin' BearDawg.
+</p>
+
+<p>
+Also a whole boatload of people that thought Kansas or Kentucky (and two for Xavier) would win had their collective Candy Hearts broken.
+</p>
+
+<div class = 'pre'>
+Florida: BearDawg
+
+Kentucky: Max Barton, Gym Nasium, Theo Chungath, Chris 'charby' Charbonneaux, The Winner, Beaumont Hoffman, Steve White, Peter Carlson, Curtis Mitchell, Rob Reed, David 'Not at Work' Lucas, Jeff Amato, Todd Rich, DeSontis The Cat (from the grave) Smalling, Josh Nisenson, Jack Genadek, Ben Schwartzenburg, Kelly Wolfe-Bellin, Wayne Lucas, Old Joe Cislo, Sam Rhoades, Sarah Odeh, John Martin Lucas, Diane Sievert, Richard Ehisen, Lea Adams, Martie Lucas, Teresa Bryan, SueMadDogWalker, Charlotte Bier, Sam Christopherson, LJ '3 Foot Twix ' Brown, Tom Lettenberger, Grace Boyd, Daron lind, Shaun Connolly, Greg 'Krackel' Zinn, Calvin Bruckner, Jamie Samuelsen, Jim Bruckner, Kerri Bruckner, Jim Lape, Todd Sieve, Dan Clark, Adam J Chittenden, Michael Maten, Karlene Jennings, Bob Armitage, Greg Wenz, Alyssa Teer, Jeff Blake, Claire 'The Bear' Lucas, Ryan Schmitt, Bill Teer, Kate Meilinger, Craig Papa D, Ryan Herrington, williford , Michelle A Dombrowski
+
+Kansas: Brenda VB, Ben Halpern, Jodi 'sometimes you feel like a nut' E, Trish Soriano, Jim Soriano, Tim Hoffman, Dustin Wenger, Alyssa Blom, Connor Morrison, Piper Dare Klaas, Eitan Weiss, Bob Barsaloux, Andy Weinecke, MaKenzie Margaret Smalling, Bridget Johnson, Ramon Roullard, Brendon Harrington, Todd's Nebraska cousin, Miles 'Shooty Hoops is a Real Sport' Haysman, Derek Bier, Keith Brown, Dan Solt, Bret Malkowski, Kim Clexton, Fran Fabrizio, Kansas Steve, Kendall DiGirolomo , Glen Volkman, Avey, Amanda Ferguson, Rick Saro, Ruth Volkman, The Real Joseph Ghastin, Elliya Chungath , Laura 'tippy toes' Goodwin, Jason Care, Brent Dakin, Eddie Sander, Jack Smalling's Oldest Son Bob, Scott Mortimer, Jodie Baird, Jacob Benson, AJ Bowers, Alex Anderson, Doug Burch, Kendra White, David Van Riper, Amish Das, Lucy Adelle Stephan, Kurt Gardinier, P West, Ryan Brady, Dawn Smith, Matt Clark, Ken Howard, Kristal Sieve, Matthew Dill, Eric Gifford, Dustin Pierce, martha carlos, Christian Costello, Dave Bush, Brian Hampton, Todd Jaworski, Baiba Olinger, William Morrison, Naila Elliott, Bridget Conkling, Ethan Lape, Bam Bam Shanahan, Howard Johnson, Christie Schmidt, zoe lape, Kiowa Kid, Jeff Shipley, Jacob, Chandra Hanke, Missy Shanahan, Jamie 'I am only 10, son of Steve' White , Malena Duque-Baird, Jason Busta, Velvet Fog, Jonathan Klimczuk, Kurt Anderson, Mike Abate, Eddie Topel, Drew Bush, Dan Ridgeway, Julie Smith, Matt Suomi, Genevieve Bettin, DBacks, Bill Teer, Davecole, Annelise Ross, Chuck Rodrigues, Lauren Schmitt, Doug Busta, Catherine, Casey Breen, Matt MacDonell, Betsy Ross, Kendra Corneliusen, Katrina schuler, The Dude, Robbie Smalling
+
+Xavier: JeffreyB, Don Pechumer
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Notable on the Kansas University alums are my dad (Ph.D. Zoology, 1970), and...wait a minute....Lucy Adelle Stephan? Hey Lucy, you live two blocks from me and are in the 5th grade. Hey Lucy, if you said you were a 5th grade Lake Harriet Community School alum, even that wouldn't be true until June! Hey Lucy: you just got served.
+</p>
+
+
+<div class = 'pre'>
+Florida: Mary F. Herrmann, Kevin 'Haribo Gummi Strawberry' Huntsman
+
+Kentucky: The Winner, Wayne Lucas, Kerri Bruckner
+
+Kansas: Kansas Steve, Amanda Ferguson, Ed Nordstrom, Lucy Adelle Stephan, Erv Klaas, Howard Johnson, Davecole
+
+Xavier: Paula Fronckowiak, jennyrupe
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+The Sports Interview Canned Response Award goes to Riley Daine's selection of "110% cacao chocolate bar"
+</p>
+
+<div class = 'quote'>
+Hey Champ, great game. Tell me how you felt out there doing all the winning and stuff.
+</div>
+
+<div class = 'quote'>
+Well, first of all you need to give our opponent a lot of credit. They really brought it tonight. Tough team.
+</div>
+
+<div class = 'quote'>
+(nods respect for articulate and deferential answer) What about your candy selection Champ, tell me about that.
+</div>
+
+<div class = 'quote'>
+You know, Coach always says to give 110%, so I thought, what better choice to make than a 110% cacao chocolate bar.
+</div>
+
+<div class = 'quote'>
+Well Champ, you've earned it after the big victory. Here it is! Take a bite...
+</div>
+
+<div class = 'quote'>
+(takes bite) OMIGOD WAT HAVE I DONE SO BITTER TASTES LIKE FEET
+</div>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+The Oh So Close Awards go to Chris "Chocolate Charleston Chew" Morgan, two points shy of any potential candy (SO CLOSE!) and 2015 champion BartmanMN (85 points, but Villanova?!?! Soooooo close!).
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Steve Shwaiko</td><td>Illinois</td><td>Big chunky</td><td>Gonzaga</td><td>88</td></tr>
+<tr><td>2</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>86</td></tr>
+<tr><td>3</td><td>BartmanMN (Todd Barton)</td><td>Minnesota</td><td>Ghiradelli Carmel Bar</td><td>Villanova</td><td>85</td></tr>
+<tr><td>4</td><td>Chris Morgan</td><td>California</td><td>Chocolate Charleston Chew</td><td>North Carolina</td><td>84</td></tr>
+<tr><td>4</td><td>Derek Roesti</td><td>Colorado</td><td>Whatchamacallit</td><td>North Carolina</td><td>84</td></tr>
+<tr><td>4</td><td>Rick Shepich</td><td>Michigan</td><td>Bag O' Bit O' Honey</td><td>North Carolina</td><td>84</td></tr>
+<tr><td>7</td><td>Milo Anderson</td><td>District of Columbia</td><td>King Size Kit Kat</td><td>Oregon</td><td>83</td></tr>
+<tr><td>10</td><td>andy anderson</td><td>Idaho</td><td>SOUR SKITTLES</td><td>Villanova</td><td>82</td></tr>
+<tr><td>10</td><td>Craig Wadzinske</td><td>Wisconsin</td><td>King SIZE KIT KAT</td><td>Gonzaga</td><td>82</td></tr>
+<tr><td>10</td><td>Jenny Gator</td><td>Wisconsin</td><td>Twix</td><td>Oregon</td><td>82</td></tr>
+<tr><td>10</td><td>Kerie Whelan</td><td>Michigan</td><td>Toblerone</td><td>Villanova</td><td>82</td></tr>
+<tr><td>10</td><td>Michelle Housenga</td><td>Minnesota</td><td>Peanut Butter Twix</td><td>Gonzaga</td><td>82</td></tr>
+<tr><td>10</td><td>Romke Mooiweer</td><td>California</td><td>Butterfinger</td><td>Gonzaga</td><td>82</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Amiya, Bryant, Eileen, and Chaya the Chimp are all in the running for Top Chimp of 2017, but it's a bittersweet pill, as none are close enough to grab a Banana Moon Pie for the Chimp Army. May 2018 be the Year of the Chimps!
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Amiya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>67</td></tr>
+<tr><td>2</td><td>Anya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>63</td></tr>
+<tr><td>3</td><td>Bryant the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>59</td></tr>
+<tr><td>4</td><td>Eileen the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>58</td></tr>
+<tr><td>5</td><td>Uriel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Xavier</td><td>56</td></tr>
+<tr><td>6</td><td>Darius the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Xavier</td><td>54</td></tr>
+<tr><td>6</td><td>Quinn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iona</td><td>54</td></tr>
+<tr><td>6</td><td>Zaria the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>54</td></tr>
+<tr><td>9</td><td>Chaya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oregon</td><td>53</td></tr>
+<tr><td>9</td><td>Cole the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Vermont</td><td>53</td></tr>
+<tr><td>9</td><td>Ivy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>53</td></tr>
+<tr><td>9</td><td>Miriam the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>53</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2017 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://www.howmanypeopleareinspacerightnow.com">howmanypeopleareinspacerightnow.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE7|*</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE8|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Loyal and probably anxious Candy Seekers: this thing was slated to get rolling Monday, but over the weekend I had a nagging shoulder condition go from bad to <i>SUPER OMG BAD</i>** this weekend.  My phone consult (no touching!) with an orthopedist said the technical term for my condition was "just really, really awful timing." This is something normally treated with a cortisone injection but they aren't giving those out any more because it lowers immunity. So now I'm the Chief Engineer on the Ibuprofen Train, and I'm happy to report that I can now barely type (from a bed, with laptop tilted at a weird angle to accomodate the sling).
+</p>
+
+<p>So, the actual "games" in this absurdist bracket have not started yet. When do they start? Good question. I'm not entirely sure, because see footnote**, but figure tomorrow or Thursday at the latest. I will be posting "updates" and possibly "highlights" on the "games" on Twitter, under the username <a href="https://twitter.com/candymeister">@candymeister</a> as they transpire. If you aren't a fan of the Twitter, and believe me I get that, it's a tire fire, never fear, the bulk of the important analysis will be in these emails.
+</p>
+
+
+<p>
+Welcome all 370 humans* to the 23rd iteration, and clearly the weirdest iteration, of the Johnny Quest Memorial Candy Bar Pool (JQMCBP)! All have entered with dreams of sweet, sweet candy. Some of you are new! Welcome! Spoiler alert: it's gonna be weird!
+</p>
+
+For the rookies:
+What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.***
+</p>
+
+<p>
+In addition to the emails, there's lots of important, vital resources available with your web browser. Evaluate how risky your picks are with the <a href = "https://benklaas.com/jqmcbp/whatsyourj.cgi">J Factor</a>, see who picked brackets like yours with the <a href = "https://benklaas.com/jqmcbp/sss.cgi">Scientific Similarity Index</a>. As the tournament progresses, figure out who has no chance of winning at the <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame!</a> Generate pointless <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">head-to-head graphs</a>! Every one of my emails will contain these linky links at the bottom of the email or head to <a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
+</p>
+
+<p>
+As I've done for the past few years, I'm sending emails through the appropriately named <a href = "http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.
+</p>
+
+<p>
+* for now! technically I haven't shut entries down because**<br />
+** OW MY SHOULDER
+</p>
+
+<p>
+*** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.
+</p>
+
+<p>
+But enough of my yakkin'. Let's boogie!
+</p>
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+The most excellent mascot Catamount* has come up in past JQMCBP years, but this year I did a bit extra research on its origins with the University of Vermont. In the seminal 2015 Vermont Quarterly article <a href = "https://vermontquarterly.wordpress.com/2015/01/21/catamounts-in-natural-fibers-and-polyester/">"Catamounts in Natural Fibers and Polyester"</a>, which <i>never once directly references natural fibers or polyester</i>, it is revealed that Catamount was chosen in 1926 by a 138-126 margin over the choices of Tomcat, Cow, and Camel. They don't know which one got the 126 2nd place votes, but...well it's gotta be Camel, right? Catamounts is still a personal mascot favorite, but maaaaan they could have been The Vermont Camels. Regrets.
+</p>
+
+<p>
+* because we needed another word, but cooler, for a mountain lion. No, not cougar. No, not puma. No, not panther. Catamount. That's the one.
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+We didn't have anything that qualified as a meaningful upset, but looking forward to the Colgate Raiders upset of Tennessee tomorrow.
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+10 of you lost your selected champion, all but shutting you out of the Quest for Candy after Day 1. Judging by the quality of your champs, methinks perhaps you never really thought the door was open to begin with. Also, congratulations to ZZZZZZZZZZZZZZZZZZZZ in definitely being the last in the alphabet.
+</p>
+
+<div class = 'pre'>
+New Mexico State: Drew Bush, Rebecca Hamling, Josiah Bowers
+Abilene Christian: Andrew Mossburg
+Fairleigh Dickinson: aDonald J Trump, ZZZZZZZZZZZZZZZZZZZZ
+Syracuse: Lisa Guidone
+Marquette: Riley Danger, Disneyminion, Greta S
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+15 lost their alma maters from the tourney today. I noticed no one was from that school in Connecticut that got beaten by LSU today, so I'll just share this joke I read on the Twitter today: "Nice to see the SEC finally hold some guys from Yale accountable for something".
+</p>
+
+<div class = 'pre'>
+New Mexico State: Josh Hamling, David 'Crusher' Lucas
+Syracuse: Sabes, Lisa Herrington, Lisa Guidone, Liz McHalpine
+Marquette: Curtis Stalter, PeterB’s Devonshire Donkeys, Bill McGrail, Karen McCartney, Matt Mac, Sarah Ebenhoe
+Nevada: William Morrison
+Montana: Sue Robinson, Lindsay Morgan
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The I'm Just Going to Google Weird Candy and Request the First Thing I Find Award
+</p>
+
+<p>
+I know this because I witnessed it. My daughter Piper Dare Klaas was Feeling Lucky with The Google, and one simple search was all she needed to come up with her choice...Cat Butt Gum. And yes, <a href = "https://www.perpetualkid.com/blue-q-cat-butt-gum/">it's a thing.</a>
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "http://bit.ly/bkMS150_2019">you may donate buckets of cash to my ride here</a>. This is my 8th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+We had three 16-for-16 clean sweeps on Day 1. Joaquin "Kit Kat", Curtis John "Skittles" Mitchell, and Joel "100 Grand" Rondeau. I think these three should start a hip-hop band and go with the stage names Kit Kat, Skittles, and 100 Grand. Band could be called Candy Crew. Just a thought.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Curtis John Mitchell</td><td>Wisconsin</td><td>Skittles</td><td>Michigan</td><td>16</td></tr>
+<tr><td>1</td><td>Joaquin</td><td>Michigan</td><td>Kit Kat</td><td>Michigan</td><td>16</td></tr>
+<tr><td>1</td><td>Joel Rondeau</td><td>Wisconsin</td><td>100 Grand</td><td>Virginia</td><td>16</td></tr>
+<tr><td>4</td><td>Annie Hoag</td><td>Michigan</td><td>Reese's</td><td>Virginia</td><td>15</td></tr>
+<tr><td>4</td><td>Bridget Conkling</td><td>Ohio</td><td>Giant Toblerone</td><td>Michigan State</td><td>15</td></tr>
+<tr><td>4</td><td>Bryn Hubbard</td><td>Illinois</td><td>Lollipops  (DumDums)</td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Chris Larson</td><td>Minnesota</td><td>Milk Chocolate Flavored Yoo Hoo Candy Bar</td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Dan Reed</td><td>California</td><td>king size Rollo</td><td>North Carolina</td><td>15</td></tr>
+<tr><td>4</td><td>Dave McHalpine</td><td>Michigan</td><td>Reeses Peanut Butter Cup</td><td>Virginia</td><td>15</td></tr>
+<tr><td>4</td><td>Dawn Smith</td><td>Iowa</td><td>Strawberry Charleston chew</td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Deanne Busta</td><td>Iowa</td><td>Snickers</td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Dennis Brodjeski</td><td>Wisconsin</td><td>Snickers </td><td>Gonzaga</td><td>15</td></tr>
+<tr><td>4</td><td>Erin Meyer</td><td>Minnesota</td><td>Giant gummy snake</td><td>North Carolina</td><td>15</td></tr>
+<tr><td>4</td><td>Ginger Carter</td><td>Texas</td><td>Toblerone</td><td>North Carolina</td><td>15</td></tr>
+<tr><td>4</td><td>James Dillon</td><td>Washington</td><td>King size Snickers</td><td>Gonzaga</td><td>15</td></tr>
+<tr><td>4</td><td>Jed Durkin</td><td>Michigan</td><td>3 Musketeers!</td><td>Gonzaga</td><td>15</td></tr>
+<tr><td>4</td><td>Lorie Dankers</td><td>Washington</td><td>Butterfinger</td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Meghan Waldron </td><td>Michigan</td><td>Butterfinger </td><td>Houston</td><td>15</td></tr>
+<tr><td>4</td><td>Paul Schmidt</td><td>Michigan</td><td>3 Musketeers </td><td>Texas Tech</td><td>15</td></tr>
+<tr><td>4</td><td>Sarah Ogborn</td><td>Illinois</td><td>Kinder Schoko-bons Crispy Box </td><td>Kentucky</td><td>15</td></tr>
+<tr><td>4</td><td>Scott Boniface</td><td>California</td><td>Whittaker's Dark Ghana</td><td>North Carolina</td><td>15</td></tr>
+<tr><td>4</td><td>Tim Rush</td><td>Michigan</td><td>Good ol' fashioned Snickers</td><td>North Carolina</td><td>15</td></tr>
+<tr><td>4</td><td>Todd Sieve</td><td>Iowa</td><td>Curly Wurly</td><td>Kentucky</td><td>15</td></tr>
+<tr><td>4</td><td>Trey White</td><td>Michigan</td><td>Maui KITCH'N COOK'D Potato Chip and Chocolate </td><td>Duke</td><td>15</td></tr>
+<tr><td>4</td><td>Wayne Lucas</td><td>Oregon</td><td>Large Payday</td><td>Duke</td><td>15</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+A strong first day showing from Abigail the Chimp, but a champion of Northeastern will not take her far. Watch out for the identical chimp twins Brandon and Landon, who picked UNC and Duke, respectively.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Abigail the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northeastern</td><td>15</td></tr>
+<tr><td>2</td><td>Calvin the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northern Kentucky</td><td>14</td></tr>
+<tr><td>2</td><td>Myla the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iowa State</td><td>14</td></tr>
+<tr><td>4</td><td>Adriel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Vermont</td><td>13</td></tr>
+<tr><td>4</td><td>Alayna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Maryland</td><td>13</td></tr>
+<tr><td>4</td><td>Aliyah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>13</td></tr>
+<tr><td>4</td><td>Damon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>13</td></tr>
+<tr><td>4</td><td>Kira the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Murray State</td><td>13</td></tr>
+<tr><td>4</td><td>Madilyn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>13</td></tr>
+<tr><td>10</td><td>Aaliyah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico State</td><td>12</td></tr>
+<tr><td>10</td><td>Annabella the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Louisiana State</td><td>12</td></tr>
+<tr><td>10</td><td>Annalise the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Ohio State</td><td>12</td></tr>
+<tr><td>10</td><td>Bella the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Tech</td><td>12</td></tr>
+<tr><td>10</td><td>Benjamin the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>12</td></tr>
+<tr><td>10</td><td>Brandon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>12</td></tr>
+<tr><td>10</td><td>Charleigh the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Baylor</td><td>12</td></tr>
+<tr><td>10</td><td>Clara the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Tech</td><td>12</td></tr>
+<tr><td>10</td><td>Conor the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>12</td></tr>
+<tr><td>10</td><td>Daniella the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Liberty</td><td>12</td></tr>
+<tr><td>10</td><td>Davis the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Yale</td><td>12</td></tr>
+<tr><td>10</td><td>Dawson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>12</td></tr>
+<tr><td>10</td><td>Diego the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>12</td></tr>
+<tr><td>10</td><td>Donovan the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Central Florida</td><td>12</td></tr>
+<tr><td>10</td><td>Edwin the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wofford</td><td>12</td></tr>
+<tr><td>10</td><td>Elaina the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arizona State</td><td>12</td></tr>
+<tr><td>10</td><td>Gia the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Virginia</td><td>12</td></tr>
+<tr><td>10</td><td>Jayleen the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Louisiana State</td><td>12</td></tr>
+<tr><td>10</td><td>Jayson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida State</td><td>12</td></tr>
+<tr><td>10</td><td>Jett the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Washington</td><td>12</td></tr>
+<tr><td>10</td><td>Jonah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Houston</td><td>12</td></tr>
+<tr><td>10</td><td>Kade the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Colgate</td><td>12</td></tr>
+<tr><td>10</td><td>Lainey the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Tech</td><td>12</td></tr>
+<tr><td>10</td><td>Landon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>12</td></tr>
+<tr><td>10</td><td>Leia the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan</td><td>12</td></tr>
+<tr><td>10</td><td>Leonel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Ohio State</td><td>12</td></tr>
+<tr><td>10</td><td>Levi the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Auburn</td><td>12</td></tr>
+<tr><td>10</td><td>Lucy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Vermont</td><td>12</td></tr>
+<tr><td>10</td><td>Matias the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Buffalo</td><td>12</td></tr>
+<tr><td>10</td><td>Maya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iowa State</td><td>12</td></tr>
+<tr><td>10</td><td>Micah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Montana</td><td>12</td></tr>
+<tr><td>10</td><td>Miranda the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Auburn</td><td>12</td></tr>
+<tr><td>10</td><td>Natalie the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>12</td></tr>
+<tr><td>10</td><td>Samantha the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Nevada</td><td>12</td></tr>
+<tr><td>10</td><td>Scarlet the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida</td><td>12</td></tr>
+<tr><td>10</td><td>Willa the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Georgia State</td><td>12</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

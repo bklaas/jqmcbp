@@ -1,0 +1,2 @@
+div#menu { position: absolute; left: 40; top: 10; width: auto; z-index: 0; display: block; }
+div.locale { position: absolute; left: 40; top: 40; width: auto; z-index: 0; display: none; }

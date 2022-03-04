@@ -1,0 +1,39 @@
+[% PROCESS jfactor_histogram %]
+
+<h1>So Just What the Heck is a "J" Factor Anyway?</h1>
+<div id = 'jfactor_histogram' class = 'chart_container wide_chart'>
+	<div id="container"></div>
+	<div class = 'logo_container'></div>
+</div>
+
+<p></p>
+
+<p>
+The "J" in J Factor is for Jonesy...astute pool-goer Chris Jones came up with this concept. You might remember Chris as the first contestant to ever lose to Lucky the Chimp.  
+<p>
+It's fairly simple in concept--it's a measure of the gutsiness of your selections. On one end of the scale is the most conservative of players: those that select only the favorites to win. On the other end is the extreme risk-taker: an upset in every game. The measurement is only taken on first-round picks, as this is where most of the upset selections are made.
+<p>
+The first J factor measurement took only first round picks into consideration, but Avid Candy Quester and 2002's 3rd place finisher Patty Henshaw took it upon herself to convince me that more than the first round picks should be taken into account. I thought she was right, so I've made the statistic <i>much more complicated</i>. Also, I now call it the J2 factor, because why not.
+<p>
+If you are dying to know the internals of this highly scientific measurement, here it is:
+<br>
+<img src = "/jqmcbp/images/j2_equation.gif" class = "white"> 
+
+<br> 
+Where Sigma1 is the sum total of all of the teams' seeds you picked to win in the first round, L1 is the lowest possible sum total of seeds picked from the first round (144), and R1 is the total range of values from lowest to highest (400-144= 256).<p>
+
+Similarly, Sigma2 is the sum total of all the teams' seeds you picked to win in the Sweet 16, L16 is the lowest possible sum total of seeds picked from the third round (12), and R16 is the total range of possible Sigma16s (124-12=112). <p>
+Since there are four times less games in the Sweet 16, the subtotal from the Sweet16 calculation is multiplied by four, then added to the First round calculation. The entire lot is multiplied by 20 to give the whole thing a nice scale of 0-100. Simple, eh?
+
+<p>
+<b>BUT</b>, enough of my yappin'. Why don't you take a look at someone's J factor?
+<p>
+<form action = whatsyourj.cgi><font size=+1><b>Choose a name from the Big List</b></font>
+<select name="player_id">
+<option value="">
+[% FOR name IN names %]
+	<option value = '[% name.player_id %]' [% IF cookie == name.player_id %]SELECTED[% END %]>[% name.name %]
+[% END %]
+</select>
+<input type = submit value = "Go Ben Go!">
+</form>
