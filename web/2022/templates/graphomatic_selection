@@ -1,0 +1,37 @@
+<form method="post" enctype="multipart/form-data">
+<table border = '0'>
+<tr>
+	<td colspan=5 align='center'><h3>Choose two players to compare in a Battle Royale of JQMCBP proportions</h3></td>
+</tr>
+<tr>
+	<td align='right'><img align = 'right' src="/jqmcbp/images/boxing_glove.gif"></td>
+	<td align=left>
+
+	<select name="first_player">
+	<option value="">
+	[% FOR name IN names %]
+	<option value = "[% name.player_id %]" [% IF cookie == name.player_id %]SELECTED[% END %]>[% name.name %]
+	[% END %]
+	</select>
+	</td>
+	<td align = 'left'><h2>vs.</h2></td>
+</tr>
+<tr>
+	<td align=right><img align = 'right' src="/jqmcbp/images/boxing_glove.gif"></td>
+	<td align=left>
+<select name="second_player">
+<option value="">
+	[% FOR name IN names %]
+	<option value = "[% name.player_id %]">[% name.name %]
+	[% END %]
+</select>
+</td></tr>
+
+<tr>
+	<td valign='middle' align='right'><img style = 'padding-top: 90px;' valign = 'middle' align = 'right' src= "/images/forward.gif"></td>
+	<td colspan = '3' valign = 'middle align = 'center'><input type = 'image' value = "submit" name = "submit" align = 'center' src ="/jqmcbp/images/rockemsockem.gif"></td>
+	<td valign = 'middle' align = 'left'><!--<img align = 'left' src = "/images/back.gif">--></td>
+	</td>
+</tr>
+<tr><td>&nbsp;</td><td colspan = '3' align=center><font size=+2 color=red><b>ROCK EM SOCK EM!</b></font></td><td>&nbsp;</td></tr>
+</table>

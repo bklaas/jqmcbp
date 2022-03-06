@@ -1,0 +1,168 @@
+<script type = 'text/javascript' language = 'JavaScript'>
+var teamsdb = new Object();
+[% FOR x IN games %]
+teamsdb["[% x.game %]"] = 
+	{
+		nextGame:"[% x.nextGame %]",
+		teams:[[% x.team_list %]]
+	};
+[% END %]
+
+function advanceTeam(thisTeam,thisGame,nextGame)
+{
+	// change all teams in teamsdb for thisGame to done from select
+	var TheseTeams = teamsdb[thisGame]["teams"];
+	var ThoseTeams = teamsdb[nextGame]["teams"];
+	for (var Team in TheseTeams) {
+		var removeMe = document.getElementById(thisGame + " " + teamsdb[thisGame]["teams"][Team] + " select");
+		var showMe = document.getElementById(thisGame + " " + teamsdb[thisGame]["teams"][Team] + " done");
+		if (removeMe.style.display == 'block') {
+			showMe.style.display = 'block';
+		}
+		removeMe.style.display = 'none';
+	}
+	// make thisTeam in thisGame emphasized
+	var myPick = document.getElementById(thisGame + " " + thisTeam + " done");
+	myPick.className = 'picked';
+	// go through each team and if any are class = picked, display text only
+	var displayType = " select";
+	for (var Team in ThoseTeams) {
+		var thisOne = document.getElementById(nextGame + " " + teamsdb[nextGame]["teams"][Team] + " done");
+		if (thisOne.className == 'picked') {
+			displayType = ' done';
+		}
+	}
+	var nextOne = document.getElementById(nextGame + " " + thisTeam + displayType);
+	$(nextOne).fadeIn();
+	nextOne.style.display = 'block';
+	flashParent(nextOne, 'flash_forward');
+}
+
+function flashParent(elem, flashclass) {
+	var parent = $(elem).parent('td');
+	setTimeout( function() { 
+					parent.addClass(flashclass); 
+				}, 750);
+	setTimeout( function() { 
+					parent.removeClass(flashclass); 
+				}, 1250);
+}
+
+function secondThoughtsChamp(team)
+{
+//	var removeMe = document.getElementById('champion' + team);
+//	removeMe.style.display = 'none';
+	$('#champion' + team).hide();
+//	var removeButton = document.getElementById('pickCandy');
+//	removeButton.style.display = 'none';
+	$('#pickCandy').hide();
+	setRadio(false, 'radio_game_63');
+	// display radio buttons of only those teams that were displayed in text form
+	showRadio('game_63');
+}
+
+function showRadio(prevGame)
+{
+	var ThoseTeams = teamsdb[prevGame]["teams"];
+	for (var Team in ThoseTeams) {
+		var thisOne = document.getElementById(prevGame + " " + teamsdb[prevGame]["teams"][Team] + " done");
+		var thatOne = document.getElementById(prevGame + " " + teamsdb[prevGame]["teams"][Team] + " select");
+		if (thisOne.style.display == 'block') {
+			thisOne.className = 'normal';
+			thisOne.style.display = 'none';
+			thatOne.style.display = 'block';
+		}
+	}
+}
+function secondThoughts(team,thisGame,prevGame)
+{
+	// "display: none;" for team in thisGame
+	var removeMe = document.getElementById(thisGame + " " + team + " select");
+	$(removeMe).fadeOut();
+	flashParent(removeMe, 'flash_remove');
+	removeMe.style.display = 'none';
+
+	// remove text of teams in previous cell
+	// unselect all radios for prevGame
+	setRadio(false, 'radio_'+prevGame);
+	// display radio buttons of only those teams that were displayed in text form
+	showRadio(prevGame);
+}
+
+function setRadio(value, field) {
+	var numelements = document.forms.bracketform.elements.length;
+	var item;
+	for (var i=0 ; i<numelements ; i++) {
+		item = document.forms.bracketform.elements[i];
+		if (item.name == field) {
+			item.checked = value;
+		}
+	}
+}
+
+function pickChampion(myChamp) {
+
+	//var pickMe = document.getElementById('pickCandy');
+
+//	$('#pickCandy').removeClass('hidden');
+//	$('#pickCandy').addClass('visible');
+
+	var pickCandy = $("#pickCandy");
+	$('#pickCandy').show();
+
+	var thisGame = 'game_63';
+	//pickMe.style.display = 'block';
+
+        // change all teams in teamsdb for thisGame to done from select
+        var TheseTeams = teamsdb[thisGame]["teams"];
+        for (var Team in TheseTeams) {
+		var thisTeam = teamsdb[thisGame]['teams'][Team];
+                var removeMe = document.getElementById(thisGame + " " + thisTeam + " select");
+                var showMe = document.getElementById(thisGame + " " + thisTeam + " done");
+		if ( thisTeam == myChamp ) {
+			console.debug('#champion' + Team);
+			$('#champion' + Team).show();
+		}
+		else {
+			var hideNonChamp = "#champion" + Team;
+			$(hideNonChamp).hide();
+		}
+
+                if (removeMe.style.display == 'block') {
+                        showMe.style.display = 'block';
+                }
+                removeMe.style.display = 'none';
+        }
+        // make myChamp in thisGame emphasized
+        var myPick = document.getElementById(thisGame + " " + myChamp + " done");
+        myPick.className = 'picked';
+
+	// make myChamp in game_63 emphasized
+	$("champion " + myChamp).show();
+
+}
+
+function skippedEntry(radio) {
+	for (var i = 0; i < radio.length; i++) {
+		if (radio[i].checked) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function validateForm(thisForm) {
+	for (var game in teamsdb) {
+		var radioKey = 'radio_' + game;
+		if (skippedEntry(thisForm[radioKey])) {
+			alert("JohnnyQuestFormChecker\nhas detected your bracket\n is not entirely filled out\nPlease check to make sure a team is selected in every game");
+			return false;
+		}
+	}
+	if (thisForm['candy'].value.length == 0) {
+		alert("No candybar! Sacrilege!!");
+		return false;
+	}
+	return true;
+}
+</script>

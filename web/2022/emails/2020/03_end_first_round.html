@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("https://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="https://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://weirdorconfusing.com">weirdorconfusing.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at 25)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/375ish</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+	WELL HELLOOOO. It's been a while. Yes, the cadence is a bit slower than during basketball
+	years. But, I remind you, We've Got Nothing But Time (WGNBT). We're at the end of First 
+	Round of JQMCBP XXIII and, as is typical, we've got some people doing well, most people 
+	doing "medium", and some people doing quite poorly.
+</p>
+
+<div class = "quote">
+Hey Candymeister, when can I expect the next "games" to be played?
+</div>
+
+<p>
+Still a good question, fictional person! How about this weekend? No promises!
+</p>
+
+<p>Remember, anything underlined below in this email is a link! The screenshots of youtube videos are links! You can follow them! WGNBT!</p>
+
+<hr class = 'section' />
+<h1><a href = "https://youtu.be/Of8JOVXYU0Q">Wha' Happened?</a></h1>
+<h2>Going in deep on some of the "games"</h2>
+
+<p>
+The First Round concluded with "games" in the Cover Songs, Odd Mammals, Punk Birds, and Carson's Picks regions. Here's the breakdown:
+</p>
+
+<h3>Cover Songs Region</h3>
+
+<p>First off, I am SUPER into Rodrigo y Gabriela. The closest I've come in my adult life
+	to fisticuffs came at a Rodrigo y Gabriela concert when a guy in the row behind me
+	refused to stop clapping off-rhythm and got beligerent when I asked him to stop. True story!
+	Anyway, they are just absolutely amazing, and if you've not heard of them I'd suggest you watch <a href = "https://youtu.be/KV2ixprDrK8">
+	this</a> or <a href = "https://youtu.be/4g-Z13qTcBA">this</a> or <i>wow</i> <a href = "https://youtu.be/wKd0HNg1kFQ">this</a>.
+"This" said, the completely randomly found <a href = "https://youtu.be/fOmcF3bOgHQ">TRUE EPIC RUSSIAN COVER</a> of Metallica's 
+instrumental Orion is something to behold: traditionaly eastern european string instruments,
+an accordion, and a bear-suited guitarist. RUSSIANS WIN!
+</p>
+
+
+<p>
+The classic 1980s song "Africa" by Toto was covered in the first round by two very different
+efforts. On the one side, there was this <a href = "https://youtu.be/MH9FyLsfDzw">EPIC METAL COVER</a>
+by this Norwegian guy named Leo and his friend Hanna. IT RULES. On the other
+side, you have Weezer, who do absolutely nothing to make their cover interesting. I know
+there are probably some Weezer fans out there* in JQMCBP land, and I'm sorry. Sorry for what, you say?
+Sorry for this lame cover? Sorry for being a Weezer fan? Sorry for your loss? All of the above?
+I mean, Weezer is fine (I guess?). But this cover is the worst. HEAVY METAL AFRICA WINS.
+</p>
+
+<p>* like Matt Damon in this SNL skit. "I'm ride or die!" "...for <i><b>Weezer</b></i>?"</p>
+<a href="https://youtu.be/ab5WvwfLuLM">
+	<img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/ab5WvwfLuLM/maxresdefault.jpg"></img></a>
+	<style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+<p><b>Next up:</b> Immigrant Songs. Or is it Immigrants Song? Anyway, this iconic song about 
+	Vikings doing something awesome has been reproduced...just a few times:
+<ul>
+	<li><a href = "https://youtu.be/BvYsygyVjqo">Zeparella</a></li>
+	<li><a href = "https://youtu.be/1J7KUCthzUE">This Guy</a></li>
+	<li><a href = "https://youtu.be/7KFFpyP2QiU">This Other Guy (srsly Will.I.Am., what's your problem)</a></li>
+	<li><a href = "https://youtu.be/Kg1mlBhRnTM">Tenacious D and Foo Fighters and Slash and WAT RLY?</a></li>
+	<li><a href = "https://youtu.be/BsQ0EcKntMI">THIS KID</a></li>
+	<li><a href = "https://youtu.be/4X5AID_c4ss">Mothers of Mayhem</a></li>
+	<li><a href = "https://youtu.be/cZzdYqBf8Mc">Sure why not a rubber chicken</a></li>
+</ul>
+</p>
+<p>For Immigrants Song, our competition pitted a really cool <a href = "https://youtu.be/KxEi3pd5xvk">lo-fi version</a>
+against one that is not actuall a cover but just the original recoring over a very lo-fi animation
+of kittens sailing across the land of the ice and snow from the midnight sun where the hot 
+springs blow. <a href = "https://youtu.be/ApxnAr6pRt0">KITTENS WIN!</a></p>
+
+<p>Lastly in the Cover Songs region, we have the song Smooth Criminal covered in two very
+	different ways. First, a really interesting <a href = "https://youtu.be/bU47K11-wNs">acapella rendition</a> by some outfit called 
+	Duwende. It's good! I mean no disrespect, people that shun instruments!
+    Second, we have more or less the definitive <a href = "https://youtu.be/CDl9ZMfj6aE">THIS IS WHAT A COVER SONG SHOULD BE</a> version by
+	Alien Ant Farm. AAF WINS! Also, the masked dancing kid is so apropos!
+</p>
+<h3>Odd Mammals Region</h3>
+
+<p>Some of you may know, and most of you don't, that while I am a mild-mannered programmer by day, I 
+	hide a secret past: <i>mammalogist</i>. It's true, I used to study wee furry critters as 
+	a full-time gig. In fact, when the very first JQMCBP was launched, it was during my grad school days studying
+	the Plains Pocker Gopher, Meadow Voles, and other assorted critters on a NW Iowa Prairie. <a href = "https://academic.oup.com/jmammal/article/79/3/942/859313">
+		For</a> <a href ="https://www.jstor.org/stable/3683026?seq=1">realsies!</a>
+</p>
+<p>
+But now the year is 2020, and what we care about is WHAT MAMMALS SURVIVED in the round of 64
+of JQMCBP XXIII.
+</p>
+<p>First up! Pangolin vs. Mountain Beaver. The Mountain Beaver is a weird, cool, and certainly ODD one.
+	Unrelated closely to pretty much anything (not even beavers), the Apolodontia aka 
+	Mountain Beaver of the Pacific Northwest certainly checks all the boxes. Unforutnately,
+	it went up against the Pangolin, an absurd cross between an anteater and an armadillo. PANGOLIN WINS!
+</p>
+
+<p>Next up! The Battle of the Flyings! The Flying Fox could have been a significant organism
+	in my professional life. True story, at the conclusion of my M.S. in Ecology I applied
+	to work on a Flying Fox research project in the Northern Marianas islands in the South Pacific.
+	Had I been hired...well, things would have gone quite a bit different, wouldn't it.
+	But I didn't get that job, and therefore...FLYING SQUIRREL WINS!
+</p>
+
+<p>What's next? Oh, Tarsier vs. Aye-Aye. They are both so. very. strange.
+	Aye-Aye's have tremendous, extended middle fingers. Tarsier's have the largest eye-to-face
+	ratios of any mammal. TARSIER WINS!</p>
+
+<p>Last up! This one was tough. As a former rodent biologist, it's hard not to like 
+	the engergetic bipedal madness of the <a href = "https://youtu.be/KHxfzDQguqI">Kangaroo Rat</a>. But, even harder not to like 
+	is the murderous intenstity of the Grasshopper Mouse, Killer of Scorpions, Killer of 
+	Mice, and <a href = "https://youtu.be/1K9mO5QzOIQ?t=98">Prolific Howler</a>. GRASSHOPPER MOUSE WINS!
+</p>
+<h3>Punk Birds Region</h3>
+
+<p>The Punk Birds region presents tough selections. So many birds with bad attitudes! But, 
+	we need victors. Let's do this.
+</p>
+<h5>Australian Magpie vs. Monkey-eating Eagle</h5>
+<p>Monkey-eating Eagles eat monkeys. This is exceptionally punk and a deep misreading of
+	the evolutionary ladder. Australian Magpies have a website dedicated to 
+	<a href = "https://www.magpiealert.com">mapping attacks on people</a>. Point in the 
+	magpie's favor. Also, and I shouldn't need to remind you of this, <a href = "https://youtu.be/YGGTcYfrEZU?t=68">
+	THE EYES DON'T WORK THE EYES DON'T WORK GET MUM GET MUM THE EYES DON'T WORK</a>. MAGPIE WINS!
+     </p>
+<h5>Greater Roadrunner vs. Common Cuckoo</h5>
+<p>Common cuckoos are brood parasites, laying their eggs in other birds nests for them 
+	to raise, like the punks
+	they are. Greater Roadrunners, which are also cuckoos, eat rattlesnakes. Beep! Beep! ROADRUNNER WINS!
+</p>
+<h5>American Dipper vs. Cassowary</h5>
+<p>The Cassowary is literally known as The Murder Bird, with 5" claws that it uses as a weapon
+	that has more than once killed people. It's quite punk. The Water Ouzel, aka the American
+	Dipper, is a songbird that has adapted to diving into fast-moving streams to catch little 
+	bugs. DIPPER WINS!</p>
+<h5>Shrike vs. Lammergaier</h5>
+
+<p>This was easily the hardest of the Punk Birds region to select a winner. Shrikes impale
+	their prey, be it bugs or lizards or even other birds, on thorns or even barbed wire. It's very punk.
+	
+	Lammergeiers, or Bearded Vultures, eat bones. That's it, just bones. Not the flesh off the bones. Bones. They drop e.g. goat femurs from high heights in the Ethiopian mountains, shattering them on the rocks below, then picking up (still large) bone bits and swallowing them whole. They have evolved special digestive juices so acidic they dissolve the bone quickly, making for a nutritious meal of BONES. Also they paint themselves with red mud to make themselves look more badass. As if this were necessary.
+</p>
+<p>I couldn't choose, so I <a href = "https://youtu.be/MqLK9vFSnqY">did another coin flip.</a> SHRIKE WINS!</p>
+<h3>Carson's Picks Region</h3>
+
+<p>Well, well, well. In the Carson's picks region, Carson gets to decide everything. It's like
+	dinner, only with 100% less vegetables.</p>
+
+<p>Here's our outcomes: Kolton Wong double play over Roger Federer, CC McGraw over Sepak Takraw,
+	McKayla Maroney over Steph Curry, and probably the most WAT of all, Stephen Bradbury over
+	Carli Lloyd.
+</p>
+<p>Upset? Confused? Here is 
+	<a href = "https://soundcloud.com/candy-meister/interview-with-carson-on-first-round-picks">a possibly over-extensive interview with Carson</a>
+about her choices.</p>
+
+<a href="https://youtu.be/vN7ih576VYM"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/vN7ih576VYM/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+
+
+
+
+<hr class = 'section' />
+<h1>How Them Humans Doing?</h1>
+<h2>Checking in on the 375ish Human(ish) Entries</h2>
+
+<p>
+Carson "I choose 1/8 of the bracket winners thankyouverymuch" Klaas sat in the fabled cat-bird's seat
+through most of the latter half of the first round, until finally being overcome by the triumvarite of
+Scott "The White Lion!" Mortimer, Cormac "Big Box of Nerds" O'Boyle, and Mark "Take 5" Richards. They
+are all at 25, with Carson one back at 24, and a host of others just behind that. It's anyone's game*!
+</p>
+<p>* Perhaps not Mary "Hershey's Cookies and Creme" James. At 7 points and an RtT of 27, I'm afraid she 
+	may be the first in the JQMCBP <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a>.
+</p>
+<hr class = 'section' />
+<h1>How Them Chimps Doing?</h1>
+<h2>Checking in on the 1,000 Chimp Army</h2>
+
+<p>Allie the Chimp has coin-flipped her way into a first round tie
+	for the top with the humans at 25. Stacey the Chimp sitting pretty one back at 24. Seven
+more chimps at 23. It. could. be. their. year. </p>
+<hr class = 'section' />
+<h1>How's That Shoulder Doing?</h1>
+
+<p>What shoulder? Srsly, so much better. This late-night typing is really helping, too.</p>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Another 57 of you lost your champ in the second half of the first round, including several the-only-people-that-picked-em:
+<ul>
+	<li>Maggie "Weezer: RIDE OR DIE" Topel</li>
+	<li>Chris "Chillin' to this Immigrant Song" Evasius</li>
+	<li>Avey "Flying Fox: It's A Giant Bat, What's Not To Like?" Anderson</li>
+	<li>Doug "How could you pick a random russian band over Rodrigo y Gabriela" Williams</li>
+	<li>Scott "I'll Sepak YOUR Takraw" Johnson</li>
+	<li>Tracy "Lammergaiers eat whole bones. BONES." Niyo</li>
+	<li>Jess "Oh? Is this your nest? My bad!" Sandborn</li>
+</p>
+
+<div class = 'pre'>
+Africa Weezer: Maggie Topel
+
+Immigrant Song Soak: Chris Evasius
+
+Smooth Criminal Acapella: Maxine Kaley, Jeff Chungath
+
+Orion Rodrigo y Gabriela: Doug Williams
+
+Mountain Beaver: Chris Charbonneaux, Jack Wenz, Paul Bellin
+
+Flying Fox: Avey Anderson
+
+Aye Aye: Kaitlyn Gaynor, Susie Smalling, Alex F., Soren Van Houten, Jeff Blake
+
+Kangaroo Rat: Anna Mitchell, Becky Burton, Stephanie Haan-Amato, Kelly Wolfe-Bellin, Lindsey Cloud, Erin Wenz
+
+Carli Lloyd: Michael Eggen, Simon F., Nate Marshall, Kurt Leuthold, Kendall DiGirolomo, Alan Perelli, Ken MILLS, Clare Isenhart , Ray Niergarth, Romke Mooiweer, Wendy Volkman
+
+Roger Federer: Hana, Sara Mitchell, Greg Ross, Michael Butler, Todd Krueger, Kate Meilinger, Cindy Arvant, Theodore Chungath
+
+Sepak Takraw: Scott Johnson
+
+Steph Curry: Shaul Hurwitz, Kathleen Phu, Ellen Gifford, Will Arvant, Sabrina
+
+Lammergeier: Tracy Niyo
+
+Monkey-eating Eagle: Ben Halpern, Steve (Cough) Carlson, Riley Daine, Bam Bam Shanahan, Anthony Grover
+
+Common Cuckoo: Jess Sanborn
+
+Cassowary: Alex McWhinnie, Kerry DeVilbiss, Michael Wooley-Ousdahl, Bob Armitage, Bob Armitage (verified)
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>The Is This Really A Thing Award. Okay, Jon Blake, ya got me. Is "Hammond's Pigs-N-Taters Chocolate Bar" really a thing?
+	*checks internet*. <a href = "https://www.vermontcountrystore.com/hammonds-pigs-n-taters-chocolate-bar-4-bars/product/H4705">IT'S A THING!</a>
+</p>
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society in (hopefully post-quarantine) June. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://main.nationalmssociety.org/goto/beat_larry_2020">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goals remain the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Cormac O'Boyle</td><td>Colorado</td><td>Big Box of Nerds </td><td>Shrike</td><td>25</td></tr>
+<tr><td>1</td><td>Mark Richards</td><td>Colorado</td><td>Take 5</td><td>Sushi</td><td>25</td></tr>
+<tr><td>1</td><td>Scott Mortimer</td><td>New Hampshire</td><td>The White Lion!</td><td>Immigrant Song Kittens</td><td>25</td></tr>
+<tr><td>4</td><td>Carson Klaas</td><td>Minnesota</td><td>Reeses Peanut Butter Egg</td><td>Stuff Summer</td><td>24</td></tr>
+<tr><td>5</td><td>Jon Mormino</td><td>District of Columbia</td><td>Gummy Bears, preferably Heidi brand, but sadly it is defunct</td><td>Hawaii</td><td>23</td></tr>
+<tr><td>5</td><td>Sue Ray</td><td>Michigan</td><td>Reese's pb cup</td><td>Reeses PB Cup</td><td>23</td></tr>
+<tr><td>5</td><td>Trey White </td><td>Michigan</td><td>Wow wee Maui kitch'n cook'd potato chip and chocolate bar</td><td>Duck Army</td><td>23</td></tr>
+<tr><td>8</td><td>Andrew Hanson</td><td>Nevada</td><td>Payday</td><td>Australian Magpie</td><td>22</td></tr>
+<tr><td>8</td><td>Julian Wenz</td><td>Minnesota</td><td>2 cup sugar, 2 cup flour, 1.5 cup h2o baked at 348 for 20min</td><td>Pangolin</td><td>22</td></tr>
+<tr><td>8</td><td>piper</td><td>Minnesota</td><td>sour skittles</td><td>Harry Styles</td><td>22</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Allie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Australian Magpie</td><td>25</td></tr>
+<tr><td>2</td><td>Stacey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tarsier</td><td>24</td></tr>
+<tr><td>3</td><td>Aldo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Sushi</td><td>23</td></tr>
+<tr><td>3</td><td>Carter</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Orion Russian</td><td>23</td></tr>
+<tr><td>3</td><td>Jadyn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Bacon</td><td>23</td></tr>
+<tr><td>3</td><td>Joslyn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Immigrant Song Soak</td><td>23</td></tr>
+<tr><td>3</td><td>Makenzie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Covid-19</td><td>23</td></tr>
+<tr><td>3</td><td>Romeo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>23</td></tr>
+<tr><td>3</td><td>Sophie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Duck Army</td><td>23</td></tr>
+<tr><td>10</td><td>Braden</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cheese Curds</td><td>22</td></tr>
+<tr><td>10</td><td>Carla</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>BBC News Kid</td><td>22</td></tr>
+<tr><td>10</td><td>Christa</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Immigrant Song Kittens</td><td>22</td></tr>
+<tr><td>10</td><td>Elaine</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cheese Curds</td><td>22</td></tr>
+<tr><td>10</td><td>Emmett</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>22</td></tr>
+<tr><td>10</td><td>Gunner</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Bacon</td><td>22</td></tr>
+<tr><td>10</td><td>Jaydon</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Sepak Takraw</td><td>22</td></tr>
+<tr><td>10</td><td>Kai</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>A Plate of Peas</td><td>22</td></tr>
+<tr><td>10</td><td>Kimberly</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>FR E SH A VOCA DO</td><td>22</td></tr>
+<tr><td>10</td><td>Lawrence</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Greater Roadrunner</td><td>22</td></tr>
+<tr><td>10</td><td>Lewis</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Sepak Takraw</td><td>22</td></tr>
+<tr><td>10</td><td>Marquis</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Smooth Criminal AAF</td><td>22</td></tr>
+<tr><td>10</td><td>Miracle</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Volleyball</td><td>22</td></tr>
+<tr><td>10</td><td>Phoenix</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Harry Styles</td><td>22</td></tr>
+<tr><td>10</td><td>Quinn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Duck Army</td><td>22</td></tr>
+<tr><td>10</td><td>Raul</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Immigrant Song Kittens</td><td>22</td></tr>
+<tr><td>10</td><td>Zachariah</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Stuff Summer</td><td>22</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<a href = "https://youtu.be/YGGTcYfrEZU?t=68"><img width = "500" src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/d3cadbaa-619e-40ee-b003-2aab437a1e59.jpg" /></a>
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2020 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+	<h1>Red Hot Kringle Pics!</h1>
+		
+<table>
+<tr>
+<td>
+	<img src = '/jqmcbp/images/kringle/w_tothemeister.jpg' class = 'bordered rightfloat'><br />
+	JQMCBP Headquarters receives a package!
+</td>
+</tr>
+<tr>
+<td>
+	<img src = '/jqmcbp/images/kringle/w_wadzzaman.jpg' class = 'bordered leftfloat'><br />
+	Craig Wadz-Za-Man Strikes Again!
+</td>
+</tr>
+<td>
+	<img src = '/jqmcbp/images/kringle/w_wisconsinkringle.jpg' class = 'bordered rightfloat'><br />
+	This was called "Wisconsin Kringle", named as such for the Cherry/Cranberry/Cream Cheese filling being Wisconsin colors and/or The State Dinner of Wisconsin.
+</td>
+</tr>
+<tr>
+<td>
+	<img src = '/jqmcbp/images/kringle/w_delicious.jpg' class = 'bordered leftfloat'><br />
+	"Piper, how is it?" "MMMffmmffdelicious"
+</td>
+</tr>
+</table>
