@@ -55,20 +55,21 @@ $(document).ready(
 	});
 </script>
 
+<!--
 <h1>Not. Yet. Patience, grasshopper.</h1>
 <img src = "images/bigcookie.gif" />
 
 <div id = 'defaultCountdown'></div>
     <img id = 'stayTuned' src = 'images/staytuned.gif' />
 <p></p>
+-->
 
-<!--
 <h1> The Tourney Has Started and is Closed for Entries</h1>
 <h3><a href = 'player_bracket_selection.cgi' style = 'text-decoration: underline;'>I ENTERED BUT WHERE'S MY BRACKET I'M FREAKIN OUT!</a></h3>
 <h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
 
 <h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com" style='text-decoration: underline;'>Give it a shot</a></h3>
--->
+
 
 <!--
 <h3>
@@ -199,12 +200,12 @@ Already entered and are looking for your bracket?
 	</form>
 
 	</div>
+-->
 
 <div id = 'entry_counter'>
 <h2>JQMCBP Entries:</h2>
 <span class = 'entry_count'></span>
 </div>
--->
 
 <!--
 <div id = 'entry_rate'>

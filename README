@@ -3,6 +3,12 @@ Here's what's needed:
 (DB copy to jq_2021 already compeleted)
 
 BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
+THIS WAS STILL A BAD PROBLEM IN 2022
+How to fix: The jq_entry.cgi file needs to be rewritten to write utf-8
+The database needs possible updating to use utf-8 (?) in its tables
+Defo it's jq_entry.cgi that's the source of the awfulness
+To try a fix, create a page that just has the first page of entry stuff (name/email) and add candybar. Have it call a jq_entry_devel.cgi that does the same thing as jq_entry.cgi minus the teams. Figure out how to get it to write out unicode data correctly, then test that it can get dropped into the database successfully with dat2db.pl (or equivalent)
+
 
 copy last year's johnnyquest database to jq_2018
 	mysqldump -u root johnnyquest > jq.sql
@@ -47,8 +53,8 @@ command:
 mysql -u root -p<pwd> < ~/jqmcbp/clear_db.sql
 
 AGAIN FOR EMPHASIS:
-use winners.cgi to define the bracket order (do not just edit www/jqmcbp/brackets.order, as winners.cgi updates the games table with game_* and region info)
-BIG FAT WARNING: cgi writes brackets.order to /data/benklaas.com/jqmcbp/. If you are staging in a different area and then copy to the live area, make damn sure that brackets.order is there and in the correct order. Fer Fuck's Sake.
+use jq_admin.cgi to define the bracket order
+BIG FAT WARNING: cgi writes brackets.order to /data/benklaas.com/jqmcbp/brackets.order. If you are staging in a different area and then copy to the live area, make damn sure that brackets.order is there and in the correct order. Fer Fuck's Sake.
 
 ###
 
@@ -66,3 +72,6 @@ test it!
 graphomatic: SQL hard-codes a player_id for doing the step-o-matic stuff. update that to something from the current year or it will be broken
 <web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl
 
+SSS: go to the root WEB folder and run similarity_index.pl, but only after all your brackets are in, preferably including the late ones.
+
+Past champs:

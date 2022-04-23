@@ -117,7 +117,7 @@
 	<div id="header">			
 
 		<h1 id="logo-text"><a href="/jqmcbp/" title="Johnny Quest">jqmcbp</a></h1>
-		<p id="slogan">Certifiable</p>
+		<p id="slogan">Still, with this?</p>
 
 		<div id="top-menu">
 			<p><a href="mailto:jqmcbp@gmail.com"><span id = 'rejoice'>[% IF keywords == 'top' %]Complain[% ELSE %]Shout Out[% END %]</span></a></p>

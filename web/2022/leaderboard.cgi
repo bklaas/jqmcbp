@@ -150,7 +150,7 @@ sub get_scores_from_db {
 	
 	my $order_frag = "$sort_fields{$sort}";
 	$order_frag .= " desc" if $PARAMS{'order'} eq 'desc';
-	$query = "select * from scores, player_info where $where_frag order by $order_frag, player_info.man_or_chimp desc, player_info.player_id";
+	$query = "select * from scores, player_info where $where_frag order by $order_frag, player_info.man_or_chimp desc, player_info.j2_factor desc";
 
 	my $aref = multi_row_query($query);
 	my %return;

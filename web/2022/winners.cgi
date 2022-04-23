@@ -96,13 +96,12 @@ print <<EOHTML;
 <hr>
 EOHTML
 
-if (!param("SubmitIt") && !param("BRACKETS")) {
+if (!param("SubmitIt")) {
 ########################################################
 #### first round code and html #########################
 ########################################################
 
-	print "<form><input type = submit name = 'BRACKETS' value = 'Submit Bracket Order'></form>\n";
-   print "<B>Here's your chance to enter the winners</B>\n";
+print "<B>Here's your chance to enter the winners</B>\n";
 print <<EOHTML;
   </center>
 EOHTML
@@ -224,34 +223,6 @@ print "</td></tr></table>\n";
 print "</form>\n";
 print end_html;
 exit(0);
-
-} elsif (param("BRACKETS")) {
-
-	if (!param("SUBMIT_BRACKETS")) {
-		print "</center><h2>Enter bracket order</h2><form>\n";
-		my $inc;
-		for (@brackets) {
-			$inc++;
-			print "<input type = text name = 'region_$inc' value = '$_'><br>\n";
-		}
-		print "<input type = submit name = \"SUBMIT_BRACKETS\" value = \"WRITE IT\">\n";
-		print "<input type = hidden name = \"BRACKETS\" value = '1'>\n";
-		print "</form>\n";
-		print "data are written to /etc/httpd/htdocs/jqmcbp/brackets.order";
-	} else {
-		print "</center>\n";
-		my @order;
-		for ('region_1', 'region_2', 'region_3', 'region_4') {
-			print param($_) . "<br>\n";
-			push @order, param($_);
-		}
-		#write_order(@order);
-		#update_games(@order);
-		
-	}
-
-	print "</body></html>\n";
-	exit;
 
 } elsif (param("SubmitIt")) {
 

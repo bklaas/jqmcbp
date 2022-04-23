@@ -15,8 +15,8 @@ connect_to_db('johnnyquest');
 ## EVERYTHING ELSE SHOULD TAKE CARE OF ITSELF
 #################################
 #my $remainingTeams = 16;
-my $remainingTeams = 8;
-#my $remainingTeams = 4;
+#my $remainingTeams = 8;
+my $remainingTeams = 4;
 
 my $N;
 my $man_or_chimp = 'both';
@@ -110,9 +110,13 @@ for my $outcome (@$outcomes) {
 	my $chimpWins = 0;
 
 	for my $winner (@$ranks) {
+        my $n = $winner->{name};
+		if ( $winner->{man_or_chimp} eq 'chimp' ) {
+            $n = $n . " the Chimp";
+        }
 		$byPlayer->{ $winner->{player_id} }++;
 		if ( $remainingTeams == 4 ) {
-			print "$winner->{name}\t$winner->{stringOutcome}\n";
+			print "$n\t$winner->{stringOutcome}\n";
 		}
 		if ( $winner->{man_or_chimp} eq 'chimp' && !$chimpWins ) {
 			$menOrChimps->{chimp}++;
@@ -136,7 +140,11 @@ print "Name\tNumber of Winning Brackets\tPercentage of Winning Brackets\n";
 for my $winner ( sort { $byPlayer->{$b} <=> $byPlayer->{$a} } keys %$byPlayer ) {
 	# winner is the player_id
 	my $percentage = sprintf("%.3f", ($byPlayer->{$winner}/($all+1) * 100));
-	print "$currentScoreRef->{$winner}{'name'}\t$byPlayer->{$winner}\t$percentage\n";
+    my $n = $currentScoreRef->{$winner}{'name'};
+    if ($currentScoreRef->{$winner}{'man_or_chimp'} eq "chimp") {
+        $n = $n . " the Chimp";
+    }
+	print "$n\t$byPlayer->{$winner}\t$percentage\n";
 }
 
 print "==== HUMAN WINS, CHIMP WINS ====\n";

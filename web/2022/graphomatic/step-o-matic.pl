@@ -12,7 +12,7 @@ do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 
 connect_to_db();
 
-my $some_player = 19254;
+my $some_player = 24745;
 
 my $webdir = "/data/benklaas.com/jqmcbp";
 my $png_path = "$webdir/graphomatic";

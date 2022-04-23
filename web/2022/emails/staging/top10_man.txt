@@ -1,10 +1,13 @@
-<tr><td>1</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>118</td></tr>
-<tr><td>2</td><td>Derek Roesti</td><td>Colorado</td><td>Whatchamacallit</td><td>North Carolina</td><td>116</td></tr>
-<tr><td>3</td><td>Mooseman Bruce Ghastin</td><td>Michigan</td><td>100 Grand Bar</td><td>North Carolina</td><td>111</td></tr>
-<tr><td>3</td><td>Scott Johnson</td><td>California</td><td>old school Marathon Bar</td><td>North Carolina</td><td>111</td></tr>
-<tr><td>5</td><td>Sue Robinson</td><td>Wisconsin</td><td>Mega size M&M's (slightly chilled, please)</td><td>North Carolina</td><td>110</td></tr>
-<tr><td>6</td><td>Chris Morgan</td><td>California</td><td>Chocolate Charleston Chew</td><td>North Carolina</td><td>108</td></tr>
-<tr><td>6</td><td>Kevin Quinn</td><td>Massachusetts</td><td>Payday</td><td>North Carolina</td><td>108</td></tr>
-<tr><td>6</td><td>Rick Shepich</td><td>Michigan</td><td>Bag O' Bit O' Honey</td><td>North Carolina</td><td>108</td></tr>
-<tr><td>9</td><td>Jessica Wiltse</td><td>Michigan</td><td>Reese's peanut butter cups</td><td>North Carolina</td><td>107</td></tr>
-<tr><td>9</td><td>Wonsliana Do</td><td>Washington</td><td>Chocolate Aero Bar</td><td>North Carolina</td><td>107</td></tr>
+1	Andy Calvert	California	See's Awesome Nuts and Chews Bar	Kansas	96	
+2	Todd Beranak	Minnesota	whatchamacallit	Kansas	95	
+3	Sonya Connolly	Missouri	Snickers	Kansas	91	
+4	Matthew Briggs	Michigan	snickers bar	Kansas	89	
+5	Tasha Cramer	Washington	Kit kat	Kansas	88	
+6	Brett Sterenson	Maryland	Reeses Peanut Butter Cups Dark	Kansas	87	
+6	Mark Larson	Wisconsin	Wunderbar	Kansas	87	
+8	Amy Lyons	Minnesota	Hershey's Milk Chocolate with Almonds Bar 	Kansas	85	
+8	Brian Olson	Kansas	Zero Bar	Kansas	85	
+8	Daniel Hoops	Michigan	Snickers	Kansas	85	
+8	Isaiah O’Hare	California	Sour patch kids	Kansas	85	
+8	Katie LeTarte	Michigan	Peppermint Patty	Kansas	85	
+8	William Morrison	California	Cadbury Wunderbar	Kansas	85	

@@ -131,6 +131,7 @@ foreach $key (keys %picks_info) {
 	$picks_sql = "INSERT INTO picks (name, game, winner, player_id)
                       VALUES('$player_info{name}', '$key', '$picks_info{$key}', '$player_id')\n";
 	# put it in the DB
+    print "$picks_sql\n";
 	$dbh->do($picks_sql) unless $test;
 }
 

@@ -24,8 +24,8 @@ my $player1; my $player2;
 if ($ARGV[0]) {
     $player1 = $ARGV[0]; $player2 = $ARGV[1];
 } else {
-    $player1 = "19254";
-    $player2 = "19255";
+    $player1 = "24745";
+    $player2 = "24746";
 }
 
 

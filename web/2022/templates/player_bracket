@@ -1,3 +1,8 @@
+<!-- POPUP WORK PICK IT UP FROM HERE
+<div id = "test-popup[% next %]" class = "white-popup mfp-hide">Testing 123</div>
+<a href ="#test-popup" class = "open-popup-link"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
+-->
+
         <table class = 'thinborder'>
                 <tr>
                 <!-- left side of heading -->
@@ -193,6 +198,7 @@
 		<tr>
 			<td class = "[% class %]" valign = "center">
 			[% url_wrapped_picks.$game %]
+		  	&nbsp;&nbsp;
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %][% UNLESS picks.$next_winner.match('winner') %]&selectedTeam=[% picks.$next_winner | html %][% END %]')"><img height = 15 src='/jqmcbp/images/piecharticon.png' border=0></a>
 		  	&nbsp;&nbsp;<a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=[% next %]&man_or_chimp=chimp')"><img height = 15 src='/johnnyquest/images/chimp.gif' border=0></a>
 			<br />

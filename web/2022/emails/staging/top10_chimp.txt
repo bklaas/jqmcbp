@@ -1,11 +1,10 @@
-<tr><td>1</td><td>Eileen the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>82</td></tr>
-<tr><td>2</td><td>Amiya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>75</td></tr>
-<tr><td>3</td><td>Anya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>71</td></tr>
-<tr><td>4</td><td>Thalia the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>66</td></tr>
-<tr><td>5</td><td>Janiya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>65</td></tr>
-<tr><td>6</td><td>Uriel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Xavier</td><td>64</td></tr>
-<tr><td>7</td><td>Jaxson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>63</td></tr>
-<tr><td>8</td><td>Zaria the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>62</td></tr>
-<tr><td>9</td><td>Aniyah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>61</td></tr>
-<tr><td>10</td><td>Hannah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>60</td></tr>
-<tr><td>10</td><td>Philip the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>60</td></tr>
+1	Mario	Rancho Cucamonga	Krembanan	Kansas	87	
+2	Dallas	Rancho Cucamonga	Krembanan	Kansas	86	
+3	Enzo	Rancho Cucamonga	Krembanan	Kansas	80	
+4	Armando	Rancho Cucamonga	Krembanan	Kansas	79	
+5	Kaitlynn	Rancho Cucamonga	Krembanan	Kansas	71	
+6	Dane	Rancho Cucamonga	Krembanan	Kansas	70	
+7	Lola	Rancho Cucamonga	Krembanan	Houston	68	
+8	Kyleigh	Rancho Cucamonga	Krembanan	Kansas	67	
+9	Jordyn	Rancho Cucamonga	Krembanan	Kansas	65	
+10	Clifford	Rancho Cucamonga	Krembanan	Tennessee	64	

@@ -32,10 +32,9 @@
 	var slogans = [
 		'Tastes like chicken',
 		'Only superficially about basketball',
-		'It is not social networking if I do not allow anyone else to speak',
-		'Come for the candy stay for the insanity',
+		'It is not social networking if I\'m the only one talking',
 		'A moose once bit my sister',
-		'I Want Candy'
+		'I Want Candy',
 	];
 
 	function createNewSlogan() {
