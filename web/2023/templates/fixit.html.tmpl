@@ -1,0 +1,81 @@
+[% PROCESS fixit.header.tmpl %]
+<script language = "Javascript">
+function populateChamp(popId, popTeam) {
+	spanID = '#span_' + popId
+	inputID = '#' + popId
+	$( spanID ).text(popTeam)
+}
+ 
+function skippedEntry(radio) {
+    for (var i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function validateForm(thisForm) {
+	games = [ 'game_61', 'game_62', 'game_63' ]
+    for (var game in games) {
+        if (skippedEntry(thisForm[games[game]])) {
+            alert("JohnnyQuestFormChecker\nhas detected not all three games have been selected\nPlease check to make sure a team is selected for both Final Four games and the Championship");
+            return false;
+        }
+    }
+    return true;
+}
+
+</script>
+</head>
+
+<body>
+<div id = 'content' style = "float: none;">
+
+[% IF submitted %]
+
+&nbsp;&nbsp;&nbsp;&nbsp;Your fixed bracket has been submitted. It will be updated in the JQMCBP database automatically, typically within about 5 minutes.
+
+[% ELSE %]
+    <img src="ohnoes.png" width = '300px' style="float:right;">
+
+<form method = 'post' id = 'bracketform' onSubmit='return validateForm(this)'>
+Re-cast your correctly matched up Final Four and Champion below
+<br>
+<p></p>
+Fixing JQMCBP Entry for: [% name %]
+<p></p>
+South vs. West:<br>
+	<input name="game_61" id = "winner_57" value="[% teams.0 %]" type="radio" onClick="populateChamp('winner_61', '[% teams.0 %]');"> [% teams.0 %]<br>
+	<input name="game_61" id = "winner_58" value="[% teams.1 %]" type="radio" onClick="populateChamp('winner_61', '[% teams.1 %]');"> [% teams.1 %]<br>
+<p></p>
+East vs. Midwest:<br>
+	<input name="game_62" id = "winner_59" value="[% teams.2 %]" type="radio" onClick="populateChamp('winner_62', '[% teams.2 %]');"> [% teams.2 %]<br>
+	<input name="game_62" id = "winner_60" value="[% teams.3 %]" type="radio" onClick="populateChamp('winner_62', '[% teams.3 %]');"> [% teams.3 %]<br>
+
+<p></p>
+Championship:<br>
+<input name="champ_pointer" id = "winner_61" value="game_61" type="radio">
+<span id = 'span_winner_61'> ---</span><br>
+<input name="champ_pointer" id = "winner_62" value="game_62" type="radio">
+<span id = 'span_winner_62'> ---</span><br>
+
+<p></p>
+    <img src="/jqmcbp/bk_files/forward" align="middle">
+    <input name="ENTER_PICKS" src="/jqmcbp/bk_files/go_ben_go" value="true" align="center" type="image">
+    <img src="/jqmcbp/bk_files/back" align="middle">
+
+<input type = 'hidden' name = 'game_57' value = '[% teams.0 %]'>
+<input type = 'hidden' name = 'game_58' value = '[% teams.1 %]'>
+<input type = 'hidden' name = 'game_59' value = '[% teams.2 %]'>
+<input type = 'hidden' name = 'game_60' value = '[% teams.3 %]'>
+<input type = 'hidden' name = 'email' value = '[% email %]'>
+<input type = 'hidden' name = 'name' value = '[% name %]'>
+<input type = 'hidden' name = 'player_id' value = '[% PARAMS.id %]'>
+</form>
+
+[% END %]
+
+</div>
+</body>
+</html>

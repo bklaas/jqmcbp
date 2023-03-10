@@ -1,0 +1,33 @@
+<form action='player_bracket.cgi'>
+<table class = 'bracket_selection'>
+<tr>
+	<td class = 'heading'>If you know your Player ID, enter it here</td>
+</tr>
+<tr><td>
+<input type = text size = 5 maxlength = 5 name = player_id value = '[% cookie %]'>&nbsp;<input type = submit value = "Go Ben Go!">
+
+</td>
+</form>
+</tr>
+</table>
+
+<form class = 'unstyled' action = 'player_bracket.cgi'>
+<table class = 'bracket_selection'>
+	<tr><td class = 'heading'>Otherwise, choose from the Big List</td></tr>
+<tr>
+<td>
+<select name="player_id">
+<option value="">
+[% FOR name IN names %]
+	<option value = '[% name.player_id %]' [% IF cookie == name.player_id %]SELECTED[% END %]>[% name.name %]
+[% END %]
+</select>
+<input type = submit value = "Go Ben Go!">
+</td>
+</tr>
+</table>
+
+</form>
+<!--
+<h1>Egads, this is a total mess right now...I'll get 'er cleaned up shortly and then you can access your bracket</h1>
+-->

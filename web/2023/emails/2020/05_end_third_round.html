@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("https://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="https://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://cat-bounce.com">catbounce.com</a>
+	<!--sponsored by <a href = "https://ihasabucket.com">ihasabucket.com</a>-->
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/375ish</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+</p>
+
+<p>
+I'm shooting for this whole thing to be wrapped up in the next couple days, crowning the first non-basketball-based JQMCBP Champion. Speaking of which, even if you aren't crowned JQMCBP Champion, and I will remind you that this will be true for approximately 99.7% of you, you should consider buying yourself some candy. MeisterHaus is prepared:
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/dae60ff8-c457-41c2-91a0-7e228763b93b.jpg" width = "500" />
+<p>
+Maybe we'll watch a classic NCAA game on YouTube while we eat it. Here's some full game options (WGNBT):
+</p>
+<ul>
+<li><a href = "https://youtu.be/R9vqNL4dXBY">1966 Texas Western v Kentucky</li>
+<li><a href = "https://youtu.be/x_uOBmzdUyI">1982 North Carolina v Georgetown</li>
+<li><a href = "https://youtu.be/m8xDrRcWSBU">1983 North Carolina State v Houston</li>
+<li><a href = "https://youtu.be/FDNhnZb6hJA">1990 Duke v Kentucky</a></li>
+<li><a href = "https://youtu.be/B3A3DoyHCxI">1998 Valparaiso v Ole Miss</a></li>
+<li><a href = "https://youtu.be/BpZPInZlWKE">2006 George Mason v UConn</a></li>
+<li><a href = "https://youtu.be/Q6fflHD73sw">2016 Villanova v North Carolina</a></li>
+<li><a href = "https://youtu.be/2FOL6SM_O2Y">...or maybe just 18 minutes of buzzer beaters and upsets</a>
+</ul>
+
+<p>Don't care for basketball (not necessary for JQMCBP participation)? Here's some other full game WGNBT options:</p>
+<ul>
+<li><a href = "https://youtu.be/iVJJ8ln1rTI">Footy: 2019 Grand Final Port Adelaide vs. Glenelg (GLENELG?)</a></li>
+<li><a href = "https://youtu.be/O6JYFnxRBnY">Cricket: Match 04 of the Pakistan Cup Punjab vs. Khyber Pakhtunkhwa (warning: 7hr42m)</a></li>
+<li><a href = "https://youtu.be/BrTRefshxpM">Sepak Takraw: Malaysia vs. Indonesia</a></li>
+<li><a href = "https://youtu.be/PJNQfNbE19o">Pickleball: Women's Doubles 30+ Gold Medal Match</a></li>
+<li><a href = "https://youtu.be/p0xgPKwj1NI">Ping Pong: 2019 World championships Andrew Baggaley vs. Wang Shibo</a></li>
+<li><a href = "https://youtu.be/2rQzRMSR1x0">Curling: 2010 Men's Gold Medal Match CAN vs. NOR (oh, the pants)</a></li>
+<li><a href = "https://youtu.be/rWD1yVLqbpY">Olympic Snowcross: 2006 Women's Final (DRAMAAAAA! DRAMAAAA!)</a></li>
+<li><a href = "https://youtu.be/CHDPd4dRGEE">Chessboxing: Brexit Belt (because nothing makes sense)</a></li>
+</ul> 
+
+<hr class = 'section' />
+<h1><a href = "https://youtu.be/Of8JOVXYU0Q">Wha' Happened?</a></h1>
+<h2>Going in deep on some of the "games"</h2>
+
+<p>
+The Third Round determined each Bracket of Enormous and Exaltant Significance (BEES) Region Winner. Here there are the BEES KNEES:
+</p>
+
+<h3>Viral Region</h3>
+
+<p><b>Stuff Summer v. Gangnam Style</b></p>
+
+<p>According to the <a href = "https://en.wikipedia.org/wiki/Gangnam_Style">Gangnam Style Wikipedia page</a>:</p> 
+<div class = "quote">The United Nations hailed Psy as an "international sensation" because of the popularity of his "satirical" video clip and its "horse-riding-like dance moves"</div>
+
+<p>That's interesting, in addition to a shared propensity for putting "quotes on things," I've also been called an international sensation because of my "horse-like" dance moves. Wait..."horse-riding-like" dance moves you say? NEVERMIND.
+
+<p>STUFF SUMMER WINS!</p>
+
+<h3>Food Region</h3>
+
+<p>
+</p>
+
+<h3>Candybar Region</h3>
+
+<p><b>Butterfinger vs. Take 5</b></p>
+
+<p>
+Don't trust me, trust <a href = "https://youtu.be/m6YxrgOhOq0?t=220">Big Mike's Snack Attack Tuesday!</a>: "this is a dang good candy bar. The pretzels, the peanut butter, the caramel...they all work together." These are True Facts. Big Mike does all of his food reviews from the driver's seat of his car, so you know it's good. It can get messy, like when he reviews <a href = "https://youtu.be/xb2TAJuN3gY">Arby's Three Cheese Steak Sandwich</a>. THREE! CHEESES! But I digress. TAKE 5 WINS!
+</p>
+
+<h3>Cover Songs Region</h3>
+
+<p><b>Heavy Metal Africa vs. Smooth Criminal AAF</b></p>
+
+<p>
+Alien Ant Farm's official twitter feed has now "liked" two of my tweets on them cruising through the Cover Songs region. This makes me A Pretty Big Deal as far as Alien Ant Farm goes. This band once performed <a href = "https://youtu.be/JNM2tV3PA_8">an inexplicable surprise rooftop concert to the BET Awards red carpet</a> that was well received by everyone except the police (they were arrested). I think we've heard enough. ALIEN ANT FARM WINS!
+</p>
+
+<h3>Odd Mammals Region</h3>
+
+<p><b>Flying Squirrel vs. Tarsier</b></p>
+
+<p>
+Last email I mentioned my friend Lance "Butterfinger" Van Houten and his love for all things "snarfy" (I don't know, it's just a thing Lance likes to say I think). When Lance was in Law School at the University of Iowa he had a pet iguana. I don't remember its name, so we'll call him Mr. Snarfy. One winter day he had Mr. Snarfy in his car, presumably for...companionship? Anyway, Mr. Snarfy got cold, as reptiles do in an Iowa Winter, and decided to seek out some warmth...in the steering column of the car. The only thing sticking out was its tail. I'm not sure how Lance got Mr. Snarfy out (he did; there were no Mr. Snarfys hurt in the creation of this story), but maybe he drove around until the rest of the car got warmer than the steering column, enticing Mr. Snarfy to emerge? You know, with the floor heat on max and only driving straight ahead so as not to cause an Unspeakable Tragedy. Maybe he took the car to a shop and said "uhhhhh....yeah....I've got a little problem with my steering column....it's uhhhh....occupied." Clearly I lack a full knowledge of this entire story, but nevertheless I wanted to share it because sometimes, when I need a little pick-me-up, I think about that iguana tail sticking out of the steering column of Lance's 1989 Toyota Corolla. TARSIER WINS!
+</p>
+
+<h3>Punk Birds Region</h3>
+
+<p><b>Australian Magpie vs. Greater Roadrunner</b></p>
+<p>
+By now I hope everyone is aware that Amber surmised that THE EYES DON'T WORK* (GET MUM). Amber had a successful test of tree branches sticking out of her really badly secured bike helmet just before trying the fake eyes painted on the back, but I wanted to suggest another stylish option, DazzaJay's Magpie Defender:
+</p>
+
+
+<a href="https://youtu.be/sphLsH8_LSE?t=281"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/sphLsH8_LSE/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+<p>
+* Here's a fun fact: Australian Magpies are known to actually <i>target people's eyes**</i>. Given this knowledge, OF COURSE THE EYES DON'T WORK***!
+</p>
+
+<p>
+** it goes after <i>eyes</i>. Of <i>course</i> it's going to win the Punk Birds region
+</p>
+<p>
+*** GET MUM****
+</p>
+<p>
+**** AUSTRALIAN MAGPIE WINS!
+</p>
+
+<h3>Carson's Picks Region</h3>
+
+<p><b>Bradbury Gold Medal vs. CC McGraw</b></p>
+<p>
+True story: last year the McGraw family treated me and Piper, via friend and first-time JQMCBP participant Troy "100 Grand" Amaris,
+ to tickets for a University of Minnesota Gopher* Volleyball match. During the match we got to talking to CC's little brother, who was a H.S. junior at the time. The previous year the Gophers, ranked 2nd in the country, lost a heart-breaking NCAA semifinal match versus Oregon, including an <a href = "https://youtu.be/CMlD_DfefFY?t=3823">epic 41-39 second set loss</a>. We were there, it was one of the loudest things I've ever attended, and I saw Metallica at Hilton Coliseum in 1988. Anyway, CC's little brother, to protect his identity we'll call him Mr. Snarfy, told us that he now owns a sweatshirt specifically to wear when CC visits home: 
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/47731fdc-e2f1-43d3-b40e-9c515cc1bd45.png" width = "400" />
+
+<p>I mean, huge hat tip to Mr. Snarfy here. When your big sister is an phenom libero for one of the top volleyball programs into the country, as a little brother how do you try to get the upper hand? By trolling her mercilessly, silently, by wearing a U of O sweatshirt when she visits home*. It's your only defense. As a 17-year-old, I <i>guarantee</i> I would have tried something similar.</p>
+
+<p>All that said, CC gets the last laugh here in the Carson's Picks JQMCBP region. CC MCGRAW WINS!!</p>
+
+<p>* The U of M gopher mascot is really a squirrel. Don't get me started.</p>
+<p>** But yes, in case you live in a cave and didn't know it already, the Oregon mascot is indeed a duck, and that is indeed an Awesome Mascot.</p>
+
+<p><b>Tacos vs. Peanut Butter</b></p>
+
+<p>
+<a href = "https://twitter.com/candymeister/status/1248011458782191619"><img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/6cc4ce2f-797e-43c3-9f2a-d1a8a6163ad1.png" /></a>
+</p>
+
+<h3>Piper's Picks Region</h3>
+
+<p><b>Harry Styles vs. Sushi</b></p>
+<a href = "https://twitter.com/candymeister/status/1248013844045107200"><img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/92a167bc-f2e3-49b4-9590-e9db9e5709fd.png" /></a>
+
+
+<hr class = 'section' />
+<h1>How Them Humans Doing?</h1>
+<h2>Checking in on the 375ish Human(ish) Entries</h2>
+
+<p>
+It's still the Mark "Take 5" Richards show, but his seemingly insurmountable lead has shrunk a bit. At 65, he's only 5 points ahead of eldest daughter Carson "Reese's Peanut Butter Egg" Klaas and 6 points ahead of wife and still-pissed-about-something-I-picked Wendy "Twix" Volkman. Don't sleep on Vernon "Goose" "Shark Candy" Grover just behind that at 58.
+</p>
+
+<p>
+I've run the simulations on the 128 remaining permutations of the bracket, and there are only 8 human beings still with a chance at the candy. They are:
+</p>
+<ul>
+<li>Carson Klaas</li>
+<li>piper</li>
+<li>Mark Richards</li>
+<li>CASEY OHARA</li>
+<li>#reubenmemoirs</li>
+<li>Jess Larson</li>
+<li>Lance Van Houten</li>
+<li>Vernon "Goose" Grover</li>
+</ul>
+
+<hr class = 'section' />
+<h1>How Them Chimps Doing?</h1>
+<h2>Checking in on the 1,000 Chimp Army</h2>
+
+<p>
+So...that simulation I was just talking about? In the 128 permutations, a chimp wins in 62 of them. There is no doubt this is the most likely Chimp Victory in the history of JQMCBP.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/a6975e5e-6345-4a54-a31d-c38c2db5aa60.jpg" width = "500"/>
+<p>Here are the chimps still in it:</p>
+<ul>
+<li>Allie the Chimp</li>
+<li>Chris the Chimp</li>
+<li>Kathryn the Chimp</li>
+<li>Kaia the Chimp</li>
+<li>Abbie the Chimp</li>
+<li>Alexandrea the Chimp</li>
+<li>Nash the Chimp</li>
+<li>Nolan the Chimp</li>
+<li>Elle the Chimp</li>
+<li>Chloe the Chimp</li>
+</ul>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Only 30 lost their champion in Round 3. Lots of Sushi lovers! Did not expect that! Also, Jake Cohen and Sean "Columbia House Mail Fraud" Whelan, you were brave backing Peanut Butter. Go with what you love, man. You be you.
+</p>
+
+<div class = 'pre'>
+Africa Heavy Metal: Sam niyo, Brent Swanson, Matt Rennie
+
+Butterfinger: Brenda Ochs
+
+Sushi: Connor Byers, Kristen Olivas, Brenda VB, Joe Bro, Jeff Amato, Sofia Amato, Tala Anderson, Gwen D, Heather Housker, Mark Richards, Lucy Noble, Baret Williams-Furfaro
+
+Flying Squirrel: June Bug, stephen malcolm anderson
+
+Bradbury Gold Medal: Eddie Topel, Bob Topel, Chris Young
+
+Greater Roadrunner: Renata Rush, Lauren Matushin, ELRONDO 
+
+Gangnam Style: Ethan 'Go Green' Ray, Paul Deeter, Tim Handlos, Chuck Rodrigues
+
+Peanut Butter: Jake Cohen, Sean "Orange Whip Groupie" Whelan*
+</div>
+
+<p>* You know who you are, Sean "Alcohol-free Honors Hall" Whelan</p>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+John Housenga is our winner today. What award did he win? SO MANY
+</p>
+<ul>
+<li>Most Disgusting Sounding Candybar Award</li>
+<li>Most Apropos In These Troubled Times Award</li>
+<li>Best Candybar To Fool Your Parents Into Thinking Your Diet Hasn't Devolved Into Solely Snack Food In These Troubled Times Award</li>
+<li>Oldest Candybar Award, or more specifically Multiple Decades Older Than That 30-year-old Kirby Puckett Bar I Had To Buy in 2015 on EBay to Award JQMCBP XVIII Champion Todd Barton Award</li>
+</ul>
+
+<p>I am relieved he's been eliminated from the potential winners, because pool veteran John Housenga selected the <b>Pearson's Chicken Dinner Bar</b>. There is an <a href = "https://www.mentalfloss.com/article/70510/clucking-sweet-history-candy-bar-called-chicken-dinner">excellent history of this confection</a> available that I encourage you all to read (WGNBT). I will also add that this is a candybar Time magazine ranked <a href = "https://newsfeed.time.com/2014/02/18/13-most-influential-candy-bars-of-all-time/slide/chicken-dinner/">#6 most influential candybar of all time</a>. From wikipedia:
+
+<div class = "quote">The Chicken Dinner Bar had been a product of the Sperry Candy Company, which was acquired by Pearson's in 1962. The bar, introduced during The Great Depression, was so called in reference to President Herbert Hoover's promise of "a chicken in every pot". The bar did not contain chicken or other poultry products, but was, rather, a chocolate-covered nut roll. Pearson's discontinued the bar's production after the acquisition. Early TV commercials sang "Chick - Chick - Chick - Chick - Chicken Dinner" similar to, and in the cadence of a rooster crowing.</div>
+
+<p>I'm kinda disappointed it didn't have actual chicken in it.</p>
+<p>Deep scouring of the internet has not unearthed the TV commercial, but if you find it (WGNBT) please send it to me. I bet it's <i>amazing</i>.</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/97cf9a7b-69e5-48ae-9838-0940184ab91d.jpg" width = "300" />
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+
+<p><b>Update:</b> Like so many other things, the MS-150 was officially cancelled yesterday. If you donated already: the cause is still good, and your cash works the same as always.</p>
+
+<p>I am still <a href = "https://main.nationalmssociety.org/goto/beat_larry_2020">accepting donations to this cause</a>, but I'd also like to put a link here to <a href = "https://wck.org/chefsforamerica">World Central Kitchen</a>, an excellent program that is feeding people during (and outside of) this crisis.</p>
+
+<hr class = 'section' />
+
+<h1>Why are you still reading this?</h1>
+
+<p><a href = "https://youtu.be/KWikGqr-OMw">Haaaaaam, girl!</a></p>
+
+<hr class = 'section' />
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Mark Richards</td><td>Colorado</td><td>Take 5</td><td>Sushi</td><td>65</td></tr>
+<tr><td>2</td><td>Carson Klaas</td><td>Minnesota</td><td>Reeses Peanut Butter Egg</td><td>Stuff Summer</td><td>60</td></tr>
+<tr><td>3</td><td>Wendy Volkman</td><td>Minnesota</td><td>Twix</td><td>Carli Lloyd</td><td>59</td></tr>
+<tr><td>4</td><td>Vernon 'Goose' Grover</td><td>Minnesota</td><td>Shark candy</td><td>Baby Shark</td><td>58</td></tr>
+<tr><td>5</td><td>piper</td><td>Minnesota</td><td>sour skittles</td><td>Harry Styles</td><td>54</td></tr>
+<tr><td>6</td><td>#reubenmemoirs</td><td>Michigan</td><td>Cadbury Curly Wurly Bar</td><td>Tarsier</td><td>49</td></tr>
+<tr><td>6</td><td>Chuck Rodrigues</td><td>Iowa</td><td>Yoo Hoo candy bar</td><td>Gangnam Style</td><td>49</td></tr>
+<tr><td>8</td><td>Thomas Leeper</td><td>Michigan</td><td>Hershey's Milk Chocolate One Pound Bar</td><td>Smooth Criminal AAF</td><td>47</td></tr>
+<tr><td>9</td><td>CASEY OHARA</td><td>California</td><td>take 5</td><td>Harry Styles</td><td>46</td></tr>
+<tr><td>9</td><td>Lance Van Houten</td><td>Arizona</td><td>Butterfinger</td><td>Tarsier</td><td>46</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+
+<tr><td>1</td><td>Abbie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Immigrant Song Soak</td><td>57</td></tr>
+<tr><td>1</td><td>Chris</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Smooth Criminal AAF</td><td>57</td></tr>
+<tr><td>3</td><td>Abbey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Stuff Summer</td><td>52</td></tr>
+<tr><td>3</td><td>Shaylee</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Greater Roadrunner</td><td>52</td></tr>
+<tr><td>5</td><td>Allie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Australian Magpie</td><td>51</td></tr>
+<tr><td>5</td><td>Frances</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>51</td></tr>
+<tr><td>5</td><td>Kaia</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tarsier</td><td>51</td></tr>
+<tr><td>5</td><td>Kathryn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Smooth Criminal AAF</td><td>51</td></tr>
+<tr><td>5</td><td>Terence</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Weezer</td><td>51</td></tr>
+<tr><td>10</td><td>Arielle</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Steph Curry</td><td>50</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2020 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

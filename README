@@ -4,6 +4,9 @@ Here's what's needed:
 
 BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
 THIS WAS STILL A BAD PROBLEM IN 2022
+
+2022 Note: Look for the file in perl/badEncodingFixer.py --> with a very small amount of effort this can be used to sanitize badly encoded files. Make sure to test it though!
+
 How to fix: The jq_entry.cgi file needs to be rewritten to write utf-8
 The database needs possible updating to use utf-8 (?) in its tables
 Defo it's jq_entry.cgi that's the source of the awfulness

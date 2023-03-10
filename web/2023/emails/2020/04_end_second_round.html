@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("https://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="https://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://pointerpointer.com">pointerpointer.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at 25)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/375ish</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+    True story, Piper stopped speaking to me for several hours yesterday. You see, she'd been working me for days, saying over and over again how she felt, in the matchup between BBC Kid and Stuff Summer; that there was a clear selection to be made. Amazingly, and many parents would identify this as a True Superhero Skill, in the dozens of times she made her case I never once listened to her pleas. I honestly had no idea which one she wanted me to pick. When she found out I had gone with Stuff Summer and not (as it turns out!) her winner of BBC Kid, she decided she'd had enough of talking to me for at least the immediate future.
+</p>
+<p>Through her intermediary Wendy, Piper has conveyed to me:</p>
+<div class = "quote"><i><b>He just doesn't understand! THIS WAS MY YEAR. this. was. my. year.</b></i></div>
+<p>I have no regrets. I may be a Pool Dictator of Questionable Benevlolence, making winning selections in a possibly random and definitely confounding way, but I will not be cowed. Besides, she's going to have to start speaking to me eventually. I do a fair bit of the cooking here, she needs to eat, and WGNBT.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/515cc7be-b79d-4ecf-9688-edf73e7024ad.jpg" width = "400" />
+<div class = "quote">
+Hey Candymeister, when can I expect the next "games" to be played?
+</div>
+
+<p>
+Alright, second round's done, we're on the home stretch. 16 "teams" left, 15 "games". I'm going to try to ramp this up a bit, and say we're going to take JQMCBP XIII to completion this week. We may have nothing but time (WGNBT), but sometimes you gotta kick it up a notch.
+</p>
+
+<p>Remember, anything underlined below in this email is a link! The screenshots of youtube videos are links! You can follow them! WGNBT!</p>
+
+<hr class = 'section' />
+<h1><a href = "https://youtu.be/Of8JOVXYU0Q">Wha' Happened?</a></h1>
+<h2>Going in deep on some of the "games"</h2>
+
+<p>
+The Second Round had action across all the regions, 16 "games" in total. Here's the completely unnecessary details:
+</p>
+
+<h3>Viral Region</h3>
+
+<p><b>BBC Kid vs. Stuff Summer</b></p>
+
+<p>Piper will get no solace from this, but I actually had BBC Kid penciled in for several minutes before I decided I just couldn't eliminate Stuff Summer, one of my favorite clips of all time. Stuff Summer needs to be acknolwedged! STUFF SUMMER WINS!</p>
+
+
+<p><b>Duck Army vs. Gangnam Style</b></p>
+
+<p>
+My first year of college, 1989-1990, I attended The Evergreen State College in Olympia, Washington. There was a store in Olympia called Yard Birds. It was the coolest. You could get anything at Yard Birds. It was like a combination Army Surplus/Fleet Farm/TJ Maxx/Home Depot. Once I got a pair of thick wool cargo pants and an engineer's hat for like $8. My friend bought a pair of slip-on loafers with palm trees on them and wore them playing basketball for the school team. I am not making this up. There was nothing you couldn't get, at steep discount, at a Yard Birds. I just googled it and the only thing that appears left of it is a site <a href = "https://www.yardbirdshistory.com">dedicated to its history</a>. The Olympia store closed in 1993. Why am I telling you this? Because the <a href = "https://youtu.be/nHc288IPFzk">Duck Army</a> was exactly the kind of thing that would be available at Yard Birds. It's tough to let go of the <a href = "https://youtu.be/nHc288IPFzk">Duck Army</a>, or Yard Birds for that matter, but in the end the <i>3.5 Billion YouTube views</i> of Gangnam Style was just too much. GANGNAM STYLE WINS!
+</p>
+
+<h3>Food Region</h3>
+
+<p><b>Tacos vs. Cheese Curds</b></p>
+
+<p>
+Cheese curds are really yummy, but could you eat cheese curds for dinner 7 nights in a row? Unlikely, especially since my pocket defibrilator ran out of batteries. But tacos, sign me up! TACOS WIN!
+</p>
+
+<p><b>Peanut Butter vs. Bacon</b></p>
+
+<p>
+This one was too hard to pick, so I had to coin flip this one with my trusty 1926 Liberty Dollar. YouTube has informed me the video of me flipping that coin and revealing the winner has, as of typing this, "Zero Views". So, it's clear this was a big deal to all y'all. PEANUT BUTTER WINS!
+</p>
+
+<h3>Piper's Picks Region</h3>
+
+<p><b>Harry Styles vs. The Office</b></p>
+
+<p>
+While The Office is known by many as a very funny sit-com of the 2000s, it also included a spooky and macabre storyline, <a href = "https://theoffice.fandom.com/wiki/Scranton_Strangler">The Scranton Strangler</a>.
+<a href = "https://youtu.be/DH0QIr5kowY">Many efforts have been made</a>
+to reveal the identity, <a href = "https://youtu.be/_PN9SLvcpcY">some...not so good.</a>
+</p>
+
+<p>
+Most theorists have arrived at the conclusion that <a href = "https://youtu.be/I009w8nDOkE">Toby Flenderson</a> was the Scranton Strangler, but this year's JQMCBP has proven otherwise: Harry Styles IS the Scranton Strangler. Take his initials, "H.S.". I've learned now from several sources, all of them forwarded emails with subjects like "fwd: fwd: fwd: fwd: fwd: H.S. GUILTY PLEASE FORWARD", that Scranton was named during colonial days with the British-style city name "Hampton-upon-Scranton". Harry Styles is British. "H.S." is the initials for Hampton-upon-Scranton Strangler. Coincidence? I think not.</p>
+
+<p>Sure, the show was being aired when Harry was what, about three years old, but if you completely ignore that fact the evidence is clearly there. HARRY STYLES WINS (and will live to murder again)!
+</p>
+
+<p><b>Volleyball vs. Sushi</b></p>
+
+<p>
+I'm guessing Piper had a tough time deciding on this one. She really does love volleyball, but in these sequestered times she's resorted to <a href = "https://youtu.be/CAT28hect2M">hosting backyard volleyball academy</a>, which is Not the Same. Perhaps out of her displeasure at not being able to play with her club team any more, this gives some hint as to why she chose sushi*. SUSHI WINS!
+</p>
+
+<p>
+* I mean, I wish I could ask her why she chose Sushi over Volleyball, but she'd just glare at me, silently mouthing "IT WAS MY YEAR. IT. WAS. MY. YEAR."
+</p>
+
+<h3>Candybar Region</h3>
+
+<p><b>$100 Grand vs Butterfinger</b></p>
+
+<p><i><b>$100 Grand</b></i> has been a popular pick over the years, as has the frequently-entered <i><b>$100,000 Grand</b></i> Bar, which is redundant and so means $100,000 * 100,000, or $10 Billion Bar. I bet that's DELICOUS. But it was $100 Grand in this matchup, facing Butterfinger. BUTTERFINGER WINS!
+</p>
+<p><b>Take 5 vs Snickers</b></p>
+
+<p>I went through the JQMCBP historical records and found that, reliably, about 10% of all JQMCBP entrants each year choose Snickers or Snickers-related* candybars. Five of the 25 candybars sent out for JQMCBP First Place were Snickers or Snickers-related* candybars. Nevertheless, whomever at the Reese's corporation threw up their arms and said "to heck with it, let's just jam a pretzel in there," when concocting the Take 5, was a brilliant and talented marketeer. TAKE 5 WINS!!</p>
+
+<p>some actual entrants over the years: "just a snickers", diet snickers, Snickers--Satisfaction!, 1 bite size Snickers, King-size Snickers, Super duper King Size Snickers, 1 lb Snickers, 2 lb. Snickers, 10lb snickers, "biggest snickers bar alive", "biggest snickers bar ever", "Good ol' Fashioned Snickers", Snickers Dark, Snickers!, Snickers NFL Yard Chocolate Candy Bar, Snickers Cruncher, Peanut Butter Snickers, Frozen Snickers, Snickers of Joy, Snickers is slang for a wee-bit too tight Knickers, Snickers if you got 'em. Okay, I made up the last three. The rest are real!</P>
+
+<h3>Cover Songs Region</h3>
+
+<p><b>Heavy Metal Africa vs. Immigrant Song Kittens</b></p>
+
+<p>
+I'm not sure if Australian Magpie vs. Shrike or Heavy Metal Africa vs. Immigrant Song Kittens was the most metal of all the second round matches, but it was definitely close. In the Cover Songs region, Immigrant Song Kittens raised some eyebrows with the fact it was <a href = "https://youtu.be/ApxnAr6pRt0">just a bunch of animated kittens going Ride or Die</a> for the original Led Zepplin recording. Eyebrows can unfurl though, because Heavy Metal Africa was too much for these viking furballs. HEAVY METAL AFRICA WINS!
+</p>
+
+<p><b>Smooth Criminal AAF vs. Russian Orion</b></p>
+
+<p>"Annie are you okay?" Survey says: YES. Alien Ant Farm's cover of Smooth Criminal is just so good. Sorry bear-suited guitarist and associated Russian Metallica cover band, you are no match for AAF. ALIEN ANT FARM WINS!
+<p>
+
+<h3>Odd Mammals Region</h3>
+
+<p><b>Pangolin vs. Flying Squirrel</b></p>
+<p>
+I really like Flying Squirrels. FLYING SQUIRREL WINS! BUT! I do not condone the idea of taming flying squirrels and naming them <a href = "https://youtu.be/RpHY9Tmqyv8?t=92">Bubba G</a>. Do not do this.
+</p>
+
+<p><b>Tarsier vs. Grasshopper Mouse</b></p>
+
+<p>
+The grasshopper mouse eats not only other mice, but scorpions. <a href = "https://youtu.be/w-K_YtWqMro?t=96">DO NOT BE FOOLED BY ITS CUTENESS</a>. It's seriously odd, seriously awesome. However, the Tarsier has the highest eyeball to face ratio in the entire mammalian class. That is ODD. Also, <a href = "https://youtu.be/gGsKDjvwVM8?t=20">check out this slow-mo catch of a katydid</a>. As Lance "Butterfinger" Van Houten would say, SERIOUSLY SNARFY! TARSIER WINS!
+</p>
+
+<h3>Punk Birds Region</h3>
+
+<p><b>Shrike vs. Australian Magpie</b></p>
+<p>
+Shrikes are amazing. They're effectively a robin or a sparrow that has somehow evolved into being <a href = "https://youtu.be/okQYO10MT3c">a murderous psycopath</a>. They impale their prey, for later, as trophies. As a Carson-favorite Hozier put it in <a href = "https://youtu.be/Bwe1O29sfRY"> his (no joke here) mezmerizingly beautiful song Shrike</a>, "Remember me, love, when I'm reborn, as the shrike to your sharp and glorious thorn." Dude. That is DARK.
+</p>
+<p>Anyway, Shrikes are great. Nevertheless, I must remind you once again: <a href = "https://youtu.be/YGGTcYfrEZU?t=68">THE EYES DON'T WORK THE EYES DON'T WORK GET MUM GET MUM THE EYES DON'T WORK</a>. MAGPIE WINS!
+</p>
+
+<p><b>Greater Roadrunner vs. American Dipper</b></p>
+<p>
+Another tough one, as I've long been a fan of the glorious Water Ouzel aka American Dipper. Like the Shrike, the Dipper is a songbird that adapted to do something entirely not-songbird-like. In the Dipper's case, it's <a href = "https://youtu.be/PKWXkdJKgNA">diving in fast-moving mountain streams</a>. Pretty great.
+</p>
+
+<p>
+Nevertheless, the Dipper faced the Greater Roadrunner. This large, ground-dwelling cuckoo is known not only for <a href = "https://youtu.be/RU_7nZbII6o">running really fast</a> but also for <a href = "https://youtu.be/jEc49SRlsvA?t=120">taking down rattlesnakes</a>. I mean, that is hardcore. ROADRUNNER WINS!
+</p>
+
+
+<h3>Carson's Picks Region</h3>
+
+<p><b>Bradbury Gold Medal vs. Kolton Wong DP</b></p>
+<p>
+Stephen Bradbury's miracle run to Gold Medal in the 2002 Olympics, <i>2 years before Carson was born</i>, has clearly resonated with here. Bradbury is into the sweet 16 with a victory over Kolton Wong's crazy double play highlight. BRADBURY WINS!
+</p>
+
+
+<p>
+"Go Gophers!" <a href = "https://youtu.be/EAzHtRBAUrg">MCGRAW WINS</a>!
+</p>
+
+
+<hr class = 'section' />
+<h1>How Them Humans Doing?</h1>
+<h2>Checking in on the 375ish Human(ish) Entries</h2>
+
+<p>
+I'm really trying to get my head around Mark "Take 5" Richards' total domination of the field right now. At 49 points, he sits a solid 9 points ahead of all other humans (and 8 ahead of all other primates).
+</p>
+<p>
+Also of note, my entire sequestered household of daughter Carson, wife Wendy, and daughter Piper sit in 2nd, 3rd, and 4th place, respectively. You'd think there's some home court advantage going on here, but I assure you I'm not sharing any insider knowledge. I guess Carson and Piper picking all of their own region winners...probably a factor. This I will concede.
+</p>
+
+<p>Also tied in 4th place is Vernon 'Goose' "Shark Candy" Grover, who is just a toddler and also just got a new baby sister (who could not enter the pool, because she was literally not born before the deadline). Rock on Vern!</p>
+
+<hr class = 'section' />
+<h1>How Them Chimps Doing?</h1>
+<h2>Checking in on the 1,000 Chimp Army</h2>
+
+<p>WOW. SO GOOD!</p>
+
+<p>Only Mark "Statistical Anomaly" Richards is beating all 1,001 chimps. Aldo, Braden, Shaylee, Stacey, and Abbey the Chimps all have scores at or higher than all humans not named Mark Richards. And most of you humans are doing much worse than that. The Chimp Army is getting pretty excited. If not this year, when?
+</p>
+
+<hr class = 'section' />
+<h1>How's That Shoulder Doing?</h1>
+
+<p>About 60% mobility, which is 59.9% more mobility than when that ordeal started. Looking forward to getting out of this shelter-in-place and getting myself to an orthopedist. In the meantime, I may need a podiatrist. Stubbed my toe on an ottoman something fierce this morning. True story. Stay tuned for the new section "How's That Toe Doing?"</p>
+
+<hr class = 'section' />
+<h1>What About Your Cats? How are They Doing?</h1>
+
+<p>...the cats?!? Why would anyone care about the cats? BUT WAIT. What if I, and by "I" I mean a creepy auto-generated Google Photos "service" that just sent this video to Wendy, set the whole cat update thing to <i>End of Days Jazz Vocals</i>? NOW WE'RE TALKIN'! BEHOLD!!</p>
+
+<a href="https://youtu.be/JiPDBR0qShs"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/JiPDBR0qShs/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+A stunning 144 of you lost your champion in the weekend's "competitions", no more so than the huge contingent of Bacon fans, losing in a coin flip to Peanut Butter. Cormac O'Boyle was near the very top of the leaderboard, but the Shrike defeat was a thorny blow to his chances. BBC Kid was a pre-tourney favorite, but no longer. And Council of Nine member (one of the 9 original JQMCBP I entrants) Pondscum lost on...Kolton Wong Double Play? Experience != JQMCBP Wisdom.
+</p>
+
+<div class = 'pre'>
+Immigrant Song Kittens: Pop Klaas, Matthew Kaley, Jessica Ball, Scott Mortimer, John Caragher, Erin D, William Morrison, Katherine Anne Gifford, Michael Ferreter, Maddy Cloud
+
+$100 Grand: Dennis Sabo, Wesley Dylan Amato, Jim Parker, Jonathan Francis, Robert Hann, Andrew Bowers
+
+Snickers: Owen Clexton, Blake Brodjeski, Arthur Rush, Peter James, dane roxek, Christy Griesheimer, Annie Cochran, Kevin Kane, Kristal Sieve, Milt Bellin, Jayson LaGrou
+
+The Office: Victoria Hebda, Scott Chesky, Nick DiGirolomo, Erin McLean, Camden Johnson, Christie Schmidt, Jenn, Billy Rossman, Brent Dakin , Shannon O'Hare, Joe Stevens, Patrick O'Boyle
+
+Volleyball: Stephen Miwa
+
+Pangolin: Allan Dranberg, Rupert Smudge, Kai Anderson, Geoff Willard, Eric Taylor, Jenny Gator, Caleb Anderson, Jane Cislo, Matt Pearson, Abby Chungath, Peter Carlson, Julian Wenz, Devon Kristiansen
+
+Grasshopper Mouse: Mark Jones, Mrs. Anonnamouse
+
+Kolton Wong DP: Pondscum
+
+McKayla Maroney: Sam Grover
+
+Shrike: Ben Cochran, Cormac O'Boyle
+
+American Dipper: Sue Robinson , Marla 'Muskateer' Weinstein
+
+BBC News Kid: Santiago Duque-Baird, Willy 'PIckles' Lee, Nate Blake, Lisa LaGrou, Kate Van Houten, isaiah ohare, Martin Lieser, Craig Wadzinske, Craig Wadzinske, THE ELLIE CHUNGATH!!!, Kiera D, John Niyo, carly thaler, Rafi Thaler
+
+Duck Army: Jeanette Clark, Tom 'T3' Wadzinski, Brendon Harrington, Sam Bosak, Jonathan Schroeder, Trey White , Greg Wenz, Jboy, Jokey Shanahan
+
+Cheese Curds: Stevia Fordays, Dan Clark, Zachary Klaas, Jennifer Meagher, (Not Tom) Brady Adams (Not the family), Margaret Wadzinske
+
+Bacon: Benjamin Kehrwald, Dr Fauci Rules , Zack Cekala, Thomas Joseph, Derek Bier, Greg Castle, Rollie Empizo, Paul Petrous, Tim Rush, Alex Ross, James Dillon, Colin Keiffer, Kyle Smith, Brett Callison, Matthew Smalling, Stephen Jacobsen, Green Acres, Dan Sousa, Matt M, Trish Soriano, DeBacks, Rich Lyle, Michael Nommensen, Lisa Blake, Lindsay Genadek, Todd Campbell, Dave Giugni, Joel Rondeau, Gayle Krueger, jim walker, Teresa Bunda, Troy Metz, Keith Kutz, Paul Wadzinske, Jon Blake, Jeff 'Trying for 3re Place' Hober, Jim Soriano, Patty Dillon, Eva Witt, Gabriel Leiblein, Dave Bush, Tim Ortopan, Jason Earl Teal, Jennifer Teal, Missy Shanahan, Jeral 'You had me at Corona' Poskey, Rashaan Clark, Michelle Housenga, Ryan Schraa, Whitney Magnuson, Sarah Ogborn, Whitney Magnuson, Karlene “Glad I am no longer stuck in an elevator” Jenni, Barb Richards
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>The You Probably Should Check the Expiration Date on That Before Eating Award goes to Susie Smalling's selection of "Protein Bar from Matt Smalling's Collection"</p>
+
+<p>Matt and I were classmates from pre-school (shout-out to Miss Judy's!) to H.S. graduation. As far as I can tell, Matt has never thrown away a single piece of memorabilia from any of those years. I happen to know he still has the attendence sheet from Miss Judy's preschool. Just last week, and I am not making this up, he texted me not only a picture of 17-year-old me christmas caroling (I was the only guy that agreed to go, and at 6'5" stand out like a circus freak towering above my female singing companions), but also a picture of me at the scene of a truly embarassing event where I swerved my 1986 Mercury Lynx into a county road ditch avoiding a cat. THESE ARE NOT MEMORIES I WANTED OR EXPECTED TO BE PRESERVED!
+<p>Don't believe me?</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/d0d21cdf-8b5c-472e-adc4-fa08e2ef296f.jpg" width = "400" />
+<p>
+So Susie, cousin of Matt, with that knowledge I ask you, do you really want a protein bar from Matt's collection? Do ya? You have been warned.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society in (hopefully post-quarantine) June. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://main.nationalmssociety.org/goto/beat_larry_2020">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goals remain the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.</p>
+
+<hr class = 'section' />
+
+<h1>Why are you still reading this?</h1>
+
+<p>Okay, fine. You're still here. You've clearly got time to burn (WGNBT). In that case, please dedicate the next 7 minutes to <a href = "https://youtu.be/P1x96yIFBz8">FLY HIGH DULUTH</a>.
+
+<hr class = 'section' />
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Mark Richards</td><td>Colorado</td><td>Take 5</td><td>Sushi</td><td>49</td></tr>
+<tr><td>2</td><td>Carson Klaas</td><td>Minnesota</td><td>Reeses Peanut Butter Egg</td><td>Stuff Summer</td><td>40</td></tr>
+<tr><td>3</td><td>Wendy Volkman</td><td>Minnesota</td><td>Twix</td><td>Carli Lloyd</td><td>39</td></tr>
+<tr><td>4</td><td>piper</td><td>Minnesota</td><td>sour skittles</td><td>Harry Styles</td><td>38</td></tr>
+<tr><td>4</td><td>Vernon 'Goose' Grover</td><td>Minnesota</td><td>Shark candy</td><td>Baby Shark</td><td>38</td></tr>
+<tr><td>6</td><td>Kate Meilinger</td><td>Michigan</td><td>super rope</td><td>Roger Federer</td><td>37</td></tr>
+<tr><td>6</td><td>Scott Mortimer</td><td>New Hampshire</td><td>The White Lion!</td><td>Immigrant Song Kittens</td><td>37</td></tr>
+<tr><td>8</td><td>Andrew Hanson</td><td>Nevada</td><td>Payday</td><td>Australian Magpie</td><td>36</td></tr>
+<tr><td>9</td><td>Cormac O'Boyle</td><td>Colorado</td><td>Big Box of Nerds </td><td>Shrike</td><td>35</td></tr>
+<tr><td>9</td><td>Nick Orum</td><td>Minnesota</td><td>Take 5</td><td>Tacos</td><td>35</td></tr>
+<tr><td>9</td><td>Stephen Miwa</td><td>Illinois</td><td>Butterfinger</td><td>Volleyball</td><td>35</td></tr>
+<tr><td>9</td><td>Sue Ray</td><td>Michigan</td><td>Reese's pb cup</td><td>Reeses PB Cup</td><td>35</td></tr>
+<tr><td>9</td><td>Thomas Leeper</td><td>Michigan</td><td>Hershey's Milk Chocolate One Pound Bar</td><td>Smooth Criminal AAF</td><td>35</td></tr>
+<tr><td>9</td><td>Trey White </td><td>Michigan</td><td>Wow wee Maui kitch'n cook'd potato chip and chocolate bar</td><td>Duck Army</td><td>35</td></tr>
+
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Aldo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Sushi</td><td>41</td></tr>
+<tr><td>2</td><td>Abbey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Stuff Summer</td><td>40</td></tr>
+<tr><td>2</td><td>Braden</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cheese Curds</td><td>40</td></tr>
+<tr><td>2</td><td>Shaylee</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Greater Roadrunner</td><td>40</td></tr>
+<tr><td>2</td><td>Stacey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tarsier</td><td>40</td></tr>
+<tr><td>6</td><td>Allie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Australian Magpie</td><td>39</td></tr>
+<tr><td>6</td><td>Frances</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>39</td></tr>
+<tr><td>6</td><td>Romeo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>39</td></tr>
+<tr><td>6</td><td>Sophie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Duck Army</td><td>39</td></tr>
+<tr><td>6</td><td>Terence</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Weezer</td><td>39</td></tr>
+
+
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2020 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

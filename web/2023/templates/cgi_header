@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head><meta name="robots" content="noindex, nofollow, noarchive" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Johnny Quest - [% IF title %][% title %][% END %]</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="benklaas.com" />
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="images/basketball.ico" type="image/x-icon" />
+
+<script src="effects.js" language="JavaScript"></script>
+
+<script src="/javascript/jquery.js"></script>
+<!--<script type="text/javascript" src="/javascript/highcharts/js/highcharts.js"></script>-->
+<!--
+<script type="text/javascript" src="/javascript/highmaps/5.0.9/code/highmaps.js"></script>
+<script type="text/javascript" src="/javascript/highmaps/5.0.9/code/highcharts.js"></script>
+<script type="text/javascript" src="/javascript/highmaps/5.0.9/code/highcharts-more.js"></script>
+-->
+<script type="text/javascript" src="/javascript/highcharts/3.0/js/highcharts.js"></script>
+<script type="text/javascript" src="/javascript/highcharts/3.0/js/highcharts-more.js"></script>
+<script src="/javascript/airport.js" language="JavaScript"></script>
+[% PROCESS raptorize %]
+
+<script type="text/javascript">
+
+	var slogans = [
+		'Tastes like chicken',
+		'Only superficially about basketball',
+		'It is not social networking if I\'m the only one talking',
+		'A moose once bit my sister',
+		'I Want Candy',
+	];
+
+	function createNewSlogan() {
+		var newSlogan = slogans[Math.floor(Math.random() * slogans.length)];
+		$( '#slogan' ).airport( [ newSlogan ] );
+	}
+
+        $(document).ready(
+        function() {
+                setTimeout(function() {
+			createNewSlogan();
+                }, 2000);
+        }
+        );
+
+</script>
+
+</head>
+
+<body class = 'wide'>
+
+<!-- wrap starts here -->
+<div id="wrapWide">
+
+	
+  <!--header -->
+	
+				
+		
+  <div id="header">			
+	[% IF params.cgi != 'player_bracket' %]
+	<div id = 'popMe'>
+	[% IF cookie %]
+	Welcome <a href = "player_bracket.cgi?player_id=[% cookie %]">[% thisisme.name %]</a><br>
+	your rank is [% thisisme.rank %]/[% params.pool_size %]<br>
+	your score is [% thisisme.score %] (leader @ [% params.high_score %])<br>
+	What, you aren't [% thisisme.name %]? <a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">change it
+	</a>
+	[% ELSE %]
+	<a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">Who are you?</a>
+	[% END %]
+	</div>
+	[% END %]
+
+    <h1 id="logo-text"><a href="leaderboard.cgi" title="Johnny Quest">jqmcbp</a></h1>
+    <p id="slogan"></p>
+    <div id="top-menu">
+			
+      <p><a href = "emails.cgi">email archive</a> | <a href = "index.cgi?overview">intro pages</a> | <a href="mailto:jqmcbp@gmail.com">contact</a></p>
+    </div>
+    <!--header ends-->
+    					
+	</div>
+  <!-- navigation starts-->
+  	
+	
+  <div id="nav">
+		
+    <ul>
+	<li[% IF params.cgi == 'leaderboard' %] id = 'current'[% END %]><a href = 'leaderboard.cgi'>Leaderboard</a></li>
+	<li[% IF params.cgi == 'player_bracket_selection'  || params.cgi == 'player_bracket' %] id = 'current'[% END %]><a href = 'player_bracket_selection.cgi'>Prognosticationland&#0153;</a></li>
+	<li[% IF params.cgi == 'whatsyourj' %] id = 'current' [% END %]><a href = 'whatsyourj.cgi'>Your "J" Factor&#0153;</a></li>
+	<li[% IF params.cgi == 'filtermatic' %] id = 'current' [% END %]><a href = 'filtermatic.cgi'>Filtermatic&#0153;</a></li>
+	<li[% IF params.cgi == 'hallofshame' %] id = 'current' [% END %]><a href = 'hallofshame.cgi'>Hall of Shame&#0153;</a></li>
+	<li[% IF params.cgi == 'graphomatic' || params.cgi == 'graphomatic_selection' %] id = 'current' [% END %]><a href = 'graphomatic.cgi'>Graphomatic&#0153;</a></li>
+	<li[% IF params.cgi == 'sss' || params.cgi == 'sss_selection' %] id = 'current' [% END %]><a href = 'sss.cgi'>SSS&#0153;</a></li>
+</ul>
+
+
+   <!-- navigation ends-->
+    	
+	</div>
+

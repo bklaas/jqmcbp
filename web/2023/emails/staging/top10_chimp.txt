@@ -1,0 +1,10 @@
+1	Mario	Rancho Cucamonga	Krembanan	Kansas	87	
+2	Dallas	Rancho Cucamonga	Krembanan	Kansas	86	
+3	Enzo	Rancho Cucamonga	Krembanan	Kansas	80	
+4	Armando	Rancho Cucamonga	Krembanan	Kansas	79	
+5	Kaitlynn	Rancho Cucamonga	Krembanan	Kansas	71	
+6	Dane	Rancho Cucamonga	Krembanan	Kansas	70	
+7	Lola	Rancho Cucamonga	Krembanan	Houston	68	
+8	Kyleigh	Rancho Cucamonga	Krembanan	Kansas	67	
+9	Jordyn	Rancho Cucamonga	Krembanan	Kansas	65	
+10	Clifford	Rancho Cucamonga	Krembanan	Tennessee	64	

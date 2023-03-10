@@ -1,0 +1,35 @@
+===== WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Gabe Smith	16	12.500
+Lola the Chimp	16	12.500
+Jackson Teer	12	9.375
+Mario the Chimp	10	7.812
+Stuart the Chimp	9	7.031
+Denis the Menace	8	6.250
+Zaria the Chimp	8	6.250
+Jair the Chimp	8	6.250
+Andy Calvert	7	5.469
+Lisa Wadzinske	6	4.688
+Mark '100 Grand Bar!' Johnson	6	4.688
+Jen Meagher	6	4.688
+Marisol the Chimp	5	3.906
+Kenny Boyd 	4	3.125
+Mark Larson	3	2.344
+Sabrina Bier	2	1.562
+Oscar Valentine	2	1.562
+Karlie the Chimp	2	1.562
+Dion the Chimp	2	1.562
+Claire Westerlund	2	1.562
+Lacey the Chimp	2	1.562
+Annie Hoag	2	1.562
+Armando the Chimp	1	0.781
+Todd Beranak	1	0.781
+Davin the Chimp	1	0.781
+Thomas Joseph	1	0.781
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 71
+Chimp Wins: 57
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	118
+2	6
+3	4

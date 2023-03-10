@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+<script type="text/javascript" src="/javascript/jquery.magnific-popup.min.js"></script>
+
+<script type="text/javascript">
+$(".open-popup-link").magnificPopup({
+    type: "inline",
+    midClick: true
+});
+</script>

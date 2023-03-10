@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "http://dandandan.net/">dandandan.net</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at 29)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/839</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+The first round has come to a close and we've got a 6-way tie at the top (see bottom of email). 1-seeds Virginia, North Carolina, and Duke all looked sketchy in the first halves of their games, but they all took care of bidness in the end. It's a pity, because destroying "expert" brackets is one of the True Joys of being the Candymeister. In that vein, may this weekend show the Terriers of Wofford, the Anteaters of UC-Irvine, the (okay, need to look this one up) Knights of Central Florida, and the Racers of Murray State continued success.
+</p>
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+I mean, I could deep dive the <a href = "https://www.slu.edu/about/key-facts/what-is-a-billiken.php">Billikens</a>, but instead I think I'll give you an anecdote about Cyclones. But not the Iowa State Cyclones, instead their dimunitive counterpart the Ames High "Little Cyclones"*
+</p>
+
+<p>
+The actual mascot of Iowa State is a Cardinal (which is not an ornithologically accurate depiction of a cardinal, but that's a story for another day), because its colors are Cardinal and Gold. Ames High's colors, and this is important to the story, are Black and Orange.</p>
+
+<p>So back in the 1980s, in the long long ago, AHS decided it needed to have its own dressed up mascot for games. Rather than a Cardinal, which didn't make sense, even if depicted with ornithological accuracy, they went with a cyclone. Since you can't go with black, as this wouldn't be easily seen at a night football game, they went with orange. If you think about the physical structure of a cyclone, it's pretty narrow at the top and pretty wide at the bottom. If you're in that costume, as 1989 AHS graduate Robert Wilke was, your options are effectively limited to one option: spinning around.
+</p>
+<p>
+So basically, we'd come to games and watch Robert try not to get to dizzy/sick as the World's Only Twirling Carrot.
+</p>
+
+<p>* My junior high school (best one in Ames until they closed it down) was the Whirlwinds, a perfectly excellent on-topic mascot. Ames High could have chosen the Tornadoes, the Dirt Devils, the Twisters, or even the Dangerous Straight Line Winds. But nope, they went with "Little Cyclones". Like a tornado, only not so scary!</p>
+
+<hr class = 'section' />
+<p>
+Side note on the last email's discussion of how Vermont should have gone with a Camel as a mascot. I've since learned that not only do the Connecticut College teams call themselves the Camels, but 2018 graduate and two-time NCAA DIII Water Polo Champion* Sophia Soriano** is a proud JQMCBP entrant.
+</p>
+
+<p>
+* The Connecticut College women's water polo team calls themselves the CoCoWoWaPo Camels, which is undisputably freaking awesome.
+</p>
+<p>
+** She was not tooting her own horn by contacting me with this information***
+</p>
+<p>
+*** It was her dad.
+</p>
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+As is typical of the second day of the first round, the upsets showed up. The big ones were UC-Irvine (go <a href = "https://tenor.com/view/anteater-kangaroo-come-at-me-bro-hop-away-scared-gif-3531605">Anteaters!</a>) over Kansas State, <a href = "https://deadspin.com/as-i-lay-me-down-to-sleep-i-pray-for-liberty-to-freaki-1833513734">Liberty</a> over Mississippi State, and...as will be endlessly discussed below, Ohio State over Iowa State. There were close to 150 each that picked these upsets, so I won't list them here, but I will instead talk about the fully predictable Irrational Confidence of Iowa State fans.
+</p>
+
+<p>
+This is an actual group text exchange made last week after Iowa State won the Big 12 conference tournament:
+</p>
+
+<div class = 'mailbag'>
+Matt Smalling*: What seed do you think the Cyclones will end up?
+
+Joshua Littrell**: #5!
+
+The Meister***: Have watched a fair bit of isu hoops this year. When they are good they are very very good. But when they aren't...not so much. I expect a lot of irrational confidence after last night from the legions of clones fans in the pool. I'd guess 6 seed, maybe a 5.
+
+Jason Teal****: They are going to win it all!
+
+<a href = "https://giphy.com/search/facepalm">&lt;facepalm.gif&gt;</a>
+</div>
+
+<p>* 80th place. Predicted Iowa State in the Final 8</p>
+<p>** Could not be bothered entering JQMCBP. Known to play air guitar in front of children.</p>
+<p>*** 30th place. Predicted Iowa State to Sweet 16</p>
+<p>**** 447th place. Predicted Iowa State in the Final 8</p>
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+23 more lost their champions Friday, including a suite of Irrational Confidence Iowa State All-Stars
+</p>
+
+<div class = 'mailbag'>
+North Dakota State: James Walsh
+Saint Louis: Zachary Klaas
+Mississippi State: Elizabeth Ferreter
+Kansas State: mellissa simko, Dusten Schiefert
+Wisconsin: Jodi Rhea, Samantha Bartnik, Ripley Wellington The Third, Marla Weinstein, Jack Wenz
+Cincinnati: Alex McWhinnie
+Iowa State: David Holm, R.J. 'Jack' Smalling, Jane Kehrwald , Joanne Isenhart, Cathy 'Swiss miss' Stidwell, Lindsey Cloud, Green Acres, Margaret*friend to chimps* Wadzinske, Gary Bahr, The Lab Rat, Rebecca Behrens
+Northern Kentucky: Cormac O’Boyle
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+I have degrees from both Wisconsin and Iowa State, and always consider which to put on as my alma mater (A: Badgers), but this year it would not have mattered, as both saw themselves out Friday. 79 people consoled themselves by muttering to themselves that their school's athletic prowess in no way had anything to do with all the other bad choices they'd made*.
+</p>
+
+<p>* Yes, I know majoring in Early Norwegian Literature is not going to open doors for me, BUT IT'S MY DREAM.</p>
+
+<div class = 'mailbag'>
+Saint Louis: Jodi Rhea, Greg '2019 Champ' Rhoades
+
+Mississippi State: Teresa Bryan, Joe Bowers
+
+Gardner-Webb: Dave Bush (news flash: Dave Bush is a liar)
+
+Mississippi: Zane Sabbert
+
+Kansas State: Bill Rogers
+
+Wisconsin: Ben Klaas, Todd Krueger, Paul Smith, Kevin Quinn, Paul Wadzinske, Mark Larson, Glen C. Volkman, Tom 'T3' Wadzinski, Marla Weinstein, Craig da man Wadzinske, Greg Wenz, Lisa Wadzinske, Kathy Larson, Dave Larson, Jess Larson, John McCartney, Joel Rondeau, Alex Anderson, Jenny Gator, Mike Weipert, Jonathan Schroeder, Wendy Volkman, Marty Dickrell, BenDiesel Auchter
+Cincinnati: Steve Fink
+Colgate: JIM quinn
+
+Iowa State: Chris 'Charby' Charbonneaux, DANK, Angie DeWaard, Brent Dakin, Brent Swanson, Daniel Backman, Dawn Smith, David Smalling, David Holm, Chris Handlos, Patrick Connolly, Zachary Klaas, Timothy Handlos, Kristal Sieve, Clare Isenhart, Serine Isenhart, Bob (Jack's Oldest Son) Smalling, Brenda VB, Matt 'Marge's #2' Smalling, Angie Mowery, Brett Callison, R.J. 'Jack' Smalling, Susan Erickson, Shaun Connolly, Doug Busta, Rob Bellin, Benjamin Kehrwald, Kayleen A. Niyo, Chris Hewitt, Sarah Handlos, Omer Mustafic, PATRICK DILLON, Joanne Isenhart, Kevin Kane, Green Acres, Tyler Groh, Pondscum, Kelly Wolfe-Bellin, Gary Bahr, Chuck Rodrigues, Alex Blom, Luke Roling, The Lab Rat, Dan Clemens
+
+Arizona State: Chuck Delargy, Dusten Schiefert
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The Do I Have To Get My Own Face Or Could I Get Someone Else's, Perhaps My Greatest Enemy Award
+</p>
+
+<p>
+"Subpar Grover", aka my co-worker Josiah Scrimshaw Grover, not to be confused with 2018 JQMCBP champion and Musk-Flavoured Sticks addict "Super Grover", selected <a href = "https://www.vat19.com/item/face-licker-personalized-lollipop">this beauty</a>, the "Face Licker Lollipop". It's...disturbing, but only 60 bucks! You should check out the <a href = "https://www.vat19.com/item/face-licker-personalized-lollipop">promotional video</a>. Jordan Peele movies have nothing on this.
+</p> 
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "http://bit.ly/bkMS150_2019">you may donate buckets of cash to my ride here</a>. This is my 8th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+Deanne "Snickers" Busta led alone for much of Friday night but was finally caught by 6 others: Curtis John "Skittles" Mitchell, Dan "king size Rollo[sic]" Reed, Joaquin "Kit Kat", Kyra "Sour Patch Kids" Whitelaw, and awesome bar triva runner/co-worker Kari "Butterfinger" Williams. Chris "Milk Chocolate Flavored Yoo Hoo Candy Bar" Larson, through an unexpected quirk of random normal statistical distributions, sits alone in 7th place.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Curtis John Mitchell</td><td>Wisconsin</td><td>Skittles</td><td>Michigan</td><td>29</td></tr>
+<tr><td>1</td><td>Dan Reed</td><td>California</td><td>king size Rollo</td><td>North Carolina</td><td>29</td></tr>
+<tr><td>1</td><td>Deanne Busta</td><td>Iowa</td><td>Snickers</td><td>Duke</td><td>29</td></tr>
+<tr><td>1</td><td>Joaquin</td><td>Michigan</td><td>Kit Kat</td><td>Michigan</td><td>29</td></tr>
+<tr><td>1</td><td>Kari Williams</td><td>Minnesota</td><td>Butterfinger</td><td>Duke</td><td>29</td></tr>
+<tr><td>1</td><td>Kyra Whitelaw</td><td>New York</td><td>Sour Patch Kids</td><td>Michigan</td><td>29</td></tr>
+<tr><td>7</td><td>Chris Larson</td><td>Minnesota</td><td>Milk Chocolate Flavored Yoo Hoo Candy Bar</td><td>Duke</td><td>28</td></tr>
+<tr><td>8</td><td>Barbie Hoag</td><td>Michigan</td><td>Peanut M&Ms</td><td>Michigan State</td><td>27</td></tr>
+<tr><td>8</td><td>Bridget Conkling</td><td>Ohio</td><td>Giant Toblerone</td><td>Michigan State</td><td>27</td></tr>
+<tr><td>8</td><td>David Mitchell</td><td>Massachusetts</td><td>Milk Chocolate Ritter Sport </td><td>Virginia</td><td>27</td></tr>
+<tr><td>8</td><td>Dawn Smith</td><td>Iowa</td><td>Strawberry Charleston chew</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Derek Bier</td><td>Michigan</td><td>Reese's Peanut Butter Cup</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Drew Bush</td><td>Washington</td><td>Half a stick of gum</td><td>New Mexico State</td><td>27</td></tr>
+<tr><td>8</td><td>Elsie Meilinger</td><td>Michigan</td><td>Smarties American, not Canadian</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Geoff Findlay</td><td>Massachusetts</td><td>Kit Kat</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Jack Fink</td><td>Ohio</td><td>Reese's King Size Peanut Butter Cup</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Jaime Millard</td><td>Michigan</td><td>Butterfinger</td><td>Michigan State</td><td>27</td></tr>
+<tr><td>8</td><td>Jayson LaGrou</td><td>Michigan</td><td>M & Ms chocolate bar</td><td>Kentucky</td><td>27</td></tr>
+<tr><td>8</td><td>Jayson LaGrou</td><td>Michigan</td><td>M & Ms chocolate bar</td><td>Kentucky</td><td>27</td></tr>
+<tr><td>8</td><td>Jed Durkin</td><td>Michigan</td><td>3 Musketeers!</td><td>Gonzaga</td><td>27</td></tr>
+<tr><td>8</td><td>Joe Hoag</td><td>Michigan</td><td>Snickers</td><td>Michigan State</td><td>27</td></tr>
+<tr><td>8</td><td>Justin Seipelt</td><td>Michigan</td><td>Butterfinger</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Katie LeTarte</td><td>Michigan</td><td>Twix</td><td>North Carolina</td><td>27</td></tr>
+<tr><td>8</td><td>Kim Williams</td><td>Minnesota</td><td>peanut butter M & M's</td><td>Duke</td><td>27</td></tr>
+<tr><td>8</td><td>Mark Dyal</td><td>Texas</td><td>3 Mustketeers</td><td>Virginia</td><td>27</td></tr>
+<tr><td>8</td><td>Meghan Waldron </td><td>Michigan</td><td>Butterfinger </td><td>Houston</td><td>27</td></tr>
+<tr><td>8</td><td>Paul Schmidt</td><td>Michigan</td><td>3 Musketeers </td><td>Texas Tech</td><td>27</td></tr>
+<tr><td>8</td><td>Rob “Tarpo” Tilley</td><td>Canada</td><td>Chewy Spree 5lb bag</td><td>Michigan</td><td>27</td></tr>
+<tr><td>8</td><td>Sarah Ogborn</td><td>Illinois</td><td>Kinder Schoko-bons Crispy Box </td><td>Kentucky</td><td>27</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Abigail the Chimp still at the top, now joined by Kiara the Chimp. Top #1-seed-as-champion entry right now is Lexi at 23.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Abigail the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northeastern</td><td>25</td></tr>
+<tr><td>1</td><td>Kiara the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>25</td></tr>
+<tr><td>3</td><td>Francis the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Marquette</td><td>24</td></tr>
+<tr><td>3</td><td>Samantha the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Nevada</td><td>24</td></tr>
+<tr><td>5</td><td>Aaliyah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico State</td><td>23</td></tr>
+<tr><td>5</td><td>Arya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Colgate</td><td>23</td></tr>
+<tr><td>5</td><td>Diego the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>23</td></tr>
+<tr><td>5</td><td>Hunter the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida State</td><td>23</td></tr>
+<tr><td>5</td><td>Lexi the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>23</td></tr>
+<tr><td>5</td><td>Romeo the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Auburn</td><td>23</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>
