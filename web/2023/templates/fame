@@ -18,6 +18,12 @@
 	
     </tr>
     <tr>
+        <td>2023</td>
+        <td>809 (+1001 chimps)<br /></td>
+        <td nowrap>Thomas J "Milka Chocolate Oreo, Large Bar 300g" Leeper</td>
+        <td nowrap>Apcvmd</td>
+    </tr>
+    <tr>
         <td>2022</td>
         <td>753 (+1001 chimps)<br /></td>
         <td nowrap>Andy "See's Awesome Nuts and Chews Bar" Calvert</td>
@@ -192,5 +198,6 @@
     </table>
 	<img src = 'http://i.imgur.com/QM54dSY.gif'  />
 	<img src = 'http://i.imgur.com/nbbkOLg.gif' />
+    <img src = "images/ketchup-bottle.gif" />
 
 [% PROCESS next link = 'enter' %]

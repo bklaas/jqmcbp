@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<style>
 		body {
@@ -8,6 +9,7 @@
 			margin: 0;
 			padding: 0;
 		}
+
 		div.email {
 			background: #eee;
 			border: 1px solid black;
@@ -18,67 +20,113 @@
 			color: black;
 			max-width: 800px;
 		}
+
 		div.quote {
-		 border : 2px solid #000;
-		 margin: 20px;
-		 padding: 10px;
-		 background-color: #ccc;
-		 quotes: "\201C" "\201D";
-		 }
-		div.quote:before { content: open-quote; font-weight: bold; }
-		div.quote:after { content: close-quote; font-weight: bold; }
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
 
 		p {
 			font-size: 14px;
 			margin-top: 10px;
 			margin-bottom: 10px;
 		}
+
 		h1 {
 			font-size: 24px;
 			font-weight: bold;
 		}
+
 		h2 {
 			font-size: 18px;
 			font-weight: normal;
 			font-style: italic;
 		}
+
 		a {
 			color: #004D73;
-			text-decoration: none;
+			text-decoration: underline;
 			font-weight: bold;
 		}
+
 		a:hover {
 			color: maroon;
 			background-color: white;
 			text-decoration: underline;
 		}
 
-        .float-right { float: right; }
+		.float-right {
+			float: right;
+		}
 
-		hr.section { 
-			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
-		} 
-		hr.section:after { 
-			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
 		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
 		hr.oldsection {
-			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
-		} 
-		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
 		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
 		hr.subsection {
 			height: 1px;
 		}
-		div.pre, div.mailbag {
+
+		div.pre,
+		div.mailbag {
 			font-family: monospace;
 			white-space: pre-wrap;
 		}
+
 		div.header {
 			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
 			height: 70px;
 			margin: 0;
 			padding: 0;
 		}
+
 		div.header h1 {
 			color: #FFFFFF;
 			font-size: 36px;
@@ -86,318 +134,408 @@
 			margin: 0;
 			padding-left: 75px;
 		}
+
 		div.header h2.slogan {
 			color: #FFFFFF;
 			font: bold 15px sans-serif;
 			margin: 0;
 			padding-left: 195px;
 		}
+
 		ul.image {
 			list-style: none outside none;
 			margin: 0;
 			padding: 0;
 		}
+
 		ul.image li {
-		    background-image: none;
+			background-image: none;
 			list-style: none outside none;
 		}
+
 		ul.image li.last {
 			padding: 13px 0 0 15px;
 		}
+
 		ul.image img {
 			vertical-align: middle;
 		}
-	#footer {
-		color: #777777;
-		font-family: "Helvetica",sans-serif;
-		font-weight: normal;
-		height: 50px;
-		letter-spacing: 10px;
-		font-size: 12px;
-		margin: 0;
-		padding: 20px 0 0;
-		text-align: center;
-	}
-	table.scores, table.chimp_scores {
-		border 1px solid black;
-		border-collapse: collapse;
-	}
-	table.scores thead th, table.chimp_scores thead th {
-		background: gray;
-		color: white;
-		font-size: 10px;
-		font-weight: bold;
-		text-align: left;
-		padding-right: 5px;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-	table.scores tbody td, table.chimp_scores tbody td {
-		background: #eee;
-		color: #111;
-		font-size: 10px;
-		padding-right: 5px;
-		text-align: left;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-	table.chimp_scores tbody td {
-		background: yellow;
-		color: black;
-	}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
 	</style>
 </head>
+
 <body>
-<div class = 'header'>
-	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXV</a></h1>
-	<h2 class = 'slogan'>
-	<a href = "https://youtu.be/0zky4p5HBYE?t=72">Bon Appetit</a>
-	</h2>
-</div>
-<div class = 'email'>
-<div class = 'email'>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVI</a></h1>
+		<h2 class='slogan'>
+			<a href="https://youtu.be/gQDqRlMeJ4U">The Infinite Frontier</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click
+						here</a></li>
+			</ul>
+
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e76876fe-a0ed-b643-a2d2-57a1d2bee60e.png"
+					class="float-right" />
+			</p>
+
+			<hr class='section' />
+            <h1>Fun Facts About Farleigh Dickinson</h1>
+<p>
+For the second time in tournament history (the first being the Maryland-Baltimore County Retriever's victory over Virginia in 2018), a #16 seed has upset at #1 seed. Going into Farleigh Dickinson's game versus Purdue, the collective record of #16 seeds in the tournament was 1-151. Well, now it's 2-151. Upsets like this leave us with questions, most notably, what is a Farleigh Dickinson? How did they get here? How did I get here? Rest assured, I am here for you with all the answers.
+</p>
+
+<p>
+<b>What is a Farleigh Dickinson?</b>
+</p>
+<p>
+Farleigh Dickinson is a rare condition that makes one's left leg, and only the left leg, involuntarily kick Rockettes-style in times of stress. If you suffer from Farleigh Dickinson Syndrome, the good news is that help is on the way. Kixatrex, a new medication proven to be effective* in the treatment of Farleigh Dickinson, can help you stop kicking your left leg in stressful situations.
+</p>
+
+<p>
+* In 86% of patients, Kixatrex may cause the following side effects: sleeplessness, drowsiness, loss of appetite, incredible appetite, feelings of inner peace, excessive shouting, periodic but predictable ability to communicate with inanimate objects, spontaneous extra limb regeneration, and in rare cases perfectly moisturized skin. Ask your doctor is Kixatrex is right for you.
+</p>
+
+<p>
+<b>But seriously, let's talk about Farleigh Dickinson</b>
+</p>
 <p>
 <ul>
-	<li>Name: *|MMERGE5|*</li>
-	<li>Candybar: *|MMERGE6|*</li>
-	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
-	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
-	<li>Rank: *|MMERGE10|*/838</li>
-	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+<li>Farleigh Dickinson had to play Texas Southern in a play-in game to make it into the 64-team field. Texas Southern's record was 14-20, yet <em>were considered the favorites in the game.</em></li>
+<li>Farleigh Dickinson's automatic berth in the tournament was not because they won their conference. The automatic berth <em>defaulted</em> to them because the conference champs, Merrimack, were not eligible as they haven't been in Division 1 long enough yet to qualify.</li>
+<li>Farleigh Dickinson lost to the following teams this year:</li>
+<ul>
+    <li>Southern Illinois-Edwardsville</li>
+    <li>Longwood</li>
+    <li>Stonehill</li>
+    <li>Hartford</li>
+    <li>Queens College</li>
+    <li>Central Connecticut</li>
+    <li>Sacred Heart (twice)</li>
+</ul>
+</li>
+<li>Farleigh Dickinson is the shortest team in NCAA Division 1 basketball.</li>
+<li>Farleigh Dickinson beat Purdue, who have a 7'4" center.</li>
+<li>Farleigh Dickinson's head coach is an alum of Interstate 35 High School, which apart from being hilariously named, is also a school I know well. I once competed in Speech Club (known in pretty much the rest of the known universe as Forensics) at I-35 H.S. in Truro, Iowa. My performance was in the Comedic Acting section (what'd you expect, drama?), which didn't get rolling until mid-afternoon. I came down on a bus with all the other speech club nerds, including long-time JQMCBP entrant Joshua "Phil" Littrell. Josh I think was also in comedic acting? I mean, he's basically always comedic acting; ask his kids about how he dresses up in a turkey suit just to jump scare them when they wake up. But I digress.  The two of us had the whole day to burn, and we chose to leave I-35 H.S. and wander the mean streets of Truro. We discovered Truro is basically the real-life representation of the song <a href = "https://youtu.be/qOfkpu6749w">Pink Houses</a>. I-35's team is aptly called the Roadrunners. Where am I going with this? Do I have to be going somewhere with this? I don't. I'm the Meister, and this is my party. Anyway, the Farleigh Dickinson coach is from there.
+</li>
 </ul>
 </p>
+			<hr class='section' />
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+			<p>
+Woof, there is so much to talk about today. Speaking of woof, let's start with the Bulldogs.
+			</p>
 
 <p>
-Gwen "Trader Joe's Pound Plus Dark Chocolate" D of New York has taken the solo lead after Round 1 with 29 and an <em>incredibly</em> aggressive 17.89 J-Factor score. Gwen is going to need Michigan State to pull off a bunch of upsets to get that pound (plus!) of chocolate, but at least for now Gwen sits in the fabled catbird seat.
+There were two Bulldog teams vanquished Friday. <b>Who wore it better?</b>
 </p>
 
 <p>
-I'm sending this out a bit late, mainly because I went deep into the (jack)rabbit hole on mascot research. You'll hear from me next early next week, when I reveal the Unweighted Chance Of Winning (UCOW!) analysis, also known as "could I still possibly win this?" People hate it!
+First we have the University of North Carolina - Asheville Bulldogs.
 </p>
-
-<hr class = 'section' />
-<h1>Losing Mascots: Let's Talk About Them!</h1>
-<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
-
-<ul>
-   <li>
-    The Virginia Tech Hokies
-    </li>
-<p>Okay, so last year I went OFF on the Hokie research. Feel free to <a href = "https://benklaas.com/jqmcbp/emails/2021/02_firstDay.html">refresh yourself from the email vault on my screed.</a>. Executive summary: Hokies are castrated turkeys, and are terrifying.
-    <li>
-    The Seton Hall Pirates
-    </li>
-<p>
-OR ARE THEY? Candy seekers, I've just uncovered a major scandal. Here is the Seton Hall Pirate:
-</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/27c4372d-5c45-67a0-2fae-407104e6e53d.jpg" width = "100%" />
-<p>
-Here, again, is the Seton Hall Pirate:
-</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/dc1c422f-5d6d-aaf1-df17-e1142c12a727.jpg" width = "100%" />
-<p>How'd you hurt your eye, Pirate Jake? Or should I say, <b>WHICH</b> eye did you hurt, <b>PIRATE FAKE</b>? Left eye? Right eye? Just switching it up for fun?</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/48a178d9-52be-36e9-d3e7-42b0192c9968.jpg" width = "100%" />
-<p>That's right, you're not fooling anyone. And changing up your jersey number isn't helping. Speaking as someone actually blind in one eye*, begone with you, charlatan!
-<p>* True story! Hit by a golf ball traveling hundreds of miles per hour! And it was my own golf ball! I'm more of a pirate than this Seton Hall con artist!</p>
-    <li>
-    The Chatanooga Mocs
-    </li>
-<p>It really looked like Chatanooga, "the Noogs" as I and I alone know them, was going to pull off the upset against Illinois. Alas, they lost in the end, but their loss is our gain, because now I can tell you that the Chatanooga mascot is named <b>Scrappy the Moc</b>. </p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/777a3fb9-3f92-6625-5d99-7a7f2394d00e.jpg" width = "70%"/>
-<p>Not to be confused with Ookla the Mok, trusty side kick of Thundarr the Barbarian (shout out, 80's nerd kids!)</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/9a2a0607-f9dd-9fcc-5ea5-949174943aa6.jpeg" width = "70%"/>
-
-    <li>The UAB Blaze</li>
-<p>The University of Alabama-Birmingham Blaze mascot is a fire-breathing dragon.</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/04c88b31-1ae4-c0a7-7e1b-644a4c7fafbc.jpg" width = "70%"/>
-<p>Not to be confused with Zach Galifianakis (shout out, 10's nerd kids!)</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/87c70fb6-eb36-42fb-7666-dd11b9d278c6.png" width = "70%"/>
-    <li>
-    The Delaware Fightin' Blue Hens
-    </li>
-<p>Following Zippy the Roo, Delaware graced us with another female mascot, sarcastically bringing complete gender equity to mascots and all professions. Problem solved!</p>
-<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/c33748ef-666d-5cdc-19e1-43dd24f9637c.png" width = "50%" />
-<p>You know how schools will sometimes do that repugnant thing where they call the men's team the "Tigers" and the women's team the "Lady Tigers"? Delaware should do the reverse: The Delaware Man Hens. I'd endorse this.</p>
-    <li>
-    The Loyola-Chicago Ramblers</li>
-<p>Again, <a href = "https://benklaas.com/jqmcbp/emails/2018/05_endThirdRound.html">TO THE ARCHIVES!</a></p>
-    <li>The Yale Oligarchs
-    </li>
-<p>Or whatever.</p>
- </ul>
-
-
-<hr class = 'section' />
-<h1>Upsets...who picked 'em</h1>
-<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
 
 <p>
-No significant upsets!
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/2afa82b4-9a27-9949-9124-0e94494568e6.png" width = "90%" />
 </p>
 
-<div class = 'pre'>
+<p>
+Why is this bulldog's jaw in a fixed agape fashion? Is it okay? Did it take too much Kixatrex? Surely this can't be the winner. 
+</p>
+
+<p>
+Next we have the Drake Bulldogs.
+</p>
+<p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/3033f803-174c-60b8-b2c5-448b66f5ca28.jpg" width = 50%" />
+</p>
+<p>
+AAAAAAAAAAH WHAT IS EVEN HAPPENING HERE? This is hands-down the weirdest looking bulldog I've ever seen. It looks like someone started out trying to make a sockpuppet monkey and ended up with something so wrong they just shrug-emojied and called it a bulldog.
+</p>
+
+<p>
+And the WINNER is...the 1970s era Drake Bulldog of my youth. BRING BACK CLASSIC DRAKE BULLDOG!
+</p>
+
+<p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/c3830126-4030-72a7-df16-8bb222f3089c.jpg" width = "50%" />
+</p>
+
+<p>The 2023 tournament also sports two Gaels, but we can't play Losing Mascot Who Wore it Better because Saint Mary's did manage to win their game. Nevertheless, I'd like to put the spotlight on the Iona Gaels as potentially the most terrifying mascot this year. Just look at this guy! Would you bring your 6-year old up for a photo? ONLY IF YOU WANT YOUR KID'S DREAMS FOREVER HAUNTED!
+</p>
+<p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/ef7a8218-6138-e94e-141b-10105189b531.jpg" width = "90%" />
+</p>
+
+<p>FOREVER. HAUNTED.</p>
+<p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/aa9860a9-adeb-46e2-ba9d-158c8d1e7653.jpg" width = "90%" />
+</p>
+
+<p>
+Also lost in the first round: a Boilermaker, an Owl, a Catamount, a Gaucho, a Ram, a Cardinal (which represents a Cyclone, which also could not help its team score more than 41 points, C'MON), a Friar, an Antelope, a Sun Devil, and a Golden Flash.
+<p>
+
+</p>
+			<hr class='section' />
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+15 people had Farleigh Dickinson over Purdue in round 1, including someone named "coinflip", repeat last place finisher Andrew Mossburg, Nathan Conkling, Aidan Conkling AND Aidan Conkling (what are the odds of two different people named Aidan Conkling both entering JQMCBP, and BOTH picking Farleigh Dickinson? Amazing).
+</p>
+			<div class='pre'>
+Farleigh Dickinson:  Aidan Conkling, Aidan Conkling, Allen witt, Andrew Mossburg, Andy Jehly, Apcvmd, coinflip , Graham Leonard, Larry Ochs, Leo Pure, Lisa Bieber, Mark Jones, McGlothern Fam, MELLISSA D SIMKO, Nathan Conkling
+			</div>
+
+			<hr class='section' />
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+126 of you, about 16% of the whole field, lost their champ on Day 2. The great majority of those had Purdue picked. Boilermaker? More like Boilerbreaker, amirite? Sucks to be you!
+</p>
+
+			<div class='pre'>
+Purdue: Tim Thomas, Kim Fredrrick, Curtis Mitchell, Jeff Keiffer, Debbie Taylor, Chris 'charby' Charbonneaux, Todd Odess, Christopher Horoschak , Jacob Shanahan, Chris Hewitt, Beck Rogers, Sofia Amato, Barb Goldsby, Gavin Rogers, Jeffray Chungath, Stella Van Houten, Dave Aucott, David Manson, Ben Cochran, Seth Goldberg, Scott Larabee, Cris Osier, Andrew Moore, Sarah Ogborn, John Yuda, ROBERT T SMALLING, Melanie Leopold, Terry Valentine, Shaun Connolly, Joel Van Valin, John Griffin, Phil Horvath , Todd Campbell, Doc Campbell, Kara Campbell , Abby Chungath, Howler F Robinson, Jennifer Williams, Tom Lynch, Tim Ogborn, Annie Cochran, Elizabeth Wright, James L Swanson, Gwen D, Matt Hickey, Bob Bonsen, Paul Madden, Paul Madden, Billy Rossman, Todd Barton(BartmanMN), Farrin Vaishnav, Paul Madden, Dennis Solberg, Jon Blake, Little El, Little El, Molly Caragher, Aaron Chittenden, Helen Copley, Angela Mowery, Joan Davidson, Susan Erickson, Steph Haan- Amato, Shaun Connolly, Lindsay Genadek, Owen Davidson, Jen Meagher, Eric Gifford, William Morrison, Heather Field, Victoria Johnson, Michelle R Young, Chris Young, Michael Frawley, Bob Rogers, Ana Paola Perez Resendiz, Anna Bier, Jess Sanborn, Chris, David A Larson, cac, Corey Garza, John Regan, Kayleen Niyo, Carolyn Hernandez, Steve Danek, Peter Cislo, Tracy Kugler, Emi kelly, Paul Leto, Tim Hoffman, Nicholas LeTarte, Renee the Great, Mike Newell, Mrs Dank, Scott Koehler, Sabrina Bier, Dale Bonham, Owen MacDonell, Harry, Old Joe Cislo, B.J. Bardy, Anne Bahr, Ani Bullock, Austin Munroe, Anna A, Jeff Kopaska, Isaiah Ohare
+
+Memphis: Sam Rhoades
+
+Vermont: Graham Leonard
+
+UC Santa Barbara: Kevin Lafferty, Gaucho Lisa, Leo Pure
+
+Northern Kentucky: Apcvmd 
+
+Kennesaw State: Mark Jones
+
+Iowa State: DANK , Ben Kehrwald, CJ Hewitt, Mark Metz, Dan Backman, Leigh Ann Long , Kevin 'Candy' Kane
+
+Texas A&M: Joe 'mit Ohren' Grover , Hank Hubert, Cole Beatty
+
+UNC Asheville: McGlothern Fam
 </div>
+<p>So long suckers!</p>
 
-<hr class = 'section' />
-<h1>Whose champion bit it?</h1>
-<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
-
-<p>
-After a first day that wiped out so many of you, day 2 of the first round caused very little bracket damage. Nevertheless, seven of you lost your champions. Yale was going to be a longshot, and in addition to early pool leader Kenna the Chimp, Parker Iamdog (who I'm guessing Isadog) also had them going all the way.
-</p>
+			<hr class='section' />
+			<h1>Boo Rah Rah</h1>
+			<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+			</h2>
 
 <p>
-Cami "Nimm2" Niyo made an impassioned plea for dental health going with Colgate as her champ, only to be shut down by a cete (look it up) of badgers. Badgers, I understand, DO NOT FLOSS*. Also Cami, I looked up this Nimm2 candy, and it purports to be made with "real juice and VITAMINS." <em>Vitamins?</em> What're you doing to me, Cami?!? We had a <em>deal</em>! This about <b>CANDY</b>, not your Personal Crusade for Better Health.
+JQMCBP was first created on the campus of The Iowa State University of Science and Technology while I was in grad school, so it does follow that ISU's loss hits the JQMCBP community hard. 41 points! That's all they scored! Gadzooks!
 </p>
-
 <p>
-* - as a Badger alum I'll admit to having a hate-hate relationship with flossing.
+I also was briefly a Ph.D. student at UC-Santa Barbara, who did put up a bit of a fight before losing their game as well. Good to see plenty of Gauchos in the field. 
 </p>
-
-<div class = 'pre'>
-Yale: Parker Iamdog
-Virginia Tech: Chris O’Brien
-Chattanooga: Mary Lou Lombardi-Butler
-Colgate: Cami Niyo
-LSU: Heather Stratton Williams
-Alabama: Dave Giugni, Espen Williams
-</div>
-
 <p>
-So long suckers!
+Since Wisconsin (The Meister's undergrad institution) didn't even make the field, the lone school I have left where I hold college credit is...checks notes...Missouri? I have ONE credit from the University of Missouri, from the summer of 1992 when I was mist netting songbirds in the Ozarks. True story. I'll get you a transcript. I passed.
 </p>
+			<div class='pre'>
+Purdue: Kim Fredrrick, Dave Aucott, Sarah Ogborn, Todd Mullanix, Tim Ogborn, Dan Ridgeway, Mark Richards
 
-<hr class = 'section' />
-<h1>Boo Rah Rah</h1>
-<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+Montana State: Gina Rumore, Sue Robinson, Michelle Housenga, Derek Roesti , Erin Austin, Jeff Shipley
 
-<p>
-Fifteen alums of fine institutions (though I'm doubting Cynthia C, CAC, and CC are three <em>separate</em> alums of Delaware) lost their team Friday.
-</p>
+Southern California: Andy Ducey, Connor Byers
 
-<p>
-Joshua Littrell, you currently have a son attending Montana State. Montana State losing alerted me to the fact I don't see his name in the JQMCBP list. Q: What does Charlie have against <b>FUN</b>, anyway? I need an answer.
-</p>
+Vermont: Sara Mitchell
 
-<div class = 'pre'>
-Virginia Tech: Anna Bier, Zack Cekala
-UAB: Chad J Pechumer, Fran Fabrizio
-Delaware: Cynthia C, CAC , CC
-LSU: Daniel William
-Southern California: Andy Ducey, Larry Marx
-Montana State: Sue 'Hoops' Robinson, Jeff Shipley, Derek Roesti
-Davidson: Ken Howard
-Cal State Fullerton: Rashaan Clark
-</div>
+UC Santa Barbara: Geoff Willard, Frank Spada, Jeff Kinne, Ron Gin, Kevin Lafferty, Don Heiduk, Carol Reed, Jesse Alexander Goldstein, Lisa Blake, Gaucho Lisa, Dan Reed, Lisa Reed, Andy Calvert, Eva Witt, UCSB Tim Ferrero, Clark Beech, Joe Bro, Daniel Gonzalez
 
-<hr class = 'section' />
-<h1>Candy Bar of the Day</h1>
-<h2>Where I give out fake awards for my favorite candy selections</h2>
+Kent State: Bridget Conkling, David Ullman, Mommy Shanahan
 
-<p>
-The <b>Kenny Rogers Gambler Award</b> goes to John "D5 from the nearest vending machine" Varesi. John, can't wait to send you this Keebler Cheese &amp; Crackers Snack Pack!
-</p>
+Drake: TYLER RYAN, Michael Cline, Scott Mortimer, Molly Mortimer, Michael Ferreter, Sam Housker
 
-<hr class = 'section' />
-<h1>Bugging you for charity</h1>
-<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas2022">you may donate buckets of cash to my ride here</a>. This is my 10th MS-150, and my goal remains much the same: raise &gt;$1500 so I can access the VIP toilets, and BEAT LARRY.
+Iowa State: Ben Klaas, Patrick Connolly, Serine Isenhart, Chris 'charby' Charbonneaux, Chris Hewitt, Clare Isenhart, Zachary Klaas, Angie DeWaard, Matt Smalling (from Ben's Ms. Judy's Preschool class), DANK , ROBERT T SMALLING, Shaun Connolly, Ben Kehrwald, Holm Plates, Mark Metz, Mike Horton, Brenda VB, Eustace Haney, Brent Dakin, Dan Backman, Susan Erickson, Shaun Connolly, Gary Bahr, Rob Bellin, michael mowery, Kelly Wolfe-Bellin, Sandlots , Sonya Connolly, Luke Roling, Leigh Ann Long , Kayleen Niyo, Brett Callison, Karlene Noel Jennings, Pondscum, Doug Busta, Dawn Smith, Joanne Isenhart, Brent Swanson, Michael Folkerts, Andy Hefte, David Smalling, Pat Dillon, Kevin 'Candy' Kane, Jeff Kopaska
 
-<hr class = 'section' />
+VCU: Doc Campbell
 
-<h1>Enough with the crap, who's ahead?</h1>
+Arizona State: Santiago
 
-<h2>Top 10 Humans</h2>
+Boise State: Andrew Anderson, Darrin Hendricks
+			</div>
 
-<p>
-</p>
+			<hr class='section' />
+<!--
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
 
-<table class = 'scores'>
-	<thead>
-		<tr>
-			<th>Rank</th>
-			<th>Name</th>
-			<th>Location</th>
-			<th>Candy</th>
-			<th>Champion</th>
-			<th>Score</th>
-		</tr>
-	</thead>
-	<tbody>
-<tr><td>1</td><td>Gwen D</td><td>New York</td><td>Trader Joe's Pound Plus Dark Chocolate</td><td>Michigan State</td><td>29</td></tr>
-<tr><td>2</td><td>Christopher Zurowski</td><td>Illinois</td><td>Snickers</td><td>Arizona</td><td>28</td></tr>
-<tr><td>3</td><td>Andrew T. Bryan</td><td>Florida</td><td>King Size Baby Ruth</td><td>Duke</td><td>27</td></tr>
-<tr><td>3</td><td>Andy Reynolds</td><td>Michigan</td><td>goo goo cluster</td><td>Arizona</td><td>27</td></tr>
-<tr><td>3</td><td>Birdie</td><td>Florida</td><td>Butterfinger</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Brian Olson</td><td>Kansas</td><td>Zero Bar</td><td>Kansas</td><td>27</td></tr>
-<tr><td>3</td><td>Drew Bryan</td><td>Florida</td><td>Milk Duds</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Eric Naiburg</td><td>Pennsylvania</td><td>Giant Reeces Peanut Butter Cup</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Faith Anders</td><td>Michigan</td><td>Almond Joy</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Helen Copley</td><td>Iowa</td><td>Peanut butter m&ms </td><td>Iowa</td><td>27</td></tr>
-<tr><td>3</td><td>James Dillon</td><td>Washington</td><td>Reese's</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Josh H </td><td>New Mexico</td><td>Snickers!</td><td>Arizona</td><td>27</td></tr>
-<tr><td>3</td><td>Kara Fisher</td><td>Minnesota</td><td>Charleston Chew</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Matthew Hickey</td><td>Michigan</td><td>Kit Kat</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Mike vs. Beer</td><td>Michigan</td><td>Scrumdiddlyumptious Bar</td><td>Wisconsin</td><td>27</td></tr>
-<tr><td>3</td><td>Paul Leto</td><td>Michigan</td><td>whatchamacallit</td><td>Michigan</td><td>27</td></tr>
-<tr><td>3</td><td>Ronald Gin</td><td>California</td><td>Snickers</td><td>Gonzaga</td><td>27</td></tr>
-<tr><td>3</td><td>Steve Carlson</td><td>California</td><td>meister's choice &#129310;</td><td>Kentucky</td><td>27</td></tr>
-	</tbody>
-</table>
+			<p>
+            </p>
+-->
 
-<h2>Top 10 Chimps</h2>
-<p>
-</p>
-<table class = 'scores'>
-	<thead>
-		<tr>
-			<th>Rank</th>
-			<th>Name</th>
-			<th>Location</th>
-			<th>Candy</th>
-			<th>Champion</th>
-			<th>Score</th>
-		</tr>
-	</thead>
-	<tbody>
-<tr><td>1</td><td>Brian</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Murray State</td><td>24</td></tr>
-<tr><td>1</td><td>Lucia</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Texas Tech</td><td>24</td></tr>
-<tr><td>3</td><td>Andrea</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Murray State</td><td>23</td></tr>
-<tr><td>3</td><td>Angelo</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Murray State</td><td>23</td></tr>
-<tr><td>3</td><td>Baylee</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Akron</td><td>23</td></tr>
-<tr><td>3</td><td>Dion</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>North Carolina</td><td>23</td></tr>
-<tr><td>3</td><td>Frances</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Arizona</td><td>23</td></tr>
-<tr><td>3</td><td>Jarrod</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UCLA</td><td>23</td></tr>
-<tr><td>3</td><td>Joel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Villanova</td><td>23</td></tr>
-<tr><td>3</td><td>Zachary</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Alabama</td><td>23</td></tr>
-	</tbody>
-</table>
-<p>
-cheers,<br />
-the Meister
-</p>
+			<h1>Enough with the crap, who's ahead?</h1>
 
-<hr class = 'section' />
-<h1>Linky links:</h1>
-	<ul>
-	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
-	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
-	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
-	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
-	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
-	</ul>
+			<h2>Top 10 Humans</h2>
 
-<hr class = 'section' />
-<div id="footer">
+			<p>
+We have 5-way tie at the top with 27 points. That's right, even the best of the best still missed 5 of the first 32 picks. Greg "Kinder Bueno" Miller and Owen "take 5" MacDonell share the lead with the Triple-K threat of Katie, Katy, and Kerie, all of Michigan. Interestingly, these five all have different champs (including Owen's pick of Purdue, so don't get used to the air up here Owen). It's a wide open race for The Candy.
+			</p>
 
-	<ul class="image">
-	<li>
-		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
-	</li>
-	<li class="last"> 2022 Ben Klaas Productions </li>
-	</ul>
-</div>
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Greg Miller</td><td>Florida</td><td>Kinder Bueno</td><td>Kansas</td><td>27</td></tr>
+<tr><td>1</td><td>Katie Letarte</td><td>Michigan</td><td>1000 Grand</td><td>Marquette</td><td>27</td></tr>
+<tr><td>1</td><td>Katy Klimczuk</td><td>Michigan</td><td>Mounds</td><td>Gonzaga</td><td>27</td></tr>
+<tr><td>1</td><td>Kerie Whelan</td><td>Michigan</td><td>Toblerone</td><td>Alabama</td><td>27</td></tr>
+<tr><td>1</td><td>Owen MacDonell</td><td>Michigan</td><td>take 5</td><td>Purdue</td><td>27</td></tr>
+<tr><td>6</td><td>Andy Ducey</td><td>Colorado</td><td>Milkshake Candy Bar</td><td>Texas</td><td>26</td></tr>
+<tr><td>6</td><td>Baba D</td><td>New York</td><td>Hershey's kisses</td><td>Texas</td><td>26</td></tr>
+<tr><td>6</td><td>Brian Hellberg</td><td>Minnesota</td><td>Cotton candy</td><td>Alabama</td><td>26</td></tr>
+<tr><td>6</td><td>Caleb</td><td>California</td><td>Snickers </td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>chad david</td><td>Illinois</td><td>Snickers </td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Cindy Arvant</td><td>Michigan</td><td>Twix</td><td>Michigan State</td><td>26</td></tr>
+<tr><td>6</td><td>Crissy Fanganello</td><td>Colorado</td><td>Compartes California Berries Dark Chocolate</td><td>UCLA</td><td>26</td></tr>
+<tr><td>6</td><td>Elizabeth Wright</td><td>Pennsylvania</td><td>Heath Bar</td><td>Purdue</td><td>26</td></tr>
+<tr><td>6</td><td>Eric Naiburg</td><td>Pennsylvania</td><td>Reese's Peanut Butter Cup </td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Erin Austin</td><td>Colorado</td><td>Salted Nut Roll</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Grace Boyd</td><td>Washington</td><td>Kinder Joy</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>gregory white</td><td>Michigan</td><td>Wow-Wee Maui Kava Chocolate Bar</td><td>Indiana</td><td>26</td></tr>
+<tr><td>6</td><td>James L Swanson</td><td>Ohio</td><td>Hershey bar</td><td>Purdue</td><td>26</td></tr>
+<tr><td>6</td><td>James Olson</td><td>Minnesota</td><td>Take 5</td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Kirin Danek</td><td>Minnesota</td><td>twix</td><td>Princeton</td><td>26</td></tr>
+<tr><td>6</td><td>Mary Smith</td><td>Michigan</td><td>Twix!</td><td>Alabama</td><td>26</td></tr>
+<tr><td>6</td><td>Michael Cline</td><td>Washington</td><td>Cherry Ripe</td><td>Arizona</td><td>26</td></tr>
+<tr><td>6</td><td>Mike Shanahan</td><td>Ohio</td><td>Jeremy's Chocolate (with nuts)</td><td>Alabama</td><td>26</td></tr>
+<tr><td>6</td><td>Milin Danek</td><td>Minnesota</td><td>Twix</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Mitch Runge</td><td>Washington</td><td>Snickers</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Mooseman Bruce</td><td>Michigan</td><td>Million Dollar Bar</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Paul Allar</td><td>Michigan</td><td>Butterfinger</td><td>Alabama</td><td>26</td></tr>
+<tr><td>6</td><td>Rob “Tarpo” Tilley</td><td>Canada</td><td>Big Turk</td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Sam Hoag</td><td>Ohio</td><td>peanut m&ms</td><td>Virginia</td><td>26</td></tr>
+<tr><td>6</td><td>Steve (Dad of Jamie and Nick)</td><td>Michigan</td><td>Giant Kit-Kat</td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Will Scott</td><td>Michigan</td><td>Mounds</td><td>Houston</td><td>26</td></tr>
+				</tbody>
+			</table>
 
-</div>
+			<h2>Top 10 Chimps</h2>
+			<p>
+Logan leads the Chimp Army field with 25 points, tying or bettering all but 31 of you humans. SHAME.
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Logan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Houston</td><td>25</td></tr>
+<tr><td>2</td><td>Christian</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Penn State</td><td>24</td></tr>
+<tr><td>2</td><td>Cornelius</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Farleigh Dickinson</td><td>24</td></tr>
+<tr><td>2</td><td>Itzel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>24</td></tr>
+<tr><td>2</td><td>John</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Pitt</td><td>24</td></tr>
+<tr><td>2</td><td>Karina</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>San Diego State</td><td>24</td></tr>
+<tr><td>2</td><td>Lexie</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Arkansas</td><td>24</td></tr>
+<tr><td>2</td><td>Renee</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Missouri</td><td>24</td></tr>
+<tr><td>9</td><td>Angelina</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Xavier</td><td>23</td></tr>
+<tr><td>9</td><td>Chelsey</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UCLA</td><td>23</td></tr>
+<tr><td>9</td><td>Deanna</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Princeton</td><td>23</td></tr>
+<tr><td>9</td><td>Kinsey</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Farleigh Dickinson</td><td>23</td></tr>
+<tr><td>9</td><td>Marlen</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Vermont</td><td>23</td></tr>
+<tr><td>9</td><td>Shaun</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>San Diego State</td><td>23</td></tr>
+<tr><td>9</td><td>Uriel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Furman</td><td>23</td></tr>
+				</tbody>
+			</table>
+			<p>
+				cheers,<br />
+				the Meister
+			</p>
+
+			<hr class='section' />
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section' />
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister"
+							src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+					</li>
+					<li class="last"> 2023 Ben Klaas Productions </li>
+				</ul>
+			</div>
+
+		</div>
 
 </body>
+
 </html>

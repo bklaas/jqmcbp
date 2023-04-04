@@ -1,4 +1,4 @@
-var winOptsPieGraph = 'resizeable=no,scrollbars=no,width=625,height=425';
+var winOptsPieGraph = 'resizeable=no,scrollbars=no,width=625,height=470';
 var winOptsBig = 'resizeable=yes,scrollbars=yes,width=800,height=650';
 var winOpts = 'resizeable=yes,scrollbars=yes,width=160,height=160';
 var winOptsChew = 'resizeable=yes,scrollbars=yes,width=190,height=50';

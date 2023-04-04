@@ -8,7 +8,7 @@ use Data::Dump qw/dump/;
 use vars qw/ $dbh /;
 do "/data/cgi-bin/jq_globals.pl";
 
-my $years = [qw/ 2004 2005 2006 2007 2008 2009 2012 2013 2014 2015 2016 2017 2018 2019 2020 johnnyquest/];
+my $years = [qw/ 2004 2005 2006 2007 2008 2009 2012 2013 2014 2015 2016 2017 2018 2019 2021 2022 johnnyquest/];
 
 print "year\tperfect_j\n";
 for my $year (@$years) {
