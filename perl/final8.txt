@@ -1,0 +1,29 @@
+===== WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Omar the Chimp	19	14.844
+Anthony the Chimp	14	10.938
+Peter Hentges	14	10.938
+Michelle Morrisey	14	10.938
+Zander the Chimp	12	9.375
+Thomas J Leeper	10	7.812
+Max teer	9	7.031
+Korbin the Chimp	8	6.250
+Andrew Mortimer	7	5.469
+Lucy Rhoades	6	4.688
+Andy Ducey	6	4.688
+Clare Abram	5	3.906
+Caitlyn the Chimp	2	1.562
+Magdalena the Chimp	2	1.562
+Daryl Morrison	2	1.562
+Xander the Chimp	2	1.562
+Shaun the Chimp	2	1.562
+Sophie the Chimp	1	0.781
+Matt Dudus	1	0.781
+Molly Mortimer	1	0.781
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 69
+Chimp Wins: 61
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	121
+2	5
+3	2

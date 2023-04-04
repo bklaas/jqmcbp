@@ -1,0 +1,24 @@
+Miami FL	0
+UConn	1
+San Diego State	2
+Florida Atlantic	3
+Omar the Chimp	020
+Shaun the Chimp	022
+Omar the Chimp	030
+Zander the Chimp	033
+Thomas J Leeper	121
+Michelle Morrisey	122
+Thomas J Leeper	131
+Zander the Chimp	133
+===== WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Omar the Chimp	2	25.000
+Thomas J Leeper	2	25.000
+Zander the Chimp	2	25.000
+Michelle Morrisey	1	12.500
+Shaun the Chimp	1	12.500
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 3
+Chimp Wins: 5
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	8
