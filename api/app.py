@@ -8,7 +8,11 @@ appService = AppService();
 
 @app.route('/')
 def home():
-    return "App Works!!!"
+    return """
+*********************
+JQ-API UP!!! 
+*********************
+"""
 
 
 @app.route('/api/tasks')

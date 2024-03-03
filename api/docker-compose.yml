@@ -5,6 +5,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/app
+      - .:/opt/app
     environment:
       - NAME=World
+    network_mode: host
