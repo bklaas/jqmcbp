@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("https://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="https://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://alwaysjudgeabookbyitscover.com">alwaysjudgeabookbyitscover.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at 15)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/375ish</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+<b>FINALLY</b>, JQMCBP XXIII is off and rolling! Half of the first round "games" have been played. Stay tuned for miscellaneous pointless commentary on those below. But first, some administrivia (IT Boss Fran says this is a word, and I never cross IT Boss Fran*).
+</p>
+<p>
+* mostly
+</p>
+
+<p>
+I've been using The Twitter to post updates and "game" "winners" via the twitter handle <a href = "https://twitter.com/candymeister">@candymeister</a>(&lt;-- that link works in a web browser, non-Twitter people). Also, if something on the website is "broken", by which I mean broken, I'll "tweet", by which I mean tweet, when I have the broken thing "fixed", by which I mean okay you know what I mean. Since starting this tweetstorm, literally "dozen" of people have followed my tweets, by which I mean twelve.
+</p>
+
+<div class = "quote">
+Hey Candymeister, when can I expect the next "games" to be played?
+</div>
+
+<p>
+Good question, fictional person! The rest of the first round "games" will happen in the next 48 hours or so, and I'll get another email update out maybe midweek. After that, no idea. I know this isn't nearly the rapid return on absurdity investment you've come to expect from past years, the ones with actual basketball (which is to say, every single other year), but a) if you haven't heard me whining about my shoulder injury you've been living in a cave*, and b) We've Got Nothing But Time (hereafter and forever WGNBT).
+</p>
+<p>
+* Okay, bad metaphor. we're all kind of doing that right now.
+</p>
+
+<p>Remember, anything underlined in this email is a link! The screenshots of youtube videos are links! You can follow them! WGNBT!</p>
+
+<p>
+But enough of my yakkin'. Let's boogie!
+</p>
+
+<hr class = 'section' />
+<h1><a href = "https://youtu.be/Of8JOVXYU0Q">Wha' Happened?</a></h1>
+<h2>Going in deep on some of the "games"</h2>
+
+<p>
+Lots of ridiculous action to cover. Some highlights:
+</p>
+
+<h3>Viral Region</h3>
+<p>I am happy to report that Covid-19 was immediately sent home by the Unstoppable Force of BBC Kid. I know many of you watched all the provided links in the bracket (and if you haven't, get on it. WGNBT), but <a href = "https://youtu.be/Mh4f9AYRCZY">have another look</a>. She's the best.
+</p>
+
+<p>The Shark Battle was a tough one. <a href = "https://youtu.be/ZcuYjDR2tSg?t=32">IT'S A SHAAAARK</a> and <a href = "https://youtu.be/WZwylQwjFhE">Stuff Summer</a> are both absolute classics in my book, but in the end I'm giving the nod to the priceless facial expressions of the Australian Today show hosts in Stuff Summer. I think if this show was just dropped in as a replacement to the American Today Show the ratings double overnight. Here's another Today Show classic:
+
+<a href="https://youtu.be/KavEoHGiU5I"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/KavEoHGiU5I/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+<div class = "quote">"Well um, we'd been down at Options Tavern at a Stubbies n Singlets Party and ah got dropped off by a mate up the road and wanted to walk down the servo n get some noodles and ah, went to jump over a sign on the way and yeh slipped over and busted mah plugga."
+</div>
+
+<p>The remaining matches had <a href = "https://youtu.be/nHc288IPFzk">Duck Army</a> beating <a href = "https://youtu.be/Z-kX46euI88">FR E SH A VOCA DO</a> and <a href = "https://youtu.be/9bZkp7q19f0">Gangnam Style</a> over <a href = "https://youtu.be/XqZsoesa55w">Baby Shark</a>. Apologies to the Baby Shark faithful (171 picked it! WAT??), but Gangnam Style still, as the kids say, "slaps."</p>
+
+<h3>Food Region</h3>
+<p>Chocolate lost to Peanut Butter. It was tied 286-286 after 26 overtimes (!), setting a record...well, every record. It ended up being decided by an accidentally painful <a href = "https://t.co/XfBorW2yoG?amp=1">1926 Libery Dollar coin flip</a>. With Chocolate's run sadly cut short, I want to make sure everyone sees at least the opening minute of Episode 68 of Tamil-language soap opera "Chocolate". It's amazing. So many expressions! It's tense! Now it's funny! I don't know what to think! Nobody does telenovellas like...Sri Lanka? (&macr;\_(&#12484;)_/&macr;)</p>
+
+<a href="https://youtu.be/Vt08C_snELY"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/Vt08C_snELY/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+<p>I think every episode includes 30-60 seconds of quick edit facial expressions with Dramatic Music and No Talking. Honestly, if someone put together a supercut of just these from each episode (and we know there are at least 68 episodes!), I'd totally watch that. WGNBT.
+</p>
+
+<p>Bacon beat a plate of peas. Does this surprise you? For those that picked A Plate of Peas (47! FORTY. SEVEN.), here's a link to one of my favorite recipes, <a href = "https://smittenkitchen.com/2016/05/crispy-tortellini-with-peas-and-prosciutto/">Crispy Tortellini with Peas and Prosciutto</a>. It's superduper delicious: mint and peas and lemon compliment so nicely together, cr&egrave;me fra&icirc;che makes it lucious with its creamy diacritics. Really, I hated peas as a kid, but I'm now decidedly Pro Pea (and I vote). But. Sorry peas, you just aren't going to beat bacon. They have festivals for bacon. Call me when Pea-a-palooza happens, and I might re-think.</p>
+
+<p>Cheese Curds earn a strong victory over Cheesecake in round 1. The bracket pundits were amazed at Cheese Curds low #11 seeding, so this was an Upset Special in the making. For those not from the Midwest and somehow not aware of these delicious cheese nuggets, they are really Quite a Thing. When fresh, they squeak when you eat them. When fried, they are a magic packet of sinful, mouth-burning delight. <a href = "https://youtu.be/ZtrzkQ5r6TQ">There's a whole Buzzfeed video of tourists in Hollywood trying them</a>, and some of them really were disgusted. These people are not to be trusted.</p>
+
+<p>Tacos v Nachos was a tough one. On the one hand, Nachos are really something. The cheese is <i>required</i> to be melted. That's a real point in the Nachos column alone. They involve chips. Who doesn't love chips? But, as Joe Grover eloquently put it:
+</p>
+<div class = "quote">
+Tacos come in their own packaging. You can't really beat that.
+</div>
+<p>Tacos win in a nailbiter*.</p>
+
+<!--
+<p>
+Co-worker and Sheltering-in-Bemidji Kari Williams was decidedly <i>not</i> pleased with Nachos' early exit, so I made sure to troll her with this pic of my dinner or, let me rephrase, my "dinner" the night of the Tacos victory:
+</p>
+
+<img src = 
+-->
+
+<p>
+* Don't bite your nails! Don't touch your face!
+</p>
+
+<h3>Piper's Picks Region</h3>
+
+<p>
+<a href = "https://twitter.com/candymeister/status/1243984431871713280">Why not interview Piper herself</a> on her region's first round "games". To summarize in case you don't want to listen (but srsly, WGNBT): Harry Styles over Iced Mocha (Harry just don't run out), Sushi over Noodles and Company (love Noodles and Co, but sushi is "just better") Volleyball over Hawaii (but Volleyball IN Hawaii ideal), The Office over Cats (tough, but funny over furry).
+</p>
+<p>
+Second round matchup of Harry Styles v The Office promises to be a competitive one. Here's some Creed Thoughts to keep you entertained until then, courtesy of www.creedthoughts.gov.www.\creedthoughts:
+</p>
+<a href="https://youtu.be/1e5td7-Bpvc"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/1e5td7-Bpvc/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+
+<h3>Candy Region</h3>
+
+<p>A real conversation that happened this week in our house:</p>
+
+<p>Candymeister, emerging from his basement injury recovery lair:</p>
+<div class = "quote">
+Hey, big upset in the candy region! $100 Grand over Twix!
+</div>
+
+<p>Wendy:</p>
+<div class = "quote">
+But I <b>LOVE</b> Twix! You know this, Ben. You know this.
+</div>
+
+<p>Candymeister:</p>
+<div class = "quote">
+Yeah, but...I mean, $100 Grand. There's crisped rice.
+</div>
+
+Wendy:
+<div class = "quote">
+...
+</div>
+
+<p>Candymeister:</p>
+<div class = "quote">
+Oh, also Butterfinger beat Reese's Peanut Butter Cups.
+</div>
+
+<p>Wendy, eyes narrowed, invisible daggers shooting:</p>
+<div class = "quote">
+...
+</div>
+
+<p>Candymeister:</p>
+<div class = "quote">
+Welp, I'm going to head back downstairs and rest.
+</div>
+
+<p>
+In other hopefully less rage-inducing action, Take 5 beats Milky Way and perennial juggernaut Snickers beat tasty underdog Caramello.
+</p>
+
+<hr class = 'section' />
+<h1>How Them Humans Doing?</h1>
+<h2>Checking in on the 375ish Human(ish) Entries</h2>
+
+<p>I say 375ish because sometimes people accidentally enter the same bracket twice. I say Human(ish) because people sometimes enter their dogs and/or cats. You know those "I am not a robot" checkboxes? I think I need one for "I am not a pet". Gonna start working on that.
+</p>
+
+<p>So anyway, our first round leader is Mark "Take 5" Richards of Colorado. Mark had 15 out of 16 picks correct, a tremendous feat when you consider his only miss was not figuring out that there's no way I was eliminating Cheese Curds in round 1. Cheesecake is lovely, but c'mon: Cheese Curds!</p>
+
+<p>
+Shouts out to my eldest daughter Carson "Reese's Peanut Butter Egg" Klaas and rockstar and multi-instrumentalist Cormac "Big Box of Nerds" O'Boyle. Both are looming in a tie for second place right behind Mark Richards. "Carson's Picks" region has yet to play any games, so I like here chances*.
+</p>
+
+<p>
+* Yes, that's not fair. No, I haven't thought this through. **
+</p>
+
+<p>
+** Yes, I'll figure something out.***
+</p>
+<p>
+*** Consider that I have to buy their candybars whether they win or not. It's a tradition.****
+</p>
+<p>
+**** Welcome to the fourth footnote, where I make Official Decisions of Great Weight and Importance: if either Piper or Carson wins, I will send a candybar to the top finisher not named Piper or Carson. We good now?
+</p>
+
+<hr class = 'section' />
+<h1>How Them Chimps Doing?</h1>
+<h2>Checking in on the 1,000 Chimp Army</h2>
+
+<p>
+The chimp brackets are all coin flips. If there's going to be a year for a coin flip bracket to emerge victorious, figure this has got to be it, right? After the first half of the first round, the chimps are very competitive. Trevor the Chimp is leading the way, just one point back of the overall lead at 14. Trevor has Tacos as his eventual champion. That is SO Trevor.
+</p>
+
+<hr class = 'section' />
+<h1>How's That Shoulder Doing?</h1>
+
+<p>Hey, thanks for asking! Still can't really move it, but it's not gut-wrenchingly painful any more, and I'm mostly out of the sling. So I've got that going for me. Which is nice.</p>
+
+<p>
+In all seriousness, this shoulder injury has sucked and been no fun for me. Mad props to Wendy who's helped me, you know, help me put my socks on and stuff. She's shouldered the load* on most stuff this week. I also enjoyed how Piper described me during my convalescence as "the zoo animal in the basement." Well said, Piper. Well said.
+</p>
+
+<p>
+* Hah! Shouldered the load! Me so funny!
+</p>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Wow, <b>94</b> of you have already lost your pick for champion after just half of the first round. That has to sting! 4 of you had Covid-19: SHAME. Special shouts out to the Singletons, those who alone selected 4 of the losers: Katie Dillon (Milky Way), Finn O'Boyle (Noodles and Company) (get healthy soon, Finn), Josh Mello (Cheesecake), and Eamon Bridges (A Plate of Peas) (!!). 
+</p>
+<p>Here's the whole list in all its glory</p>
+
+<div class = 'pre'>
+Twix: ScrappyCheese, David Eng, Mattozan, Owen MacDonell, Milo Kai Anderson, Michelle R Young, Sam Housker, Karen McCartney
+
+Reeses PB Cup: Eddie Sander, Sheryl Hatcher, Glen LaGrou, Dawn Smith, Mark Largent, Anna Bier, Nathan, Steve Fink, Gym Nasium, Jack Fink, Scott Larabee, Keith Brown, Sue Ray, Ella Francis, Usha Dheenan, Allen witt, Ben Specious, Joe Cislo, Andrea Auchter, John Housenga
+
+Milky Way: Katie Dillon
+
+Caramello: Joe Hebda, Shawna Renando
+
+Cats: Rachelle Owen, Ben Auchentoshan, Paul Smith, Carolynne Burkholder-James, Serine Isenhart, Joanne Isenhart, Tina Ferreter, Elizabeth Ferreter, Sophia Soriano, Mike Shanahan, Jeff Shipley, Misty&amp;Sunny
+
+Hawaii: Jason Kerwin, Jane Kehrwald, Chuck D, Lisa Giovannini, Shae Lorenc, Mike Ford, Annelise Ross, Frank Spada, Steve Fidh, Benjamin Francis, Jennifer Topel, Jon Mormino, Amy McLanahan, Todd Beranak, Gregory White, Theresa White, Micki Grover, Patricia Lee
+
+Noodles and Company: Finn O'Boyle
+
+Covid-19: Mimi Czarnik, Mimi Czarnik, Aaron Last-Name-Redacted, Jacob Shanahan
+
+A SHAAAARK: Alicia Strnad Hoalcraft, Joe Bowers, Michael Hartmann, Stella Van Houten, Haley Pesik, Gabe Smith, Fran Fabrizio
+
+FR E SH A VOCA DO: Barbie, Andy Reynolds, Andrew Mortimer, Ian Bloom, Jacob W
+
+Baby Shark: Taylor DiGirolomo, DANK, Erin Keiffer, Mary James, Laurie Anderson, Vernon 'Goose' Grover
+
+Nachos: Josh Nisenson, Megan Poetzel, Angie Mowery
+
+Cheesecake: Josh Mello
+
+Chocolate: Justin Grenier, Rennie Anderson, Tamara Fink, Maria Blake, Michael Mowery
+
+A Plate of Peas: Eamon Bridges
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<!--
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you what your favorite thing was in the bracket. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+
+</p>
+
+<div class = 'pre'>
+</div>
+
+-->
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+Wendy a couple days ago:
+</p>
+<div class = "quote">
+Whoa. Have you seen this year's candybar selections? It's...really next level this year.
+</div>
+
+<p>
+<i>*candymeister looks at list*</i>
+</p><p>
+She's right.
+</p>
+<p>
+We're going to start with the aforementioned Joe Grover, because his pick is indeed truly Next Level. Joe's selection of Gummi Bear maker Haribo's <a href = "https://sarahstaebler.wordpress.com/2013/02/12/butt-with-ears/">Arche mit Ohren</a>, which translates cleanly to "Butts with Ears". And you thought eating squishy teddy bears was weird. Also, shouts out to the whole Grover family who are welcoming a new Grover into the family later this week. We're all excited to meet her! In solidarity, I too will stay home with my children for many weeks. 
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society in (hopefully post-quarantine) June. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://main.nationalmssociety.org/goto/beat_larry_2020">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goals remain the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Mark Richards</td><td>Colorado</td><td>Take 5</td><td>Sushi</td><td>15</td></tr>
+<tr><td>2</td><td>Carson Klaas</td><td>Minnesota</td><td>Reeses Peanut Butter Egg</td><td>Stuff Summer</td><td>14</td></tr>
+<tr><td>2</td><td>Cormac O'Boyle</td><td>Colorado</td><td>Big Box of Nerds </td><td>Shrike</td><td>14</td></tr>
+<tr><td>4</td><td>Matthew Smalling</td><td>California</td><td>Come Ready Caramel Pretzel Crunch Performance Protein Bar</td><td>Bacon</td><td>13</td></tr>
+<tr><td>4</td><td>Mattozan</td><td>International</td><td>Um, Twix?</td><td>Twix</td><td>13</td></tr>
+<tr><td>4</td><td>Milt Bellin</td><td>Minnesota</td><td>Snickers!</td><td>Snickers</td><td>13</td></tr>
+<tr><td>4</td><td>Paul Smith</td><td>Wisconsin</td><td>Clark Bar</td><td>Cats</td><td>13</td></tr>
+<tr><td>8</td><td>Abby Chungath</td><td>Iowa</td><td>Endangered Species chocolate infused with Covid-19 vaccine</td><td>Pangolin</td><td>12</td></tr>
+<tr><td>8</td><td>Alan Perelli</td><td>Michigan</td><td>100 Grand</td><td>Carli Lloyd</td><td>12</td></tr>
+<tr><td>8</td><td>Dennis Sabo</td><td>Ohio</td><td>$100 Thousand Dollar Bar</td><td>$100 Grand</td><td>12</td></tr>
+<tr><td>8</td><td>Greg Ross</td><td>Michigan</td><td>Zotz!</td><td>Roger Federer</td><td>12</td></tr>
+<tr><td>8</td><td>Jake Cohen</td><td>California</td><td>Snickers</td><td>Peanut Butter</td><td>12</td></tr>
+<tr><td>8</td><td>Jeral 'You had me at Corona' Poskey</td><td>California</td><td>Marathon</td><td>Bacon</td><td>12</td></tr>
+<tr><td>8</td><td>Joe ' mit ohren' Grover</td><td>Minnesota</td><td>Haribo Arsch Mit Ohren</td><td>Tacos</td><td>12</td></tr>
+<tr><td>8</td><td>Jokey Shanahan</td><td>Ohio</td><td>King Size Heath Bar</td><td>Duck Army</td><td>12</td></tr>
+<tr><td>8</td><td>Lance Van Houten</td><td>Arizona</td><td>Butterfinger</td><td>Tarsier</td><td>12</td></tr>
+<tr><td>8</td><td>Nate Blake</td><td>California</td><td>Butterfinger </td><td>BBC News Kid</td><td>12</td></tr>
+<tr><td>8</td><td>Nick Orum</td><td>Minnesota</td><td>Take 5</td><td>Tacos</td><td>12</td></tr>
+<tr><td>8</td><td>piper</td><td>Minnesota</td><td>sour skittles</td><td>Harry Styles</td><td>12</td></tr>
+<tr><td>8</td><td>Sam niyo</td><td>Michigan</td><td>100 dum dums </td><td>Africa Heavy Metal</td><td>12</td></tr>
+<tr><td>8</td><td>Tom 'T3' Wadzinski</td><td>Minnesota</td><td>Anything with Erythritol</td><td>Duck Army</td><td>12</td></tr>
+<tr><td>8</td><td>Trey White </td><td>Michigan</td><td>Wow wee Maui kitch'n cook'd potato chip and chocolate bar</td><td>Duck Army</td><td>12</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Trevor</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>14</td></tr>
+<tr><td>2</td><td>Allie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Australian Magpie</td><td>13</td></tr>
+<tr><td>2</td><td>Amy</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Peanut Butter</td><td>13</td></tr>
+<tr><td>2</td><td>Belen</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Stuff Summer</td><td>13</td></tr>
+<tr><td>2</td><td>Daphne</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Butterfinger</td><td>13</td></tr>
+<tr><td>2</td><td>Darius</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Pangolin</td><td>13</td></tr>
+<tr><td>2</td><td>Devon</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Flying Fox</td><td>13</td></tr>
+<tr><td>2</td><td>Emmanuel</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Grasshopper Mouse</td><td>13</td></tr>
+<tr><td>2</td><td>Stacey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tarsier</td><td>13</td></tr>
+<tr><td>2</td><td>Whitney</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Weezer</td><td>13</td></tr>
+<tr><td>2</td><td>Zain</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Harry Styles</td><td>13</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e802308a-0c40-490a-882d-921efe941506.jpg" />
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2020 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXV</a></h1>
+		<h2 class='slogan'>
+			<a href="https://youtu.be/mDp-ABzpRX8">Myriad Profiteroles</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<p>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click
+						here</a></li>
+			</ul>
+			</p>
+
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e76876fe-a0ed-b643-a2d2-57a1d2bee60e.png"
+					class="float-right" />
+				Welcome welcome welcome to the <b>TWENTY SIXTH</b> Johnny Quest Memorial Candy Bar Pool, confectionally known as JQMCBP!  809 humans* are entered in this year's Quest for Candy. 808 will fail, one will remain. Will you be The One? I am 99.8763906% sure you are not.
+			</p>
+
+			<p>
+				<b>For the rookies, and those that don't remember what I told you last year:</b><br /> What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.**
+			</p>
+
+			<p>
+				In addition to the emails, there's lots of important, vital resources available with your web browser.  Evaluate how risky your picks are with the <a href="https://benklaas.com/jqmcbp/whatsyourj.cgi">J Factor</a>, see who picked brackets like yours with the <a href="https://benklaas.com/jqmcbp/sss.cgi">Scientific Similarity Index</a>. As the tournament progresses, figure out who has no chance of winning at the <a href="https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame!</a> Generate pointless <a href="https://benklaas.com/jqmcbp/hallofshame.cgi">head-to-head graphs</a>! Every one of my emails will contain these linky links at the bottom of the email, or instead just head to <a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
+			</p>
+
+			<p>
+As I've done for the past few years, I'm sending emails through the appropriately named <a href="http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.
+			</p>
+
+			<p>
+				* and 1,001 chimps. This number has been remarkably steady.
+			</p>
+
+			<p>
+				** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.
+			</p>
+
+			<p>
+				But enough of my yakkin'. Let's boogie!
+			</p>
+
+			<hr class='section' />
+            <h1>CANDYMEISTER! Why are you missing the late games in this First Day update?</h1>
+<p>
+Long story short: Because I'm old.
+</p>
+<p>
+Long story long: In a JQMCBP first, I'm sending this first email update out before the first day's games are done. Why? I'm on the East Coast and I'm getting on a plane early in the morning. It turns out that the East Coast, and I am not making this up, <em>exists in a different place in time</em>. I know, right? When you are in Florida, the games end like, SO LATE. And, to reference the prior paragraph, I'm old. So, I'm going to send this email out after just 12 games. Rest assured, if you had Northern Kentucky over Houston in round 1 and it actually comes true, I'll give you your sacred props in the next update.
+</p>
+			<hr class='section' />
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion (or in this case, none at all) about Losing Teams and Their Mascots</h2>
+
+			<ul>
+				<li>Posted without comment, these are the Howard Bison
+					<p>
+						<img
+							src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/187470cc-6ba3-9617-25b9-577acfe57cb2.jpg" />
+					</p>
+			</ul>
+			<p>
+			</p>
+
+			<hr class='section' />
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+			<p>
+			Furman University (more on their mascot later, should they ever lose) won for the first time in this tournament since 1974. They cavalierly dispatched another boring Virginia team, sending the streets of Greenville, South Carolina (yes, I had to look it up) into a frenzy. 95 had the Paladins over the Cavaliers.
+			</p>
+			<p>
+			Also Princeton won, so I guess that was a thing. 32 had the Tigers over the Wildcats, which mascot-wise is kind of a self-own.
+			</p>
+
+			<div class='pre'>
+Furman: AAA - Mascot bracket, Aidan Conkling, Aidan Conkling, Aidan Conkling, Allen witt, Andrew D Nicholson, Andrew Mossburg, Andy Calvert, Andy Ducey, Andy Jehly, Apcvmd, Austin Munroe, Bill McGrail, Brenda VB, Bruno Rhoades, Carson Klaas, Cassie, Chris Conway, Chris Jonesy Jones, coinflip , Colin Keiffer, Connor Byers, Cris Osier, Dan Reed, Daniel C. Smokey, Dave Bush, David Ullman, Davoin Showerhandle, Denis the Menace, Drew Bush, Eddie Deevine, Elijah Lewis Hostetler, Espen Williams, Faith Anders, Finn Roberts, Gary Bahr, Grace Boyd, Graham Leonard, Greg Wenz, Hal Norman, Isaiah Ohare, Jane Cislo, Jason Busta, Jill Lantz, Jim Toomey, John Boyle, Johnny Slash, Josie McCartney, Judi Durda, Julia Foster, Katie Letarte, Keith Boyd, Ken Howard, Kristin Gifford, Kristopher Nordstrom, Kurtis Anders, Larry Ochs, Lindsey LaGrou, Lori LeMieux, Lucy Rhoades, Luke Chryssikos, Marco Byrd, Maria Blake, Mark Jones, Mark Richards, Mark Weiss, Martin Lieser, Matt Hickey, Matt MacDonell, McGlothern Fam, Meg Whelan, Milan Vaishnav, Mitch Runge, Mooseman Bruce, My Dog, Nathan Conkling, Old Joe Cislo, Parker Rogers, Patty Dillon, Paula Fronckowiak, Rich Prittie, Sam Housker, scottlarabee, Shaun Connolly, silver1998, Soren Van Houten, Sue Robinson, Susie Smalling, Suvir S, Tim Thomas, Tyler Schmitt, Vivian Copley, vowel tezt, Will Bernstein, Willy Lee
+
+Princeton: Aidan Conkling, Aidan Conkling, Aidan Conkling, Allen witt, Andrew Mossburg, Apcvmd, BARBARA SMITH, Bridget Burns, Bruno Rhoades, Cac23, Chris Jonesy Jones, coinflip , Denis the Menace, Elizabeth Rogers, Espen Williams, Jenn, Josie McCartney, Kirin Danek, Leo Pure, Maria Blake, Mark Jones, Milin Danek, Missy Shanahan, Nathan Conkling, Riley Young, Rosanna Collars, Shaun Connolly, silver1998, Taylor Strom, Theodore Chungath, Wesley Amato, Wyn Jamieson
+
+			</div>
+
+			<hr class='section' />
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+			<p>
+				The Arizona loss cut deep for many of you, and I'm so sorry* it took less than a day to ruin any hope of candy for you lot.
+			</p>
+
+			<p>
+				* not really
+			</p>
+
+			<div class='pre'>
+West Virginia: Jeffrey Bunch
+
+Virginia: Joe Hoag, Nweir, Leigh 'Go Green'  Keiper, Jason Jennings, Sam Hoag, Kate Knowles
+
+Arizona: Kendall DiGirolomo, Ross Benson, Kai Anderson , Jeff Amato, Brenda Ochs, Clare Isenhart, Kate Van Houten, Javier Fregoso, Michael Cline, John Caragher, Laurie Anderson, Frank Spada, Cats_Rule!, Todd Martin, Scott Sabbert, Jodi E., Nick DiGirolomo, John Debbrecht, Patty, Andrew Anderson, Shannon O'Hare, Brent Daley, Delk, Sonya Connolly, Lindsey Callison, Arthur Rush, Addison Busta, Ted Daniel, Caleb Anderson, stephen anderson, Pondscum, Todd Rich, matt pearson, John Niyo, Michael Nommensen, Steve Carlson I, Rocky Balboa, Fran Fabrizio, Lisa Wadzinske, Pat Dillon, Tyler Schmitt, Jeff Shipley, Josh T., Kurtis Anders, Paul Bellin
+
+Iowa: Wyn Jamieson, David Ullman, Tony Potter*
+
+Howard: Allen witt, Andrew Mossburg
+
+Illinois: Lindsey LaGrou, Chris Jonesy Jones
+			</div>
+
+            <p>* Tony Potter?!? That you, buddy?</p>
+			<p>
+				So long suckers!
+			</p>
+
+			<hr class='section' />
+			<h1>Boo Rah Rah</h1>
+			<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+			</h2>
+
+<!--
+			<p>
+				Meister's note: Since I ignore the play-in games that happened Tues/Wed, if you were an alum of Arizona State or Nevada I don't know which it was since for the first few days of entry it was listed as Arizona St/Nevada pending the outcome of their qualifying game. As I did two years ago with the UC-Mighigan State Spartabruins, last year with the Indiyoming Cowboosiers, I shall refer to you as the Nevada State University of Arizona Wolfdevils.
+			</p>
+-->
+
+            <p>So, <a href = "https://en.wikipedia.org/wiki/Fielding_H._Yost">Fielding H. Yost</a>, a very dead Michigan football coach of the early 1900s, has been entering from the Great Beyond for many, many years. I would like to give a hat tip to whomever is behind these Yost entries, recognizing that they list Yost's historically correct alma mater of West Virginia. That's the kind of attention to detail that makes the JQMCBP even odder. Well done, Coach Yost!
+			<div class='pre'>
+West Virginia: Andrew L Craft, Fielding H. Yost
+
+Virginia: Ryan Ahearn, Jason Jennings, Tim Switzer, Finn Roberts, Kate Knowles
+
+Arizona: Javier Fregoso, Cats_Rule!, Josie Wakser, Todd Martin
+
+Iowa: Winnie Gavin, Theodore Chungath, Peter Hentges, Chris Daigh, Elrondo, Lance Van Houten, Abby Chungath, Wyn Jamieson, Rich Lyle, Aaron Chittenden, Helen Copley, Vivian Copley, Jennifer Chittenden, Crawfish, C.Stiddy, Tony Potter
+
+Illinois: Mary Herrmann , Mark Jones, Scott Sabbert, Tim Rush, John Regan, Marcie Marcey Marcy Tocci, Michael Nommensen, Beatriz Arredondo
+			</div>
+
+			<hr class='section' />
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>
+				Steve Carlson thought he was going to win The SPIRIT Award for his selection of "I'd rather have a CD, TBH," but he was beaten out by Kristen Gladsky, who dug deep and chose "no candy". That's the spirit, Kristen! Honorable mention to Andy Weinecke for their selection of "Tide Pods." These are my clientele.
+            </p>
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+After 12 games, Chris "Black Thunder white chocolate" Conway and Maria "Junior Mints" Blake are atop the standings with 9 points.
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+
+<tr><td>1</td><td>Chris Conway</td><td>International</td><td>Black Thunder white chocolate</td><td>Houston</td><td>9</td></tr>
+<tr><td>1</td><td>Maria Blake</td><td>California</td><td>Junior Mints</td><td>Gonzaga</td><td>9</td></tr>
+<tr><td>3</td><td>Amanda Thomas</td><td>Minnesota</td><td>Reese's peanut butter cups</td><td>Kansas</td><td>8</td></tr>
+<tr><td>3</td><td>Andrew D Nicholson</td><td>Colorado</td><td>3 ounce Chocolove Raspberry</td><td>Michigan State</td><td>8</td></tr>
+<tr><td>3</td><td>Andy Ducey</td><td>Colorado</td><td>Milkshake Candy Bar</td><td>Texas</td><td>8</td></tr>
+<tr><td>3</td><td>Birdie</td><td>Florida</td><td>york peppermint paddy</td><td>Gonzaga</td><td>8</td></tr>
+<tr><td>3</td><td>Bob Ruprich 2</td><td>Michigan</td><td>Twix</td><td>Duke</td><td>8</td></tr>
+<tr><td>3</td><td>Brian Hellberg</td><td>Minnesota</td><td>Cotton candy</td><td>Alabama</td><td>8</td></tr>
+<tr><td>3</td><td>Brian Weiss </td><td>Michigan</td><td>King size snickers</td><td>Kansas</td><td>8</td></tr>
+<tr><td>3</td><td>Connor Byers</td><td>California</td><td>Performance Gum (Mixed Mint)</td><td>Duke</td><td>8</td></tr>
+<tr><td>3</td><td>Ethan 'Go Green' Ray</td><td>Michigan</td><td>Giant Reese's PB cup</td><td>Michigan State</td><td>8</td></tr>
+<tr><td>3</td><td>Gary Bahr</td><td>Washington</td><td>Milky way</td><td>Kansas</td><td>8</td></tr>
+<tr><td>3</td><td>Grace Boyd</td><td>Washington</td><td>Kinder Joy</td><td>Houston</td><td>8</td></tr>
+<tr><td>3</td><td>Gus</td><td>Minnesota</td><td>100K dollar bar</td><td>Marquette</td><td>8</td></tr>
+<tr><td>3</td><td>Jason Busta</td><td>California</td><td>Almond Joy</td><td>Houston</td><td>8</td></tr>
+<tr><td>3</td><td>Jill Lantz</td><td>Washington</td><td>Mocha Chocolate Kit Kat Duo</td><td>Kansas</td><td>8</td></tr>
+<tr><td>3</td><td>Kerie Whelan</td><td>Michigan</td><td>Toblerone</td><td>Alabama</td><td>8</td></tr>
+<tr><td>3</td><td>Kurtis Anders</td><td>Michigan</td><td>Jolly Ranchers</td><td>Arizona</td><td>8</td></tr>
+<tr><td>3</td><td>Martin Lieser</td><td>Minnesota</td><td>Goo Goo Cluster</td><td>Alabama</td><td>8</td></tr>
+<tr><td>3</td><td>Michael Cline</td><td>Washington</td><td>Cherry Ripe</td><td>Arizona</td><td>8</td></tr>
+<tr><td>3</td><td>Milin Danek</td><td>Minnesota</td><td>Twix</td><td>Houston</td><td>8</td></tr>
+<tr><td>3</td><td>Sophia Soriano</td><td>Oregon</td><td>Crystal Salty Pocky</td><td>Marquette</td><td>8</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+More chimps than humans currently sit at 9 points. Is it happening? Will the chimps hold on *?
+			</p>
+
+            <p>* history says NOPE</p>
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Abdiel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Memphis</td><td>9</td></tr>
+<tr><td>1</td><td>Abigail</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Michigan State</td><td>9</td></tr>
+<tr><td>1</td><td>Antwan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Grand Canyon</td><td>9</td></tr>
+<tr><td>1</td><td>Caleb</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Saint Marys</td><td>9</td></tr>
+<tr><td>1</td><td>Cristopher</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Houston</td><td>9</td></tr>
+<tr><td>1</td><td>Haleigh</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Memphis</td><td>9</td></tr>
+<tr><td>1</td><td>Harley</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Princeton</td><td>9</td></tr>
+<tr><td>1</td><td>Jacquelyn</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas</td><td>9</td></tr>
+<tr><td>1</td><td>Lexie</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Arkansas</td><td>9</td></tr>
+<tr><td>1</td><td>Marley</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kennesaw State</td><td>9</td></tr>
+<tr><td>1</td><td>Rory</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Saint Marys</td><td>9</td></tr>
+<tr><td>1</td><td>Yvette</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Princeton</td><td>9</td></tr>
+				</tbody>
+			</table>
+			<p>
+				cheers,<br />
+				the Meister
+			</p>
+
+			<hr class='section' />
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section' />
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister"
+							src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+					</li>
+					<li class="last"> 2023 Ben Klaas Productions </li>
+				</ul>
+			</div>
+
+		</div>
+
+</body>
+
+</html>

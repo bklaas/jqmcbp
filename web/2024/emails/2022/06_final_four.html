@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+        .float-right { float: right; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXV</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/dn5Tattkj_E">WOW</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/838</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>UCOW!...what's a UCOW and why should I care?</h1>
+<h2>The Unweighted Chance Of Winning or UCOW! tells you if there's still a chance.</h2>
+
+<p>
+Howdy folks! No sense in burying the lede here: <b>WHO'S STILL IN THIS THING???</b>
+</p>
+
+<p>
+Pretty much all of our Cinderella stories have been ousted, and we're left with a Final Four of a #1 seed, two #2 seeds, and a #8 seed (which is North Carolina, one of the most storied basketball schools in the country). That return to form has, sadly for our primate friends, destroyed all hope for a Historic Chimp Victory. The Chimp Army has retreated back to their compound in Rancho Cucamonga CA, where I'm sure they will lick their wounds, regroup, and return next year in pursuit of the fabled Krembanan.
+</p>
+
+<p>It's a bummer too, I'd been working on a GIF for the inevitable Chimp Victory after Saint Peters defeated Miami in the championship. Since this is JQMCBP XXV, it was going to be modeled after the Adele 25 album. Too bad I can't share it. Oh wait, I totally can!
+</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/dafba35f-4761-908d-bf92-b80f50534a51.gif" width = "40%" />
+<p>
+Back to me DEFINITELY not burying the lede, there are <b>SIX</b> humans still alive in the Quest for Candy. Here they are:
+</p>
+
+<table class = "scores">
+<thead>
+    <tr>
+        <th>Name</th>
+        <th>Candybar</th>
+        <th>What Will it Take to Win the Candy</th>
+        <th>Vegas Odds*</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Andy Calvert (2005 JQMCBP Champion)</td>
+        <td>See's Awesome Nuts and Chews Bar</td>
+        <td>Kansas is Champ</td>
+        <td>5:2</td>
+    </tr>
+     <tr>
+        <td>Gabe Smith</td>
+        <td>Chocolate Covered Cinnamon Bears</td>
+        <td>Villanova is Champ</td>
+        <td>4:1</td>
+    </tr>
+   <tr>
+        <td>Sabrina Bier</td>
+        <td>Butterfinger</td>
+        <td>Duke over Kansas in Championship</td>
+        <td>7:1</td>
+    </tr>
+   <tr>
+        <td>Claire Westerlund</td>
+        <td>dark chocolate sea salt caramel</td>
+        <td>Duke over Villanova in Championship</td>
+        <td>8:1</td>
+    </tr>
+   <tr>
+        <td>Thomas Joseph</td>
+        <td>Skittles</td>
+        <td>North Carolina over Kansas in Championship</td>
+        <td>10:1</td>
+    </tr>
+     <tr>
+        <td>Jen Meagher</td>
+        <td>Rolos</td>
+        <td>North Carolina over Villanova in Championship</td>
+        <td>12:1</td>
+    </tr>
+ </tbody>
+</table>
+
+<p>Best of luck to the six of you, and happy I escaped procuring tenth place LJ Brown's 3 foot Twix Bar.**</p>
+<p>* Vegas called and said they want to make it clear they are not interested in JQMCBP, nor will they ever be.</p>
+<p>** Yes, 3 foot Twix Bar <a href = "https://www.hy-vee.com/aisles-online/p/1843544/Twix-Yard-Cookie-Bars-18Ct">is a thing</a>.
+
+
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>Let me tell you a story...</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/cb61ac70-4c10-bad9-4129-456ff3e1c323.jpg" width = "100%" />
+<p>Once there was a sad peacock.</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/a9b52a47-4745-97b6-9b5a-e1efdcd2a997.jpg" width = "100%" />
+<h3>THE END</h3>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Though they are no Saint Peters, or even Miami, only 10 people picked North Carolina into the Final Four. Andy "See's Nuts and Chews"* Calvert's pick of the Tarheels into the Final Four was instrumental in his possible and unprecedented 2nd JQMCBP victory.
+</p>
+
+<p>* This is the name of a candybar. I assure you, Andy is not a squirrel.</p>
+
+<div class = 'pre'>
+North Carolina:  Andy Calvert, Connor Morrison, Derek Roesti, Jeb Byers, Joe 'Monkey-eating Eagle' Grover, Kwest, Lindsey LaGrou, Mark '100 Grand Bar!' Johnson, Mary Lou Lombardi-Butler, Patrick Connolly
+</div>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+After more than half of JQMCBP Candy Seekers losing their champ on Thursday and Friday, how many lost theirs Saturday and Sunday? SIX.
+</p>
+
+<div class = "pre">
+Houston: vannya
+Arkansas: Denis the Menace, Reneethegreat , Jackson Teer, Lillian James , WillAyeAm
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Sorry, Teer's of Arkansas. You were the only two alma mater casualties of the weekend. Not a single Saint Peters alum (nor Miami, nor Houston). Turns out JQMCBP is not big in Jersey City, NJ (nor Miami, nor Houston).
+</p>
+
+<div class = 'pre'>
+Arkansas: Max Teer, Bill Teer
+</div>
+
+<!--
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+XXX
+</p>
+-->
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas2022">you may donate buckets of cash to my ride here</a>. This is my 10th MS-150, and my goal remains much the same: raise &gt;$1500 so I can access the VIP toilets, and BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+A great run, Hannes my infant friend. May your days be filled with applesauce pouches, but alas they shant come free as a result of this pool :(
+
+</p>
+
+<table class = 'scores'>
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Candy</th>
+            <th>Champion</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr><td>1</td><td>Jen Meagher</td><td>Michigan</td><td>Rolos</td><td>UCLA</td><td>80</td></tr>
+<tr><td>2</td><td>Gabe Smith</td><td>California</td><td>Chocolate Covered Cinnamon Bears</td><td>Villanova</td><td>79</td></tr>
+<tr><td>3</td><td>Hannes Williams</td><td>Minnesota</td><td>applesauce pouch :)</td><td>Villanova</td><td>75</td></tr>
+<tr><td>3</td><td>Katy Klimczuk</td><td>Michigan</td><td>Mounds</td><td>Villanova</td><td>75</td></tr>
+<tr><td>3</td><td>Thomas Joseph</td><td>Michigan</td><td>Skittles</td><td>Kentucky</td><td>75</td></tr>
+<tr><td>6</td><td>Andy Calvert</td><td>California</td><td>See's Awesome Nuts and Chews Bar</td><td>Kansas</td><td>72</td></tr>
+<tr><td>7</td><td>Aufwuchs</td><td>Iowa</td><td>Grateful Dead Dancing Bears in Space Bar</td><td>Texas Tech</td><td>71</td></tr>
+<tr><td>7</td><td>Bill King</td><td>Illinois</td><td>Reese's Peanut Butter cup</td><td>Arizona</td><td>71</td></tr>
+<tr><td>7</td><td>Todd Beranak</td><td>Minnesota</td><td>whatchamacallit</td><td>Kansas</td><td>71</td></tr>
+<tr><td>10</td><td>Jane Kehrwald</td><td>International</td><td>Caramello Koala</td><td>Gonzaga</td><td>70</td></tr>
+<tr><td>10</td><td>Lisa Wadzinske</td><td>Wisconsin</td><td>Take 5 Candy Bar</td><td>Duke</td><td>70</td></tr>
+<tr><td>10</td><td>LJ Brown</td><td>Michigan</td><td>3 foot Twix Bar</td><td>Villanova</td><td>70</td></tr>
+<tr><td>10</td><td>Sabrina Bier</td><td>Illinois</td><td>Butterfinger</td><td>Duke</td><td>70</td></tr>
+</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Ciao Mario. Adios Lola, Brian, Joel, and Yoselin. Sionara Clifford, Delilah, Armando, and Dion. Tschuss Dallas, Hassan, Jair, and Tianna. And, finally, good day Zaria. I SAID GOOD DAY!
+</p>
+
+<table class = 'scores'>
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Candy</th>
+            <th>Champion</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+<tr><td>1</td><td>Mario</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas</td><td>63</td></tr>
+<tr><td>2</td><td>Lola</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Houston</td><td>60</td></tr>
+<tr><td>3</td><td>Brian</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Murray State</td><td>58</td></tr>
+<tr><td>4</td><td>Joel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Villanova</td><td>57</td></tr>
+<tr><td>4</td><td>Yoselin</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UCLA</td><td>57</td></tr>
+<tr><td>6</td><td>Clifford</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Tennessee</td><td>56</td></tr>
+<tr><td>6</td><td>Delilah</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Norfolk State</td><td>56</td></tr>
+<tr><td>8</td><td>Armando</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas</td><td>55</td></tr>
+<tr><td>8</td><td>Dion</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>North Carolina</td><td>55</td></tr>
+<tr><td>10</td><td>Dallas</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas</td><td>54</td></tr>
+<tr><td>10</td><td>Hassan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Villanova</td><td>54</td></tr>
+<tr><td>10</td><td>Jair</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Miami FL</td><td>54</td></tr>
+<tr><td>10</td><td>Tianna</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Boise State</td><td>54</td></tr>
+<tr><td>10</td><td>Zaria</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Miami FL</td><td>54</td></tr>
+</tbody>
+</table>
+
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2022 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

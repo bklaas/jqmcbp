@@ -1,0 +1,65 @@
+<script language = 'JavaScript'>
+function validateForm(form) {
+	if (form.name.value == '') {
+		alert('Please state your name');
+		return false;
+	} else if (form.email.value == '') {
+		alert('Honest, your email address is safe with me. Please give me one');
+		return false;
+	} else if (!isEmailAddr(form.email)) {
+		alert("'"+form.email.value+"' does not look like a valid email address");
+		return false;
+	} else if (form.locale.selectedIndex == 0) {
+		alert('Where are you from? Note that "Places Unknown" is an option!');
+		return false;
+	}
+	return true;
+}
+function isEmailAddr(elem) {
+	var str = elem.value;
+	str = str.toLowerCase();
+	if (str.indexOf("@") == -1) {
+		return false;
+	} else {
+		var addr = str.substring(0, str.indexOf("@"));
+		var domain = str.substring(str.indexOf("@")+1, str.length);
+		if (domain.indexOf(".") == -1) {
+			return false;
+		} else if (addr.length == -1) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function get_count() {
+	// chrome keeps a JS cache, so we have to fudge a bogus query string
+	// to get around that
+	var random = Math.floor((Math.random()*99999)+1);
+	$.getJSON(
+		'entry_count.json?foo=bar' + random,
+		function(data) {
+			$('.entry_count').replaceWith('<span class = "entry_count">' + data.entry_count + '</span>');
+			$('.entry_count').fadeIn('slow');
+			setTimeout(function() { get_count(); }, 15000);
+		}
+	);
+}
+
+$(document).ready(
+        function() {
+		var data = [];
+              	setTimeout(function() {
+			get_count();
+               	}, 2000);
+	});
+</script>
+
+<img src = "https://media.giphy.com/media/8m4R4pvViWtRzbloJ1/giphy.gif"/ class = 'float-right' width = '300'>
+<h1>Not. Yet. Patience, grasshopper.</h1>
+<img src = "images/bigcookie.gif" />
+
+<div id = 'defaultCountdown'></div>
+    <img id = 'stayTuned' src = 'images/staytuned.gif' />
+<p></p>
+

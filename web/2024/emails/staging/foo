@@ -1,0 +1,42 @@
+<h2>Top 10 Humans</h2>
+
+<p>
+2018 champ Super Grover wedged his way into the Top 10 this year, a remarkable showing in what is basically a super involved random walk experiment.
+</p>
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Well done Peter the Chimp, in coin-flipping your way to Top Chimp Honors.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+	</tbody>
+</table>

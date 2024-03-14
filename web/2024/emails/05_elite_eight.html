@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVI</a></h1>
+		<h2 class='slogan'>
+			<a href="https://youtu.be/Ng3XHPdexNM">You know...for kids</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+
+
+			<hr class='section'>
+            <h1>CHAOS REIGNS!</h1>
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/1bffcb71-1496-0e44-5609-0cdf0e5dcb1f.png"
+					class="float-right" alt = "Chaos is a Ladder" width = "50%">
+			</p>
+<p>
+After the last two #1 seeds Alabama and Houston crumbled at the hands of San Diego State and Miami, respectively, even the top of the JQMCBP leaderboard presents a scorched pile of brackets on fire. Current frontrunner Chrissy "Compartes California Berries Dark Chocolate" Fanganello is mathematically eliminated after their champ UCLA were dispatched by Gonzaga in a thriller. But Chrissy is not alone. Amongst the first 25 (human) leaders, 16 do not have their champ pick still playing. That's, you know, not great!
+</p>
+<p>Meanwhile in Chimpland: The 1,000 Chimp Army has never produced a JQMCBP winner. Will this be the year? We don't know yet, but looking through the next iteration of UCOW (see below; still not popular!), it is without a doubt the most even odds they've ever had. Chimps win in 61 of the remaining 128 bracket permutations, and Omar the Chimp (champ: Miami) and Anthony the Chimp (champ: Creighton) own 33 of those scenarios. Back at The Ranch in Rancho Cucamonga, Omar and Anthony are already buying rounds of Krembanans at the banana bar.
+</p>
+<table>
+<tr><td>Human Wins: 69</td></tr>
+<tr><td><b>CHIMP WINS: 61</b></td></tr>
+</table>
+
+
+<table class = 'scores'>
+<tr><td>Name</td><td># Winning Brackets</td><td>% Winning Brackets</td></tr>
+<tr><td>Omar the Chimp</td><td>19</td><td>14.844</td></tr>
+<tr><td>Anthony the Chimp</td><td>14</td><td>10.938</td></tr>
+<tr><td>Peter Hentges</td><td>14</td><td>10.938</td></tr>
+<tr><td>Michelle Morrisey</td><td>14</td><td>10.938</td></tr>
+<tr><td>Zander the Chimp</td><td>12</td><td>9.375</td></tr>
+<tr><td>Thomas J Leeper</td><td>10</td><td>7.812</td></tr>
+<tr><td>Max teer</td><td>9</td><td>7.031</td></tr>
+<tr><td>Korbin the Chimp</td><td>8</td><td>6.250</td></tr>
+<tr><td>Andrew Mortimer</td><td>7</td><td>5.469</td></tr>
+<tr><td>Lucy Rhoades</td><td>6</td><td>4.688</td></tr>
+<tr><td>Andy Ducey</td><td>6</td><td>4.688</td></tr>
+<tr><td>Clare Abram</td><td>5</td><td>3.906</td></tr>
+<tr><td>Caitlyn the Chimp</td><td>2</td><td>1.562</td></tr>
+<tr><td>Magdalena the Chimp</td><td>2</td><td>1.562</td></tr>
+<tr><td>Daryl Morrison</td><td>2</td><td>1.562</td></tr>
+<tr><td>Xander the Chimp</td><td>2</td><td>1.562</td></tr>
+<tr><td>Shaun the Chimp</td><td>2</td><td>1.562</td></tr>
+<tr><td>Sophie the Chimp</td><td>1</td><td>0.781</td></tr>
+<tr><td>Matt Dudus</td><td>1</td><td>0.781</td></tr>
+<tr><td>Molly Mortimer</td><td>1</td><td>0.781</td></tr>
+</table>
+
+<p>
+And that's the whole UCOW! Everyone else is eliminated!
+</p>
+<p>In case the Wanton Destruction of All Remaining Candy Hope is not clear enough, let's have a look at an updated pie chart* of who JQMCBPers picked for their bracket champion.</p>
+<p>* there is a school of thought in the data visualization world that it is never appropriate to use a pie chart, there are always better choices. This pie chart debunks that philosophy. CLEARLY this is the best representation of the data.</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/f3eb7394-37df-1770-def2-456f451216a0.png" alt = "Chaos on the Crosstown" width = "100%">
+
+<hr class='section'>
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+OH YES IT'S XAVIER TIME.
+</p>
+
+<p>
+Xavier University's mascot is D'Artagnan the Musketeer. According to Cincinnati.com, the Official Musketeer Curator of the Greater Cincinnati Area:
+</p>
+<div class = 'quote'>
+Reverend Francis J. Finn, a Xavier Board of Trustees member, proposed D'Artagnan the Musketeer as Xavier's mascot in 1925. According to the university's website, Finn felt D'Artagnan represented Xavier's historical connection to France and embodied the school's "all for one, one for all" spirit. 
+
+</div>
+
+<div>Cincinnati.com, which is a website that also has strange chili recipes that use spaghetti and oblique references to "hayrides," goes on to say this:
+<div class = 'quote'>
+The mascot, however, would not make its debut until October 1965, nearly 40 years after Finn's proposal. Bill Peters, a 1968 Xavier graduate, was the first student to dress up as D'Artagnan. Peters was the mascot for a homecoming game against Villanova, in which the Musketeers defeated the Wildcats 35-0. His costume consisted of a white blouse with blue pleated sleeves, a brown vest, dark blue pantaloons, a blue cape, a fencing foil and fake brown boots.
+</div>
+
+<p>And here he is, D'Artagnan.</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/f29e2031-16fe-8b58-4231-cf3813b3f6b4.jpg" width = "60%" alt = "musketeer">
+<p>
+Cincinnati.com, which has a standing ban on reporting anything about Cleveland, also says "The university reports that up to four Xavier students now fulfill D'Artagnan's role." Pedantically, I think these four should be named D'Artagnan, Athos, Porthos and Aramis, but I digress. What is clear here is that they definitely have enough mascots.
+</p>
+
+<p>BUT WAIT.</p>
+
+<p>Since 1985, Xavier University has TWO mascots. I know what you're asking: what could possibly compliment this suave, swashbuckling Musketeer, with his debonair cape and feathered hat?</p>
+
+<p>
+What better foil (see what I did there) to D'Artagnan than...a Blue Blob?
+</p>
+
+<p>That's right, Xavier's secondary mascot is a Blue Blob. Here it is cowardly poking an unexpecting D'Artagnan in the back.
+</p>
+<img src = " https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e7603cb1-8b0f-6077-18fb-3ee772a5c885.jpg" alt = "blueblob">
+
+<p>Now I love a good absurdist mascot. Don't get me started about the Western Kentucky Big Red, a distant relative of this Blue Blob here. Mad props to Big Red. But...Xavier already had a very strange mascot! Isn't that enough? Why two?</p>
+
+<p>Again, Cincinnati.com, a website still inexplicably <a href = "https://youtu.be/wTy5wWpWC90">dancing the Ickey Shuffle,</a> has the goods:</p>
+
+<div class = "quote">
+The Blue Blob was created in 1985 as a kid-friendly alternative to the sometimes-scary main mascot. The costume features a muppet nose, hound eyes and, of course, blue fur.
+</div>
+
+<p>
+Cincinnati.com, which apparently had no real news to report on, also produced <a href = "https://youtu.be/UBfiXAjpZNU?t=26">this video on the Blue Blob.</a>
+</p>
+
+<p>Okay, Blue Blob. You're "for kids". I'll allow it. I only have one ask, and that's for Xavier to give Iona a call. Iona has an "always-scary" mascot problem.</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/aa9860a9-adeb-46e2-ba9d-158c8d1e7653.jpg" alt = "gael" width = "100%">
+
+<p>&nbsp;</p>
+<p>Couldn't Blue Blob please just get traded to Iona? ¯\_(ツ)_/¯
+<p>&nbsp;</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/7526c403-cdd7-f3bf-3842-a0ba921dc477.png" alt = "blue blub shrug" width = "100%">
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+THREE HUNDRED TWENTY TWO. That's how many lost their champ in the Sweet Sixteen round. Surely the Candymeister isn't going to publish that many names? Think of all the data beans it will use to publish those in an email! Think of the Earth! I will not. Here are the names.
+</p>
+
+<div class='pre'>
+Tennessee: Russell Nelson, ASF
+
+Michigan State: TYLER RYAN, Stacy Trussell, Rich doher, Ethan 'Go Green' Ray, Taylor Strom, Samuel Allar, Sue Miller, Jane Cislo, Kathleen Phu, Andrew D Nicholson, Sue Miller, PJ Torres, Cindy Arvant, AAA - Mascot bracket, Lori LeMieux, Katie D, Jim Chryssikos, Luke Chryssikos, Peggy Meagher, Philip Danne, Cheryl Holton, Bridget Burns
+
+Alabama: Avi Gupta, Patrick Sullivan, Patrick Connolly, Pete, Beardawg, Taylor DiGirolomo, My Dog, Dennis Sabo, Ben 'this is my year' Halpern, john Lucas, Thomas Joseph, Mark Foster, Renata Rush, Angie DeWaard, Mark Largent, Rob Strnad, Chris Daigh, Julia Foster, Sheev, Terry Sievert, Mike Ford, Tim Switzer, Griffin Johnson, Martin Lieser, Milan Vaishnav, Whitney Payne, Dad Klaas, Rocky Reinert, Joe Raymond, Trevor Shepich, Jacob Kinne, Burke Hegrenes, Jodi, Kevin Quinn, Matt Mischler, Paul Allar, Claire Lucas, New twin, Old twin, Mike Riggins, Ryan Schuelke, Mary Smith, Brendon Harrington, Hunter 'Ghirardelli' Lenihan, Don Heiduk, Dave Bush, John J Hassinger, Dane Debbrecht, DeBacks, Michael Webster, michael mowery, Kerie Whelan, Colin Morrison , Dan Clark, Gabe Smith, Dan Ridgeway, Drew Bush, Mike Katulski, Felipe Mendez, Eddie Sander, Will Arvant, Scott Driscoll, Johnny Slash, Maya Gypsy , Jenn, Jeff Blake, Carlos Agens, Hayden Bier, Wayne Lucas, Rob Van Beusekom, Jennifer Chittenden, Howard Johnson, InMemoryOf JamieSamuelsen, Suvir S, Charlotte Bowers, Kurt Anderson, Andrew T. Bryan, Teresa Bryan, Michael Gill, Martha Carlos, Matt MacDonell, Phantom Dustoff-57, Kari Williams, Max McCartney, Teresa Bunda, Joe Bowers, Brian Hellberg, Sam niyo, Sohyon Warner, Greg Wenz, Mike Shanahan, Alli Muilenburg, Tim Muilenburg, Andy Hefte, Dave Giugni, john quijote finbar farrell, Katie Dillon, Jamie (Son of Steve) White, Michael Farrell, Dave Hauser, Kevin Wood, Jessica Wiltse, Missy Shanahan, R. Bartus, Keith Boyd, Fielding H. Yost, Robert Portnoy, Mommy Shanahan, UCSB Tim Ferrero, Charles BARKley, Matthew Gordon Goodrich, LJ Brown, Pepe LePew, Judi Durda
+
+Princeton: Aidan Conkling, Kirin Danek, Aidan Conkling, Aidan Conkling
+
+Houston: Kelli Strom, Kiernan Raffo, Jacob Strom, Camille Blake, Theodore Chungath, Parker Rogers, Jorgen Chapin, Rob Warren, Brett Sterenson, Carson Klaas, John W Davidson, Carin Goodrich, Lisa P LaGrou, Jason Busta, Kurt Haffner, Sam McWilliams, Rupert Smudge, Rachelle Owen, Bill King, Josie Wakser, Scott Johnson, Cassidy Mazelin, Lance Van Houten, Peter Hepburn, Robert WILLIAMS, Gina Rumore, Nancy Smalling Valentine, Joseph Caragher, Dave Metcalfe, Curtis Stalter, Erin D, Will Bernstein, Colin “Candy Bar Not Candy Barf” Gjervold, Randy Hooper, Chris Conway, John Cooper, Nathaniel Smith, Brenda VB, Will Scott, Alex Anderson, Paul Nielsen, Srikar Achanta, Jim Soriano, Hal  Norman, Mooseman Bruce, Office Minion, Barbie Hoag, Eric S, Rob Bellin, Milt Bellin, Jeff Johnson, Alex Ross, Sandlots , Jeff 'Chimps are Chumps' Hober, Alyssa A Teer, Cale Rubenstein, Scott Biddinger, Mark Weiss, Luke Roling, Tom Hoag, Walt H, Tom 'T3' Wadzinski, Judy Johnson, Jack Genadek, Brett Callison, Milin Danek, Karlene Noel Jennings, Sean Bellin, Carlos Carlos, Dawn Smith, Scott Strom, Brian O'Donnell, Joanne Isenhart, Rick Shepich, Baret Williams-Furfaro, Tim Hoelscher, Paul Wadzinske, Jed Durkin, Nick MacDonell, Michael Folkerts, John Boyle, Jodie-o, Jonathan Schroeder, Kelly Zheng, Janet Hellberg, Bill Rogers, Jackson Taylor, Matt Williams, Scarlett Benson, Diego Fernandez Duque, Liz McHalpine, Derek Roesti , Jim Toomey, Michael Wooley-Ousdahl, Erin Austin, Joel Rondeau, Nate Reed, Jacob Teer, Beatriz Arredondo , Jason Care, Ryan Herrington, Steve Fink, Kevin Boyd, Pete Arvant, Chris Larson, Greg Rhoades, Zane Sabbert, Mike Shemon, Greg Wallack, Grace Boyd, Dave McHalpine, Cyndee Iannazzo, Marc Skipper, Mitch Runge, John Housenga, Scott Teer, Clark Beech, Madi Field, Johnny Slash, William Cunningham
+
+Xavier: Logan Adkins, Kiera D, Denis the Menace, Davoin Showerhandle, Tim Barr, Dave Chronicle, jennyrupe, Bobby Rupe
+
+Arkansas: Elijah Lewis Hostetler
+
+UCLA: Derek Bier, Ryan Ahearn, Riley Young, Wesley Amato, Geoff Willard, Todd Krueger, James Parker, Larry Ochs, Mark R Dyal, AJ Bowers, John Varesi, Brian Kinne, Jeff Kinne, Meg Whelan, Meg Whelan, Rennie Anderson, Tala Anderson, Young Joe C, Mike Horton, Ron Gin, Crissy Fanganello, Diamond Daves, Romke Mooiweer, Caroline Welby, Carol Reed, Milo Anderson, Dan Reed, Trish Soriano, Lorie D, Bridget Johnson, Spencer Payne, Andrew Gregg, Bri, Crawfish, Hannes Williams, Patty Dillon, Dave Lyons, Keith Brown, Andy Bauer, Eva Witt, Amy McLanahan, Eanie Meanie, Joe Hebda, Rick Wilder, Madhatter, Kenny Boyd, Bruno Rhoades, Lyndel Fusello, Joe Bro, Dan Smedley, Daniel Gonzalez
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>
+A smaller number in this section, 50, of which the lion's share were from Michigan State. So long, Sparty Pants! There are also three people intimately familiar with the Blue Blob. Who knows, one of them might have <em>been</em> the Blue Blob*.
+</p>
+
+<p>* true story, one of the 805 JQMCBP entrants once was an official Goldy Gopher**.
+
+<p>** Minnesota did not qualify for the tourney this year***.</p>
+<p>*** Or for the NIT****.</p>
+<p>**** Goldy Gopher is not a gopher, but a squirrel. Don't even get me started.</p>
+<div class='pre'>
+Tennessee: Joe Hoag
+
+Michigan State: Nweir, Leigh 'Go Green'  Keiper, Rich doher, David Manson, Mark Largent, Rachel Ray, Ethan 'Go Green' Ray, Thomas J Leeper, Trevor Shepich, Sue Miller, Kim Clexton, Bob Armitage, Andrew D Nicholson, Eric Gifford, Barbie Hoag, Beaumont Hoffman, Sue Miller, Mary Galm, Mark Kenneth Hebda, Brian Weiss , Kristin Gifford, Chris, Scott Driscoll, Cindy Arvant, Mark Weiss, Carlos Agens, Tom Hoag, Andrew Gregg, Rick Shepich, Bob Ruprich, John Boyle, Jim Chryssikos, Patrick O'Boyle, Mike 'the Big Ragu' Hartmann, Jessica Wiltse, Bob Ruprich 2, R. Bartus, Philip Danne, Austin Munroe, Bobby Rupe
+
+Princeton: Kirin Danek
+
+Xavier: Paula Fronckowiak, Matt Williams, jennyrupe
+
+Arkansas: Bill Teer, Janet Hellberg, Max teer
+
+UCLA: John Varesi, Rick Wilder
+</div>
+
+<hr class='section'>
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+A surprising number of people picked the upset wins for Creighton (79), San Diego State (57). This email is getting long (O RLY?), so I'll limit my shouts-out to Miami FL (39) and Florida Atlantic (17!).
+</p>
+			<div class='pre'>
+Miami FL:  AAA - Mascot bracket, Andy Ducey, Brandon Ray, Cate Whelan, Crissy Fanganello, Dan Smedley, Dave Giugni, Derek Bier, Ed Myers, Flynn Cadell , Isaac LeTarte, James Dillon, James Parker, Jane Cislo, Jim Bauer, Jim Preston, Joe Raymond, Kathleen Phu, Kayleen Niyo, Kenny Boyd, Kristopher Nordstrom, Leo Pure, Leyla Benson, Lindsey LaGrou, Lucy Rhoades, Marty Dickrell, Mary Smith, McGlothern Fam, Missy Shanahan, Nicki Bowers, Peter James, Phil McCracken, Renata Rush, Scott Iannazzo, Scott Iannazzo, Shannon O'Hare, Steph Haan- Amato, Thomas J Leeper, Tom Lynch
+
+Florida Atlantic:  Andrew Mossburg, Andy Jehly, ASF, coinflip , Jacob Kinne, Jeff Johnson, Kristen DiGirolomo, Larry Ochs, Maya Gypsy , McGlothern Fam, Missy Shanahan, Molly Mortimer, My Dog, Nicki Bowers, Sam niyo, vowel tezt, Will Arvant
+
+			</div>
+
+
+<!--
+			<hr class='section'>
+
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>
+            </p>
+-->
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Crissy Fanganello</td><td>Colorado</td><td>Compartes California Berries Dark Chocolate</td><td>UCLA</td><td>64</td></tr>
+<tr><td>2</td><td>Kurtis Anders</td><td>Michigan</td><td>Jolly Ranchers</td><td>Arizona</td><td>61</td></tr>
+<tr><td>3</td><td>Andy Ducey</td><td>Colorado</td><td>Milkshake Candy Bar</td><td>Texas</td><td>60</td></tr>
+<tr><td>3</td><td>Corey Garza</td><td>California</td><td>Kit Kat Cheesecake Flavor</td><td>Purdue</td><td>60</td></tr>
+<tr><td>3</td><td>Daryl Morrison</td><td>Illinois</td><td>M&M Peanut</td><td>Texas</td><td>60</td></tr>
+<tr><td>3</td><td>Peter Hentges</td><td>Iowa</td><td>Kit-Kat</td><td>Texas</td><td>60</td></tr>
+<tr><td>3</td><td>Shannon O'Hare</td><td>California</td><td>Tim Tams</td><td>Arizona</td><td>60</td></tr>
+<tr><td>8</td><td>Dan Smedley</td><td>California</td><td>Almond Joy</td><td>UCLA</td><td>59</td></tr>
+<tr><td>8</td><td>Pete Arvant</td><td>Michigan</td><td>Snickers</td><td>Houston</td><td>59</td></tr>
+<tr><td>10</td><td>Jacob Kinne</td><td>Colorado</td><td>3 musketeers</td><td>Alabama</td><td>58</td></tr>
+<tr><td>10</td><td>Max teer</td><td>Texas</td><td>5 pounds of sugar free gummy bears</td><td>Gonzaga</td><td>58</td></tr>
+<tr><td>10</td><td>Paul Madden</td><td>South Carolina</td><td>Pearson's Salted Nut Roll</td><td>Purdue</td><td>58</td></tr>
+<tr><td>10</td><td>Thomas J Leeper</td><td>Michigan</td><td>Milka Chocolate Oreo, Large Bar 300g</td><td>UConn</td><td>58</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Anthony</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Creighton</td><td>56</td></tr>
+<tr><td>2</td><td>Omar</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Miami FL</td><td>54</td></tr>
+<tr><td>3</td><td>Kaitlyn</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>TCU</td><td>53</td></tr>
+<tr><td>4</td><td>Kinsey</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Farleigh Dickinson</td><td>51</td></tr>
+<tr><td>4</td><td>Zander</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Florida Atlantic</td><td>51</td></tr>
+<tr><td>6</td><td>Korbin</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas State</td><td>50</td></tr>
+<tr><td>6</td><td>Sophie</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas State</td><td>50</td></tr>
+<tr><td>8</td><td>Kayden</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Howard</td><td>48</td></tr>
+<tr><td>8</td><td>Nicolette</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Grand Canyon</td><td>48</td></tr>
+<tr><td>10</td><td>Amelia</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Southern California</td><td>47</td></tr>
+<tr><td>10</td><td>Noemi</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Purdue</td><td>47</td></tr>
+<tr><td>10</td><td>Uriel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Furman</td><td>47</td></tr>
+				</tbody>
+			</table>
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2023 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>

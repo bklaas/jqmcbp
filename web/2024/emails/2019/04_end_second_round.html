@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "http://corndog.io">corndog.io</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/839</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Sunday was a day where a few absolutely amazing things could have happened, but didn't*. I was enjoying a day of youth volleyball in the Exurban Hinterlands of Minneapolis-St. Paul, but apparently there was a game that really really really looked like it was going to end with a Duke upset, but didn't. Think of the Bracket Carnage that would have caused! I even have Duke, the Manchester United** of College Basketball, winning this year, but would have welcomed the disarray a Central Florida win would have caused. Plus we'd get another game of 7'6" Tacko Fall****, who in addition to being so very tall, has a name that may qualify for next year's <a href = "https://deadspin.com/presenting-the-2019-name-of-the-year-bracket-1833570554">Name of the Year bracket</a>, taking on opponents like Alpha Omega Nickleberry III*****, Chastity Gooch-Fant, and Deicide Huxtable. Or perhaps Tacko could become a two sport athlete, making the <a href = "https://youtu.be/gODZzSOelss">East-West College Bowl</a> team.
+</p>
+
+<p>
+* Implied "other thing" intentional
+</p>
+
+<p>
+** Wait, that's a tough reference. Duke, the AC Milan*** of College Basketball.
+</p>
+<p>
+*** I'm not good at this. What I mean to say is that Duke is BAD and should be DISLIKED. But, have you seen that Zion guy? He's pretty amazing.
+</p>
+<p>
+**** His full name is Elhadji Tacko Sereigne Diop Fall, and he actually seems pretty awesome. He's from Senegal, came to the U.S. at age 16 where he played organized basketball for the first time (training with Hakeem Olajuwon, which is of course such a typical training partner when first learning basketball), learned English in 8 months, had a 4.0 GPA in high school while pursuing advanced math and science courses, is majoring in Computer Science at Central Florida, and hopes to be an engineer, possibly <i>instead</i> of a professional basketball player. This makes him exceptional relative to most populations, but sadly amongst 7'6" college basketball players he's just average.
+</p>
+<p>
+***** I feel the need to point out that if there's an Alpha Omega Nickleberry III this implies there were two Alpha Omega Nickleberrys before this one.
+</p>
+
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+IT'S ANTEATER TIME!
+</p>
+
+<p>
+The University of California system has a lot of good mascots. The Mount Rushmore of UC mascots would include the UC-Santa Cruz Banana Slugs, the UC-Santa Barbara Gauchos, the UC-Riverside Highlanders, and without a doubt the UC-Irvine Anteaters. I didn't want them to lose, but when they did, it became time to talk anteaters.
+</p>
+
+<p>
+According to my sister Abby, who literally texted me this information from the UC-Irvine campus Monday: "The anteater became the mascot of UCI when 56% of the students wrote it in on their ballots (which had 4 other choices to choose from: Golden Bison, Seahawks, Road Runners, and Unicorns)."
+</p>
+<p>Three current JQMCBP participants sitting around a flip-flop wearing Peter the Anteater:
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/b6df12a2-f88e-4470-add8-3743316f20b2.png" width = "70%" />
+</p>
+
+
+<p>
+Unlike Vermont, who may have missed out on picking Camels, I think Irvine went the right direction here. Roadrunners are about the best large, ground-dwelling member of the Cuckoo family I know, and they do natively occur in Irvine, but there's no denying the awesomeness of this as a defensive posture:
+</p>
+
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/51d93e15-4a8a-4d54-95d2-1e996ee67b1c.jpg" width= '45%'  />
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/2ae8062a-38c1-447d-829a-d096f4337945.jpg" width = '45%' />
+
+
+<p>
+A group of anteaters is called a parade. Everybody loves a parade!
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+SO. After all that what-could-have-been discussion, the main upset of the weekend was the Ducks of Oregon advancing to the Sweet 16, vanquishing the aforementioned Anteaters of UC-Irvine. There were 126 people that had Oregon getting this far though, and this is too many too print. Wait, it isn't. Here they are.
+</p>
+
+<div class = 'mailbag'>
+Adam Chittenden, Alison Monson, Allan Dranberg, Amy L, Andrea Porter, Andy Calvert, Andy Ducey, Arnold Woods, B Hoffman, Barbie Hoag, Beckett Kornze, Ben Mitrzyk, Betsy Ross, Bill Gates, Bob Topel, Brad Hubbard, Brady, Cami Niyo, Caroline Herrington, chris daigh, Chris Larson, Christie Schmidt, Corey Garza, Dan Reed, Dan Ridgeway, Dan Smedley, dane rozek, Dave Bush, David 'Crusher' Lucas, David Livermore, David Smalling, Deanne Busta, Diego Fernandez Duque, Disneyminion, Doc Boyle, Drew Bush, Dylan Wigness, Eric Anthony Blaha, Flynn Cadell, Fran Fabrizio, Gary Bahr, Geoff Findlay, Green Acres, Greg '2019 Champ' Rhoades, Isaiah O'Hare, James Walsh, Janie Thompson, Jared Elfvin, Jason Danielson, Jason Hermanson, Jason Kerwin, Jeb Byers, Jeff 'Zion was part of the Matrix' Hober, Jeff Shipley, Jim “thunder dunk” walker, Jim Bunda, JIm Parker, Jim Preston, JIM quinn, Jim Soriano, Jodie Baird, Joe Bowers, Joe Hoag, John Caragher, John Geis, John Varesi, Jon Mormino, Jon Wood, Josh Hanson, Josh Mello, Josh Nisenson, Josh Thaler, Justin Durr, Kai Anderson, Kari Williams, Kate Van Houten, Kathleen Phu, Katie Dillon, Keith Boyd, Ken Howard, Kim Williams, Kris Hansen, Kristin Gifford, Kyra Whitelaw, Laurie Anderson, Maddy Cloud, Mark Dyal, Michael Mowery, Michael Wooley-Ousdahl, Michael Wyatt, Mike Hartmann, Mike Hartmann, Milan Vaishnav, Milo Anderson, Nate Reed, Nicholas LeTarte, Omer Mustafic, P West2, Patty Dillon, Paul Wadzinske, Paula Fronckowiak, Pete Bring home the candy Baenen, PeterB’s Devonshire Donkeys, President Barack Obama, Randall Yoshida, Rennie Anderson, Rick 'dark hershey' Jones, Robert Portnoy, RockyMtnClam, Ron Gin, Roy Kuramoto, Sam Calvert, Sammy, Santiago Duque-Baird, Scott Boniface, Sean martin, Sean martin, Soren Van Houten, stephen malcolm anderson, steve bauscher, Steve Englehart, Susan Bannan, Taylor DiGirolomo, Timothy Ortopan, Todd Martin, Zobro Keiper
+</div>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Only 21 of you lost your champions over the weekend, including a couple True Wofford Believers and seven that didn't get the memo that defending champion Villanova isn't so good any more (tough luck, "awesomedude1234").
+</p>
+
+<div class = 'mailbag'>
+Maryland: Rachelle Owen
+
+Minnesota: Mia Riza, MadBums
+
+Villanova: Roy Kuramoto, Holly Borth, Ian Elletson, Santiago Duque-Baird, Natalie Keigher, awesomedude1234, Ryan van Mechelen
+
+Iowa: Mark Jones
+
+Washington: Denis Charette
+
+Kansas: Ben Halpern, Sherri, Jokey Shanahan, Chandra Hanke
+
+Ohio State: Mike Shanahan
+
+Wofford: David Ullman, Brooke Hailey
+
+Baylor: Eric Taylor
+
+Buffalo: Kazu D
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+I got a text from a friend on Saturday asking if I wanted to come over to watch "the game" that night. Since both of my alma maters, Wisconsin and Iowa State, had lost the day before, my response was "what game?". And then I realized Minnesota was still playing in the tournament. And that I live in Minnesota. And that the University of Minnesota is <i>my employer</i>. OHHHH THAT GAME. Well, they lost.
+</p>
+
+<p>73 of you lost your alma maters, including my dad (Ph.D. Kansas), a whole slew of Hawkeyes (yeah, I see ya Sedge), one Anteater alum, and a bunch of Minnesota Golden Gophers*</p>
+
+<p>* which are not actually gophers but squirrels. Don't get me started.</p>
+
+<div class = 'mailbag'>
+Maryland: Jenn Flaa, Rachelle Owen, Jeff Johnson
+
+Minnesota: Tom Lynch, Rob Strnad, Seth Goldberg, Doug Williams, Rupert Smudge, Dave Lyons, Mia Riza, Baron Van Valin, Andrew Carhart, John Flaa, Eric Taylor, John J Hassinger, Amy L, Michelle R Young, Tim Hoelscher, Chris Young, Chris Larson, Scott Koehler, Milt Bellin, Scott Goodman, martin lieser, Josh Hanson, Andrew Verdin
+
+UC-Irvine: Michael Wooley-Ousdahl
+
+Villanova: Diego Fernandez Duque, Natalie Keigher
+
+Iowa: Aaron Chittenden, Greg Brown, Rich Lyle, David Ver Woert, Abby Chungath, Jeff Chungath, Ruth Chittenden, Kiowa kid, Helen Copley, Lance Van Houten, Jared Elfvin, Andy Hefte, Jennifer Chittenden, The Sedge aka We're Back Bitches!, Craig Welsh , Carrie O’Boyle, Adam Chittenden, Little Eva
+
+Washington: Billy Rossman, Glenn Cramer, Patty Dillon, Jennifer Topel, Geoff Findlay, RockyMtnClam, Megan Dapper
+
+Kansas: Ed Nordstrom, The Dad, steve bauscher, Howard Johnson, davecole
+
+Ohio State: Todd Odess, christopher horoschak, Dennis Sabo, Tor Tor, Arthur Rush, Andy Glime
+
+Buffalo: Randall Yoshida
+
+Florida: Sean martin, Greg, Kevin Huntsman , Hilda, Sean martin, Mary Herrmann, Kevin Martin
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The Smartie Pants Award
+</p> 
+
+<p>
+Elsie Meilinger of Michigan requested "Smarties American, not Canadian". I mean...without that specific direction to shun the candy from our Neighbors to the North, would I have road tripped it to Winnepeg to get Elsie those other, inferior, <i>Canadian</i> smarties? I mean...probably.
+</p>
+<p>
+Notably, Alyssa Campbell, <i>also</i> of Michigan, requested Smarties (the Nestle kind), which are otherwise known as "Canadian Smarties". What is it with Michigan and specific types of Smarties?
+</p>
+
+<p>The world-renowned website Toronto Mike <a href = "https://www.torontomike.com/2011/03/american_smarties_vs_canadian.html">clears up the difference between these Smarties</a>, which are truly quite different. In Canada, American Smarties are known as Rockets, whereas in Canada, Smarties appear to be, basically, M&M's.</p>
+<p>Then I learned that <a href = "http://www.nearof.com/food-fight-u-k-vs-canadian-smarties-candy/">Canadian Smarties are ALSO not the same as BRITISH Smarties</a>. At which point I decided that I was not at all smarter for any of this knowledge.</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "http://bit.ly/bkMS150_2019">you may donate buckets of cash to my ride here</a>. This is my 8th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+<h1>It's UCoW!&#0153; TIME!</h1>
+
+<p>
+This is a JQMCBP "feature" that I don't think anyone a) wants or b) asked for, but I do it every year nevertheless. Given the remaining teams, I simulate every possible permutation left (currently 2<sup>15</sup> or 32,768 possible outcomes), and figure out who wins in each of those scenarios (<a href = "https://github.com/bklaas/jqmcbp/blob/master/perl/UCOW.pl">source code!</a>). The output is the highly scientific and largely useless Unweighted Chance of Winning, or UCoW!&#0153; (pronounced as a loudly shouted YOU COW!)
+</p>
+
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/698b2400-d540-44f4-b86f-a7c298ec44f2.jpg" width = '90%' />
+<p>
+This list will reduce a lot after this coming weekend, but here is the first UCoW!&#0153; in all its overly lengthy glory
+</p>
+<div class = 'mailbag'>
+===== UCoW!&#0153; WINNERS ====
+Name	Number of Winning Brackets	Percentage of Winning Brackets
+Troy Felix	1490	4.547
+Mark Foster	1382	4.218
+Jacob W	1037	3.165
+Michelle R Young	1030	3.143
+Paul Schmidt	908	2.771
+Heather Williams	896	2.734
+Kai Anderson	709	2.164
+RockyMtnClam	686	2.094
+Jeff Shipley	655	1.999
+Molly Mortimer	653	1.993
+Sheila Robine	623	1.901
+Andrew Mortimer	616	1.880
+Rob 'Tarpo' Tilley	584	1.782
+Laurie Anderson	579	1.767
+Deanne Busta	556	1.697
+Caleb Anderson	553	1.688
+Rebekah Hynson	541	1.651
+Luke Roling	536	1.636
+Hui Murray	476	1.453
+John McCartney	372	1.135
+Sean Whelan	356	1.086
+Diego Fernandez Duque	338	1.031
+Ellie Rupe	329	1.004
+Adam Schill	328	1.001
+Rennie Anderson	328	1.001
+Wubby Dubby O	327	0.998
+Kelly Hubbard	327	0.998
+Jenn Flaa	307	0.937
+Dave Bush	299	0.912
+Sam Hoag	298	0.909
+Lennox the Chimp	286	0.873
+Mark Dyal	285	0.870
+Glenn Cramer	281	0.858
+Josh Nisenson	281	0.858
+Md20-20	267	0.815
+Steven Antilla	249	0.760
+Curtis John Mitchell	249	0.760
+Tim Thomas	243	0.742
+Shay Parker Ridl	233	0.711
+Joaquin	227	0.693
+Tamara Fink	212	0.647
+Hunter the Chimp	210	0.641
+Alexandria Chittenden	209	0.638
+Joe Hoag	202	0.616
+Mark Largent	199	0.607
+Jim Toomey	192	0.586
+Matt Newton	191	0.583
+Meghan Waldron 	189	0.577
+Tim Ogborn	186	0.568
+Jayson LaGrou	180	0.549
+Jayson LaGrou	180	0.549
+steve bauscher	179	0.546
+Serine Isenhart	176	0.537
+Sarah Ogborn	175	0.534
+Dan Smedley	171	0.522
+Doc Boyle	170	0.519
+Nicholas LeTarte	170	0.519
+Erin D	169	0.516
+Wayne Lucas	168	0.513
+Jenny Gator	166	0.507
+The Dad	163	0.497
+Jaime Millard	163	0.497
+Miyagi	160	0.488
+Chris Larson	160	0.488
+Marty Dickrell	152	0.464
+Brad Hubbard	148	0.452
+Sofia Amato	148	0.452
+David Mitchell	146	0.446
+Mark Richards	144	0.439
+Bar low	140	0.427
+Kimbrel4aBuck	135	0.412
+Nate Hafer	134	0.409
+Mark Larson	132	0.403
+Adam Chittenden	132	0.403
+Martie	129	0.394
+Barbie Hoag	128	0.391
+Mooseman Bruce	128	0.391
+Bridget Conkling	125	0.381
+Little Eva	123	0.375
+Timothy Ortopan	123	0.375
+Pete Bring home the candy Baenen	121	0.369
+Michelle Hampton	119	0.363
+Romke Mooiweer	118	0.360
+Kate Van Houten	117	0.357
+Subpar Grover	116	0.354
+Annie Hoag	115	0.351
+Ellen Gifford	112	0.342
+Andrew Mossburg	110	0.336
+Jared Elfvin	110	0.336
+Henry H	109	0.333
+Ellie Chungath	106	0.323
+Amy L	106	0.323
+Pete kroha	105	0.320
+Billy Rossman	103	0.314
+Zack Cekala	101	0.308
+Atticus the Chimp	100	0.305
+Jack Genadek	99	0.302
+Kevin Quinn	99	0.302
+Drew Ruprich	97	0.296
+Kyra Whitelaw	96	0.293
+Margaret the Chimp	96	0.293
+Jack Wenz	95	0.290
+Jim Preston	95	0.290
+Sweatsville	94	0.287
+Jeff Amato	92	0.281
+Kelly and the Waves	91	0.278
+Mike Ford	90	0.275
+Heather Haun	89	0.272
+Rob Strnad	89	0.272
+B.J. Bardy	88	0.269
+Alondra the Chimp	87	0.266
+Brian ODonnell	85	0.259
+Calla Hubbard	83	0.253
+Kris Hansen	82	0.250
+Peter Hepburn	82	0.250
+Joe Hebda	80	0.244
+Mike Hartmann	80	0.244
+Craig da man Wadzinske	78	0.238
+Geoff Willard 	75	0.229
+Elsie Meilinger	74	0.226
+Alison Monson	73	0.223
+Janie Thompson	71	0.217
+Derek Roesti	70	0.214
+ryan mulvenon	69	0.211
+Dave McHalpine	69	0.211
+Fielding H. Yost	69	0.211
+Glen C. Volkman	68	0.208
+Kathy Larson	66	0.201
+Nirenoj	65	0.198
+Tyler Schmitt	64	0.195
+Patty Dillon	63	0.192
+Jason Kerwin	63	0.192
+Milo Anderson	62	0.189
+Andrew Verdin	60	0.183
+Scott Boniface	59	0.180
+David 'Crusher' Lucas	59	0.180
+Rafi Gregory Thaler	59	0.180
+Sarah DeLeon	58	0.177
+Brady Glime	58	0.177
+Steve Fink	56	0.171
+Dan Reed	56	0.171
+Pete Blagoev	54	0.165
+Josh Hanson	54	0.165
+Kristin Gifford	53	0.162
+Caroline Herrington	51	0.156
+Darby Niyo	50	0.153
+Christopher LeVasseur	49	0.150
+Alex Anderson	49	0.150
+Michael Mojzak	49	0.150
+Kelly Wolfe-Bellin	47	0.143
+Jerry Schmitt	47	0.143
+Justin Thakolkaran	47	0.143
+Joe Krakker	46	0.140
+B Hoffman	45	0.137
+Theresa LW	45	0.137
+Lindsay Genadek	44	0.134
+Cole the Chimp	43	0.131
+Todd Sieve	42	0.128
+Jon Mormino	42	0.128
+Dan Ridgeway	42	0.128
+Nate Marshall	41	0.125
+Ken Howard	41	0.125
+Tom Hoag	41	0.125
+Scott Koehler	41	0.125
+Renata Rush	40	0.122
+Dave Lyons	40	0.122
+Zander the Chimp	40	0.122
+Vivicecream Keiper	39	0.119
+Jayson the Chimp	39	0.119
+Trish Soriano	38	0.116
+Otto the Chimp	38	0.116
+Jack Fink	38	0.116
+Geoff Findlay	38	0.116
+David Smalling	38	0.116
+Lilliana the Chimp	38	0.116
+Jenna Sagen	37	0.113
+JennyRupe	37	0.113
+Kelli Strom	37	0.113
+Todd Martin	37	0.113
+Andrea Porter	37	0.113
+Jim Soriano	37	0.113
+Carson Moxie Klaas	36	0.110
+Eddie T	36	0.110
+Betsy Ross	36	0.110
+Will Scott 	35	0.107
+Susan Bannan	35	0.107
+Derek Bier	35	0.107
+Lary Ward	35	0.107
+Paul Petrous	35	0.107
+Rick Shepich	34	0.104
+Eric Ruprich	34	0.104
+Peter Cislo	33	0.101
+Big Dog	33	0.101
+Mary Tocci 	33	0.101
+Richard Doher	32	0.098
+Kate Meilinger	32	0.098
+Bryn Hubbard	31	0.095
+Matt Meilinger 	31	0.095
+Megan Boyd	31	0.095
+Alissa Lash	31	0.095
+Benjamin Martin	31	0.095
+Soren Van Houten	30	0.092
+Steve 'Dad of JAWS' White	30	0.092
+Jason Danielson	29	0.089
+Kyle Martin	29	0.089
+Sally Bowhay	29	0.089
+Bam Bam Shanahan	28	0.085
+IU Hoosiers Suck ballz	28	0.085
+Jed Durkin	28	0.085
+Jeff Blake	28	0.085
+Super Grover	28	0.085
+Michael Shim	28	0.085
+Colin Keiffer	27	0.082
+Mark Weiss	27	0.082
+Michael Nommensen	26	0.079
+Ron Gin	25	0.076
+Jeb Byers	25	0.076
+Jorge Acevedo	25	0.076
+Jodie Baird	24	0.073
+Michelle Dombrowski	24	0.073
+Brett Henry	24	0.073
+stekker	23	0.070
+Joe Bowers	23	0.070
+Chris Hewitt	23	0.070
+Cindy Arvant	23	0.070
+Amy Glime	23	0.070
+Tyler Groh	23	0.070
+Jon Klimczuk	22	0.067
+Al Wadz	22	0.067
+Thomas Joseph	22	0.067
+Daniel Weckstein	22	0.067
+Todd Mullanix	22	0.067
+Terry Schrems	22	0.067
+Nancy Girardot	21	0.064
+John Housenga	21	0.064
+Joshua Majors 	21	0.064
+Michael Gill 2006	21	0.064
+Rich Lyle	21	0.064
+Mike Hartmann	20	0.061
+Lynn Rohrkemper	20	0.061
+Peter Haun	20	0.061
+Scrappy	20	0.061
+CASSANDDRA DROUILLARD	20	0.061
+JOSHUA VERHAGE	20	0.061
+Dennis Brodjeski	19	0.058
+Jim Bunda	19	0.058
+Isaac LeTarte	19	0.058
+Greg Wenz	19	0.058
+Ashley Majors	18	0.055
+Maggie Topel	18	0.055
+Leighton the Chimp	17	0.052
+Steve Englehart	17	0.052
+Cami Niyo	17	0.052
+David Needham	17	0.052
+Jennifer Tesch	17	0.052
+James Carlson	16	0.049
+Beth Hoffman	16	0.049
+Jess Larson	16	0.049
+Max	15	0.046
+Camden Johnson	15	0.046
+Andrew T. Bryan	15	0.046
+Random troll	15	0.046
+Josh Hamling	15	0.046
+Addison Busta	14	0.043
+Jill campbell	14	0.043
+Stevens T. Mason	14	0.043
+Scott Driscoll	14	0.043
+Michael Ferreter	13	0.040
+B A Dhruna	13	0.040
+Devon Kristiansen	13	0.040
+Judi Durda	13	0.040
+John Debbrecht	13	0.040
+MICHAEL J FRAWLEY	12	0.037
+Larry Marx	12	0.037
+Ariah the Chimp	12	0.037
+Sam Christopherson	12	0.037
+Artie Wilkowsky	12	0.037
+Lj Brown	12	0.037
+Maria Blake	12	0.037
+Charlie Meilinger	11	0.034
+Amanda 'little to no chance' McGlothern	11	0.034
+Teresa Bunda	11	0.034
+Suvir S.	11	0.034
+Ashley Glime	10	0.031
+Justin Durr	10	0.031
+Flynn Cadell	10	0.031
+Andy Ducey	10	0.031
+Noam Hurwitz	9	0.027
+Tor Tor	9	0.027
+Lindsey Belzyt	9	0.027
+Nick 'Brother of JAWS' White	9	0.027
+Piper Dare Klaas	9	0.027
+J Dawg	9	0.027
+Jason Busta	8	0.024
+Stephanie Stalter	8	0.024
+Lorie Dankers	8	0.024
+Natalie Groves	8	0.024
+Chris 'Charby' Charbonneaux	8	0.024
+Trinity the Chimp	7	0.021
+Terry Sievert	7	0.021
+Julie Smith	7	0.021
+Todd Campbell	7	0.021
+Patrick Connolly	7	0.021
+Tim Hoelscher	6	0.018
+Rupert Smudge	6	0.018
+Joel Greene	6	0.018
+Will Arvant	6	0.018
+Tina Ferreter	6	0.018
+Jonathan Schroeder	6	0.018
+Justin Seipelt	6	0.018
+Riley Lyons	6	0.018
+Kathleen Phu	6	0.018
+Baron Van Valin	6	0.018
+Brett Callison	5	0.015
+Ryan Herrington	5	0.015
+Victoria Hebda	5	0.015
+Missy Shanahan	5	0.015
+Hayden Bier	5	0.015
+Isaiah O'Hare	4	0.012
+Owen F Clexton	4	0.012
+Susan B. Duck	4	0.012
+William Morrison	4	0.012
+Carrie O’Boyle	4	0.012
+Craig Drelles	4	0.012
+Liz McHalpine	4	0.012
+Chuck Delargy	4	0.012
+Joe Bro	4	0.012
+Ruth Hurwitz	4	0.012
+Marla Weinstein	4	0.012
+Dave Giugni	4	0.012
+Marin Oldenburg	4	0.012
+Mark Bailey	4	0.012
+Alyssa Campbell	4	0.012
+Dan Leon	4	0.012
+Trey White	4	0.012
+Melvin Medler	4	0.012
+Jamie (JAWS) White	4	0.012
+Doug Busta	4	0.012
+Mike Riggins	3	0.009
+Todd Rich	3	0.009
+Dawn Smith	3	0.009
+Bob Rogers	3	0.009
+Nate Smith	3	0.009
+Keith Shaftoe	3	0.009
+Beckett Kornze	3	0.009
+Marion Brown 	3	0.009
+nina thaler	3	0.009
+John Niyo	3	0.009
+Shae Lorenc	3	0.009
+Nancy Niergarth	3	0.009
+Anna Arvant	3	0.009
+Steve Weir	2	0.006
+James Dillon	2	0.006
+Taylor DiGirolomo	2	0.006
+Jon Blake	2	0.006
+Gym Nasium	2	0.006
+Nolan the Chimp	2	0.006
+Michelle Housenga	2	0.006
+Katie Herrmann	2	0.006
+Kayleen A. Niyo	2	0.006
+Bill Rogers	2	0.006
+BearDawg	2	0.006
+John Flaa	1	0.003
+Susie Smalling	1	0.003
+Amy McLanahan	1	0.003
+Todd Odess	1	0.003
+Davin Blixt	1	0.003
+Finn the Chimp	1	0.003
+Joshua stevens 	1	0.003
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 31933
+Chimp Wins: 1006
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1	29190
+2	3156
+3	359
+4	59
+5	3
+6	1
+
+</div>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+Deanne "Snickers" Busta has had a strangle hold at the top of the leaderboard for a while now, especially buoyed by her upset pick of Oregon into the Sweet 16. Mark "3 Musketeers"* Dyal trails by 2 and is alone in 2nd place. Shout out to Jack "Raczki" Wenz in 3rd place representing the Meister's Hood.
+</p>
+<p>
+* Carrie O'Boyle's favoritest candy bar
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Deanne Busta</td><td>Iowa</td><td>Snickers</td><td>Duke</td><td>59</td></tr>
+<tr><td>2</td><td>Mark Dyal</td><td>Texas</td><td>3 Mustketeers</td><td>Virginia</td><td>57</td></tr>
+<tr><td>3</td><td>Barbie Hoag</td><td>Michigan</td><td>Peanut M&Ms</td><td>Michigan State</td><td>55</td></tr>
+<tr><td>3</td><td>Bridget Conkling</td><td>Ohio</td><td>Giant Toblerone</td><td>Michigan State</td><td>55</td></tr>
+<tr><td>3</td><td>Curtis John Mitchell</td><td>Wisconsin</td><td>Skittles</td><td>Michigan</td><td>55</td></tr>
+<tr><td>3</td><td>Jack Fink</td><td>Ohio</td><td>Reese's King Size Peanut Butter Cup</td><td>Duke</td><td>55</td></tr>
+<tr><td>3</td><td>Jack Wenz</td><td>Minnesota</td><td>Raczki</td><td>Wisconsin</td><td>55</td></tr>
+<tr><td>3</td><td>Kyra Whitelaw</td><td>New York</td><td>Sour Patch Kids</td><td>Michigan</td><td>55</td></tr>
+<tr><td>3</td><td>Nicholas LeTarte</td><td>Michigan</td><td>Snickers</td><td>Duke</td><td>55</td></tr>
+<tr><td>3</td><td>Rob “Tarpo” Tilley</td><td>Canada</td><td>Chewy Spree 5lb bag</td><td>Michigan</td><td>55</td></tr>
+<tr><td>3</td><td>RockyMtnClam</td><td>Colorado</td><td>100 Grand Bar</td><td>Duke</td><td>55</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Keith the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>42</td></tr>
+<tr><td>2</td><td>Francis the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Marquette</td><td>40</td></tr>
+<tr><td>2</td><td>Lennox the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Virginia Tech</td><td>40</td></tr>
+<tr><td>2</td><td>Myla the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iowa State</td><td>40</td></tr>
+<tr><td>5</td><td>Adelynn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Abilene Christian</td><td>39</td></tr>
+<tr><td>5</td><td>Hunter the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida State</td><td>39</td></tr>
+<tr><td>7</td><td>Atticus the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Louisiana State</td><td>38</td></tr>
+<tr><td>7</td><td>Christian the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Washington</td><td>38</td></tr>
+<tr><td>9</td><td>Abigail the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northeastern</td><td>37</td></tr>
+<tr><td>9</td><td>Alexa the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Purdue</td><td>37</td></tr>
+<tr><td>9</td><td>Amir the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northern Kentucky</td><td>37</td></tr>
+<tr><td>9</td><td>Graham the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>37</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>
