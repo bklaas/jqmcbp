@@ -1,3 +1,4 @@
+import lib.db as db
 from flask import Flask, request
 from app_service import AppService
 import json
@@ -14,6 +15,15 @@ JQ-API UP!!!
 *********************
 """
 
+def dbconnect():
+    return db.get_engine().connect()
+
+@app.route('/api/dbhealth')
+def dbhealth():
+    # XXX this import not working
+    with db.get_engine().connect() as dbc:
+        result = dbc.execute(text("SELECT * from player_info"))
+        return result.fetchone()
 
 @app.route('/api/tasks')
 def tasks():
