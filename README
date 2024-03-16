@@ -44,23 +44,24 @@ html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year
     edit templates/overview to make it a Stay Tuned
     might as well update the main text of overview for the current year
 
+    Go to templates/header and adjust the timer for the countdown
     countdown timer! fix date in templates/header.
-    two places! don't know why!
+    in two places! don't know why!
     around line 48 and line 96
     austDay = new Date(NEW_YEAR, 02, NEW_1_BASED_DAY, 22);
+
+    Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
 
     # make enter page "not yet"
     jq && cp enter_notyet enter
 
 data/perl space: 
-        cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/Lucky.dat
+        cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/*.dat
         cd jqmcbp && rm data_files/*.dat
 
-Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
-Go to templates/header and adjust the timer for the countdown
 
 ###
-USE clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
+USE ~/jqmcbp/clear_db.sql to clear database of all values in players, games, player_info, players, filter tables. Do not clear teams table. Let jq_admin.cgi do that.
 DO NOT just clear the tables. clear_db.sql will insert values to the games table and NULL out the teams table
 
 NOTE TO 2019 BEN FROM 2018 BEN: HOLY CRAP DON'T SCREW UP THE FINAL FOUR REGION ORDER AGAIN. DO NOT USE ESPN. DO NOT. USE. ESPN.
@@ -71,7 +72,7 @@ Also: Watch out to make sure that all second round and onward games in winners.c
 Here's a one-liner sql that will fix it
 UPDATE games set winner = 'foo' where round > 1;
 
-Also: graph-o-matic needs a 2020 player_id to work properly. Fix that so the step-o-matic stuff works.
+Also: graph-o-matic needs a current player_id to work properly. Fix that so the step-o-matic stuff works.
 <web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl
 
 command:
@@ -93,6 +94,8 @@ new graphics as needed
 test it!
 
 #######
+
+POST-ENTRIES/THURSDAY OF JQMCBP
 
 graphomatic: SQL hard-codes a player_id for doing the step-o-matic stuff. update that to something from the current year or it will be broken
 <web_dir>/graphomatic/graph-o-matic.pl and step-o-matic.pl

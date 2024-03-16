@@ -1,11 +1,17 @@
 import lib.db as db
+from lib.models import (
+    Filter, Games, LastUpdated, Picks, PlayerInfo, Scores, SimilarityIndex, Teams, 
+)
 from flask import Flask, request
+from sqlalchemy import create_engine, text, desc
 from app_service import AppService
 import json
 
 app = Flask(__name__)
 appService = AppService();
 
+# XXX Change to johnnyquest
+DB = "jq_2023"
 
 @app.route('/')
 def home():
@@ -15,34 +21,13 @@ JQ-API UP!!!
 *********************
 """
 
-def dbconnect():
-    return db.get_engine().connect()
-
-@app.route('/api/dbhealth')
-def dbhealth():
-    # XXX this import not working
-    with db.get_engine().connect() as dbc:
-        result = dbc.execute(text("SELECT * from player_info"))
-        return result.fetchone()
-
-@app.route('/api/tasks')
-def tasks():
-    return appService.get_tasks()
-
-@app.route('/api/task', methods=['POST'])
-def create_task():
-    request_data = request.get_json()
-    task = request_data['task']
-    return appService.create_task(task)
-
-
-@app.route('/api/task', methods=['PUT'])
-def update_task():
-    request_data = request.get_json()
-    return appService.update_task(request_data['task'])
-
-
-@app.route('/api/task/<int:id>', methods=['DELETE'])
-def delete_task(id):
-    return appService.delete_task(id)
+@app.route('/api/test')
+def test():
+    with db.get_engine(DB) as session:
+        ret = []
+        step = session.query(Scores).order_by(desc(Scores.step)).first()
+        result = session.query(Scores).filter(Scores.step == step.step, Scores.man_or_chimp == 'man').order_by(desc(Scores.score))
+        for r in result:
+            ret.append({"name": r.name, "score": r.score})
+    return json.dumps(ret)
 
