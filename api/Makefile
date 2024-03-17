@@ -10,6 +10,10 @@ lstart: ## start the docker container
 
 .PHONY: start
 start: ## start the docker container
+	docker-compose up
+
+.PHONY: start-daemon
+start-daemon: ## start the docker container, daemonize
 	docker-compose up -d
 
 .PHONY: build-start

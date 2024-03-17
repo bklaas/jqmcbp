@@ -1,5 +1,6 @@
 gunicorn
 flask
+flask-restful
 python-dotenv
 sqlalchemy
 pymysql
