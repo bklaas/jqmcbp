@@ -18,6 +18,10 @@ start-daemon: ## start the docker container, daemonize
 
 .PHONY: build-start
 build-start: ## rebuild and start the docker container
+	docker-compose up --build
+
+.PHONY: build-start-daemon
+build-start-daemon: ## rebuild and start the docker container, daemonize
 	docker-compose up --build -d
 
 .PHONY: stop
