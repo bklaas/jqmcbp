@@ -34,7 +34,11 @@ close(DONE);
 while (defined($datfile = readdir(DIR))) {
 
 	next unless $datfile =~ /\.dat$/;
-	next if $done{$datfile};
+	#next if $done{$datfile};
+    if ($done{$datfile}) {
+        print STDERR "$datfile already in DB.\n";
+        next;
+	}
 	#print "$datfile this one ain't done\n";
 	my ($timestamp, @trash) = split /\./, $datfile;
 	# blank out arrays for use in loop

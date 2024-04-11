@@ -99,9 +99,24 @@ test it!
 
 #######
 
+During the week Sunday-Thurs before things kick off
+
+** Update team names after play-in games finish (teams, player_info)
+
+** Enter the chimps + Lucky.
+cd ~/jqmcbp/perl
+rm chimp_data/*.dat
+rm lucky/*.dat
+./1000chimps.pl
+./lucky.pl
+./dat2db.pl lucky chimp
+./dat2db.pl chimp_data chimp
+
+#######
+
 POST-ENTRIES/THURSDAY OF JQMCBP
 
-Enter all the chimps, including Lucky!
+If you haven't done it yet: Enter all the chimps, including Lucky!
 
 cp templates/enter_closed templates/enter
 
@@ -113,6 +128,11 @@ SSS: go to the root WEB folder and run similarity_index.pl, but only after all y
 Past champs:
 update player_info set past_champion = TRUE where name = "<champion name>"
 there's really no automated way to do this well right now
+go to halloffame page
+then do these queries
+select name, player_id, past_champion from player_info where man_or_chimp = "man" and name like "%Kopaska%";
+then grab the player_id and do
+update player_info set past_champion = "<YEAR>" where player_id = <player_id>
 
 for play-in games, there is a script to help with this! Look in jqmcbp/perl, it's called fix_play_in_teams.pl
 

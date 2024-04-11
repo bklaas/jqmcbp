@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 125px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVII</a></h1>
+		<h2 class='slogan'>
+			Brought to you by: <a href="https://heeeeeeeey.com">heeeeeeeey.com</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+<p><small>Note: now sending from ben@benklaas.com in an effort to get these emails through spam filters better. Official Candymeister email is still <a href = "mailto:jqmcbp@gmail.com">jqmcbp@gmail.com</a>.</small></p>
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/47d7db0a-e7a0-652e-a68c-3cceb7a5d340.png"
+					class="float-right" width = "20%" />
+			</p>
+
+			<hr class='section'>
+			<h1>Who Brought It?</h1>
+			<h2>And What Did They Bring?</h2>
+<p>Well certainly <a href = "https://youtu.be/fOT1QoP5WO8?si=RA-ZbwmBjXjk1ito">Jack Gohlke</a> (pictured right) of Oakland, which is still very much in Michigan, brought it.
+<p>
+But who didn't bring it, but by nature of not bringing it, really brought it, if you know what I mean. Which I'm sure you don't.
+</p>
+<p>
+I'm talking about <b>Andrew "Twix" Mossburg</b>, who at 8 points is not only in last place but also, with an RtT&#8482;* of 12, is the first inductee into this year's <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame&#8482;</a>, AND is nearly a lock for his record-setting <b>FOURTH</b> title of Last Place in JQMCBP. And it's not without competition. Rossburg typically faces off against <b>Dr. Wilbur "Dental Floss" Wonka DDS</b> for lastsies. Wonka has taken the cellar spot twice in the past, and is entered again this year (though Dr. Wonka does appear to have stopped the tanking strategy).</p>
+
+<p>It's almost as if, with Andrew's <a href = "https://benklaas.com/jqmcbp/whatsyourj.cgi">J-Factor&#8482;</a> score of 95.84**, he's <em>trying to lose</em>. 
+</p>
+
+<p>
+Andrew has also achieved the feat of a Darwin score of 1,000, currently doing worse than all but one of the 1,001 Chimp Army. Julio the Chimp currently sits at 7 points, but will likely overtake Andrew in the next round.
+</p>
+
+<p>* RtT&#8482; is Run the Table, your score if all remaining possible picks in your bracket go your way. Mossburg's is 12, which trails the current leading score, hence induction to the HoS&#8482;.
+<p>** 95.84, not 100, because Mossburg doesn't pick all upsets, just <em>almost</em> all upsets. Mossburg is an enigma.
+
+			<hr class='section'>
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<h3>The Now Vanquished Stetson Hatters</h3>
+			<p>
+Somehow no one called me on the fact that I devoted a lot of my first email to Stetson, a team that had neither played nor lost yet at the time of writing. Well, they lost Friday by 39 points. So that happened. Go Hatters!
+			</p>
+
+<h3>BEHOLD The Greatest Mascot in the World</h3>
+
+<p>
+ALL HAIL BIG RED! It had been since 2013 since the Western Kentucky Hilltoppers had made the dance, but I was patiently waiting. Behold, the Greatest Mascot in the World, BIG RED.
+</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/ef201dbc-9211-e720-3645-1206c954a3da.png" width = '100%' alt='pic of big red, the greatest mascot in the world'/>
+
+<p>There's a lot to learn about Big Red, as noted in the Western Kentucky Sports Marketing Guidelines PDF, which I definitely didn't read in its entirety.</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e256e79e-9708-bcea-edfe-5fb11c990584.png" width = '100%'/>
+<p>
+<ul>
+<li>Big Red taunts; is never taunted.</li>
+<li>Big Red cannot eat, but does chew Big Red gum and drinks exclusively Code Red.</li>
+<li>Big Red has complete and total diplomatic immunity.</li>
+<li>Big Red's favorite color is ironically blue.</li>
+<li>ONCE AGAIN BIG RED DOES NOT TALK PLEASE DO NOT PORTRAY TALKING WITH THE USER OF CONVERSATION BALLOONS.</li>
+</ul>
+
+<p>Big Red is THE BEST. I mean, JUST. <b>BEHOLD</b>.</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/8db8e86f-c89b-d85a-8557-262336425341.png" alt='pic of big red, the greatest mascot in the world' width='30%'/>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/24eb11d9-375e-feda-154b-cd9145710933.png" alt='pic of big red, the greatest mascot in the world' width='30%'/>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/b5965f68-aec7-db0d-535d-9049149f6847.png" alt='pic of big red, the greatest mascot in the world' width='30%'/>
+
+
+<p>According to Mark Greer, second person to ever wear the suit</p>
+<div class = 'quote'>
+It’s a very funny suit. ... It can make expressions where most mascots have one stupid expression on their face at all times. Big Red can show emotion like no other mascot.
+</div>
+<p>Hear that? ONE STUPID EXPRESSION. All other mascots are worst! Big Red is best! I mean, JUST. LOOK. <b>UNMATCHED</b>.</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/1d02a1d2-63ab-b12a-98dd-731812fafe3c.png" width = '100%' alt='pic of big red, the greatest mascot in the world' />
+
+			<hr class='section'>
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+93 of you had Yale over Auburn in Round 1. Pictured here is the celebration on campus. New Haven was LIT.
+</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/3ab08b20-f612-e293-0da2-6c62360cd417.png" width = '90%' />
+			<div class='pre'>
+Yale:  AJ Anderson, Ana Pao, Andrew Mossburg, Andy Hefte, Anne Bahr, Avi Gupta, Bam Bam Shanahan, Bill Gates, Brandon, Brent Daley , Bruno Rhoades, Cami Niyo, Caprice McGrail, Cassie Connery, Charlotte Bowers, Cris Osier, Dani Godreau, Denis 'The Menace', Devan Dhruna, Eddie Sander, Eddie Topel, Ellie “Lil’ Nifty” Chungath, Eric Young, Faviola Robles, Gavaboo, Graham Leonard, Greg Rhoades, Hannes Williams, Isaac LeTarte, Jackson Taylor, Jake Lowenstern , James Davis, Jeb Byers, Jenn, Jennifer Chittenden, Jeremy Van't Hof, Jodi E, Joe Hoag, Joe Raymond, John 'I dunno yet but it's gonna be hard to find' Yuda, John McCartney, John Stakoe, Julia Drew, June Bug McGlothern, Kate Meilinger, Katie Kelly, Kyle Ramfos, Lindsey LaGrou, Lisa Blake, Lucy Rhoades, Marco Byrd, Margaret Wadz, Maria Blake, Maria Célia , Marissa Stolt, Martha Carlos, Matt Smalling , Maya Gypsy, Maya Gypsy, Meg Whelan, Melissa Elliott, Michael Shim, Michelle Morrisey, Milan Vaishnav, Mooseman Bruce, Mya Proctor, Nancy Valentine, Nick Kasik, Nick White, OLD BET THE BEST, Pat Dillon, Patrick Connolly, Peter Griffin, Peter James, Renata S Rush, Ronald Gin, Ronin Danek, Sab, Sam Waldron, Sandlots , Sara Mitchell, sel, snoop in da coop, Steve, Taryn Myers, Theo Anders, Theodore Chungath, Todd Pepperkorn, Trevor Shepich, Victoria Johnson, Will Scott, Winston Churchill, Zach Gostanian
+			</div>
+
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Kate Knowles actually led the whole JQMCBP for a stretch on Friday. Alas, all hopes were dashed when the Vermont Catamounts were callously ousted in round 1, defying no one save Kate's expectations.
+</p>
+
+<p>Also, pour one out for Cami Niyo, the most loyal Colgate stan ever. Just look at her Candy Bar choice.</p>
+
+<p>Wisconsin fans in this pool are not a surprise, but 12 people for Auburn! Who would have guessed! That did not work out well for you!</p>
+
+<div class='pre'>
+Wisconsin: Craig Wadzinske, Owen Boll, Steve, Everett Brun, Gundersnipe, Jenn Tran, Darby Niyo, Violette Simon, Owen Knych, Rosanna Collars, Stevie Nicks, Charlotte Bowers, Erin Meyer
+
+Auburn: Eric Gobstopper, Fred, Mark Foster, Alex Lobster, Robert Van Beek, Jeffrey B, Sierra Bergman, Max Costigan, Sean Bellin, Brendon Harrington, Grace Rennie, Tyler Schmitt
+
+New Mexico: Lucia Carlos, David Mitchell , Leo Kuyl
+
+UAB: June Bug McGlothern
+
+Vermont: Kate Knowles
+
+Florida: Donna Huntsman, Globetrottingmoose
+
+Saint Marys: Kai Anderson, Bugs
+
+Colgate: Cami Niyo
+
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>Adios, Badger alums</p>
+<div class='pre'>
+Wisconsin: Ben Klaas, Jenny Gator, Jacob Wadzinske, Jonah Rondeau , Max McCartney, Craig Wadzinske, Piper Klaas, Owen Boll, Paul Smith, Todd Krueger, Steve, Mark Larson, Rob Danek, Steve Danek, Ryan Schuelke, Carson Moxie Klaas, Jack Wenz, Gundersnipe, Jonah Rondeau , Julia Drew, Paul Wadzinske, Marissa Stolt, Violette Simon, Faviola Robles, Owen Knych, Kathy Larson, David Larson, Sierra Bergman, Conor Whelan, Marla Weinstein, John McCartney, Melanie Leopold, David Van Riper, Kate Connolly, Kevin Quinn, Lisa Wadzinske, Wendy Volkman, Jonathan Schroeder, Joel Rondeau, Tom 'Muad'Dib' Wadzinski , Alex Anderson, Tim Ogg, Greg Wenz, Marty Dickrell
+
+Florida Atlantic: Sabrina Bier
+
+UAB: Fran Fabrizio, Chad Pechumer
+
+Nebraska: Greg Miller, Abby Chungath, Jessica Dussault, Matt D, Kyle Smith, Chad Koch
+
+Vermont: Sara Mitchell
+
+Florida: Dani Godreau, Donna Huntsman, Kevin Huntsman, Moosecaboose , Nora Huntsman, Mary F Herrmann
+
+Grambling (but actually probably Montana State): Derek Roesti, Jeff Shipley, Gina Rumore
+
+Saint Marys: Ross Benson, Macie Benson, Leyla Benson
+
+New Mexico: David Mitchell
+</div>
+
+			<hr class='section'>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/042aac1e-3b16-1283-2c44-ded3e139b88b.png" width = '20%' class = 'float-right' />
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>
+The Ride Or Die for Oral Hygiene Award goes to <b>Cami "colgate toothpaste!" Niyo</b>. Cami, as previously mentioned, also had Colgate winning it all this year. Basically, she's like really into Colgate. Y'all can laugh, but she's blissfully cavity-free.
+            </p>
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>John Griffin</td><td>North Carolina</td><td>Kit-Kat</td><td>North Carolina</td><td>28</td></tr>
+<tr><td>1</td><td>Justin Strohmeyer</td><td>Michigan</td><td>Big Kat </td><td>North Carolina</td><td>28</td></tr>
+<tr><td>3</td><td>Caprice McGrail</td><td>Michigan</td><td>Chocolate covered crickets</td><td>Marquette</td><td>27</td></tr>
+<tr><td>3</td><td>Joe 'mit Ohren' Grover </td><td>Minnesota</td><td>Uncle Urnie's Candy Ashes</td><td>Houston</td><td>27</td></tr>
+<tr><td>3</td><td>Zach Gostanian</td><td>Maine</td><td>100 Grand!</td><td>Houston</td><td>27</td></tr>
+<tr><td>6</td><td>Alex Ross</td><td>Michigan</td><td>Twix </td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Anna Bier</td><td>Michigan</td><td>Peanut butter m&amp;ms </td><td>Purdue</td><td>26</td></tr>
+<tr><td>6</td><td>Derek Bier</td><td>Michigan</td><td>Snickers </td><td>Purdue</td><td>26</td></tr>
+<tr><td>6</td><td>Jake Lowenstern </td><td>Oregon</td><td>Lindt Lindor</td><td>Creighton</td><td>26</td></tr>
+<tr><td>6</td><td>Jenn Tran</td><td>Missouri</td><td>Take5</td><td>Wisconsin</td><td>26</td></tr>
+<tr><td>6</td><td>Johnny Slash Flaa</td><td>Washington</td><td>Twirly Whirly</td><td>Purdue</td><td>26</td></tr>
+<tr><td>6</td><td>Josie Wakser</td><td>Arizona</td><td>1 pound Reeses peanut butter cup</td><td>Arizona</td><td>26</td></tr>
+<tr><td>6</td><td>Kate Knowles</td><td>California</td><td>Maple Sugar Candy</td><td>Vermont</td><td>26</td></tr>
+<tr><td>6</td><td>Kenneth Andrew Boyd </td><td>Washington</td><td>Kit Kat</td><td>North Carolina</td><td>26</td></tr>
+<tr><td>6</td><td>Kevin Nolan</td><td>Michigan</td><td>Payday</td><td>Marquette</td><td>26</td></tr>
+<tr><td>6</td><td>Lisa Blake</td><td>California</td><td>King Size Take 5</td><td>Kansas</td><td>26</td></tr>
+<tr><td>6</td><td>Marissa Stolt</td><td>Wisconsin</td><td>Nerd rope </td><td>Arizona</td><td>26</td></tr>
+<tr><td>6</td><td>Megan Wooley-Ousdahl</td><td>California</td><td>Milky Way </td><td>Tennessee</td><td>26</td></tr>
+<tr><td>6</td><td>Michael Shim</td><td>Michigan</td><td>King Size Nestle Crunch Bar</td><td>Connecticut</td><td>26</td></tr>
+<tr><td>6</td><td>Michelle Morrisey</td><td>California</td><td>Twix</td><td>San Diego State</td><td>26</td></tr>
+<tr><td>6</td><td>Patrick Connolly</td><td>Wisconsin</td><td>Peanut Butter M&amp;Ms</td><td>North Carolina</td><td>26</td></tr>
+<tr><td>6</td><td>Peter Hepburn </td><td>California</td><td>Skor</td><td>Houston</td><td>26</td></tr>
+<tr><td>6</td><td>Sara Mitchell</td><td>Massachusetts</td><td>Milk Chocolate Ritter Sport</td><td>Connecticut</td><td>26</td></tr>
+<tr><td>6</td><td>Staci Nowak</td><td>Michigan</td><td>Peanut m&amp;ms</td><td>Connecticut</td><td>26</td></tr>
+<tr><td>6</td><td>Teresa Bunda</td><td>Minnesota</td><td>Take 5 Bar</td><td>Connecticut</td><td>26</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+		<p>
+
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Isaak</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Arizona</td><td>24</td></tr>
+<tr><td>1</td><td>Serena</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Tennessee</td><td>24</td></tr>
+<tr><td>1</td><td>Will</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Texas A&amp;M</td><td>24</td></tr>
+<tr><td>4</td><td>Cristian</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Gonzaga</td><td>23</td></tr>
+<tr><td>4</td><td>Demarcus</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Vermont</td><td>23</td></tr>
+<tr><td>4</td><td>Kaleb</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>NC State</td><td>23</td></tr>
+<tr><td>4</td><td>Magdalena</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Akron</td><td>23</td></tr>
+<tr><td>4</td><td>Sheila</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Longwood</td><td>23</td></tr>
+<tr><td>4</td><td>Sky</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Utah State</td><td>23</td></tr>
+<tr><td>10</td><td>Asa</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Grambling</td><td>22</td></tr>
+<tr><td>10</td><td>Chandler</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Northwestern</td><td>22</td></tr>
+<tr><td>10</td><td>Fabiola</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Oakland</td><td>22</td></tr>
+<tr><td>10</td><td>Jan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Western Kentucky</td><td>22</td></tr>
+<tr><td>10</td><td>Louis</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Wisconsin</td><td>22</td></tr>
+<tr><td>10</td><td>Lucia</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>NC State</td><td>22</td></tr>
+<tr><td>10</td><td>Marquis</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Alabama</td><td>22</td></tr>
+<tr><td>10</td><td>Melody</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>South Dakota State</td><td>22</td></tr>
+<tr><td>10</td><td>Mohammed</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Michigan St</td><td>22</td></tr>
+	
+				</tbody>
+			</table>
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2024 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>
