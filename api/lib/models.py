@@ -76,6 +76,8 @@ class Scores(Base):
     combined_rank = Column(Integer)
     eliminated = Column(Enum('y', 'n'), default='n')
 
+    player_info_obj = relationship("PlayerInfo", uselist=False)
+
 class SimilarityIndex(Base):
     __tablename__ = 'similarity_index'
     first_player_id = Column(Integer, primary_key=True)

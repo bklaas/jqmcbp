@@ -8,6 +8,8 @@ use vars qw/$dbh/;
 do "/home/bklaas/jqmcbp/web/2020/jq_globals.pl";
 
 connect_to_db('johnnyquest');
+#connect_to_db('jq_2023');
+
 my $player_info = get_emails();
 
 my %done;
