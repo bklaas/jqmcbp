@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIV</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/1e5td7-Bpvc">Creed Thoughts</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/838</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+</p>
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+I work at the University of Minnesota's (UofM) Institute for Social Research and Data Innovation (ISRDI) and at work there is an active JQMCBP conversation amongst participants (altogether now, that's UofMISRDIJQMCBP). Last week there was some discussion and research by co-worker Joe "Mail a Potato Face" Grover* about St. Bonaventure. Through the school's history, the Bonnies had a number of mascots that were...problematic. Trying to reform this, St. Bonaventure in the late 1990s unveiled the Bona Fanatic. I think you'll all agree from this picture that the Bona Fanatic was <b>ABSOLUTELY AMAZING</b>.
+</p>
+
+<p>* not to be confused with 2018 JQMCBP Champion Super Grover</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/3c8b5e61-39f3-4956-b12e-b6853109fd6d.jpg" />
+
+<p>Why isn't the Bona Fanatic still a fixture at St. Bonaventure, and why has it been replaced with the definitely-lame-in-comparison Bona Wolf? Perhaps this is why, extracted from <a href = "http://archives.sbu.edu/symbols/bona_fanatic.htm">this amazing modern website</a>:</p>
+
+<div class = "quote">
+the Bona Fanatic made its first appearance on Dec. 3, 1996, and precipitated a list of complaints. The people inside of this costume were subjected to assault by Bonaventure's own fans and suffered from its construction.
+</div>
+
+<p>But wait there's more!</p>
+
+<div class = "quote">
+In an article dated January 31, 1997 reports of the mascot getting hurt are included. Two freshman shared rally duties in the suit. Taylor Nicklaus and Lori Magenis were recipients of cracked ribs, bruises, abrasions, and a dislocated knee.
+</div>
+
+<p>Nicklaus is quoted as saying</p>
+
+<div class = "quote">
+The crowd rushed onto the court at the University of Buffalo game and started roughing me up. I had a cracked rib, a cut nose and bruises on my  arms and legs.
+</div>
+
+<p>But wait there's more! Nicklaus also stated</p>
+
+<div class = "quote">
+There have been home games were fans attempted to push me down the stairs.
+</div>
+<p>But wait there's still more!</p>
+<div class = "quote">
+Magenis includes tales in which she said it was hard to work in the costume and after tripping because of poor visibility she dislocated her knee. Even the suit itself was not conducive to the needs of a school mascot.
+</div>
+<p>Let's go back to Nicklaus for EVEN MOAR</p>
+<div class = "quote">
+...the inside part of the legs and boots give me rug burns, ...and the shoes are at least four sizes too big.
+</div>
+
+<p>But wait there's still more!</p>
+<div class = "quote">
+In an attempt to help the students inside of the suit, the Athletic Director bought an ice pack system to help keep the suit cool. In response to student harassment the mascot also received an escort to all the games.
+</div>
+
+<p> In conclusion, <b>BRING BACK BONA FANATIC!</b></p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Ohio over Virginia was certainly an upset, but yet 136 of you (including me!) knew the Cavs were heading home. Abilene Chrstian, which I've recently learned is a university in Texas, beat Texas, which I've not recently learned is a university in Texas. 38 of you had a feeling about Sweet Abilene, and here's your official props for that pick.
+</p>
+
+<div class = 'pre'>
+Abilene Christian:  Allan Dranberg, Andrew Mossburg, Anna Griesheimer, Bob Armitage, Carin goodrich, Caroline Spears, Chad Ceadda Pechumer, Chris Handlos, Claire Kamp Dush, Cole Anderson, Cormac O'Boyle , Dave Larson, David Mitchell, Derren , Espen 'what's candy?' Williams, ET, GAUCHOS!, Helen Regan, Jackson Smith, Jason Kerwin, Jenn, Jokey Shanahan, Judi Durda, Katie Dominguez, Kiera D, Kurt Anderson, Littleeva, Mark Dyal, Mark Jones, Marvella Avery, Maya O'Hare, Paul Bellin, PC, queen violet, Satoshi Nakamoto, Seamus Lee, Simon Fitch-Roberts, Sue M
+</div>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+18 lost their champion pick on Saturday, including 9 Texas supporters (remember Finn O'Boyle, he of the 1st place after 5 games? Yeah, not so much now. Sorry Finn).</p>
+<p>If there's one thing we've learned about Virginia, it's either a first round exit or they win the whole thing. There is no in between with the Cavaliers. Sorry Jacob Wadzinske, you chose...unwisely.
+</p>
+<p>Adios GAUCHOS!, back to the pampas for you.
+</p>
+
+<div class = 'pre'>
+Texas Southern: Sue M 
+
+St Bonaventure: Jeff Miller
+
+Georgetown: Helen Care, Jake Fisher
+
+Texas: Leigh A Keiper, Seth Goldberg, Mark Largent, Isaac LeTarte, Finn O'Boyle, Christy Griesheimer, Daniel Backman, Larry Knowles, Matt Suomi
+
+Norfolk St: Andrew Mossburg
+
+Missouri: Henry Fabrizio
+
+Virginia: Jacob Wadzinske
+
+UC Santa Barbara: GAUCHOS!
+
+Grand Canyon: Derren
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament*. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+* not everyone
+</p>
+
+<p>In the before time, the long long ago, the Meister lived in Santa Barbara, which is why there are so many alums here in the JQMCBP. Lisa Blake has been waiting for years to be able to put in UCSB as her alma mater in her entry (the team rarely makes the tourney). Well Lisa, here's your time to be made fun of (along with your "friend", GAUCHOS!). Your alma mater is no longer. #butyoustillgettoliveinsantabarbara
+</p>
+
+<div class = 'pre'>
+Texas: Jeral 'You Had Me at Candy' Poskey
+
+Brigham Young: Gabriel Smith
+
+Virginia: Katie Gagliano, Kate Knowles
+
+UC Santa Barbara: Lisa Blake, GAUCHOS!, Corey Garza, Eva Witt, Timothy Ferrero, Dan Reed, Ron Gin, Kurt Anderson, Lisa Reed, Jeffrey Kinne, Jeff Kinne
+
+Eastern Washington: Nick White
+</div>
+<p>
+As long as we're taking this trip down memory lane, here are some action photos from my softball team BIOHAZARD (go Orange!) in 2001, featuring current JQMCBP entrants.
+</p>
+<br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/396de924-df13-4d73-950c-b8ea09b8803c.jpg" width = "400" />
+<br />JQMCBPer Eva Witt about to hit the deep ball
+<br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/a14e3013-9dd8-4a93-8628-9eb26755c3a3.jpg" width = "400" />
+<br />The Meister hitting cleanup, hopefully with Eva on base somewhere because I liked to chase her down on the basepaths (true story!)
+<br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/b208f29d-7e24-4293-a4ca-0185036c31b4.jpg" width = "400" />
+<br />JQMCBPer Corey Garza contemplating why he's a Detroit Tigers fan and why he's been so unsuccessful in grabbing the novelty diploma playing that Candy Crane behind him.
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/26991301-badd-433d-bd3d-71f2747b001c.jpg"  width = "400" />
+<br />The Meister's Rookie Softball Card. You should save this photo, it could be worth something (talking to you, Smalling).
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The How Do I Take Any Kind of Reasonable Action On This Award goes to my nephew <b>Theo Chungath</b> whose candybar selection of <b>"I work in an ice cream shop..."</b> is an enigma wrapped in a mystery.
+</p>
+<p>
+What's Theo trying to tell me? Maybe...maybe he's trapped at his ice cream shop, tied up by ice cream thieves. His arms are immobile, but he's managed to get his nose next to his phone, clumsily tapping out a plea for help on the last thing he had open, the candybar entry to JQMCBP. He was trying to type "I work in an ice cream shop...and I've been tied up by ice cream thieves who have stolen all of the money and worse yet ALL OF THE ICE CREAM and PLEASE call 911 they made off in the ice cream truck and they should be considered armed and dangerous and I oh yeah I think for JQMCBP some skittles would be fine pleaseandthankyou," but I coded the candybar selection to not allow that many characters in the form and OH GOD WHAT HAVE I DONE ARE YOU OKAY THEO?
+</p>
+<p>
+On second thought, maybe he just saying he doesn't need more sugar.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+We've got a two-way tie at the top between Dave "Reese's Peanut Butter Cups" McHalpine and Kathy "Milky Way Dark Midnight" Larson. Kathy's selection of Ohio State to win it all will probably spell doom for her in the Quest for Candy, and by the time you read this maybe Dave's champ Illinois will have been beaten by the Ramblers of Loyola (though if they beat Loyola I think I better start researching that mascot). Lots of players lurking just behind these two. It's anyone's game*.
+</p>
+
+<p>
+* however, currently sitting in 527th place, probably not mine.
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Dave McHalpine</td><td>Michigan</td><td>Reese's Peanut Butter Cups</td><td>Illinois</td><td>27</td></tr>
+<tr><td>1</td><td>Kathy Larson</td><td>Wisconsin</td><td>Milky Way Dark MIdnight</td><td>Ohio State</td><td>27</td></tr>
+<tr><td>3</td><td>Luke Roling</td><td>Iowa</td><td>Reeses Peanut Butter Cup</td><td>Gonzaga</td><td>26</td></tr>
+<tr><td>3</td><td>Mark Dyal</td><td>Texas</td><td>Milky Way</td><td>Baylor</td><td>26</td></tr>
+<tr><td>3</td><td>Mark Fidder</td><td>Illinois</td><td>Peanut M&amp;M</td><td>Alabama</td><td>26</td></tr>
+<tr><td>3</td><td>Rich Lyle</td><td>Iowa</td><td>Necco Wafers</td><td>Illinois</td><td>26</td></tr>
+<tr><td>3</td><td>Scott Driscoll</td><td>Michigan</td><td>Charleston Chew</td><td>Gonzaga</td><td>26</td></tr>
+<tr><td>3</td><td>Tracy Kugler</td><td>Minnesota</td><td>Divine Dark Chocolate with Ginger &amp; Orange</td><td>Ohio State</td><td>26</td></tr>
+<tr><td>3</td><td>Will Arvant</td><td>Michigan</td><td>3 Musketeers</td><td>Michigan</td><td>26</td></tr>
+<tr><td>10</td><td>Bob Armitage</td><td>Michigan</td><td>Strawberry Whoppers</td><td>Alabama</td><td>25</td></tr>
+<tr><td>10</td><td>Brandon Ray</td><td>Maryland</td><td>Watermelon Kit Kat</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Brenda Ochs</td><td>Michigan</td><td>Butterfinger </td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Bridget Burns</td><td>Oregon</td><td>Big hunk</td><td>Oregon State</td><td>25</td></tr>
+<tr><td>10</td><td>Caleb Anderson</td><td>Virginia</td><td>Kit Kat</td><td>Michigan</td><td>25</td></tr>
+<tr><td>10</td><td>Cathy Mullanix</td><td>California</td><td>Red Vines</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Chad Ceadda Pechumer</td><td>Michigan</td><td>Tolberone candy bar</td><td>Michigan</td><td>25</td></tr>
+<tr><td>10</td><td>dane rozek</td><td>Illinois</td><td>snickers</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Dave Lyons</td><td>Minnesota</td><td>Ritter Sport Dark Choc w/hazelnuts </td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>David Smalling</td><td>Kansas</td><td>The Lion Candy Bar</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Deanne Busta</td><td>Iowa</td><td>King size snickers</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Diamond Dave’s </td><td>Iowa</td><td>Heath Bar</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Ed Myers</td><td>Colorado</td><td>Three Musketeers </td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Greg Brown</td><td>North Carolina</td><td>Caramello</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Jason Cadell</td><td>Illinois</td><td>Butterfinger</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Jason Hermanson</td><td>Iowa</td><td>King Size Reeses</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Jim Chryssikos</td><td>Michigan</td><td>caramello</td><td>Baylor</td><td>25</td></tr>
+<tr><td>10</td><td>John Cooper</td><td>Michigan</td><td>payday</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Judi Durda</td><td>Maryland</td><td>reeces peanut butter cups</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Kerie</td><td>Michigan</td><td>Whatchamacallit</td><td>Michigan</td><td>25</td></tr>
+<tr><td>10</td><td>Lance Van Houten</td><td>Arizona</td><td>Whatchamacallit</td><td>Iowa</td><td>25</td></tr>
+<tr><td>10</td><td>Michael Mojzak</td><td>Michigan</td><td>Payday</td><td>Gonzaga</td><td>25</td></tr>
+<tr><td>10</td><td>Owen Clexton</td><td>Wisconsin</td><td>Coffee Crisp</td><td>Michigan</td><td>25</td></tr>
+<tr><td>10</td><td>PC</td><td>Wisconsin</td><td>Trump Impeachmints</td><td>Wisconsin</td><td>25</td></tr>
+<tr><td>10</td><td>Terry Valentine</td><td>Ohio</td><td>Nestle Crunch bar</td><td>Illinois</td><td>25</td></tr>
+<tr><td>10</td><td>Timothy Ortopan</td><td>Michigan</td><td>Baby Ruth</td><td>Ohio State</td><td>25</td></tr>
+<tr><td>10</td><td>Trevor Shepich</td><td>Michigan</td><td>Take 5</td><td>Baylor</td><td>25</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+My namesake Benjamin the Chimp living large with 24 points at the top of the chimp pile! Coincidence? I think not. THE FIX IS IN.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Benjamin</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Florida State</td><td>24</td></tr>
+<tr><td>1</td><td>Christy</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>24</td></tr>
+<tr><td>3</td><td>August</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>San Diego State</td><td>23</td></tr>
+<tr><td>3</td><td>Campbell</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UCLA</td><td>23</td></tr>
+<tr><td>3</td><td>Cecilia</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Loyola Chicago</td><td>23</td></tr>
+<tr><td>3</td><td>Cody</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>23</td></tr>
+<tr><td>3</td><td>Diana</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colgate</td><td>23</td></tr>
+<tr><td>3</td><td>Fabian</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Florida State</td><td>23</td></tr>
+<tr><td>3</td><td>Gordon</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Iowa</td><td>23</td></tr>
+<tr><td>3</td><td>Niko</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oral Roberts</td><td>23</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

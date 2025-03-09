@@ -2,27 +2,31 @@ Here's what's needed:
 
 (DB copy to jq_2021 already compeleted)
 
+2025: The multi-year encoding problem has been fixed-- in crontab, use the shell script that invokes the encoding fix before the
+
+FOR THE HISTORICAL DOCUMENTS ARCHIVE:
 BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
 THIS WAS STILL A BAD PROBLEM IN 2022
-
 2022 Note: Look for the file in perl/badEncodingFixer.py --> with a very small amount of effort this can be used to sanitize badly encoded files. Make sure to test it though!
 
 ****
+2025: dat2db.pl is now IDEMPOTENT
+for the archives:
 MAKE dat2db.pl IDEMPOTENT. If it skips entering any files already in the DB, you should be able to continue to run it repeatedly, even after encoding fixes. Either stop using the "done" file or start querying the DB directly.
-
 The dat2db.pl that is in /data/jq_entries is almost there
 make it append to the proper done file
 figure out a way where a failed entry will cause it to trigger the python script that will fix the encoding
-
-THE ENTRIES IN /data/jq_entries/busted are still in BUSTED form
-use these for a post-processing set of helper files
 ****
 
-How to fix: The jq_entry.cgi file needs to be rewritten to write utf-8
+2025: Don't bother with below. We're good enough by invoking the python encoding fixer as described above
+How to truly fix: The jq_entry.cgi file needs to be rewritten to write utf-8
 The database needs possible updating to use utf-8 (?) in its tables
 Defo it's jq_entry.cgi that's the source of the awfulness
 To try a fix, create a page that just has the first page of entry stuff (name/email) and add candybar. Have it call a jq_entry_devel.cgi that does the same thing as jq_entry.cgi minus the teams. Figure out how to get it to write out unicode data correctly, then test that it can get dropped into the database successfully with dat2db.pl (or equivalent)
 
+
+------------------
+Here's the get-it-up-and-running instructions
 
 copy last year's johnnyquest database to jq_2018
 	mysqldump -u root johnnyquest > jq.sql

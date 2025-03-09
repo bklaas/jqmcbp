@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVI</a></h1>
+		<h2 class='slogan'>
+			<a href="">XXX youtube link here</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/850</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e76876fe-a0ed-b643-a2d2-57a1d2bee60e.png"
+					class="float-right" alt = "And We're Back">
+			</p>
+
+			<hr class='section'>
+            <h1>XXX This is the first section</h1>
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+			<hr class='section'>
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+			<p>
+			</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+<p>
+</p>
+
+			<hr class='section'>
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+</p>
+			<div class='pre'>
+			</div>
+
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+</p>
+
+<div class='pre'>
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>
+</p>
+<p>
+</p>
+
+<div class='pre'>
+</div>
+
+			<hr class='section'>
+
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>
+            </p>
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2024 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>

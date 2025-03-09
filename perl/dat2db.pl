@@ -14,7 +14,7 @@ my $dbh;
 connect_to_database();
 
 opendir(DIR,"$dirpath");
-my @player_data = ("name","email","candybar","location","champion","entry_time", "man_or_chimp", 'alma_mater');
+my @player_data = ("name","email","candybar","location","champion","entry_time", "man_or_chimp", 'alma_mater', 'entry_filename');
 
 my @pick_data = ("name");
 for (1..63) {
@@ -22,24 +22,16 @@ for (1..63) {
 	push @pick_data, $game;
 }
 
-my %done;
-open(DONE,"</home/bklaas/jqmcbp/perl/done");
-while(<DONE>) {
-	chomp;
-	$done{$_}++;
-}
-close(DONE);
+my $done = get_done_from_database();
 
 # iterate through data files
 while (defined($datfile = readdir(DIR))) {
 
 	next unless $datfile =~ /\.dat$/;
-	#next if $done{$datfile};
-    if ($done{$datfile}) {
-        print STDERR "$datfile already in DB.\n";
+    if ($done->{$datfile}) {
         next;
 	}
-	#print "$datfile this one ain't done\n";
+
 	my ($timestamp, @trash) = split /\./, $datfile;
 	# blank out arrays for use in loop
 	@vals = ();
@@ -51,8 +43,8 @@ while (defined($datfile = readdir(DIR))) {
 
 	# read data file into name value pairs
 	#$datfile =~ s/\@/\\@/g;
-	print "entering data for $datfile\n";
-	open (DATAFILE,"<$dirpath/$datfile");
+    $player_info{'entry_filename'} = $datfile;
+	open (DATAFILE,"<$dirpath/$datfile") or die $!;
      
         while (<DATAFILE>) {
 		chomp;
@@ -86,12 +78,6 @@ while (defined($datfile = readdir(DIR))) {
               $picks{$name} = $value;
         }
 	close (DATAFILE);
-    if ($man_or_chimp eq 'man') {
-    	open(DONE,">>/home/bklaas/jqmcbp/perl/done");
-    	print DONE "$datfile\n";
-    	close(DONE);
-    }
-
 
 # champion as well
 $player_info{'champion'} = $picks_info{'game_63'};
@@ -106,7 +92,6 @@ foreach $key (keys %player_info) {
 foreach $key (keys %picks_info) {
        push @picks_fields, $key;
        push @picks_vals, $picks_info{$key};
-       #print "'$key', ";
 }
 
 
@@ -114,7 +99,7 @@ foreach $key (keys %picks_info) {
 construct_playerinfo_sql();
 
 unless ($test) {
-	$dbh->do($playerinfo_sql) unless $test;
+	$dbh->do($playerinfo_sql) or die "$!" unless $test;
 
 }
 
@@ -135,7 +120,6 @@ foreach $key (keys %picks_info) {
 	$picks_sql = "INSERT INTO picks (name, game, winner, player_id)
                       VALUES('$player_info{name}', '$key', '$picks_info{$key}', '$player_id')\n";
 	# put it in the DB
-    print "$picks_sql\n";
 	$dbh->do($picks_sql) unless $test;
 }
 
@@ -178,7 +162,6 @@ if ($j2_factor == 100) {
     $j2_factor = 99.99;
 }
 
-print "j_factor: $j_factor\tj2_factor: $j2_factor\n";
 my $insert = "UPDATE player_info set j_factor = \"$j_factor\", j2_factor = \"$j2_factor\" where player_id = \"$player_id\"";
 $dbh->do($insert) unless $test;
 
@@ -221,17 +204,17 @@ for $i (0..$#fields) {
 
     $frag .= $fields[$i] . $join;
     $frag2 .= "'$player_info{$fields[$i]}'" . $join;
-    #print "$fields[$i]\n";
 }
 	$frag =~ s/\s*,\s*$//;
 	$frag2 =~ s/\s*,\s*$//;
 
 $playerinfo_sql = "INSERT INTO player_info (" . $frag . ") VALUES(" . $frag2 . ")";
-#print "$playerinfo_sql\n";
 
 }
 
 $dbh->disconnect();
+
+print "Data has been entered for $datfile\n";
 
 sub make_frag {
 	# sub to deal with new naming scheme for games
@@ -257,4 +240,17 @@ my $db_user = "nobody";
 
 $dbh = DBI->connect($database,$db_user) or die $DBI::errstr;
 ################################################################
+}
+
+sub get_done_from_database {
+    my $query = "select entry_filename from player_info";
+    my $done;
+
+	my $sth = $dbh->prepare($query);
+	$sth->execute();
+	while (my $hashref = $sth->fetchrow_hashref) {
+		$done->{$hashref->{entry_filename}}++;
+	}
+	$sth->finish();
+    return $done;
 }
