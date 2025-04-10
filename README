@@ -1,63 +1,59 @@
 Here's what's needed: 
 
-(DB copy to jq_2021 already compeleted)
+(DB copy to jq_2025 already compeleted)
 
-2025: The multi-year encoding problem has been fixed-- in crontab, use the shell script that invokes the encoding fix before the
+FIXED! UPDATE2025: The multi-year encoding problem has been fixed-- in crontab, use the shell script that invokes the encoding fix before the db entry
+HOWEVER!: it can still break. If someone enters an emoji, it will bomb. Consider a try/except block so it doesn't die for everyone after the failure, just the offending entry. Will need testing.
 
 FOR THE HISTORICAL DOCUMENTS ARCHIVE:
-BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
-THIS WAS STILL A BAD PROBLEM IN 2022
-2022 Note: Look for the file in perl/badEncodingFixer.py --> with a very small amount of effort this can be used to sanitize badly encoded files. Make sure to test it though!
+    BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.
+    THIS WAS STILL A BAD PROBLEM IN 2022
+    2022 Note: Look for the file in perl/badEncodingFixer.py --> with a very small amount of effort this can be used to sanitize badly encoded files. Make sure to test it though!
 
 ****
-2025: dat2db.pl is now IDEMPOTENT
-for the archives:
-MAKE dat2db.pl IDEMPOTENT. If it skips entering any files already in the DB, you should be able to continue to run it repeatedly, even after encoding fixes. Either stop using the "done" file or start querying the DB directly.
-The dat2db.pl that is in /data/jq_entries is almost there
-make it append to the proper done file
-figure out a way where a failed entry will cause it to trigger the python script that will fix the encoding
+*UPDATE 2025*: dat2db.pl is now IDEMPOTENT. The crontab is in good shape for running inside this brave new world
+
+# m h  dom mon dow   command 
+#*/2 * * * * /bin/bash /home/bklaas/jqmcbp/perl/dat2db_with_encoding_fix.sh 2>> /data/dat2db.err 1>> /data/dat2db.out
+#*/10 * * * * cd /home/bklaas/jqmcbp/web/2025 && perl scoring.pl no 2> /tmp/wat.err
+#*/10 * * * * cd /home/bklaas/jqmcbp/perl && perl htmlify_txt.pl /tmp/top10_chimp_abbr.txt > /tmp/top10_chimp_abbr.html
+#*/10 * * * * cd /home/bklaas/jqmcbp/perl && perl htmlify_txt.pl /tmp/top10_chimp.txt > /tmp/top10_chimp.html
+#*/10 * * * * cd /home/bklaas/jqmcbp/perl && perl htmlify_txt.pl /tmp/top10_man_abbr.txt > /tmp/top10_man_abbr.html
+#*/10 * * * * cd /home/bklaas/jqmcbp/perl && perl htmlify_txt.pl /tmp/top10_man.txt > /tmp/top10_man.html
+#* * * * * /data/benklaas.com/jqmcbp/graphs/entries_through_time.pl 2>> /data/entries_through_time.err
+
 ****
-
-2025: Don't bother with below. We're good enough by invoking the python encoding fixer as described above
-How to truly fix: The jq_entry.cgi file needs to be rewritten to write utf-8
-The database needs possible updating to use utf-8 (?) in its tables
-Defo it's jq_entry.cgi that's the source of the awfulness
-To try a fix, create a page that just has the first page of entry stuff (name/email) and add candybar. Have it call a jq_entry_devel.cgi that does the same thing as jq_entry.cgi minus the teams. Figure out how to get it to write out unicode data correctly, then test that it can get dropped into the database successfully with dat2db.pl (or equivalent)
-
-
-------------------
 Here's the get-it-up-and-running instructions
 
-copy last year's johnnyquest database to jq_2018
+copy last year's johnnyquest database to jq_2025
 	mysqldump -u root johnnyquest > jq.sql
-	CREATE DATABASE jq_2018
-	mysql -u root jq_2018 < jq.sql
+	CREATE DATABASE jq_2025
+	mysql -u root jq_2025 < jq.sql
 	now this year's johnnyquest is ready for use (follow instructions below for setup)
 
 html space: copy jqmcbp/web/<last_year> directory space to jqmcbp/web/<this_year>
 	cd jqmcbp/web && rm <this_year> && cp -rf <last_year> <this_year> && ln -s <this_year> <next_year>
 	<next_year> is a symlink to this year so the dynamic year in jq_globals.pl works up until the next JQMCBP
 	change year reference in credits.html
+    give Niyo and LVH new job titles
 	make sure halloffame list includes last year's winner and loser
-	change symlink at website root (/data/benklaas.com) from <last_year> to <this_year>
-	cd /data/benklaas.com && rm jqmcbp && ln -s /home/bklaas/jqmcbp_<this_year> jqmcbp
+	change symlink at website root: 
+	    cd /data/benklaas.com && rm jqmcbp && ln -s /home/bklaas/jqmcbp_<this_year> jqmcbp
     update ~/.bash_alias for jq and jqw to current year. source ~/.bash_aliases
 
     cp templates/enter_notyet templates/enter
     edit templates/index and comment out the bits about the tourney being closed for entries
+    edit templates/overview to reference the correct roman numerals
     edit templates/overview to make it a Stay Tuned
     might as well update the main text of overview for the current year
 
     Go to templates/header and adjust the timer for the countdown
     countdown timer! fix date in templates/header.
-    in two places! don't know why!
+    in two places! don't know why! look for "XXX UPDATE ME"
     around line 48 and line 96
     austDay = new Date(NEW_YEAR, 02, NEW_1_BASED_DAY, 22);
 
     Change all references to JQMCBP X.. to X..+I (web/<year>/templates/overview, web/<year>/emails/invite.html, etc.)
-
-    # make enter page "not yet"
-    jq && cp enter_notyet enter
 
 data/perl space: 
         cd jqmcbp/perl && rm chimp_data/*.dat && rm lucky/*.dat

@@ -13,10 +13,10 @@ my $update_it = 1;
 ###########################################
 # UPDATE THIS HASH AND THEN RUN THE PROGRAM
 my $play_in_games = {
-'Virginia/Colorado St'=> 'Colorado St',
-'Howard/Wagner' => 'Wagner',
-'Mont St/Grambl St' => 'Grambling',
-'Boise St/Colorado' => 'Colorado',
+#''=> 'Colorado St',
+#'' => 'Wagner',
+'Texas/Xavier' => 'Xavier',
+'American/Mt St Marys' => 'Mount St Marys',
 };
 #############################################
 

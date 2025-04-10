@@ -99,7 +99,7 @@ foreach $key (keys %picks_info) {
 construct_playerinfo_sql();
 
 unless ($test) {
-	$dbh->do($playerinfo_sql) or die "$!" unless $test;
+	$dbh->do($playerinfo_sql) or die "$playerinfo_sql: $!" unless $test;
 
 }
 
@@ -166,6 +166,7 @@ my $insert = "UPDATE player_info set j_factor = \"$j_factor\", j2_factor = \"$j2
 $dbh->do($insert) unless $test;
 
 # end readdir while loop
+print "Data has been entered for $datfile\n";
 }
 closedir(DIR);
 
@@ -214,7 +215,6 @@ $playerinfo_sql = "INSERT INTO player_info (" . $frag . ") VALUES(" . $frag2 . "
 
 $dbh->disconnect();
 
-print "Data has been entered for $datfile\n";
 
 sub make_frag {
 	# sub to deal with new naming scheme for games

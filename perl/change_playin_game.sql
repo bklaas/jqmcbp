@@ -1,3 +1,4 @@
-update teams set team = "Syracuse" where team = "Arizona State/Syracuse";
-update picks set winner = "Syracuse" where winner = "Arizona State/Syracuse";
-update player_info set champion = "Syracuse" where champion = "Arizona State/Syracuse";
+update teams set team = "North Carolina" where team = "SDSU/North Carolina";
+update picks set winner = "North Carolina" where winner = "SDSU/North Carolina";
+update player_info set champion = "North Carolina" where champion = "SDSU/North Carolina";
+update player_info set alma_mater = "North Carolina" where alma_mater = "SDSU/North Carolina";

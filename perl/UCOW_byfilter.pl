@@ -16,9 +16,9 @@ my $filter_id = shift @ARGV;
 ## SET THE REMAINING TEAMS VARIABLE HERE
 ## EVERYTHING ELSE SHOULD TAKE CARE OF ITSELF
 #################################
-#my $remainingTeams = 16;
+my $remainingTeams = 16;
 #my $remainingTeams = 8;
-my $remainingTeams = 4;
+#my $remainingTeams = 4;
 
 my $N;
 

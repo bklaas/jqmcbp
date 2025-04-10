@@ -31,7 +31,7 @@ for (0..$#goners) {
 	if ($this_one eq $last_one) {
 		print "$goners[$_]{'name'}, ";
 	} else {
-		print "\n\n$this_one: ";
+		print "\n$this_one: ";
 		print "$goners[$_]{'name'}, ";
 	}
 	my $str = join(', ', @list);

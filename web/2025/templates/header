@@ -44,7 +44,7 @@
 	function startIt() {
 		var austDay = new Date();
 		//austDay = new Date([% year %], 02, 14, 22);
-		austDay = new Date(2024, 02, 17, 20);
+		austDay = new Date(2025, 02, 16, 20); // XXX UPDATE ME
 		$('#defaultCountdown').countdown({until: austDay});
 		$('#year').text(austDay.getFullYear());
 	}
@@ -92,8 +92,7 @@
 <script type="text/javascript">
 	function startIt() {
 		var austDay = new Date();
-		//austDay = new Date([% year %], 02, 15, 20);
-		austDay = new Date(2024, 02, 17, 20);
+		austDay = new Date(2025, 02, 16, 20); // XXX UPDATE ME
 		$('#defaultCountdown').countdown({until: austDay});
 		$('#year').text(austDay.getFullYear());
 	}
