@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+        img.inline {
+            width: 90%;
+            border: 10px;
+        }
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "http://burymewithmymoney.com/">burymewithmymoney.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/839</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+</p>
+<hr class = 'section' />
+<h1>I Want Candy</h1>
+
+<p>
+It just so happens I work just a couple blocks from the Mothership, aka USBank Stadium, host of this year's Final Four. And today, thanks to the keen eyes of my lovely wife Wendy Volkman, I was alerted to the "Reese's Final Four Friday", an open-to-the-public open practice featuring the four Final Four teams as well as other events like the Reese's 3-point competition, the Reese's throw-a-foam-basketball-at-a-nice-ladies-head, the Reese's FREE CANDY BARS FOR EVERYONE, and the Texas Tech Raider Stares Ominously (not brought to you by Reese's).
+</p>
+
+<p>This event was like the definition of Basketball-Candy intersectionality, and it would have been shameful for The Candymeister to miss it.</p>
+
+<p>Wendy and I weren't the only JQMCBPers in the house either. Long-time Candy Seeker and "journalist" John Niyo was there, but he couldn't meet us on account of being "at the suite level", where he was "interviewing the Texas Tech players", or "whatever". I tried to use my fake Press Pass (Abe Saperstein, Ypsilanti Courier), but I couldn't get past the gate.</p>
+<p>
+Here's some pics!
+</p>
+
+<p>Yes, this looks like a GREAT venue for a basketball game.</p>
+<img class = 'inline' src = 'https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/7fc17519-e05d-4c85-a554-201465fddd57.jpg' />
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+
+<p>
+Reese's!
+</p> 
+
+<p>
+This event was sponsored by Reese's. There was SO MUCH Reese's going on.
+</p>
+
+<p>
+--&gt;This giant Reese's blimp that dropped coupons on terrified fans.
+</p>
+<img class = 'inline' src="https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/16826ee8-4203-4ec8-832a-57118667389f.jpg" />
+
+<p>
+--&gt; A Reese's 3-point competition that featured this Giant Reese's PB Cup Creature and this guy representing Virginia that, I am not making this up, missed every single one of his 20 or so attempts by a combined 12,543 feet (srsly, he was baaaaaad).
+</p>
+
+<img class = 'inline' src="https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/def033a4-a056-417e-aef0-f8b931c2d8e0.jpg" />
+<p>
+--&gt; A woman with a Reese's pop-a-shot backboard strapped to her back like a medieval torture device walking around the concourse*, JUST DARING KIDS to throw foam basketballs at (just above) her head. No picture here, I think this woman deserves expungement of all record of this, her Terrible Horrible No Good Very Bad Day.
+</p>
+
+<p>
+Finally: FREE Reese's PB Cups! Wendy and I split one. Delicious.
+</p>
+
+<div class = 'mailbag'>
+* can you imagine the interview this woman had? These things are all staffed by volunteers I think, since the NCAA is so strapped for cash.
+"Are you available on Friday for the Reese's Final Four Friday brought to you by Reese's?"
+"Ummmm...well, you sure are saying Reese's a lot, but yeah, I think I can do that."
+"Can you work for free?"
+"Ummmm...free? I mean, it's not ideal, but..."
+"GREAT! I'll see you Friday! You're going to have a great time! <small>Oh, and also you're going to have a backboard strapped to your back</small>"
+"..."
+"..."
+"wait...WHAT??"
+</div>
+
+<hr class = 'section' />
+<h1>Mascots!</h1>
+
+<p>
+We were having such a fun time, but then came the vacant, ghostly stare of the Texas Tech Red Raider. We got outta there right after this disturbing incident. Spooky!
+</p>
+
+<img class = 'inline' src = 'https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/689bfd59-e9d0-47eb-a7a3-1da7d76f6b6d.jpg' />
+<img class = 'inline' src = 'https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/43e1c67d-4f9b-48cb-aeab-4c62cb04d2a3.jpg' />
+<img class = 'inline' src = 'https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/b41e891b-3b86-44d4-a1e1-f849b8c6333e.jpg' />
+<img class = 'inline' src = 'https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/1b9fee6b-ad02-4997-b6fa-d15612057442.jpg' />
+
+<h1>The Hall of Not Shame</h1>
+<div class = 'mailbag'>
+Going into the weekend, a reminder as to who is still in it in the Quest for Candy:
+
+Dan "Almond Joy" Smedley will win if Michigan State wins the final, or if Auburn beats Michigan State in the final.
+Tamara "Vosges Missing Link Chocolate Bar" Fink wins if Virginia wins the final.
+Andrew "Candy Corn M&amp;M's" Mortimer wins if the final is Texas Tech vs. Auburn, regardless of outcome.
+Mark "Snickers" Foster also wins if Auburn beats Texas Tech in the final.
+Jacob "Jelly Belly Jelly Beans" W(adzinske) wins if Texas Tech beats Virginia in the final.
+</div>
+
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding 150 miles to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "http://bit.ly/bkMS150_2019">you may donate buckets of cash to my ride here</a>. This is my 8th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

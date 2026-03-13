@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		.float-left {
+			float: left;
+            padding-right: 10px;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+        div.small {
+            font-size: 9px;
+        }
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 125px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVII</a></h1>
+		<h2 class='slogan'>
+			Brought to you by: <a href="https://eelslap.com">eelslap.com</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/850</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+
+			<hr class='section'>
+            <h1>The Candymeister will not need to locate Uncle Urnie's Candy Ashes</h1>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/07006166-5f6a-e1be-58ed-685fb3ff6fcb.png" class = "float-left" width = '20%' />
+<p>After Thursday's games, Joe "Uncle Urnie's Candy Ashes" Grover and Day 1 Candy Bar of the Day winner sat atop the leaderboard. Not that I was rooting against Joe (narrator: he was), but if he held on to the lead (narrator: he didn't), there was a strong possibility Joe would do something that 26 previous JQMCBPs had failed to do: stump the Candymeister. Across JQMCBP history, I have had to use eBay to acquire 20-year old candy (Kirby Puckett Bar) as well as send miscellaneous candy mules out to pick up Melo Bars (available only at Denver-area King Soopers grocery stores), Dulce De Leche M&amp;M's (test markets in Mexican-American neighborhoods of San Antonio and Los Angeles) and Black&amp;Gold Musk-Flavoured Sticks (literally a gas station in Australia). Hat-tips to Joshua Littrell, Matt "The Sparrow" Smalling, and Alex McWhinnie (srsly! smuggled back from Australia to procure the JQMCBP prize) for getting me those. But Uncle Urnie's? Believe it or not, it appears this was a pretty limited run candy and, judging from the picture, janky enough to not have a secondary market on eBay. Candymeister dodged a close one there.
+</p>
+			<hr class='section'>
+            <h1>Revisiting the UCoW&#8482;</h1>
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e500febb-221c-eed2-3b70-77b89fe5d4d1.png"
+					class="float-right" alt = "So you're saying there's a chance" width = '40%' />
+			</p>
+
+<p>
+Now that we're down to 8 teams, there are 2 to the 7th or 128 possible bracket permutations left. Of those, only 25 humans and 2 chimps (!) are left as possible JQMCBP champions. Of those, our current front-runner Derek "Taza Mexican Dark Chocolate" Roesti of Colorado is the clear favorite. Derek's final four of UConn, Purdue, Duke (!), and Alabama (!!) are all alive and well. For now. Megan "Milky Way" Wooley-Ousdahl sits currently in 2nd both in the standings and in UCoW&#8482;, and needs a Tennessee championship to fulfill her candy dreams.
+</p>
+<div class = "pre small">
+===== WINNERS ====
+Name                    # of Winning Brackets  % of Winning Brackets
+----                    ---------------------  ---------------------
+Derek Roesti            26                     20.312
+Megan Wooley-Ousdahl    17                     13.281
+Charlotte Bier           9                     7.031
+Judi Durda               9                     7.031
+Jim Bauer                9                     7.031
+Rob Bellin               9                     7.031
+Jason Hermanson          7                     5.469
+Johnathon the Chimp      6                     4.688
+Scott Thompson           6                     4.688
+Joshua Foster            5                     3.906
+MJ Hilker                5                     3.906
+Baba Delargy             4                     3.125
+Abby Chungath            4                     3.125
+Sam Hoag                 4                     3.125
+David Needham            4                     3.125
+Caroline Welby           3                     2.344
+Brenda Ochs              3                     2.344
+Mary F Herrmann          2                     1.562
+Bethany the Chimp        2                     1.562
+Michael Hartnett         2                     1.562
+Rupert Smudge            1                     0.781
+Carin Goodrich           1                     0.781
+Nick  DiGirolomo         1                     0.781
+Chris Boese              1                     0.781
+Ryan currie              1                     0.781
+Zach Gostanian           1                     0.781
+Matt Mac                 1                     0.781
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1       113
+2       15
+</div>
+
+<div class = "pre small">
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 126
+Chimp Wins: 8
+</div>
+
+
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/df0dfab5-f999-137d-92ba-bbb3b930a897.png"
+					alt = "surely these chimps with their disproportionate size and strength will rise up and kill us all" />
+			</p>
+<p>
+If you are a nihilistic Chimp Army fan, you should now root for NC State and Alabama, those are the champs selected by Johnathon the Chimp and Bethany the Chimp, the only 2 chimps remaining in the UCoW&#8482; list.
+</p>
+
+
+			<hr class='section'>
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless <s>Discussion</s> Memes about Losing Teams and Their Mascots</h2>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/7f6e3893-9c0c-6312-1623-07553a4ae914.png" width = '45%' />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/12d7b9ca-b5cd-b618-a8e8-70c6de7c94ad.png" width = '45%' />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/67fc9677-8134-98df-243f-411b22ab974b.png" width = '45%' />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/38e942dd-9f2b-a06a-184c-e7bfacbce0ea.png" width = '45%' />
+
+			<hr class='section'>
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+114 of us (including me!) prognosticated the Alabama win, but the stretch pick was 11 seed NC State making their way into the last 8 teams standing. 38 brave candy seekers had the Wolfpack this far, and here they are:
+</p>
+			<div class='pre'>
+NC State:  Andy Calvert, Avi Gupta, Barbie Hoag, Craig Wadzinske, Dan Backman, Derek Roesti, Emi Kelly, Hannes Williams, Jackson Balch, Jacob Teer, jane mc, Jason Danielson, Jeremy Van't Hof, Joe Hoag, John Caragher, Judi Durda, Kristopher  Nordstrom, Leigh Ann Long - the Lab Rat, Marco Byrd, Matt D, Michael Webster, Michelle Morrisey, Milt Bellin, MJ Hilker, Neal Nordstrom, Nisha Labroo, PAUL CHRISTOPHER MCNEIL, Paul Schmidt, Rob Bellin, Ryan currie, Sab, Scott Mortimer, Sean Bellin, Sheev, Todd Pepperkorn, Tom 'Muad'Dib' Wadzinski , Wild Goose, WTF Is This
+			</div>
+
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+WOOF! 379 (44.5%) of you lost your champion Thursday/Friday, and the pain was acutely felt on the Iowa State, Houston, Marquette, and North Carolina losses.
+</p>
+
+<div class='pre'>
+Iowa State: Jason Earl Teal, Blake Brodjeski, Sam niyo, Chris Charbonneaux, Piper Klaas, Angie D, Tony Potter, Brent Dakin , Gavaboo, DANK, Dan Backman, AARON CHITTENDEN, Helen Copley, Chris Daigh, Eric Naiburg, Erv Klaas, Lance Van Houten, Kate Van Houten, harley carpenter, Kristen Meyer, Jessica Dussault, Matt D, Katherine Gifford , Mrs. Dank, Carson Moxie Klaas, Jack Wenz, Brett Callison, Brian Wieck, Nate Judson, Mike Brown, Gary Bahr, Aspen Holm, Paul Schmidt, Nordyhey, Beaumont Hoffman, Andy Hefte, Jody Bonsen, Christopher Horoschak, Deanne Busta, Deanne Busta, Spencer Payne, WTF Is This, Addison Busta, Serine Isenhart, Chris Conway, Ben Kehrwald, Jeff Shipley, Mike Andreen, Isaac LeTarte, Eustace Haney, Kevin Kane, Matt Smalling , Camille Blake, Brian Kinne, Brennan Swanson, Gina Rumore, Todd Pepperkorn, Sarah Handlos, Sara Van Houten, Maya Gypsy, Matt Goodrich, Mr. Miyagi, Joanne Isenhart, Jeff Kopaska, Jacob Teer, MaKenzie Smalling, Joel Rondeau, Anne Bahr, Chris Handlos, Susan Erickson, Rod Tressel, Leigh Ann Long - the Lab Rat, CJ Hewitt, Emily Gates, Pondscum, Timothy Handlos
+
+Houston: Parker Rogers, Jeffrey Durr, Jeff Chungath, Amanda Sue Thomas, Peter Hepburn , Zach Gostanian, Cris Osier, Shawn McCullars, Tim Rush, James Yizze, Patrick Bourke, Sam McWilliams, Dante Chittenden, Eddie Sander, Martin Lieser, Macie Benson, Alex Ross, Eddie Topel, Kristin Gifford, AJ Bowers, Ryan Ahearn, Simon James, Lisa Reed, Pimp, Joe 'mit Ohren' Grover , Kristopher  Nordstrom, Mike Horton, Brian Weiss, Conner Schultz, Carolyn Hernandez, Erin Austin, Ellen Gifford, Dennis Sabo, Brian Dise, Karlene Noel Jennings, Lisa P LaGrou, Jacqueline Holland, Huell Babineaux, Usha D, Marco Byrd, Chad Koch, Devan Dhruna, John Lucas, Jim Dillon, Jonathan Ware, chad david, AA Reinert, Ted Daniel, Thomas Newman, Mark Dyal, John Stakoe, Conor Whelan, Keith Boyd, John Housenga, Brian O'Donnell, Tim Ferrero, Mark Weiss, Tim Hoelscher , Connor Byers, Faith Brown, Chris Hewitt, Meg Whelan, Michael Ferreter, One more time, Thomas Hammett, Jonathan Schroeder, Peter Rosston, Jon Klimczuk, John Boyle, Maria Blake, Matt Suomi, Greg Rhoades, Pete Arvant, Jennifer Chittenden, Larry Deeney, Victor. Nisenson, Andrew Hanson, Scott Teer, Gabe Smith, Kerie Whelan, Kurt Anders, Rich Lyle, Mellissa Simko, Mike Shanahan, Super Grover, Zane Sabbert, Matt Mischler, Jeff Downs, Mommy Shanahan, Socalnocalnw, Missy Shanahan, Bill Gates, Benjamin Shwaiko, Alyssa Teer, Soren Van Houten
+
+Marquette: Jacob Wadzinske, Chuck Delargy, Jonah Rondeau , Paul Allar, Derek Hoagland, Andy Myers, Bill McGrail, Brenda Ochs, Chandra Hanke, Butterfinger, Joe Cislo, Lesley H, Andy Weinecke, Steve Grose, Lindsey LaGrou, Jonah Rondeau , Mark Jones, Katrin wenz, Jodi E, Meg Whelan, Dave Aucott, Tim Hoffman, Jan Merrell, Gwen Delargy, Leyla Benson, Caprice McGrail, Annie Hoag, Riley Daine, John McCartney, Karen McCartney, Jennifer Topel, Maggie Topel, Christie Schmidt, AvaGlibota, Walt Hattemer, Dick M, Dawn Smith, Greg Ross, Al Wadz, snoop in da coop, Kevin Nolan, Bridget Conkling, Danny Hoops, Steve Fink, Kate Meilinger, Max Teer, Riley Lyons, michelle rago, Michelle Tressel, Sandy Long, Kathy  Guimond
+
+North Carolina: Theodore Chungath, Brett Sterenson, Jill Lantz, Tyler Ryan, S Harbour, Ben Halpern, Alexander Goldberg, J Cadell, Patrick Connolly, Carol Rupp, Keith Brown, Rob “Tarpo” Tilley, Brenda VB, Brent Daley , Clare Isenhart, Lily Onesko, RainesofTerror, Jess Larson, Avi Gupta, Shannon O'Hare, Lexi Rosenbaum, Neil Kornze, Steve Danek, Cassidy Mazelin, Elizabeth Wright, Wild Goose, Jeff Amato, Jonathan Cole, Steve 'Dad of Jamie and Nick' White, Maya O'Hare, Stephen Malcolm Anderson, Julia Drew, John Griffin, Scott Johnson, Nick White, Sab, Cheryl Holton, Chad Pechumer, Joe Hebda, Andy Stocker, Lorie D, Zachary Klaas, Bluehowler, Justin Strohmeyer, Michelle R Young, Jack Genadek, Bennett, Rebekah Hynson, Kelly Zheng, cynthia, Kevin Quinn, Robert Bartus, Dave Metcalfe, Kenneth Andrew Boyd , Peyton Bowers, Owen Davidson, Jack Backer , Nicholas LeTarte, Gregory White, Bridget Johnson, Charlie Meilinger, Bill Teer, Moosecaboose , Andrew T. Bryan, Drew, Gage Teer, Drew Ruprich, Renee the Great, Tim Ogg, Mark Largent, Mark Largent, Lauren Schmitt, Winston Churchill, Lisa Fox
+
+Arizona: MOLLY MORTIMER, Jeffrey Keiffer, Matt Pearson, Taryn Myers, Jayson LaGrou, PJ Torres, Rob Strnad, Beth Rogers, Scott Mortimer, Gavin Rogers, Mark Larson, Mya Proctor, Javier Fregoso, Crissy Fanganello, Lindsey Callison, Milo Anderson, Jim Chryssikos, Rennie Anderson, Michael Webster, Tala Anderson, Todd Martin, Caleb Anderson, Todd Fehniger, Amanda McGlothern, Mike, Ed Myers , Artez Hutchinson, Marissa Stolt, David Larson, Heather Lucas-foster, Luke Roling, Thunder 28, John Niyo, Sarah Boyd, Dave Giugni, Eva Witt, Josie Wakser, Erin D, Littleeva, Doug Busta, Katie Dillon, Barry Weeks, Norm Johnson, Jamie Zaninovich, carly thaler, Christa Fan, Patrick O'Boyle, Brett Rondeau, Jerry Schmitt, Todd Dankers, Sam Housker, Romke Mooiweer
+
+San Diego State: Curtis Mitchell, Carol Reed, Michelle Morrisey
+
+Gonzaga: Jason Emrich, Nate Blake, Kathy Larson, Diane Sievert, Ryan Mowery, Kate Connolly, Lucy Rhoades, Margaret Wadz, Nisha Labroo
+
+Creighton: Willy Lee, Kari Williams, Rollie E., Colin Gjervold, Greg Miller, AJ Anderson, paul madden, Kyle Smith, Peter James, Joey Zambreno, Winnie Gavin, Liz McHalpine, Nick Mac, Dave Lyons, Sandlots , Dirk Diggler, Jake Lowenstern , Annelise Ross, Greg Wallack
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>
+Sorry Cyclones (and Aztecs, Golden Eagles, Bulldogs, Blue Jays, Tarheels, and Wildcats), not this year...
+</p>
+
+<p>Notably, no Cougar alums. Why does Houston hate candy?</p>
+
+<div class='pre'>
+Iowa State: Chris Charbonneaux, Patrick Connolly, Angie D, Brenda VB, Brent Dakin , DANK, Dan Backman, Clare Isenhart, Brent Swanson, Nathan Lewis , harley carpenter, Holm Plates, Brett Callison, Nate Judson, Mark Sherfy, Mike Horton, David Smalling, Gary Bahr, Angie Mowery, Shaun Connolly, michael mowery, Serine Isenhart, Ben Kehrwald, Pat Dillon, Zachary Klaas, Eustace Haney, Michael Folkerts, Kevin Kane, Matt Smalling , Luke Roling, Brennan Swanson, Sonya connolly , Sarah Handlos, kay niyo, Dawn Smith, Chris Hewitt, Sandlots , Rob Bellin, Kelly Wolfe-Bellin, Joanne Isenhart, Doug Busta, Jeff Kopaska, Chris Handlos, William Clark, Susan Erickson, Leigh Ann Long - the Lab Rat, Pondscum, Timothy Handlos
+
+San Diego State: Wyn Jamieson, Michelle Morrisey, Maria Blake, Andrew Hanson, Nate Reed, PAUL CHRISTOPHER MCNEIL, Socalnocalnw
+
+Marquette: Curtis Stalter, Bill McGrail, Jodi Eastberg, Jodi E, Mark Merrell, Karen McCartney, Matt Mac, Kevin Nolan
+
+Gonzaga: Jess Sanborn, Emily Gates
+
+Creighton: Jeff Chungath, John Quigley, Soren Van Houten
+
+North Carolina: Megan Wooley-Ousdahl, Michael Wooley-Ousdahl, Bridget Johnson, Lisa Fox, Kate Bronstein
+
+Arizona: Javier Fregoso, Todd Martin, Josie Wakser, Barry Weeks
+</div>
+
+			<hr class='section'>
+
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/318c75b6-9ae0-e45a-0737-0977ffcdf5c6.png" width = '40%' class = 'float-right' />
+			<p>
+The <b>I'm-So-Glad-It's-This-Wooley-Ousdahl-That-Picked-It-Not-Megan</b> Award goes to <b>Michael Wooley-Ousdahl</b>. Megan Wooley-Ousdahl, who might win JQMCBP this year, picked a Milky Way. Michael, like a few others in JQMCBP, probably did a Bing! search for "most expensive chocolate in the world" and found himself on the ultra-ritzy Ecuadoran To'ak website. Not to be outdone though, Micheal then did a little shopping to find the most ludicrous item available, and he settled on the <a href = "https://toakchocolate.com/products/masters-series-enriquestuardo">To'ak Masters Series Enriquestuardo</a>. In collaboration with one of Ecuador's most celebrated modern artists, Enriquestuardo, because no chocolate experience is complete without the lens of a post-modern mixed media visionary, To'ak has created a taste experience like none other. The reason it's a wholly unique experience is that, with the first bite, all of your senses uncloud and hyper-focus on this one thing: "This candybar cost $490." My favorite part of this delicacy is they charge $6 to gift wrap it. Seems a bit chinchy! 
+</p>
+<p>
+Well, second favorite. First favorite is the absurd solid teak chopsticks you get to pick up the $490 chocolate. Don't want to tarnish it with bodily oils!
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/5b5e71a9-75ab-ae23-a3e7-14ad1b967fc3.png" width = '90%' />
+            </p>
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Derek Roesti</td><td>Colorado</td><td>Taza Mexican Dark Chocolate</td><td>Connecticut</td><td>76</td></tr>
+<tr><td>2</td><td>Brenda Ochs</td><td>Michigan</td><td>Butterfingers </td><td>Marquette</td><td>72</td></tr>
+<tr><td>2</td><td>Megan Wooley-Ousdahl</td><td>California</td><td>Milky Way </td><td>Tennessee</td><td>72</td></tr>
+<tr><td>4</td><td>Michael Hartnett</td><td>Michigan</td><td>Marathon Bar</td><td>Connecticut</td><td>71</td></tr>
+<tr><td>4</td><td>Michael Webster</td><td>Minnesota</td><td>Reese's crunchy cup</td><td>Arizona</td><td>71</td></tr>
+<tr><td>4</td><td>MJ Hilker</td><td>Ohio</td><td>Andes Mints</td><td>Connecticut</td><td>71</td></tr>
+<tr><td>4</td><td>Nick  DiGirolomo </td><td>Arizona</td><td>Reggie Bar</td><td>Connecticut</td><td>71</td></tr>
+<tr><td>8</td><td>Charlotte Bier</td><td>Michigan</td><td>Giant Hershey Kiss</td><td>Purdue</td><td>70</td></tr>
+<tr><td>8</td><td>David Needham</td><td>Illinois</td><td>Snickers</td><td>Purdue</td><td>70</td></tr>
+<tr><td>10</td><td>Frankie</td><td>Minnesota</td><td>KitKat</td><td>Connecticut</td><td>69</td></tr>
+<tr><td>10</td><td>Joe 'mit Ohren' Grover </td><td>Minnesota</td><td>Uncle Urnie's Candy Ashes</td><td>Houston</td><td>69</td></tr>
+<tr><td>10</td><td>Martha Carlos</td><td>Illinois</td><td>Sour patch blueberries </td><td>Connecticut</td><td>69</td></tr>
+<tr><td>10</td><td>Ryan currie</td><td>Michigan</td><td>Snickers </td><td>Connecticut</td><td>69</td></tr>
+<tr><td>10</td><td>Zach Gostanian</td><td>Maine</td><td>100 Grand!</td><td>Houston</td><td>69</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Ramon</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Illinois</td><td>58</td></tr>
+<tr><td>2</td><td>Johnathon</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>NC State</td><td>51</td></tr>
+<tr><td>3</td><td>Marco</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Purdue</td><td>50</td></tr>
+<tr><td>3</td><td>Rodolfo</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Tennessee</td><td>50</td></tr>
+<tr><td>5</td><td>Alden</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Oakland</td><td>49</td></tr>
+<tr><td>5</td><td>Alexandrea</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Tennessee</td><td>49</td></tr>
+<tr><td>5</td><td>Bethany</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Alabama</td><td>49</td></tr>
+<tr><td>5</td><td>Frank</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>South Dakota State</td><td>49</td></tr>
+<tr><td>5</td><td>Natalee</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Duke</td><td>49</td></tr>
+<tr><td>5</td><td>Saniya</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Purdue</td><td>49</td></tr>
+				</tbody>
+			</table>
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2024 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>

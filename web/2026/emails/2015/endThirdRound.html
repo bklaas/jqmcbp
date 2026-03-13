@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         margin: 5px;
+		 margin-left: 10px;
+         padding: 5px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">XVIII</a></h1>
+	<h2 class = 'slogan'><a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">18 and Life!</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE4|*</li>
+	<li>Candybar: *|MMERGE5|*</li>
+	<li>Score: *|MMERGE8|* (leader is at *|MMERGE10|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE7|*</li>
+	<li>Rank: *|MMERGE9|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE6|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Shoutin' out to the Wadzinskes: Holy Kringle!</h1>
+<p>
+I've been buying a lot of stuff online lately. Duvet covers*. Cell phone batteries**. Kickstands***. <a href = "http://store.hbo.com/game-of-thrones-life-size-replica-iron-throne/detail.php?p=373634">The Iron Throne</a>****. So, it was not a surprise Thursday when there was a package waiting at my doorstep. But the box read "O &amp; H Danish Bakery of Racine Wisconsin", and was addressed to JQMCBP HEADQUARTERS. This was a surprise. Opening the package confirmed my suspicions of my past email, that Craig Wadz-za-man was in fact of the Milwaukee (the Good Land) Wadzinskes*****, not some Canadian interloper (see Mailbag for further discussion). Inside the box was two Danish Kringle, also known as Oh Gollee So Good. The entire Meisterhaus enjoyed Kringle for breakfast Friday morning which was, in Piper's full-mouthed words, "mmfmfmfmdelicious". Then I went to work and had donuts, and was given a candy bar for doing good work, all before lunch. Instead of lunch I crawled under my desk and slept off my sugar coma******.
+</p>
+
+<p>
+<a href = "http://benklaas.com/jqmcbp/?kringle">Check out my Red Hot Kringle Pics!</a>
+</p>
+
+<hr class = 'subsection' />
+* true<br />
+** true<br />
+*** true<br />
+**** not true, but OMG so awesome. Only $30,000!<br />
+***** another true story, Paul WadzinskE was a college roommate, as was Tom WadzinskI. In the college phonebook (kids: a paper book full of phone numbers. they used to do this) Paul and Tom were *not consecutive listings*. I like to tell this story because srsly Only in Wisconsin.<br />
+****** not true, but OMG wouldabeennice<br />
+
+</hr>
+<hr class = 'section' />
+<h1>Thinkin' Outta The Box: Half-Baked Ideas to Improve March Madness</h1>
+<p>
+As we were watching the "15 Extra Timeouts Brought to you by Coca-Cola" NCAA games last night, I was thinking that the NCAA needs some new features to keep these games interesting. Here are a couple of ideas:
+</p>
+
+<p>
+* Play-Out Game: Several years ago the NCAA in all of its wisdom decided that 64 teams weren't enough and created these dumb "Play-in" games. Initially the Play-in teams were the 4 worst teams out of the 68, which were teams receiving automatic bids for winning, for example, The Great Rural Nevada Conference tournament. This concept stinks on many levels, most notably (for me) that Play-in games happen too quickly after they are announced to meaningfully include them in an NCAA pool.</p>
+
+<p>So! What if instead of play-in games we have a "Play-out" game, where the worst team gets a bye all the way to the end of the tournament, and gets one shot at defeating for example Kentucky for the NCAA Championship. Sure, they'll get killed, but it would be very exciting to see a Kentucky vs. NNW Scranton College of Obstetrics for ALL THE GLORY.
+</p>
+
+<p>Bad idea? Wait, i've got more</p>
+
+<p>* Varied Terrain: I've been logging some big hours with Piper "Popin' Cookin' Happy Sushi House" on Wii U Super Mario Bros, and I've noticed that our adventures are made all the more fun because of the different terrain Mario, Luigi, and Yellow Toad (Piper's favorite) are forced to trek through in order to win the game.</p>
+
+<p>What if NCAA games offered a similar range of terrains:
+<ul>
+<li>"Oh, you're playing in the West Regional? Good luck, those courts are really sandy! Watch out for the rattlesnakes!"</li> 
+<li>"Kentucky is the favorite in this region, but they drew a tough court here in Cleveland, what with the forest on one end and the signature River of Fire to jump over at midcourt."
+</li>
+<li>"Welcome to the KFC Yum! Center, where the lanes are painted with mashed potatoes and gravy and Popcorn Chicken randomly rains from the sky! Yum!"</li>
+</ul>
+I think this could be very exciting.
+</p>
+
+<p>Still not impressed with my ideas? One more then</p>
+<p>*Playing as mascots: How much more fun would it be if the players on each team had to dress as their respective mascots? For example, the Wisconsin vs. North Carolina game would have featured grown men in Badger suits against a bunch of athletes with the back part of their shoes dipped in pitch (I still would have gone with the badgers here). How much more fun? SO MUCH MORE FUN.
+</p>
+<p>
+I think this is probably the best of my ideas, but I'm concerned that schools would figure out pretty quickly how to game this system. Before long, Nebraska would become a force in basketball after the school controversially changed their name from the Cornhuskers to the People Dressed to Play Basketball, only to be thwarted by the freshly renamed Florida A&M Pogo-Stick-Footed Giants (also watch out for the Air Force Academy Jet Packs).
+</p>
+<p>
+Wendy "Take 5" Volkman has reminded me that we have actually witnessed a "basketball game" between people dressed in mascot gear. At the halftime of a real basketball game we were treated to a surreal public service scrimmage from a health care company between a Urine Sample and a Hypodermic Needle. I am not making this up. The Needle won. Turns out it's very hard to dribble (or see) when you are dressed as a cup of pee.
+</p>
+
+
+<!-- https://www.linkedin.com/pub/fb-bk/50/33b/995 -->
+</p>
+
+<hr class = 'section' />
+<h1>Catchin' up with UCOW: Sionara Chimps</h1>
+
+<p>
+The Chimp Army's hopes have been officially dashed. With 8 teams and 128 bracket permutations left, humans win all 128 of them. The Chimp Army is not calling this a defeat, but a "calculated retreat", and Generalisimo Lucky has stated that he has no doubt that his Army will Rise Up and Destroy Us All in 2016. He also threw something at me that was not at all nice.
+</p>
+<p>
+Of the humans, current leader Michele "Marathon" Thomas is dominating the possible winner list, but the door is still very much open for another competitor to Rise to the Candy&#8482;, as Michele does not have big favorite Kentucky in the Final Four. Full table of possible outcomes is below, but I've also created a <a href ="http://benklaas.com/jqmcbp/graphs/ucow8.png">uselessly convenient bar chart of the UCOW going into the weekend games</a>
+</p>
+
+<h1>UCOW&#8482; Elite 8 Results</h1>
+<div class = 'pre'>==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 128
+Chimp Wins: 0
+
+==== NUMBER OF WINNERS ACROSS ALL POSSIBLE BRACKETS ====
+1   110
+2   18
+</div>
+
+<br />
+Full UCOW&#8482; Breakdown
+<table class = 'scores'>
+<thead>
+<tr><th>Name</th><th>Number of Winning Brackets</th><th>Percentage of Winning Brackets</th></tr>
+</thead>
+<tbody>
+<tr><td>Michele Thomas</td><td>21</td><td>16.406</td></tr>
+<tr><td>Patrick O'Boyle</td><td>8</td><td>6.250</td></tr>
+<tr><td>Dustin Ramoie</td><td>8</td><td>6.250</td></tr>
+<tr><td>Chad meister Pechumer</td><td>8</td><td>6.250</td></tr>
+<tr><td>Brian Clair</td><td>7</td><td>5.469</td></tr>
+<tr><td>J hamling</td><td>5</td><td>3.906</td></tr>
+<tr><td>Jennyrupe</td><td>5</td><td>3.906</td></tr>
+<tr><td>Ramon Roullard</td><td>4</td><td>3.125</td></tr>
+<tr><td>Todd 'Bartman' Barton</td><td>4</td><td>3.125</td></tr>
+<tr><td>W Mazur</td><td>4</td><td>3.125</td></tr>
+<tr><td>Sonia Pai</td><td>4</td><td>3.125</td></tr>
+<tr><td>Carson Moxie</td><td>4</td><td>3.125</td></tr>
+<tr><td>SirLantzalot</td><td>4</td><td>3.125</td></tr>
+<tr><td>BigSexy</td><td>4</td><td>3.125</td></tr>
+<tr><td>Jeb Byers</td><td>4</td><td>3.125</td></tr>
+<tr><td>Matt MacDonell</td><td>4</td><td>3.125</td></tr>
+<tr><td>Ryan Surber</td><td>3</td><td>2.344</td></tr>
+<tr><td>Craig Wadz-za-man</td><td>3</td><td>2.344</td></tr>
+<tr><td>Anna Arvant</td><td>3</td><td>2.344</td></tr>
+<tr><td>Paul WadzinskE</td><td>2</td><td>1.562</td></tr>
+<tr><td>Lochlain McGrail</td><td>2</td><td>1.562</td></tr>
+<tr><td>Joel Rondeau</td><td>2</td><td>1.562</td></tr>
+<tr><td>Arun Mahapatra</td><td>2</td><td>1.562</td></tr>
+<tr><td>Cal Ruprich</td><td>2</td><td>1.562</td></tr>
+<tr><td>Doug Gilbert</td><td>2</td><td>1.562</td></tr>
+<tr><td>Robert Portnoy</td><td>2</td><td>1.562</td></tr>
+<tr><td>Ryan Brady</td><td>2</td><td>1.562</td></tr>
+<tr><td>Zane Sabbert</td><td>2</td><td>1.562</td></tr>
+<tr><td>Tom Hinds</td><td>2</td><td>1.562</td></tr>
+<tr><td>Jim Soriano</td><td>2</td><td>1.562</td></tr>
+<tr><td>Lindsay Morgan</td><td>2</td><td>1.562</td></tr>
+<tr><td>Mitch Pickens</td><td>1</td><td>0.781</td></tr>
+<tr><td>Larry Flees</td><td>1</td><td>0.781</td></tr>
+<tr><td>Andy Ducey</td><td>1</td><td>0.781</td></tr>
+<tr><td>Lesley Hogg</td><td>1</td><td>0.781</td></tr>
+<tr><td>adam klimala</td><td>1</td><td>0.781</td></tr>
+<tr><td>Snuffy</td><td>1</td><td>0.781</td></tr>
+<tr><td>Jen Flora</td><td>1</td><td>0.781</td></tr>
+<tr><td>Richard Augustin</td><td>1</td><td>0.781</td></tr>
+<tr><td>Jeff Waterstredt</td><td>1</td><td>0.781</td></tr>
+<tr><td>Nick DiGirolomo</td><td>1</td><td>0.781</td></tr>
+<tr><td>scott clair</td><td>1</td><td>0.781</td></tr>
+<tr><td>Denis Charette</td><td>1</td><td>0.781</td></tr>
+<tr><td>Craig Roder</td><td>1</td><td>0.781</td></tr>
+<tr><td>Eric Gottlieb</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kirk Moloney</td><td>1</td><td>0.781</td></tr>
+<tr><td colspan = '3'><img src = "http://benklaas.com/jqmcbp/images/theresachance.jpg" width = '340'/></td></tr>
+</tbody>
+</table>
+
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+No upsets! Move along kids, nothing to see here!
+</p>
+
+<hr class = 'section' />
+
+<h1>Mailbag</h1>
+<h1>Sac Postal</h1>
+<div class = 'pre'>
+From: Denis
+To: The Meister
+
+From your last JQMCBP email: "[...] I'm going to send your King size Kit Kat to an International location, like the capital of Canada, which is Toronto."
+
+Silly Meister, Toronto is not the capital of Canada. Everyone* knows that Vancouver** is the capital.
+Knowledge is Power!***
+
+* by which I mean every Canadian (and maybe some Americans).
+** Last I checked it was Vancouver. Our capital changes every year, so it is hard to keep track of which city is the capital all the time.
+*** Not an accurate statement. If this were true, all the big corporations of the world and every nation would have people with PhD's (or some other means to prove one's intelligence) as their leaders and top decision makers.
+</div>
+
+<hr class = 'subsection' />
+<div class = 'pre'>
+To: The Meister
+From: Zak Klaas (brother, resident of Gatineau, Quebec)
+Dear Meister:
+
+I suppose you think I am duly mocked, as one who has been a trained professor of geography and as a resident of Canada...but I must protest that the capital of Canada is not Toronto, as you insensitively claim, but is, rather, Gatineau, Quebec (and suburbs).
+
+Okay, one specific suburb in particular.  Geography is not an exact science.
+
+Yours in knowledge of our frozen neighbours to the north,
+Dr. Zachary P. Klaas, B. G. H.*
+
+* Big Giant Head **
+** Yes, it's not Shatner any longer.
+</div>
+
+<hr class = 'subsection' />
+<div class = 'pre'>
+To: Zak
+From: The Meister
+
+Zak,
+
+I've already cleared this whole matter up with another Canuck. I'll forward it to you.
+
+I expect I'll be getting more emails from Canadians soon, but my casual rip of the The Great White North was deep in my email, and as we all know Canadians are slow readers*.
+
+The Meister**
+
+* because they have to first transcribe a copy in French to comply with national law
+** King of the Footnotes
+</div>
+<hr class = 'subsection' />
+
+<div class = 'pre'>
+To: Denis
+Fwd: Zak
+From The Meister
+
+Actually Denis, I looked into this after my last email, and we're both wrong. The capital of Canada is Canada City.
+
+glad to clear that up,
+The Meister
+</div>
+
+<hr class = 'subsection' />
+(it really never gets old making fun of Canada. They're so cute up there)
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Q: What are the odds of two people named Georgia picking Oklahoma to win it all? A: Less than two people named millissa picking West Virginia.
+</p>
+
+<div class = 'pre'>
+Oklahoma: Georgia, Georgia, Barbie Hoag, Jason Wulff
+
+UCLA: Maggie Topel
+
+West Virginia: millissa, millissa
+
+Wichita State: mellissa simko, Matt
+
+North Carolina: Ahra Shall, Joe Hoag, Sam Hoag, Noach, Noach, Jennifer Flaa , Bern Cooper
+
+Xavier: Annabel Flora
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Two graduates each from UCLA, West Virginia, Wah Cheetah State, North Carolina, and Xavier saw their team lose on Thursday Friday. Hi John Varesi!
+</p>
+
+<div class = 'pre'>
+UCLA: Harry Hirschman, John Varesi
+
+West Virginia: Andrew Craft, Fielding Yost
+
+Wichita State: mellissa simko
+
+North Carolina: Allison Holifield
+
+Xavier: Jennyrupe, Mara Peyton
+
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The Drunk Uncle Award goes to Lance Van Houten, who has repeatedly insisted to have his candy bar replaced with a "<a href = "http://benklaas.com/jqmcbp/images/bocolatchar.jpg">Bocolate Char</a>".*
+</p>
+
+<p>
+* this would be a violation of the JQMCBP Bylaws, so Lance will have to stick with his initial selection, a bowl of gruel.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+Well, you've read this far so you must be a kind soul. The JQMCBP is forever 100% free with no obligations, other than listening to my long rants*, but in June I am riding 150 miles on my bike to help fund MS research. <a href ="http://bit.ly/benMS150">Donate to my ride here</a>. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>.
+</p>
+<p>
+* also optional
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>
+Michele "Marathon" Thomas is laying waste to the field right now, a solid 2 points ahead of every man, woman, and chimp in JQMCBP. Michele had 13 of 16 teams in the Sweet Sixteen and ALL EIGHT of the elite eight picked correctly.
+</p>
+
+<p>
+</p>
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Michele Thomas</td><td>Michigan</td><td>Marathon</td><td>Wisconsin</td><td>84</td><td></tr>
+<tr><td>2</td><td>Dustin Ramoie</td><td>Montana</td><td>Charleston Chew</td><td>Kentucky</td><td>82</td><td></tr>
+<tr><td>3</td><td>Chad meister Pechumer</td><td>Michigan</td><td>Reeces peanut butter cup</td><td>Wisconsin</td><td>80</td><td></tr>
+<tr><td>4</td><td>Craig Wadz-za-man</td><td>International</td><td>King size Kit Kat</td><td>Wisconsin</td><td>78</td><td></tr>
+<tr><td>5</td><td>Paul C. Smith</td><td>Wisconsin</td><td>Baby Ruth</td><td>Wisconsin</td><td>77</td><td></tr>
+<tr><td>6</td><td>Arun Mahapatra</td><td>Michigan</td><td>Twix KING SIZE</td><td>Kentucky</td><td>76</td><td></tr>
+<tr><td>6</td><td>Brian Clair</td><td>Iowa</td><td>Chic-o-Stick</td><td>Arizona</td><td>76</td><td></tr>
+<tr><td>6</td><td>Cal Ruprich</td><td>Michigan</td><td>Gummy Bears</td><td>Wisconsin</td><td>76</td><td></tr>
+<tr><td>6</td><td>Chris Farley</td><td>Arizona</td><td>Dark Choc. Milkyway</td><td>Kansas</td><td>76</td><td></tr>
+<tr><td>6</td><td>Patrick O'Boyle</td><td>Colorado</td><td>Green Chuckles</td><td>Michigan State</td><td>76</td><td></tr>
+<tr><td>6</td><td>Paul WadzinskE</td><td>Wisconsin</td><td>Butterfinger</td><td>Kentucky</td><td>76</td><td></tr>
+<tr><td>6</td><td>Robert Portnoy</td><td>New Mexico</td><td>Hershey's Dark Chocolate</td><td>Kentucky</td><td>76</td><td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Jenna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>56</td><td></tr>
+<tr><td>2</td><td>Alex the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>51</td><td></tr>
+<tr><td>2</td><td>Caroline the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>51</td><td></tr>
+<tr><td>2</td><td>Chaya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>51</td><td></tr>
+<tr><td>5</td><td>Carlos the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Utah</td><td>50</td><td></tr>
+<tr><td>5</td><td>Deborah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>50</td><td></tr>
+<tr><td>5</td><td>Paloma the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>50</td><td></tr>
+<tr><td>8</td><td>Alayna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Ohio State</td><td>49</td><td></tr>
+<tr><td>8</td><td>Arnold the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Davidson</td><td>49</td><td></tr>
+<tr><td>10</td><td>Katrina the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wofford</td><td>48</td><td></tr>
+<tr><td>10</td><td>Terrell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>48</td><td></tr>
+<tr><td>10</td><td>William the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>48</td><td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2015 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

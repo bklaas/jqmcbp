@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         margin: 5px;
+		 margin-left: 10px;
+         padding: 5px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">XVIII</a></h1>
+	<h2 class = 'slogan'><a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">18 and Life!</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE4|*</li>
+	<li>Candybar: *|MMERGE5|*</li>
+	<li>Score: *|MMERGE8|* (leader is at *|MMERGE10|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE7|*</li>
+	<li>Rank: *|MMERGE9|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE6|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>And Then There Were Two</h1>
+
+<p>
+Craig "King-Size Kit Kat" Wadz-za-man has parlayed the Power of Kringle into a commanding lead in the JQMCBP with 118 points. One point back is Paul C "Will Have to Buy His Own Baby Ruth" Smith at 117, and then it's a big gap to third place at 108. However, a 16 point pickup for a Duke victory will vault Todd 'Bartman' "Kirby Puckett Bar" Barton into first place. For 1,000 reasons (UW Alumni, Go Bucky, Hate Duke, Enjoy Stenographers, Frank the Tank, Up Yours Duke, etc.) I will be rooting for Wisconsin on Monday, but the prospect of acquiring a 20-year old Kirby Puckett bar for Mr. Barton gives me a 1,001st reason. GO KRINGLE BOY GO!
+</p>
+
+<hr class = 'section' />
+<h1>Watching Bucky Beat Kentucky in BuckyTown</h1>
+
+<p>
+I'll admit to not considering that the Final Four might be happening, with alma mater Wisconsin in it, coincident with a family trip to Madison, Wisconsin this weekend. But MAN did that end up being a great place to see the Saturday games. 
+</p>
+
+<p>
+The first thing to know driving into Wisconsin is that you don't need any of that Florida-based Gatorade for all of your sports drink needs, but instead pick up a <a href = "https://www.flickr.com/photos/35137853@N00/16835510998/">syrupy-sweet Badger Max</a> to mutilate your thirst. It's got electrolytes!
+</p>
+
+<p>
+Next, you'll need to gear yourself up for the big game. My initial choice, <a href = "http://benklaas.com/jqmcbp/images/pinstripes.png">pin-stripe overalls</a>, were soundly dismissed by my companions with the direct quote "No, Ben. No." Then I found <a href = "https://www.flickr.com/photos/35137853@N00/16403058473/">this excellent knit sweater</a>, which I thought was classy but ultimately passed on. I ended up with an XXL fitted hat, a rare find for someone with my King-Size Melon*, but I have to admit I have some remorse for not picking up the best shirt in the house, these <a href = "https://www.flickr.com/photos/35137853@N00/16997207506/">three biologically accurate badgers howling at the moon</a>. Next time.
+</p>
+
+<p>
+<img src = "http://benklaas.com/jqmcbp/images/pinstripes_small.png" />
+</p>
+
+<p>
+* also a disgusting canteloupe-flavored candy bar
+</p>
+
+<p>
+We watched the game at Union South on campus, which allowed us to take part in a bonkers scene with the Badger faithful. Game tip-off was 8pm, and we showed up at 3pm and found out there were no available seats in the big area with the projection screen. We did, however, snag one of the remaining booths in the "auxilliary" area (not to be confused with the auxilliary auxilliary area, which also existed, or the bowling alley). There we camped out and waited for the game to start, FIVE HOURS LATER. And you know what? TOTALLY WORTH IT. Stray observations during the game:
+</p>
+
+<p>
+<ul>
+<li>Did you know there are now secondary channels broadcasting these games with "Team Stream", which gives you an intentionally stilted broadcast of the game? This is possibly the stupidest TV sports invention I've witnessed in some time. During the Michigan State - Duke game (MSU TeamStream brought to you in SpartyVision), they literally never once showed Duke's Coach K on screen, and showed the Michigan State coach Tom Izzo every 30 seconds throughout the game. Then we got the same thing for the Wisconsin game, giving me more close-ups of Bo Ryan than I'm at all comfortable with. I never saw who was coaching Kentucky, but I think it was Adolph Rupp. I realize TruTV has nothing else to do in the cable graveyard of excessive channels, but honestly this whole concept needs to go.</li>
+<li>When you are watching the game with a sea of red-and-white clad fanatics, there is very clearly a conspiracy to JUST HAND KENTUCKY THE CHAMPIONSHIP I CAN'T BELIEVE THIS I DEMAND AN INVESTIGATION.
+</li>
+<li>
+<a href = "https://www.flickr.com/photos/35137853@N00/17010940506/">But then you win and all is forgiven.</a>
+</li>
+<li>
+<a href = "https://www.flickr.com/photos/35137853@N00/16850356349/">Sweet Caroline</a>
+</li>
+<li>
+<a href = "https://www.flickr.com/photos/35137853@N00/16428390143/">Daughter Carson Moxie is a big fan already</a>. Daughter Piper went to hotel room and binge-watched Disney Channel.
+</li>
+<li>
+Nothing to do with the actual game, but The University of Wisconsin Memorial Union Rathskeller has the greatest mural in the history of murals, <a href = "https://www.flickr.com/photos/35137853@N00/16844638588/">the Tragic Battle of Beer v. Wine</a>. Wenn Wein und Biere sich bekriegen, Wer wird siegen, wer wird unterliegen?
+</li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Kentucky and Michigan State departed, and so did SO MANY bracket entrants' champions. Too many too print you say? Balderdash!
+</p>
+
+<div class = 'pre'>
+Michigan State: Rich Doher, Mark Largent, Lesley Hogg, Cris Osier, Larry'Oakie' Ochs, Jorgen Chapin, Kristin Gifford, Susie Flora, Cindy Arvant, Cormac 'Mac Attack' O'Boyle, Ruth Hurwitz, John Wallin, Bob Ruprich, Patrick O'Boyle, Anna Arvant, Aaron Escobedo, Jennyrupe
+
+Kentucky: Scott Larabee, Tom Westhoff, Owen Clexton , Andrew Reese PB Eggs Waldron, Jeff 'I hate Christian Laettner' Hober, Tim Thomas, Tala Anderson, Rennie Anderson, Allen R. Thunder stick Witt, cate whelan, Caleb Anderson, Samantha Morley, Nic Rhinehart, Rod Harl, Jon Marthaler, theodore chungath, Henry Nichols, jeffrey mckeage, Lea Adams, Rich Ehisen, David 'Father of Crusher' Lucas, Arthur Rush, Glen LaGrou, charby, Allan Dranberg, Brendon Harrington, Michael Nommensen, Mike Popek, Rick Tetlow, Michael Howard, Steve 'Its my 11th time playing.. I should win by now' White, Annie h, Michael Hartnett, Jay Leonard, Brett Rondeau, Joe O'Neill, Greg Brown, Dennis Sabo, Mark Stringer, Kevin Taylor, Mike Mojzak, Kelli Strom, John Cooper, Jared Poertner, Scott govoni, Anthony Messina, Eric Blaha, Portree2k, Angie Mowery, Matt Murdockq, Andy Ducey, cazzie walker, Sarah Vandevanter, Mike Askren, Chris Gayler, Lisa LaGrou, Jacob Benson, Dave Marney, Renata Guedes Sampaio, Aaron Chittenden, Todd Beranak, TakeFabFive, Chuck Del, 'Ol One Drink, Dustin Ramoie, Natalie Schmidt, Nick DiGirolomo, Chris Daigh, Andrew Hanson, Jeremy Garncarz, Eric Gifford, Robert Strnad, Bob (Jack's Youngest Son) Smalling, Kristopher Nordstrom, Nate Hafer, Peter Carlson, Brent Swanson, Jeff Amato, David Smalling, Jim Chryssikos, Bob Barsaloux, Josh Stevens , Eva Witt, PHorvath, DANK, Gregory J. White II, tcrunner, Glen Volkman, Joe 'Junior' Cislo, Martha carlos, Bill Scott, Corey Garza, Erin Hogg, Ellen Gifford, Chad CEADDA Pechumer, Will Scott, Martie Lucas, Liam McGrail, Bill McGrail, Matt Johnson, Michael Butler, Wayne Lucas, Rob Reed, Joey Valentine, Terry Valentine, Jennifer Meagher, Mark Weiss, Diane Sievert, Drake Dranberg, Josh Klein, Jason Danielson, John Geis, Brenda VB, Tom Lynch, Thomas Leeper, Scott driscoll, Ken, Sara Van Houten, RJ 'Jack' Smalling, Billy Rossman, Eric Naiburg, Andy Calvert, Chris Picini, Bob Southard, Joe Hebda, Tor Tor, Eddie Sander, Chris H, Susie Smalling, Jared Elfvin, Heather lucas-foster, Clark Beech, Mark Foster, Noam Hurwitz, James Doyle, Brett callison, Michael Maten, Elrondo, jim preston, Sir Rupert Rorshach Smudge, Gregory Steinke, Nigel, Michael Collins, Super Grover, Kenny Kozak, David Needham, Nancy Larson, Dr. Julius Strangepork, Franswear, Victoria Hebda, Jim Nasium, Trish Soriano, Jenn, Usha D., Scott Sabbert, Dana 'Kemba Walker' Care, Sarah O, Beaumont Hoffman, Steve Fink, Brent Dakin, Annelise ross, Geoff Findlay, Ethan 'Go Green' Ray, John Niyo, Kelly Wolfe-Bellin, Jenny Gator, Joan Davidson, Matt englehart, Paul WadzinskE, Kenny Boyd , John 'Crusher' Lucas, Ruth Chittenden , Claire 'The Bear' Lucas, Jamie Harrison, Jason Busta, Kristal Sieve, Julie 'Mother of Crusher' Lucas, Tallman, Colin Morrison, Brittany Hite, Dan Nelson, MCOLLIN6, Tim Ortopan, Teresa Bryan, Gregory Castle, Nathaniel Smith, Mike Brown, Scott Westhoff, Morgan Davis, Richard Augustin, Tom Joseph, Mike D, Ken Mills, Robert Portnoy, Lisa Reed, Andrew Moore, Jamie Watson, Martin Casey, Meredith 'Reigning Champion' Hammons, Patty Dillon, Carol Reed, Bob Rogers, WendyLou, Dave Bush, Hal Norman, Arun Mahapatra, michael anderson, Mattozan, Bill Crandall, Mike Ford, michael mowery, Rob Cory, Todd Campbell, Liz McHalpine, Chase Campbell, Kara Campbell, DeSantis 'The Orange Cat' Smalling, Jill Campbell, Senora Espero, Paul Blake, Jamie 'Son of Steve ...  11th year...'  White, Sue Ray, Sam Niyo, Sam Niyo, Joe Bro, Millie Howe, Rick Shepich, Bam-Bam Shanahan, Trevor Shepich, Chelsey Bigalk, Jill Taylor, Jeff Keiffer , Dane Rozek, Jenni Thomas, Alex Ross, John Varesi, Gregory J. White III, Lucy Rhoades, Annie Rhoades, Sam Rhoades, Julia Foster, Keith Shaftoe, Charlie Englehart, Lynn Smith, Erin Austin, Cary Smith, Jason Care, Brandon Ray, Rob DeLeon, Dan Karamanski, Betsy Ross, Nick Fox, Mark Carlson, Rob Bellin, Larry Stephan, Allison Holifield, Old Joe, Jonah Rondeau, Dawn Smith, Bob Topel, Michael Simmons, Paul Schmidt's dad, Wendy Volkman, Mark Klever, Bab Sansgaard, Dan Ridgeway, MadMammaK'ski, Joe Bowers, Alyssa Teer, Bill Teer, Carolynne Burkholder-James, Mitch Pickens, Nancy Niergarth, Rob Meilinger, Karen McCartney, Michelle Housenga, Jeff Blake, Gregg Schultz, Sam Calvert, Andrew Bush, Ryan Daniel Pilgrim, Kurt Evan Anderson, John Housenga, Tom, Sedge, Fran Fabrizio, Nate Silver, Amy McLanahan, Kristen Blake, Matt M, Big Bar Candy, Yishak Habtemichael, Patrick Dillon, Dan Reed, Chuck Rodrigues, Ron Gin, Snuffy, Dawn Schmitt, Jonathan Paterson, Michelle Morrisey, Therese Hebda, Bruce Ghastin, Leigh Keiper, Ray Hutchinson, Colin 'Fargo' Gjervold, Alex Blom, P Repp, Pete Arvant, Marty Orlowski, Larry Flees, Fielding Yost, Sabie Sabester, Hank Jacky, Richard Mott, Nicholas Rhinehart, Ryan Herrington, Mark Dyal, Madison Dyal, Annette Dyal, Linda Scibilia, Taminator, Tim King, Michael Carcone, Barlow, Kevin Kane, Yacht Club, Kerie Whelan, Jeff Kopaska, Alexa Kopaska, TomH, Cassie Kopaska, Shae Lorenc, Pondscum, Milin Danek, Joel Vause, William Girardot, William Girardot, Jeff Waterstredt, Ian Smith, Rebecca z, Sarah, James Saburomaru, pete, President Barack Obama, Nate Reed
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Sorry Wayne. So alone as a Kentucky alum. So alone. Go pound sand.
+</p>
+
+<div class = 'pre'>
+Michigan State: Jaime Millard, Rich Doher, Ben Glime, 'Ol One Drink, Natalie Schmidt, Kim Clexton, Ahra Shall, Eric Gifford, Jim Chryssikos, Matt Johnson, Barbie Hoag, Mark Weiss, Kristin Gifford, Thomas Leeper, Scott driscoll, kurt gardinier, Scott Smith, Cindy Arvant, Ethan 'Go Green' Ray, Arun Mahapatra, Bill Crandall, Sue Ray, Rick Shepich, Staci Nowak, Bob Ruprich, Patrick O'Boyle, Leigh Keiper, Michael Carcone, Barlow, TomH, Jeff Waterstredt, Kathryn Guimond
+
+Kentucky: Wayne Lucas
+</div>
+
+<hr class = 'section' />
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+Well, you've read this far so you must be a kind soul. The JQMCBP is forever 100% free with no obligations, other than listening to my long rants*, but in June I am riding 150 miles on my bike to help fund MS research. <a href ="http://bit.ly/benMS150">Donate to my ride here</a>. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>.
+</p>
+<p>
+* also optional
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Craig Wadz-za-man</td><td>International</td><td>King size Kit Kat</td><td>Wisconsin</td><td>118</td></tr>
+<tr><td>2</td><td>Paul C. Smith</td><td>Wisconsin</td><td>Baby Ruth</td><td>Wisconsin</td><td>117</td></tr>
+<tr><td>3</td><td>Dustin Ramoie</td><td>Montana</td><td>Charleston Chew</td><td>Kentucky</td><td>108</td></tr>
+<tr><td>3</td><td>Kathy Larson</td><td>Florida</td><td></td><td>Wisconsin</td><td>108</td></tr>
+<tr><td>3</td><td>Kevin Quinn</td><td>Massachusetts</td><td>Payday</td><td>Wisconsin</td><td>108</td></tr>
+<tr><td>3</td><td>Todd 'Bartman' Barton</td><td>Minnesota</td><td>Kirby Puckett Bar</td><td>Duke</td><td>108</td></tr>
+<tr><td>7</td><td>Andy Glime</td><td>Michigan</td><td>big fast break bar</td><td>Wisconsin</td><td>107</td></tr>
+<tr><td>8</td><td>Chad meister Pechumer</td><td>Michigan</td><td>Reeces peanut butter cup</td><td>Wisconsin</td><td>106</td></tr>
+<tr><td>8</td><td>Owen Clexton </td><td>Michigan</td><td>Coffee Crisp </td><td>Kentucky</td><td>106</td></tr>
+<tr><td>8</td><td>QBKatt</td><td>Illinois</td><td>Reece's Peanut Butter Cups</td><td>Wisconsin</td><td>106</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Terrell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>68</td></tr>
+<tr><td>2</td><td>Carlos the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Utah</td><td>64</td></tr>
+<tr><td>3</td><td>Deborah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+<tr><td>3</td><td>Madyson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+<tr><td>5</td><td>Braeden the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>59</td></tr>
+<tr><td>5</td><td>Hannah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Georgia State</td><td>59</td></tr>
+<tr><td>7</td><td>Destiney the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>NC State</td><td>58</td></tr>
+<tr><td>7</td><td>Stacy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>58</td></tr>
+<tr><td>9</td><td>Alessandra the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>57</td></tr>
+<tr><td>9</td><td>Alex the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>57</td></tr>
+<tr><td>9</td><td>Miranda the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Dayton</td><td>57</td></tr>
+<tr><td>9</td><td>Quinten the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>UC Irvine</td><td>57</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2015 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

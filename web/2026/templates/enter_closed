@@ -1,0 +1,64 @@
+<script language = 'JavaScript'>
+function validateForm(form) {
+	if (form.name.value == '') {
+		alert('Please state your name');
+		return false;
+	} else if (form.email.value == '') {
+		alert('Honest, your email address is safe with me. Please give me one');
+		return false;
+	} else if (!isEmailAddr(form.email)) {
+		alert("'"+form.email.value+"' does not look like a valid email address");
+		return false;
+	} else if (form.locale.selectedIndex == 0) {
+		alert('Where are you from? Note that "Places Unknown" is an option!');
+		return false;
+	}
+	return true;
+}
+function isEmailAddr(elem) {
+	var str = elem.value;
+	str = str.toLowerCase();
+	if (str.indexOf("@") == -1) {
+		return false;
+	} else {
+		var addr = str.substring(0, str.indexOf("@"));
+		var domain = str.substring(str.indexOf("@")+1, str.length);
+		if (domain.indexOf(".") == -1) {
+			return false;
+		} else if (addr.length == -1) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function get_count() {
+	// chrome keeps a JS cache, so we have to fudge a bogus query string
+	// to get around that
+	var random = Math.floor((Math.random()*99999)+1);
+	$.getJSON(
+		'entry_count.json?foo=bar' + random,
+		function(data) {
+			$('.entry_count').replaceWith('<span class = "entry_count">' + data.entry_count + '</span>');
+			$('.entry_count').fadeIn('slow');
+			setTimeout(function() { get_count(); }, 15000);
+		}
+	);
+}
+
+$(document).ready(
+        function() {
+		var data = [];
+              	setTimeout(function() {
+			get_count();
+               	}, 2000);
+	});
+</script>
+
+
+<h1> The Tourney Has Started and is Closed for Entries</h1>
+<h3><a href = 'player_bracket_selection.cgi' style = 'text-decoration: underline;'>I ENTERED BUT WHERE'S MY BRACKET I'M FREAKIN OUT!</a></h3>
+<h3>You might be looking for the <a href = 'leaderboard.cgi'>Leaderboard</a></h3>
+
+<h3>Want to plead your case for a late entry? <a href = "mailto:jqmcbp@gmail.com" style='text-decoration: underline;'>Give it a shot</a></h3>
+

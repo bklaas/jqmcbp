@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			/*color: #FFFFFF;*/
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XIX</a></h1>
+	<h2 class = 'slogan'>Rep this</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<p>
+I hope you all had a great time with this year's JQMCBP. JQMCP is forever free, but if you are feeling an urge to shower me with gifts, I ride 150 miles on my bicycle in June to raise money for Multiple Sclerosis research. <a href ="http://bit.ly/bkMS150_2016">Donate to my ride here</a>. Now let's get to Whahappened!
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+<h2>
+Congratulations to Julia "GUMMY BEARS" Foster, the JQMCBP XIX CHAMPION!
+</h2>
+<p>If you recall, a few emails ago I was trumpeting the dominance of one 11-year-old Kiera Delargy, leading the field of Candy Seekers for several rounds in a row. This was a great accomplishment, and Julia should be proud. But alas, in the end, Kiera was JUST. TOO. OLD.
+</p>
+<p>Out of the woodwork, with a special hunch about Villanova going all the way, comes Julia "I'm 10, and I'm better than all 756* of the rest of you" Foster. Julia has earned the coveted Gummy Bears prize with 112 points, outpacing the entire field by 5 or more points. <b>Fosters: send me your address and I'll send Julia some Gummy Bears.</b>
+</p>
+
+<p>
+* +1000 Chimps
+</p>
+
+<p>
+Second place, winning the traditional prize of BIG FAT NOTHING, is a tie between Brenda VB and Bill Girardot. Congrats! I do not need your address!
+<p>
+
+<p>
+While the game was being played Monday, I'd sort of forgotten that Hawaii Standard Time is 5 hours behind what I'm used to. I was walking down the street in Historic Kapaa Town in the late afternoon, specifically <a href = "https://www.google.com/maps/@22.0764826,-159.3178726,3a,75y,326.75h,84.92t/data=!3m6!1e1!3m4!1s2FyeejVpg-U5yF0JHi436g!2e0!7i13312!8i6656!6m1!1e1">right outside this sports bar with wide open-air windows</a>, and spied through the TVs over the bar that there were 14.5 seconds left and North Carolina was down 3. Then UNC hit <a href = "http://deadspin.com/marcus-paiges-shot-deserved-better-1769096319">this ridiculous shot</a> to tie up the game with 4 seconds left. Villanova calls a time out, and I continue to loiter. Then they hit a buzzer-beater to win the thing.
+</p>
+<p>
+After much whooping and hollering by myself and the 4-6 other people paying attention in Historic Kapaa Town*, I proceeded down the road and announced loudly to several people with heads buried in smartphones that Villanova had pulled it out (I was right, they were all checking scores). One of the more fun endings to an NCAA championship game, and in case you missed it check out 
+<a href = "http://screengrabber.deadspin.com/heres-every-angle-and-every-call-of-villanovas-ncaa-tou-1769055349">this tremendously entertaining set of every angle and every call of the buzzer-beating Villanova shot.</a> My favorites are the Canal+ Spanish announcer Antonio Lamolda "Siiiiiiiiiiiiiiii! Viya-Nova!", the Villanova IMG announcer Ryan Fannon "CATS WIN! CATS WIN! CATS WIN!", as well as the contrasting <a href = "https://twitter.com/NBAonTNT/status/717229145051291648?ref_src=twsrc%5Etfw">Charles Barkley / Kenny "the Jet" Smith</a> reactions.
+</p>
+
+<p>
+* three of which were my wife and daughters
+</p>
+
+<p>
+Also of special note: this year Nyla the Chimp, with an extra-orbital J-Factor of 46.75, finished in an astonishing <i>11th Place</i> overall. In the modern JQMCBP era, aka when I finally started recording scores directly in the database, this is the best finish ever by a chimp. Here are the Top Chimps and their ranks since 2006:
+<p>
+
+<ul>
+	<li>2006: Iliana the Chimp: 17th*</li>
+	<li>2007: Ryann the Chimp: 391st</li>
+	<li>2008: Joe the Chimp: 269th</li>
+	<li>2009: Shayna the Chimp: 338th</li>
+	<li>2010-2011: JQMCBP Lockout due to Stolen Meister Mojo</li>
+	<li>2012: Gianna the Chimp: 216th</li>
+	<li>2013: Robin the Chimp: 178th</li>
+	<li>2014: Taliyah the Chimp: 19th**</li>
+	<li>2015: Terrell the Chimp: 201st</li>
+	<li>2016: Nyla the Chimp: <b>11th</b></li>
+</ul>
+
+<p>
+* 2006 was the "George Mason in the final four" year<br />
+** 2014 was the "7th seed Connecticut wins it all" year
+</p>
+
+<p>p.s. this also means that a coin-flipping chimp beat 98.5% of all humans. GOOD JOB WITH THE EVOLUTION, HUMAN RACE.
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Here are 14, or 1.8%, of the JQMCBP pool of humans that picked Villanova to win it all. They were a #2 seed, same as Michigan State, of whom 35.5% of you picked to go all the way. So, yeah, good job.
+</p>
+
+<div class = 'pre'>
+Bill Girardot, Brenda VB, Elizabeth Meilinger, Jane Cislo, Josh Nisenson, Julia Foster, Kelly Poole, Kendall DiGirolomo, Peter James, Ree-Oooohshiny!, Tim Ogborn, Tod Mullanix, Todd Campbell, Wesley Amato
+</div>
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+From: Heather Lucas-Foster<br />
+To: The Meister<br />
+Received: Within Minutes after Villanova hits game-winning shot<br />
+</p>
+
+<div class = 'pre'>
+I THINK my kid just won what we lovingly refer to as the "monkey bracket"???  Julia Foster is 10 and if she did win, we are all going to fall off our chairs laughing!  If you're worried she had help, check out the LucasFamily and Friends filter for her potential helpers.  Monkeys wouldn't ask us for help picking their noses!
+Heather "Mother of the Princess of the Apes" Lucas-Foster
+</div>
+
+<p>
+Editor's note: Luckicious J. Chimp was reached at his Rancho Cucamunga Banana Farm, Spa and Resort, and he emphasized that neither himself nor any of his 1,000 chimp army would never ask a human to pick their noses. They like to pick their own and each others' noses, mahalo-verymuch.
+</p>
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Though not a single human selected Syracuse as their champion, there were plenty (118) of people that lost North Carolina and Oklahoma (including yours truly). Schwoops! So close buddy!
+</p>
+
+<div class = 'pre'>
+North Carolina: Joshua stevens, Jeb 'Carrot Sticks' Byers, Annie Hoag, Joe Hoag, Tala Anderson, Jeff Amato, Dave Giugni, Brenda  Ochs, Michael Nommensen, Shaul Hurwitz, Mark Bailey, Matt Englehart, Kristopher Nordstrom, Jon Marthaler, Sheryl Hatcher, Phil Horvath, Theodore Chungath, Carson Pakula, Nick DiGirolomo, Glen Volkman, Arthur Rush, David Boll, Jessica Sanborn, Paco Sinbad, Kevin Quinn, Chad Ceadda Pechumer, Renata Sampaio Rush, Jenni Thomas, Chuck Delargy, Abby, Tracy Kugler, dwatt, Jim Marten, Big Pappa Pump, Phil Horvath, Scott Boniface, Sarah Handlos, David Hagen, Mark T Weaver, Oscar Valentine, Todd Beranak, Derek Roesti, Bri Ruiz, John Niyo, Kirk Moloney, Nathan Glime, Regan Soldner, Nathaniel Smith, Matt Rennie, Helen Regan, Will Arvant, Jerry Schmitt, Rob Bellin, Chris Young, Rosalind Kroha, Jokey Shanahan, David Ullman, Jed Durkin, Milt Bellin, Alex Cory, Erin Austin, Ryan Schmitt, Tyler Schmitt, Corey Garza, Lisa Reed, Colin Gjervold, Elizabeth Danielson, Fatty Stinky, Sabrina Ruiz, Bri, Mark Stelten, MaMaMaMaMaKski!, KennyBagg, Sam Housker, Christine Dyal, Michael, Byers, Tom 'T3' Wadzinski, 
+
+Oklahoma: Ben Klaas, Chris Charbonneaux, Sabrina Bier, Rod Harl, Patrick Hebda, Bob Rogers, Jeral Poskey, Joel Davis, Chris Goodwin, Victoria Hebda, Steve, Chuck Meilinger, Brian Swanson, Noam Hurwitz, andy anderson, Eustace Haney, Lindsay Morgan, Kevin Kane, Zane Sabbert, Jamie Harrison, Dan Solt, Andrew Bodziony, Lynn Smith, Jamie Watson, Peter Adelson, Rebekah Hynson, Matthew Meilinger, Doug Busta, Michael Ferreter, Kathleen Murray, Kurt Anders, David Needham, William Morrison, Mike Brown, Jared Elfvin, Yishak Habtemichael, Pete Arvant, Kurt Anders (Revised), Steve Carlson, Jason Earl Teal
+</div>
+
+<p>
+<a href = "https://youtu.be/eOifa1WrOnQ">Ha ha!</a> So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Only 6 of you lost alma maters on Final Four weekend. But nobody from Oklahoma! I am not surprised about this!
+</p>
+
+<div class = 'pre'>
+North Carolina: Greg Brown, Michael Wooley-Ousdahl, Mark Stelten
+Syracuse: Gary Mullen, Liz McHalpine, Sabie Sabester
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The This Is Not a Candy Bar But I'll Make an Exception Because Seriously Who Are The Marketing Wizards That Came Up With This Award goes to my lovely wife Wendy Volkman for her my-jaw-hurts-thinking-about-it selection of "7Eleven Slurpee-Flavored Donut". Yes, <a href = "http://nerdist.com/slurpee-flavored-donuts-are-a-thing-now/">these are now a thing</a>.
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, WHO WON?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Julia Foster</td><td>Illinois</td><td>gummy bears</td><td>Villanova</td><td>112</td></tr>
+<tr><td>2</td><td>Bill Girardot</td><td>Michigan</td><td>Milky Way</td><td>Villanova</td><td>107</td></tr>
+<tr><td>2</td><td>Brenda VB</td><td>South Dakota</td><td>Dove Dark Chocolate</td><td>Villanova</td><td>107</td></tr>
+<tr><td>4</td><td>Kelly Poole</td><td>Iowa</td><td>Heath Bar</td><td>Villanova</td><td>106</td></tr>
+<tr><td>5</td><td>Tod Mullanix</td><td>California</td><td>Baby Ruth</td><td>Villanova</td><td>100</td></tr>
+<tr><td>6</td><td>Jane Cislo</td><td>Michigan</td><td>King Size Twix</td><td>Villanova</td><td>98</td></tr>
+<tr><td>7</td><td>Todd Campbell </td><td>Michigan</td><td>Toblerone</td><td>Villanova</td><td>96</td></tr>
+<tr><td>8</td><td>Kendall DiGirolomo</td><td>Arizona</td><td>Pretzel M&M</td><td>Villanova</td><td>95</td></tr>
+<tr><td>9</td><td>Christie Schmidt</td><td>Michigan</td><td>Butterfinger</td><td>Michigan State</td><td>94</td></tr>
+<tr><td>9</td><td>Josh Nisenson</td><td>California</td><td>Grape Tangy Taffy</td><td>Villanova</td><td>94</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Nyla the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>92</td></tr>
+<tr><td>2</td><td>Ashlynn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>87</td></tr>
+<tr><td>3</td><td>Caleb the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>86</td></tr>
+<tr><td>4</td><td>Cassandra the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>79</td></tr>
+<tr><td>5</td><td>Carlee the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Syracuse</td><td>77</td></tr>
+<tr><td>6</td><td>Evelin the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>74</td></tr>
+<tr><td>7</td><td>Madisyn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>73</td></tr>
+<tr><td>8</td><td>Fidel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>72</td></tr>
+<tr><td>8</td><td>Lauren the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>72</td></tr>
+<tr><td>10</td><td>Coby the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>69</td></tr>
+	</tbody>
+</table>
+<p>
+Until JQMCBP XX, cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2016 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

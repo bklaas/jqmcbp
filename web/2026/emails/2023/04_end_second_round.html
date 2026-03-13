@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVI</a></h1>
+		<h2 class='slogan'>
+			<a href="https://youtu.be/CO9ysLspb4Q">You know what I'm sayin?</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+
+			<hr class='section'>
+
+<h1>Well Folks, It's UCOW Time!</h1>
+<h2>The Unweighted Chance Of Winning or UCOW! tells you if there's still a chance.</h2>
+
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/25b542c9-220d-c9c9-bdc2-2d983c75555e.png"
+					class="float-right" width = "40%" alt = "There's a chance">
+			</p>
+
+<p>
+What's UCOW you say? For those not in the know, UCOW, pronounced at a high-pitched yell "YOU COW!," stands for Unweighted Chance Of Winning. After the field of teams is whittled down from 64 to 16, the number of remaining bracket permutations drops from, I am not making this up, &gt; 9 <em>quintillion</em> (2 to the 63rd power) to 32,768 (2 to the 15th power). UCOW simulates every one of those 32,768 possible prmutations and determines the winner or winners of each permutation. After every permutation is run, results are compiled to show each person (and chimp) just how many of those 32,768 permutations they emerge victorious. 
+</p>
+
+<p>UCOW, as I note every year, is not popular with anyone. Something about knowing one's fate totally destroys morale in a complete and crushing fashion. Nevertheless, here are the results!
+
+<table>
+<tr><td>(at least one) Human Wins: 24821</td></tr>
+<tr><td>(at least one) Chimp Wins: 8633</td></tr>
+</table>
+
+
+
+<table>
+<tr><th nowrap align = "left">Name</th><th nowrap># of Winning Brackets</th><th nowrap>% of Winning Brackets</th></tr>
+<tr><td>Michelle Morrisey</td><td>1574</td><td>4.803</td></tr>
+<tr><td>Zander the Chimp</td><td>1500</td><td>4.578</td></tr>
+<tr><td>Kirin Danek</td><td>1446</td><td>4.413</td></tr>
+<tr><td>Dan Smedley</td><td>1316</td><td>4.016</td></tr>
+<tr><td>Max teer</td><td>1151</td><td>3.513</td></tr>
+<tr><td>Dave Chronicle</td><td>991</td><td>3.024</td></tr>
+<tr><td>Evan Roberts</td><td>918</td><td>2.802</td></tr>
+<tr><td>Miyagi</td><td>856</td><td>2.612</td></tr>
+<tr><td>Cheryl Holton</td><td>849</td><td>2.591</td></tr>
+<tr><td>Omar the Chimp</td><td>770</td><td>2.350</td></tr>
+<tr><td>Deanna the Chimp</td><td>738</td><td>2.252</td></tr>
+<tr><td>Anthony the Chimp</td><td>729</td><td>2.225</td></tr>
+<tr><td>Andrew Mortimer</td><td>654</td><td>1.996</td></tr>
+<tr><td>Sophie the Chimp</td><td>629</td><td>1.920</td></tr>
+<tr><td>Peter Hentges</td><td>609</td><td>1.859</td></tr>
+<tr><td>Alex Anderson</td><td>570</td><td>1.740</td></tr>
+<tr><td>Clare Abram</td><td>554</td><td>1.691</td></tr>
+<tr><td>Jacob Kinne</td><td>523</td><td>1.596</td></tr>
+<tr><td>Winnie Gavin</td><td>491</td><td>1.498</td></tr>
+<tr><td>Elizabeth Ferreter</td><td>486</td><td>1.483</td></tr>
+<tr><td>Russell Nelson</td><td>470</td><td>1.434</td></tr>
+<tr><td>Bobby Rupe</td><td>466</td><td>1.422</td></tr>
+<tr><td>Nicki Bowers</td><td>435</td><td>1.328</td></tr>
+<tr><td>Andrew D Nicholson</td><td>422</td><td>1.288</td></tr>
+<tr><td>Davoin Showerhandle</td><td>418</td><td>1.276</td></tr>
+<tr><td>Jackson Teer</td><td>416</td><td>1.270</td></tr>
+<tr><td>Jane Cislo</td><td>406</td><td>1.239</td></tr>
+<tr><td>Andy Ducey</td><td>402</td><td>1.227</td></tr>
+<tr><td>Crissy Fanganello</td><td>376</td><td>1.147</td></tr>
+<tr><td>Daniel Gonzalez</td><td>362</td><td>1.105</td></tr>
+<tr><td>Birdie</td><td>348</td><td>1.062</td></tr>
+<tr><td>Bill King</td><td>333</td><td>1.016</td></tr>
+<tr><td>Ryan Hundt</td><td>328</td><td>1.001</td></tr>
+<tr><td>Thomas J Leeper</td><td>322</td><td>0.983</td></tr>
+<tr><td>Hal  Norman</td><td>320</td><td>0.977</td></tr>
+<tr><td>Arnav the Chimp</td><td>306</td><td>0.934</td></tr>
+<tr><td>Daryl Morrison</td><td>285</td><td>0.870</td></tr>
+<tr><td>Karlie the Chimp</td><td>280</td><td>0.854</td></tr>
+<tr><td>Abigail the Chimp</td><td>272</td><td>0.830</td></tr>
+<tr><td>Luke Roling</td><td>267</td><td>0.815</td></tr>
+<tr><td>Jackson Teer</td><td>247</td><td>0.754</td></tr>
+<tr><td>Caiden the Chimp</td><td>246</td><td>0.751</td></tr>
+<tr><td>Shaun the Chimp</td><td>239</td><td>0.729</td></tr>
+<tr><td>Jacqueline the Chimp</td><td>235</td><td>0.717</td></tr>
+<tr><td>Lexie the Chimp</td><td>233</td><td>0.711</td></tr>
+<tr><td>Magdalena the Chimp</td><td>230</td><td>0.702</td></tr>
+<tr><td>PJ Torres</td><td>226</td><td>0.690</td></tr>
+<tr><td>Micah the Chimp</td><td>220</td><td>0.671</td></tr>
+<tr><td>Kathleen Phu</td><td>210</td><td>0.641</td></tr>
+<tr><td>Jason Busta</td><td>202</td><td>0.616</td></tr>
+<tr><td>Mitch Runge</td><td>198</td><td>0.604</td></tr>
+<tr><td>Matt Dudus</td><td>196</td><td>0.598</td></tr>
+<tr><td>Korbin the Chimp</td><td>196</td><td>0.598</td></tr>
+<tr><td>Lucy Rhoades</td><td>195</td><td>0.595</td></tr>
+<tr><td>Mark Largent</td><td>190</td><td>0.580</td></tr>
+<tr><td>Will Arvant</td><td>188</td><td>0.574</td></tr>
+<tr><td>Joslyn the Chimp</td><td>179</td><td>0.546</td></tr>
+<tr><td>Ed Myers</td><td>169</td><td>0.516</td></tr>
+<tr><td>Sam niyo</td><td>165</td><td>0.504</td></tr>
+<tr><td>Esperanza the Chimp</td><td>151</td><td>0.461</td></tr>
+<tr><td>Diane Sievert</td><td>148</td><td>0.452</td></tr>
+<tr><td>Connor the Chimp</td><td>138</td><td>0.421</td></tr>
+<tr><td>Carlos Agens</td><td>137</td><td>0.418</td></tr>
+<tr><td>Peggy Meagher</td><td>136</td><td>0.415</td></tr>
+<tr><td>Emilee the Chimp</td><td>132</td><td>0.403</td></tr>
+<tr><td>Martha Carlos</td><td>130</td><td>0.397</td></tr>
+<tr><td>Xander the Chimp</td><td>124</td><td>0.378</td></tr>
+<tr><td>Nate Blake</td><td>124</td><td>0.378</td></tr>
+<tr><td>Mooseman Bruce</td><td>120</td><td>0.366</td></tr>
+<tr><td>Jonathan Schroeder</td><td>119</td><td>0.363</td></tr>
+<tr><td>Brian Hellberg</td><td>119</td><td>0.363</td></tr>
+<tr><td>Kaylee the Chimp</td><td>116</td><td>0.354</td></tr>
+<tr><td>Hanna the Chimp</td><td>115</td><td>0.351</td></tr>
+<tr><td>Paul Allar</td><td>115</td><td>0.351</td></tr>
+<tr><td>Larry Deeney</td><td>110</td><td>0.336</td></tr>
+<tr><td>John Housenga</td><td>109</td><td>0.333</td></tr>
+<tr><td>Jon Klimczuk</td><td>104</td><td>0.317</td></tr>
+<tr><td>Becky Burton</td><td>102</td><td>0.311</td></tr>
+<tr><td>Dave Giugni</td><td>101</td><td>0.308</td></tr>
+<tr><td>Tala Anderson</td><td>100</td><td>0.305</td></tr>
+<tr><td>Geoff Willard</td><td>95</td><td>0.290</td></tr>
+<tr><td>Chris Conway</td><td>94</td><td>0.287</td></tr>
+<tr><td>Andy Bauer</td><td>94</td><td>0.287</td></tr>
+<tr><td>Michael Webster</td><td>92</td><td>0.281</td></tr>
+<tr><td>Peyton Bowers</td><td>92</td><td>0.281</td></tr>
+<tr><td>Bill Teer</td><td>92</td><td>0.281</td></tr>
+<tr><td>Renata Rush</td><td>89</td><td>0.272</td></tr>
+<tr><td>Erin D</td><td>88</td><td>0.269</td></tr>
+<tr><td>Bo the Chimp</td><td>88</td><td>0.269</td></tr>
+<tr><td>Pete Arvant</td><td>87</td><td>0.266</td></tr>
+<tr><td>Tim Barr</td><td>84</td><td>0.256</td></tr>
+<tr><td>Rollie</td><td>83</td><td>0.253</td></tr>
+<tr><td>Glen LaGrou</td><td>82</td><td>0.250</td></tr>
+<tr><td>Maxwell the Chimp</td><td>80</td><td>0.244</td></tr>
+<tr><td>Carol Reed</td><td>78</td><td>0.238</td></tr>
+<tr><td>Ella Bier</td><td>76</td><td>0.232</td></tr>
+<tr><td>Ethan 'Go Green' Ray</td><td>74</td><td>0.226</td></tr>
+<tr><td>Mark Weiss</td><td>72</td><td>0.220</td></tr>
+<tr><td>Kayden the Chimp</td><td>71</td><td>0.217</td></tr>
+<tr><td>Shannon O'Hare</td><td>69</td><td>0.211</td></tr>
+<tr><td>Jenn</td><td>65</td><td>0.198</td></tr>
+<tr><td>Dan Clark</td><td>64</td><td>0.195</td></tr>
+<tr><td>Jim Toomey</td><td>64</td><td>0.195</td></tr>
+<tr><td>Spencer Payne</td><td>64</td><td>0.195</td></tr>
+<tr><td>Kendall the Chimp</td><td>63</td><td>0.192</td></tr>
+<tr><td>Gabe Smith</td><td>61</td><td>0.186</td></tr>
+<tr><td>Devon Kristiansen</td><td>58</td><td>0.177</td></tr>
+<tr><td>Alayna the Chimp</td><td>58</td><td>0.177</td></tr>
+<tr><td>Peter James</td><td>58</td><td>0.177</td></tr>
+<tr><td>Myles the Chimp</td><td>56</td><td>0.171</td></tr>
+<tr><td>Samuel Allar</td><td>56</td><td>0.171</td></tr>
+<tr><td>John J Hassinger</td><td>56</td><td>0.171</td></tr>
+<tr><td>Rogelio the Chimp</td><td>55</td><td>0.168</td></tr>
+<tr><td>Eanie Meanie</td><td>55</td><td>0.168</td></tr>
+<tr><td>Logan the Chimp</td><td>55</td><td>0.168</td></tr>
+<tr><td>Jack Genadek</td><td>54</td><td>0.165</td></tr>
+<tr><td>Todd Mullanix</td><td>52</td><td>0.159</td></tr>
+<tr><td>Terry Sievert</td><td>50</td><td>0.153</td></tr>
+<tr><td>Gabriella the Chimp</td><td>50</td><td>0.153</td></tr>
+<tr><td>Colin “Candy Bar Not Candy Barf” Gjervold</td><td>50</td><td>0.153</td></tr>
+<tr><td>Mary Smith</td><td>50</td><td>0.153</td></tr>
+<tr><td>Tierra the Chimp</td><td>50</td><td>0.153</td></tr>
+<tr><td>Jim Preston</td><td>49</td><td>0.150</td></tr>
+<tr><td>AJ Bowers</td><td>47</td><td>0.143</td></tr>
+<tr><td>Jeff Kinne</td><td>47</td><td>0.143</td></tr>
+<tr><td>Harmony the Chimp</td><td>47</td><td>0.143</td></tr>
+<tr><td>Caitlyn the Chimp</td><td>46</td><td>0.140</td></tr>
+<tr><td>Ryan Ahearn</td><td>45</td><td>0.137</td></tr>
+<tr><td>Brandon Ray</td><td>44</td><td>0.134</td></tr>
+<tr><td>Bill Rogers</td><td>44</td><td>0.134</td></tr>
+<tr><td>Christopher the Chimp</td><td>44</td><td>0.134</td></tr>
+<tr><td>Scott Driscoll</td><td>39</td><td>0.119</td></tr>
+<tr><td>UCSB Tim Ferrero</td><td>39</td><td>0.119</td></tr>
+<tr><td>Carin Goodrich</td><td>38</td><td>0.116</td></tr>
+<tr><td>Nick Dyal</td><td>38</td><td>0.116</td></tr>
+<tr><td>Jackson Teer</td><td>38</td><td>0.116</td></tr>
+<tr><td>Randy Hooper</td><td>37</td><td>0.113</td></tr>
+<tr><td>Cristopher the Chimp</td><td>36</td><td>0.110</td></tr>
+<tr><td>Emmanuel the Chimp</td><td>36</td><td>0.110</td></tr>
+<tr><td>Ella the Chimp</td><td>36</td><td>0.110</td></tr>
+<tr><td>Gabriel Anderson</td><td>36</td><td>0.110</td></tr>
+<tr><td>Matt Jurach</td><td>36</td><td>0.110</td></tr>
+<tr><td>Baba D</td><td>36</td><td>0.110</td></tr>
+<tr><td>Dave Bush</td><td>35</td><td>0.107</td></tr>
+<tr><td>Patrick Sullivan</td><td>35</td><td>0.107</td></tr>
+<tr><td>Jenny Gator</td><td>35</td><td>0.107</td></tr>
+<tr><td>Martin Lieser</td><td>35</td><td>0.107</td></tr>
+<tr><td>Avi Gupta</td><td>34</td><td>0.104</td></tr>
+<tr><td>Fielding H. Yost</td><td>34</td><td>0.104</td></tr>
+<tr><td>Stacy Trussell</td><td>34</td><td>0.104</td></tr>
+<tr><td>Damion the Chimp</td><td>32</td><td>0.098</td></tr>
+<tr><td>Milan Vaishnav</td><td>30</td><td>0.092</td></tr>
+<tr><td>Stone the Chimp</td><td>30</td><td>0.092</td></tr>
+<tr><td>Dan Reed</td><td>30</td><td>0.092</td></tr>
+<tr><td>Denis the Menace</td><td>28</td><td>0.085</td></tr>
+<tr><td>Brenda VB</td><td>28</td><td>0.085</td></tr>
+<tr><td>Jim Bauer</td><td>28</td><td>0.085</td></tr>
+<tr><td>Will Bernstein</td><td>28</td><td>0.085</td></tr>
+<tr><td>Rachael the Chimp</td><td>27</td><td>0.082</td></tr>
+<tr><td>Michael Farrell</td><td>26</td><td>0.079</td></tr>
+<tr><td>Romke Mooiweer</td><td>26</td><td>0.079</td></tr>
+<tr><td>Alan Brouilette</td><td>26</td><td>0.079</td></tr>
+<tr><td>Jesus the Chimp</td><td>26</td><td>0.079</td></tr>
+<tr><td>Molly Mortimer</td><td>26</td><td>0.079</td></tr>
+<tr><td>Rich doher</td><td>24</td><td>0.073</td></tr>
+<tr><td>Lance Van Houten</td><td>24</td><td>0.073</td></tr>
+<tr><td>Phil McCracken</td><td>24</td><td>0.073</td></tr>
+<tr><td>Edward the Chimp</td><td>24</td><td>0.073</td></tr>
+<tr><td>Sue Miller</td><td>22</td><td>0.067</td></tr>
+<tr><td>Elijah Lewis Hostetler</td><td>22</td><td>0.067</td></tr>
+<tr><td>Brendon Harrington</td><td>22</td><td>0.067</td></tr>
+<tr><td>Sue Miller</td><td>22</td><td>0.067</td></tr>
+<tr><td>Eddie Sander</td><td>20</td><td>0.061</td></tr>
+<tr><td>Matt Suomi</td><td>20</td><td>0.061</td></tr>
+<tr><td>Will Scott</td><td>18</td><td>0.055</td></tr>
+<tr><td>Milin Danek</td><td>18</td><td>0.055</td></tr>
+<tr><td>Trish Soriano</td><td>17</td><td>0.052</td></tr>
+<tr><td>Matthew Gordon Goodrich</td><td>17</td><td>0.052</td></tr>
+<tr><td>Amy Lyons</td><td>17</td><td>0.052</td></tr>
+<tr><td>Macie Benson</td><td>16</td><td>0.049</td></tr>
+<tr><td>Austin Munroe</td><td>16</td><td>0.049</td></tr>
+<tr><td>Isaac LeTarte</td><td>14</td><td>0.043</td></tr>
+<tr><td>carly thaler</td><td>14</td><td>0.043</td></tr>
+<tr><td>Kiera D</td><td>12</td><td>0.037</td></tr>
+<tr><td>Maya Gypsy </td><td>12</td><td>0.037</td></tr>
+<tr><td>Kurt Haffner</td><td>12</td><td>0.037</td></tr>
+<tr><td>Teresa Bunda</td><td>11</td><td>0.034</td></tr>
+<tr><td>Suvir S</td><td>11</td><td>0.034</td></tr>
+<tr><td>Colin Morrison </td><td>11</td><td>0.034</td></tr>
+<tr><td>Kaitlyn the Chimp</td><td>11</td><td>0.034</td></tr>
+<tr><td>Martie Lucas</td><td>10</td><td>0.031</td></tr>
+<tr><td>Kurtis Anders</td><td>10</td><td>0.031</td></tr>
+<tr><td>Kerie Whelan</td><td>10</td><td>0.031</td></tr>
+<tr><td>Caroline Welby</td><td>9</td><td>0.027</td></tr>
+<tr><td>Sabrina the Chimp</td><td>9</td><td>0.027</td></tr>
+<tr><td>Finn Roberts</td><td>9</td><td>0.027</td></tr>
+<tr><td>Johnny Slash</td><td>9</td><td>0.027</td></tr>
+<tr><td>Jaylynn the Chimp</td><td>8</td><td>0.024</td></tr>
+<tr><td>James Parker</td><td>8</td><td>0.024</td></tr>
+<tr><td>Jan Merrell</td><td>8</td><td>0.024</td></tr>
+<tr><td>Baret Williams-Furfaro</td><td>8</td><td>0.024</td></tr>
+<tr><td>Dale the Chimp</td><td>8</td><td>0.024</td></tr>
+<tr><td>Sam McWilliams</td><td>8</td><td>0.024</td></tr>
+<tr><td>Scott Biddinger</td><td>7</td><td>0.021</td></tr>
+<tr><td>Leyla Benson</td><td>7</td><td>0.021</td></tr>
+<tr><td>Albert the Chimp</td><td>7</td><td>0.021</td></tr>
+<tr><td>Callie the Chimp</td><td>7</td><td>0.021</td></tr>
+<tr><td>Sophia Soriano</td><td>7</td><td>0.021</td></tr>
+<tr><td>Beardawg</td><td>7</td><td>0.021</td></tr>
+<tr><td>Tom Hoag</td><td>7</td><td>0.021</td></tr>
+<tr><td>Kari Williams</td><td>6</td><td>0.018</td></tr>
+<tr><td>Beaumont Hoffman</td><td>6</td><td>0.018</td></tr>
+<tr><td>B.J. Bardy</td><td>6</td><td>0.018</td></tr>
+<tr><td>Katie Dillon</td><td>6</td><td>0.018</td></tr>
+<tr><td>Steph Haan- Amato</td><td>5</td><td>0.015</td></tr>
+<tr><td>Kevin Huntsman</td><td>5</td><td>0.015</td></tr>
+<tr><td>Zoey Keiper</td><td>5</td><td>0.015</td></tr>
+<tr><td>Grace Boyd</td><td>5</td><td>0.015</td></tr>
+<tr><td>Dane the Chimp</td><td>5</td><td>0.015</td></tr>
+<tr><td>Dane Debbrecht</td><td>5</td><td>0.015</td></tr>
+<tr><td>Alex Ross</td><td>4</td><td>0.012</td></tr>
+<tr><td>Cate Whelan</td><td>4</td><td>0.012</td></tr>
+<tr><td>Joseph Shanahan</td><td>4</td><td>0.012</td></tr>
+<tr><td>Riley Lyons</td><td>4</td><td>0.012</td></tr>
+<tr><td>Diamond the Chimp</td><td>4</td><td>0.012</td></tr>
+<tr><td>Rachelle Owen</td><td>4</td><td>0.012</td></tr>
+<tr><td>Luke Chryssikos</td><td>4</td><td>0.012</td></tr>
+<tr><td>Curtis the Chimp</td><td>3</td><td>0.009</td></tr>
+<tr><td>Davion the Chimp</td><td>3</td><td>0.009</td></tr>
+<tr><td>Savannah the Chimp</td><td>3</td><td>0.009</td></tr>
+<tr><td>Eric S</td><td>2</td><td>0.006</td></tr>
+<tr><td>Srikar Achanta</td><td>2</td><td>0.006</td></tr>
+<tr><td>Jeff Blake</td><td>2</td><td>0.006</td></tr>
+<tr><td>Marshall the Chimp</td><td>2</td><td>0.006</td></tr>
+<tr><td>Kenny Boyd</td><td>2</td><td>0.006</td></tr>
+<tr><td>Ralph the Chimp</td><td>1</td><td>0.003</td></tr>
+<tr><td>Eddie Deevine</td><td>1</td><td>0.003</td></tr>
+<tr><td>Patty Dillon</td><td>1</td><td>0.003</td></tr>
+<tr><td>Jodi</td><td>1</td><td>0.003</td></tr>
+<tr><td>Judi Durda</td><td>1</td><td>0.003</td></tr>
+<tr><td>Chris Daigh</td><td>1</td><td>0.003</td></tr>
+<tr><td>Annie Cochran</td><td>1</td><td>0.003</td></tr>
+<tr><td>Carson Klaas</td><td>1</td><td>0.003</td></tr>
+<tr><td>Owen Davidson</td><td>1</td><td>0.003</td></tr>
+</table>
+
+<hr class='section'>
+
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+			<p>
+The Furman Paladins. Paladin is a word likely not familiar to many of you, but it is very familiar to one likely over-represented group in JQMCBP: those that once played (or perhaps are still playing) Dungeons &amp; Dragons. The Paladin was a righteous subclass of Fighter character in the game, one who crusaded for a Higher Power. I don't think it was the religiosity of the Paladin that drew D&amp;D players to it, it was...the SWORD. The +5 HOLY AVENGER was the most coveted sword in the game. Sure, the +5 HOLY AVENGER was way too unwieldy to be reasonable, but srsly it's not like you had to actually carry the +5 HOLY AVENGER. You're playing D&amp;D! You're just a 13-year-old kid in a basement getting jacked up on Mountain Dew and Nutty Bars at 2am with your buddies, and darned if you're not gonna swing that 60-pound +5 HOLY AVENGER through those heretic orcs and hobgoblins like a hot knife through butter. THE PALADIN CANNOT BE STOPPED!
+			</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/1f3d8307-6431-c0fb-e98a-5dff9fe9ee58.jpg" width = "40%"> 
+<p>
+Unless of course the Paladin is facing San Diego State, in which case you will lose by 23 points.
+</p>
+
+<p>How does Furman University represent the Paladin? Like this:</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/5bda6077-d282-5724-c143-aeb7e41b301c.jpg" width = "80%">
+<p>D&amp;D players doth protest! This is not a +5 HOLY AVENGER, it is a foam finger that's been ripped off its hand and wrapped in tin foil!</p>
+
+			<hr class='section'>
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+17 interpid souls picked Princeton into the Sweet Sixteen. This list includes, and I am not making this up, at least one current roommate of a player on this Princeton basketball team. Also "coinflip" is back, as well as Aidan Conkling, Aidan Conkling, and Aidan Conkling.
+</p>
+			<div class='pre'>
+Princeton:  Aidan Conkling, Aidan Conkling, Aidan Conkling, Allen witt, Apcvmd, Chris Jonesy Jones, coinflip, Denis the Menace, Kirin Danek, Maria Blake, Mark Jones, Milin Danek, Missy Shanahan, Rosanna Collars, Taylor Strom, Theodore Chungath, Wyn Jamieson
+			</div>
+
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Another big blow to champ picks in round 2. I had placed all my hopes on Marquette, and that really didn't work out for me and a whole lot of you. Worse yet was the Kansas loss; Rock, chalk, jaywutjusthappened? 199 in total lost their champion pick across 2nd round games.
+</p>
+
+<div class='pre'>
+Duke: Jeb Byers, Connor Byers, Conner Schultz, Mary Herrmann , Brian Dise, Jason Danielson, Arnold Woods, Stevie Nicks, Bob Ruprich, Mike Gill, Danny Mahon, C.Stiddy, Leyla Benson, Bob Ruprich 2, President Barack Obama
+
+Kentucky: David Lucas, Scott Mortimer, Ryan schraa
+
+Marquette: Ben Klaas, Darren Prodger, Andy Weinecke, Carly McLanahan, Paul Smith, James Dillon, John Geis, Ryan Brady, Zachary Klaas, Matt Rennie, Steve Grose, Elrondo, Daniel Hoops, Sophia Soriano, Owen Clexton, Jennifer Topel, Owen Boll, Andrew L Craft, Vivian Copley, Gus, Ryan Currie, Tina Ferreter, Kristen Gladsky, vowel tezt, Lisa Reed, Blake Brodjeski, Dennis Brodjeski, Amelia McCartney, Karen McCartney, John McCartney, Katie Letarte, Christie Schmidt, Michelle Rago, Eddie Deevine, Al Wadz, Jim Bunda, Jan Merrell, Megan Wooley-Ousdahl, Cj Wadz, Josie McCartney, Super Grover, Kate Meilinger, Lochlain McGrail, Wendy Volkman, Paul Schmidt, Allan Dranberg, Bill McGrail, Mike Andreen
+
+Baylor: Elias Prodger, Willy Lee, Darby Niyo, Elizabeth Rogers, Cac23, PJ Schmidt
+
+Missouri: Nathan Conkling
+
+Auburn: Eric Gottlieb, Andy Jehly
+
+Indiana: Conor Whelan, Sean Whelan, Doug Williams, silver1998, Marco Byrd, gregory white, Grace Rennie, Marcie Marcey Marcy Tocci, Theresa White , Tracy Niyo, Ryan Coin, Scott Thompson
+
+Penn State: Nick Mazzocchi
+
+Kansas: Jill Lantz, Colin Keiffer, Serine Isenhart, AJ Anderson, Rob “Tarpo” Tilley, Kristen DiGirolomo, Lesley Hogg, Heather Lucas-foster, Jane Kehrwald , Jason Cadell, Kyle Smith, Bill Meyer, Bridget Conkling, Danika Brockman, Rachel Ray, Matt Smalling (from Ben's Ms. Judy's Preschool class), Paula Fronckowiak, Kathy Larson, Jessica Dussault, Kristopher Nordstrom, Zach Gostanian, Timothy Schappe, Ed Nordstrom, Eric Naiburg, Eric Young, The Sedge, Jenny Gator, Rob Grabarek, Holm Plates, Sheryl Hatcher, Sue Robinson, Julie Smith, Lil elephant , Sara Mitchell, Michael Hartnett, Steve (Dad of Jamie and Nick), Kim Clexton, Michelle Housenga, Rich Lyle, Kiowa Kids, Mark Larson, Brent Dakin, Greg Miller, Bob Armitage, Neal Nordstrom, AugMeister, Ellen Gifford, Beaumont Hoffman, Nick (Son of Steve) White, Lisa Blake, Zoey Keiper, Gary Bahr, scottlarabee, Darrin Hendricks, Kelly Wolfe-Bellin, Ken Howard, Mary Galm, tdpCA, Ruthann Jones, Susie Smalling, Mark Kenneth Hebda, Brian Weiss , Tim Rush, John Wallin, Amanda Thomas, Martie Lucas, MaKenzie Smalling , Michael Shim, Andrew Hanson, Lisa Bieber, Tim Ortopan, Tim Ogg, Usha D, Glen LaGrou, Isaac LeTarte, Mike lemieux, Brennan Swanson, Caleb, Greg Ross, Michael demon deac Butler, Doug Busta, gregory white III (trey), Max Durkin, Jason Earl Teal, Kevin gill, chad david, Brent Swanson, Serge Kéna Cohen, Mark Bailey, James Olson, Macie Benson, Gary Borrell, Andy Calvert, Santiago, Jayson LaGrou, David Cain, Jim Bauer, Laura Herring, Todd Beranak, Robert DeLeon, Daniel C. Smokey, Heather Stratton Williams, Bruce Johnsen , Jess Larson, Betsy Ross, Grace Geiser, Cassie, Piper Klaas, Gabriel Leiblein, Chad J Pechumer
+
+Northwestern: Flynn Cadell
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>
+40 of you lost your alma maters in the 2nd round, with a big contingent of Marquette grads (including Jodi E., Jodi, and Jodi; also my wife, who is not named Jodi)
+</p>
+<p>
+</p>
+
+<div class='pre'>
+Duke: Jeb Byers, Kurt Anderson, Tim Hoelscher
+
+Kentucky: john Lucas, Whitney Payne, Wayne Lucas
+
+Marquette: Jenny Gator, Jodi E., Jodi, Jodi, Curtis Stalter, Karen McCartney, Matt MacDonell, Wendy Volkman, Bill McGrail
+
+Maryland: Birdie, Rachelle Owen, Jeff Johnson
+
+Missouri: Sohyon Warner, Laura Herring
+
+Indiana: Conor Whelan, Sheev, Mike Riggins, Grace Rennie, Joe Stevens, Kurtis Anders
+
+Pitt: Tim Hoffman
+
+Penn State: John Yuda, Nick Mazzocchi
+
+Kansas: Ed Nordstrom, Dad Klaas, Judy Johnson, Howard Johnson
+
+Saint Marys: Ross Benson, Scarlett Benson, Macie Benson, Leyla Benson
+
+TCU: Mark R Dyal
+
+Northwestern: InMemoryOf JamieSamuelsen, PJ Schmidt
+</div>
+
+			<hr class='section'>
+
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>Riley Lyons chose <b>Smarties Double Lollies</b> as her candy choice. Sorry Riley, this didn't win you an award, but it did open things up for the <b>Hold My Lolly, This Is How It's Done Award</b>, which I'm bestowing upon Nancy Smalling Valentine for her selection of <b>Smarties Double Lollies, 200 piece, 56oz tub</b>. Now, is this "a" candybar? No, it's not. It's a three-and-a-half pound bucket of sugar on sticks. Doesn't matter Nancy, should you win I will grant you this giant bucket of a Dentist's Cautionary Tale. Looking back on the UCOW results, it looks like you have 0.0% chance of receiving said bucket. Good luck!
+
+            </p>
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+Kurtis "Jolly Ranchers" Anders has risen to the top of the heap, but with a Run the Table score of 75, it's not gonna last.
+
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Kurtis Anders</td><td>Michigan</td><td>Jolly Ranchers</td><td>Arizona</td><td>49</td></tr>
+<tr><td>2</td><td>Crissy Fanganello</td><td>Colorado</td><td>Compartes California Berries Dark Chocolate</td><td>UCLA</td><td>48</td></tr>
+<tr><td>2</td><td>Daryl Morrison</td><td>Illinois</td><td>M&amp;M Peanut</td><td>Texas</td><td>48</td></tr>
+<tr><td>2</td><td>Mooseman Bruce</td><td>Michigan</td><td>Million Dollar Bar</td><td>Houston</td><td>48</td></tr>
+<tr><td>5</td><td>Carolyn Hernandez</td><td>California</td><td>Dark Chocolate w/Sea Salt</td><td>Purdue</td><td>47</td></tr>
+<tr><td>5</td><td>Dan Smedley</td><td>California</td><td>Almond Joy</td><td>UCLA</td><td>47</td></tr>
+<tr><td>5</td><td>Jan Merrell</td><td>Minnesota</td><td>Reese's peanut butter cups</td><td>Marquette</td><td>47</td></tr>
+<tr><td>8</td><td>Jacob Kinne</td><td>Colorado</td><td>3 musketeers</td><td>Alabama</td><td>46</td></tr>
+<tr><td>8</td><td>Jenny Gator</td><td>Wisconsin</td><td>Special Dark</td><td>Kansas</td><td>46</td></tr>
+<tr><td>8</td><td>Milin Danek</td><td>Minnesota</td><td>Twix</td><td>Houston</td><td>46</td></tr>
+<tr><td>8</td><td>Sara Mitchell</td><td>Massachusetts</td><td>Ritter Sport Milk Chocolate</td><td>Kansas</td><td>46</td></tr>
+<tr><td>8</td><td>Sue Robinson</td><td>Wisconsin</td><td>Plain M&amp;M's</td><td>Kansas</td><td>46</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+Anthony, Kayden and Renee the Chimp, Chimp, and Chimp (respectively) hold down the top spots in the Chimp Army at 40 points. That's as good or better than &gt;600 of you! SHAME.
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Anthony</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Creighton</td><td>40</td></tr>
+<tr><td>1</td><td>Kayden</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Howard</td><td>40</td></tr>
+<tr><td>1</td><td>Renee</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Missouri</td><td>40</td></tr>
+<tr><td>4</td><td>Kinsey</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Farleigh Dickinson</td><td>39</td></tr>
+<tr><td>4</td><td>Uriel</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Furman</td><td>39</td></tr>
+<tr><td>4</td><td>Zander</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Florida Atlantic</td><td>39</td></tr>
+<tr><td>7</td><td>Gabriella</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Gonzaga</td><td>38</td></tr>
+<tr><td>7</td><td>Sophie</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kansas State</td><td>38</td></tr>
+<tr><td>9</td><td>Deanna</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Princeton</td><td>37</td></tr>
+<tr><td>9</td><td>Dimitri</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>West Virginia</td><td>37</td></tr>
+<tr><td>9</td><td>Harmony</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UCLA</td><td>37</td></tr>
+<tr><td>9</td><td>Kaitlyn</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>TCU</td><td>37</td></tr>
+<tr><td>9</td><td>Logan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Houston</td><td>37</td></tr>
+<tr><td>9</td><td>Maliyah</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Kennesaw State</td><td>37</td></tr>
+<tr><td>9</td><td>Marlen</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>Vermont</td><td>37</td></tr>
+<tr><td>9</td><td>Shaun</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>San Diego State</td><td>37</td></tr>
+				</tbody>
+			</table>
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2023 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>
