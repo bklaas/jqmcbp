@@ -19,7 +19,7 @@ while (my $hashref = $sth->fetchrow_hashref()) {
     $in_db->{$email}++;
 }
 
-open(DAT, "/tmp/raw_emails.txt");
+open(DAT, "/data/jqtmp/raw_emails.txt");
 while(<DAT>) {
     chomp;
     my ($trash, $email) = split /\|/;

@@ -131,7 +131,7 @@ sub get_teams_allinfo {
 
 sub log_to_file {
 	my @message = @_;
-	open(LOG,">>/tmp/jq.debug");
+	open(LOG,">>/data/jqtmp/jq.debug");
 	for (@message) {
 		print LOG $_ . "\n";
 	}
