@@ -1,0 +1,211 @@
+<script type = 'text/javascript'>
+$(document).ready(function() {
+
+	$('[% selector %]').highcharts({
+	
+	    chart: {
+	        type: 'gauge',
+	        plotBorderWidth: 1,
+	        plotBackgroundColor: {
+	        	linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+	        	stops: [
+	        		[0, '#FFF4C6'],
+	        		[0.3, '#FFFFFF'],
+	        		[1, '#FFF4C6']
+	        	]
+	        },
+	        plotBackgroundImage: null,
+	        height: 200
+	    },
+	
+		credits: {
+			enabled: false,
+		},
+	
+	    title: {
+	        text: '[% main_title %]'
+	    },
+	    
+	    pane: [{
+	        startAngle: -45,
+	        endAngle: 45,
+	        background: null,
+	        center: ['25%', '145%'],
+	        size: 300
+	    }, {
+	    	startAngle: -45,
+	    	endAngle: 45,
+	    	background: null,
+	        center: ['75%', '145%'],
+	        size: 300
+	    }],	    		        
+	
+	    yAxis: [{
+	        min: 0,
+	        max: 10,
+	        minorTickPosition: 'outside',
+	        tickPosition: 'outside',
+	        labels: {
+	        	rotation: 'auto',
+	        	distance: 20
+	        },
+	        plotBands: [
+				{
+					from: 0,
+					to: 1,
+					color: '#00ff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 1,
+					to: 3,
+					color: '#7fff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 3,
+					to: 5,
+					color: '#ffff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 5,
+					to: 7,
+					color: '#FF7F00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 7,
+					to: 10,
+					color: '#ff0000',
+					innerRadius: '100%',
+					outerRadius: '105%'
+				},
+	        ],
+	        pane: 0,
+	        title: {
+	        	text: '[% title1 | html %]<br/><span style="font-size:8px">[% subtitle1 | html %]</span>',
+	        	y: -40
+	        }
+	    }, 
+		{
+	        min: 0,
+	        max: 10,
+	        minorTickPosition: 'outside',
+	        tickPosition: 'outside',
+	        labels: {
+	        	rotation: 'auto',
+	        	distance: 20
+	        },
+	        plotBands: [
+				{
+					from: 0,
+					to: 1,
+					color: '#00ff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 1,
+					to: 3,
+					color: '#7fff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 3,
+					to: 5,
+					color: '#ffff00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 5,
+					to: 7,
+					color: '#FF7F00',
+					innerRadius: '100%',
+					outerRadius: '105%'
+	        	},
+				{
+					from: 7,
+					to: 10,
+					color: '#ff0000',
+					innerRadius: '100%',
+					outerRadius: '105%'
+				},
+			],
+	        pane: 1,
+	        title: {
+	        	text: "[% title2 | html %]<br/><span style='font-size:8px'>[% subtitle2 | html %]</span>",
+	        	y: -40
+	        }
+	    }],
+	    
+	    plotOptions: {
+	    	gauge: {
+	    		dataLabels: {
+	    			enabled: false
+	    		},
+	    		dial: {
+	    			radius: '100%'
+	    		}
+	    	}
+	    },
+	    	
+	
+	    series: [{
+	        data: [0],
+	        yAxis: 0
+	    }, {
+	        data: [0],
+	        yAxis: 1
+	    }]
+	
+	},
+	
+	function(chart) {
+	    setTimeout(function() {
+	        var left = chart.series[0].points[0],
+	            leftVal;
+			if ( [% left_val %] > 12 ) {
+				leftVal = 12
+			}
+			else {
+		        leftVal =  [% left_val %]
+			}
+	        left.update(leftVal, false);
+	        chart.redraw();
+	
+	    }, 1500);
+	    setTimeout(function() {
+	        var right = chart.series[1].points[0],
+	            rightVal;
+	
+			if ( [% right_val %] > 12 ) {
+				rightVal = 12
+			}
+			else {
+		        rightVal =  [% right_val %]
+			}
+	
+	        right.update(rightVal, false);
+	        chart.redraw();
+	    }, 3000);
+	    setTimeout(function() {
+			if ( [% left_val %] > 10 ) {
+				$('#broken_glass_left').show();
+			}
+	    }, 4000);
+	    setTimeout(function() {
+			if ( [% right_val %] > 10 ) {
+				$('#broken_glass_right').show();
+			}
+	    }, 4500);
+	
+	});
+});
+</script>

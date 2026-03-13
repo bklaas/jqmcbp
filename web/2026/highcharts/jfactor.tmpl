@@ -1,0 +1,88 @@
+<script type="text/javascript">
+$(document).ready(function() {
+
+	var chart;
+	chart = new Highcharts.Chart({
+		credits: {
+			enabled: false
+		},
+		exporting: {
+			enabled: false
+		},
+		chart: {
+			backgroundColor: 'transparent',
+			renderTo: 'container',
+			type: 'column'
+		},
+		tooltip: {
+                        formatter: function() {
+                                return '<b>'+ 'J Factor of: ' + this.y + '</b>';
+                        }
+                },
+		title: {
+			text: 'J Factor Distribution'
+		},
+		subtitle: {
+			text: 'Useless Stat Division, JQMCBP HQ'
+		},
+		xAxis: {
+			categories: [ [% FOR bin IN frequency_bins %]'[% bin %]',[% END %]],
+			title: {
+				text: 'J Factor'
+			}
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: 'Frequency'
+			}
+		},
+		legend: {
+			layout: 'vertical',
+			backgroundColor: 'transparent',
+			align: 'left',
+			verticalAlign: 'top',
+			x: 100,
+			y: 70,
+			floating: true,
+			shadow: true
+		},
+		tooltip: {
+			formatter: function() {
+				return ''+
+					this.x +': '+ this.y;
+			}
+		},
+		plotOptions: {
+			column: {
+				pointPadding: 0.2,
+				borderWidth: 0
+			}
+		},
+		series: [
+			{
+				name: 'Humans',
+				data: [ [% FOR freq IN human_data %][% freq %],[% END %] ]
+
+			}, 
+			{
+				name: 'Chimps',
+				data: [ [% FOR freq IN chimp_data %][% freq %],[% END %] ]
+
+			}
+		]
+	});
+
+	$('.logo_container').append('<img id="logo" class = "graph_logo" src="images/jq_graph_logo.png" />');
+
+});
+
+</script>
+
+<!--
+<div id = 'graph'>
+<div id="container"></div>
+<div class = 'logo_container'></div>
+</div>
+-->
+

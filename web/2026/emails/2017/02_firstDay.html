@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XX</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/eRBOgtp0Hac?t=5s">Peanut Butter Jelly Time</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Aaaand we're off! JQMCBP XX has broken all previous JQMCBP entrant records! 869 humans* have entered with hopes of a brief, victorious, free sugar high. Good luck to you all, with increased participation comes even slimmer chances!
+</p>
+
+<p>
+For the rookies:
+What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.**
+</p>
+
+<p>
+In addition to the emails, there's lots of important, vital resources available with your web browser. Evaluate how risky your picks are with the J Factor, see who picked brackets like yours with the Scientific Similarity Index. As the tournament progresses, figure out who has no chance of winning at the Hall of Shame! Generate pointless head-to-head graphs! Check out the linky links at the bottom of the email or head to <a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
+</p>
+
+<p>
+As I've done for the past few years, I'm sending emails through the appropriately named <a href = "http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.
+</p>
+
+<p>
+* Plus 1,001 chimps. This number has been remarkably steady.
+</p>
+<p>
+** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.
+</p>
+
+<p>
+But enough of my yakkin'. Let's boogie!
+</p>
+
+<!--
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+-->
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+From an odds perspective, this was a remarkably dull first day. The only "upsets" were the losses by Maryland (considered by hoop pundits as perhaps the "most overseeded team"), and Minnesota (I work at the University of Minnesota, and if there's one thing I've learned: best not to bet on the Gophers*). The Middle Tennessee State win over Minnesota was the least picked amongst pool goers, but even then there were 334 of you. Not quite enough for individual shouts out for your prowess.
+</p>
+
+<p>
+* Besides, the Minnesota Golden Gophers aren't even gophers, they're squirrels. I should know, I'm a published gopher biologist**. How can you bet on a team that can't even name their mascot biologically accurate?***
+</p>
+<p>
+** Really.
+</p>
+<p>
+*** yes, sometimes people coloquially call squirrels gophers. Don't get me started.****
+</p>
+<p>
+**** DON'T GET ME STARTED.
+</p>
+
+<!--
+<hr class = 'section' />
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+The Worst Typo Award goes to whatever family member created a filter just for my family, and then spelled our name wrong. No ass in Klaas.
+</p>
+-->
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+Lots of emails yesterday and today as people were getting their picks in. I even spoke <i>ein bischen Deutsch</i> tech support (mostly cursing, which is what I know) with someone in <i>Die Schweiz</i>. However, my mail of the day comes from Peter Kroha, who gave the most succinct and self-deprecating plea for leniency on a late entry:
+</p>
+<div class = 'quote'>
+I have been in the Johnny Quest for over 15 years and I suck and I am a Procrastinator.
+</div>
+
+<p>
+You have?<br />You do.<br />And you are!*
+</p>
+<p>* I let Peter in after the games started. The late start clearly gave him a competitive advantage, as he currently sits in 750th place.
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! When you get published in a JQMCBP email, experts* have determined** that this kind of exposure is 10x more effective for fame*** and fortune**** than either Snapchat or Instagram*****.
+</p>
+
+<p>
+* meaning me<br />
+** determined implies no actual data collection<br />
+*** not so much<br />
+**** candy!<br />
+***** actually, this is probably true<br />
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<div class = 'pre'>
+Mt St Marys: Mark Jones
+
+Virginia Tech: Miranda Barker
+
+Minnesota: Jen Flora, Brian Gottreu
+
+South Dakota St: Joseph Ghastin, Andrew Mossburg, Donald Trump*
+
+Maryland: Finna Davis (age 3)
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<p>
+* FAKE NEWS. Didn't even fill out a bracket.**
+</p>
+
+<p>** But Barack Obama did, and he (by which I mean his picks) entered JQMCBP. His candy bar? The "I'm Ridin' With Biden" bar, which like his picks are <a href = "http://abcnews.go.com/Politics/ridin-biden-chocolate-bars-hit-dnc-meeting/story?id=33394256">an actual, real thing.</a>
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>Sorry Gopher (and Hokie, Catamount, Wolfpack, Jackrabbit, Commodore, Bison, Terrapin, Ram, and Fighting Hawk*) faithful. Not your night...</p>
+
+<div class = 'pre'>
+Minnesota: BartmanMN (Todd Barton), Chris Young, Michelle R Young, Tom Lynch, Jason Kerwin, Rob Strnad, Tom lyons, Chris Goodwin, Jon Marthaler, Gina Rumore, Rupert Smudge, Milt Bellin, Joel 'On a Roll' Davis, Rich Portnoy, Chris Larson, Baron Joel Van Valin, Rod Cookie Layer Crunch, Tim Hoelscher, Baiba Olinger, Josie Davis, Jon Renner, Joshua Hanson, Dave Lyons, Johnny Slash Flaa, Chandra Hanke, Erin Austin, Katie Genadek, Catherine, Amy Lyons, Ali Collins
+
+Virginia Tech: Anna Bier
+
+Vermont: Sara Mitchell, Papa P
+
+Nevada: William Morrison
+
+South Dakota St: Richard 
+
+Vanderbilt: Bridget Johnson, Nancy Valentine, Bob Boniface
+
+Bucknell: Scott Chesky
+
+Maryland: Matthew Dill, Rachelle Owen, Jeff Johnson
+
+VCU: Todd Campbell
+
+North Dakota: Jason Danielson, Doug Williams
+</div>
+
+<p>* This is a tremendous lineup of mascots.</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+We have a new Most Difficult to Procure Award. One might think Michael Wooley-Ousdahl wins the award, continuing in the now 2-year tradition of someone ordering a $345 To'ak Cognac Cask bar (PLUS $20 SHIPPING! HONESTLY, HOW CAN THEY CHARGE FOR SHIPPING? PROFIT MARGIN TOO THIN?). But, that's not the winner.</p>
+
+<p>Congrats to Ali Collins and Usha D., both of whom requested the Kinder Surprise Egg, which is quite literally against the law to possess in the United States.
+</p>
+
+<p>The Kinder Surprise Egg looks on the surface pretty much like a Cadbury Egg, but oh there's so much more beneath the surface. You see, the Kinder Surprise Egg isn't filled with a delicious center. No no, the (Cruel to be) Kinder folks have placed <i>a fun plastic toy</i> inside the egg. <b>SURPRISE! YOU'RE CHOKING!</b>
+</p>
+
+<p>
+Surprise! Egg News:
+<ul>
+<li>
+<a href = "https://www.cbp.gov/newsroom/local-media-release/cross-border-travelers-are-reminded-kinder-egg-ban">
+United States Customs and Border Protection 
+reminds us</a> that the FDA describes Surprise Kinder Eggs as
+"a non-nutritive confectionery product with an object imbedded in it."
+</li>
+<li><a href = "https://www.thestar.com/news/canada/2011/01/12/surprise_border_officials_seize_canadian_womans_kinder_egg.html">"Linda"* gets caught at the Canada-Minnesota border</a>
+</li>
+</ul>
+</p>
+
+<p>
+* an egg mule, clearly not her real name. If Ali or Usha win the pool I'm going to have to find someone else, because I think "Linda" is out of the game.
+</p>
+
+
+<div class = 'pre'>
+</div>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+This was probably a record setter, if I kept such records. 6 different people skated through Thursday with a clean sheet of 16 correctly prognosticated picks. Impressive. It would have been 7 except for a guy named Rennie who, after picking everything else correctly, decided that it was reasoanble to pick against Iowa State. Picking against ISU in the World's Finest Candy-based NCAA pool? Which happens to have been founded in 1995 at Iowa State? By someone that grew up in Ames, Iowa? Not cool. ISU 1, Rennie 0*.
+</p>
+
+<p>
+* Ya dead ta me Rennie. Ya dead ta me.
+</p>
+<p>
+Here's the perfect six...
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Baba Hattemer</td><td>New York</td><td>Hersheys Dark Chocolate</td><td>Gonzaga</td><td>16</td></tr>
+<tr><td>1</td><td>Chris Dziewiatkowski</td><td>Colorado</td><td>Raisinets</td><td>Gonzaga</td><td>16</td></tr>
+<tr><td>1</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>16</td></tr>
+<tr><td>1</td><td>Howard Johnson</td><td>Washington</td><td>Snicker </td><td>Kansas</td><td>16</td></tr>
+<tr><td>1</td><td>Rick Tetlow</td><td>Michigan</td><td>Swedish Fish</td><td>UCLA</td><td>16</td></tr>
+<tr><td>1</td><td>Santiago Duque-Baird</td><td>Pennsylvania</td><td>TWIX BAR</td><td>Villanova</td><td>16</td></tr>
+<tr><td colspan = 6>56 people tied at 15</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+Lucky's going to have a tough year, he picked Princeton as his champ. Davon, Jaron and Serena the Chimps' coin-flip picks came through at 14, leading the way for the 1,000 Chimp Army. This, by the way, is as good or better score than 807 of you.
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Davon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico St</td><td>14</td></tr>
+<tr><td>1</td><td>Jaron the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>14</td></tr>
+<tr><td>1</td><td>Serena the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Cincinnati</td><td>14</td></tr>
+<tr><td>4</td><td>Ashleigh the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Rhode Island</td><td>13</td></tr>
+<tr><td>4</td><td>Carson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Cincinnati</td><td>13</td></tr>
+<tr><td>4</td><td>Dean the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iowa State</td><td>13</td></tr>
+<tr><td>4</td><td>Gisselle the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Marquette</td><td>13</td></tr>
+<tr><td>4</td><td>Jeremiah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan</td><td>13</td></tr>
+<tr><td>4</td><td>Kali the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Vermont</td><td>13</td></tr>
+<tr><td>4</td><td>Kallie the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Troy</td><td>13</td></tr>
+<tr><td>4</td><td>Micaela the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arizona</td><td>13</td></tr>
+<tr><td>4</td><td>Mikaela the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Northwestern</td><td>13</td></tr>
+<tr><td>4</td><td>Syed the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arkansas</td><td>13</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2017 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

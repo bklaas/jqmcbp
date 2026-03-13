@@ -1,9 +1,23 @@
+----------------------------------------------------------------------
+New server notes!
+
+test a bracket entry BEFORE wiping the DB! 
+test where it writes
+test that the database records get written
+
+get the server completely up and on the internet on the new hardware
+include certbot/letsencrypt as part of that (oi!)
+DONE don't write to /tmp anywhere, data are lost on reboot
+DONE get a cron working on this machine
+DONE make sure git works
+----------------------------------------------------------------------
+
 Here's what's needed: 
 
 (DB copy to jq_2025 already compeleted)
 
 FIXED! UPDATE2025: The multi-year encoding problem has been fixed-- in crontab, use the shell script that invokes the encoding fix before the db entry
-HOWEVER!: it can still break. If someone enters an emoji, it will bomb. Consider a try/except block so it doesn't die for everyone after the failure, just the offending entry. Will need testing.
+HOWEVER!: it can still break. If someone enters an emoji, it will bomb. It will punt and print an error message
 
 FOR THE HISTORICAL DOCUMENTS ARCHIVE:
     BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.

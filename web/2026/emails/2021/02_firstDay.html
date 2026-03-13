@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIV</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/YGGTcYfrEZU?t=60">THE EYES DON'T WORK</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/838</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Wooohooo! We're back! Welcome welcome to the 689 humans* entering the 24th incantation of the Johnny Quest Memorial Candy Bar Pool (JQMCBP)! Everyone enters with one goal: sweet, sweet candy. Almost all will leave with dreams shattered. I wish you nothing but good fortune in this Fool's Journey.
+</p>
+
+<p>Last year was an adventure, with about 375 of you opting to participate in a fully basketball-less bracket of items strange and sundry. Things that "competed" for bracket supremacy: birds, mammals, food, Harry Styles, Shaaaaaarks. Tacos ended up winning the entire bracket, which was certainly controversial**. However, if there's one thing we could all agree on: <a href = "https://youtu.be/YGGTcYfrEZU?t=46" />The Eyes Don't Work The Eyes Don't Work Get Mum Get Mum The Eyes Don't Work</a>.
+</p>
+
+<p>
+<b>For the rookies:</b><br />
+What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.***
+</p>
+
+<p>
+In addition to the emails, there's lots of important, vital resources available with your web browser. Evaluate how risky your picks are with the <a href = "https://benklaas.com/jqmcbp/whatsyourj.cgi">J Factor</a>, see who picked brackets like yours with the <a href = "https://benklaas.com/jqmcbp/sss.cgi">Scientific Similarity Index</a>. As the tournament progresses, figure out who has no chance of winning at the <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame!</a> Generate pointless <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">head-to-head graphs</a>! Every one of my emails will contain these linky links at the bottom of the email or head to <a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
+</p>
+
+<p>
+As I've done for the past few years, I'm sending emails through the appropriately named <a href = "http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.
+</p>
+
+<p>
+* and 1,001 chimps. This number has been remarkably steady.
+</p>
+
+<p>
+** Tacos aren't even the half of it. I am STILL regularly hearing about the injustice of Peanut Butter's wins over Chocolate and Bacon. "Wendy, are you back on that Peanut Butter over Chocolate thing?" "Not back on it. Still on it."
+</p>
+<p>
+*** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.
+</p>
+
+<p>
+But enough of my yakkin'. Let's boogie!
+</p>
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+I have a fascination with non-plural mascots, but we're going to have to wait on the North Texas Mean Green deep dive, because they won! Disappointed that Colgate's mascot is not Tartar Control, let's instead spend some time discussing Hokies.
+</p>
+
+<p>
+VT, short for VA Tech, short for Virginia Tech, is short for Virginia Agricultural and Mechanical College and Polytechnic Institute. Which is a mouthful. It also makes me wonder, are there Monotechnic Institutes? ANYWAY, the Virginia Tech mascot is a Hokie. What is a Hokie?
+</p>
+<div class = "quote">
+The Hokie Bird is a larger-than-life turkey often seen wandering the college campus in Blacksburg, Virginia. 
+</div>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/f02165f9-4921-4ece-b439-db199969c36e.jpg" height = "200" />
+
+<p>
+Well that's just positively terrifying. Have you ever been chased by a turkey? <a href = "https://benklaas.com/poultry_slam.html">I HAVE</a>. I can't imagine sending my child to a campus where a larger-than-life turkey is allowed to just wander around*. NO THANK YOU.
+</p>
+
+<p>
+Going a bit deeper, according to extremely well known website infomory.com:
+</p>
+
+<div class = "quote">
+Hokie is popularly known as the castrated turkey mascot of the Virginia Tech. However, if you try to closely look into the comprehensive history and background of this term, it has no relation whatsoever with the infamous turkey. In fact, this word has "no" meaning at all. It was first used by someone who won the cheer writing competition in Virginia Tech named O.M. Stull during the school year 1896.
+</div>
+
+<p>
+Oh gosh. That's a lot to unpack. Ignoring that first sentence entirely, let's start by asking why they put "no" in quotes? "What" is that all about? Also, how did that cheer go? Was O.M. using Hokie to fill out a rhyme? If so, to rhyme with "what"? Smoky? Karaoke? Gnocchi? So many questions. 
+</p>
+
+<p>
+* As an employee of the University of Minnesota, once in a while a giant life size gopher** will come screaming by me on campus*** riding on this weird motorized scooter thing. Also terrifying.
+</p>
+<p>
+** actually a squirrel
+</p>
+<p>
+*** back when being on campus was a thing that I did. Mostly I live in my basement now. Mostly.
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Though the Tartar Control of Colgate didn't make it out of the first round, it was not a total loss for dental hygiene. The Oral Roberts Electric Toothbrushes took it to the Buckeyes of Ohio State. As a result, for a brief time the Finn O'Boyle's chimp-equivalent bracket (the bracket, not Finn) was in the lead, as very few people saw that upset coming.
+</p>
+
+<div class = 'pre'>
+44 had the North Texas Mean Green:  AALA Russel, Addison Smith, Andrew Hanson, Angie Mowery, Anna Griesheimer, Arnold Woods, Caleb Anderson, Charlotte Bowers, Cole Byers, Cormac O'Boyle , Derren , Erin Meyer, Espen 'what's candy?' Williams, GAUCHOS!, Griffin Shockley, Heinz Time, Helen Regan, Jackson Smith, Jason Fidder, Jeff Johnson, Jeff Kinne, Jim Chryssikos, Joe Reutter , Josh Thaler, Katherine Gifford, Kristen Stipanov, Louise Grover, Mark Dyal, Mark Jones, Marla Weinstein, Marvella Avery, Maya O'Hare, Paul Bellin, Renata S Rush, Ryan Brady, Samuel McWilliams, Seamus Lee, Shawna R, Sofia Amato, Suvir S, Tiller, Timothy Ferrero, Vernon Grover, Will Arvant
+
+16 had Oral Roberts Mint-Flavored Dental Floss:  Andrew Mossburg, Ashleigh Apostolovski, Cami Niyo, Cole Byers, Finn O'Boyle, GAUCHOS!, Helen Care, Helen Regan, Jason Kerwin, Jenn, Katherine Gifford, Mark Jones, Maya O'Hare, Paul Bellin, Peggy Voeller, Seamus Lee
+</div>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+51 people lost their champion today. While the great majority of those were Ohio State believers, I need to give a hat tip to Paul Bellin and the very bold choice of Hartford. I wasn't even aware there WAS a Hartford U.
+</p>
+
+<div class = 'pre'>
+Hartford: Paul Bellin
+
+North Carolina: Shannon O'Hare, Denis B. Charette, ET, Andrew T. Bryan, Josh Mello
+
+Purdue: Shake N Bake, Shaun M Connolly, Chris Young, Idiot@ idiot
+
+Ohio State: Clark Beech, Jokey Shanahan, Sam Hoag, Nicki B., AJ Anderson, Todd Krueger, Timothy Ortopan, Rob Strnad, Andy Glime, Brady Glime, Rupert Smudge, Willy Lee, Patricia Lee, Kathy Larson, Josh Nisenson, Eva Witt, Tracy Kugler, Paul Schmidt, Milan Vaishnav, Bob Smalling, David Mitchell, Lindsay Genadek, Colin Morrison, Tom Hoag, Carolyn Hernandez, Alex F, Mike Shanahan, BamBamShanahan, Missy Shanahan, Griffin Shockley, Mommy Shanahan, Bill G, Adam J Chittenden, Jim Lape
+
+Georgia Tech: Derek Bier, Alex McWhinnie, Helen Regan
+
+Tennessee: Charlotte Bowers
+
+San Diego State: Michelle Morrisey 
+
+Clemson: Earl Netwal, wRight Picks
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament*. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+* oof, but not everyone! I had turned off that field in the entry form last year, since nobody could graduate from "Austrailian Magpie University" (<a href = "https://youtu.be/YGGTcYfrEZU?t=60">the eyes don't work</a>). Only after eagle-eyed UCSB Alum Lisa "GAUCHOS!" Blake alerted me to my oversight did I re-enable the form entry. For the first 275 of you, sorry. If you missed this key feature and want to be included, let me know if you want to me to add your alma mater, just like proud Morehead State grad Dave Bush did.
+</p>
+
+<div class = 'pre'>
+North Carolina: Megan Wooley-Ousdahl
+
+Purdue: Tim Ogborn, Dave Aucott, Dan Ridgeway, David Needham
+
+Ohio State: Arthur Rush, Christopher Horoschak, Griffin Shockley
+
+Morehead State: Dave Bush (but not really)
+
+San Diego State: Michelle Morrisey, Onomatopoeia, Nate Reed, Dr. Desmond Forrest Oates
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The This-Delicious-Candybar-Sure-Sounds-Like-A-Basketball-Score Award goes to Dr. Kurt Anderson, who somehow thought THE CANDYBAR POOL was asking him what he thought the score of the final game would be and not his candybar choice. Let me tell you something Kurt. The candybar pool is a lot of things, but concerned about basketball scores it certainly is not. So Kurt, should you emerge victorious, I will do everything I can to track you down a nougat-filled 77-71 bar. Until then, I say good day, sir. I SAID GOOD DAY.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+Usually there's a couple clean sweep 16-for-16 brackets, but not with the likes of North Texas and Oral Roberts winning games.
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Dave McHalpine</td><td>Michigan</td><td>Reese's Peanut Butter Cups</td><td>Illinois</td><td>14</td></tr>
+<tr><td>1</td><td>Mark Dyal</td><td>Texas</td><td>Milky Way</td><td>Baylor</td><td>14</td></tr>
+<tr><td>1</td><td>Tracy Kugler</td><td>Minnesota</td><td>Divine Dark Chocolate with Ginger & Orange</td><td>Ohio State</td><td>14</td></tr>
+<tr><td>4</td><td>Angie Mowery</td><td>Iowa</td><td>O'Henry </td><td>Gonzaga</td><td>13</td></tr>
+<tr><td>4</td><td>Arthur Rush</td><td>Illinois</td><td>Snickers</td><td>Illinois</td><td>13</td></tr>
+<tr><td>4</td><td>Bridget Burns</td><td>Oregon</td><td>Big hunk</td><td>Oregon State</td><td>13</td></tr>
+<tr><td>4</td><td>Christopher Zurowski</td><td>Illinois</td><td>Snickers</td><td>Illinois</td><td>13</td></tr>
+<tr><td>4</td><td>Diamond Dave’s </td><td>Iowa</td><td>Heath Bar</td><td>Illinois</td><td>13</td></tr>
+<tr><td>4</td><td>Jennifer Meagher</td><td>Michigan</td><td>Rolo</td><td>Michigan</td><td>13</td></tr>
+<tr><td>4</td><td>John Cooper</td><td>Michigan</td><td>payday</td><td>Illinois</td><td>13</td></tr>
+<tr><td>4</td><td>Kathy Larson</td><td>Wisconsin</td><td>Milky Way Dark MIdnight</td><td>Ohio State</td><td>13</td></tr>
+<tr><td>4</td><td>Lance Van Houten</td><td>Arizona</td><td>Whatchamacallit</td><td>Iowa</td><td>13</td></tr>
+<tr><td>4</td><td>Liam McGrail</td><td>Michigan</td><td>Mike and Ikes</td><td>Gonzaga</td><td>13</td></tr>
+<tr><td>4</td><td>Mark Fidder</td><td>Illinois</td><td>Peanut M&M</td><td>Alabama</td><td>13</td></tr>
+<tr><td>4</td><td>Matthew Stetson</td><td>Michigan</td><td>Butterfinger</td><td>Iowa</td><td>13</td></tr>
+<tr><td>4</td><td>Paul Repp</td><td>Michigan</td><td>Coffee Crisp</td><td>Gonzaga</td><td>13</td></tr>
+<tr><td>4</td><td>Rich Lyle</td><td>Iowa</td><td>Necco Wafers</td><td>Illinois</td><td>13</td></tr>
+<tr><td>4</td><td>Timothy Ortopan</td><td>Michigan</td><td>Baby Ruth</td><td>Ohio State</td><td>13</td></tr>
+<tr><td>4</td><td>Will Arvant</td><td>Michigan</td><td>3 Musketeers</td><td>Michigan</td><td>13</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Adriana</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Loyola Chicago</td><td>14</td></tr>
+<tr><td>1</td><td>Tatiana</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>USC</td><td>14</td></tr>
+<tr><td>3</td><td>Arthur</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Abilene Christian</td><td>13</td></tr>
+<tr><td>3</td><td>Cecilia</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Loyola Chicago</td><td>13</td></tr>
+<tr><td>3</td><td>Christy</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>13</td></tr>
+<tr><td>3</td><td>Delaney</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>West Virginia</td><td>13</td></tr>
+<tr><td>3</td><td>Precious</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>VCU</td><td>13</td></tr>
+<tr><td>3</td><td>Reilly</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oral Roberts</td><td>13</td></tr>
+<tr><td>9</td><td>Alexys</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Texas</td><td>12</td></tr>
+<tr><td>9</td><td>Alexzander</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colgate</td><td>12</td></tr>
+<tr><td>9</td><td>Amelia</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Rutgers</td><td>12</td></tr>
+<tr><td>9</td><td>Aria</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>12</td></tr>
+<tr><td>9</td><td>Arturo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Grand Canyon</td><td>12</td></tr>
+<tr><td>9</td><td>Aryana</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Michigan</td><td>12</td></tr>
+<tr><td>9</td><td>Ashlynn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>VCU</td><td>12</td></tr>
+<tr><td>9</td><td>Aubrey</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Maryland</td><td>12</td></tr>
+<tr><td>9</td><td>Berenice</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Florida</td><td>12</td></tr>
+<tr><td>9</td><td>Carl</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Creighton</td><td>12</td></tr>
+<tr><td>9</td><td>Derick</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colorado</td><td>12</td></tr>
+<tr><td>9</td><td>Dillan</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>VCU</td><td>12</td></tr>
+<tr><td>9</td><td>Elena</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cleveland State</td><td>12</td></tr>
+<tr><td>9</td><td>Emily</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colgate</td><td>12</td></tr>
+<tr><td>9</td><td>Eva</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>West Virginia</td><td>12</td></tr>
+<tr><td>9</td><td>Fabian</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Florida State</td><td>12</td></tr>
+<tr><td>9</td><td>Janiya</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>12</td></tr>
+<tr><td>9</td><td>Janiyah</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Hartford</td><td>12</td></tr>
+<tr><td>9</td><td>Jaron</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Texas</td><td>12</td></tr>
+<tr><td>9</td><td>Jesus</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cleveland State</td><td>12</td></tr>
+<tr><td>9</td><td>Kailee</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colorado</td><td>12</td></tr>
+<tr><td>9</td><td>Kory</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UC Santa Barbara</td><td>12</td></tr>
+<tr><td>9</td><td>Lea</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Colorado</td><td>12</td></tr>
+<tr><td>9</td><td>Madisen</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Texas Tech</td><td>12</td></tr>
+<tr><td>9</td><td>Marilyn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oral Roberts</td><td>12</td></tr>
+<tr><td>9</td><td>Noelle</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Abilene Christian</td><td>12</td></tr>
+<tr><td>9</td><td>Paige</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Maryland</td><td>12</td></tr>
+<tr><td>9</td><td>Serenity</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Rutgers</td><td>12</td></tr>
+<tr><td>9</td><td>Sydnee</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Illinois</td><td>12</td></tr>
+<tr><td>9</td><td>Terrance</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UCLA</td><td>12</td></tr>
+<tr><td>9</td><td>Toby</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>12</td></tr>
+<tr><td>9</td><td>Tristen</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>12</td></tr>
+<tr><td>9</td><td>Yosef</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Baylor</td><td>12</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

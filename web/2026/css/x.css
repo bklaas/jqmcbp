@@ -1,0 +1,10 @@
+div.email_pre {
+    background: #eee;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 30px;
+    padding-bottom: 60px;
+    font-family: sans-serif;
+    color: black;
+    max-width: 800px;
+}

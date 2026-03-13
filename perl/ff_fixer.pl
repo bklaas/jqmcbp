@@ -5,7 +5,7 @@ use DBI;
 use vars qw/ $dbh /;
 do "/data/cgi-bin/jq_globals.pl";
 
-my $dirpath = "/tmp/jq_fix";
+my $dirpath = "/data/jqtmp/jq_fix";
 
 connect_to_db();
 

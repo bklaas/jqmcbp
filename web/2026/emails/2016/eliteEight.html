@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			/*color: #FFFFFF;*/
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XIX</a></h1>
+	<h2 class = 'slogan'>I Came, I Saw, I Repped</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+
+<p>
+Kiera Delargy has not only been on top for an unprecedented two rounds of JQMCBP, but her prospects look excellent for a winning her beloved Hershey's bar. She wins 23.4% of all remaining 128 possible bracket permutations, almost 1 in 4. Also, I've learned she's 11 years old, which has made Carson and Piper, my 12- and 10-year-old daughters, adopt Kiera as Most Favored Pool Entrant.
+</p>
+
+<p>
+Key UCOW (You Cow!) points from this round:
+</p>
+<ul>
+	<li>
+	44 humans still have a Chance at the Candy
+	</li>
+	<li>
+	Chimps be painin', but they ain't out of it. Fernando the Chimp and Carlee the Chimp: still alive.
+	</li>
+	<li>
+	Kiera Delargy! 11 Years Old! Beating all of you! Having a better chance of winning than all of you!
+	</li>
+</ul>
+</p>
+
+<p>
+</p>
+
+<table class = 'scores'>
+<thead>
+<tr><th>Name</th><th>Number of Winning Brackets</th><th>Percentage of Winning Brackets</th></tr>
+</thead>
+<tbody>
+<tr><td>Kiera Delargy</td><td>30</td><td>23.438</td></tr>
+<tr><td>Traci Nies</td><td>9</td><td>7.031</td></tr>
+<tr><td>Michelle R Young</td><td>7</td><td>5.469</td></tr>
+<tr><td>Conor Whelan</td><td>7</td><td>5.469</td></tr>
+<tr><td>Zane Sabbert</td><td>7</td><td>5.469</td></tr>
+<tr><td>Dawn Smith</td><td>6</td><td>4.688</td></tr>
+<tr><td>Bill Girardot</td><td>6</td><td>4.688</td></tr>
+<tr><td>Carlee the Chimp</td><td>6</td><td>4.688</td></tr>
+<tr><td>Julia Foster</td><td>5</td><td>3.906</td></tr>
+<tr><td>Todd Campbell </td><td>5</td><td>3.906</td></tr>
+<tr><td>Joanne Isenhart</td><td>4</td><td>3.125</td></tr>
+<tr><td>Sabrina Bier</td><td>4</td><td>3.125</td></tr>
+<tr><td>Leslie Karkanawi</td><td>4</td><td>3.125</td></tr>
+<tr><td>Joel Davis</td><td>4</td><td>3.125</td></tr>
+<tr><td>Richard Augustin</td><td>4</td><td>3.125</td></tr>
+<tr><td>Andrew Hanson </td><td>4</td><td>3.125</td></tr>
+<tr><td>Dan Solt</td><td>4</td><td>3.125</td></tr>
+<tr><td>Sabrina Ruiz</td><td>3</td><td>2.344</td></tr>
+<tr><td>Fernando the Chimp</td><td>3</td><td>2.344</td></tr>
+<tr><td>Bri</td><td>3</td><td>2.344</td></tr>
+<tr><td>Jon Marthaler</td><td>2</td><td>1.562</td></tr>
+<tr><td>Tom 'T3' Wadzinski</td><td>2</td><td>1.562</td></tr>
+<tr><td>Erin Delargy</td><td>2</td><td>1.562</td></tr>
+<tr><td>Kenny Boyd</td><td>2</td><td>1.562</td></tr>
+<tr><td>Curly Girl</td><td>2</td><td>1.562</td></tr>
+<tr><td>Mark Bailey</td><td>2</td><td>1.562</td></tr>
+<tr><td>Brandon Cox</td><td>2</td><td>1.562</td></tr>
+<tr><td>Jim Bunda</td><td>2</td><td>1.562</td></tr>
+<tr><td>Laura 'Bob's mom' Moreland</td><td>2</td><td>1.562</td></tr>
+<tr><td>Sheryl Hatcher</td><td>2</td><td>1.562</td></tr>
+<tr><td>Brenda VB</td><td>1</td><td>0.781</td></tr>
+<tr><td>Natalie Weir</td><td>1</td><td>0.781</td></tr>
+<tr><td>Mark T Weaver</td><td>1</td><td>0.781</td></tr>
+<tr><td>Sue Ray</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kelli Strom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Michael Howard</td><td>1</td><td>0.781</td></tr>
+<tr><td>Christopher Bowhay</td><td>1</td><td>0.781</td></tr>
+<tr><td>Mike Askren</td><td>1</td><td>0.781</td></tr>
+<tr><td>Paco Sinbad</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kristopher Nordstrom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Matt Van Heukelom</td><td>1</td><td>0.781</td></tr>
+<tr><td>Regan Soldner</td><td>1</td><td>0.781</td></tr>
+<tr><td>Kelly Poole</td><td>1</td><td>0.781</td></tr>
+<tr><td>Giggidy Giggidy</td><td>1</td><td>0.781</td></tr>
+<tr><td>Jerry Schmitt</td><td>1</td><td>0.781</td></tr>
+<tr><td>Sam Housker</td><td>1</td><td>0.781</td></tr>
+</table>
+
+<table class = 'scores'>
+<thead>
+<tr><th>==== HUMAN WINS, CHIMP WINS ====</th></tr>
+</thead>
+<tbody>
+<tr><td>Human Wins: 120</td></tr>
+<tr><td>Chimp Wins: 9</td></tr>
+</tbody>
+</table>
+
+<table class = 'scores'>
+<thead>
+<tr><th colspan = 2>==== NUMBER OF WINNERS/OUTCOME TALLY ====</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>101</td></tr>
+<tr><td>2</td><td>22</td></tr>
+<tr><td>3</td><td>4</td></tr>
+<tr><td>4</td><td>1</td></tr>
+<tr><td></td></tr>
+</tbody>
+</table>
+</table>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+The final 8 teams are made up of 4 #1 seeds, 2 #2 seeds, 1 #6 seed, and a #10 seed. 54 people had #6 Notre Dame getting this far. The #10 seed Syracuse Orange, formerly Orangemen, aka Donald Trump, were only picked by 7 visionary candy seekers. Here they are:
+</p>
+
+<div class = 'pre'>
+Syracuse:  David Ullman, Jacob Carlos, Joel Davis, Kiera Delargy, Nigel, prince ali, Ron Gin
+</div>
+
+<p>
+See a familiar face in there? That's right, it's Kiera Delargy again, making all y'all look so very foolish.
+</p>
+
+<hr class = 'section' />
+<!--
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+</p>
+
+<hr class = 'section' />
+-->
+<h1>Mailbag</h1>
+
+<p>
+In case you weren't already rooting for Kiera like we are here at Meister HQ, here's some further background from Chuck Delargy, aka Kiera's dad:
+</p>
+
+<p>
+To: The Meister<br />
+From: Chuck Delargy
+</p>
+<div class = 'quote'>
+It was Kiera Delargy's 11th birthday yesterday. She picked out the entire bracket on her own with the exception of two games. When she first started picking I told her that she couldn't pick Yale because they weren't going to win and that California was going to beat Hawaii* because their roster was too good. Thankfully, after that I learned to just let her pick whomever she wants because it is all for fun. My wife has put a ban on me taking either of my two girls to Las Vegas. 
+</div>
+
+<p>So not only is she a) 11 years old and b) beating all of you, she c) would be beating you EVEN WORSE if not for her meddling father. OMG DAD SRSLY U R RUINING EVERYTHING! #wouldhavepickedyale</p>
+
+<p>
+* speaking of Hawaii, I'm flying there tomorrow. Fingers crossed that Kauai-based JQMCBP HQ will operate without major technical glitches.
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! When you get published in a JQMCBP email, experts* have determined** that this kind of exposure is 10x more effective for fame*** and fortune**** than either Snapchat or Instagram*****.
+</p>
+
+<p>
+* meaning me<br />
+** determined implies no actual data collection<br />
+*** not so much<br />
+**** candy!<br />
+***** actually, this is probably true<br />
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+42 of you lost your champs on Thursday and Friday's games. Just noticed there's someone entered with the name "It's Not Easy Being Crean". Nope, not easy at all. Also, condolences to Riley Stinkapants Young, Piper Dare AWESOMENESS, Bent and the jets kehrwald, Colin's Evil Twin, L. Breshniv, Bam Bam Shanahan, and of course Thor Taste the Rainbow. Why don't you people take this important event more seriously?? SRSLY!
+</p>
+
+<div class = 'pre'>
+Indiana: Kristen Blake, Stan Orzel, It's Not Easy Being Crean, Christy Reed, Jeffrey Sparks, Barb Richards
+Wisconsin: Terry Sievert, Andy Weinecke, Carson Moxie Klaas, Peyton Bowers, Riley Stinkapants Young, Tyler Groh, Tracy McCall, Piper Dare AWESOMENESS
+Maryland: Tom Lynch, Drew Downs, williford , Aine McCarthy, Mary James
+Miami: Dante Chittenden, Anna Arvant, Bam Bam Shanahan, Bam Bam Shanahan
+Iowa State: Lindsey Cloud, Bent and the jets kehrwald, Darby Niyo, Brennan Swanson, Holmly, L. Breshniv, Susan Erickson
+Gonzaga: bruce blake, Jonathan Pfaff, Colin's Evil Twin, Nathan Blake
+Duke: Tricia Lange, Jeff, Bud H, Marion Brown, Teej, Sky Bounds, Thor Taste the Rainbow
+Texas A&M: Lisa LaGrou
+</div>
+
+<p>
+<a href = "https://youtu.be/eOifa1WrOnQ">Ha ha!</a> So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+91 of you lost your alma maters, including a huge contingent from Wisconsin and Iowa State. Not a surprise, as The Meister holds B.S. and M.S. degrees from those fine institutions, respectively. Meister and family watched both games on competing televisions at a local watering hole* with a couple other current and former JQMCBPers (Marty "White Chocolate" Dickrell**, Chandra "Pearson's Nut Goodie" Hanke). What an opportunity to see both my schools win big! Yeah...not so much.
+</p>
+
+<p>
+* actually, we were largely watching commercials. SO MANY COMMERCIALS. CBS: Always over-Reppin'.<br />
+** a member of The Council of Nine, the original JQMCBP I entrants
+<p>
+<div class = 'pre'>
+Indiana: Joshua stevens, Bob Anders, Mike Riggins, Kurt Anders, It's Not Easy Being Crean, Joe Stevens, Kurt Anders (Revised), Barb Richards
+Wisconsin: Ben Klaas, Mark Larson, Glen Volkman, Kevin Quinn, Steve, Raye Volkman, Paul Smith, Todd Krueger, Joel Rondeau, Matt Calvert, Paul Wadzinske, David Van Riper, Alex Anderson, Fred Volkman, Jonathan Schroeder, Wendy Volkman, Jill S, John McCartney, Lisa Wadzinske, BRIAN HUTCHINSON, Steve Danek, MaMaMaMaMaKski!, Marty Dickrell, Tom 'T3' Wadzinski
+Maryland: Jenn Flaa
+Iowa State: Chris Charbonneaux, Joel Vause, Wendy Reed, Brenda VB, Brent Dakin, Brent Swanson, Greta Bakman, Daniel Backman, Andrew Hefte, Bob (Jacks' oldest son) Smalling, Shaun Connolly, David Smalling, Jack 'Matt's Dad' Smalling, Bent and the jets kehrwald, Patrick Connolly, Laura 'Bob's mom' Moreland, Rob Reed, Dawn Smith, Brian Swanson, Matt Van Heukelom, Matt 'Marge's #2 son' Smalling, Pat Dillon, Eustace Haney, Kevin Kane, Sarah Handlos, michael mowery, Karlene Jennings, Joanne Isenhart, Chris Handlos, Holmly, Jamie Harrison, Sarah Vandevanter, Lynn Smith, DANK, Brett Callison, Kristal 'K-Boz' Sieve, The Lab Rat, Susan Erickson, Alex Blom, CJ Hewitt, Zachary Klaas, Sheryl Howe, Kelly Wolfe-Bellin, Rob Bellin, Doug Busta, Chuck Rodrigues, Brad Johnson, Gary Bahr, Pondscum, Christy Reed, Mr. Central Iowa, Kelly Poole
+Gonzaga: Colin's Evil Twin
+Duke: Jeb 'Carrot Sticks' Byers, Kristopher Nordstrom, Kirk Moloney, Tim Hoelscher, Kurt Anderson
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The I Don't READ Online Forms I Just Fill 'Em Out Hurriedly Award goes jointly to Nate "79-75" Hafer and Lyman "165" Hancock. You see, these aren't candybars. In Nate's case he at least tried to email me and replace 79-75 (a predicted score of the final) with a Heath bar, which I haven't done because it's just more entertaining making fun of him. I have to think "165" was a predicted combined final score from Lyman, unless...unless there's some obscure european bar commemorating the 165 year anniversary of the cessation of the Poll tax levied on Russo-Polish Jews entering Austrian Galicia.*
+</p>
+
+<p>
+* 165th anniversary! Death to the Poll Tax!**<br />
+** Probably not a candy bar though.
+</p>
+<hr class = 'section' />
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+The JQMCBP is forever 100% free with no obligations, other than listening to my long rants*, but in June I am riding 150 miles on my bike to help fund MS research. <a href ="http://bit.ly/bkMS150_2016">Donate to my ride here</a>. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>. 
+</p>
+<p>
+* also optional
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+Have I mentioned Kiera Delargy?
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Kiera Delargy</td><td>New York</td><td>Hersheys</td><td>Kansas</td><td>76</td></tr>
+<tr><td>2</td><td>Jim Bunda</td><td>Minnesota</td><td>Whatchamacallit</td><td>Kansas</td><td>75</td></tr>
+<tr><td>3</td><td>Alex Blom</td><td>Wisconsin</td><td>CLARK BAR</td><td>Michigan State</td><td>71</td></tr>
+<tr><td>3</td><td>Bill Girardot</td><td>Michigan</td><td>Milky Way</td><td>Villanova</td><td>71</td></tr>
+<tr><td>3</td><td>Brent Swanson</td><td>Iowa</td><td>King sized Milk Way</td><td>Kansas</td><td>71</td></tr>
+<tr><td>3</td><td>Claire Westerlund</td><td>Michigan</td><td>Canadian Smarties</td><td>Michigan State</td><td>71</td></tr>
+<tr><td>3</td><td>Sue Ray</td><td>Michigan</td><td>Zero Bar</td><td>Michigan State</td><td>71</td></tr>
+<tr><td>3</td><td>Trevor Shepich</td><td>Michigan</td><td>King-size take 5</td><td>Michigan State</td><td>71</td></tr>
+<tr><td>9</td><td>Jim Toomey</td><td>Minnesota</td><td>Twix</td><td>Michigan State</td><td>70</td></tr>
+<tr><td>9</td><td>Sabrina Bier</td><td>Illinois</td><td>Butterfinger</td><td>Oklahoma</td><td>70</td></tr>
+<tr><td>9</td><td>Zane Sabbert</td><td>Missouri</td><td>sour gummy rings</td><td>Oklahoma</td><td>70</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Fernando the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Syracuse</td><td>55</td></tr>
+<tr><td>2</td><td>Kylie the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Tech</td><td>53</td></tr>
+<tr><td>3</td><td>Destin the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas</td><td>52</td></tr>
+<tr><td>4</td><td>Carlee the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Syracuse</td><td>51</td></tr>
+<tr><td>4</td><td>Elaine the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Syracuse</td><td>51</td></tr>
+<tr><td>4</td><td>Priscilla the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas A&M</td><td>51</td></tr>
+<tr><td>7</td><td>Caleb the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>50</td></tr>
+<tr><td>7</td><td>Dayanara the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>North Carolina</td><td>50</td></tr>
+<tr><td>9</td><td>Mariana the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>48</td></tr>
+<tr><td>9</td><td>Sariah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oregon</td><td>48</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2016 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

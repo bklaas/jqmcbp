@@ -1,0 +1,6 @@
+<center>
+<h3>Entries so far:</h3>
+[% FOR number IN params.howmany %]
+	<img src = "/jqmcbp/images/[% number %]BBLKBLK.GIF">
+[% END %]
+</center>
