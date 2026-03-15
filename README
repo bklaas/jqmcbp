@@ -10,6 +10,7 @@ Will need to either update router or make new server .199 and old server e.g. .1
 Router might map it to MAC, need to check
 
 **************************************************
+
 Here's what's needed: 
 
 (DB copy to jq_2025 already compeleted)

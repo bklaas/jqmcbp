@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("https://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="https://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIII</a></h1>
+	<h2 class = 'slogan'>
+	sponsored by <a href = "https://ihasabucket.com">ihasabucket.com</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/375ish</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+Lest I bury the lede, you should all dial this phone number right now: <b>1.719.266.2837</b>. Seriously, give it a call. It's important. You're welcome.
+</p>
+
+<p>Now that I've gotten the important stuff out of the way, on to trivial matters. <b>CONGRATULATIONS JESS "TAKE 5" LARSON, the JQMCBP XXIII Champion</b> and first ever Candy Winner With No Actual Basketball Games Played. Jess, send me your address and I'm going to send you a delicious Take 5. WOOHOO!!
+</p>
+
+<p>In second place, winner of the traditional 2nd place prize of BIG FAT NOTHING, is Mark "Take 5" Richards. Mark was waaaaaaay out ahead through most of the pool this year, but alas his champion pick of Sushi became his downfall. Enjoy your nothing, Mark. Embrace the void.</p>
+
+<p>The Third place winner of a CD of my choosing (it's always awful, except for last year when I think I forgot to mail it), is Nick "Take 5" Orum. No, I'm not making that up, Take 5 not only was the candy pick of the top 3 in this year's leaderboard, the candy itself also made a surprise run all the way to the Finals. I know you are all thinking the fix is in (especially, as you'll see down the page, Dr. Ben Halpern), but this was just a weird coincidence.</p>
+
+<p>
+This weird coincidence brought to you by Take 5 &reg;. "Have you had time to Take 5 &reg; today?" &trade;
+</p>
+
+<p>Certainly this year's JQMCBP was borne of a certain amount of WGNBT, but it was also a real desire to give you all something in[s]ane and unrelated to this surreal world of 2020. I hope you've enjoyed it as much as I have, which can be best described as "yeah, I guess it was pretty okay. Also, when can I get a haircut?". I do enjoy hearing from my loyal Candy Seekers, so by all means <a href = "mailto:jqmcbp@gmail.com">send me an email</a>.
+</p>
+
+<p>
+Looking back on the action this year, all of the "games" amounted to fictitious contests between YouTube clips, food, odd mammals, punk birds, candy, and did I mention YouTube clips. I thought with stakes this low/weird, people would not have strong opinions on outcomes.</p>
+<p><i>I seriously miscaluclated</i>.
+</p>
+
+<h3>The Official JQMCBP Airing of Grievances</h3>
+
+<p>Bill McGrail:</p>
+<div class = "quote">
+Love you brother but have to say my faith in the system has been tested with the multiple upsets this round with BBC, Duck, bacon, snickers (to Take 5? - might as well have had Members only jacket taking out Burberry) and others going down
+</div>
+
+<p>Jon Blake:</p>
+
+<div class = "quote">
+Peanut butter beat bacon?!? No way, everybody loves bacon!!!  To boot, nobody is allergic to bacon!  (bacon emoji)!!! I think I have to stop talking to you as well... 
+</div>
+
+<p>Dr. Ben Halpern</p>
+
+<div class = "quote">
+I am officially registering a highly official complaint, all the way to the top. Magpie beats monkey-eating eagle?!?!? Even the pathetic excuse for a rationale for a magpie win belies the underlying truth that a monkey-eating eagle is punk, badass and downright amazing all rolled into one.  This whole frickin tournament is rigged.  Rigged and ridiculous.  Carson chooses the winners in an entire bracket and, well lo and behold, she's on the leader board just one point behind!
+
+What does my protest look like? Weekly marches in the street, rallying the gen z-ers? Probably. Hunting magpies? Definitely.
+
+This whole tournament is a sham.
+
+</div>
+<p>Rob T:</p>
+<div class = "quote">
+That PB cup loss is some BS. Butterfinger isn even candy. It's just peanut butter drywall 
+
+</div>
+
+<p>Last but 100% not least my lovely but SRSLY SO WORKED UP ABOUT PEANUT BUTTER wife Wendy Volkman:</p>
+
+<div class = "quote">
+Peanut butter beat both Chocolate AND Bacon?? There's no way, and you know it. This reeks of some kind of doping/academic/Pell-Grant/point-shaving/recruiting scandal. I cry SHENANIGANS!
+</div>
+
+<p>Oh, you think we're done with Wendy? Not hardly. She's also trolling me on Twitter:</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/18251aba-2f04-482c-a205-8ab15e655687.png" width = '500' />
+<p>Are we done yet? NOT. HARDLY. Sunday I was treated to a Power Point presentation in our living room highlighting the error of my ways. I'm not joking. Some highlights:</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/eeab2fba-d7dc-4c0e-b3e4-01d4eddee7c2.jpg" width = "600" />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/340e039d-9d0e-4548-bef7-e6d9d011064c.jpg" width = "600" />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/2982b868-82cd-43a7-b5f5-279106fa5e84.jpg" width = "600" />
+<p>So that happened.</p>
+
+<hr class = 'section' />
+<h1><a href = "https://youtu.be/Of8JOVXYU0Q">Wha' Happened?</a></h1>
+
+<p>Okay, we're doing the whole remainder of the tournament rapid fire here. Good luck to you all!</p>
+<h3>Elite Eight</h3>
+
+
+<p><b>Stuff Summer v. Tacos</b></p>
+
+<p>Huge fan of <a href = "https://youtu.be/WZwylQwjFhE">Stuff Summer</a>. Classic stuff from Australia Today. Someday I hope they do a long thing Magpies (THE EYES DON'T WORK). Unfortunately, this is the end of the road for them. TACOS WIN!!
+</p>
+
+<p><b>Harry Styles v. Tarsier</b></p>
+
+<p>
+Really, really tight one here. Though never a big fan of whatever demon spawn invented Boy Bands, Harry Styles has done well on his own and is <a href = "https://youtu.be/IQYLPEuAClo">clearly a pretty decent bloke</a>. Sadly though, not very snarfy. TARSIER WINS!
+</p>
+
+<p><b>CC McGraw v. Australian Magpie</b></p>
+
+<p>
+Endless props to the volleyball stylings of CC McGraw, but if I've told you once I've (literally) told you a thousand times, THE EYES DON'T WORK. AUSTRALIAN MAGPIE WINS!
+</p>
+
+<p><b>Smooth Criminal AAF v. Take 5</b></p>
+
+<p>
+Getting two "likes" from the official Alien Ant Farm Twitter feed was definitely the highlight of my nascent and soon to be dormant career on Twitter. There will not be a third "like". Pretzels, Caramel, Peanuts, and Chocolate are not to be denied. TAKE 5 WINS!
+</p>
+
+<h3>Final Four</h3>
+
+<p><b>Tacos v. Tarsier</b></p>
+
+<p>
+Tacos: STUPID DELICIOUS. Tarsier: SNARFY.
+</p>
+<p>TACOS WIN!</p>
+
+<p><b>Australian Magpie v. Take 5</b></p>
+
+<p>
+GET MUM! TAKE 5 WINS! (revel in how flippantly I dismiss what you thought was a shoe-in for the finals)
+</p>
+
+<h3>Championship</h3>
+
+<p>Can you imagine if this turned out to be Magpie vs. Tarsier? THE EYES DON'T WORK vs. THE EYES DEFINITELY WORK! If only I had complete and total dictatorial control over these "games", I could have fixed this injustice. If only.</p>
+
+<p><b>Tacos vs. Take 5</b></p>
+
+<p>
+Are you as surprised as I am? I honestly don't know how it came down to Tacos versus Take 5. So unexpected!
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/d3ffade2-5234-49d4-9334-ec71554244b1.jpeg" width = "500" />
+
+<h1>TACOS WIN! TACOS WIN!</h1>
+
+<p>(theeeeeeeee tacos win)</p>
+
+<hr class = 'section' />
+<h1>How Them Chimps Doing?</h1>
+<h2>Checking in on the 1,000 Chimp Army</h2>
+
+<p>
+SO. GOOD. Honestly, I had no idea how the leaderboard was going to shake out, and chimps really truly were in it to the end. While Jess Larson legit beat the entire army, Jess was alone in this feat. Abbie the Chimp managed 83 points for an overall 2nd place (and that's with a champion of first round loser Immigrant Song Soak). Trevor the Chimp tied Mark Richards in overall 3rd, and there were 5 chimps in the Hominid Top 10. Amazing, solid work from these coin flip brackets.
+</p>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+26 of you lost your champion, including two fellow Alient Ant Farm fans (represent!), a bunch of Harry Styles lovers (sorry Piper! sorry Darby! sorry Joe's mom but thanks for your lovely email!), a bunch of Aussie Magpie fans (THE EYES DON'T WORK), Stuff Summer afficianados (apologies Carson, Seth, and Dan...like that cage is gonna help you), and lone wolf CC McGraw backer Troy "100 Grand" Amaris.
+</p>
+
+<p>The Snarfiest of all mammals the Tarsier also was eliminated by eventual champion Tacos. No shame in that. I do not expect Lance to forgive me soon though. What can I say, the man holds grudges.</p>
+
+<p>Side note, Carrie "Three Musketeers Is The Worst" O'Boyle (don't get her started) also lost her champ Tarsier. True story: I very nearly put Three Musketeers in the Candy Region and was going to intentionally turn this year's JQMCBP into an long elaborate troll of Carrie, life-long hater of this confection. I was going to have it "just win" round after round to see how much of a rise I could get from her (don't <i>even</i> get her started).
+</p>
+
+<div class = 'pre'>
+Smooth Criminal AAF: Thomas Leeper, Jerry Cucem
+
+Harry Styles: rachel ray, piper, Ashley Keeter, Russell Nelson, CASEY OHARA, Darby Niyo, Sean Bellin, Jessica Wiltse, Carol L. Grover
+
+Tarsier: Lance Van Houten, #reubenmemoirs, Carrie 'Three Musketeers Is The Worst' O’Boyle
+
+CC McGraw: Troy Amaris
+
+Australian Magpie: Frank Spada, Rob Bellin, Andrew Hanson, Kristen Jeffers, Rob Strnad, katrin wenz, katrin wenz, Kari Williams
+
+Stuff Summer: Seth Goldberg, Carson Klaas, Daniel Backman
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+
+<p><b>The Now That This Is Over And I'm Looking At Your Candy Choice Ruh Roh Surely You Are Going To Put A Tiger-King-Style Hit Out On Me Award</b> goes to Jeff Hober, who selected..."Reese's PB Cup with Bacon (obviously)". Oh wow. That did not go well for you.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+
+<p>Larry sent me a text and I'm currently like $20.42 ahead of him. The ride is off, but I am still <a href = "https://main.nationalmssociety.org/goto/beat_larry_2020">accepting donations to the cause</a>. If you have money to give, please consider it, as well as the many charities involved with feeding and assisting people through This Stupid Crap.</p>
+
+<hr class = 'section' />
+
+<h1>Why are you still reading this?</h1>
+
+<p>Pepe Silvia! Pepe Silvia! All this mail is for Pepe Silvia!</p>
+
+<a href="https://youtu.be/_nTpsv9PNqo"><img src="http://res.cloudinary.com/techmarketer/image/fetch/w_0.25,c_scale,l_playbutton.png,o_88/q_100,w_500/http://img.youtube.com/vi/_nTpsv9PNqo/maxresdefault.jpg"></img></a><style type="text/css"> @media only screen and (max-width:480px){.emailImage{height:auto!important;max-width:600px!important;width:100%!important}}</style>
+
+<hr class = 'section' />
+<h1>Enough with the crap, what's the final leaderboard?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Jess Larson</td><td>Wisconsin</td><td>Take 5</td><td>Tacos</td><td>85</td></tr>
+<tr><td>2</td><td>Mark Richards</td><td>Colorado</td><td>Take 5</td><td>Sushi</td><td>79</td></tr>
+<tr><td>3</td><td>Nick Orum</td><td>Minnesota</td><td>Take 5</td><td>Tacos</td><td>73</td></tr>
+<tr><td>4</td><td>DaveVW</td><td>Iowa</td><td>Snickers</td><td>Tacos</td><td>72</td></tr>
+<tr><td>4</td><td>Kyle Casello</td><td>Minnesota</td><td>Reeses PB Cup</td><td>Tacos</td><td>72</td></tr>
+<tr><td>6</td><td>Joe 'mit ohren' Grover</td><td>Minnesota</td><td>Haribo Arsch Mit Ohren</td><td>Tacos</td><td>71</td></tr>
+<tr><td>6</td><td>Mark Larson</td><td>Wisconsin</td><td>Wunderbar</td><td>Tacos</td><td>71</td></tr>
+<tr><td>8</td><td>#beans</td><td>Illinois</td><td>$100 Grand</td><td>Tacos</td><td>67</td></tr>
+<tr><td>9</td><td>Andy Calvert</td><td>California</td><td>Sees Awesome Nuts and Chews Bar</td><td>Tacos</td><td>66</td></tr>
+<tr><td>9</td><td>Hal E Norman</td><td>California</td><td>Trader Joes Super Sour Scandinavian Swimmers</td><td>Tacos</td><td>66</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Abbie</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Immigrant Song Soak</td><td>83</td></tr>
+<tr><td>2</td><td>Trevor</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>79</td></tr>
+<tr><td>3</td><td>Selena</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>76</td></tr>
+<tr><td>4</td><td>Eleanor</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>74</td></tr>
+<tr><td>4</td><td>Elle</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>74</td></tr>
+<tr><td>6</td><td>Nash</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>70</td></tr>
+<tr><td>6</td><td>Shawn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Tacos</td><td>70</td></tr>
+<tr><td>8</td><td>Kathryn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Smooth Criminal AAF</td><td>65</td></tr>
+<tr><td>9</td><td>Arielle</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Steph Curry</td><td>64</td></tr>
+<tr><td>10</td><td>Kaylyn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Africa Heavy Metal</td><td>63</td></tr>
+<tr><td>10</td><td>Rebecca</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cassowary</td><td>63</td></tr>
+	</tbody>
+</table>
+<hr class = 'section' />
+<p>
+Until next year! Stay Safe! Stay Home! But above all, <b>STAY HUNGRY!</b><br/>
+cheers,<br />
+the Meister
+</p>
+
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2020 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

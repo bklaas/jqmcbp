@@ -1,0 +1,48 @@
+[% PROCESS jfactor_gauge 
+		selector = '#jfactor_gauge'
+		main_title = 'How high on the Guts-O-Meter Are You?'
+		subtitle1 = 'J Factor'
+		title1 = 'Median among Humans' 
+		subtitle2 = 'J Factor'
+		title2 = player_info.name 
+		left_val = median_abbr
+		right_val = j_factor
+%]
+
+[%- image = "j_factor_meter${thisDiv}.png" -%]
+
+<div id = 'jfactor_left'>
+
+	<h1 class = 'russoFont'>[% player_info.name %]'s J Factor:</h1>
+	<h3 class = 'russoFont bigFont'>[% j_factor %]</h3>
+  
+	<div class = 'gauge_wrapper'>
+
+	<div id = 'jfactor_gauge' class = 'chart_container'>
+	</div>
+
+	<div id = 'broken_glass_left'>
+		<img src = 'images/brokenglass.png' />
+	</div>
+	<div id = 'broken_glass_right'>
+		<img src = 'images/brokenglass.png' />
+	</div>
+
+	</div>
+
+</div>
+
+<div id = 'jfactor_right'>
+	The median J factor of the JQMCBP competitors is [% median_abbr %]
+
+	[% IF j_factor > median_abbr %]
+	You are above the median, so you should buy yourself a Mountain Dew to match your risk-taking nature.
+	[% ELSE %]
+	You are below the median, thus branding you too afraid to go out on a limb for anything. Congratulations!
+	[% END %] 
+
+<div id = 'jfactor_meter'>
+	<img src="/jqmcbp/images/[% image %]">
+</div>
+
+</div>

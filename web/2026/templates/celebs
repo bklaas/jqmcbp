@@ -1,0 +1,28 @@
+	<h1>CELEBRITIES! THEY'RE JUST LIKE US!</h1>
+		
+	<img src = '/johnnyquest/images/ryanreynolds.gif' class = 'rightfloat' />
+	Except for the fame, power, devilish charm and good looks, celebrities are just like us. I know because <a href = "http://www.usmagazine.com/just-like-us/they-love-to-play-at-the-park-2011156" target = "_blank">US Weekly says so</a>. At least, they are more like us than <a href = "/jqmcbp/?army">the 1000 Chimp Army</a>. A new feature this year to JQMCBP, I'll be scouring the interhoops (interhoops, I just made that up; you have my full permission to use it) for any celebrities that publicly share their bracket selections, and then "inviting them" to "enter their picks in this year's JQMCBP". President Obama entered the JQMCBP in 2009, and I expect more pedigreed individuals to join him this year in the Quest For Candy.
+	<h3>Glossary:</h3>
+	<ul>
+		<li>"inviting them" = "not contacting them at all" </li>
+		<li>"enter their picks in this year's JQMCBP" = "me hand-entering their bracket and using their name without permission"</li>
+	</ul>
+
+	<img src = '/johnnyquest/images/jtwithellen.gif' class = 'leftfloat'>
+	So, do you think you have what it takes to beat Kelly Clarkson* or even Bono** in your ability to prognosticate the outcome of this year's tourney? You'll never know unless you <a href = "?enter">enter</a>.
+	<p></p>
+	<span class = 'smalltext'>* Kelly Clarkson not scheduled to compete.<br>**Bono not scheduled to compete.</span>
+	<p></p>
+<!--
+	<h3>They're Just Like Us!</h3>
+	<p></p>
+	<img src = '/johnnyquest/images/bueller.gif' class = 'leftfloat' />
+	<img src = '/johnnyquest/images/firefly.gif' class = 'rightfloat'>
+	<img src = '/johnnyquest/images/anchor-man.gif' class = 'leftfloat'>
+	
+	<img src = '/johnnyquest/images/garybusey.gif' class = 'nofloat'>
+	<p></p>
+	EDITORS NOTE: GARY BUSEY WILL NOT BE ENTERING.
+-->
+
+[% PROCESS next link = 'scoring' %]

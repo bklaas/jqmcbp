@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 from sys import argv
 
 def slurpNbarf(input_file, encoding, convert=False):
@@ -16,12 +17,16 @@ def fix_file(input_file, output_file):
     try:
         words = slurpNbarf(input_file, "utf-8")
     except UnicodeDecodeError:
-        words = slurpNbarf(input_file, "cp1252")
-    finally:
-        print(f"Writing fix to: {output_file}")
-        with open(output_file, "w") as f:
-            for word in words:
-                f.write(f"{word}\n")
+        try:
+            words = slurpNbarf(input_file, "cp1252")
+        # punt if it didn't work
+        except Exception as e:
+            print(f"Failed to parse {input_file}: {str(e)}")
+            return
+    print(f"Writing fix to: {output_file}")
+    with open(output_file, "w") as f:
+        for word in words:
+            f.write(f"{word}\n")
 
 bad = argv[1]
 good = argv[2]

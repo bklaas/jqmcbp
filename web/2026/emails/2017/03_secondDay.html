@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XX</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/KWikGqr-OMw">Ham, Girl!</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+<p>
+As The Candymeister and administrator of the World's First and Probably Only NCAA Candy Bar Pool, I get a front row seat to the raw drama* of seeing people's fates rise and fade. This year was no exception. At about 9pm Central Daylight Time, Rick Tetlow had prognosticated 28-for-28 correctly** and needed just the last four games to fall his way for a first in JQMCBP history: a perfect clean sweep of the first round picks. Really, it's never happened before. Even I, jaded and troll-like in my old age, was enthusiastically on #teamtetlow. Alas, like all good things it had to come to an end***. Rick went only 2-for-4 in the last 4 games, and fell back into a 6-way tie for first place. More on the leaders below the fold.
+</p>
+
+<p>
+* The raw drama of mass dice rolling.
+</p>
+
+<p>
+** Twice as many consecutive correct picks as that Rennie guy. Remember him? Yeah, me neither. Ya dead ta me, Rennie!
+</p>
+
+<p>
+*** And bad things. Like the Star Wars prequels. Episode I <i>does eventually finish</i>. Or so I am told.
+</p>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Another dull first round day, nothing of the completely unexpected upset variety. Remember the good ol' days of Mercer beating Duke in 2014? Or Lehigh beating Duke in 2012? Or really any time Duke loses? Those were the best days.
+</p>
+<p>
+I'll start giving direct attribution once we have less than say 100 people picking an upset. Best we could do yesterday were the 286 people picking the Rams of Rhode Island over the Bluejays of Creighton.
+</p>
+
+<!--
+<hr class = 'section' />
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+The Worst Typo Award goes to whatever family member created a filter just for my family, and then spelled our name wrong. No ass in Klaas.
+</p>
+-->
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+The Me. Goodbar, You Jane Award goes to Brett Rondeau for his inadvertent choice of Me. Goodbar. From Brett:
+</p>
+<div class = 'quote'>
+So when I filled out my bracket on my phone I accidentally hit the e instead of r so my candy bar reads "me. Goodbar" [instead of Mr. Goodbar]. I wouldn't normally care except I'm on the leader board. Can you change that for me? My next question is that if I actually win can I take the old cd from your kid instead of a candy bar? I have kids younger than yours that might enjoy it. Thank you, Brett Rondeau.
+</div>
+
+<p>
+Unfortunately the JQMCBP Bylaws clearly state this is not possible.
+</p>
+<p><b>Rule 35 Sec. 53b:<br />No takebacks.*</b>
+</p>
+
+<p>Brett, if you win, you're not going to get a CD, you're not going to get a Mr. Goodbar, you are going to get a Me. Goodbar**. You're gonna take a bite and reflexivly shout "ME. GOODBAR! ME. LIKEY!" So it is written.
+</p>
+
+<p>
+* Unless you are a mom that mistakenly entered "Hershey's Kiss", "Starburst", and "Reese's" for your three children, when they (obviously) wanted "Big bag of Hershey's Kisses", "Smarties", and "Nerds", respectively (true story). There is a specific provision (Rule 35 Sec. 53c) that covers this.
+<p><b>Rule 35 Sec. 53c:<br />Respect Mothers.</b></p>
+<p>I don't want to break apart families. My heart is not completely made of coal, just <i>mostly</i> made of coal.</p>
+
+<p>
+** This whole "Me. Goodbar" thing reminds of a story. It has nothing whatsoever to do with basketball, but then again neither does most of this insanity. A number of years ago my oldest daughter Carson had a 2nd grade project called the "All About Me" tunnel book project. A tunnel book is a three-dimensional art project that's kind of like a paper-based diorama. But that's not important. What's important was that I read the note from her teacher describing it as the "All About Me Tunnel" book project. I thought it was a typo and she meant to say My and not Me, and that the project involved some fictitious tunnel. So that's weird. But furthermore, I thought the typo was HILARIOUS, because I read it <a href ="https://youtu.be/MJr9SSJKkII?t=3s">Eliza Doolittle</a> style, as in "yeah, dat's roight 'enry 'iggins, I'll tell ya awwwl about me tunnel, I will!" You have no idea how much mileage we've gotten from the All About Me Tunnel Book snafu of 2011.
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>The TV score ticker was reading the Kentucky versus Northern Kentucky matchup as "Kentucky" versus "No Kentucky", which sounded more like a needed constitutional referendum rather than a basketball game*. Katherine Gifford had No Kentucky as her champ, along with 4 others that picked extreme longshots to go the distance.
+<div class = 'pre'>
+New Mexico St: Wesley Amato
+
+Texas Southern: LTice
+
+Northern Kentucky: Katherine Gifford
+
+UC Davis: Mark Bailey
+
+Oklahoma St: Audrey Flora
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<p>* Apologies to Alex 'ball hard in the paint' Goff, Miles 'Shooty Hoops is a Real Sport' Haysman, and two other Kentuckians in the pool for that brutal slight on the Bluegrass State. Actually, with nicknames like that you're kind of asking to be called out...
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>28 lost their alma maters Friday, including New Mexico State alum and Pride of Las Cruces "Fatty Stinky", and three UC Davis Davids* faithful. There were also two from Oklahoma State that lost their university from the contest, "Cowboy Country", and "cowboy country". I like to think all graduates of OSU have their name changed to Cowboy Country. A phone call between two alumni would go something like this:
+</p>
+
+<div class = 'quote'>
+Howdy! The name's Cowboy Country. Who do I have the pleasure of speakin' with today?
+</div>
+
+<div class = 'quote'>
+This here is cowboy country!
+</div>
+
+<div class = 'quote'>
+Well I'll be hog-tied! cowboy country?? YEEEEHAH!
+</div>
+
+<div class = 'quote'>
+YEEEEEHAH! GO COWBOYS!
+</div>
+
+<div class = 'quote'>
+GO COWBOYS!
+</div>
+
+<p>This would continue for several minutes before neither could remember who called whom, or what the purpose of the call was. GO COWBOYS!
+</p>
+<div class = 'pre'>
+New Mexico St: Stephanie Haan-Amato, David 'Not at Work' Lucas, Fatty Stinky, Julie Smith
+
+Marquette: Jodi 'sometimes you feel like a nut' E, Peter B, Bill Mech, curtis stalter, Karen McCartney, Bill McGrail, Chris Dziewiatkowski
+
+Kent State: Bridget Conkling, Mommy Shanahan, Jon Conkling
+
+Kansas St: Mike D, Kristopher Nordstrom, Bill Rogers
+
+Northern Kentucky: Dustin Pierce
+
+UC Davis: Patty Dillon, Scott Johnson, Matt Jay
+
+Creighton: Jeff Chungath, Todd's Nebraska cousin, Amanda Caldwell Wise, Genevieve Bettin, Amanda Zalud
+
+Oklahoma St: Cowboy Country, cowboy country
+</div>
+
+<p>
+* Until I'm told otherwise, they are the UC-Davis Davids. When I am told otherwise, they will continue to be the UC-Davis Davids.
+</p>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+The Oh No, No No, No No No No Award goes to veteran JQMCBPer Colin "Coolhaus GIANT Fried Chicken Caramel Milk Chocolate Bar" Gjervold. That candy bar can't be a thing. No. Can't be.
+</p>
+<p>
+<a href = "https://www.goldbely.com/coolhaus/15041-fried-chicken-caramel-milk-chocolate-bar-2-pack">It's a thing</a>.</p>
+
+<p>$49 too. Not quite To'ak Cognac Cask prices, but....yyyyyeah, that's a lot of money for a candy bar that's "infused with organic chicken skins". Organic. That does not make me feel better about this.
+</p>
+<div class = 'pre'>
+</div>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+My nephew Theo sits atop the leaderboard along with 6 others, including UC Davis Davids supporter Patty Dillon, who was so excited about the Davids' game she left in the middle of it to take her children to something called Math Adventures. True story.
+</p>
+<p>
+Things said out loud this morning by members of my family when we realized Theo was on top of the leaderboard.
+</p>
+<div class = "quote">
+I'm pretty sure he knows he's in first already. (Wendy)
+</div>
+
+<div class = "quote">
+I'm so proud of him! (Carson)
+</div>
+
+<div class = "quote">
+Well don't let it get to your head, Theo.(The Meister)
+</div>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Brett Rondeau </td><td>Wisconsin</td><td>Me. Goodbar</td><td>Duke</td><td>30</td></tr>
+<tr><td>1</td><td>Curtis Mitchell</td><td>Wisconsin</td><td>King Size Snickers</td><td>Kentucky</td><td>30</td></tr>
+<tr><td>1</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>30</td></tr>
+<tr><td>1</td><td>Howard Johnson</td><td>Washington</td><td>Snicker </td><td>Kansas</td><td>30</td></tr>
+<tr><td>1</td><td>Patty Dillon</td><td>Washington</td><td>100 Grand</td><td>Gonzaga</td><td>30</td></tr>
+<tr><td>1</td><td>Rick Tetlow</td><td>Michigan</td><td>Swedish Fish</td><td>UCLA</td><td>30</td></tr>
+<tr><td>1</td><td>Theo Chungath</td><td>Iowa</td><td>Crunch</td><td>Kentucky</td><td>30</td></tr>
+<tr><td>8</td><td>Baba Hattemer</td><td>New York</td><td>Hersheys Dark Chocolate</td><td>Gonzaga</td><td>29</td></tr>
+<tr><td>8</td><td>Diamond Dave's </td><td>Iowa</td><td>Heath Bar</td><td>Villanova</td><td>29</td></tr>
+<tr><td>8</td><td>Jeff Shipley</td><td>Oregon</td><td>LIndt A Touch of Sea Salt EXCELLENCE Bar</td><td>Kansas</td><td>29</td></tr>
+<tr><td>8</td><td>Jessica Sanborn</td><td>California</td><td>Butterfinger</td><td>North Carolina</td><td>29</td></tr>
+<tr><td>8</td><td>Jim Doyle</td><td>Massachusetts</td><td>Snickers</td><td>Villanova</td><td>29</td></tr>
+<tr><td>8</td><td>Michael The Deac Butler</td><td>Georgia</td><td>1906 Chocolate Bar</td><td>Duke</td><td>29</td></tr>
+<tr><td>8</td><td>Mooseman Bruce Ghastin</td><td>Michigan</td><td>100 Grand Bar</td><td>North Carolina</td><td>29</td></tr>
+<tr><td>8</td><td>Rob M</td><td>Michigan</td><td>Marathon bar</td><td>North Carolina</td><td>29</td></tr>
+<tr><td>8</td><td>Todd Beranak</td><td>Minnesota</td><td>The Cal Bar</td><td>Villanova</td><td>29</td></tr>
+<tr><td>8</td><td>Todd Mullanix</td><td>California</td><td>Baby Ruth</td><td>Arizona</td><td>29</td></tr>
+<tr><td>8</td><td>Trevor Shepich</td><td>Michigan</td><td>King Sized Take 5</td><td>North Carolina</td><td>29</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Syed the Chimp has busted ahead of the pack with 25 points, which happens to be 1 more than I have in my own bracket. Nice work, Syed.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Syed the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arkansas</td><td>25</td></tr>
+<tr><td>2</td><td>Bernardo the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Seton Hall</td><td>24</td></tr>
+<tr><td>2</td><td>Emilio the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>24</td></tr>
+<tr><td>2</td><td>Jaron the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>24</td></tr>
+<tr><td>2</td><td>Jaydon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Villanova</td><td>24</td></tr>
+<tr><td>6</td><td>Anya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>23</td></tr>
+<tr><td>6</td><td>Carson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Cincinnati</td><td>23</td></tr>
+<tr><td>6</td><td>Davon the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico St</td><td>23</td></tr>
+<tr><td>6</td><td>Forrest the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>USC</td><td>23</td></tr>
+<tr><td>6</td><td>Isabell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>23</td></tr>
+<tr><td>6</td><td>Jude the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>23</td></tr>
+<tr><td>6</td><td>Tessa the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma St</td><td>23</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2017 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

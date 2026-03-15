@@ -6,7 +6,7 @@ sub send_email {
 	}
 	$message .= "\nhttp://benklaas.com/precious_moments/\ncheers,\nBen's PingBot\n";
 
-	my $file = '/tmp/foo.txt';
+	my $file = '/data/jqtmp/foo.txt';
 	open(FILE, ">$file");
 	print FILE $message;
 	close(FILE);
