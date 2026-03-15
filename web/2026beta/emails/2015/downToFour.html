@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/squaredmetal.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: underline;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+        div.quote {
+         margin: 5px;
+		 margin-left: 10px;
+         padding: 5px;
+         background-color: #ccc;
+         quotes: "\201C" "\201D";
+         }
+        div.quote:before { content: open-quote; font-weight: bold; }
+        div.quote:after { content: close-quote; font-weight: bold; }
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.mailbag, div.pre {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			float: left;
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+   			float: left;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.links {
+		    float: right;
+		    list-style: none outside none;
+		    padding-top: 10px;
+		}
+		ul.links li {
+		    background-image: none;
+		    float: left;
+		    list-style: none outside none;
+		    margin-left: 5px;
+		    padding-left: 5px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.finalfour td {
+		background: white;
+		width: auto;
+		min-width: 120px;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1>JQMCBP <a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">XVIII</a></h1>
+	<h2 class = 'slogan'><a href = "https://youtu.be/8O317T6Zlno" title = "18 and Life!">18 and Life!</a></h2>
+</div>
+
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE4|*</li>
+	<li>Candybar: *|MMERGE5|*</li>
+	<li>Score: *|MMERGE8|* (leader is at *|MMERGE10|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE7|*</li>
+	<li>Rank: *|MMERGE9|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE6|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>The JQMCBP Sugary Seven&#8482;</h1>
+<p>
+Hola Candy Questers! I'm here to tell you that, except for The Magnificent Seven listed below, your Quest is at an end. Going into the Final Four, there are 8 possible permutations left in the bracket, and of those 8, one of 7 will emerge the 2015 JQMCBP Champion. Considering Kentucky is still the oddsmakers favorite to win the tournament, it does look like Dustin "Charleston Chew" Ramoie has the inside track to glory. Still, I would not count out Craig Wadz-za-man, who has the Power of Kringle on his side, or Todd 'Bartman' Barton, who is probably going to win because OMG where am I going to find a Kirby Puckett Bar.
+</p>
+
+<p>
+Here are the 8 Final Four scenarios and their JQMCBP implications:
+</p>
+<table class = 'finalfour'>
+<tr>
+	<th>Final Four</th>
+	<th>Championship</th>
+	<th>Champion</th>
+	<th>JQMCBP Winner</th>
+	<th>Candy</th>
+</tr>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Dustin Ramoie</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_charlestonchew.jpg" />
+	</td>
+</tr>
+</table>
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State <br />
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Dustin Ramoie</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_charlestonchew.jpg" />
+	</td>
+</tr>
+</table>
+
+
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State <br />
+					1 Wisconsin
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>jennyrupe</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_gummybears.jpg" />
+	</td>
+</tr>
+</table>
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State <br />
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Anna Arvant</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_reeses.jpg" />
+	</td>
+</tr>
+</table>
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					7 Michigan State <br />
+					1 Wisconsin
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Wisconsin 
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Chad meister Pechumer</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_reeses.jpg" />
+	</td>
+</tr>
+</table>
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke<br />
+					1 Wisconsin
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Wisconsin 
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Craig Wadz-za-man</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_kingsizekitkat.jpg" />
+	</td>
+</tr>
+</table>
+
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke<br />
+					1 Wisconsin
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke 
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Todd 'Bartman' Barton</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_kirby.jpg" />
+	</td>
+</tr>
+</table>
+
+
+<table class = 'finalfour'>
+<tr>
+	<td>
+		<table class = 'first_round' valign = 'center'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke <br />
+					7 Michigan State
+				</td>
+			</tr>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Kentucky<br />
+					1 Wisconsin<br />
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Duke<br />
+					1 Kentucky
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<table class = 'second_round'>
+			<tr>
+				<td class = 'brackets1 nowrap' valign = 'center'>
+					1 Wisconsin 
+				</td>
+			</tr>
+		</table>
+	</td>
+	<td>
+		<b>Tom Hinds</b>
+	</td>
+	<td>
+		<img src = "http://benklaas.com/jqmcbp/images/t_rootbeerdumdums.jpg" />
+	</td>
+</tr>
+</table>
+
+<!-- https://www.linkedin.com/pub/fb-bk/50/33b/995 -->
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+The Final Four this year features an overwhelming favorite #1 seed Kentucky Wildcats, the <a href = "https://twitter.com/BadgerMBB/status/579419066726629377"> easily-having-the-most-fun </a><a href ="http://sports.yahoo.com/blogs/ncaab-the-dagger/wisconsin-s-nigel-hayes-tests-ncaa-stenographer-during-press-conference-235557660.html">#1 seed Wisconsin Badgers</a>, the Evil Empire #1 seed Duke, and an "upstart" #7 seed Michigan State. But is Michigan State an underdog? Not if you ask JQMCBPers. <a href = "http://benklaas.com/jqmcbp/highcharts/highChartPieChart.cgi?game=58">Check this out</a>: Not only had 87 people selected this "#7 seed" to go all the way to the Final Four, but that was more than the team they beat, #4 Louisville, to get there, as well as more than <i>than the 3, 5, and 6 seeds</i>, including a whopping <b>80 more selections</b> than #6 Providence. So yeah, #7 seed, but not really. JQMCBPers knew better.
+</p>
+
+<hr class = 'section' />
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Oh no! Lance! You've lost all hope of winning your Bocolate Char! Serves you right for being an Arizona homer.
+</p>
+
+<p>
+My daughter Carson Moxie would have been in the mix for the Candy had Gonzaga pulled off a win against Duke, so we are all in collective mourning here at the Meister Haus. Never have I seen so much enthusiasm for a player as I witnessed for Gonzaga guard Kevin Pangos, and <a href = "https://youtu.be/h1-SdMbxd8c">in particular his hair</a>, which was described as "breath-taking" and "so 80s and so Awesome". Personally I think he's going for <a href = "https://youtu.be/IzhSpdPqexY">Minnesota Hockey Hair</a>. Anyway, sorry Moxie, sorry Pangos.
+</p>
+
+<div class = 'pre'>
+Louisville: W Mazur, Jen Flora, scott clair, Jordan Kotubey, Russell Nelson
+
+Gonzaga: Rob 'Tarpo' Tilley, Jill Lantz, Jeffrey Bunch, Henry entering more than once for real this time Nichols, Jim Soriano, Josiah Grover, Eric Gottlieb, Carson Moxie, Sarah Boyd, J hamling, Timmy D, GeeGee the dog, Gregory J. White (Tracy), Matt MacDonell, Nathan Blake, Amy Lodwig , carly thaler
+
+Notre Dame: BigSexy, Carol Blanchette, Ramon Roullard, Zane Sabbert, Sonia Pai, Joe Stevens
+
+Arizona: Jaime Millard, Kevin Boyd, Chris Hewitt, Ryan Brady, Dan Solt, Kendall DiGirolomo, James Stremme, Matt Rennie, Lance Van Houten, Soren Van Houten, Annette Boehlje, Harry Hirschman, Faith Daniel, Jim Parker, Herman 'I always lose' Weiss, Andrew Craft, SirLantzalot, Johnny Taste the Rainbow Flaa, Jodie Baird, Ben Dover, Tim Hoffman, Doug Busta, Jim Marten, Richard nordstrom, Bryan Boguslawski, Amanda Blake, Jack Genadek, Romke Mooiweer, Scott Boniface, Laura Goodwin, Greg Rhoades, Jon Klimczuk , Michael Shim, Zachary Klaas, Chris Hutchinson, Bill Rogers, Ted Daniel, Howard Johnson, adam klimala, Alex Frangos, Brian Wieck, Lindsay Morgan, Scott Johnson, Mark Richards, Brian Clair, Ryan Surber, more cowbell, Margaret Wadz, Nick Dyal, Ronin Danek, Bob Anders, MoNelisa
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+It seems impossible, what with JQMCBP's international fame and reputation, that only two people lost their Alma Maters in the weekend games, but that's what the data shows. A special shout out to Dr. Carol "Dark Chocolate M&amp;M's" Blanchette, who lost both her alma mater and champion in a game Notre Dame really should have won. In frustration, Carol wrote me with an astute observation that eloquently described her feelings in a way that only a person with an erudite background such as hers could:
+</p>
+<div class = 'pre'>
+To: The Meister
+From: Carol Blanchette, Ph.D.
+
+Aaaaaaaaaaargh!!!
+</div>
+
+<div class = 'pre'>
+Notre Dame: Carol Blanchette, Bob Topel
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out one or two of my favorite candy selections</h2>
+
+<p>
+The Unfortunately Named Candy Bar Only Available in the Dominican Republic Award goes to 2014 JQMCBP Meredith "Crachi Bar" Hammons. The Crachi Bar is described as "a low-cost alternative to the Nestle Crunch bar". Oh my.
+</p>
+<p>
+<a href = "http://www.uliad.net/images/Year1/crachi-bar.jpg">Here is a picture of a Crachi Bar next to "an inexpensive bottle of sparkling wine"</a>. I think we can all agree that THAT LOOKS JUST DELICIOUS.
+</p>
+
+<hr class = 'section' />
+<h1>Bugging You For Charity</h1>
+<h2>where I shamelessly bug you for money to support charitable purposes</h2>
+<p>
+Well, you've read this far so you must be a kind soul. The JQMCBP is forever 100% free with no obligations, other than listening to my long rants*, but in June I am riding 150 miles on my bike to help fund MS research. <a href ="http://bit.ly/benMS150">Donate to my ride here</a>. If I raise $1000 I get access to <a href="http://benklaas.com/jqmcbp/images/prioritytoilets.jpg">EXTRA FANCY PRIORITY TOILETS</a>.
+</p>
+<p>
+* also optional
+</p>
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>
+Craig "Kringle Boy" Wadz-za-man prophecized that he would re-take his Chosen Place on top, and so it was written. Craig leads all people and chimps with an impressive 102 points. Michele Thomas was poised to break pretty much every JQMCBP record on file if the four teams from Michele's perfect final 8 won. But alas, they did not, and just like that a front runner drops to 20th place and is mathematically eliminated from The Candy. 
+</p>
+
+<h2>Top 10 Humans</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>Craig Wadz-za-man</td><td>International</td><td>King size Kit Kat</td><td>Wisconsin</td><td>102</td></tr>
+<tr><td>2</td><td>Paul C. Smith</td><td>Wisconsin</td><td>Baby Ruth</td><td>Wisconsin</td><td>101</td></tr>
+<tr><td>3</td><td>Dustin Ramoie</td><td>Montana</td><td>Charleston Chew</td><td>Kentucky</td><td>100</td></tr>
+<tr><td>4</td><td>Chad meister Pechumer</td><td>Michigan</td><td>Reeces peanut butter cup</td><td>Wisconsin</td><td>98</td></tr>
+<tr><td>4</td><td>Owen Clexton </td><td>Michigan</td><td>Coffee Crisp </td><td>Kentucky</td><td>98</td></tr>
+<tr><td>6</td><td>Arun Mahapatra</td><td>Michigan</td><td>Twix KING SIZE</td><td>Kentucky</td><td>94</td></tr>
+<tr><td>6</td><td>Jennyrupe</td><td>Michigan</td><td>Gummy Bears</td><td>Michigan State</td><td>94</td></tr>
+<tr><td>6</td><td>Paul WadzinskE</td><td>Wisconsin</td><td>Butterfinger</td><td>Kentucky</td><td>94</td></tr>
+<tr><td>9</td><td>Mike Popek</td><td>California</td><td>Mike & Ikes</td><td>Kentucky</td><td>93</td></tr>
+<tr><td>9</td><td>Scott Westhoff</td><td>Illinois</td><td>Cadbury egg</td><td>Kentucky</td><td>93</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Deborah the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>62</td></tr>
+<tr><td>2</td><td>Terrell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Duke</td><td>60</td></tr>
+<tr><td>3</td><td>Alex the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan State</td><td>57</td></tr>
+<tr><td>3</td><td>Miranda the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Dayton</td><td>57</td></tr>
+<tr><td>5</td><td>Carlos the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Utah</td><td>56</td></tr>
+<tr><td>5</td><td>Jenna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>56</td></tr>
+<tr><td>5</td><td>Paloma the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Oklahoma</td><td>56</td></tr>
+<tr><td>8</td><td>Alayna the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Ohio State</td><td>55</td></tr>
+<tr><td>9</td><td>Katrina the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wofford</td><td>54</td></tr>
+<tr><td>9</td><td>Madyson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kentucky</td><td>54</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2015 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

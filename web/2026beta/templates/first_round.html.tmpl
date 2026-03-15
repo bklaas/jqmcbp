@@ -1,0 +1,29 @@
+<td>
+	<table class = 'first_round' cellpadding="0" cellspacing="0">
+	<tbody>
+	[% FOR row IN games %][% LAST IF row.game == 'game_33' %]
+		<tr><td class="brackets1">
+		[% FOR team_info IN row.teams %]
+			<span id = '[% row.game %] [% team_info.team %] select' style = "display: block;" class = 'radio'>
+				<input name="radio_[% row.game %]" id = "radio_[% row.game %]_[% loop.count %]" value="[% team_info.team %]" type="radio" onClick='advanceTeam("[% team_info.team %]","[% row.game %]","[% row.nextGame %]")'>[% team_info.seed %]
+[% IF team_info.url != "" %]
+    <a href = "[% team_info.url %]" target = "_blank" class = "bracket_link">[% team_info.team %]</a>
+[% ELSE %]
+    [% team_info.team %]
+[% END %]
+            <br>
+			</span>
+			<span id = '[% row.game %] [% team_info.team %] done' style = "display: none;" class = 'normal'>
+				<span id = '[% row.game %] [% team_info.team %]'>[% team_info.seed %] 
+[% IF team_info.url != "" %]
+                    <a href = "[% team_info.url %]" target = "_blank" class = "bracket_link">[% team_info.team %]</a>
+[% ELSE %]
+                    [% team_info.team %]
+[% END %]
+                <br></span>
+			</span>
+		[% END %]
+		</td></tr>
+	[% END %]
+	</tbody></table>
+</td>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIV</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/J2UyOTS3UCE">Two Hours of Lo-Fi Hip Hop Squid</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/838</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+</p>
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+The second round had 16 mascots heading with giant heads bowed to the exits. They may have all been losers, but it was an EXCELLENT set of mascots. Here they are in rank order, from lamest to awesomest. It's basically Mascot Gold from #11 on down.
+</p>
+<ul>
+<li>Fighting Illini</li>
+<li>Wildcats</li>
+<li>Tigers</li>
+<li>Cowboys</li>
+<li>Sooners</li>
+<li>Red Raiders</li>
+<li>Mountaineers</li>
+<li>Scarlet Knights</li>
+<li>Buffaloes</li>
+<li>Jayhawks</li>
+<li>Hawkeyes</li>
+<li>Bobcats</li>
+<li>Gators</li>
+<li>Badgers</li>
+<li>Terrapins</li>
+<li>MEAN GREEN</li>
+</ul>
+
+<p>Some musings on the list</p>
+<p>
+The <b>Rutgers Scarlet Knights</b> used to be called the Chanticleers, which is a fighting chicken. They are now the Scarlet Knights because, <a href = "https://www.theuconnblog.com/2010/10/7/1734636/the-sad-pathetic-history-of-the-scarlet-knight">according to this UConn blogger, they are all a bunch of lazy pretty boy traitors.</a> I think Scarlet Knights sounds pretty cool, but I speak for all of us in saying <b>BRING BACK THE RUTGERS FIGHTING CHICKENS!</b>
+</p>
+
+<p>
+Texas Tech used to be the Texas Tech Matadors. THE MATADORS! WHAT? HOW DO YOU DUMP THAT NAME?? However, now they are the <b>Texas Tech Red Raiders</b>, which is admittedly also pretty cool. They have some mascot issues though, in that they are represented by both the horse-riding "Masked Rider", who is mysterious and awesome, and Raider Red, who is RIDICULOUS and awesome. I favor the latter, as evidenced by this photo essay I did while visiting a practice session of the Final Four a few years ago in Minneapolis.
+</p>
+
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/43e1c67d-4f9b-48cb-aeab-4c62cb04d2a3.jpg" width = "30%" />
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/b41e891b-3b86-44d4-a1e1-f849b8c6333e.jpg" width = "30%" />
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/1b9fee6b-ad02-4997-b6fa-d15612057442.jpg" width = "30%" />
+<br />
+
+
+<p>
+<b>Ohio Bobcats</b>-- all that needs to be said about the Ohio Bobcat can be viewed in <a href = "https://youtu.be/lZWvFmjEdDk">this EPIC MASCOT battle</a> between the Ohio Bobcat and THE Ohio State Buckeye. An aside, OSU is pretty close to unique in the mascot world in that it is just a nut off of a tree. I mean, srsly. LOL.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/f1f0e6a6-5568-4ceb-ae60-4f74aa8c138d.jpg" width = "100%" />
+<br />
+<p>
+<b>Bucky Badger</b>. Great school. Great mascot. Will punch you. What's not to love?
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/489e51c4-f592-4bce-a262-f5a138aab9e3.jpg" width = "100%" />
+<p>
+<b>Maryland Terrapins:</b><br /><a href = "https://youtu.be/CMNry4PE93Y" alt = "I like turtles"><img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/172ff075-0ffa-4225-8c77-ff1552f9f7ac.png" /></a>
+</p>
+
+<p>
+Which brings us finally to the <b>MEAN GREEN</b>.
+</p>
+<p>
+There are competing anecdotes about the origin of <b>The North Texas Mean Green</b>. The first one, <a href = "https://meangreensports.com/sports/2018/7/6/trads-MeanGreen-html.aspx">chronicled in meangreensports.com</a>, describes superfan Sidney Sue Green cheering on North Texas in 1966 coining the term via her cheers:
+
+<div class = "quote">
+We were way behind and she started hollering, 'Come on green, get mean,' or 'Here we go, mean green,' or variants on that. Then it became popular with some of the students and some of the other fans. So it caught on.
+</div>
+
+<p>
+This story is misinformation brought on by an evil cabal lead by Meangreensports, the government of Venezuela, and probably some sort of pizza restaurant. IT IS FALSE AND AWFUL AND SHOULD BE CONDEMNED.
+</p>
+
+<p>The real origin of Mean Green, from Wikipedia:
+<p>
+<div class = "quote">The name "Mean Green" was adopted by fans and media in 1966 for a North Texas football defensive squad that finished the season second in the nation against the rush. That school year, Joe Greene, then a sophomore at North Texas, played left defensive tackle on the football team</div>
+
+<p>
+They <b><i>literally named their school's team after Mean Joe Greene</i></b>. That is is so awesome.
+</p>
+this is a <b>MEAN GREEN:</b><br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/9a201ee0-d424-4403-84d8-09373ddd9c60.jpg" width = "100%" />
+this is a <b>MEAN JOE GREENE:</b><br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/d2a19143-2d39-461f-b5a9-a79a1771e686.jpg" width = "100%"/>
+<p>This is the canonical Mean Green origin story. All other Mean Green origin stories are false. The Meister has spoken.</p>
+
+<hr class = 'section' />
+<h1>FUN WITH DATA</h1>
+
+<p>
+Here are the wining JQMCBP scores and their associated J-factor scores since 2006, the year where my database became good enough to save such things.
+</p>
+<p>
+The highest winning score was 2007's "ARUSSIAN" with 137 points.
+
+<p>JQMCBP XXIII, in which there was no basketball, was intentionally insane. Last year Jess "Take 5" Larson won with 85 points and a jaw-dropping 36.36 J-factor.
+</p>
+<p>Factoring JQMCBP XXIII out, the lowest winning score was Meredith Hammons in 2014 with 94 points. J-factors of champions have ranged from 0.79 (2016 champ Julia "These are My Gummi Bears And I'll Share With My Sister At My Own Discretion" Larson) to 10.65 (2019, Tamara "Vosges Missing Link" Fink).
+</p>
+<p>
+It remains to be seen if this year's winning score drops below that level, but it certainly could. Aside from Mark Dyal who is <i>killing it,</i> a great portion of the Leaderboard already has RtT's below 94. When Oral Roberts, Oregon State, Loyola Chicago, and Syracuse are 25% of the remaining teams, this is clearly a bracket buster kind of year.
+</p>
+<p>
+Much more J-factor analysis coming in the next update. VERY IMPORTANT ANALYSIS!
+</p>
+
+<table width = "100%">
+<tr>
+<td>YEAR</td><td>Champion</td><td>FINAL SCORE</td><td>J-Factor</td>
+</tr>
+<tr>
+<td>2006 </td><td> Jay Wulkowicz </td><td>   102 </td><td>      1.66</td> 
+</tr>
+<tr>
+<td>2007 </td><td> ARUSSIAN </td><td bgcolor = "green">   137 </td><td>      1.65 </td>
+</tr>
+<tr>
+<td>2008 </td><td> Betsy Ross </td><td>   126 </td><td>      2.58 </td>
+</tr>
+<tr>
+<td>2009 </td><td> Anna Lee </td><td>   127 </td><td>      9.94 </td>
+</tr>
+<tr>
+<td>2012 </td><td> chris gayler </td><td>   118 </td><td>      3.48 </td>
+</tr>
+<tr>
+<td>2013 </td><td> William Hershey </td><td>   103 </td><td>      6.89 </td>
+</tr>
+<tr>
+<td>2014 </td><td> Meredith Hammons </td><td bgcolor = "red">    94 </td><td>      8.53 </td>
+</tr>
+<tr>
+<td>2015 </td><td> Todd 'Bartman' Barton </td><td>   124 </td><td>      5.15 </td>
+</tr>
+<tr>
+<td>2016 </td><td> Julia Foster </td><td>   113 </td><td bgcolor = "green">      0.79 </td>
+</tr>
+<tr>
+<td>2017 </td><td> eyoung54 </td><td>   118 </td><td>      9.17 </td>
+</tr>
+<tr>
+<td>2018 </td><td> Super Grover </td><td>   104 </td><td>      8.69 </td>
+</tr>
+<tr>
+<td>2019 </td><td> Tamara Fink </td><td>   120 </td><td bgcolor = "red">     10.65 </td>
+</tr>
+<tr>
+<td>2020 </td><td> Jess Larson </td><td bgcolor = "yellow">    85 </td><td bgcolor = "yellow">     36.36 </td>
+</tr>
+</table>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+</p>
+
+<div class = 'pre'>
+How many had Syracuse? 73! 
+
+<br />
+Syracuse:  aaaSantiago Duque-Baird, Abby Chungath, Alex F, Alex McWhinnie, Andrew Moore, Anna Griesheimer, Beaumont Hoffman, Bill Teer, Breanna Long, Bridget Burns, Cali-Boy, Christy Griesheimer, Cole Byers, Connor Byers, Dave Lyons, Dave McHalpine, Dawn Smith , Denis B. Charette, Diane Sievert, Ellie Chungath, Eric Blaha, Erin Meyer, Espen 'what's candy?' Williams, Ginny Gelms, Greg Wenz, Gwen D, Gym Nasium, Heather Stratton Williams, Helen Regan, I’m not dead yet, Jaime Millard, Jane MC, Jason Cadell, Jenn, Jennifer Meagher, john, John Boyle, Jon Klimczuk, Josh foster, Josh Hanson, Josh Mello, Kiera D, Kristopher Nordstrom, Kurt Anderson, Kyle 'Burger Man' Smith, Leigh A Keiper, Lisa Herrington, Lisa Herrington, Liz McHalpine, Mandy Kelly, Maria Seipelt, Marla Weinstein, Martin LIeser, Mike Ford, Nicholas DiGirolomo, Nin Brooks, Noah Trister, Phil Horvath, Pranav S, Rennie Anderson, Rob Bellin, Sam Hoag, Satoshi Nakamoto, Shae Lorenc, Steve Fink, Teresa Bryan, Theodore Chungath, Thomas Griesheimer, Thomas Joseph, Thomas Leeper, Tracy Niyo, Victoria Johnson, wRight Picks
+
+<br />
+How many had Oregon State? 51!
+<br />
+Oregon State:  Allan Dranberg, Andrew Nicholson, Andy Calvert, Anna Griesheimer, Bill Meyer, Bridget Burns, Caprice McGrail, Curtis Stalter, Denis B. Charette, Espen 'what's candy?' Williams, ET, Eva Witt, Gina Rumore, Haley P, Helen Regan, Idiot@ idiot, Isaac LeTarte, Jacqueline Holland, Jeff Amato, Jeff Shipley, Joe Grover, John B Varesi, John Flaa, John McCartney, Josh foster, Kai Anderson, Kathy Larson, Kristen Stipanov, Kyle 'Burger Man' Smith, Laurie Anderson, Lesley Hogg, Lisa Wadzinske, Marco Byrd, Margaret Care, Martin LIeser, Marvella Avery, Michelle Morrisey, Milan Vaishnav, Milo Kai Anderson, Paul Wadzinske, Peter Benavente, Phil Horvath, Rennie Anderson, Rev. John Monteith (1788-1868), Romke Mooiweer, Ryan Schraa, Sara Mitchell, Scott Mortimer, Tala Anderson, Tracy Kugler, Zozo
+
+<br />
+How many had Loyola?  25!
+Loyola Chicago:  aaaSantiago Duque-Baird, Addison Smith, AJ Anderson, Ben Klaas, Brandon Ray, Chris Charbonneaux, Earl Netwal, Espen 'what's candy?' Williams, Greg Rhoades, Jackson Smith, Jim Soriano, Joel Van Valin, Kristen Kosa, Lesley Hogg, Lindsey LaGrou, Lochlain McGrail, Matthew Stetson, Michelle Morrisey, Rollie E, Stefan Wodzicki, The Burke, Theresa White, Todd Dankers, Trey White, wRight Picks
+
+<br />
+Finally, how many had Oral Roberts? 10!
+Oral Roberts:  Andrew Mossburg, Ashleigh Apostolovski, Cami Niyo, Finn O'Boyle, GAUCHOS!, Katherine Gifford, Mark Jones, Maya O'Hare, Paul Bellin, Seamus Lee
+</div>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+<p>Hoooboy it was not a great Sunday/Monday for soooo many of you. 191 in all dropped your champ, with the lion's share of those Illinois faithful, along with a fair share of Hawkeye rooters (Sorry Sedge, sorry Lance). Honorable mentions to Jenn's pick of WHY NOT, Rutgers, and cat-probably-just-walking-across-a-keyboard AALA Russel and Colorado.</p>
+
+<div class = 'pre'>
+LSU: Seamus Lee, Heather Stratton Williams
+
+Colorado: AALA Russel
+
+Maryland: Marvella Avery
+
+Wisconsin: Anna Griesheimer, PC, Peggy Voeller
+
+Texas Tech: Faith Koh, Andrew Mortimer, Cormac O'Boyle 
+
+Florida: Jeffrey B
+
+Illinois: Milo Kai Anderson, Dave Go Hawks! Sedgwick, Michael Nommensen, Kelli Strom, Natalie Weir, Jamie White, Steve White, I’m not dead yet, Ben Halpern, Craig Wadzinske, Renata S Rush, Andrew Moore, Arthur Rush, Jonathan Schroeder, Mary Herrmann , michael lopus, Keith Brown, Daniel Weckstein, Dennis Brodjeski, Tyler Ryan, Todd Mullanix, Blake Brodjeski, Lauren Harrington, Thomas Griesheimer, Joe Hoag, Christopher Zurowski, Sarah Ogborn, Samuel McWilliams, Todd Odess, Phil Horvath, Super Grover, BRETT STERENSON, Chase campbell , Kristen DiGirolomo, Rick Shepich, Michelle R Young, Matt Clark, Eric Naiburg, AJ Bowers, Ed Nordstrom, Andrew Ducey, Old Joe Cislo, Peter JC, Milt Bellin, Michael Cline, Heather lucas-foster, KEVIN MEADE, JOSHUA VERHAGE, Breanna Long, Dave Lyons, Soren Van Houten, Timothy Handlos, Stekker, Jason Fidder, Eddie SAnder, Brian Weiss, Pete Baenen, Scott Sabbert, Terry Valentine, Matt Rennie, Erv Klaas, Becky Sabbert, Paul Wadzinske, Zane Sabbert, Carly McLanahan, Fielding Yost, Tim Rush, Mark Hebda, Holm Plates, Claire Kamp Dush, Beatriz Dhruna, John Cooper, Ted Daniel, Julia “gummy bear winner”, Jason Cadell, William Morrison, John McCartney, Green Acres, Dan Clark, Arthur Rush, Elizabeth Wright, Ben Glime, Lorie Dankers, Sara Mitchell, John Niyo, Jon Klimczuk, Riley Lyons , Jason Busta, Gary Bahr, Bill Teer, Curtis Stalter, Onomatopoeia , Mike Riggins, Jason Hermanson, Bill Meyer, PJ Schmidt , JOHN GEIS, Annie Rhoades, Gloria Winters, dane rozek, Scott Boniface, Darby Niyo, Lindsay Morgan, Pete Arvant, Tina Ferreter, Steve Carlson, Nicholas DiGirolomo, El Dub, Michael Shim, Sam Housker, Ed Myers, Littleeva, Rich Lyle, DeBacks, Dave McHalpine, Diamond Dave’s , Caroline Spears, Gregory, Ryan Herrington, Lisa Reed, Evan Roberts, Joel Rondeau, Isaiah. O'hare, Chris Larson, Jim Toomey, Tim “The Buzzer Beater” McGrath, Joe Stevens, Dawn Schmitt, Mandy Kelly, DeeDee Gassmann, Cali-Boy, Megan Wooley-Ousdahl, Jeffrey Kinne, Jeff Kinne, Mary Tocci, Aaron Dush
+
+Oklahoma State: Proud Poppa, Nick White, PK, Maya O'Hare
+
+West Virginia: Joe Grover, Hayden Bier, Margaret Care, Joe Raymond, Mark Jones, Sofia Amato, Marty 'Ass-kicker' Dickrell
+
+Rutgers: Jenn
+
+Kansas: Jeff Amato, Kim Clexton, Lisa Blake, Ellen Gifford, Suresh Narayan, Andy Calvert, Ryan Smith, Matthew Goodrich, john
+
+Iowa: Annie Cochran, Eric Young, Dave Go Hawks! Sedgwick, Jane Kehrwald, Lance Van Houten, Matthew Stetson, Helen Copley, Ranger, Susan Erickson, C. Stiddy , Allen witt, Derek Roesti, Haley P, Josh foster, Marion Brown, Julie Lucas, Ruth Chittenden, Jake Lowenstern, Catherine Fitch, Al Wadz, Andy Hefte, Dubby, Matthew 'Ms. Judy's Classmate of Ben' Smalling
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament*. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+* not everyone
+</p>
+
+<p>
+My own alma mater Wisconsin were dispatched, as were every remaining Big 10 team except Michigan. It's almost as if the selection committee had no real clue what was going on this year.
+</p>
+<p>
+For about as long as I can remember someone has been entering with the name Fielding Yost, who was a long-time Michigan coach in the early 20th century. Props to putting down Mr. Yost's correct alma mater of West Virginia. That's some serious attention to detail on a very bizarre long-standing JQMCBP entry. Along these lines, see also: this year's entry of "Rev. John Monteith (1788-1868)", founder of the University of Michigan. I don't really understand all these Michigan fans and their callouts to Wolverines Past, but the historical detail is impressive.
+</p>
+
+<div class = 'pre'>
+Maryland: Jeff Johnson
+
+Wisconsin: Jonathan Schroeder, Kevin Quinn , Kathy Larson, Paul Wadzinske, Mark Larson, John McCartney, Greg Wenz, Curtis Stalter, Dave Larson, David Van Riper, Wendy Volkman, Alex Anderson, Marla Weinstein, Lisa Wadzinske, Joel Rondeau, Ben 'No Klass' Brown, Marty 'Ass-kicker' Dickrell, THE CANDYMEISTER
+
+Texas Tech: Andrew Mossburg
+
+Illinois: Scott Sabbert, Cole Anderson, Becky Sabbert, Tim Rush, Claire Kamp Dush, Beatriz Dhruna, Mark Jones, Jason Hermanson, Mark Richards, Dawn Schmitt, Mary Tocci
+
+Oklahoma State: Suresh Narayan
+
+West Virginia: Fielding Yost
+
+Ohio: Tina Ferreter, Jim Lape
+
+Kansas: Howard Johnson, Stephen Jacobsen
+
+Iowa: C. Stiddy, David Haynes, Theodore Chungath, Abby Chungath, Ruth Chittenden, Littleeva, Rich Lyle, Adam J Chittenden
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The Livin' Large Award
+</p>
+<p>
+When it comes to upsizing your candy, JQMCBP selections have a long and storied past.
+</p>
+<p>
+This year, like all others, features the predictable choice of $100,000 Grand Bar*, in which one-hundred thousand * a grand = 100 MILLION dollar bar. Which is a big bar. Todd Dankers, you're livin' large, but you don't get the award.
+</p>
+<p>
+This year, like all others, features people "King-sizing" their candy. By my scientific count of staring at the sorted list of candybars, I count somewhere between 20 and my eyes are getting tired King Size bars. Well done, upsizers. No award.
+</p>
+
+<p>
+Some other grandiose selections to mention: Charlotte "1 lb Milk Chocolate Hershey Bar", Larryjoe "3ft Twix" Brown, AJ "Giant 10lb Toblerone" Bower (as opposed to "Regular 10lb Toblerone"?), Mark "Mallo Cup 4 pack" Weiss, which is 4 more Mallo Cups than I care to consume, Ben "movie theater sized anything" Halpern (congrats on your teeth-extracting box of Jujyfruits), 2004 Champion Greg "Thanks A Million Giant 2-Pound Chocolate Bar Gift Box" Rhoades, and finally four of you that wanted "World's Largest _insert candy here_".
+</p>
+
+<p>
+The Livin' Large Award goes to <b>DANK's choice of 5lb Blue Raspberry Gummy Bear</b>. EW.
+</p>
+<p>DANK, while you are sitting in 548th place and have exhausted all chances of winning, I am attending your wedding in June. I have a great idea for a gift. Careful lifting it, it's gonna weigh like five pounds.
+</p>
+
+<p>
+* to clarify: it's $100,000 bar or 100 grand bar, but not $100,000 Grand Bar.
+</p>
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+<p>
+Mark "Peanut M&amp;M" Fidder leads the pack with 46, but look to Mark "Milky Way" Dyal as the frontrunner right now, with 15 of his 16 picks for the next round still alive. Shout out to college roomie Paul "World's King Size Candy Cigarettes" Wadzinske, setting a good example for The Children with his candy selection.
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Mark Fidder</td><td>Illinois</td><td>Peanut M&M</td><td>Alabama</td><td>46</td></tr>
+<tr><td>2</td><td>Chad Ceadda Pechumer</td><td>Michigan</td><td>Tolberone candy bar</td><td>Michigan</td><td>45</td></tr>
+<tr><td>3</td><td>Mark Dyal</td><td>Texas</td><td>Milky Way</td><td>Baylor</td><td>44</td></tr>
+<tr><td>3</td><td>Paul Wadzinske</td><td>Wisconsin</td><td>World's King Size Candy Cigarettes</td><td>Illinois</td><td>44</td></tr>
+<tr><td>3</td><td>Riley Young</td><td>Wisconsin</td><td>Whozeewhatzit Bar</td><td>Michigan</td><td>44</td></tr>
+<tr><td>3</td><td>Ruth Chittenden</td><td>Iowa</td><td>Hershey bar</td><td>Iowa</td><td>44</td></tr>
+<tr><td>3</td><td>Scott Driscoll</td><td>Michigan</td><td>Charleston Chew</td><td>Gonzaga</td><td>44</td></tr>
+<tr><td>8</td><td>Betsy Ross</td><td>Michigan</td><td>Dark Chocolate Raspberry Truffle</td><td>Gonzaga</td><td>43</td></tr>
+<tr><td>8</td><td>Ed Myers</td><td>Colorado</td><td>Three Musketeers </td><td>Illinois</td><td>43</td></tr>
+<tr><td>8</td><td>Jim Chryssikos</td><td>Michigan</td><td>caramello</td><td>Baylor</td><td>43</td></tr>
+<tr><td>8</td><td>John Cooper</td><td>Michigan</td><td>payday</td><td>Illinois</td><td>43</td></tr>
+<tr><td>8</td><td>Kathy Larson</td><td>Wisconsin</td><td>Milky Way Dark MIdnight</td><td>Ohio State</td><td>43</td></tr>
+<tr><td>8</td><td>Lisa Herrington</td><td>Connecticut</td><td>Good n Plenty</td><td>Gonzaga</td><td>43</td></tr>
+<tr><td>8</td><td>Michael Horton</td><td>Iowa</td><td>Salted nut roll</td><td>Gonzaga</td><td>43</td></tr>
+<tr><td>8</td><td>Owen Clexton</td><td>Wisconsin</td><td>Coffee Crisp</td><td>Michigan</td><td>43</td></tr>
+<tr><td>8</td><td>Phil Horvath</td><td>Ohio</td><td>Snickers </td><td>Illinois</td><td>43</td></tr>
+<tr><td>8</td><td>Richard Doher</td><td>Michigan</td><td>Mike and Ikes</td><td>UCLA</td><td>43</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+August the Chimp has taken the top spot with 41 points. I expect Top Chimp will go through some iterations here, as there isn't a "Gonzaga" to be seen in the champ picks anywhere in the Top 10 Chimp Leaderboard.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>August</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>San Diego State</td><td>41</td></tr>
+<tr><td>2</td><td>Cody</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>39</td></tr>
+<tr><td>2</td><td>Lizette</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Loyola Chicago</td><td>39</td></tr>
+<tr><td>2</td><td>Wilfredo</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Villanova</td><td>39</td></tr>
+<tr><td>5</td><td>Christy</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>38</td></tr>
+<tr><td>5</td><td>Regan</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>VCU</td><td>38</td></tr>
+<tr><td>7</td><td>Anthony</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Morehead State</td><td>37</td></tr>
+<tr><td>7</td><td>April</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oregon State</td><td>37</td></tr>
+<tr><td>7</td><td>Ashlynn</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>VCU</td><td>37</td></tr>
+<tr><td>7</td><td>Cecilia</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Loyola Chicago</td><td>37</td></tr>
+<tr><td>7</td><td>Demarcus</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>San Diego State</td><td>37</td></tr>
+<tr><td>7</td><td>Martin</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oral Roberts</td><td>37</td></tr>
+<tr><td>7</td><td>Phoebe</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Virginia</td><td>37</td></tr>
+<tr><td>7</td><td>Stephany</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>37</td></tr>
+<tr><td>7</td><td>Terrance</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UCLA</td><td>37</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

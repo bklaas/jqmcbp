@@ -1,0 +1,26 @@
+<tr class = '[% IF rowdata.man_or_chimp == 'chimp' || rowdata.name == 'Lucky the Chimp' %]monkey[% ELSIF rowdata.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
+	<td>[% IF params.man_or_chimp == 'both' %][% rowdata.combined_rank %][% ELSE %][% rowdata.rank %][% END %]</td>
+	<td>[% IF rowdata.man_or_chimp == 'chimp' %]<img src = '/johnnyquest/images/chimp.gif'>[% END %]
+    [% IF rowdata.past_champion != "" %]<img src = "images/trophy_small2.png" title = "[% rowdata.past_champion %] Champion [% rowdata.name | html %]" width = "14"/>[% END %]
+    <a href = "player_bracket.cgi?player_id=[% rowdata.player_id %]" title = "[% IF rowdata.past_champion != "" %][% rowdata.past_champion %] Champion [% END %][% rowdata.name | html %]">[% rowdata.name | truncate(40) %]</a></td>
+	<td class = 'nolink'>[% rowdata.candybar | truncate (40) %]</td>
+	<td>[% rowdata.location %]</td>
+	<td><a href ="javascript:popUpPieGraph('/jqmcbp/highcharts/highChartPieChart.cgi?game=63[% IF rowdata.man_or_chimp == 'chimp' %]&man_or_chimp=chimp[% END %]&selectedTeam=[% rowdata.champion | html %]')">[% rowdata.champion %]</a></td>
+	<td><a href = "whatsyourj.cgi?player_id=[% rowdata.player_id %]" title = "What's a J Factor?">[% rowdata.j2_factor %]</a></td>
+	<td>[% IF rowdata.man_or_chimp != 'chimp' %][% rowdata.darwin %][% END %]</td>
+	<td>[% rowdata.rtt %]</td>
+	[%- IF rowdata.man_or_chimp == 'chimp' %]
+		<td>&nbsp;</td>
+	[%- ELSE %]
+		<td[% IF cookie %] class = "
+		[% IF similarities.${rowdata.player_id}.similarity == 100 %]one
+		[% ELSIF similarities.${rowdata.player_id}.similarity > 80 %]two
+		[% ELSIF similarities.${rowdata.player_id}.similarity > 60 %]three
+		[% ELSIF similarities.${rowdata.player_id}.similarity > 40 %]four
+		[% ELSIF similarities.${rowdata.player_id}.similarity > 20 %]five
+		[% ELSE %]six
+		[% END %]
+		">[% similarities.${rowdata.player_id}.similarity %][% ELSE %]><a href = "javascript:popUpAny('whoareyou.cgi', 400, 130)">?</a>[% END %]</td>
+	[%- END %]
+	<td><b>[% rowdata.score %]</b></td>
+</tr>

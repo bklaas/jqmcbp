@@ -1,0 +1,23 @@
+.redacted {
+    color: black;
+    background-color: black;
+    white-space:nowrap;
+    -moz-transform: rotate(.8deg) skewx(-12deg);
+    -moz-box-shadow:3px 0 2px #444;
+    border:1px dotted #555;
+    background: -moz-linear-gradient(180deg, #000, #222);
+}
+
+/* Add a few more selectors with slightly varying styles */
+.redacted:first-child {
+    -moz-transform: rotate(-.8deg);
+}
+.redacted:first-child + .redacted {
+    -moz-transform: rotate(3deg);
+}
+
+/* Highlight effect */
+.redacted::-moz-selection {
+    background:#e6ff3f;
+}
+

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin-top: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXI</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/htTLWC1unMc">I'm a Ramblin Guy</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<p>
+While I had grand plans of doing all kinds of data visualization to show how wacky this year has been, I am atypically tardy with this end-of-third round email and it's time to just hit the SEND button. Suffice it to say though, there have been a lot of upsets, and all normal dynamics of the pool are out the window. Bernardo the Chimp sits in second place, and Diamond the Chimp not far behind. Amongst the final eight teams there are two #9 seeds and a #11 seed. Further proof that we are now all living in the Upside Down.
+</p>
+
+<hr class = 'section' />
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>If you've seen any of the coverage of the Loyola University Chicago games, you know about <a href = "http://www.chicagotribune.com/sports/college/ct-spt-sister-jean-bobblehead-chicago-inc-20180324-story.html">Sister Jean</a>. The 98-year-old team chaplain is known to sprinkle in scouting reports on the opposing team into her team prayers, which is certainly Quite A Thing, but this section is all about mascots, so let's talk about The Ramblers.
+<p>
+<p>
+What's a Rambler? Glad you asked.
+</p>
+<div class = "pre">
+In 1926, ... an informal but ... binding process ... gave Loyola's teams their nickname - Ramblers. That year, the football team travelled extensively across the United States, "rambling" from place to place for games...Despite the fact that football was dropped as a varsity sport in 1930, the nickname Ramblers is still proudly carried by today's athletic teams at Loyola University Chicago.
+
+In 1982, a new mascot, "'Bo Rambler," short for "Hobo," carried on the Rambler tradition. The [mascot] portrayed a bum rambling across the LU logo. In 1990, Loyola stopped using Bo, citing the rationale that a homeless man did not seem to be a fitting mascot for a top-notch university*. The university instead introduced its new and current mascot, LU Wolf, in recognition of the animal's association with St. Ignatius.**
+</div>
+<p>* Only took 8 years, but to their credit, they quickly dismissed the plan of replacing "'Bo" with "Sparky", a serial arsonist with a penchant for pyrotechnics.</p>
+<p>source: <a href = "http://www.lib.luc.edu/specialcollections/exhibits/show/loyola-traditions/athletics/ramblers">Loyola University Library</a>
+<p>
+So now the Ramblers are represented by a wolf. That's disappointing, I think they missed a grand opportunity here. I'm talking of course about the Rambler, the classic automobile from American Motors Corporation. Look at these testimonials to the Rambler. It practically sells itself!
+</p>
+
+<ul>
+<li><a href = "https://youtu.be/QAoMFV6CoMg?t=12s">This is Gail</a></li>
+<li><a href = "https://youtu.be/nsmbkHvOaI0">Go find yourself a Rambler</a></li>
+<li><a href = "https://youtu.be/y_XZHicNAoI">This is no dream</a></li>
+<li><a href = "https://youtu.be/7ARxwQ3lRNM">Why, James Terwiliger, you went and got an expensive sports car!</a></li>
+</ul>
+<p>
+With three engine options and a smooth, spring-suspended ride (but no seatbelts!), I think the Rambler auto would have made a fine thing to roll out at games. Also, and this is important, in a mascot battle it may have stood a puncher's chance against a Thundering Herd.
+</p>
+<p>
+While Loyola may not survive today's game against everyone's pre-tournament favorite, errrr... Kansas State, after watching Loyola's exciting games I can safely say <a href = "https://youtu.be/KXDtQcuA5Bo">I'm a Ramblin' Man</a>.
+</p>
+
+<h1>Whose champion bit it?</h1>
+<!--<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>-->
+
+<p>
+59 more candy hopefuls' hopes were dashed Thursday and Friday, the largest contingent supporters of the Purdue Boilermakers. I'll give you Purdue fans credit, backing a trained craftsman who produces steel fabrications from plates and tubes is gutsy, it just didn't work out.
+</p>
+
+<div class = "pre">
+Kentucky: Tom Lynch, David Lucas, John Curly Wurly Flaa, Patrick Connolly, Kevin Chauvin, Todd Beranak, Wayne Lucas, Martie Lucas, Kerri Bruckner, John Lucas, Joshua 'JJ' Foster, Julia Foster
+
+Nevada: June Taylor
+
+Gonzaga: Kiera Delargy, Gina Rumore, kyle m, NGK, Cassie Vome, Kristen Meyer, James Walsh, Jim Soriano, Carol Reed, Trevor House, Jennifer Topel, quinnster, Sarah Boyd, Gary Bahr, Michelle Tressel, Margaret Wadzinske, Ron Gin, Lucy Rhoades
+
+West Virginia: Rachelle Owen, John Varesi, Andrew Craft
+
+Purdue: Drew Downs, Serine Isenhart , Chris Young, Joel On a Roll Davis, Lisa Blake, Pete Arvant, Sarah Ogborn, Deanne Busta, Troy Felix, Stephanie Stalter, Debra Hendren , Brian Wieck, William Morrison, Patrick 'Boiler Up Baby' Zunk, Joe Gobernatz, Mrs. Pickle, Steve Lantz, David Needham, Victoria Reisinger, Adam Chittenden, Maggie Topel, Sam Housket, Alex 'Kit Kat Dark' Man
+
+Clemson: Diane Sievert, Laura Demos
+</div>
+
+<p>
+So long suckers!
+</p>
+
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Three major upsets to account for...six of you had Kansas State, 16(!) had Loyola-Chicago, and 7 had Florida State into the Elite Eight. Well done, upset pickers.
+</p>
+<div class = "pre">
+Kansas State:  Annette Dyal, Christy Griesheimer, Debra Hendren , Helen Care, Joel Van Valin, Stephanie Lozenski
+
+Loyola-Chicago:  Aaron Chittenden, Augusta Bowhay, Ben 'No Klass' Brown, Charlotte Bowers, Dan Reed, Dana Care, Deanne Busta, Jason Care , John Seidensticker, Kiowa Kid, Michelle Tressel, Millie Tressel, nina beatrice 'pony lover' thaler, Paul Schmidt, Shannon O'Hare, Theresa White
+
+Florida State:  Eric Young, Geraldine Cowden, Gregory J White III, Jordan wheeler, nina beatrice 'pony lover' thaler, Yaron 'Ankle Breaker' Weiss, Zoey the great.
+</div>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+I would like to commend whomever always enters Fielding H. Yost, who has been dead for 72 years, on doing their due diligence in knowing that Yost, mostly known as a Michigan coach and Athletic director, attended West Virginia. However, it may be controversial to call the Mountaineers his Alma Mater as Yost transferred mid-season to Lafayette so he could be on a better team. <a href = "https://en.wikipedia.org/wiki/Fielding_H._Yost#%22If_you_can't_beat_'em,_join_'em.%22">True story!</a>
+</p>
+
+<p>
+Fielding is not the only dead, historic, and historically dead Michigan personality in the JQMCBP. Also entered is Hazen Pingree. More on that below. Both sniffed the top of the leaderboard for a while, but have since dropped back.
+</p>
+
+<div class = 'pre'>
+Kentucky: Wayne Lucas, Calvin Bruckner, Kerri Bruckner
+
+Nevada: William Morrison
+
+West Virginia: Fielding H. Yost, Andrew Craft
+
+Purdue: eric stevens, Sarah Ogborn, Dave Aucott, Stephanie Stalter, Tim Ogborn, Brian Hampton, Patrick 'Boiler Up Baby' Zunk, David Needham, Dan Ridgeway , Pablo R
+</div>
+
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+This is a real letter I got from one of you, my loyal JQMCBP email readers.
+</p>
+
+<div class = 'pre'>
+To the Meister:
+
+Long-dead Progressive mayor of Detroit and first time correspondent Hazen Pingree here.
+
+Due to the weakness of my aged and deceased eyes, and that d--ned technology of the autocorrect, I've been misidentified as Haven Pingree instead of Hazen. Might you make the change to my proper name? I'd be much obliged.
+
+I was delighted to see Buffalo victorious over the representatives of the Territory of Arizona last night. With it's fine weather, limitless industrial possibilities, and teetotaling population, Buffalo is truly a grand city. I'll have to tell Bill McKinley to visit in the future; he'll have a blast.
+
+Thank you good sir for your time and attention. I'll make a donation to your worthy charitable cause, regardless of my political stance against corruption.
+
+Yours,
+Hazen Pingree
+</div>
+---
+<div class = "pre">
+To the Honorable Hazen Pingree,
+
+I am so pleased to have received your written correspondence. It only took 17 days to receive it, which I believe is a record. The fine horse riders of the Post Office continue to amaze me with their admirable pluck and dedication to their vocation.
+
+It was interesting of you to bring up the Territory of Arizona, as I have been working through enumeration forms of the 1860 Census of the United States in my work*, and have been paying special attention to our new territories in the West.
+
+Best wishes in your future endeavors, and in shaping the hearts and minds of the hearty souls in Michigan. I'm sure your great state has a future in front of it, not least of which the efforts of the Nash Motor Company. I'm not sure I'd buy stock in one of these horseless carraige companies, but I do believe that if anyone can do it, Nash and his Rambler may just do it.
+
+Cordially,
+Candy Meister, Esquire
+</div>
+
+<p>
+* I know you aren't believing any of the above letter to Mr. Pingree, but the bit about me working on the 1860 Census is actually <em>absolutely true</em>. In my paying job**, I work with data***, including US Census data. I really have been looking at Arizona Territory census data. I'm particularly enamored with occupations in 19th century Census data. For one, there are a fair number of sometimes hilarious typos in the process of deciphering the hand-written enumeration forms. Also, there's just some nutty jobs people had. I'm going to share a bunch of them with you, verbatim.
+</p>
+<p>** contrary to popular belief, the occupation of Candy Meister carries no salary.</p>
+<p>*** shocker, I know</p>
+<p>These are real listed Occupations from the 1860 and 1870 censuses:</p>
+<div class = 'pre'>Hunter of Farmer
+Mad Chopper
+Not Insane
+Young Gentleman of Elegant Ceisure
+WS Prestzlerian Minester
+Keeper of Fancy Goods
+Prostitute Maker
+Hag Broker
+Boom for Boom Company Works on Lumber at Boom
+Hamster
+Meth Epic Clergyman
+Smut Machine Maker
+Dealer in Ice Cream & Oysters
+Editor & Rambler (!)
+and of course...
+Boilermaker
+</div>
+
+<!-- <hr class = 'subsection' /> <p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! When you get published in a JQMCBP email, experts* have determined** that this kind of exposure is 10x more effective for fame*** and fortune**** than either Snapchat or Instagram*****.
+</p>
+
+<p>
+* meaning me<br />
+** determined implies no actual data collection<br />
+*** not so much<br />
+**** candy!<br />
+***** actually, this is probably true<br />
+</p>
+-->
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+The Very Specific Directions Award
+</p>
+
+<p>
+To Mark Largent, and his selection of "Gigantic You Can Only Buy It At the Airport Toblerone".
+</p>
+
+<p>
+I know when I have very specific candy needs, I head to the airport. BUT WHICH AIRPORT?? I need further instruction.
+</p>
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<p>
+Well. It's time to start talking about the chimps. Currently, if you sort the entire leaderboard by its RtT™ score (points if every remaining possible prediction comes through), the two entries with the highest possible scores are chimps. And it's not close. Childhood troop-mates Bernardo and Diamond both have their entire Final Four intact, and have RtT™s of 118 and 116 respectively. The best human RtT™ is 109. After so many years, this truly could be The Year of the Chimp.
+</p>
+<h2>Top 10 Humans</h2>
+<p>
+Kevin Chauvin has opened up a couple points on the field, but his champ of Kentucky is a harbinger of dark days ahead for the Chauvin bracket. In fact, if you look down the top end of the leaderboard, you'll see all kinds of people that pinned their hopes on already vanquished teams. I've been doing this more than twenty years now, and I'd say that as it currently stands this is the most upset-ridden bracket I've seen.
+</p>
+
+<p>
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Kevin Chauvin</td><td>Michigan</td><td>Butterfinger </td><td>Kentucky</td><td>66</td></tr>
+<tr><td>2</td><td>Andrew Mortimer</td><td>New Hampshire</td><td>milky way</td><td>Texas Tech</td><td>64</td></tr>
+<tr><td>3</td><td>Kerie Whelan</td><td>Michigan</td><td>Toblerone</td><td>Virginia</td><td>63</td></tr>
+<tr><td>4</td><td>Matt Newton</td><td>Michigan</td><td>Gummy Coke Bottles</td><td>Virginia</td><td>62</td></tr>
+<tr><td>4</td><td>Steven Antilla</td><td>Michigan</td><td>Payday</td><td>Virginia</td><td>62</td></tr>
+<tr><td>6</td><td>Hayden Bier</td><td>Michigan</td><td>Jumbo Reeces Penut Butter Cups</td><td>Duke</td><td>61</td></tr>
+<tr><td>6</td><td>Lisa LaGrou</td><td>Michigan</td><td>Justin's Dark Chocolate Peanut Butter Cups</td><td>Duke</td><td>61</td></tr>
+<tr><td>6</td><td>miyagi-do</td><td>Michigan</td><td>thingamajig</td><td>Cincinnati</td><td>61</td></tr>
+<tr><td>9</td><td>Cad Monkey</td><td>Michigan</td><td>Snickers</td><td>Kansas</td><td>60</td></tr>
+<tr><td>9</td><td>Nick White</td><td>Michigan</td><td>Giant Size Kit Kat</td><td>Duke</td><td>60</td></tr>
+<tr><td>9</td><td>Sue “the shoe” walker</td><td>Michigan</td><td>Peppermint patty </td><td>Cincinnati</td><td>60</td></tr>
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Bernardo the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas State</td><td>62</td></tr>
+<tr><td>2</td><td>Diamond the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas</td><td>60</td></tr>
+<tr><td>3</td><td>Monique the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Loyola-Chicago</td><td>56</td></tr>
+<tr><td>3</td><td>Zavier the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Michigan</td><td>56</td></tr>
+<tr><td>5</td><td>Mary the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Radford</td><td>52</td></tr>
+<tr><td>6</td><td>Earl the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Florida State</td><td>50</td></tr>
+<tr><td>6</td><td>Jake the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Ohio State</td><td>50</td></tr>
+<tr><td>8</td><td>Annette the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Kansas State</td><td>49</td></tr>
+<tr><td>8</td><td>Jovanny the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Texas Southern</td><td>49</td></tr>
+<tr><td>10</td><td>Brady the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>48</td></tr>
+<tr><td>10</td><td>Tamara the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>West Virginia</td><td>48</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2018 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

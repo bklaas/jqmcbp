@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>[% title %]</title>
+
+<link rel="stylesheet" href="/jqmcbp/wide.css" type="text/css" />
+		<script type="text/javascript" src="/javascript/jquery.js"></script>
+		<script type="text/javascript" src="/javascript/highcharts/3.0/js/highcharts.js"></script>
+		<script type="text/javascript" src="/javascript/highcharts/3.0/js/modules/exporting.js"></script>
+		<script type="text/javascript">
+var chart;
+$(document).ready(function() {
+    	// Radialize the colors
+		Highcharts.getOptions().colors = Highcharts.map(Highcharts.getOptions().colors, function(color) {
+		    return {
+		        radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+		        stops: [
+		            [0, color],
+		            [1, Highcharts.Color(color).brighten(-0.3).get('rgb')] // darken
+		        ]
+		    };
+		});
+
+	chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'container',
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+                credits: {
+                        enabled: false
+                },
+                exporting: {
+                        enabled: false
+                },
+		title: {
+			text: '[% title %]'
+		},
+		tooltip: {
+			formatter: function() {
+				return '<b>'+ this.point.name +': ' + this.y + '</b>';
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: true,
+					color: '#000000',
+					connectorColor: '#000000',
+					formatter: function() {
+						return '<b>'+ this.point.name + '</b>';
+					}
+				}
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Who Picked Who',
+			data: [
+				[%- FOR team IN series %]
+					{
+						name: '[% team.0 %]',
+						y: [% team.1 %]
+						[% IF team.0 == params.selectedTeam %], selected: true, sliced: true[% END %]
+						
+					}[% UNLESS loop.last %],[% END %]
+				[%- END %]
+			]
+		}]
+	});
+        $('.logo_container').append('<img id="logo" class = "graph_logo" src="/jqmcbp/images/jq_graph_logo.png" />');
+
+});
+
+		</script>
+	</head>
+	<body>
+
+<div id = 'graph' class = 'highchart'>
+<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+<div class = 'logo_container'></div>
+</div>
+
+
+	</body>
+</html>

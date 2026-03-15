@@ -1,0 +1,7 @@
+[% PROCESS locale_map %]
+
+<div id = 'local_map' class = 'chart_container wide_chart'>
+	<div id="container"></div>
+	<div class = 'logo_container'></div>
+</div>
+

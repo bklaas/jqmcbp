@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XX</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/6rNgCnY1lPg">As seen on FriendFace</a>
+	</h2>
+</div>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE3|*</li>
+	<li>Candybar: *|MMERGE4|*</li>
+	<li>Score: *|MMERGE7|* (leader is at *|MMERGE9|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE6|*</li>
+	<li>Rank: *|MMERGE8|*/760</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE5|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>Whahappened?</h1>
+<p>
+Well then. That was a devastating weekend for anyone that thought Louisville (#2 seed, perennially go far) Villanova (returning champions) or Duke (returning uber-villains) were going deep in the tourney.
+</p>
+
+<p>
+Still, only 20 players are officially in the <a href = "https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a>, mathematically eliminated from the competition. However, I've also run the simulations of all remaining 32,768 permutations of the game outcomes*, and there are actually more like 600 of you mathemtically eliminated. But, that leaves a few hundred of you still alive! I'm excited to say that I win in 35 of 32,768 permutations, a full 0.11%! That's 10 times better than a one in a million chance! I like my odds.
+</p>
+
+
+<p>* Really. This is called the Unweighted Chance Of Winning, or UCOW**, a patented*** JQMCBP technology.</p> 
+<p>** Pronounced, and shouted: YOU COW!</p>
+<p>*** Not really.</p>
+
+<p>Some summary stats from UCOW:</p>
+<div class = 'pre'>
+==== HUMAN WINS, CHIMP WINS ====
+Human Wins: 29954
+Chimp Wins: 3273
+(will add up to more than 32,768 because some scenarios have ties between humans and chimps)
+</div>
+
+<div class = 'pre'>
+==== NUMBER OF WINNERS/OUTCOME TALLY ====
+1       28895
+2       3307
+3       454
+4       91
+5       19
+6       2
+We've had a couple ties in past years, but it's much more common for me to only have to send one 1st place prize. At this point there is a non-zero possibility that I have to send SIX candy bars.
+</div>
+
+<p>After this coming weekend the field of potential Candy Winners will reduce by a whole lot, and I'll share the short list of contenders at that time.</p>
+
+<hr class = 'section' />
+<h1>Buggin you for charity</h1>
+<p>The JQMCBP was, is, and always will be 100% Free. In past years I've bugged you for donations to support my MS-150 bike ride. I can't make the ride this year, but will still bug you for money. <a href = "https://benklaas.com/jqmcbp/?charity">Have a look at the JQMCBP XX Charity Page</a> and, if you are able and willing, give piles of cash to one or many of the causes listed there.</p>
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+65 smart prognosticators had my alma mater Wisconsin ejecting the returning champs Villanova. Even less, 29, had South Carolina advancing to the Sweet Sixteen. Well done, longshooters!
+</p>
+
+<div class = 'pre'>
+Wisconsin:  Amanda Zalud, Amy McLanahan, Amythemouse, Andy Weinecke, Bill Mech, Brenda Ochs, Brian Fitzpatrick, Carol Reed, Catherine, Charlotte Bowers, Chelsey Hungerholt, Chris 'charby' Charbonneaux, Chris O'Brien, Cindy Arvant, Cormac 'Mac' OBoyle, Dave Lyons, David Needham, Denis B. Charette, Devin James Teal, Don Pechumer, Donald Trump, Dory Davis (age 4), Eric Gifford, eyoung54, Fatty Stinky, Finna Davis (age 3), Greg 'Krackel' Zinn, Jack Wenz, Jason Teal, Jennifer Topel, Jenny Gator, Joe , Joe Stevens, Jorgen Chapin, Joshua Stevens, Katherine Gifford, Kendra Corneliusen, Kyle Martin, Kyle Reardon, Laurie Anderson, Lesley Hogg, Lisa Reed, Marty Dickrell, Matt Jay, Maya O, Michelle Mondoux, Michelle Tresssel, Mike Weipert, Mo Nabulsi, Riley Lyons, Rowan Klaas, Sarah DeLeon, Sean Whelan, Sofia Amato, Steve Shwaiko, Susie Flora, Tamara Portnoy, Terry Sievert, Terry Sievert, Thor Fabiado, Tom Lynch, Tracy Niyo, TyGroh, Vee walker, wei
+
+South Carolina:  Adam J Chittenden, Amish Das, Annie Hoag, Baron Joel Van Valin, CJ Hewitt, Claire 'The Bear' Lucas, David 'Not at Work' Lucas, DeSontis The Cat (from the grave) Smalling, Don Pechumer, Donald Trump, Ella Bier, Emil Angelica, Greg Freedman Ellis, Jim Chryssikos, John Martin Lucas, Jokey Shanahan, Karlene Jennings, Katie Dillon, Katrin Wenz, Laurie Anderson, LTice, Maddie Girl Smalling, Maya O, Pat Dillon, Rainy Jay, Rebekah Hynson, Robert O'Bryan, Tom Lynch, wei
+</div>
+<!--
+<hr class = 'section' />
+<h1>Shout Outs</h1>
+<h2>where I pseudo-randomly (by which I mean not randomly at all) give a shout out to one or many of you, my loyal pool contestants.</h2>
+
+<p>
+The Worst Typo Award goes to whatever family member created a filter just for my family, and then spelled our name wrong. No ass in Klaas.
+</p>
+-->
+
+<!--
+<hr class = 'section' />
+<h1>Mailbag</h1>
+
+<p>
+</p>
+<div class = 'quote'>
+</div>
+
+<p>
+</p>
+
+<hr class = 'subsection' />
+<p>
+<a href = "mailto:jqmcbp@gmail.com">Send me funny things</a>! I just might print them! 
+</p>
+
+<hr class = 'section' />
+-->
+
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+A monstrous list to print here. Normally I wouldn't take up so much space with this but...okay I always do this. A whopping <b>277</b> non-chimps lost their champs over the weekend. That's about 32% of the pool. In addition to the large Villanova (133) and Duke (80) groups of losers, there were also 28 Louisville losers, 17 Iowa State losers, 8 Michigan State losers, 4 Florida State losers, 3 Notre Dame losers, and 2 each for Virginia and Wichita State (also losers).
+</p>
+<div class = 'pre'>
+Villanova: Herm 'can taste the peanut butter cup now' Weiss, BartmanMN (Todd Barton), Tim Thomas, Santiago Duque-Baird, Plaid Scarves Matter, Shaul Hurwitz, Rennie Anderson, Scott Westhoff, Jim Bunda, Brian Wieck, Chuck Delargy, Jeff Keiffer, Owen Clexton , Matt Van Heukelom, Michael Nommensen, Drew Downs, Scott Larabee, Paula Fronckowiak, Tom Westhoff, John Davidson, Todd Beranak, Michael 'The Engineer' Collins, Greg Freedman Ellis, greg, Faith Anders, kchauvin1, Soren Van Houten, Kate Van Houten , Roland Empizo, Andrew Hanson, Sue Ray, Chris Goodwin, Erin Delargy, Mike Ford, Sandra Blake, Eric Naiburg, Tala, Kerie Whelan, Todd Campbell, T Garrison Campbell , Joseph Caragher, Eloise Campbell , andy anderson, Yaron weiss, Barbie Hoag, Diamond Dave's , Grace Barton, Geoff Findlay, Peter Adelson, Jill Lantz, Kristopher Nordstrom, Little Eva, Sara Van Houten, jim walker, Pondscum, Mike Popek, Paul Bellin, David Smalling, Chad Pechumer, John Seidensticker, Mary F. Herrmann, Keith Shaftoe, Rich Portnoy, Julia -2016 Champ- Foster, Katie Dillon, Helen Copley, Andy Calvert, Nathaniel Smith, Lynn Smith, Keith Boyd, Jennifer Meagher, Brandon Ray, Morgan`, Rachel Ray, Karen McCartney, Mark Stringer, Arthur Rush, TJ, Nate Silver, Janet Klaas, Max McCartney, Rebekah Hynson, Anthony Brousseau, Amy Boniface, Bob Boniface, alex lonetti, Squeekers Whelan, Jacob Carlos, Steve Carfino, Rob DeLeon, Hayden Simmons, Michael Simmons, Christine LaGuardia, Kevin Boyd, Ellie Ruprich, Bill McGrail, Mommy Shanahan, Gregory J. White III (Trey), Alex Ross, John Geis, Leto, Michael Mowery, Mark Weiss, Deanne Busta, Owen Davidson, Nate Hafer, Gabriel Anderson, Marissa madison, Marc Skipper, Glen LaGrou, Pat Dillon, Mark T Weaver , Jack Fink, Justin Seipelt, Scott L, Tom Rohlfing, Michael Shim, Jason Cadell, Steve Fink, Rainy Jay, Nancy Niergarth, joel clement, Ali Collins, Lisa Lou Benson, Jed Durkin, Meg Whelan, Scott Chesky, Abby Housker, Steve Bob Carlson, Heather Housker, Bar Low, Lindsay Hayes, Jim Doyle
+
+
+Duke: Chuck Nagi, Mark Largent, Connor Byers, Jason Danielson, Jeff Chungath, Alex 'ball hard in the paint' Goff, TomH, Kari 'still wants a Butterfinger' Williams, Mike Kozak, Joshua Stevens, Eric Anthony Blaha, Jeb Byers, Nick DiGirolomo, The Best NCAA Bracket, Jeff Allen, Mike Mojzak, Willy Lee, Chris O'Brien, Matt Johnson, Bud Hattemer, Mike Bauer, Kiera Delargy, Nancy Valentine, Sabrina Bier, Billy Rossman, Annabel Flora, sdf, Joey Valentine, Terry M Valentine, Daniel russman, David Ullman, Rupert Smudge, Dennis Sabo, Brett Callison, Ted Daniel , wigglebeard, Curt, Charlotte Bowers, Kirk, Kevin Gill, Jenn, Lesley Hogg, Joshua 'JJ' Foster, frank spada, Greg Steinke, Dylan, Mike Enderle, Tim Ortopan, Kerry DeVilbiss, Dustin Ramoie, Tim Hoelscher, Erv Klaas, Davin Blixt, Max Karp, Ruth Chittenden, Gregory J. White II, Doug Williams, Nolan Simmons, Lisa Wadzinske, Anna Zoe, Jenna Reiter, John McCartney, john niyo, Sabiekins, Brett Rondeau , Dave McHalpine, Michael The Deac Butler, Nancy Girardot, Christopher May, Pete Arvant, Dawn Schmitt, Matthew Gordon Goodrich, Kim Landon, Ginna Ward, Kevin Kane, Bonnie Hendricks, Phil Wilson, Artie Wilkowsky, Amanda Zalud, Scott
+
+Louisville: Tom Lynch, Denis B. Charette, Patrick Zunk, Joe Gobernatz, Dante Chittenden, Not Joe Hoag, Kristin Gifford, Emil Angelica, Eric Gottlieb, Ed Nordstrom, Joel 'On a Roll' Davis, Jonathan White, Nicki Bowers, Rachelle Owen, Joe Hebda, Pete Baenen, Jon Renner, Bhavani Thota, Seth Burgess, William Meyer, Jonah Rondeau, Jon Conkling, Lisa Reed, Jason Teal, Margaret Wadz, David Needham, Lisa LaGrou, Christa Buff
+
+Iowa State: Ben Down Under Kehrwald , CJ Hewitt, Maddie Girl Smalling, Matt 'Marge's 2nd Boy' Smalling, Patrick Connolly, Susan Erickson, chris gayler, Leigh Ann Long, Stella Van Houten, Holmly, Brian Hole, Eddie Deevine , Jane Kehrwald, Lindsey Cloud, Joanne, Kelly Poole, Greta Backman
+
+Michigan State: Maria Seipelt , Ruthie Hurwitz, Susie Flora, Kristin Scripter, Ellen Gifford, Ethan 'Go Green' Ray, Margaret Care, Cindy Arvant
+
+Florida State: Leigh Keiper, Tarpo, Pepper Mae Teal, Matthew Green
+
+Notre Dame: Joe Stevens, Baba Delargy, Jokey Shanahan
+
+Virginia: Chris Young, Mo Nabulsi
+
+Wichita St: Ryan Dickson, Mellissa Simko
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+Because of heavy JQMCBP heritage in the states of Iowa and Michigan, loads of Alma Mater departures over the weekend too (113), highlighted by Iowa State and Michigan State. Michigan is still in it, but there will be another big set of names to print here should they lose. I will note that University of Iowa alums were not losers and cannot be losers, as their team did not qualify for the tournament.
+</p>
+
+<p>Also, sorry about the Gaels, Ross Benson. Next year for Saint Mary's, I'm sure...</p>
+
+<div class = 'pre'>
+Villanova: Amy Boniface 
+
+Virginia: joel clement
+
+USC: AndryDucey, Daron lind, Becky Hamling, Andy Ducey
+
+Duke: Jeb Byers, The Best NCAA Bracket, Kirk, Dylan, Kurt Anderson
+
+Cincinnati: Hunter Tickel, Jim Bruckner, Steve Fink
+
+Wichita St: Mellissa Simko
+
+Michigan State: Leigh Keiper, Jaime Millard, Tom Leeper, TomH, Richard Doher, Beaumont Hoffman, Natalie Weir, Scott Driscoll, Eileen Proudlock, Kim Clexton, Sue Ray, Curtis Mitchell, Matt Johnson, Mike Bauer, Kristin Scripter, Jen Flora, Rick Saro, Kristin Gifford, Barbie Hoag, Mike Hartmann, Sarah Gossett, Rick Shepich, Kurt Gardinier, Eric Gifford, Ethan 'Go Green' Ray, Pete Baenen, Nate Silver, Brian Fitzpatrick, Jeff Waterstredt, Greg 'Krackel' Zinn, Trevor Shepich, Ken 'Taking candy from a baby' Reo, Ann '100 Grand' Reo, Susan Bannan , Mark Weiss, Cindy Arvant, Bob Armitage, Billy Beck, Patrick O'Boyle, BIll Crandall, Jim Chryssikos, Ginna Ward, Jim Delproposto, Bar Low
+
+Iowa State: Joel M Vause, Brenda VB, Ben Down Under Kehrwald , CJ Hewitt, Plaid Scarves Matter, Chris 'charby' Charbonneaux, Matt Van Heukelom, Patrick Connolly, Brent Swanson, Susan Erickson, Leigh Ann Long, Sarah Vandevanter, Angie Mowery, Rob Reed, Chris H, Zachary Klaas, Holmly, Brent Dakin, Mr. Haney, Jack Smalling's Oldest Son Bob, Pondscum, Ben Schwartzenburg, Rob Bellin, Kelly Wolfe-Bellin, David Smalling, Sonya Connolly, Brett Callison, Alex Blom, Sarah Handlos, Dawn Smith, Andrew Hefte, Kristal Sieve, Lynn Smith, Daniel Backman, Sandlots, jack smalling, Shaun Connolly, Angie DeWaard, Joanne, Pat Dillon, Chuck Rodrigues, Jeff Kopaska, Kelly Poole, Doug Busta, Greta Backman, Kevin Kane
+
+Northwestern: Greg Freedman Ellis, Daniel russman, Jamie Samuelsen, Old Paul Schmidt
+
+Notre Dame: Matt Englehart, Bob Topel
+
+Florida State: Matthew Green
+
+Saint Marys: Ross Benson
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>where I single out my favorite candy selections</h2>
+
+<p>
+The I Am SO Sorry Award goes to Michael 'The Engineer' Collins* for his selection of Chocopologie by Knipschildt. You know, the best kind of apology is a Chocopologie. It comes from the heart. You're saying, "Hey, I really feel bad about accidentally burning down your garage. I chocopologize." And then everything's better!
+</p>
+
+<p>* not to be confused with Michael 'The Astronaut' Collins**</p>
+<p>** not to be confused with Michael 'The Irish Revolutionary Leader' Collins***</p>
+<p>*** not to be confused with Michael 'The Irish Whiskey' Collins****</p>
+<p>**** not to be confused with Tom Collins, which is a cocktail</p>
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+<p>
+eyoung "twix" 54 has the slightest of leads with 54 points, taking over first place from Michael The Deac "1906 Chocolate Bar" Butler, who led going into Sunday's games. I see 2008 Champ Betsy "Godiva Dark Chocoloate Raspberry Truffle" Ross in the mix as well (moving up from her 2008 selection of "Snickers", whatever that is).
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+
+<tr><td>1</td><td>eyoung54</td><td>Illinois</td><td>Twix</td><td>North Carolina</td><td>54</td></tr>
+<tr><td>2</td><td>Michael The Deac Butler</td><td>Georgia</td><td>1906 Chocolate Bar</td><td>Duke</td><td>53</td></tr>
+<tr><td>2</td><td>Nancy Niergarth</td><td>Michigan</td><td>Hershey baar</td><td>Villanova</td><td>53</td></tr>
+<tr><td>4</td><td>Alyssa Campbell </td><td>Michigan</td><td>Go Blue! (Nestle Smarties)</td><td>Michigan</td><td>52</td></tr>
+<tr><td>4</td><td>Andy Weinecke</td><td>California</td><td>Peanut M&Ms</td><td>Kansas</td><td>52</td></tr>
+<tr><td>4</td><td>Annelise Ross</td><td>Michigan</td><td>Cookies and cream hershey bar</td><td>Kansas</td><td>52</td></tr>
+<tr><td>4</td><td>Betsy Ross</td><td>Michigan</td><td>Godiva Dark Chocolate Raspberry Truffle</td><td>Kansas</td><td>52</td></tr>
+<tr><td>4</td><td>Curtis Mitchell</td><td>Wisconsin</td><td>King Size Snickers</td><td>Kentucky</td><td>52</td></tr>
+<tr><td>4</td><td>LJ '3 Foot Twix ' Brown</td><td>Michigan</td><td>3 Foot Twix</td><td>Kentucky</td><td>52</td></tr>
+<tr><td>4</td><td>Steve Shwaiko</td><td>Illinois</td><td>Big chunky</td><td>Gonzaga</td><td>52</td></tr>
+
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+According to UCOW, Miriam the Chimp wins 1169 of the possible 32768 permutations left, or 3.5%. The good news for the chimps is that this is better raw chances than all but 4 human entries. The bad news is that all of those permutations require South Carolina to win the NCAA championship.
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Anya the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>41</td></tr>
+<tr><td>2</td><td>Zachery the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>UCLA</td><td>40</td></tr>
+<tr><td>3</td><td>Elaine the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arkansas</td><td>39</td></tr>
+<tr><td>3</td><td>Ivy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>39</td></tr>
+<tr><td>5</td><td>Uriel the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Xavier</td><td>38</td></tr>
+<tr><td>6</td><td>Carson the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Cincinnati</td><td>37</td></tr>
+<tr><td>6</td><td>Isabell the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Wisconsin</td><td>37</td></tr>
+<tr><td>6</td><td>Saul the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>New Mexico St</td><td>37</td></tr>
+<tr><td>6</td><td>Syed the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Arkansas</td><td>37</td></tr>
+<tr><td>10</td><td>Emilio the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>South Carolina</td><td>36</td></tr>
+<tr><td>10</td><td>Janessa the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Saint Marys</td><td>36</td></tr>
+<tr><td>10</td><td>Javier the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Purdue</td><td>36</td></tr>
+<tr><td>10</td><td>Lucky the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Princeton</td><td>36</td></tr>
+<tr><td>10</td><td>Macy the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Baylor</td><td>36</td></tr>
+<tr><td>10</td><td>Quinn the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Iona</td><td>36</td></tr>
+<tr><td>10</td><td>Tate the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Marquette</td><td>36</td></tr>
+<tr><td>10</td><td>Warren the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>USC</td><td>36</td></tr>
+<tr><td>10</td><td>Zaria the Chimp</td><td>Neverland Ranch</td><td>Banana Moon Pie</td><td>Southern Methodist</td><td>36</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2017 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

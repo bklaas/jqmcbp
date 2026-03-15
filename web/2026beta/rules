@@ -1,0 +1,14 @@
+This is a test directory for the current year's website for a large and old codebase that serves up a fun NCAA March Madness pool for people. Winner gets a candybar.
+
+It is written almost completely in Perl, and much of the code (all written by me) is as much as 25 years old. It all still works!
+
+Nevertheless, it is getting long in the tooth. I am thinking it could benefit from some improvements to modernize it.
+
+Code stack:
+apache webserver with https support and cgi enabled
+Perl, CGI.pm, Template::Toolkit, GD::Graph and other modules
+
+mariadb (top directory schema.sql)
+
+I do not want you writing files outside this 2026beta/ directory. Here you have free reign to do your thing.
+

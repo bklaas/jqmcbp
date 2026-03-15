@@ -1,0 +1,15 @@
+<p>
+It has been getting harder and harder to get my silly emails through the multitude of "feature rich" spamfilters, bad email clients, and general ill will set up on the Interwebs now (the Interwebs, if you haven't heard, are a series of tubes).
+</p>
+<p>
+With the help of <a href='http://mailchimp.com'>MailChimp</a>, I've been doing a lot better getting my updates through, but there's always a bunch that bounce.
+
+</p>
+Rather than spend an eternity trying to weasel my way into your inbox (Microsoft Outlook, I'm giving you the evil eye right now), I've decided to just put each missive online. Links to all of them are below.
+
+<ul>
+[% FOR email IN emails %]
+	<li><a href = 'emails/[% email %]'>[% email FILTER remove('.html') %]</a></li>
+[% END %]
+</ul>
+

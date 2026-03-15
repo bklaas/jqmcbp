@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <title>Johnny Quest Memorial Candy Bar Pool</title>
+    <meta charset="utf-8">
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+
+		div.quote {
+			border: 2px solid #000;
+			margin: 20px;
+			padding: 10px;
+			background-color: #ccc;
+			quotes: "\201C" "\201D";
+		}
+
+		div.quote:before {
+			content: open-quote;
+			font-weight: bold;
+		}
+
+		div.quote:after {
+			content: close-quote;
+			font-weight: bold;
+		}
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+
+		a {
+			color: #004D73;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		.float-right {
+			float: right;
+		}
+
+		hr.section {
+			padding: 0;
+			border: none;
+			border-top: medium double #333;
+			color: #333;
+			text-align: center;
+		}
+
+		hr.section:after {
+			content: "JQMCBP";
+			display: inline-block;
+			position: relative;
+			top: -0.7em;
+			padding: 0 0.25em;
+			color: black;
+			opacity: 0.3;
+		}
+
+		hr.oldsection {
+			height: 30px;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px 0 0 0;
+			border-radius: 20px;
+		}
+
+		hr.oldsection:before {
+			/* Not really supposed to work, but does */
+			display: block;
+			content: "";
+			height: 30px;
+			margin-top: -31px;
+			border-style: solid;
+			border-color: black;
+			border-width: 0 0 1px 0;
+			border-radius: 20px;
+		}
+
+		hr.subsection {
+			height: 1px;
+		}
+
+		div.pre,
+		div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+
+		ul.image li {
+			background-image: none;
+			list-style: none outside none;
+		}
+
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+
+		ul.image img {
+			vertical-align: middle;
+		}
+
+		#footer {
+			color: #777777;
+			font-family: "Helvetica", sans-serif;
+			font-weight: normal;
+			height: 50px;
+			letter-spacing: 10px;
+			font-size: 12px;
+			margin: 0;
+			padding: 20px 0 0;
+			text-align: center;
+		}
+
+		table.scores,
+		table.chimp_scores {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+
+		table.scores thead th,
+		table.chimp_scores thead th {
+			background: gray;
+			color: white;
+			font-size: 10px;
+			font-weight: bold;
+			text-align: left;
+			padding-right: 5px;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.scores tbody td,
+		table.chimp_scores tbody td {
+			background: #eee;
+			color: #111;
+			font-size: 10px;
+			padding-right: 5px;
+			text-align: left;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+
+		table.chimp_scores tbody td {
+			background: yellow;
+			color: black;
+		}
+	</style>
+</head>
+
+<body>
+	<div class='header'>
+		<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXVI</a></h1>
+		<h2 class='slogan'>
+			<a href="https://youtu.be/hio88ZmFUWQ">a petri dish of friendship germs</a>
+		</h2>
+	</div>
+	<div class='email'>
+		<div class='email'>
+			<ul>
+				<li>Name: *|MMERGE5|*</li>
+				<li>Candybar: *|MMERGE6|*</li>
+				<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+				<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+				<li>Rank: *|MMERGE10|*/809</li>
+				<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+			</ul>
+
+			<hr class='section'>
+            <h1>CONGRATS JQMCBP XXVI CHAMPION THOMAS J LEEPER!!!</h1>
+
+<p>
+Candy Seekers: May I present to you Thomas J Leeper, the 2023 JQMCBP XXVI Champion! I am very much looking forward to sourcing a <b>	Milka Chocolate Oreo, Large Bar 300g</b> for you. Thomas, send me your mailing address and I'll get that 300g of Milka on it's Way-a.
+</p>
+
+<p>
+For everyone else, hey that's how it goes for statistically all of you every year. JQMCBP is really an exercise in failure, yet you all keep coming back! This year was especially WAAAAAT, with only 3 of 809 humans beating the entire Chimp Army. Kaylee the Chimp finished a Chimp Record 4th in the standings, with Allan the Chimp in 9th and Damion the Chimp in 11th.</p>
+<p>I hope you enjoyed the nonsense again, and if you come back next year I can guarantee similar treatment. Remember, entry is always free, the more the merrier, and no invitation is required. Just visit <a href = "https://benklaas.com/jqmcbp/">https://benklaas.com/jqmcbp/</a> to renew your desperate hope for sugar-based treat parcels in March 2024.
+</p>
+
+
+			<hr class='section'>
+			<h1>Losing Mascots: Let's Talk About Them!</h1>
+			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>Miami University teams are known as the Hurricanes. Smartly, Miami decided their mascot would not be a giant destructive tropical storm. Granted, this would be a high concept costume that if you could pull off would be quite a thing. But we have to remember that mascots are...you know, for kids (I'm looking at you Iona Gael).</p>
+
+<p>According to deeply revered internet authority fanbuzz.com, 
+</p>
+<div class = "quote">
+The Ibis became the official mascot when the school yearbook took the name "The Ibis" in 1926. In 1958, John Stormont first performed at Miami football games in an Ibis costume that was "glued, sewn and pinned together."
+</div>
+<p>
+I'd love to see that original costume, wouldn't you? 
+</p>
+<p>ZOMIGOSH I FOUND IT!</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/9805ddfe-8013-fe22-d384-d79d823c7181.jpg" width = "30%">
+<p>
+I'm pretty happy with Mr. Stormont's version. This is what a White Ibis looks like:
+</p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/8c037bb5-ef9e-5537-ad8d-ad8d38737bcc.jpg" width = "100%">
+
+<p>
+Cartoon depictions of Sebastian started with a corn-cob-smoking just-got-in-a-brawl ibis.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e1c461fe-d04a-5283-1d35-8bee80b02b5b.png" width = "50%">
+<p>Okay, well. A decent ibis, but Smoking is Bad. Let's modernize a bit.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/b06733f6-f183-06b6-108e-e7e84018a0c5.png" width = "50%">
+
+<p>
+Pretty good! For a modern Sebastian in mascot form, all Miami needs to do is transfer this concept into a costume suitable for kids but still honoring this majestic wading bird. This...this is the current Sebastian the Ibis.
+</p>
+
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/1f4bf2a5-3821-e9e8-3055-1f14c4cd4135.jpg" width = "60%">
+
+<p>
+There are no words.
+</p>
+
+<p>
+</p>
+
+			<hr class='section'>
+			<h1>Upsets...who picked 'em</h1>
+			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+Just seven people had San Diego State getting to the final. 23 had UConn getting there, with only 9 having UConn as their champion, slightly more than 1% of the JQMCBP human field.
+</p>
+			<div class='pre'>
+San Diego State (semifinal):  Carol Reed, Isaac LeTarte, James Parker, Lucy Rhoades, Michelle Morrisey, Nicki Bowers, Wyn Jamieson
+
+UConn (semifinal):  Andrew Mortimer, Annie Hoag, Devon Kristiansen, Drew Bush, Espen Williams, Faith Anders, Howard Johnson, Isaiah Ohare, Jacob Shanahan, John Debbrecht, Michael Nommensen, Michael Webster, Michelle Rago, Miyagi, Patrick Sullivan, Rosanna Collars, Ryan Hundt, Sam niyo, Scott Driscoll, Scott Sabbert, Sonya Connolly, Sophia Soriano, Thomas J Leeper
+
+UConn (final):  Andrew Mortimer, Annie Hoag, Devon Kristiansen, Espen Williams, Faith Anders, Miyagi, Rosanna Collars, Ryan Hundt, Thomas J Leeper
+			</div>
+
+			<hr class='section'>
+			<h1>Whose champion bit it?</h1>
+			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+Not a soul picked Miami FL as their champion, probably because they were mad about the ridiculous depiction of an ibis by the U's mascot. Just one had FAU, and it was the chimp-like bracket "coinflip", and two had San Diego State, including Michelle "One Win From JQMCBP Championship TWIX" Morrisey.
+</p>
+
+<div class='pre'>
+Florida Atlantic: coinflip
+San Diego State: Nicki Bowers, Michelle Morrisey
+</div>
+
+<p>So long suckers!</p>
+
+<hr class='section'>
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
+</h2>
+
+<p>
+Dave Bush did not go to Florida Atlantic*, but his wife Tricia did, and she's got a jersey (and probably a degree!) to show for it. Tricia has made me stop doubting FAU's existence in Boca Raton (spanish for Rat Mouth!).
+</p>
+
+<p>
+Oof, Michelle not only had SDSU as her champion, it's also her alma mater! THAT HURTS DOUBLE!
+</p>
+
+<p>* normally Dave claims USC as his alma mater, also not a school he went to. #chicostate4eva</p>
+
+
+<div class='pre'>
+Florida Atlantic: Dave Bush, Sabrina Bier
+San Diego State: Maria Blake, Michelle Morrisey, Nate Reed, Eanie Meanie
+</div>
+
+			<hr class='section'>
+
+			<h1>Candy Bar of the Day</h1>
+			<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+			<p>
+The <b>WHATEVENISTHIS</b> Award goes to my lovely daughter Piper. We are on a college visit trip through the Southeast U.S. right now, and in celebration of the final picked up a bag of her choice, Nerds Gummy Clusters, at a Circle K earlier today. These are Nerds Gummy Clusters:
+            </p>
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/60c8feab-0bc5-f61f-82cd-17f05e3d9220.png" width = "100%">
+<p><b>WHAT EVEN IS THIS</b></p>
+<p>I tried one. They're bad. And I'll eat just about anything.</p>
+
+
+			<h1>Enough with the crap, who's ahead?</h1>
+
+			<h2>Top 10 Humans</h2>
+
+			<p>
+			</p>
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Thomas J Leeper</td><td>Michigan</td><td>Milka Chocolate Oreo, Large Bar 300g</td><td>UConn</td><td>88</td></tr>
+<tr><td>2</td><td>Miyagi</td><td>Michigan</td><td>Marathon bar</td><td>UConn</td><td>87</td></tr>
+<tr><td>3</td><td>Andrew Mortimer</td><td>New Hampshire</td><td>Gobstoppers</td><td>UConn</td><td>83</td></tr>
+<tr><td>4</td><td>Espen Williams</td><td>Minnesota</td><td>plain m&ms</td><td>UConn</td><td>80</td></tr>
+<tr><td>5</td><td>Ryan Hundt</td><td>Michigan</td><td>Reese's</td><td>UConn</td><td>78</td></tr>
+<tr><td>6</td><td>Annie Hoag</td><td>Michigan</td><td>reeses</td><td>UConn</td><td>77</td></tr>
+<tr><td>6</td><td>Faith Anders</td><td>Michigan</td><td>blue raspberry sour patch kids</td><td>UConn</td><td>77</td></tr>
+<tr><td>8</td><td>Devon Kristiansen</td><td>Minnesota</td><td>Reese's Big Cup</td><td>UConn</td><td>74</td></tr>
+<tr><td>9</td><td>Lucy Rhoades</td><td>Missouri</td><td>Peanut Butter M&Ms</td><td>Gonzaga</td><td>70</td></tr>
+<tr><td>9</td><td>Michelle Morrisey</td><td>California</td><td>TWIX</td><td>San Diego State</td><td>70</td></tr>
+<tr><td>9</td><td>Rosanna Collars</td><td>New Jersey</td><td>Beara Sea Salt (Milk) by Brona Irish Chocolates</td><td>UConn</td><td>70</td></tr>
+				</tbody>
+			</table>
+
+			<h2>Top 10 Chimps</h2>
+			<p>
+
+			</p>
+
+
+			<table class='scores'>
+				<thead>
+					<tr>
+						<th>Rank</th>
+						<th>Name</th>
+						<th>Location</th>
+						<th>Candy</th>
+						<th>Champion</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody>
+<tr><td>1</td><td>Kaylee</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>81</td></tr>
+<tr><td>2</td><td>Allan</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>75</td></tr>
+<tr><td>3</td><td>Damion</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>72</td></tr>
+<tr><td>4</td><td>Ignacio</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>68</td></tr>
+<tr><td>5</td><td>Jamari</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>66</td></tr>
+<tr><td>5</td><td>Stone</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>San Diego State</td><td>66</td></tr>
+<tr><td>7</td><td>Aurora</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>65</td></tr>
+<tr><td>7</td><td>Krystal</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>65</td></tr>
+<tr><td>7</td><td>Noe</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>UConn</td><td>65</td></tr>
+<tr><td>7</td><td>Shaun</td><td>Rancho Cucamonga</td><td>Krembanan</td><td>San Diego State</td><td>65</td></tr>
+				</tbody>
+			</table>
+			<p>
+				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/dbfdbbf2-d0e5-f231-25ce-8c3b9e771846.jpg"
+					alt = "That's All Folks!" width = "100%">
+			</p>
+
+			<p>
+				cheers,<br>
+				the Meister
+			</p>
+
+			<hr class='section'>
+			<h1>Linky links:</h1>
+			<ul>
+				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
+				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+			</ul>
+
+			<hr class='section'>
+			<div id="footer">
+
+				<ul class="image">
+					<li>
+						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
+					</li>
+					<li class="last"> 2023 Ben Klaas Productions </li>
+				</ul>
+			</div>
+		</div>
+    </div>
+</body>
+
+</html>

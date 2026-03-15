@@ -1,0 +1,8 @@
+<script src="/javascript/raptorize-2.0/js/jquery.raptorize.2.0.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+          $('.raptorButton').raptorize({
+            enterOn: 'click'
+          });
+     });
+</script>

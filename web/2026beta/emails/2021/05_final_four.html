@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("http://benklaas.com/jqmcbp/images/grey_wash_wall.png");
+			font-family: sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		div.email {
+			background: #eee;
+			border: 1px solid black;
+			margin: 20px;
+			padding: 30px;
+			padding-bottom: 60px;
+			font-family: sans-serif;
+			color: black;
+			max-width: 800px;
+		}
+		div.quote {
+		 border : 2px solid #000;
+		 margin: 20px;
+		 padding: 10px;
+		 background-color: #ccc;
+		 quotes: "\201C" "\201D";
+		 }
+		div.quote:before { content: open-quote; font-weight: bold; }
+		div.quote:after { content: close-quote; font-weight: bold; }
+
+		p {
+			font-size: 14px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		h1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		h2 {
+			font-size: 18px;
+			font-weight: normal;
+			font-style: italic;
+		}
+		a {
+			color: #004D73;
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: maroon;
+			background-color: white;
+			text-decoration: underline;
+		}
+
+		hr.section { 
+			padding: 0; border: none; border-top: medium double #333; color: #333; text-align: center; 
+		} 
+		hr.section:after { 
+			content: "JQMCBP"; display: inline-block; position: relative; top: -0.7em; padding: 0 0.25em; color: black; opacity: 0.3;
+		}
+		hr.oldsection {
+			height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; 
+		} 
+		hr.oldsection:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; 
+		}
+		hr.subsection {
+			height: 1px;
+		}
+		div.pre, div.mailbag {
+			font-family: monospace;
+			white-space: pre-wrap;
+		}
+		div.header {
+			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+			height: 70px;
+			margin: 0;
+			padding: 0;
+		}
+		div.header h1 {
+			color: #FFFFFF;
+			font-size: 36px;
+			font-weight: bold;
+			margin: 0;
+			padding-left: 75px;
+		}
+		div.header h2.slogan {
+			color: #FFFFFF;
+			font: bold 15px sans-serif;
+			margin: 0;
+			padding-left: 195px;
+		}
+		ul.image {
+			list-style: none outside none;
+			margin: 0;
+			padding: 0;
+		}
+		ul.image li {
+		    background-image: none;
+			list-style: none outside none;
+		}
+		ul.image li.last {
+			padding: 13px 0 0 15px;
+		}
+		ul.image img {
+			vertical-align: middle;
+		}
+	#footer {
+		color: #777777;
+		font-family: "Helvetica",sans-serif;
+		font-weight: normal;
+		height: 50px;
+		letter-spacing: 10px;
+		font-size: 12px;
+		margin: 0;
+		padding: 20px 0 0;
+		text-align: center;
+	}
+	table.scores, table.chimp_scores {
+		border 1px solid black;
+		border-collapse: collapse;
+	}
+	table.scores thead th, table.chimp_scores thead th {
+		background: gray;
+		color: white;
+		font-size: 10px;
+		font-weight: bold;
+		text-align: left;
+		padding-right: 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.scores tbody td, table.chimp_scores tbody td {
+		background: #eee;
+		color: #111;
+		font-size: 10px;
+		padding-right: 5px;
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	table.chimp_scores tbody td {
+		background: yellow;
+		color: black;
+	}
+	</style>
+</head>
+<body>
+<div class = 'header'>
+	<h1><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">JQMCBP XXIV</a></h1>
+	<h2 class = 'slogan'>
+	<a href = "https://youtu.be/G-VM5wqzhWY">Mama Said Knock You Out (feat. Mama and Papa)</a>
+	</h2>
+</div>
+<div class = 'email'>
+<div class = 'email'>
+<p>
+<ul>
+	<li>Name: *|MMERGE5|*</li>
+	<li>Candybar: *|MMERGE6|*</li>
+	<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+	<li>How many chimps are at or above your score: *|MMERGE8|*</li>
+	<li>Rank: *|MMERGE10|*/838</li>
+	<li>Your Bracket: <a href = "http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
+</ul>
+</p>
+
+<hr class = 'section' />
+<h1>WHO'S STILL IN IT?</h1>
+
+<p>
+As we head into the Final Four this weekend, I know the question burning in all of your minds is this: IS THE CANDY STILL IN MY GRASP?
+</p>
+<p>After running the numbers, I am 99.16% sure when I tell you the answer is NOPE. For 0.84% of you, there is HOPE.
+</p>
+<p>Rob Strnad has told me that it's always appropriate to use this.</p>
+<img src = "https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/698b2400-d540-44f4-b86f-a7c298ec44f2.jpg" />
+
+
+<p>Here's the rundown:</p>
+
+<ul>
+<li>If Baylor wins the championship, <b>Mark Dyal</b> wins a <b>Milky Way.</b></li>
+<li>If Gonzaga wins over Houston in the Final, <b>Dawn Smith</b> wins a <b>Strawberry Charleston Chew</b></li>
+<li>If Gonzaga wins over Baylor in the Final, <b>Terese Bryan</b> wins a <b>Dark Chocolate Reese's</b></li>
+<li>If Houston wins over Gonzaga in the Final, <b>Tracy "T-bone" Reese's PB Cup</b> wins a <strike>T-bone</strike> <b>Reese's PB Cup (singular)</b>.</li>
+<li>If Houston wins over UCLA in the Final, <b>Tracy "T-bone" Reese's PB Cup</b> TIES with <b>Thomas Leeper</b>, who wins a <b>Super Milk Bundle</b></li>
+<li>If UCLA wins over Baylor in the Final, <b>Richard Doher</b> wins <b>Mike and Ike's</b></li>
+<li>If UCLA wins over Houston in the Final, <b>Richard Doher</b> TIES with...wait for it...<b>CARLEE THE CHIMP!</b> That's right folks, a chimp is still in it, ready to take home that sweet sweet <b>Banana Moon Pie</b></li>
+</ul>
+
+<hr class = 'section' />
+<h1>Congratulations UCLA Spartans</h1>
+
+<div class = "pre">
+To: The Candymeister
+From: John Housenga
+
+I love all the support UCLA is getting this year. To be the 8th most commonly selected champion, despite an 11 seed and play in game, makes me wonder if they know something I don't. Good luck to those candy seakers as they root on their precious Spartans...I mean Bruins...to the victory.
+
+Thanks,
+John
+</div>
+<hr class = 'section' />
+
+<p>
+A little backstory. In 2011 the NCAA decided that 64 teams was not enough teams. So they created "The First Four", four games played <em>before</em> the main bracket of 64, with the winners advancing into the traditional 2^6 binary tree.
+</p>
+<p>As a programmer, especially one that spent I'm Not Telling You hours coding that 64-team bracket, my decision to just completely ignore the First Four was a sane one. Since Candy Seekers needed to put in their picks before those games were played, I would just put both teams in for the entry.
+</p>
+<p>For example, if Greendale Community College was playing Stratton College, I'd put Greendale/Stratton in the bracket entry. After that game was played (The Greendale Human Beings won in OT), I'd fix it in the JQMCBP database, giving anyone that selected Greendale/Stratton as a winner the benefit of the doubt that they'd really just meant Greendale.
+</p>
+<p>
+So. An interesting thing happened this year. One of the First Four games was Michigan State/UCLA. UCLA won, and then just kept winning. Amazingly, as John pointed out, "UCLA" was the 8th most commonly selected champion, despite being seeded by the NCAA somewhere between the 44th and 47th best team.
+</p>
+<p>So what happened? The thing is, JQMCBP is KIND OF A BIG DEAL in Michigan. While many of the Michigander Faithful are Wolverine fans, there are also a fair number of Michigan Staters. And 10 of them thought <strike>Michigan State</strike> UCLA was going all the way. Of the 10 people that selected <strike>Michigan State</strike> UCLA, <em>8 reside in Michigan</em>.
+
+<p>I reached out to one of the other two, Dr. Andrew Nicholson of Colorado, to get some clarification on his selection. He shared SO MUCH good intel, <em>especially</em> the bit about giving Earvin Johnson a parking violation.
+</p>
+
+<hr class = 'section' />
+<div class = "pre">
+To: The Candymeiser
+From: Andrew Nicholson
+
+I, of course, was picking a program that has a record of winning the tournament, a strong coaching tradition, and with many former players becoming NBA greats, especially with the Lakers.
+
+Also, my college roommate's girlfriend dropped a Ticket on Magic's Rolls-Royce in 1982 in her work-study parking enforcement job on the MSU campus.
+
+Frankly, I've been frazzled and not following college hoops much this year, and went with the homer pick and Nate Silver's theory, that Tom Izzo is the best tourney coach. Plus, MSU beat a couple of good teams before the tournament. Besides, my college girlfriend is from Iron Mountain in the UP, and knows him personally (oh, and her grandmother makes a mean pasty...the food item, not the clothing item, as expected in those old mining towns).
+
+I actually thought UCLA was going to suck in the tourney.  Heck our local Colorado Buffs (keep expectations low and enjoy success) beat them relatively late in the season.
+
+Thus, your theory holds. I've cc'd your old friend Grace, who hooked me into this wild thing and is trailing the "Rupert's Relations" group.
+
+Thanks for your good work. 
+
+Andrew
+</div>
+
+<hr class = 'section' />
+
+<h1>Losing Mascots: Let's Talk About Them!</h1>
+<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
+
+<p>
+12 more mascots found their way out over the weekend (plus Monday and Tuesday, which I'm definitely not used to as being "basketball nights"). Here they are in order from lamest to awesomest:
+</p>
+<ul>
+<li>Wildcats - Sorry Villanova. Be more specific! Vermont Catamounts, Missouri Tigers, The California University of Pennsylvania Fuzzy Kittens. These are good mascots. Wildcats: LAME.</li>
+<li>Eagles - Oral Roberts, named after not-at-all-consumed-with-self-promotion evangelist Oral Roberts, could have done so much better. Don't get me wrong, Eagles are huge and awesome, I just think Oral could have dreamed bigger. 3 out of 5 stars. It was really fun watching their team though, this 4th place regular season Summit League team was legit.</li>
+<li>Crimson Tide - I've gone off on this many times in year's past. There's nothing more terrifying than a <a href = "https://en.wikipedia.org/wiki/Red_tide">Red Tide, a toxic floatilla of deadly dinoflagellates</a>. But, that's not what Crimson Tide means in this context, which makes it 100% not terrifying and instead lame and disregardable. That's right, I said it! Disregardable!</li>
+<li>Seminoles - I think the world has spoken on the whole native-peoples-as-mascot thing. Seriously, even if you get sign off from the Seminole Tribe, I mean...you're a University in <em>Florida</em>. The state is a cautionary tale in geographic form. So many scary things to choose from! I know, the Gators are already taken, but...The FSU Invasive Pythons. The FSU Florida Man. The FSU Srsly Pick Any Florida Politician. The FSU <em>Actual Red Tide</em>.</li>
+<li>Orangemen - He was voted out after one term and I am so so very done thinking about him, thankyouverymuch.</li>
+<li>Trojans - It's fine. Here's a <a href = "http://gph.is/19ZL2fo">context-free GIF</a></li>
+<li>Razorbacks - This is solid. It's not just a pig but a feral pig, a once-domestic pig now living off the land, as Pig God intended. According to wikipedia, Razorback also disambiguates as follows:
+    <ul>
+        <li>The fin whale</li>
+        <li>Razorback (film), a 1984 Australian horror film</li>
+        <li>Razorback (band), a Filipino rock band</li>
+        <li>Arkansas Razorbacks, the names of college sports teams at the University of Arkansas in Fayetteville, Arkansas</li>
+        <li>USS Razorback, a World War 2 submarine</li>
+        <li>West Sydney Razorbacks, an Australian professional basketball team</li>
+        <li>Razorback2, a former server on the eDonkey filesharing network</li>
+        <li><a href = "https://en.wikipedia.org/wiki/Dean_Razorback#/media/File:DeanRazorback.JPG">Dean Razorback, a guitar</a></li>
+        <li>Razorback (comics), Buford Hollis, a comic book character introduced in the pages of Spectacular Spider-Man in 1977</li>
+        <li>The Razorbacks, a Canadian rockabilly band</li>
+        <li>Early models of Republic P-47 Thunderbolt fighter aircraft</li>
+        <li>An unlockable item in Team Fortress 2</li>
+        <li>Razorback, New South Wales, a locality in Australia</li>
+        <li>Razorback, a hiking trail on Mount Feathertop in the Australian state of Victoria</li>
+        <li>Russelsheim Razorbacks, a defunct American football Team from Russelsheim, Germany</li>
+        <li>A beer by Ringwood Brewery</li>
+        <li>A worker who loads and unloads train cars for a circus</li>
+    </ul>
+</li>
+<li>Blue Jays - This is a pretty solid mascot. Smart bird. Wily. Loud. Mean. Living in Madison Wisconsin in the summer of 1993, a Blue Jay nested outside our back door, and dive-bombed me mercilessly. True story.</li>
+<li>Ramblers - I did a whole thing on the Ramblers a few years ago. Though not all named for it, you should all go <a href = "https://youtu.be/nsmbkHvOaI0">get yourself a Rambler</a>!</li>
+<li>Wolverines - I know, Michigan-faithful, your loss has to sting. Esp. losing to the Michigan State Bruins like that. But rest assured, the Wolverine remains one of the most fantastic of all college mascots. 50% bear, 50% cat, 100% awesome.</li>
+<li>Beavers - A VERY solid mascot. Literally chews down trees. Cool tail. Is busy. Yet somehow, amazingly, only the second best mascot in the state of Oregon.</li>
+<li>Ducks - There we go, the #1 mascot in Oregon, and in this list. Who needs the 1,000 Chimp Army when you've got the <a href = "https://youtu.be/nHc288IPFzk">1,000 DUCK ARMY?</a> QUACK!</li>
+</ul>
+
+<hr class = 'section' />
+<h1>Upsets...who picked 'em</h1>
+<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
+
+<p>
+</p>
+
+<div class = 'pre'>
+How many had Oregon State in the Final 8? 8!
+
+Oregon State:  Bridget Burns, Idiot@ idiot, Jeff Shipley, Josh foster, Kristen Stipanov, Laurie Anderson, Margaret Care, Zozo
+
+How many had UCLA in the Final Four? 21! (see long-winded section above. Again, congrats Michigan State Bruins. Our UCLA Spartans. Or whatever.)
+
+UCLA:  Aevah, Alex McWhinnie, Andrew Nicholson, Anna Griesheimer, Bridget Burns, Cindy Arvant, Cormac O'Boyle , Ethan 'Go Green' Ray, Jen Ruprich, jennyrupe, Kathleen Phu, Kyle 'Burger Man' Smith, Laurie Anderson, Lochlain McGrail, Margaret Care, Maria Seipelt, Mimi Czarnik, queen violet, Richard Doher, Todd Beranak, Zozo
+<br />
+
+</div>
+
+<hr class = 'section' />
+<h1>Whose champion bit it?</h1>
+<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+
+<p>
+First, some unfinished business from the last email, where I highlighted Sad Hawkeyes. To the Mailbag!
+</p>
+<div class = "pre">
+To: The Candymeister
+From: Carrie O'Boyle
+
+Thanks for not mocking me publicly in the last email about my team losing it all big time. Lance and Sedge deserve mocking.
+
+Gratefully,
+C.Stiddy
+
+</div>
+
+<div class = "pre">
+To: Carrie O'Boyle
+From: The Candymeister
+</div>
+<br />
+<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/9b9f4cbe-7b63-465e-b16f-7e2e9c147134.jpg" />
+
+<br />
+<p>
+Now to highlight the Big Losers from the weekend. Similar to many musical acts being Big in Japan, like <a href = "https://youtu.be/NM60iVDu79Y">Tom Waits</a> or <a href = "https://youtu.be/rbDtxvVr_Jg">Kiss</a> or <a href = "https://youtu.be/N_Etcvly_Rs?t=113">Spinal Tap</a>, the Candymeister is Big in Michigan. And they, like, LOST. So here they are amongst the 131 losers.
+</p>
+<div class = 'pre'>
+Michigan: Jeff Keiffer, Curtis Mitchell, Chad Ceadda Pechumer, Owen Clexton, Sean Whelan, Paul Smith, Sue Robinson, Robert Tilley, Steve Lindsey, Cole Byers, Thomas Joseph, DANK, Kari Williams, Riley Young, Jeb Byers, Greg Ross, Ashleigh Apostolovski, Rev. John Monteith (1788-1868), Geoff Willard, Jason Kerwin, Victoria Johnson, Becky Burton, Rennie Anderson, Alyssa Campbell , Tracy Niyo, Jill campbell , aaaSantiago Duque-Baird, Todd Campbell, Mike Ford, Leto, Keith Shaftoe, MOLLY MORTIMER, Gym Nasium, Jennifer Meagher, Adam Lake, Mike Collins, Fran Fabrizio, Eric Blaha, Kevin, Conor Whelan, gregory castle, Becca CAstle, Cami Niyo, Katie LeTarte, Mooseman Bruce, Katie Gagliano, Will Arvant, Lucy Not-That-Creative Noble, Marco Byrd, Rob Warren, Mike Medoro, David Haynes, Jed Durkin, Gabriel Smith, Lesley Hogg, Kristen Kosa, Robert DeLeon, Lisa P LaGrou, Gracie Boyd, Brenda VB, Caleb Anderson, Ray Niergarth, Carin goodrich, Erin D, Darron Rose, Michael Hartnett, P West, Liv, The Burke, Camryn, Connor Morrison, Melissa VanGorden, Kerie, Dayton McGrail, Peyton Bowers, Julie Weiss-Fassbender, Susie Smalling, Caprice McGrail, Conner Schultz, Theresa White, Trey White, Emily Saul, Kate Knowles, Stephanie Haan-Amato, Stefan Wodzicki, Chandra Hanke, Scott Chesky, B.J. Bardy, Kate Meilinger, Lary Ward, Erin Meyer, Mellissa Simko, Lindsey LaGrou, Kaye Castro, Martin LIeser, Sheryl Hatcher, Doug Williams, Jason Care, Jack Wenz
+
+Florida State: Colin Keiffer, Jeff Shipley, Allison Schraa
+
+Alabama: David Lucas, Brett Rondeau, Beardawg, Karlene Jennings, Aaron Telander, Heinz Time, Rob Bellin, Mark Foster, Kara Fisher, Mark Fidder, Abby Chungath, Amy Lyons, Bob Ruprich, Diane Sievert, Bob Armitage, Tyler Schmitt, Diane Sievert
+
+Villanova: Ellie Chungath, Jane MC, Dave Metcalfe, Katy Klimczuk
+
+Loyola Chicago: Addison Smith
+
+Oregon State: Laurie Anderson, Bridget Burns
+
+Syracuse: Pranav S
+
+Creighton: Chris Charbonneaux
+
+USC: Ginny Gelms, Connor Byers
+
+Oregon: Kristen Stipanov
+</div>
+
+<p>
+So long suckers!
+</p>
+
+<hr class = 'section' />
+<h1>Boo Rah Rah</h1>
+<h2>I asked you if your alma mater was in the tournament*. Why? So I could make fun of you when they lose!</h2>
+
+<p>
+* not everyone
+</p>
+
+<p>
+Two Syracuse grads named Lisa Herrington! What are the odds?
+</p>
+
+<div class = 'pre'>
+Michigan: Stekker, gregory castle, Mooseman Bruce, Usha D, John Cooper, Robert DeLeon, John Niyo, Jon Klimczuk, P West, Brandon Ray, Katy Klimczuk, JOHN GEIS, Pete Arvant, Betsy Ross, Caprice McGrail, Ryan Herrington, Bill G, B.J. Bardy, Rob M, Kate Meilinger, Kaye Castro, Megan Boyd
+
+Florida State: Amy Glime
+
+Villanova: Diego Fernandez Duque
+
+Arkansas: Jackson Teer
+
+Oregon State: Bridget Burns, Tracy Kugler
+
+Syracuse: Sabes, Liz McHalpine, Lisa Herrington, Lisa Herrington
+
+USC: Connor Byers
+
+Oregon: Katie Dominguez, Jodie Baird
+</div>
+
+<hr class = 'section' />
+<h1>Candy Bar of the Day</h1>
+<h2>Where I give out fake awards for my favorite candy selections</h2>
+
+<p>
+The Global Scatalogical Award
+</p>
+<p>
+Today's award is a TIE between two candies from opposite sides of the globe. First, from Germany, we have Arsch mit Ohren. Jack Wenz's selection of Arsch mit Ohren translates from German to "Butt With Ears". Classy.
+</p>
+<p>
+<a href = "https://www.amazon.de/Haribo-mit-Ohren-Dose-650g/dp/B004R5DH1I">This is Arsch Mit Ohren.</a> Unfortunately, this item is Derzeit nicht verfugbar, which either means it's not available or that I've broken some kind of international treaty.
+</p>
+<p>
+Alongside our Audio-detecting Rear End auf Deutch we have Satoshi Nakamoto's selection of Moko Moko Mokoletto. The Japanese words Moko Moko Mokoletto translate to "Moko Moko Mokoletto". It's a toilet, and you eat the toilet water.
+</p>
+<p>
+<a href = "https://youtu.be/lPLl8gHPFAY">This is Moko Moko Mokoletto</a>. I wasn't kidding. It's a toilet. You eat the toilet water.
+</p>
+<p>Ladies and Gentlemen, Arsch Mit Ohren and Moko Moko Mokoletto. Two great tastes that go great together!
+</p>
+<hr class = 'section' />
+<h1>Bugging you for charity</h1>
+<p>In case you haven't seen it on the website already, I'm riding my bike more miles than I'm fit to ride in June to support the MS society. The JQMCBP is always and forever 100% free, but if you're so inclined <a href = "https://mssociety.donordrive.com/participant/BenKlaas">you may donate buckets of cash to my ride here</a>. This is my 9th MS-150, and my goal remains the same: raise &gt;$1000 so I can access the VIP toilets, and to BEAT LARRY.
+
+<hr class = 'section' />
+
+<h1>Enough with the crap, who's ahead?</h1>
+
+<h2>Top 10 Humans</h2>
+
+<p>
+Shout out to the Isenhart clan, including Pondscum aka Aufwuchs aka Dr. Tom, one of the JQMCBP I Council of Nine. Serine and Tom are in 3rd and 5th place respectively. But alas, they have no chance at the candy. So close!
+<p>
+Mark Dyal has had an amazing run thus far and is 7 points clear on the entire field going into the Final Four. Nevertheless, he needs a Baylor win to bring home the Milky Way.
+</p>
+
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Mark Dyal</td><td>Texas</td><td>Milky Way</td><td>Baylor</td><td>86</td></tr>
+<tr><td>2</td><td>Teresa Bryan</td><td>Florida</td><td>Dark Chocolate Reece's</td><td>Gonzaga</td><td>79</td></tr>
+<tr><td>3</td><td>Kathleen Phu</td><td>California</td><td>Twix</td><td>Gonzaga</td><td>78</td></tr>
+<tr><td>3</td><td>Serine Isenhart</td><td>Iowa</td><td>Cotton candy</td><td>Gonzaga</td><td>78</td></tr>
+<tr><td>5</td><td>Pondscum</td><td>Iowa</td><td>Vosges Ritual Collection for Prosperity</td><td>Baylor</td><td>77</td></tr>
+<tr><td>6</td><td>Scott Driscoll</td><td>Michigan</td><td>Charleston Chew</td><td>Gonzaga</td><td>76</td></tr>
+<tr><td>7</td><td>Dawn Smith </td><td>Iowa</td><td>Strawberry Charleston Chew</td><td>Gonzaga</td><td>75</td></tr>
+<tr><td>7</td><td>Ed Myers</td><td>Colorado</td><td>Three Musketeers </td><td>Illinois</td><td>75</td></tr>
+<tr><td>7</td><td>Gracie Boyd</td><td>Washington</td><td>Bueno bar</td><td>Michigan</td><td>75</td></tr>
+<tr><td>7</td><td>Joe Reutter </td><td>New Mexico</td><td>Snickers</td><td>Gonzaga</td><td>75</td></tr>
+	</tbody>
+</table>
+
+<h2>Top 10 Chimps</h2>
+<p>
+Carlee the Chimp! Still in it!
+</p>
+<table class = 'scores'>
+	<thead>
+		<tr>
+			<th>Rank</th>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Candy</th>
+			<th>Champion</th>
+			<th>Score</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr><td>1</td><td>Willow</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Baylor</td><td>65</td></tr>
+<tr><td>2</td><td>Carlee</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UCLA</td><td>63</td></tr>
+<tr><td>3</td><td>Kyree</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Gonzaga</td><td>62</td></tr>
+<tr><td>4</td><td>August</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>San Diego State</td><td>59</td></tr>
+<tr><td>4</td><td>Quincy</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Hartford</td><td>59</td></tr>
+<tr><td>6</td><td>Elena</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Cleveland State</td><td>58</td></tr>
+<tr><td>7</td><td>Terrance</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UCLA</td><td>57</td></tr>
+<tr><td>8</td><td>Donna</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>UC Santa Barbara</td><td>56</td></tr>
+<tr><td>8</td><td>Violet</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Oregon</td><td>56</td></tr>
+<tr><td>10</td><td>Adam</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Drexel</td><td>55</td></tr>
+<tr><td>10</td><td>Francisco</td><td>Rancho Cucamonga</td><td>Banana Moon Pie</td><td>Houston</td><td>55</td></tr>
+	</tbody>
+</table>
+<p>
+cheers,<br />
+the Meister
+</p>
+
+<hr class = 'section' />
+<h1>Linky links:</h1>
+	<ul>
+	<li><a href = "http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
+	<li><a href = "http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
+	<li><a href = "http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li> 
+	<li><a href = "http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
+	<li><a href = "http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
+	</ul>
+
+<hr class = 'section' />
+<div id="footer">
+
+	<ul class="image">
+	<li>
+		<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png" title="">
+	</li>
+	<li class="last"> 2019 Ben Klaas Productions </li>
+	</ul>
+</div>
+
+</div>
+
+</body>
+</html>

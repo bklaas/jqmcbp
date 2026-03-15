@@ -1,0 +1,46 @@
+<td>
+	<table class = 'championship' cellpadding="0" cellspacing="0" width="100%">
+	<tbody>
+	[% n = [ start .. end ] %]
+	[% FOR x IN n %]
+		[% row = games.$x %]
+		<tr><td class="[% class %]">&nbsp;
+		<div class = 'flash_effect'></div>
+		[% elements = [ 0 .. 63  ] %]
+		[% FOR element IN elements %]
+		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]
+		[% seed = seeds.$team %]
+			<span id = '[% row.game %] [% team %] select' style = "display: none;" class = 'radio'>
+				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team %]" type="radio" onClick='pickChampion("[% team %]")'>[% seed %] [% team %]
+				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team %]","[% row.game %]","[% prevGame %]")'><br>
+			</span>
+			<span id = '[% row.game %] [% team %] done' class = 'hidden normal'>
+				<span id = '[% row.game %] [% team %]'>[% seed %] [% team %]<br></span>
+			</span>
+		[% END %]
+	[% END %]
+
+<div id = 'pickCandy' class = 'hidden'>
+		[% row = games.$start %]
+		[% elements = [ 0 .. 63 ] %]
+		[% FOR element IN elements %]
+			[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]
+			[% seed = seeds.$team %]
+			<span id = 'champion[% element %]' class = 'hidden picked'>
+				<p></p>
+				<p></p>
+				<b>Champion: </b>[% seed %] [% team %] <img src = '/jqmcbp/images/remove.gif' onClick='secondThoughtsChamp("[% element %]")' />
+			</span>
+		[% END %]
+	<br>
+	And now for the most important part...<br>
+	Pick your CANDY!<br>
+	<input type = text name = 'candy' id = 'candy' class = 'textinput' size = 30 maxlength = 60><br>
+	<img src="/jqmcbp/bk_files/forward" align="middle">
+	<input name="ENTER_PICKS" src="/jqmcbp/bk_files/go_ben_go" value="true" align="center" type="image">
+	<img src="/jqmcbp/bk_files/back" align="middle">
+</div>
+		</td></tr>
+	</tbody></table>
+</td>
+

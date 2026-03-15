@@ -1,0 +1,35 @@
+<table border = '0'>
+<tr><td align=center ><p><font size='+2'><b>[% player_info.name %]'s J Factor:</b></font></td></tr>
+<tr>
+<td align = 'center' valign = 'middle'>
+[%- FOR number IN strings %]
+	[%- img_name = "${number}BBLKBLK.GIF" -%]
+  	[% IF number == '.' %]
+     		<font size = +3 style = 'color: black;'><b>.</b></font>
+	[% ELSE -%]
+     		<img src = "/jqmcbp/images/[% img_name %]" >
+	[% END -%]
+[% END -%]
+</td></tr>
+<tr><td align = center>
+<font size='+2'><b>How high on the Guts-O-Meter are you?</b></font><br>
+
+[%- IF thisDiv > 0 %]
+	[%- image = "j_factor_meter${thisDiv}.png" -%]
+[% ELSE -%]
+	[%- image = "j_factor_meter.png" -%]
+[% END -%]
+</tr><tr><td align = 'center'>
+   
+<img src="/jqmcbp/images/[% image %]" ><br>
+</td></tr>
+
+<tr><td>The median J factor of the JQMCBP competitors is [% median_abbr %]</td></tr>
+<tr><td>
+[% IF j_factor > median %]
+You are above the median, so you should buy yourself a Mountain Dew to match your risk-taking nature.
+[% ELSE %]
+You are below the median, thus branding you too afraid to go out on a limb for anything. Congratulations!
+[% END %] 
+</td></tr>
+</table>
