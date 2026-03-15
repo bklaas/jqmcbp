@@ -11,7 +11,7 @@ print "Content-type: text/html\n\n";
 
 my $config = config_variables();
 my $cgi = "player_bracket.cgi";
-my $webdir = "/etc/httpd/htdocs";
+my $webdir = "/data/benklaas.com";
 my $javascript = "/jqmcbp/effects.js";
 my $stylesheet = "/jqmcbp/jqmcbp.css";
 my $heading_color = "#800080";

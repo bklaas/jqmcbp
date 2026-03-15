@@ -25,8 +25,8 @@ print "done\n";
 
 sub query_for_data {
 
-open(FILE,"</tmp/chimp_scores.txt");
-#open(FILE,"</tmp/combined_scores.txt");
+open(FILE,"</data/jqtmp/chimp_scores.txt");
+#open(FILE,"</data/jqtmp/combined_scores.txt");
 while(<FILE>) {
 next if /Crazy Ramon/;
 	chomp;

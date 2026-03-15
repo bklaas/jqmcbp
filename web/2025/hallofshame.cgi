@@ -12,7 +12,7 @@ do "./jq_globals.pl";
 $| = 1;
 
 my $config = config_variables();
-my $data_dir = "/tmp";
+my $data_dir = "/data/jqtmp";
 my $javascript = "/jqmcbp/effects.js";
 my $link = "/cgi-bin/hallofshame.cgi";
 my $stylesheet = "/johnnyquest/$config->{'year'}/jqmcbp.css";

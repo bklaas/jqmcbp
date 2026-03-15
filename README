@@ -1,9 +1,21 @@
+**************************************************
+New server notes
+
+Test an entry BEFORE wiping the database
+Make sure the data makes it all the way into the database from the bracket entry
+
+Get the lets encrypt stuff running on skullduggery
+Get the server finally cut over to the new benklaas.com
+Will need to either update router or make new server .199 and old server e.g. .198
+Router might map it to MAC, need to check
+
+**************************************************
 Here's what's needed: 
 
 (DB copy to jq_2025 already compeleted)
 
 FIXED! UPDATE2025: The multi-year encoding problem has been fixed-- in crontab, use the shell script that invokes the encoding fix before the db entry
-HOWEVER!: it can still break. If someone enters an emoji, it will bomb. Consider a try/except block so it doesn't die for everyone after the failure, just the offending entry. Will need testing.
+HOWEVER!: it can still break. If someone enters an emoji, it will bomb. It will skip (but continue) for any that fail
 
 FOR THE HISTORICAL DOCUMENTS ARCHIVE:
     BAD PROBLEM: there are bad chars that get screwed up when entering the pool. Smart quotes, weird apostrophes, etc. Figure out how to fix this.

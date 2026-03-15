@@ -285,7 +285,7 @@ sub print_record {
 sub write_order {
 
 	my @order = @_;
-	open(ORDER,">/etc/httpd/htdocs/jqmcbp/brackets.order");
+	open(ORDER,">/data/benklaas.com/jqmcbp/brackets.order");
 	for (@order) {
 		print ORDER $_ . "\n";
 	}

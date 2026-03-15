@@ -2,12 +2,12 @@
 #
 use strict;
 
-my $files = [ "/tmp/top10_man.txt", "/tmp/top10_chimp.txt"];
+my $files = [ "/data/jqtmp/top10_man.txt", "/data/jqtmp/top10_chimp.txt"];
 
 for my $file (@$files) {
     my $out = $file;
     $out =~ s/\.txt/.html/;
-    $out =~ s/\/tmp\///;
+    $out =~ s/\/data\/jqtmp\///;
 
     open(IN, "<$file") or die $!;
     open(OUT, ">$out") or die $!;

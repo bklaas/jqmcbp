@@ -14,7 +14,7 @@ use DBI;
 do "./jq_globals.pl";
 
 my $config = config_variables();
-my $data_dir = "/tmp";
+my $data_dir = "/data/jqtmp";
 my $webdir = "/data/benklaas.com/jqmcbp/";
 my $graphdir = "graphomatic";
 my ($line, $score, $name, $candybar, $gender, $champion, $player_id);

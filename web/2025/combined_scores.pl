@@ -11,7 +11,7 @@ connect_to_db();
 my @brackets = get_bracket_order();
 my $teams_ref = get_teams(@brackets);
 
-my $data_dir = "/tmp";
+my $data_dir = "/data/jqtmp";
 
 my %point_values;
 my %winners;

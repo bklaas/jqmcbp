@@ -92,7 +92,7 @@ my $template = Template->new( {
 sub submit_fix {
         my $stamp = time;
         my $file = $stamp . "." . $PARAMS{'email'} . ".dat";
-        my $dir = "/tmp/jq_fix";
+        my $dir = "/data/jqtmp/jq_fix";
         mkdir $dir, 0777 unless -d $dir;
         open(DATA,">$dir/$file") or warn "couldn't open $file: $!";
 			for (sort keys %PARAMS) {

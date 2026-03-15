@@ -10,8 +10,8 @@ use GD::Graph::bars;
 use GD::Graph::colour;
 use File::Copy;
 
-my $datadir = "/tmp";
-my $webdir = "/etc/httpd/htdocs";
+my $datadir = "/data/jqtmp";
+my $webdir = "/data/benklaas.com";
 my $png_path = "$webdir/jqmcbp/graphomatic";
 my ($line, $score, $name, $candybar, $gender, $champion, $player_id);
 my @names_unsorted;

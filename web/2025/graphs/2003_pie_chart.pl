@@ -7,7 +7,7 @@ use strict;
 
 
 my @years = ('2004', '2003', '2002', '2001');
-my $logo = "/etc/httpd/htdocs/jqmcbp/images/jq_graph_logo.png";
+my $logo = "/data/benklaas.com/jqmcbp/images/jq_graph_logo.png";
 
 for my $year (@years) {
 

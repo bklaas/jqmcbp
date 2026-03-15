@@ -124,8 +124,8 @@ sub get_score {
 
 	my $player_id = shift;
 	# score rank total leader
-	# best just to get this from the /tmp/jq_scores.txt file
-	open(SCORES,"</tmp/jq_scores.txt") or return ('n/a','n/a','n/a','n/a');
+	# best just to get this from the /data/jqtmp/jq_scores.txt file
+	open(SCORES,"</data/jqtmp/jq_scores.txt") or return ('n/a','n/a','n/a','n/a');
 	my $inc;
 	my @data;
 	my %ranks;

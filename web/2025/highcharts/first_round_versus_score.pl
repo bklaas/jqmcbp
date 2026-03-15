@@ -4,7 +4,7 @@ use DBI;
 $| = 1;
 
 my $dbh; my $sth;
-my $webdir = "/etc/httpd/htdocs/johnnyquest/2003/graphs/";
+my $webdir = "/data/benklaas.com/johnnyquest/2003/graphs/";
 
 my $graph_name;
 

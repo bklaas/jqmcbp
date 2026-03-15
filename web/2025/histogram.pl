@@ -13,7 +13,7 @@ my $lowest = 0;
 my $highest;
 my $interval;
 my $x_skip;
-my $datadir = "/tmp";
+my $datadir = "/data/jqtmp";
 my $x_max;
 # $x_max is highest of all scores
 open(COMBINED, "$datadir/combined_scores.txt");
@@ -42,7 +42,7 @@ my @scores = @$scores;
 
 	$score_dist[0][0] = 0;
        $score_dist[1][0] = 0;
-#open (LOG, ">/tmp/hist.log");
+#open (LOG, ">/data/jqtmp/hist.log");
 my $inc = 0;
 for my $j ($lowest..$highest) {
    unless ($score_hash{$j}) {

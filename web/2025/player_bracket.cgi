@@ -188,9 +188,9 @@ exit;
 sub get_score {
 	my $name = shift;
 	# score rank total leader
-	# best just to get this from the /tmp/jq_scores.txt file
-	my $file = "/tmp/jq_scores.txt";
-	$file = "/tmp/jq_chimp_scores.txt" if $man_or_chimp eq "chimp";
+	# best just to get this from the /data/jqtmp/jq_scores.txt file
+	my $file = "/data/jqtmp/jq_scores.txt";
+	$file = "/data/jqtmp/jq_chimp_scores.txt" if $man_or_chimp eq "chimp";
 	open(SCORES,"<$file") or return ('n/a','n/a','n/a','n/a');
 	my $inc;
 	my @data;
