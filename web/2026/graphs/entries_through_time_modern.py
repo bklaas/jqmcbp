@@ -69,7 +69,7 @@ LOGO_PATH = OUTPUT_DIR / "jq_graph_logo.png"
 
 # Chart configuration
 CHART_WIDTH = 800
-CHART_HEIGHT = 600
+CHART_HEIGHT = 800
 Y_MAX = 900
 COLORS = ['#1f77b4', '#2ca02c', '#d62728', '#000000', '#9467bd', '#00bfbf']
 
@@ -166,11 +166,11 @@ def compile_data_for_year(year: str) -> pd.DataFrame:
     else:
         end_time = start_time + TIME_WINDOW_SECONDS
     
-    # Sample every minute for smooth curves
+    # Sample once per hour for highly visible smooth curve interpolation
     data = []
     current_ts_idx = 0
     
-    for elapsed_seconds in range(0, end_time - start_time, 60):
+    for elapsed_seconds in range(0, end_time - start_time, 3600):
         current_time = start_time + elapsed_seconds
         hours_elapsed = elapsed_seconds / 3600
         
@@ -198,6 +198,48 @@ def compile_all_data() -> pd.DataFrame:
         all_dfs.append(df)
     
     return pd.concat(all_dfs, ignore_index=True)
+
+
+def get_current_year_status(df: pd.DataFrame) -> Dict:
+    """
+    Get current status information for the current year.
+    
+    Args:
+        df: Complete data DataFrame
+    
+    Returns:
+        Dict with current_hours, current_entries, and comparison data
+    """
+    # Get current year data
+    current_df = df[df['year'] == CURRENT_YEAR]
+    
+    if current_df.empty:
+        return None
+    
+    # Get the last (most recent) data point
+    last_row = current_df.iloc[-1]
+    current_hours = last_row['hours_elapsed']
+    current_entries = last_row['num_entries']
+    
+    # Get all years' entry counts at approximately the same elapsed time
+    comparisons = []
+    for year in YEARS_OF_INTEREST:
+        year_df = df[df['year'] == year]
+        if not year_df.empty:
+            # Find closest time point to current_hours
+            closest_idx = (year_df['hours_elapsed'] - current_hours).abs().idxmin()
+            closest_row = year_df.loc[closest_idx]
+            comparisons.append({
+                'year': year,
+                'entries': int(closest_row['num_entries']),
+                'hours': closest_row['hours_elapsed']
+            })
+    
+    return {
+        'current_hours': current_hours,
+        'current_entries': int(current_entries),
+        'comparisons': comparisons
+    }
 
 
 # ============================================================================
@@ -231,12 +273,13 @@ def get_logo_data_uri() -> str:
     return f"data:{mime_type};base64,{encoded}"
 
 
-def create_chart(df: pd.DataFrame) -> alt.Chart:
+def create_chart(df: pd.DataFrame, status: Optional[Dict] = None) -> alt.Chart:
     """
     Create an Altair line chart from the data with logo in lower right.
     
     Args:
         df: DataFrame with columns: hours_elapsed, num_entries, year
+        status: Optional dict with current year status information
     
     Returns:
         Altair Chart object
@@ -244,7 +287,8 @@ def create_chart(df: pd.DataFrame) -> alt.Chart:
     # Base line chart
     lines = alt.Chart(df).mark_line(
         strokeWidth=2,
-        point=False
+        point=False,
+        interpolate='monotone'
     ).encode(
         x=alt.X(
             'hours_elapsed:Q',
@@ -272,8 +316,175 @@ def create_chart(df: pd.DataFrame) -> alt.Chart:
         ]
     )
     
+    layers = [lines]
+    
+    # Add current year enhancements if we have status info
+    if status and status['current_hours'] < TIME_WINDOW_HOURS:
+        current_hours = status['current_hours']
+        current_entries = status['current_entries']
+        
+        # 1. Add a vertical line at current time
+        vline_data = pd.DataFrame([{
+            'x': current_hours,
+            'y': 0,
+            'y2': Y_MAX
+        }])
+        
+        vline = alt.Chart(vline_data).mark_rule(
+            strokeDash=[5, 5],
+            opacity=0.7,
+            color='#666666',
+            strokeWidth=1.5
+        ).encode(
+            x=alt.X('x:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+            y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+            y2='y2:Q'
+        )
+        layers.append(vline)
+        
+        # 2. Add a marker point at the end of current year line
+        marker_data = pd.DataFrame([{
+            'hours': current_hours,
+            'entries': current_entries,
+            'year': CURRENT_YEAR
+        }])
+        
+        marker = alt.Chart(marker_data).mark_point(
+            size=225,
+            filled=True,
+            color=COLORS[YEARS_OF_INTEREST.index(CURRENT_YEAR)]
+        ).encode(
+            x=alt.X('hours:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+            y=alt.Y('entries:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+            tooltip=[
+                alt.Tooltip('year:N', title='Year'),
+                alt.Tooltip('hours:Q', title='Hours', format='.1f'),
+                alt.Tooltip('entries:Q', title='Current Entries')
+            ]
+        )
+        layers.append(marker)
+        
+        # 3. Create comparison table as text annotations
+        # Position in upper left area
+        table_x = 5
+        table_y = Y_MAX - 50
+        line_spacing = 38
+        
+        # Table header
+        table_texts = []
+        table_texts.append({
+            'x': table_x,
+            'y': table_y,
+            'text': f'Entries at {current_hours:.1f} hours:',
+            'size': 12,
+            'bold': True
+        })
+        
+        # Table rows - one per year
+        for i, comp in enumerate(status['comparisons']):
+            y_pos = table_y - (i + 1) * line_spacing
+            is_current = comp['year'] == CURRENT_YEAR
+            year_color_idx = YEARS_OF_INTEREST.index(comp['year'])
+            
+            # Year name and entry count
+            prefix = '► ' if is_current else '   '
+            text = f"{prefix}{comp['year']}: {comp['entries']:,}"
+            
+            table_texts.append({
+                'x': table_x,
+                'y': y_pos,
+                'text': text,
+                'size': 11,
+                'bold': is_current
+            })
+        
+        # Create text annotations for table
+        table_df = pd.DataFrame(table_texts)
+        
+        # Split into bold and normal text for different mark properties
+        bold_df = table_df[table_df['bold']]
+        normal_df = table_df[~table_df['bold']]
+        
+        # Create separate text marks for bold and normal
+        table_layers = []
+        
+        if not bold_df.empty:
+            # Header text - size 12
+            header_df = bold_df[bold_df['size'] == 12]
+            if not header_df.empty:
+                table_header = alt.Chart(header_df).mark_text(
+                    align='left',
+                    baseline='top',
+                    dx=5,
+                    dy=-5,
+                    fontWeight='bold',
+                    fontSize=12
+                ).encode(
+                    x=alt.X('x:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+                    y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+                    text='text:N'
+                )
+                table_layers.append(table_header)
+            
+            # Bold row text (current year) - size 11
+            bold_row_df = bold_df[bold_df['size'] == 11]
+            if not bold_row_df.empty:
+                table_bold_row = alt.Chart(bold_row_df).mark_text(
+                    align='left',
+                    baseline='top',
+                    dx=5,
+                    dy=-5,
+                    fontWeight='bold',
+                    fontSize=11
+                ).encode(
+                    x=alt.X('x:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+                    y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+                    text='text:N'
+                )
+                table_layers.append(table_bold_row)
+        
+        if not normal_df.empty:
+            # Normal row text - size 11
+            table_normal = alt.Chart(normal_df).mark_text(
+                align='left',
+                baseline='top',
+                dx=5,
+                dy=-5,
+                fontSize=11
+            ).encode(
+                x=alt.X('x:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+                y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+                text='text:N'
+            )
+            table_layers.append(table_normal)
+        
+        if table_layers:
+            table = alt.layer(*table_layers)
+            layers.append(table)
+        
+        # Add semi-transparent background for table
+        table_bg_data = pd.DataFrame([{
+            'x': table_x - 2,
+            'y': table_y + 20,
+            'x2': table_x + 22,
+            'y2': table_y - len(status['comparisons']) * line_spacing - 10
+        }])
+        
+        table_bg = alt.Chart(table_bg_data).mark_rect(
+            opacity=0.85,
+            color='white',
+            stroke='lightgray',
+            strokeWidth=1
+        ).encode(
+            x=alt.X('x:Q', scale=alt.Scale(domain=[0, TIME_WINDOW_HOURS])),
+            y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
+            x2='x2:Q',
+            y2='y2:Q'
+        )
+        # Insert background before table text
+        layers.insert(-1, table_bg)
+    
     # Logo in lower right corner
-    # Position it at approximately 75 hours and 75 entries from bottom
     logo_uri = get_logo_data_uri()
     
     if logo_uri:
@@ -292,15 +503,10 @@ def create_chart(df: pd.DataFrame) -> alt.Chart:
             y=alt.Y('y:Q', scale=alt.Scale(domain=[0, Y_MAX])),
             url='img:N'
         )
-        
-        # Layer the logo on top of the lines
-        chart = alt.layer(lines, logo)
-    else:
-        # No logo available, just use the lines
-        chart = lines
+        layers.append(logo)
     
-    # Apply common properties
-    chart = chart.properties(
+    # Layer all components
+    chart = alt.layer(*layers).properties(
         width=CHART_WIDTH,
         height=CHART_HEIGHT,
         title={
@@ -328,8 +534,8 @@ def save_chart(chart: alt.Chart, format: str = 'png'):
         format: 'png', 'svg', or 'both'
     """
     if format in ('png', 'both'):
-        # Save as PNG using vl-convert
-        chart.save(str(OUTPUT_PNG), scale_factor=2.0)
+        # Save as PNG to match Perl output dimensions (no upscaling)
+        chart.save(str(OUTPUT_PNG))
         print(f"✓ Saved PNG to: {OUTPUT_PNG}")
     
     if format in ('svg', 'both'):
@@ -374,9 +580,15 @@ def main():
     print(f"✓ Collected {len(df)} data points")
     print()
     
+    # Get current year status for annotations
+    status = get_current_year_status(df)
+    if status:
+        print(f"✓ Current year ({CURRENT_YEAR}) status: {status['current_entries']} entries at {status['current_hours']:.1f} hours")
+        print()
+    
     # Create visualization
     print("Creating visualization...")
-    chart = create_chart(df)
+    chart = create_chart(df, status=status)
     
     # Save outputs
     print(f"Saving chart ({args.format})...")

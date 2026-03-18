@@ -9,7 +9,7 @@
 
 <link rel="shortcut icon" href="images/basketball.ico" type="image/x-icon" />
 
-<link rel="stylesheet" href="css/styles.css" type="text/css" />
+<link rel="stylesheet" href="css/styles.css?v=2026.2" type="text/css" />
 <link rel="stylesheet" href="css/jquery.countdown.css" type="text/css" />
 
 [% IF keyword == 'stately' %]

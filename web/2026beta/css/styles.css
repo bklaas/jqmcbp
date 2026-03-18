@@ -1170,3 +1170,104 @@ td.six {
   height: 145px;
   left: 300px;
   top: 38px; }
+
+/* ========== UX ENHANCEMENTS ========== */
+
+/* Entry Form Validation Styles */
+.field_error {
+  display: none;
+  color: #d32f2f;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 4px;
+  padding: 4px 8px;
+  background-color: #ffebee;
+  border-left: 3px solid #d32f2f;
+  border-radius: 3px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input.error, select.error {
+  border: 2px solid #d32f2f !important;
+  background-color: #ffebee !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #324651;
+  outline-offset: 2px;
+}
+
+.submit_help {
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Mobile Responsiveness for Entry Form */
+@media screen and (max-width: 480px) {
+  table.entry {
+    width: 100%;
+  }
+  
+  table.entry td {
+    display: block;
+    width: 100%;
+  }
+  
+  table.entry .entry_label {
+    margin-bottom: 4px;
+  }
+  
+  table.entry input[type="text"],
+  table.entry input[type="email"],
+  table.entry select {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for better keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #ffa500;
+  outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #314650;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}

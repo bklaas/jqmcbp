@@ -42,11 +42,13 @@ unless (-e "$CONFIG->{'template_dir'}/$PARAMS->{'keywords'}") {
 }
 
 my $random = rand(1000);
+my $timestamp = time();
 my %data = (
 	'params'	=>	$PARAMS,
 	'title'		=> 	$CONFIG->{'year'},
 	'year'		=>  $CONFIG->{'year'},
 	'random'	=>	$random,
+    'timestamp' =>  $timestamp,
 );
 
 my $template = Template->new({

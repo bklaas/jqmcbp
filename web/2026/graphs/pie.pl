@@ -12,7 +12,7 @@ do "/data/cgi-bin/jq_globals.pl";
 connect_to_db();
 my $png_path = "/data/benklaas.com/jqmcbp/graphs";
 my $logo_path = $png_path . "/jq_graph_logo.gif";
-my $font_path = "/usr/share/fonts/truetype/ttf-bitstream-vera";
+my $font_path = "/usr/share/fonts/ttf-bitstream-vera";
 
 my $start = $ARGV[0] || 1; 
 my $end = $ARGV[1] || 63;

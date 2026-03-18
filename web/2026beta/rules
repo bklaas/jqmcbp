@@ -8,7 +8,13 @@ Code stack:
 apache webserver with https support and cgi enabled
 Perl, CGI.pm, Template::Toolkit, GD::Graph and other modules
 
-mariadb (top directory schema.sql)
+mariadb (top directory of entire repo, look at schema.sql)
 
 I do not want you writing files outside this 2026beta/ directory. Here you have free reign to do your thing.
+
+layout:
+inside 2026beta/
+Template::Toolkit templates are in the templates/ directory
+Pages are rendered with index.cgi, player_selection.cgi, leaderboard.cgi and other *.cgi's at the top level
+
 

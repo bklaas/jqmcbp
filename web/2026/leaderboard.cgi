@@ -98,6 +98,7 @@ my %view = (	"10"	=> "10",
                 "All" => "All",
             );
 
+my $ts = time();
 my %data = ( 'view'    =>      \%view,
                 'params'        =>      \%PARAMS,
                 'order' =>      \%order,
@@ -108,6 +109,7 @@ my %data = ( 'view'    =>      \%view,
 		'thisisme'	=>	$thisisme,
 		'cookie'	=>	$cookie,
 		'similarities'	=>	$similarities,
+        'timestamp' => $ts,
                 );
 
 my $file = "cgi_generic";

@@ -10,6 +10,9 @@ teamsdb["[% x.game %]"] =
 
 function advanceTeam(thisTeam,thisGame,nextGame)
 {
+	// Add to undo stack
+	addToUndoStack(thisTeam, thisGame, nextGame);
+	
 	// change all teams in teamsdb for thisGame to done from select
 	var TheseTeams = teamsdb[thisGame]["teams"];
 	var ThoseTeams = teamsdb[nextGame]["teams"];
@@ -163,6 +166,337 @@ function validateForm(thisForm) {
 		alert("No candybar! Sacrilege!!");
 		return false;
 	}
-	return true;
+	// Show confirmation screen instead of submitting directly
+	showConfirmationScreen();
+	return false; // Prevent default submit
 }
+
+// ============ NEW UX ENHANCEMENTS ============
+
+// Progress tracking
+var bracketProgress = {
+	totalGames: 63,
+	selectedGames: 0,
+	undoStack: []
+};
+
+function updateProgressIndicator() {
+	var progressText = document.querySelector('#bracket_progress .progress_text');
+	var progressBar = document.querySelector('#bracket_progress .progress_bar');
+	
+	if (progressText && progressBar) {
+		progressText.textContent = bracketProgress.selectedGames + ' of ' + bracketProgress.totalGames + ' games selected';
+		var percentage = (bracketProgress.selectedGames / bracketProgress.totalGames) * 100;
+		progressBar.style.width = percentage + '%';
+	}
+}
+
+function addToUndoStack(team, game, nextGame) {
+	bracketProgress.undoStack.push({
+		team: team,
+		game: game,
+		nextGame: nextGame,
+		timestamp: Date.now()
+	});
+	
+	// Keep only last 5 actions
+	if (bracketProgress.undoStack.length > 5) {
+		bracketProgress.undoStack.shift();
+	}
+	
+	updateUndoButtons();
+}
+
+function updateUndoButtons() {
+	var undoContainer = document.querySelector('#bracket_progress .undo_stack');
+	if (!undoContainer) return;
+	
+	undoContainer.innerHTML = '';
+	
+	// Show last 3 actions
+	var recentActions = bracketProgress.undoStack.slice(-3).reverse();
+	recentActions.forEach(function(action, index) {
+		var button = document.createElement('button');
+		button.className = 'undo_button';
+		button.textContent = 'Undo: ' + action.team;
+		button.onclick = function() {
+			performUndo(bracketProgress.undoStack.length - 1 - index);
+		};
+		undoContainer.appendChild(button);
+	});
+}
+
+function performUndo(index) {
+	if (index >= 0 && index < bracketProgress.undoStack.length) {
+		var action = bracketProgress.undoStack[index];
+		// Remove from undo stack
+		bracketProgress.undoStack.splice(index, 1);
+		
+		// Find the previous game for this action
+		var prevGame = findPrevGame(action.game);
+		if (prevGame) {
+			secondThoughts(action.team, action.game, prevGame);
+		}
+		
+		updateUndoButtons();
+		saveToLocalStorage();
+	}
+}
+
+function findPrevGame(game) {
+	// Look through teamsdb to find which game feeds into this one
+	for (var g in teamsdb) {
+		if (teamsdb[g].nextGame === game) {
+			return g;
+		}
+	}
+	return null;
+}
+
+// Auto-save to localStorage
+function saveToLocalStorage() {
+	var bracketData = {
+		selections: {},
+		candy: '',
+		timestamp: Date.now()
+	};
+	
+	// Save all radio selections
+	for (var game in teamsdb) {
+		var radioKey = 'radio_' + game;
+		var radios = document.getElementsByName(radioKey);
+		for (var i = 0; i < radios.length; i++) {
+			if (radios[i].checked) {
+				bracketData.selections[game] = radios[i].value;
+				break;
+			}
+		}
+	}
+	
+	// Save candy selection
+	var candyField = document.getElementsByName('candy')[0];
+	if (candyField) {
+		bracketData.candy = candyField.value;
+	}
+	
+	try {
+		localStorage.setItem('jqmcbp_bracket_autosave', JSON.stringify(bracketData));
+		showAutosaveIndicator('Saved', false);
+	} catch (e) {
+		console.error('Failed to save to localStorage:', e);
+		showAutosaveIndicator('Save failed', true);
+	}
+}
+
+function loadFromLocalStorage() {
+	try {
+		var saved = localStorage.getItem('jqmcbp_bracket_autosave');
+		if (!saved) return false;
+		
+		var bracketData = JSON.parse(saved);
+		
+		// Check if save is recent (within 7 days)
+		var daysSinceSave = (Date.now() - bracketData.timestamp) / (1000 * 60 * 60 * 24);
+		if (daysSinceSave > 7) {
+			localStorage.removeItem('jqmcbp_bracket_autosave');
+			return false;
+		}
+		
+		// Ask user if they want to restore
+		if (confirm('Found a saved bracket from ' + new Date(bracketData.timestamp).toLocaleString() + '. Restore it?')) {
+			// Restore selections (you'd need to trigger advanceTeam for each)
+			// For now, just show a message
+			alert('Auto-restore functionality would go here. For now, please manually fill out your bracket.');
+			return true;
+		}
+		
+		return false;
+	} catch (e) {
+		console.error('Failed to load from localStorage:', e);
+		return false;
+	}
+}
+
+function showAutosaveIndicator(message, isError) {
+	var indicator = document.getElementById('autosave_indicator');
+	if (!indicator) {
+		indicator = document.createElement('div');
+		indicator.id = 'autosave_indicator';
+		document.body.appendChild(indicator);
+	}
+	
+	indicator.textContent = message;
+	indicator.className = isError ? 'show error' : 'show';
+	
+	setTimeout(function() {
+		indicator.className = '';
+	}, 2000);
+}
+
+// Confirmation screen
+function showConfirmationScreen() {
+	var modal = document.getElementById('confirmation_screen');
+	if (!modal) return;
+	
+	// Build summary
+	var summary = buildBracketSummary();
+	var summaryContainer = modal.querySelector('.bracket_summary');
+	if (summaryContainer) {
+		summaryContainer.innerHTML = summary;
+	}
+	
+	modal.style.display = 'block';
+}
+
+function hideConfirmationScreen() {
+	var modal = document.getElementById('confirmation_screen');
+	if (modal) {
+		modal.style.display = 'none';
+	}
+}
+
+function confirmSubmit() {
+	// Clear autosave
+	try {
+		localStorage.removeItem('jqmcbp_bracket_autosave');
+	} catch (e) {}
+	
+	// Actually submit the form
+	var form = document.getElementById('bracketform');
+	if (form) {
+		// Remove the onSubmit handler to allow submission
+		form.onsubmit = null;
+		form.submit();
+	}
+}
+
+function buildBracketSummary() {
+	var html = '<h3>Your Selections:</h3>';
+	
+	var rounds = {
+		'Round 1': { start: 0, end: 31 },
+		'Round 2': { start: 32, end: 47 },
+		'Sweet 16': { start: 48, end: 55 },
+		'Elite 8': { start: 56, end: 59 },
+		'Final Four': { start: 60, end: 61 },
+		'Championship': { start: 62, end: 62 }
+	};
+	
+	for (var roundName in rounds) {
+		var range = rounds[roundName];
+		html += '<h4>' + roundName + ':</h4><ul>';
+		
+		for (var i = range.start; i <= range.end; i++) {
+			var game = 'game_' + (i + 1);
+			var radioKey = 'radio_' + game;
+			var radios = document.getElementsByName(radioKey);
+			
+			for (var j = 0; j < radios.length; j++) {
+				if (radios[j].checked) {
+					html += '<li>' + radios[j].value + '</li>';
+					break;
+				}
+			}
+		}
+		
+		html += '</ul>';
+	}
+	
+	// Add candy
+	var candyField = document.getElementsByName('candy')[0];
+	if (candyField && candyField.value) {
+		html += '<h4>Candy Choice:</h4><p style="font-size: 16px; font-weight: bold;">' + candyField.value + '</p>';
+	}
+	
+	return html;
+}
+
+// Keyboard navigation
+var currentFocusGame = null;
+var currentFocusOption = 0;
+
+function initKeyboardNavigation() {
+	document.addEventListener('keydown', function(e) {
+		// Only activate when not in an input field
+		if (e.target.tagName === 'INPUT' && e.target.type === 'text') {
+			return;
+		}
+		
+		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+			e.preventDefault();
+			navigateOptions(e.key === 'ArrowDown' ? 1 : -1);
+		} else if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			selectCurrentOption();
+		}
+	});
+}
+
+function navigateOptions(direction) {
+	// Find all visible radio buttons
+	var visibleRadios = [];
+	var allRadios = document.querySelectorAll('input[type="radio"]');
+	
+	for (var i = 0; i < allRadios.length; i++) {
+		var radio = allRadios[i];
+		var parent = radio.parentElement;
+		if (parent && parent.style.display !== 'none') {
+			visibleRadios.push(radio);
+		}
+	}
+	
+	if (visibleRadios.length === 0) return;
+	
+	currentFocusOption = (currentFocusOption + direction + visibleRadios.length) % visibleRadios.length;
+	
+	// Focus the radio
+	visibleRadios[currentFocusOption].focus();
+	visibleRadios[currentFocusOption].parentElement.classList.add('keyboard_focus');
+	
+	// Remove focus from others
+	for (var i = 0; i < visibleRadios.length; i++) {
+		if (i !== currentFocusOption) {
+			visibleRadios[i].parentElement.classList.remove('keyboard_focus');
+		}
+	}
+}
+
+function selectCurrentOption() {
+	var focused = document.activeElement;
+	if (focused && focused.tagName === 'INPUT' && focused.type === 'radio') {
+		focused.click();
+	}
+}
+
+// Initialize on page load
+$(document).ready(function() {
+	// Check for autosave
+	loadFromLocalStorage();
+	
+	// Initialize keyboard navigation
+	initKeyboardNavigation();
+	
+	// Update progress on any radio change
+	$('input[type="radio"]').on('change', function() {
+		// Count selected games
+		bracketProgress.selectedGames = 0;
+		for (var game in teamsdb) {
+			var radioKey = 'radio_' + game;
+			var radios = document.getElementsByName(radioKey);
+			for (var i = 0; i < radios.length; i++) {
+				if (radios[i].checked) {
+					bracketProgress.selectedGames++;
+					break;
+				}
+			}
+		}
+		
+		updateProgressIndicator();
+		saveToLocalStorage();
+	});
+	
+	// Initialize progress indicator
+	updateProgressIndicator();
+});
 </script>
+

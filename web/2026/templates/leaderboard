@@ -36,13 +36,13 @@ Scores last updated: [% params.last_updated %] [%# params.year %] CDT
 [% BLOCK histograms %]
 	<tr><td align = center>
 	[% IF params.man_or_chimp == 'man' || params.man_or_chimp == 'both' %]
-		<img src = "/jqmcbp/graphomatic/histogram.png" name = 'histogram' id = 'histogram' class = "white" 
-		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png";'
-		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png";'>
+		<img src = "/jqmcbp/graphomatic/histogram.png?t=[% timestamp %]" name = 'histogram' id = 'histogram' class = "white" 
+		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png?t=[% timestamp %]";'
+		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png?t=[% timestamp %]";'>
 	[% ELSE %]
 		<img src = "/jqmcbp/graphomatic/chimp_histogram.png" name = 'histogram' id = 'histogram' class = "white" 
-		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png";'
-		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png";'>
+		onMouseOver = 'document.histogram.src = "/jqmcbp/graphomatic/histogram.png?t=[% timestamp %]";'
+		onMouseOut = 'document.histogram.src = "/jqmcbp/graphomatic/chimp_histogram.png?t=[% timestamp %]";'>
 	[% END %]
 	</td></tr>
 [% END %]

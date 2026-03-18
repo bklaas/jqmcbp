@@ -8,7 +8,7 @@ print "Content-type: text/html;charset=UTF-8\n\n";
 use CGI qw/ :param /;
 use DBI;
 use vars qw/ $dbh /;
-do "/data/benklaas.com/jqmcbp/jq_globals.pl";
+do "./jq_globals.pl";
 my $PARAMS; 
 my $CONFIG = config_variables();
 

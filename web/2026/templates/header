@@ -39,6 +39,7 @@
 
 [% IF keyword == 'top' %]
 
+<!--
 
 <script type="text/javascript">
 	function startIt() {
@@ -87,8 +88,10 @@
 	}
 	);
 </script>
+-->
 
 [% ELSIF keyword == 'enter' || keyword == 'overview' || keyword == 'willtherebeajqmcbpthisyear' %]
+<!--
 <script type="text/javascript">
 	function startIt() {
 		var austDay = new Date();
@@ -107,6 +110,7 @@
 	}
 	);
 </script>
+-->
 [% END %]
 
 <!-- wrap starts here -->

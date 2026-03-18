@@ -11,10 +11,13 @@
 		[% team = row.teams.$element %][% prevGame = row.prevGame.$element %]
 		[% seed = seeds.$team %]
 			<span id = '[% row.game %] [% team %] select' style = "display: none;" class = 'radio'>
-				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team %]" type="radio" onClick='pickChampion("[% team %]")'>[% seed %] [% team %]
-				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team %]","[% row.game %]","[% prevGame %]")'><br>
+				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team %]" type="radio" 
+				       onClick='pickChampion("[% team %]")'
+				       aria-label="Select [% seed %] seed [% team %] as champion">[% seed %] [% team %]
+				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team %]","[% row.game %]","[% prevGame %]")' 
+				     alt="Remove [% team %]" title="Remove this selection" role="button" tabindex="0"><br>
 			</span>
-			<span id = '[% row.game %] [% team %] done' class = 'hidden normal'>
+			<span id = '[% row.game %] [% team %] done' class = 'hidden normal' aria-live="polite">
 				<span id = '[% row.game %] [% team %]'>[% seed %] [% team %]<br></span>
 			</span>
 		[% END %]
@@ -35,10 +38,12 @@
 	<br>
 	And now for the most important part...<br>
 	Pick your CANDY!<br>
-	<input type = text name = 'candy' id = 'candy' class = 'textinput' size = 30 maxlength = 60><br>
-	<img src="/jqmcbp/bk_files/forward" align="middle">
-	<input name="ENTER_PICKS" src="/jqmcbp/bk_files/go_ben_go" value="true" align="center" type="image">
-	<img src="/jqmcbp/bk_files/back" align="middle">
+	<label for="candy_input" class="sr-only">Enter your desired candy bar</label>
+	<input type = text name = 'candy' id = 'candy_input' class = 'textinput' size = 30 maxlength = 60 
+	       aria-label="Enter your desired candy bar prize" placeholder="e.g., Snickers, Kit Kat, Reese's"><br>
+	<img src="/jqmcbp/bk_files/forward" align="middle" alt="">
+	<input name="ENTER_PICKS" src="/jqmcbp/bk_files/go_ben_go" value="true" align="center" type="image" alt="Submit bracket">
+	<img src="/jqmcbp/bk_files/back" align="middle" alt="">
 </div>
 		</td></tr>
 	</tbody></table>

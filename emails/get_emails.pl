@@ -5,10 +5,10 @@ use DBD::mysql;      # perl module for mySQL interface
 use strict;
 
 use vars qw/$dbh/;
-do "/home/bklaas/jqmcbp/web/2020/jq_globals.pl";
+do "/home/bklaas/jqmcbp/web/2026/jq_globals.pl";
 
-connect_to_db('johnnyquest');
-#connect_to_db('jq_2023');
+#connect_to_db('johnnyquest');
+connect_to_db('jq_2025');
 
 my $player_info = get_emails();
 

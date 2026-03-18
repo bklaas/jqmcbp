@@ -34,6 +34,8 @@ my $tm = "&#0153;";
 my $playerId = param("player_id");
 $PARAMS{'title'} = "The J Factor$tm";
 
+my $ts = time();
+
 if ($playerId) {
    my $info = get_player_info($playerId);
    my $div = get_div($info->{'j2_factor'}, $divs, $j_factors);
@@ -42,7 +44,7 @@ if ($playerId) {
 
  $PARAMS{'cgi'} = 'jfactor';
  %data = (
-	     'params'		=>      \%PARAMS,
+	     'params'		=>  \%PARAMS,
 	     'strings'		=>	\@strings,
 	     'player_info'	=>	$info,
 	     'thisDiv'		=>	$div,
@@ -50,6 +52,7 @@ if ($playerId) {
 	     'median_abbr'	=>	$median_abbr,
 	     'cookie'		=>	$cookie,
 	     'thisisme'		=>	$thisisme,
+         'timestamp'    =>  $ts,
              );
 } else {
 
@@ -61,13 +64,14 @@ if ($playerId) {
 
 	$PARAMS{'cgi'} = 'whatsyourj';
 	%data = (
-		'params'  =>      \%PARAMS,
-		'names'   =>      $names,
-		'cookie'		=>	$cookie,
-		'thisisme'		=>	$thisisme,
-		'human_data'   => $human_data,
+		'params'         => \%PARAMS,
+		'names'          => $names,
+		'cookie'		 =>	$cookie,
+		'thisisme'		 =>	$thisisme,
+		'human_data'     => $human_data,
 		'frequency_bins' => \@div_labels,
-		'chimp_data'   => $chimp_data,
+		'chimp_data'     => $chimp_data,
+        'ts'             => $ts,
 	);
 }
 

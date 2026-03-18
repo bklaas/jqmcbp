@@ -25,8 +25,8 @@ for (sort {$tallies{$a} <=> $tallies{$b} } keys %tallies) {
 #$graph = GD::Graph::pie->new();
 $graph = GD::Graph::pie->new(650,400);
 
-$graph->set_title_font('/usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf', 14);
-$graph->set_value_font('/usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf', 12);
+$graph->set_title_font('/usr/share/fonts/ttf-bitstream-vera/VeraBd.ttf', 14);
+$graph->set_value_font('/usr/share/fonts/ttf-bitstream-vera/VeraBd.ttf', 12);
 
 $graph->set(
 	title	=>	"$year Alma Mater Breakdown",

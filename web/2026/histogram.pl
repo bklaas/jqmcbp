@@ -9,6 +9,9 @@ use GD::Graph::bars;
 use GD::Graph::colour;
 use File::Copy;
 
+# CHANGE EACH YEAR!
+my $jq_year = "XXIX";
+
 my $lowest = 0;
 my $highest;
 my $interval;
@@ -81,11 +84,11 @@ if ($man_or_chimp eq 'man') {
 	} else {
 		$x_skip = 0;
 	}
-        $title	= "JQMCBP PEOPLE Score Distribution";
+        $title	= "JQMCBP ${jq_year} PEOPLE Score Distribution";
 } else {
 	$dclrs = 'gold';
 	$logo = '/data/benklaas.com/johnnyquest/images/lucky.gif';
-        $title	= "JQMCBP CHIMP Score Distribution";
+        $title	= "JQMCBP ${jq_year} CHIMP Score Distribution";
 	$bgclr = 'black';
 }
   #$histogram->set_title_font(gdMediumBoldFont) or die "couldn't do it: $!";

@@ -1,41 +1,107 @@
-<script language = 'JavaScript'>
-function validateForm(form) {
-	if (form.name.value == '') {
-		alert('Please state your name');
-		return false;
-	} else if (form.email.value == '') {
-		alert('Honest, your email address is safe with me. Please give me one');
-		return false;
-	} else if (!isEmailAddr(form.email)) {
-		alert("'"+form.email.value+"' does not look like a valid email address");
-		return false;
-	} else if (form.locale.selectedIndex == 0) {
-		alert('Where are you from? Note that "Places Unknown" is an option!');
+<script type="text/javascript">
+// Inline validation functions
+function showError(fieldName, message) {
+	const errorId = fieldName + '_error';
+	let errorElem = document.getElementById(errorId);
+	if (!errorElem) {
+		errorElem = document.createElement('div');
+		errorElem.id = errorId;
+		errorElem.className = 'field_error';
+		errorElem.setAttribute('role', 'alert');
+		const field = document.getElementsByName(fieldName)[0];
+		field.parentNode.appendChild(errorElem);
+		field.classList.add('error');
+	}
+	errorElem.textContent = message;
+	errorElem.style.display = 'block';
+}
+
+function clearError(fieldName) {
+	const errorId = fieldName + '_error';
+	const errorElem = document.getElementById(errorId);
+	if (errorElem) {
+		errorElem.style.display = 'none';
+	}
+	const field = document.getElementsByName(fieldName)[0];
+	if (field) {
+		field.classList.remove('error');
+	}
+}
+
+function validateName(showErrors) {
+	const nameField = document.getElementsByName('name')[0];
+	const name = nameField.value.trim();
+	
+	if (name === '') {
+		if (showErrors) showError('name', 'Please state your name');
 		return false;
 	}
+	clearError('name');
 	return true;
 }
+
+function validateEmail(showErrors) {
+	const emailField = document.getElementsByName('email')[0];
+	const email = emailField.value.trim();
+	
+	if (email === '') {
+		if (showErrors) showError('email', 'Honest, your email address is safe with me. Please give me one');
+		return false;
+	} else if (!isEmailAddr(emailField)) {
+		if (showErrors) showError('email', "'" + email + "' does not look like a valid email address");
+		return false;
+	}
+	clearError('email');
+	return true;
+}
+
+function validateLocale(showErrors) {
+	const localeField = document.getElementsByName('locale')[0];
+	
+	if (localeField.selectedIndex === 0) {
+		if (showErrors) showError('locale', 'Where are you from? Note that "Places Unknown" is an option!');
+		return false;
+	}
+	clearError('locale');
+	return true;
+}
+
 function isEmailAddr(elem) {
-	var str = elem.value;
-	str = str.toLowerCase();
-	if (str.indexOf("@") == -1) {
+	const str = elem.value.toLowerCase();
+	if (str.indexOf("@") === -1) {
 		return false;
 	} else {
-		var addr = str.substring(0, str.indexOf("@"));
-		var domain = str.substring(str.indexOf("@")+1, str.length);
-		if (domain.indexOf(".") == -1) {
-			return false;
-		} else if (addr.length == -1) {
+		const addr = str.substring(0, str.indexOf("@"));
+		const domain = str.substring(str.indexOf("@") + 1, str.length);
+		if (domain.indexOf(".") === -1 || addr.length === 0) {
 			return false;
 		}
 	}
 	return true;
 }
 
+function validateForm(form) {
+	let isValid = true;
+	
+	if (!validateName(true)) isValid = false;
+	if (!validateEmail(true)) isValid = false;
+	if (!validateLocale(true)) isValid = false;
+	
+	if (!isValid) {
+		// Scroll to first error
+		const firstError = document.querySelector('.field_error[style*="display: block"]');
+		if (firstError) {
+			firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+		}
+	}
+	
+	return isValid;
+}
+
 function get_count() {
 	// chrome keeps a JS cache, so we have to fudge a bogus query string
 	// to get around that
-	var random = Math.floor((Math.random()*99999)+1);
+	const random = Math.floor((Math.random() * 99999) + 1);
 	$.getJSON(
 		'entry_count.json?foo=bar' + random,
 		function(data) {
@@ -46,13 +112,28 @@ function get_count() {
 	);
 }
 
-$(document).ready(
-        function() {
-		var data = [];
-              	setTimeout(function() {
-			get_count();
-               	}, 2000);
-	});
+$(document).ready(function() {
+	// Auto-focus first field
+	const nameField = document.getElementsByName('name')[0];
+	if (nameField) {
+		nameField.focus();
+	}
+	
+	// Add real-time validation on blur
+	$('input[name="name"]').on('blur', function() { validateName(false); });
+	$('input[name="email"]').on('blur', function() { validateEmail(false); });
+	$('select[name="locale"]').on('change', function() { validateLocale(false); });
+	
+	// Clear errors on focus
+	$('input[name="name"]').on('focus', function() { clearError('name'); });
+	$('input[name="email"]').on('focus', function() { clearError('email'); });
+	$('select[name="locale"]').on('focus', function() { clearError('locale'); });
+	
+	// Start entry counter
+	setTimeout(function() {
+		get_count();
+	}, 2000);
+});
 </script>
 
 <h3>
@@ -64,36 +145,37 @@ Already entered and are looking for your bracket?
 <h5>*JQMCBP is free, so if you don't have fun I will donate an equivalent amount to <br><a href="javascript:popUpHF('images/human_fund.jpg')">The Human Fund</a></h5>
 
 <div id = 'entry_form'>
-<FORM ACTION="jq_entry.cgi" METHOD='post' onSubmit = 'return validateForm(this);'>
+<FORM ACTION="jq_entry.cgi" METHOD='post' onSubmit = 'return validateForm(this);' novalidate>
 
 <table class = 'entry'>
 	<tr>
 		<td class = "entry_label">
-			Full Name
+			<label for="name_field">Full Name</label>
 		</td>
 
 		<td class = 'entry_input'>
-			<input type=text name="name" value="" size=20 maxlength=60>
+			<input type="text" id="name_field" name="name" value="" size="20" maxlength="60" 
+			       required aria-required="true" aria-describedby="name_error" autocomplete="name">
 		</td>
 	</tr>
 
 	<tr>
 		<td class = 'entry_label'>
-			Email
+			<label for="email_field">Email</label>
 		</td>
 		<td class = 'entry_input'>
-			<input type=text name="email" value="" size=30 maxlength=60>
+			<input type="email" id="email_field" name="email" value="" size="30" maxlength="60" 
+			       required aria-required="true" aria-describedby="email_error" autocomplete="email">
 		</td>
 	</tr>
 
 	<tr>
 		<td class = 'entry_label'>
-			Location
+			<label for="locale_field">Location</label>
 		</td>
 
 		<td class = 'entry_input'>
-
-			<select name='locale'>
+			<select name="locale" id="locale_field" required aria-required="true" aria-describedby="locale_error">
 			<option selected value="">
 			<option value="International">Outside U.S. and Canada
 			<option value="Canada">Canada
@@ -155,13 +237,13 @@ Already entered and are looking for your bracket?
 
     <tr>
     <td align = 'left' valign = 'bottom' class = 'booty' colspan = '2'>
-    Did your alma mater make it into the tournament? If so, specify:
+    <label for="alma_mater_field">Did your alma mater make it into the tournament? If so, specify:</label>
     </td>
     </tr>
     <tr>
     <td>&nbsp;</td>
     <td class = 'entry_input'>
-    <select name = 'alma_mater'>
+    <select name="alma_mater" id="alma_mater_field" aria-label="Select your alma mater">
     <option value="No" SELECTED>No
     <option value="Impossible">Impossible
     <option value="Huh">Alma mater?
@@ -175,8 +257,8 @@ Already entered and are looking for your bracket?
 
 	<tr>
 	<td colspan = '2' align = 'center'>
-		<input type="image" name="FIRST_ROUND" src="/johnnyquest/images/go_ben_go.gif"><br>
-		(submit and go to next page to start your picks)
+		<input type="image" name="FIRST_ROUND" src="/johnnyquest/images/go_ben_go.gif" alt="Submit and start picks"><br>
+		<span class="submit_help">(submit and go to next page to start your picks)</span>
 	</td>
 	</tr>
 	</TABLE>

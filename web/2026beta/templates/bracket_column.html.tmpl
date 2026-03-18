@@ -9,10 +9,13 @@
 		[% FOR element IN elements %]
 		[% team_info = row.teams.$element %][% prevGame = row.prevGame.$element %]
 			<span id = '[% row.game %] [% team_info.team %] select' style = "display: none;" class = 'radio'>
-				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team_info.team %]" type="radio" onClick='advanceTeam("[% team_info.team %]","[% row.game %]","[% row.nextGame %]")'>[% team_info.seed %] [% team_info.team %]
-				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team_info.team %]","[% row.game %]","[% prevGame %]")'><br>
+				<input name="radio_[% row.game %]" id = 'radio_[% row.game %]_[% loop.count %]' value="[% team_info.team %]" type="radio" 
+				       onClick='advanceTeam("[% team_info.team %]","[% row.game %]","[% row.nextGame %]")'
+				       aria-label="Select [% team_info.seed %] seed [% team_info.team %] for [% row.game %]">[% team_info.seed %] [% team_info.team %]
+				<img src = '/jqmcbp/images/remove.gif' onClick='secondThoughts("[% team_info.team %]","[% row.game %]","[% prevGame %]")' 
+				     alt="Remove [% team_info.team %]" title="Remove this selection" role="button" tabindex="0"><br>
 			</span>
-			<span id = '[% row.game %] [% team_info.team %] done' style = "display: none;" class = 'normal'>
+			<span id = '[% row.game %] [% team_info.team %] done' style = "display: none;" class = 'normal' aria-live="polite">
 				<span id = '[% row.game %] [% team_info.team %]'>[% team_info.seed %] [% team_info.team %]<br></span>
 			</span>
 		[% END %]

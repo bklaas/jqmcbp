@@ -19,7 +19,7 @@ my $start_times = {
     '2015' => 15, '2016' => 13, '2017' => 12, '2018' => 11,
     '2019' => 17, '2020' => 17, '2021' => 15, '2022' => 13,
     '2023' => 12, '2024' => 17, '2025' => 16, '2026' => 15};
-my $current_year = '2025';
+my $current_year = '2026';
 ###############################################################
 # EVERYTHING BELOW THIS SHOULD "JUST WORK"
 ###############################################################
@@ -31,7 +31,7 @@ use vars qw/ $dbh /;
 do "/data/benklaas.com/jqmcbp/jq_globals.pl";
 my $graph;
 my $logo = "/data/benklaas.com/jqmcbp/graphs/jq_graph_logo.gif";
-my $font_path = "/usr/share/fonts/truetype/ubuntu";
+my $font_path = "/usr/share/fonts/ubuntu";
 
 my %data;
 my @legend;
