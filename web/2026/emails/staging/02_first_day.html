@@ -1,520 +1,534 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<style>
-		/* Base styles */
-		body {
-			background-image: url("https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/169ef6bb-fce7-488f-8b3f-c87600b43828.png");
-			font-family: sans-serif;
-			margin: 0;
-			padding: 0;
-			-webkit-text-size-adjust: 100%;
-			-ms-text-size-adjust: 100%;
-		}
-		
-		/* Container */
-		div.email {
-			background: #eee;
-			border: 1px solid black;
-			margin: 20px auto;
-			padding: 30px;
-			padding-bottom: 60px;
-			font-family: sans-serif;
-			color: black;
-			max-width: 800px;
-			box-sizing: border-box;
-		}
-		
-		/* Quote block */
-		div.quote {
-			border: 2px solid #000;
-			margin: 20px 0;
-			padding: 10px;
-			background-color: #ccc;
-			quotes: "\201C" "\201D";
-		}
-		div.quote:before { content: open-quote; font-weight: bold; }
-		div.quote:after { content: close-quote; font-weight: bold; }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style>
+                /* Base styles */
+                body {
+                        background-image: url("https://gallery.mailchimp.com/b94193d8d716ab819d32fb668/images/169ef6bb-fce7-488f-8b3f-c87600b43828.png");
+                        font-family: sans-serif;
+                        margin: 0;
+                        padding: 0;
+                        -webkit-text-size-adjust: 100%;
+                        -ms-text-size-adjust: 100%;
+                }
+                
+                /* Container */
+                div.email {
+                        background: #eee;
+                        border: 1px solid black;
+                        margin: 20px auto;
+                        padding: 30px;
+                        padding-bottom: 60px;
+                        font-family: sans-serif;
+                        color: black;
+                        max-width: 800px;
+                        box-sizing: border-box;
+                }
+                
+                /* Quote block */
+                div.quote {
+                        border: 2px solid #000;
+                        margin: 20px 0;
+                        padding: 10px;
+                        background-color: #ccc;
+                        quotes: "\201C" "\201D";
+                }
+                div.quote:before { content: open-quote; font-weight: bold; }
+                div.quote:after { content: close-quote; font-weight: bold; }
 
-		/* Typography */
-		p {
-			font-size: 16px;
-			line-height: 1.6;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-		h1 {
-			font-size: 28px;
-			font-weight: bold;
-			line-height: 1.3;
-			margin: 15px 0;
-		}
-		h2 {
-			font-size: 20px;
-			font-weight: normal;
-			font-style: italic;
-			line-height: 1.4;
-		}
-		
-		/* Links */
-		a {
-			color: #004D73;
-			text-decoration: none;
-			font-weight: bold;
-			word-wrap: break-word;
-		}
-		a:hover {
-			color: maroon;
-			background-color: white;
-			text-decoration: underline;
-		}
+                /* Typography */
+                p {
+                        font-size: 16px;
+                        line-height: 1.6;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                }
+                h1 {
+                        font-size: 28px;
+                        font-weight: bold;
+                        line-height: 1.3;
+                        margin: 15px 0;
+                }
+                h2 {
+                        font-size: 20px;
+                        font-weight: normal;
+                        font-style: italic;
+                        line-height: 1.4;
+                }
+                
+                /* Links */
+                a {
+                        color: #004D73;
+                        text-decoration: none;
+                        font-weight: bold;
+                        word-wrap: break-word;
+                }
+                a:hover {
+                        color: maroon;
+                        background-color: white;
+                        text-decoration: underline;
+                }
 
-		/* Section dividers */
-		hr.section { 
-			padding: 0; 
-			margin: 30px 0;
-			border: none; 
-			border-top: medium double #333; 
-			color: #333; 
-			text-align: center; 
-		} 
-		hr.section:after { 
-			content: "JQMCBP"; 
-			display: inline-block; 
-			position: relative; 
-			top: -0.7em; 
-			padding: 0 0.25em; 
-			background: #eee;
-			color: black; 
-			opacity: 0.3;
-		}
-		hr.oldsection {
-			height: 30px; 
-			border-style: solid; 
-			border-color: black; 
-			border-width: 1px 0 0 0; 
-			border-radius: 20px;
-			margin: 30px 0;
-		} 
-		hr.oldsection:before {
-			display: block; 
-			content: ""; 
-			height: 30px; 
-			margin-top: -31px; 
-			border-style: solid; 
-			border-color: black; 
-			border-width: 0 0 1px 0; 
-			border-radius: 20px; 
-		}
-		hr.subsection {
-			height: 1px;
-			margin: 20px 0;
-		}
-		
-		/* Mailbag */
-		div.mailbag {
-			font-family: monospace;
-			white-space: pre-wrap;
-			font-size: 14px;
-		}
-		pre {
-			white-space: pre-wrap;
-			white-space: -moz-pre-wrap;
-			white-space: -pre-wrap;
-			white-space: -o-pre-wrap;
-			word-wrap: break-word;
-			overflow-x: auto;
-		}
+                /* Section dividers */
+                hr.section { 
+                        padding: 0; 
+                        margin: 30px 0;
+                        border: none; 
+                        border-top: medium double #333; 
+                        color: #333; 
+                        text-align: center; 
+                } 
+                hr.section:after { 
+                        content: "JQMCBP"; 
+                        display: inline-block; 
+                        position: relative; 
+                        top: -0.7em; 
+                        padding: 0 0.25em; 
+                        background: #eee;
+                        color: black; 
+                        opacity: 0.3;
+                }
+                hr.oldsection {
+                        height: 30px; 
+                        border-style: solid; 
+                        border-color: black; 
+                        border-width: 1px 0 0 0; 
+                        border-radius: 20px;
+                        margin: 30px 0;
+                } 
+                hr.oldsection:before {
+                        display: block; 
+                        content: ""; 
+                        height: 30px; 
+                        margin-top: -31px; 
+                        border-style: solid; 
+                        border-color: black; 
+                        border-width: 0 0 1px 0; 
+                        border-radius: 20px; 
+                }
+                hr.subsection {
+                        height: 1px;
+                        margin: 20px 0;
+                }
+                
+                /* Mailbag */
+                div.mailbag {
+                        font-family: monospace;
+                        white-space: pre-wrap;
+                        font-size: 14px;
+                }
+                pre, div.pre {
+                        white-space: pre-wrap;
+                        white-space: -moz-pre-wrap;
+                        white-space: -pre-wrap;
+                        white-space: -o-pre-wrap;
+                        word-wrap: break-word;
+                        overflow-x: auto;
+                }
 
-		/* Header */
-		div.header {
-			background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
-			padding: 20px 15px;
-			margin: 0;
-			text-align: center;
-		}
-		div.header h1 {
-			color: #004D73;
-			font-size: 36px;
-			font-weight: bold;
-			margin: 0 0 5px 0;
-			padding: 0;
-		}
-		div.header h1 a {
-			color: #004D73;
-		}
-		div.header h2.slogan {
-			color: #004D73;
-			font: bold 15px sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-		div.header h2.slogan a {
-			color: #004D73;
-		}
-		
-		/* Images */
-		img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-		}
-		
-		/* Lists */
-		ul.image {
-			list-style: none outside none;
-			margin: 0;
-			padding: 0;
-		}
-		ul.image li {
-			background-image: none;
-			list-style: none outside none;
-		}
-		ul.image li.last {
-			padding: 13px 0 0 15px;
-		}
-		ul.image img {
-			vertical-align: middle;
-		}
-		
-		/* Footer */
-		#footer {
-			color: #777777;
-			font-family: "Helvetica", sans-serif;
-			font-weight: normal;
-			letter-spacing: 10px;
-			font-size: 12px;
-			margin: 0;
-			padding: 20px 0 0;
-			text-align: center;
-		}
-		
-		/* Tables */
-		table.scores, table.chimp_scores {
-			border: 1px solid black;
-			border-collapse: collapse;
-			width: 100%;
-			overflow-x: auto;
-			display: block;
-		}
-		table.scores thead th, table.chimp_scores thead th {
-			background: gray;
-			color: white;
-			font-size: 10px;
-			font-weight: bold;
-			text-align: left;
-			padding: 5px;
-			white-space: nowrap;
-		}
-		table.scores tbody td, table.chimp_scores tbody td {
-			background: #eee;
-			color: #111;
-			font-size: 10px;
-			padding: 5px;
-			text-align: left;
-			white-space: nowrap;
-		}
-		table.chimp_scores tbody td {
-			background: yellow;
-			color: black;
-		}
-		
-		/* Mobile optimizations */
-		@media only screen and (max-width: 600px) {
-			body {
-				background-image: none;
-				background-color: #ddd;
-			}
-			
-			div.email {
-				margin: 0;
-				padding: 20px 15px;
-				padding-bottom: 40px;
-				border-left: none;
-				border-right: none;
-			}
-			
-			div.header {
-				padding: 15px 10px;
-			}
-			
-			div.header h1 {
-				font-size: 24px;
-			}
-			
-			div.header h2.slogan {
-				font-size: 12px;
-			}
-			
-			h1 {
-				font-size: 22px;
-			}
-			
-			h2 {
-				font-size: 18px;
-			}
-			
-			p {
-				font-size: 15px;
-			}
-			
-			div.quote {
-				margin: 15px 0;
-				padding: 8px;
-			}
-			
-			#footer {
-				letter-spacing: 5px;
-				font-size: 10px;
-			}
-			
-			table.scores, table.chimp_scores {
-				font-size: 9px;
-			}
-			
-			table.scores thead th, table.chimp_scores thead th,
-			table.scores tbody td, table.chimp_scores tbody td {
-				font-size: 9px;
-				padding: 3px;
-			}
-		}
-		
-		/* Extra small devices */
-		@media only screen and (max-width: 400px) {
-			div.email {
-				padding: 15px 10px;
-			}
-			
-			div.header h1 {
-				font-size: 20px;
-			}
-			
-			div.header h2.slogan {
-				font-size: 11px;
-			}
-			
-			h1 {
-				font-size: 20px;
-			}
-			
-			p {
-				font-size: 14px;
-			}
-			
-			#footer {
-				letter-spacing: 3px;
-			}
-		}
-	</style>
+                /* Header */
+                div.header {
+                        background: url("http://benklaas.com/jqmcbp/images/wood_pattern.png") repeat;
+                        padding: 20px 15px;
+                        margin: 0;
+                        text-align: center;
+                }
+                div.header h1 {
+                        color: #004D73;
+                        font-size: 36px;
+                        font-weight: bold;
+                        margin: 0 0 5px 0;
+                        padding: 0;
+                }
+                div.header h1 a {
+                        color: #004D73;
+                }
+                div.header h2.slogan {
+                        color: #004D73;
+                        font: bold 15px sans-serif;
+                        margin: 0;
+                        padding: 0;
+                }
+                div.header h2.slogan a {
+                        color: #004D73;
+                }
+                
+                /* Images */
+                img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                }
+                
+                /* Lists */
+                ul.image {
+                        list-style: none outside none;
+                        margin: 0;
+                        padding: 0;
+                }
+                ul.image li {
+                        background-image: none;
+                        list-style: none outside none;
+                }
+                ul.image li.last {
+                        padding: 13px 0 0 15px;
+                }
+                ul.image img {
+                        vertical-align: middle;
+                }
+                
+                /* Footer */
+                #footer {
+                        color: #777777;
+                        font-family: "Helvetica", sans-serif;
+                        font-weight: normal;
+                        letter-spacing: 10px;
+                        font-size: 12px;
+                        margin: 0;
+                        padding: 20px 0 0;
+                        text-align: center;
+                }
+                
+                /* Tables */
+                table.scores, table.chimp_scores {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                        overflow-x: auto;
+                }
+                table.scores thead th, table.chimp_scores thead th {
+                        background: gray;
+                        color: white;
+                        font-size: 10px;
+                        font-weight: bold;
+                        text-align: left;
+                        padding: 5px;
+                        white-space: nowrap;
+                }
+                table.scores tbody td, table.chimp_scores tbody td {
+                        background: #eee;
+                        color: #111;
+                        font-size: 10px;
+                        padding: 5px;
+                        text-align: left;
+                        white-space: nowrap;
+                }
+                table.chimp_scores tbody td {
+                        background: yellow;
+                        color: black;
+                }
+                
+                /* Mobile optimizations */
+                @media only screen and (max-width: 600px) {
+                        body {
+                                background-image: none;
+                                background-color: #ddd;
+                        }
+                        
+                        div.email {
+                                margin: 0;
+                                padding: 20px 15px;
+                                padding-bottom: 40px;
+                                border-left: none;
+                                border-right: none;
+                        }
+                        
+                        div.header {
+                                padding: 15px 10px;
+                        }
+                        
+                        div.header h1 {
+                                font-size: 24px;
+                        }
+                        
+                        div.header h2.slogan {
+                                font-size: 12px;
+                        }
+                        
+                        h1 {
+                                font-size: 22px;
+                        }
+                        
+                        h2 {
+                                font-size: 18px;
+                        }
+                        
+                        p {
+                                font-size: 15px;
+                        }
+                        
+                        div.quote {
+                                margin: 15px 0;
+                                padding: 8px;
+                        }
+                        
+                        #footer {
+                                letter-spacing: 5px;
+                                font-size: 10px;
+                        }
+                        
+                        table.scores, table.chimp_scores {
+                                font-size: 9px;
+                        }
+                        
+                        table.scores thead th, table.chimp_scores thead th,
+                        table.scores tbody td, table.chimp_scores tbody td {
+                                font-size: 9px;
+                                padding: 3px;
+                        }
+                }
+                
+                /* Extra small devices */
+                @media only screen and (max-width: 400px) {
+                        div.email {
+                                padding: 15px 10px;
+                        }
+                        
+                        div.header h1 {
+                                font-size: 20px;
+                        }
+                        
+                        div.header h2.slogan {
+                                font-size: 11px;
+                        }
+                        
+                        h1 {
+                                font-size: 20px;
+                        }
+                        
+                        p {
+                                font-size: 14px;
+                        }
+                        
+                        #footer {
+                                letter-spacing: 3px;
+                        }
+                }
+  </style>
+  <title></title>
 </head>
 <body>
-<div class = 'header'>
-	<h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXIX</a></h1>
-	<h2 class = 'slogan'><a href = "https://youtu.be/r-uSWAJd9GE?si=O1uo3RYFa0QkSrZC">Ba ba ba ba ba basketball</a></h2>
+  <div class='header'>
+    <h1><a href="http://benklaas.com/jqmcbp">JQMCBP XXIX</a></h1>
+    <h2 class='slogan'><a href="https://youtu.be/r-uSWAJd9GE?si=O1uo3RYFa0QkSrZC">Ba ba ba ba ba basketball</a></h2>
+  </div>
+  <div class='email'>
+    <ul>
+      <li>Name: *|MMERGE5|*</li>
+      <li>Candybar: *|MMERGE6|*</li>
+      <li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
+      <li>How many chimps are at or above your score: *|MMERGE8|*</li>
+      <li>Rank: *|MMERGE10|*/850</li>
+      <li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a>
+      </li>
+    </ul>
+    <hr class='section'>
+    <h1>Aaaaaand We're Back</h1>
+	
+    <p>
+	<b>For the rookies, and those that don't remember what I told you last year:</b><br>
+    What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.**
+    </p>
+	<p>
+		You will be competing against 849 other humans and 1,001 chimps* for the coveted title of JQMCBP Champion and the accompanying candy bar prize. The top 10 humans and top 10 chimps will be listed in each email update, but you can check the <a href="http://benklaas.com/jqmcbp/leaderboard.cgi">leaderboard</a> at any time to see where you stand. Powered by the Meister's NearRealTimeScoring™ system, the leaderboard is updated within minutes of each game finishing. Or sometimes hours. It really depends on when I click the buttons. Seriously, that's how it works.
+	</p>
+    <p><img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e76876fe-a0ed-b643-a2d2-57a1d2bee60e.png" class="float-right" alt="And We're Back"></p>
+    <p>In addition to the emails and the leaderboard, there's lots of important, vital resources available with your web browser. <a href="https://benklaas.com/jqmcbp/filtermatic.cgi">Setup a filter</a> with all your friends and enemies to track your own "pool within the pool". Evaluate how risky your picks are with the <a href="https://benklaas.com/jqmcbp/whatsyourj.cgi">J Factor</a>, see who picked brackets like yours with the <a href="https://benklaas.com/jqmcbp/sss.cgi">Scientific Similarity Index</a>. As the tournament progresses, figure out who has no chance of winning at the <a href="https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame!</a> Generate pointless <a href="https://benklaas.com/jqmcbp/graphomatic.cgi">head-to-head graphs</a>! Every one of my emails will contain these linky links at the bottom of the email.</p>
+
+    <p>As I've done for the past decade plus, I'm sending emails through the appropriately named <a href="http://mailchimp.com">MailChimp</a> mass email service. This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. However, MailChimp will not allow me to send multiple emails to the same email address. So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. How about we call this a "feature" and call an end to the tech talk.</p>
+	   
+	<p>Last thing: if you like the JQMCBP please remember to smash that <b>Velociraptor!</b> button.</p>
+    <p>* and 1,001 chimps. This number has been remarkably steady.</p>
+    <p>** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). Or you could contact your congressperson, which will give you a similar outcome.</p>
+    <p>But enough of my yakkin'. Let's boogie!</p>
+
+    <hr class='section'>
+    <h1>In Memoriam</h1>
+    <h2>Where We Mourn the Loss of Often Bizarro Mascots</h2>
+    <p></p>
+
+	Bucky Badger
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/b92e6be1-96bd-783a-dab2-8f8bb176e6e2.png" />
+	Vili
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/71ff0988-e2c5-ad76-bb41-cc6eec2b0adb.png" />
+	Scrappy the Owl
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/c989be41-668d-c4cd-d9b0-9006ae3b140e.png" />
+	BYU's Cosmo the Cougar
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/97e7afcb-8e2f-9976-de4b-9a5d95c37307.png" />
+	Troy's T-Roy
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/0b13d700-a2c7-52c7-7506-860af6bdbb2e.png" />
+	Mcneese's Rowdy
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/0f024679-7b60-43f7-fe0b-c0fe5d272988.png" />
+	St Mary's Gael
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/63c36aa1-9801-689b-fe6f-207e844629f0.png" />
+	Joe Vandal
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/543c84a6-ece1-5924-1649-c3c10c12a6a8.png" />
+	The Quaker
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/4e085ceb-9cf0-1fbc-05e7-496ba07313a2.png" />
+	Brutus Buckeye
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/7bff1058-a494-fd44-ae1c-7d91959c0166.png" />
+	Thundar
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/02dedab8-7082-016d-f884-34313911e639.png" />
+	Rocky the Bull
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/573de8df-208a-e62f-c652-dcb7f70c333e.png" />
+	Howard Bison
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/ba6b4376-74e2-4d9a-9ce4-874ccc45fb6a.png" />
+	Rameses
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/7fd80e61-251b-eecb-e4d3-c3a03a25d68c.png" />
+	Hairy Dawg
+	<img src = "https://mcusercontent.com/b94193d8d716ab819d32fb668/images/46cc8632-4ac4-35b2-8a29-09fe616a8ce6.png" />
+    <div class='pre'></div>
+    <hr class='section'>
+    <h1>Whose champion bit it?</h1>
+    <h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
+    <p>
+Only 14 champion picks gone after day 1. Sorry Jacob, it's just not North Dakota State's year.
+    <div class='pre'>
+Saint Marys: Kai Anderson, Supra
+Ohio State: Daniel
+North Dakota State: Jacob W
+Georgia: PJ Torres
+Wisconsin: Steve Shwaiko, Cate Whelan, Carson Klaas, Lesley Hogg, Violette Simon, Craig W, Steve Danek, Eowyn Simon, Riley Daine
 </div>
-<div class = 'email'>
-
-	<ul>
-		<li>Name: *|MMERGE5|*</li>
-		<li>Candybar: *|MMERGE6|*</li>
-		<li>Score: *|MMERGE9|* (leader is at *|MMERGE11|*)</li>
-		<li>How many chimps are at or above your score: *|MMERGE8|*</li>
-		<li>Rank: *|MMERGE10|*/850</li>
-		<li>Your Bracket: <a href="http://benklaas.com/jqmcbp/player_bracket.cgi?player_id=*|MMERGE7|*">Click here</a></li>
-	</ul>
-
-
-
-
-
-			<hr class='section'>
-            <h1>Aaaaaand We're Back</h1>
-<b>For the rookies, and those that don't remember what I told you last year:</b><br /> What I do is send out email updates (personalized just for your entry!) several times during the course of the tournament. I go on and on and on over seemingly meaningless minutia. It might seem meaningless but...well okay, it's meaningless. But we'll have fun, or your money back.**
-            </p>
-
-			<p>
-				<img src="https://mcusercontent.com/b94193d8d716ab819d32fb668/images/e76876fe-a0ed-b643-a2d2-57a1d2bee60e.png"
-					class="float-right" alt = "And We're Back">
-			</p>
-
-            <p>In addition to the emails, there's lots of important, vital resources available with your web browser.
-				Evaluate how risky your picks are with the <a href="https://benklaas.com/jqmcbp/whatsyourj.cgi">J Factor</a>, 
-				see who picked brackets like yours with the <a href="https://benklaas.com/jqmcbp/sss.cgi">Scientific Similarity Index</a>. 
-				As the tournament progresses, figure out who has no chance of winning at the <a href="https://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame!</a> Generate pointless <a href="https://benklaas.com/jqmcbp/graphomatic.cgi">head-to-head graphs</a>! 
-				Every one of my emails will contain these linky links at the bottom of the email, or instead just head to <a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> as a jumping off point.
-            </p>
-
-            <p>As I've done for the past decade plus, I'm sending emails through the appropriately named <a href="http://mailchimp.com">MailChimp</a> mass email service. 
-			   This is Lucky the Chimp's favorite email service, and because it actually sends emails that people tend to receive. 
-			   However, MailChimp will not allow me to send multiple emails to the same email address. 
-			   So, if you signed up several brackets on one email address, you only be getting one personalized email for each entry. 
-		   	   How about we call this a "feature" and call an end to the tech talk.
-            </p>
-
-			<p>
-				* and 1,001 chimps. This number has been remarkably steady.
-			</p>
-
-            <p>
-                ** Refund applications need to be filed in triplicate and mailed to the Johnny Quest Memorial 
-				Candy Bar Pool Customer Service Department, care of its Parent Corporation, Slaptronics Personal Massage Therapy and Self Help Video Distribution Corporation of Netherland Antilles (nasdaq:SPMTSHVDCNA). 
-				Or you could contact your congressperson, which will give you a similar outcome.
-            </p>
-
-            <p>
-                But enough of my yakkin'. Let's boogie!
-            </p>
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-			<hr class='section'>
-			<h1>Losing Mascots: Let's Talk About Them!</h1>
-			<h2>Pointless Discussion about Losing Teams and Their Mascots</h2>
-
-			<p>
-			</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-<p>
-</p>
-
-			<hr class='section'>
-			<h1>Upsets...who picked 'em</h1>
-			<h2>Highlighting those brave souls that chose oddball longshots to win games</h2>
-
-<p>
-</p>
-			<div class='pre'>
-			</div>
-
-			<hr class='section'>
-			<h1>Whose champion bit it?</h1>
-			<h2>Sometimes you win, sometimes you lose, but it never sucks worse than when the team you picked to win it all loses it all. It's even worse when I publish it for all to read!</h2>
-
-<p>
-</p>
-
-<div class='pre'>
-</div>
-
-<p>So long suckers!</p>
-
-<hr class='section'>
-<h1>Boo Rah Rah</h1>
-<h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!
-</h2>
-
-<p>
-</p>
-<p>
-</p>
-
-<div class='pre'>
-</div>
-
-			<hr class='section'>
-
-			<h1>Candy Bar of the Day</h1>
-			<h2>Where I give out fake awards for my favorite candy selections</h2>
-
-			<p>
-            </p>
-
-			<h1>Enough with the crap, who's ahead?</h1>
-
-			<h2>Top 10 Humans</h2>
-
-			<p>
-			</p>
-
-			<table class='scores'>
-				<thead>
-					<tr>
-						<th>Rank</th>
-						<th>Name</th>
-						<th>Location</th>
-						<th>Candy</th>
-						<th>Champion</th>
-						<th>Score</th>
-					</tr>
-				</thead>
-				<tbody>
-
-				</tbody>
-			</table>
-
-			<h2>Top 10 Chimps</h2>
-			<p>
-
-			</p>
-
-
-			<table class='scores'>
-				<thead>
-					<tr>
-						<th>Rank</th>
-						<th>Name</th>
-						<th>Location</th>
-						<th>Candy</th>
-						<th>Champion</th>
-						<th>Score</th>
-					</tr>
-				</thead>
-				<tbody>
-
-				</tbody>
-			</table>
-			<p>
-				cheers,<br>
-				the Meister
-			</p>
-
-			<hr class='section'>
-			<h1>Linky links:</h1>
-			<ul>
-				<li><a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead</li>
-				<li><a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were</li>
-				<li><a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.</li>
-				<li><a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets</li>
-				<li><a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely</li>
-			</ul>
-
-			<hr class='section'>
-			<div id="footer">
-
-				<ul class="image">
-					<li>
-						<img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png">
-					</li>
-					<li class="last"> 2025 Ben Klaas Productions </li>
-				</ul>
-			</div>
-		</div>
+    <p>So long suckers!</p>
+    <hr class='section'>
+    <h1>Boo Rah Rah</h1>
+    <h2>I asked you if your alma mater was in the tournament. Why? So I could make fun of you when they lose!</h2>
+    <p>72 of you lost your alma mater on the first day, including a full host of Badgers (me included). Shout out to Tom 🏤 Wadzinski for the only player that entered with an emoji, and one of two players that literally broke my database with their special ❄️ character needs. The other was Shawn "Black Thunder (ブラックサンダー)" McCullers. Well done, both of you.</p>
+	   <p>Oh no Saint Mary's! The whole Benson clan wiped out in one day!</p>
+    <div class='pre'>
+Penn: Mike Tu
+North Carolina: Nikki Gray, Darin Kalisak, Michelle Gavel, Bridget Johnson, Michael Wooley-Ousdahl, Megan Wooley-Ousdahl, Susanna Angles
+Saint Marys: Scarlett Benson, Ross Benson, Leyla Benson
+Ohio State: Harlan H. Hatcher (1898-1998), Dennis Sabo, idotter05, Charlotte Bier, Charlotte Bier, Paul Schmidt, Arthur Rush, Tor Tor, Aaron Dush
+North Dakota State: Parker Rogers, David Montebello
+Georgia: PJ Torres, Allie Velleca
+Wisconsin: Ben Klaas, Steve Shwaiko, Conor Whelan, Paul Smith, Amelia Stalter, Owen Boll, Noah Pollack, Maggie Deering, Ryan Schuelke, Carson Klaas, Max McCartney, Todd Krueger, Abby Anokye-Agyei, Wendy Volkman, Greg Wenz, Violette Simon, Piper Dare Klaas, Craig W, Mark Larson, Julia Drew, Kathy Larson, David Larson, Tom 🏤 Wadzinski, Maya PHAM, Kate Connolly, Leela Mixer, Tim Ogg, Marty Dickrell, Rob Danek, Steve Danek, Paul Wadzinske, Joel Rondeau, Millie McCartney, John McCartney, Lisa Wadzinske, Eowyn Simon, Marla Weinstein, Jess Larson, Jonathan Schroeder, Jacob W, Alex Anderson, Charlotte Erenberg, sofifi lipscomb, Berit Campbell, Jake Wagner, Jack Wenz
+Kennesaw State: Derek Harper
+Brigham Young: Gabe Smith 
+	</div>
+    <hr class='section'>
+    <h1>Candy Bar of the Day</h1>
+    <h2>Where I give out fake awards for my favorite candy selections</h2>
+    <p>
+		The <b>Desperate For Candy Much?&trade;</b> Award goes to honorary niece Violette "need gummy clusters" Simon. Alrighty Violette, I get it, you want candy. But you don't need to be so rude about it. You could have said "gummy clusters please and thank you" and it would have been better received. Instead..."need gummy clusters". Well, no candy for you until you learn some manners. And maybe not even then.
+	</p>
+	<hr class='section'>
+	<p>
+	</p>
+    <h1>Enough with the crap, who's ahead?</h1>
+    <h2>Top 10 Humans</h2>
+    <p>A TEN way tie in 1st place is your top 10!</p>
+    <table class='scores'>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Candy</th>
+          <th>Champion</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr><td>1</td><td>Addison Busta</td><td>Iowa</td><td>Collision Lifesaver Gummies</td><td>Arizona</td><td>15</td></tr>
+<tr><td>1</td><td>Barlow</td><td>Michigan</td><td>Twix</td><td>Arizona</td><td>15</td></tr>
+<tr><td>1</td><td>Chris Larson</td><td>Minnesota</td><td>Lindt Dubai Style Chocolate Bar</td><td>Houston</td><td>15</td></tr>
+<tr><td>1</td><td>Elsie Meilinger</td><td>Michigan</td><td>Twizzlers</td><td>Michigan</td><td>15</td></tr>
+<tr><td>1</td><td>Kathryn Hagerman</td><td>California</td><td>sour patch kids</td><td>Michigan</td><td>15</td></tr>
+<tr><td>1</td><td>Kurt Anders</td><td>Michigan</td><td>NERDS JUICY GUMMY GLUSTERS</td><td>Duke</td><td>15</td></tr>
+<tr><td>1</td><td>Nancy M Friedman</td><td>Florida</td><td>Reese's peanut butter cup</td><td>Arkansas</td><td>15</td></tr>
+<tr><td>1</td><td>Paula Fronckowiak</td><td>Michigan</td><td>Snickers</td><td>Arizona</td><td>15</td></tr>
+<tr><td>1</td><td>Ryan Schraa</td><td>Wisconsin</td><td>Cookies and Cream Hershey</td><td>Houston</td><td>15</td></tr>
+<tr><td>1</td><td>Victor Aaron</td><td>International</td><td>Kansas</td><td>Kansas</td><td>15</td></tr>
+	  </tbody>
+    </table>
+    <h2>Top 10 Chimps</h2>
+    <p></p>
+    <table class='scores'>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Candy</th>
+          <th>Champion</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr><td>1</td><td>Lorenzo</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Michigan</td><td>14</td></tr>
+<tr><td>1</td><td>Reynaldo</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>14</td></tr>
+<tr><td>3</td><td>Cooper</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>13</td></tr>
+<tr><td>3</td><td>Emily</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Hawaii</td><td>13</td></tr>
+<tr><td>3</td><td>Kadin</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Troy</td><td>13</td></tr>
+<tr><td>3</td><td>Lina</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>St Johns</td><td>13</td></tr>
+<tr><td>3</td><td>Mya</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Tennessee</td><td>13</td></tr>
+<tr><td>3</td><td>Sidney</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas</td><td>13</td></tr>
+<tr><td>3</td><td>Yvette</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>High Point</td><td>13</td></tr>
+<tr><td>10</td><td>Aden</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Kentucky</td><td>12</td></tr>
+<tr><td>10</td><td>Aisha</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>UCLA</td><td>12</td></tr>
+<tr><td>10</td><td>Aliya</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Furman</td><td>12</td></tr>
+<tr><td>10</td><td>Armani</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Arizona</td><td>12</td></tr>
+<tr><td>10</td><td>Dane</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas Tech</td><td>12</td></tr>
+<tr><td>10</td><td>Deanna</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>St Johns</td><td>12</td></tr>
+<tr><td>10</td><td>Elisha</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>12</td></tr>
+<tr><td>10</td><td>Emerson</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Nebraska</td><td>12</td></tr>
+<tr><td>10</td><td>Galilea</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Duke</td><td>12</td></tr>
+<tr><td>10</td><td>Grayson</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Ohio State</td><td>12</td></tr>
+<tr><td>10</td><td>Gunnar</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Siena</td><td>12</td></tr>
+<tr><td>10</td><td>Ibrahim</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>TCU</td><td>12</td></tr>
+<tr><td>10</td><td>Jamya</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>12</td></tr>
+<tr><td>10</td><td>Joyce</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>12</td></tr>
+<tr><td>10</td><td>Kaylee</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Houston</td><td>12</td></tr>
+<tr><td>10</td><td>Keith</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Florida</td><td>12</td></tr>
+<tr><td>10</td><td>Kenyon</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Iowa State</td><td>12</td></tr>
+<tr><td>10</td><td>Leroy</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Miami OH</td><td>12</td></tr>
+<tr><td>10</td><td>Mauricio</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>St Johns</td><td>12</td></tr>
+<tr><td>10</td><td>Mira</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Iowa</td><td>12</td></tr>
+<tr><td>10</td><td>Peyton</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Kentucky</td><td>12</td></tr>
+<tr><td>10</td><td>Presley</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>High Point</td><td>12</td></tr>
+<tr><td>10</td><td>Rey</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Prairie View</td><td>12</td></tr>
+<tr><td>10</td><td>Russell</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Duke</td><td>12</td></tr>
+<tr><td>10</td><td>Serenity</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Prairie View</td><td>12</td></tr>
+<tr><td>10</td><td>Susan</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Florida</td><td>12</td></tr>
+<tr><td>10</td><td>Sylvia</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Northern Iowa</td><td>12</td></tr>
+<tr><td>10</td><td>Victor</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Furman</td><td>12</td></tr>
+<tr><td>10</td><td>Whitney</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Purdue</td><td>12</td></tr>
+<tr><td>10</td><td>Yadiel</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Wright State</td><td>12</td></tr>
+<tr><td>10</td><td>Yusuf</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>North Dakota State</td><td>12</td></tr>
+<tr><td>10</td><td>Zaria</td><td>Rancho Cucamonga</td><td>Banana Turkish Taffy</td><td>Texas A&M</td><td>12</td></tr>
+	  </tbody>
+    </table>
+    <p>cheers,<br>
+    the Meister</p>
+    <hr class='section'>
+    <h1>Linky links:</h1>
+    <ul>
+      <li>
+        <a href="http://benklaas.com/jqmcbp/leaderboard.cgi">The Leaderboard</a> for checking out who is ahead
+      </li>
+      <li>
+        <a href="http://benklaas.com/jqmcbp/whatsyourj.cgi">What's Your J?</a> will tell you how risky your picks were
+      </li>
+      <li>
+        <a href="http://benklaas.com/jqmcbp/sss.cgi">SSS</a> Want to see who picked brackets similar to yours? You do??? srsly why.
+      </li>
+      <li>
+        <a href="http://benklaas.com/jqmcbp/player_bracket_selection.cgi">Prognosticationland</a> for looking at some brackets
+      </li>
+      <li>
+        <a href="http://benklaas.com/jqmcbp/hallofshame.cgi">Hall of Shame</a> will tell you who is out of the race for candy completely
+      </li>
+    </ul>
+    <hr class='section'>
+    <div id="footer">
+      <ul class="image">
+        <li><img width="38" height="40" alt="Candymeister" src="http://benklaas.com/jqmcbp/images/footer.png"></li>
+        <li class="last">2025 Ben Klaas Productions</li>
+      </ul>
     </div>
+  </div>
 </body>
-
 </html>
