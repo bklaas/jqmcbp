@@ -1,11 +1,12 @@
 import os
+import sys
+import base64
 from pathlib import Path
-import pymysql
 import pandas as pd
 import plotly.graph_objects as go
-from dotenv import load_dotenv
 
-load_dotenv(Path(__file__).resolve().parents[2] / ".env")
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from db_config import get_connection
 
 STATE_TO_ABBREV = {
     "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
@@ -60,12 +61,7 @@ CALLOUT_STATES = {
 
 ALL_US_CODES = list(STATE_TO_ABBREV.values())
 
-conn = pymysql.connect(
-    host=os.getenv("JQMCBP_DB_HOST"),
-    user=os.getenv("JQMCBP_DB_USER"),
-    password=os.getenv("JQMCBP_DB_PASS"),
-    database=os.getenv("JQMCBP_DB", "johnnyquest"),
-)
+conn = get_connection(database=os.getenv("JQMCBP_DB", "johnnyquest"))
 cursor = conn.cursor()
 query = """
     SELECT location, COUNT(*) as players
@@ -195,6 +191,18 @@ fig.update_layout(
     margin=dict(l=0, r=0, t=80, b=60),
     width=1200,
     height=750,
+)
+
+# Add logo in lower right
+logo_path = Path(__file__).resolve().parents[2] / "web" / "2026" / "graphs" / "jq_graph_logo.gif"
+with open(logo_path, "rb") as f:
+    logo_b64 = base64.b64encode(f.read()).decode()
+fig.add_layout_image(
+    source=f"data:image/gif;base64,{logo_b64}",
+    xref="paper", yref="paper",
+    x=1, y=0,
+    xanchor="right", yanchor="bottom",
+    sizex=0.12, sizey=0.12,
 )
 
 fig.write_html("choropleth.html")
