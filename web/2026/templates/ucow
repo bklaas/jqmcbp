@@ -1,0 +1,112 @@
+<h1>Unweighted Chance Of Winning, or UCOW&#0153; 🐄</h1>
+
+<div class = 'section'>
+<p>
+<img src = "images/ucow.png" width = "40%" class = 'float-right' />
+From the Pointless Data Division of JQMCBP Labs is the Unweighted Chance Of Winning, or UCOW&trade;. 
+"UCOW, pronounced at a high-pitched yell 'YOU COW!', stands for Unweighted Chance Of Winning. After the field of teams is whittled down from 64 to 16, the number of remaining bracket permutations drops from, I am not making this up, >9 quintillion (2<sup>63</sup>) to 32,768 (2<sup>15</sup>). UCOW&trade; simulates every one of those 32,768 possible permutations and determines the winner or winners of each permutation. After every permutation is run, results are compiled to show each person (and chimp) just how many of those 32,768 permutations they emerge victorious. I repeat this process twice more, when we are down to 8 teams (2<sup>7</sup> = 128 permutations) and 4 teams (2<sup>3</sup> = 8 permutations). It's very deflating. You're welcome!
+</p> 
+</p>
+</div>
+
+<h2>Final Four UCOW&trade;</h2>
+[% INCLUDE wrapper_table_start %]
+
+<table>
+<tr>
+	<td width = "50%">
+
+	[% IF ucow_four && ucow_four.size > 0 %]
+	<table class = 'thinborder leaderboard'>
+	<tr>
+		<th>Name</th>
+		<th>Winning Brackets</th>
+		<th>Percent</th>
+	</tr>
+	[% FOR row IN ucow_four %]
+	<tr class = '[% IF row.man_or_chimp == "chimp" %]monkey[% ELSIF row.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
+		<td>[% IF row.man_or_chimp == "chimp" %]<img src = '/johnnyquest/images/chimp.gif'> [% row.name | html %] the Chimp[% ELSE %]
+    [% IF row.past_champion != "" %]<img src = "images/trophy_small2.png" title = "[% row.past_champion %] Champion [% row.name | html %]" width = "14"/>[% END %]
+    [% row.name | html %]
+[% END %]</td>
+		<td>[% row.brackets %]</td>
+		<td>[% row.percent %]%</td>
+	</tr>
+	[% END %]
+	</table>
+	[% ELSE %]
+	<p><i>TBD &mdash; available after the Elite Eight round</i></p>
+	[% END %]
+[% INCLUDE wrapper_table_end img="images/candycelebrate.webp" %]
+
+<h2>Elite Eight UCOW&trade;</h2>
+
+[% INCLUDE wrapper_table_start %]
+
+[% IF ucow_eight && ucow_eight.size > 0 %]
+<table class = 'thinborder leaderboard'>
+<tr>
+	<th>Name</th>
+	<th>Winning Brackets</th>
+	<th>Percent</th>
+</tr>
+[% FOR row IN ucow_eight %]
+<tr class = '[% IF row.man_or_chimp == "chimp" %]monkey[% ELSIF row.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
+	<td>[% IF row.man_or_chimp == "chimp" %]<img src = '/johnnyquest/images/chimp.gif'> [% row.name | html %] the Chimp[% ELSE %]
+    [% IF row.past_champion != "" %]<img src = "images/trophy_small2.png" title = "[% row.past_champion %] Champion [% row.name | html %]" width = "14"/>[% END %]
+    [% row.name | html %]
+[% END %]</td>
+	<td>[% row.brackets %]</td>
+	<td>[% row.percent %]%</td>
+</tr>
+[% END %]
+</table>
+[% ELSE %]
+<p><i>TBD &mdash; available after the Sweet Sixteen round</i></p>
+[% END %]
+[% INCLUDE wrapper_table_end img="images/winning.webp" %]
+
+<h2>Sweet Sixteen UCOW&trade;</h2>
+
+[% INCLUDE wrapper_table_start %]
+
+[% IF ucow_sixteen && ucow_sixteen.size > 0 %]
+<table class = 'thinborder leaderboard'>
+<tr>
+	<th>Name</th>
+	<th>Winning Brackets</th>
+	<th>Percent</th>
+</tr>
+[% FOR row IN ucow_sixteen %]
+<tr class = '[% IF row.man_or_chimp == "chimp" %]monkey[% ELSIF row.player_id == cookie %]thisisme[% ELSE %]leaderboard[% END %]'>
+	<td>[% IF row.man_or_chimp == "chimp" %]<img src = '/johnnyquest/images/chimp.gif'> [% row.name | html %] the Chimp[% ELSE %]
+    [% IF row.past_champion != "" %]<img src = "images/trophy_small2.png" title = "[% row.past_champion %] Champion [% row.name | html %]" width = "14"/>[% END %]
+    [% row.name | html %]
+[% END %]</td>
+	<td>[% row.brackets %]</td>
+	<td>[% row.percent %]%</td>
+</tr>
+[% END %]
+</table>
+[% ELSE %]
+<p><i>TBD &mdash; available after the Second Round</i></p>
+[% END %]
+
+[% INCLUDE wrapper_table_end img="images/theresachance.webp" %]
+
+
+[% BLOCK wrapper_table_start %]
+<table>
+<tr>
+	<td width = "50%">
+[% END %]
+
+[% BLOCK wrapper_table_end%]
+	</td>
+	<td width = "50%">
+		<img src = "[% img %]" width = "80%" valign = 'top'/>
+	</td>
+</tr>
+</table>
+
+[% END %]
